@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Node-opcua 0.0.50 : ObjectType and Objcet instantiation"
+title: "Node-opcua 0.0.50 : ObjectType and Object instantiation"
 date:   2015-12-5 12:00:00  +0100
 categories: tutorial
 ---
