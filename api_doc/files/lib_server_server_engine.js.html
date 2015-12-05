@@ -1,0 +1,1724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>lib/server/server_engine.js - The NodeOPCUA API</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.0.46</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/AcknowledgeMessage.html">AcknowledgeMessage</a></li>
+                                <li><a href="../classes/ActivateSessionRequest.html">ActivateSessionRequest</a></li>
+                                <li><a href="../classes/ActivateSessionResponse.html">ActivateSessionResponse</a></li>
+                                <li><a href="../classes/AddNodesItem.html">AddNodesItem</a></li>
+                                <li><a href="../classes/AddNodesRequest.html">AddNodesRequest</a></li>
+                                <li><a href="../classes/AddNodesResponse.html">AddNodesResponse</a></li>
+                                <li><a href="../classes/AddNodesResult.html">AddNodesResult</a></li>
+                                <li><a href="../classes/AddReferencesItem.html">AddReferencesItem</a></li>
+                                <li><a href="../classes/AddReferencesRequest.html">AddReferencesRequest</a></li>
+                                <li><a href="../classes/AddReferencesResponse.html">AddReferencesResponse</a></li>
+                                <li><a href="../classes/AddressSpace.html">AddressSpace</a></li>
+                                <li><a href="../classes/AggregateConfiguration.html">AggregateConfiguration</a></li>
+                                <li><a href="../classes/AnonymousIdentityToken.html">AnonymousIdentityToken</a></li>
+                                <li><a href="../classes/ApplicationDescription.html">ApplicationDescription</a></li>
+                                <li><a href="../classes/ApplicationType.html">ApplicationType</a></li>
+                                <li><a href="../classes/Argument.html">Argument</a></li>
+                                <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
+                                <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+                                <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
+                                <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
+                                <li><a href="../classes/BaseNode.html">BaseNode</a></li>
+                                <li><a href="../classes/BaseUAObject.html">BaseUAObject</a></li>
+                                <li><a href="../classes/BinaryStream.html">BinaryStream</a></li>
+                                <li><a href="../classes/BinaryStreamSizeCalculator.html">BinaryStreamSizeCalculator</a></li>
+                                <li><a href="../classes/BrowseDescription.html">BrowseDescription</a></li>
+                                <li><a href="../classes/BrowseNextRequest.html">BrowseNextRequest</a></li>
+                                <li><a href="../classes/BrowseNextResponse.html">BrowseNextResponse</a></li>
+                                <li><a href="../classes/BrowsePath.html">BrowsePath</a></li>
+                                <li><a href="../classes/BrowsePathResult.html">BrowsePathResult</a></li>
+                                <li><a href="../classes/BrowsePathTarget.html">BrowsePathTarget</a></li>
+                                <li><a href="../classes/BrowseRequest.html">BrowseRequest</a></li>
+                                <li><a href="../classes/BrowseResponse.html">BrowseResponse</a></li>
+                                <li><a href="../classes/BrowseResult.html">BrowseResult</a></li>
+                                <li><a href="../classes/BuildInfo.html">BuildInfo</a></li>
+                                <li><a href="../classes/CallMethodRequest.html">CallMethodRequest</a></li>
+                                <li><a href="../classes/CallMethodResult.html">CallMethodResult</a></li>
+                                <li><a href="../classes/CallRequest.html">CallRequest</a></li>
+                                <li><a href="../classes/CallResponse.html">CallResponse</a></li>
+                                <li><a href="../classes/CancelRequest.html">CancelRequest</a></li>
+                                <li><a href="../classes/CancelResponse.html">CancelResponse</a></li>
+                                <li><a href="../classes/ChannelSecurityToken.html">ChannelSecurityToken</a></li>
+                                <li><a href="../classes/ChunkManager.html">ChunkManager</a></li>
+                                <li><a href="../classes/ClientMonitoredItem.html">ClientMonitoredItem</a></li>
+                                <li><a href="../classes/ClientSecureChannelLayer.html">ClientSecureChannelLayer</a></li>
+                                <li><a href="../classes/ClientSession.html">ClientSession</a></li>
+                                <li><a href="../classes/ClientSidePublishEngine.html">ClientSidePublishEngine</a></li>
+                                <li><a href="../classes/ClientSubscription.html">ClientSubscription</a></li>
+                                <li><a href="../classes/ClientTCP_transport.html">ClientTCP_transport</a></li>
+                                <li><a href="../classes/CloseSecureChannelRequest.html">CloseSecureChannelRequest</a></li>
+                                <li><a href="../classes/CloseSecureChannelResponse.html">CloseSecureChannelResponse</a></li>
+                                <li><a href="../classes/CloseSessionRequest.html">CloseSessionRequest</a></li>
+                                <li><a href="../classes/CloseSessionResponse.html">CloseSessionResponse</a></li>
+                                <li><a href="../classes/ContentFilter.html">ContentFilter</a></li>
+                                <li><a href="../classes/ContentFilterElement.html">ContentFilterElement</a></li>
+                                <li><a href="../classes/ContentFilterElementResult.html">ContentFilterElementResult</a></li>
+                                <li><a href="../classes/ContentFilterResult.html">ContentFilterResult</a></li>
+                                <li><a href="../classes/CreateMonitoredItemsRequest.html">CreateMonitoredItemsRequest</a></li>
+                                <li><a href="../classes/CreateMonitoredItemsResponse.html">CreateMonitoredItemsResponse</a></li>
+                                <li><a href="../classes/CreateSessionRequest.html">CreateSessionRequest</a></li>
+                                <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
+                                <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
+                                <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
+                                <li><a href="../classes/cryptoutils.html">cryptoutils</a></li>
+                                <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
+                                <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
+                                <li><a href="../classes/DataValue.html">DataValue</a></li>
+                                <li><a href="../classes/DeleteMonitoredItemsRequest.html">DeleteMonitoredItemsRequest</a></li>
+                                <li><a href="../classes/DeleteMonitoredItemsResponse.html">DeleteMonitoredItemsResponse</a></li>
+                                <li><a href="../classes/DeleteNodesItem.html">DeleteNodesItem</a></li>
+                                <li><a href="../classes/DeleteNodesRequest.html">DeleteNodesRequest</a></li>
+                                <li><a href="../classes/DeleteNodesResponse.html">DeleteNodesResponse</a></li>
+                                <li><a href="../classes/DeleteReferencesItem.html">DeleteReferencesItem</a></li>
+                                <li><a href="../classes/DeleteReferencesRequest.html">DeleteReferencesRequest</a></li>
+                                <li><a href="../classes/DeleteReferencesResponse.html">DeleteReferencesResponse</a></li>
+                                <li><a href="../classes/DeleteSubscriptionsRequest.html">DeleteSubscriptionsRequest</a></li>
+                                <li><a href="../classes/DeleteSubscriptionsResponse.html">DeleteSubscriptionsResponse</a></li>
+                                <li><a href="../classes/DiagnosticInfo.html">DiagnosticInfo</a></li>
+                                <li><a href="../classes/ElementOperand.html">ElementOperand</a></li>
+                                <li><a href="../classes/EncodeDecode.html">EncodeDecode</a></li>
+                                <li><a href="../classes/EndpointDescription.html">EndpointDescription</a></li>
+                                <li><a href="../classes/Enum.html">Enum</a></li>
+                                <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
+                                <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
+                                <li><a href="../classes/EUInformation.html">EUInformation</a></li>
+                                <li><a href="../classes/EventField.html">EventField</a></li>
+                                <li><a href="../classes/EventFilter.html">EventFilter</a></li>
+                                <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
+                                <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
+                                <li><a href="../classes/ExpandedNodeId.html">ExpandedNodeId</a></li>
+                                <li><a href="../classes/Factory.html">Factory</a></li>
+                                <li><a href="../classes/FilterOperand.html">FilterOperand</a></li>
+                                <li><a href="../classes/FilterOperator.html">FilterOperator</a></li>
+                                <li><a href="../classes/FindServersRequest.html">FindServersRequest</a></li>
+                                <li><a href="../classes/FindServersResponse.html">FindServersResponse</a></li>
+                                <li><a href="../classes/GetEndpointsRequest.html">GetEndpointsRequest</a></li>
+                                <li><a href="../classes/GetEndpointsResponse.html">GetEndpointsResponse</a></li>
+                                <li><a href="../classes/HelloMessage.html">HelloMessage</a></li>
+                                <li><a href="../classes/HistoryData.html">HistoryData</a></li>
+                                <li><a href="../classes/HistoryModifiedData.html">HistoryModifiedData</a></li>
+                                <li><a href="../classes/HistoryReadDetails.html">HistoryReadDetails</a></li>
+                                <li><a href="../classes/HistoryReadRequest.html">HistoryReadRequest</a></li>
+                                <li><a href="../classes/HistoryReadResponse.html">HistoryReadResponse</a></li>
+                                <li><a href="../classes/HistoryReadResult.html">HistoryReadResult</a></li>
+                                <li><a href="../classes/HistoryReadValueId.html">HistoryReadValueId</a></li>
+                                <li><a href="../classes/HistoryUpdateRequest.html">HistoryUpdateRequest</a></li>
+                                <li><a href="../classes/HistoryUpdateResponse.html">HistoryUpdateResponse</a></li>
+                                <li><a href="../classes/HistoryUpdateResult.html">HistoryUpdateResult</a></li>
+                                <li><a href="../classes/IssuedIdentityToken.html">IssuedIdentityToken</a></li>
+                                <li><a href="../classes/LiteralOperand.html">LiteralOperand</a></li>
+                                <li><a href="../classes/LocalizedText.html">LocalizedText</a></li>
+                                <li><a href="../classes/MessageBuilder.html">MessageBuilder</a></li>
+                                <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
+                                <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
+                                <li><a href="../classes/MessageSecurityMode.html">MessageSecurityMode</a></li>
+                                <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
+                                <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
+                                <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
+                                <li><a href="../classes/ModifySubscriptionRequest.html">ModifySubscriptionRequest</a></li>
+                                <li><a href="../classes/ModifySubscriptionResponse.html">ModifySubscriptionResponse</a></li>
+                                <li><a href="../classes/MonitoredItem.html">MonitoredItem</a></li>
+                                <li><a href="../classes/MonitoredItemCreateRequest.html">MonitoredItemCreateRequest</a></li>
+                                <li><a href="../classes/MonitoredItemCreateResult.html">MonitoredItemCreateResult</a></li>
+                                <li><a href="../classes/MonitoredItemModifyRequest.html">MonitoredItemModifyRequest</a></li>
+                                <li><a href="../classes/MonitoredItemModifyResult.html">MonitoredItemModifyResult</a></li>
+                                <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
+                                <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
+                                <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+                                <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
+                                <li><a href="../classes/NodeId.html">NodeId</a></li>
+                                <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
+                                <li><a href="../classes/NodeTypeDescription.html">NodeTypeDescription</a></li>
+                                <li><a href="../classes/NotificationMessage.html">NotificationMessage</a></li>
+                                <li><a href="../classes/opcua.html">opcua</a></li>
+                                <li><a href="../classes/OPCUABaseServer.html">OPCUABaseServer</a></li>
+                                <li><a href="../classes/OPCUAClient.html">OPCUAClient</a></li>
+                                <li><a href="../classes/OPCUAClientBase.html">OPCUAClientBase</a></li>
+                                <li><a href="../classes/OPCUASecureObject.html">OPCUASecureObject</a></li>
+                                <li><a href="../classes/OPCUAServer.html">OPCUAServer</a></li>
+                                <li><a href="../classes/OPCUAServerEndPoint
+                
+                A sever end point is listening to one port.html">OPCUAServerEndPoint
+                
+                A sever end point is listening to one port</a></li>
+                                <li><a href="../classes/OpenSecureChannelRequest.html">OpenSecureChannelRequest</a></li>
+                                <li><a href="../classes/OpenSecureChannelResponse.html">OpenSecureChannelResponse</a></li>
+                                <li><a href="../classes/PacketAssembler.html">PacketAssembler</a></li>
+                                <li><a href="../classes/ParsingResult.html">ParsingResult</a></li>
+                                <li><a href="../classes/PublishRequest.html">PublishRequest</a></li>
+                                <li><a href="../classes/PublishResponse.html">PublishResponse</a></li>
+                                <li><a href="../classes/QualifiedName.html">QualifiedName</a></li>
+                                <li><a href="../classes/QueryDataDescription.html">QueryDataDescription</a></li>
+                                <li><a href="../classes/QueryDataSet.html">QueryDataSet</a></li>
+                                <li><a href="../classes/QueryFirstRequest.html">QueryFirstRequest</a></li>
+                                <li><a href="../classes/QueryFirstResponse.html">QueryFirstResponse</a></li>
+                                <li><a href="../classes/QueryNextRequest.html">QueryNextRequest</a></li>
+                                <li><a href="../classes/QueryNextResponse.html">QueryNextResponse</a></li>
+                                <li><a href="../classes/Range.html">Range</a></li>
+                                <li><a href="../classes/ReadAtTimeDetails.html">ReadAtTimeDetails</a></li>
+                                <li><a href="../classes/ReaderState.html">ReaderState</a></li>
+                                <li><a href="../classes/ReadEventDetails.html">ReadEventDetails</a></li>
+                                <li><a href="../classes/ReadProcessedDetails.html">ReadProcessedDetails</a></li>
+                                <li><a href="../classes/ReadRawModifiedDetails.html">ReadRawModifiedDetails</a></li>
+                                <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
+                                <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
+                                <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+                                <li><a href="../classes/Reference.html">Reference</a></li>
+                                <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
+                                <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
+                                <li><a href="../classes/RegisteredServer.html">RegisteredServer</a></li>
+                                <li><a href="../classes/RegisterNodesRequest.html">RegisterNodesRequest</a></li>
+                                <li><a href="../classes/RegisterNodesResponse.html">RegisterNodesResponse</a></li>
+                                <li><a href="../classes/RegisterServerRequest.html">RegisterServerRequest</a></li>
+                                <li><a href="../classes/RegisterServerResponse.html">RegisterServerResponse</a></li>
+                                <li><a href="../classes/RelativePath.html">RelativePath</a></li>
+                                <li><a href="../classes/RelativePathElement.html">RelativePathElement</a></li>
+                                <li><a href="../classes/RepublishRequest.html">RepublishRequest</a></li>
+                                <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
+                                <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
+                                <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+                                <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
+                                <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
+                                <li><a href="../classes/SecurityTokenRequestType.html">SecurityTokenRequestType</a></li>
+                                <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
+                                <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
+                                <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
+                                <li><a href="../classes/ServerEngine.html">ServerEngine</a></li>
+                                <li><a href="../classes/ServerSecureChannelLayer.html">ServerSecureChannelLayer</a></li>
+                                <li><a href="../classes/ServerSession.html">ServerSession</a></li>
+                                <li><a href="../classes/ServerSidePublishEngine.html">ServerSidePublishEngine</a></li>
+                                <li><a href="../classes/ServerStatus.html">ServerStatus</a></li>
+                                <li><a href="../classes/ServerTCP_transport.html">ServerTCP_transport</a></li>
+                                <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
+                                <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
+                                <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+                                <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
+                                <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
+                                <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
+                                <li><a href="../classes/SetPublishingModeResponse.html">SetPublishingModeResponse</a></li>
+                                <li><a href="../classes/SetTriggeringRequest.html">SetTriggeringRequest</a></li>
+                                <li><a href="../classes/SetTriggeringResponse.html">SetTriggeringResponse</a></li>
+                                <li><a href="../classes/SignatureData.html">SignatureData</a></li>
+                                <li><a href="../classes/SignedSoftwareCertificate.html">SignedSoftwareCertificate</a></li>
+                                <li><a href="../classes/SimpleAttributeOperand.html">SimpleAttributeOperand</a></li>
+                                <li><a href="../classes/Simulator.html">Simulator</a></li>
+                                <li><a href="../classes/StatusChangeNotification.html">StatusChangeNotification</a></li>
+                                <li><a href="../classes/StatusCode.html">StatusCode</a></li>
+                                <li><a href="../classes/Subscription.html">Subscription</a></li>
+                                <li><a href="../classes/SubscriptionAcknowledgement.html">SubscriptionAcknowledgement</a></li>
+                                <li><a href="../classes/SubscriptionDiagnostics.html">SubscriptionDiagnostics</a></li>
+                                <li><a href="../classes/SymmetricAlgorithmSecurityHeader.html">SymmetricAlgorithmSecurityHeader</a></li>
+                                <li><a href="../classes/TCP_transport.html">TCP_transport</a></li>
+                                <li><a href="../classes/TCPErrorMessage.html">TCPErrorMessage</a></li>
+                                <li><a href="../classes/TimestampsToReturn.html">TimestampsToReturn</a></li>
+                                <li><a href="../classes/ToolBrowsePath.html">ToolBrowsePath</a></li>
+                                <li><a href="../classes/TransferResult.html">TransferResult</a></li>
+                                <li><a href="../classes/TransferSubscriptionsRequest.html">TransferSubscriptionsRequest</a></li>
+                                <li><a href="../classes/TransferSubscriptionsResponse.html">TransferSubscriptionsResponse</a></li>
+                                <li><a href="../classes/TranslateBrowsePathsToNodeIdsRequest.html">TranslateBrowsePathsToNodeIdsRequest</a></li>
+                                <li><a href="../classes/TranslateBrowsePathsToNodeIdsResponse.html">TranslateBrowsePathsToNodeIdsResponse</a></li>
+                                <li><a href="../classes/TypeSchema.html">TypeSchema</a></li>
+                                <li><a href="../classes/UADataType.html">UADataType</a></li>
+                                <li><a href="../classes/UAObject.html">UAObject</a></li>
+                                <li><a href="../classes/UAObjectType.html">UAObjectType</a></li>
+                                <li><a href="../classes/UAVariable.html">UAVariable</a></li>
+                                <li><a href="../classes/UAVariableType.html">UAVariableType</a></li>
+                                <li><a href="../classes/UnregisterNodesRequest.html">UnregisterNodesRequest</a></li>
+                                <li><a href="../classes/UnregisterNodesResponse.html">UnregisterNodesResponse</a></li>
+                                <li><a href="../classes/UserIdentityTokenType.html">UserIdentityTokenType</a></li>
+                                <li><a href="../classes/UserNameIdentityToken.html">UserNameIdentityToken</a></li>
+                                <li><a href="../classes/UserTokenPolicy.html">UserTokenPolicy</a></li>
+                                <li><a href="../classes/Variant.html">Variant</a></li>
+                                <li><a href="../classes/View.html">View</a></li>
+                                <li><a href="../classes/ViewDescription.html">ViewDescription</a></li>
+                                <li><a href="../classes/WriteRequest.html">WriteRequest</a></li>
+                                <li><a href="../classes/WriteResponse.html">WriteResponse</a></li>
+                                <li><a href="../classes/WriteValue.html">WriteValue</a></li>
+                                <li><a href="../classes/X509IdentityToken.html">X509IdentityToken</a></li>
+                                <li><a href="../classes/Xml2Json.html">Xml2Json</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/opcua.address_space.html">opcua.address_space</a></li>
+                                <li><a href="../modules/opcua.address_space.types.html">opcua.address_space.types</a></li>
+                                <li><a href="../modules/opcua.client.html">opcua.client</a></li>
+                                <li><a href="../modules/opcua.datamodel.html">opcua.datamodel</a></li>
+                                <li><a href="../modules/opcua.helpers.html">opcua.helpers</a></li>
+                                <li><a href="../modules/opcua.miscellaneous.html">opcua.miscellaneous</a></li>
+                                <li><a href="../modules/opcua.server.html">opcua.server</a></li>
+                                <li><a href="../modules/opcua.server.simulation.html">opcua.server.simulation</a></li>
+                                <li><a href="../modules/opcua.transport.html">opcua.transport</a></li>
+                                <li><a href="../modules/services.browse.html">services.browse</a></li>
+                                <li><a href="../modules/services.get_endpoints.html">services.get_endpoints</a></li>
+                                <li><a href="../modules/services.historizing.html">services.historizing</a></li>
+                                <li><a href="../modules/services.method.html">services.method</a></li>
+                                <li><a href="../modules/services.read.html">services.read</a></li>
+                                <li><a href="../modules/services.register.html">services.register</a></li>
+                                <li><a href="../modules/services.session.html">services.session</a></li>
+                                <li><a href="../modules/services.subscription.html">services.subscription</a></li>
+                                <li><a href="../modules/services.write.html">services.write</a></li>
+                                <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
+                                <li><a href="../modules/xml2json.html">xml2json</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: lib/server/server_engine.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+&quot;use strict&quot;;
+/**
+ * @module opcua.server
+ */
+
+require(&quot;requirish&quot;)._(module);
+var assert = require(&quot;better-assert&quot;);
+var async = require(&quot;async&quot;);
+
+var NodeClass = require(&quot;lib/datamodel/nodeclass&quot;).NodeClass;
+
+var NodeId = require(&quot;lib/datamodel/nodeid&quot;).NodeId;
+var resolveNodeId = require(&quot;lib/datamodel/nodeid&quot;).resolveNodeId;
+var makeNodeId = require(&quot;lib/datamodel/nodeid&quot;).makeNodeId;
+var NodeIdType = require(&quot;lib/datamodel/nodeid&quot;).NodeIdType;
+var NumericRange = require(&quot;lib/datamodel/numeric_range&quot;).NumericRange;
+var browse_service = require(&quot;lib/services/browse_service&quot;);
+var BrowseDirection = browse_service.BrowseDirection;
+var BrowseResult = browse_service.BrowseResult;
+
+
+var read_service = require(&quot;lib/services/read_service&quot;);
+var ReadRequest = read_service.ReadRequest;
+var AttributeIds = read_service.AttributeIds;
+var TimestampsToReturn = read_service.TimestampsToReturn;
+
+var BaseNode = require(&quot;lib/address_space/base_node&quot;).BaseNode;
+var UAObject = require(&quot;lib/address_space/ua_object&quot;).UAObject;
+var UAVariable = require(&quot;lib/address_space/ua_variable&quot;).UAVariable;
+
+var DataValue = require(&quot;lib/datamodel/datavalue&quot;).DataValue;
+var Variant = require(&quot;lib/datamodel/variant&quot;).Variant;
+var DataType = require(&quot;lib/datamodel/variant&quot;).DataType;
+var VariantArrayType = require(&quot;lib/datamodel/variant&quot;).VariantArrayType;
+var isValidVariant = require(&quot;lib/datamodel/variant&quot;).isValidVariant;
+var LocalizedText = require(&quot;lib/datamodel/localized_text&quot;).LocalizedText;
+var BuildInfo = require(&quot;lib/datamodel/buildinfo&quot;).BuildInfo;
+
+var util = require(&quot;util&quot;);
+
+
+var StatusCodes = require(&quot;lib/datamodel/opcua_status_code&quot;).StatusCodes;
+var StatusCode = require(&quot;lib/datamodel/opcua_status_code&quot;).StatusCode;
+
+var _ = require(&quot;underscore&quot;);
+
+var address_space = require(&quot;lib/address_space/address_space&quot;);
+var AddressSpace = address_space.AddressSpace;
+
+var generate_address_space = require(&quot;lib/address_space/load_nodeset2&quot;).generate_address_space;
+
+var VariableIds = require(&quot;lib/opcua_node_ids&quot;).VariableIds;
+var MethodIds = require(&quot;lib/opcua_node_ids&quot;).MethodIds;
+var ObjectIds = require(&quot;lib/opcua_node_ids&quot;).ObjectIds;
+
+var ReferenceType = require(&quot;lib/address_space/referenceType&quot;).ReferenceType;
+
+
+var EventEmitter = require(&quot;events&quot;).EventEmitter;
+
+//xx require(&quot;lib/address_space/convert_nodeset_to_types&quot;).makeServerStatus();
+var ServerState = require(&quot;schemas/39394884f696ff0bf66bacc9a8032cc074e0158e/ServerState_enum&quot;).ServerState;
+var ServerStatus = require(&quot;_generated_/_auto_generated_ServerStatus&quot;).ServerStatus;
+
+var ServerDiagnosticsSummary = require(&quot;_generated_/_auto_generated_ServerDiagnosticsSummary&quot;).ServerDiagnosticsSummary;
+
+var constructFilename = require(&quot;lib/misc/utils&quot;).constructFilename;
+
+var standard_nodeset_file = constructFilename(&quot;nodesets/Opc.Ua.NodeSet2.xml&quot;);
+exports.standard_nodeset_file = standard_nodeset_file;
+
+var mini_nodeset_filename = constructFilename(&quot;lib/server/mini.Node.Set2.xml&quot;);
+exports.mini_nodeset_filename = mini_nodeset_filename;
+
+var part8_nodeset_filename = constructFilename(&quot;nodesets/Opc.Ua.NodeSet2.Part8.xml&quot;);
+exports.part8_nodeset_filename = part8_nodeset_filename;
+
+var di_nodeset_filename = constructFilename(&quot;nodesets/Opc.Ua.Di.NodeSet2.xml&quot;);
+exports.di_nodeset_filename = di_nodeset_filename;
+
+var adi_nodeset_filename = constructFilename(&quot;nodesets/Opc.Ua.Adi.NodeSet2.xml&quot;);
+exports.adi_nodeset_filename = adi_nodeset_filename;
+
+var debugLog = require(&quot;lib/misc/utils&quot;).make_debugLog(__filename);
+//var doDebug = require(&quot;lib/misc/utils&quot;).checkDebugFlag(__filename);
+
+var ServerCapabilities = require(&quot;./server_capabilities&quot;).ServerCapabilities;
+
+
+var eoan = require(&quot;lib/address_space/extension_object_array_node&quot;);
+
+/**
+ * @class ServerEngine
+ * @extends EventEmitter
+ * @uses ServerSidePublishEngine
+ * @constructor
+ */
+function ServerEngine(options) {
+
+    options = options || {};
+    options.buildInfo = options.buildInfo || {};
+
+    EventEmitter.apply(this, arguments);
+
+    this._sessions = {};
+    this._closedSessions = {};
+
+    // ---------------------------------------------------- ServerStatus
+    this.serverStatus = new ServerStatus({
+        startTime: new Date(),
+        currentTime: new Date(),
+        state: ServerState.NoConfiguration,
+        buildInfo: options.buildInfo,
+        secondsTillShutdown: 10,
+        shutdownReason: {text: &quot;&quot;}
+    });
+
+    var self = this;
+
+    this.serverStatus.__defineGetter__(&quot;secondsTillShutdown&quot;,function() {
+        return self.secondsTillShutdown();
+    });
+
+    this.serverStatus.__defineGetter__(&quot;currentTime&quot;,function() {
+       return new Date();
+    });
+
+    // --------------------------------------------------- ServerCapabilities
+    options.serverCapabilities = options.serverCapabilities ||{};
+    options.serverCapabilities.serverProfileArray = options.serverCapabilities.serverProfileArray || [];
+    options.serverCapabilities.localeIdArray = options.serverCapabilities.localeIdArray ||[&quot;en-EN&quot;, &quot;fr-FR&quot;];
+
+    this.serverCapabilities = new ServerCapabilities(options.serverCapabilities);
+
+    // --------------------------------------------------- serverDiagnosticsSummary
+    this.serverDiagnosticsSummary = new ServerDiagnosticsSummary({
+
+    });
+    assert(this.serverDiagnosticsSummary.hasOwnProperty(&quot;currentSessionCount&quot;));
+
+    var self = this;
+    this.serverDiagnosticsSummary.__defineGetter__(&quot;currentSessionCount&quot;, function () {
+        return Object.keys(self._sessions).length;
+    });
+    assert(this.serverDiagnosticsSummary.hasOwnProperty(&quot;currentSubscriptionCount&quot;));
+    this.serverDiagnosticsSummary.__defineGetter__(&quot;currentSubscriptionCount&quot;, function () {
+        // currentSubscriptionCount returns the total number of subscriptions
+        // that are currently active on all sessions
+        var counter = 0;
+        _.values(self._sessions).forEach(function (session) {
+            counter += session.currentSubscriptionCount;
+        });
+        return counter;
+    });
+
+    this.status = &quot;creating&quot;;
+
+    this.setServerState(ServerState.NoConfiguration);
+
+    this.addressSpace = null;
+
+    this._shutdownTask = [];
+
+    this._applicationUri = options.applicationUri || &quot;&lt;unset _applicationUri&gt;&quot;;
+}
+
+util.inherits(ServerEngine, EventEmitter);
+
+ServerEngine.prototype.__defineGetter__(&quot;startTime&quot;,function() {
+    return this.serverStatus.startTime;
+});
+
+ServerEngine.prototype.__defineGetter__(&quot;currentTime&quot;,function() {
+    return this.serverStatus.currentTime;
+});
+
+ServerEngine.prototype.__defineGetter__(&quot;buildInfo&quot;,function() {
+    return this.serverStatus.buildInfo;
+});
+/**
+ * register a function that will be called when the server will perform its shut down.
+ * @method registerShutdownTask
+ */
+ServerEngine.prototype.registerShutdownTask = function (task) {
+    assert(_.isFunction(task));
+    this._shutdownTask.push(task);
+
+};
+
+/**
+ * @method shutdown
+ */
+ServerEngine.prototype.shutdown = function () {
+
+    var self = this;
+
+    self.status = &quot;shutdown&quot;;
+    self.setServerState(ServerState.Shutdown);
+
+    // delete any existing sessions
+    var tokens = Object.keys(self._sessions).map(function (key) {
+        var session = self._sessions[key];
+        return session.authenticationToken;
+    });
+
+    //xx console.log(&quot;xxxxxxxxx ServerEngine.shutdown must terminate &quot;+ tokens.length,&quot; sessions&quot;);
+
+    tokens.forEach(function (token) {
+        self.closeSession(token, true);
+    });
+
+    // all sessions must have been terminated
+    assert(self.currentSessionCount === 0);
+
+    // perform registerShutdownTask
+    self._shutdownTask.forEach(function (task) {
+        task.call(this);
+    });
+};
+
+/**
+ * the number of active sessions
+ * @property currentSessionCount
+ * @type {Number}
+ */
+ServerEngine.prototype.__defineGetter__(&quot;currentSessionCount&quot;, function () {
+    return this.serverDiagnosticsSummary.currentSessionCount;
+});
+
+/**
+ * the cumulated number of sessions that have been opened since this object exists
+ * @property cumulatedSessionCount
+ * @type {Number}
+ */
+ServerEngine.prototype.__defineGetter__(&quot;cumulatedSessionCount&quot;, function () {
+    return this.serverDiagnosticsSummary.cumulatedSessionCount;
+});
+
+/**
+ * the number of active subscriptions.
+ * @property currentSubscriptionCount
+ * @type {Number}
+ */
+ServerEngine.prototype.__defineGetter__(&quot;currentSubscriptionCount&quot;, function () {
+    return this.serverDiagnosticsSummary.currentSubscriptionCount;
+});
+/**
+ * the cumulated number of subscriptions that have been created since this object exists
+ * @property cumulatedSubscriptionCount
+ * @type {Number}
+ */
+ServerEngine.prototype.__defineGetter__(&quot;cumulatedSubscriptionCount&quot;, function () {
+    return this.serverDiagnosticsSummary.cumulatedSubscriptionCount;
+});
+
+ServerEngine.prototype.__defineGetter__(&quot;rejectedSessionCount&quot;, function () {
+    return this.serverDiagnosticsSummary.rejectedSessionCount;
+});
+
+ServerEngine.prototype.__defineGetter__(&quot;rejectedRequestsCount&quot;, function () {
+    return this.serverDiagnosticsSummary.rejectedRequestsCount;
+});
+
+ServerEngine.prototype.__defineGetter__(&quot;sessionAbortCount&quot;, function () {
+    return this.serverDiagnosticsSummary.sessionAbortCount;
+});
+ServerEngine.prototype.__defineGetter__(&quot;sessionTimeoutCount&quot;, function () {
+    return this.serverDiagnosticsSummary.sessionTimeoutCount;
+});
+
+ServerEngine.prototype.__defineGetter__(&quot;publishingIntervalCount&quot;, function () {
+    return this.serverDiagnosticsSummary.publishingIntervalCount;
+});
+
+
+/**
+ * @method secondsTillShutdown
+ * @return {UInt32} the approximate number of seconds until the server will be shut down. The
+ * value is only relevant once the state changes into SHUTDOWN.
+ */
+ServerEngine.prototype.secondsTillShutdown = function () {
+    // ToDo: implement a correct solution here
+    return 1;
+};
+
+
+var CallMethodResult = require(&quot;lib/services/call_service&quot;).CallMethodResult;
+// binding methods
+function getMonitoredItemsId(inputArguments, context, callback) {
+
+
+    assert(_.isArray(inputArguments));
+    assert(_.isFunction(callback));
+
+    assert(context.hasOwnProperty(&quot;session&quot;), &quot; expecting a session id in the context object&quot;);
+
+    var session = context.session;
+    if (!session) {
+        return callback(null, {statusCode: StatusCodes.BadInternalError});
+    }
+
+    var subscriptionId = inputArguments[0].value;
+    var subscription = session.getSubscription(subscriptionId);
+    if (!subscription) {
+        return callback(null, {statusCode: StatusCodes.BadSubscriptionIdInvalid});
+    }
+    var result = subscription.getMonitoredItems();
+    assert(result.statusCode);
+    assert(_.isArray(result.serverHandles));
+    assert(_.isArray(result.clientHandles));
+    assert(result.serverHandles.length === result.clientHandles.length);
+    var callMethodResult = new CallMethodResult({
+        statusCode: result.statusCode,
+        outputArguments: [
+            {dataType: DataType.UInt32, arrayType: VariantArrayType.Array, value: result.serverHandles},
+            {dataType: DataType.UInt32, arrayType: VariantArrayType.Array, value: result.clientHandles}
+        ]
+    });
+    callback(null, callMethodResult);
+
+}
+
+/**
+ * the name of the server
+ * @property serverName
+ * @type String
+ */
+ServerEngine.prototype.__defineGetter__(&quot;serverName&quot;, function () {
+    return this.serverStatus.buildInfo.productName;
+});
+
+/**
+ * the server urn
+ * @property serverNameUrn
+ * @type String
+ */
+ServerEngine.prototype.__defineGetter__(&quot;serverNameUrn&quot;, function () {
+    return this._applicationUri;
+});
+
+/**
+ * the urn of the server namespace
+ * @property serverNamespaceName
+ * @type String
+ */
+ServerEngine.prototype.__defineGetter__(&quot;serverNamespaceUrn&quot;, function () {
+    return this._applicationUri; // &quot;urn:&quot; + this.serverName;
+});
+
+
+ServerEngine.prototype.setServerState = function (serverState) {
+    assert(serverState !== null &amp;&amp; serverState !== undefined);
+    this.serverStatus.state = serverState;
+};
+
+
+/**
+ * @method initialize
+ * @async
+ *
+ * @param options {Object}
+ * @param options.nodeset_filename {String} - [option](default : &#x27;mini.Node.Set2.xml&#x27; )
+ * @param callback
+ */
+ServerEngine.prototype.initialize = function (options, callback) {
+
+    var self = this;
+    assert(!self.addressSpace); // check that &#x27;initialize&#x27; has not been already called
+
+    self.status = &quot;initializing&quot;;
+
+    options = options || {};
+    assert(_.isFunction(callback));
+
+    options.nodeset_filename = options.nodeset_filename || standard_nodeset_file;
+
+    var startTime = new Date();
+
+    debugLog(&quot;Loading &quot;, options.nodeset_filename, &quot;...&quot;);
+
+    self.addressSpace = new AddressSpace();
+
+    // register namespace 1 (our namespace);
+    var serverNamespaceIndex = self.addressSpace.registerNamespace(self.serverNamespaceUrn);
+    assert(serverNamespaceIndex === 1);
+
+    generate_address_space(self.addressSpace, options.nodeset_filename, function () {
+
+        var endTime = new Date();
+        debugLog(&quot;Loading &quot;, options.nodeset_filename, &quot; done : &quot;, endTime - startTime, &quot; ms&quot;);
+
+        function findObjectNodeId(name) {
+            var obj = self.findObject(name);
+            return obj ? obj.nodeId : null;
+        }
+
+        self.FolderTypeId = findObjectNodeId(&quot;FolderType&quot;);
+        self.BaseObjectTypeId = findObjectNodeId(&quot;BaseObjectType&quot;);
+        self.BaseDataVariableTypeId = findObjectNodeId(&quot;BaseDataVariableType&quot;);
+
+        self.rootFolder = self.findObject(&quot;RootFolder&quot;);
+        assert(self.rootFolder.readAttribute);
+
+        self.setServerState(ServerState.Running);
+
+        function bindVariableIfPresent(nodeId, opts) {
+            assert(nodeId instanceof NodeId);
+            assert(!nodeId.isEmpty());
+            var obj = self.findObject(nodeId);
+            if (obj) {
+                self.bindVariable(nodeId, opts);
+            }
+            return obj;
+        }
+
+
+        // -------------------------------------------- install default get/put handler
+        var server_NamespaceArray_Id = makeNodeId(VariableIds.Server_NamespaceArray); // ns=0;i=2255
+        bindVariableIfPresent(server_NamespaceArray_Id, {
+            get: function () {
+                return new Variant({
+                    dataType: DataType.String,
+                    arrayType: VariantArrayType.Array,
+                    value: self.addressSpace.getNamespaceArray()
+                });
+            },
+            set: null // read only
+        });
+
+        var server_NameUrn_var = new Variant({
+            dataType: DataType.String,
+            arrayType: VariantArrayType.Array,
+            value: [
+                self.serverNameUrn // this is us !
+            ]
+        });
+        var server_ServerArray_Id = makeNodeId(VariableIds.Server_ServerArray); // ns=0;i=2254
+
+        bindVariableIfPresent(server_ServerArray_Id, {
+            get: function () {
+                return server_NameUrn_var;
+            },
+            set: null // read only
+        });
+
+
+        function bindStandardScalar(id, dataType, func , setter_func) {
+
+            assert(_.isNumber(id));
+            assert(_.isFunction(func));
+            assert(_.isFunction(setter_func) || !setter_func);
+            assert(dataType !== null); // check invalid dataType
+
+            var setter_func2 = null;
+            if (setter_func) {
+                setter_func2 = function(variant) {
+                    var variable2 = !!variant.value;
+                    setter_func(variable2);
+                    return StatusCodes.Good;
+                }
+            }
+
+            var nodeId = makeNodeId(id);
+
+            // make sur the provided function returns a valid value for the variant type
+            // This test may not be exhaustive but it will detect obvious mistakes.
+            assert(isValidVariant(VariantArrayType.Scalar, dataType, func()));
+            return bindVariableIfPresent(nodeId, {
+                get: function () {
+                    return new Variant({
+                        dataType: dataType,
+                        arrayType: VariantArrayType.Scalar,
+                        value: func()
+                    });
+                },
+                set: setter_func2
+
+            });
+        }
+
+        function bindStandardArray(id, variantDataType, dataType, func) {
+
+            assert(_.isFunction(func));
+            assert(variantDataType !== null); // check invalid dataType
+
+            var nodeId = makeNodeId(id);
+
+            // make sur the provided function returns a valid value for the variant type
+            // This test may not be exhaustive but it will detect obvious mistakes.
+            assert(isValidVariant(VariantArrayType.Array, dataType, func()));
+
+            bindVariableIfPresent(nodeId, {
+                get: function () {
+                    var value = func();
+                    assert( _.isArray(value));
+                    return new Variant({
+                        dataType: variantDataType,
+                        arrayType: VariantArrayType.Array,
+                        value: value
+                    });
+                },
+                set: null // read only
+            });
+        }
+
+        bindStandardScalar(VariableIds.Server_ServiceLevel,
+            DataType.Byte, function () {
+                return 255;
+            });
+
+        bindStandardScalar(VariableIds.Server_Auditing,
+            DataType.Boolean, function () {
+                return false;
+            });
+
+
+        function bindServerDiagnostics() {
+
+            var serverDiagnostics_Enabled = false;
+
+            bindStandardScalar(VariableIds.Server_ServerDiagnostics_EnabledFlag,
+                DataType.Boolean,function() {
+                    return serverDiagnostics_Enabled
+                },function(newFlag) {
+                    serverDiagnostics_Enabled = newFlag;
+                });
+
+
+
+            var serverDiagnosticsSummary_var = new Variant({
+                dataType: DataType.ExtensionObject,
+                value: self.serverDiagnosticsSummary
+            });
+            bindVariableIfPresent(makeNodeId(VariableIds.Server_ServerDiagnostics_ServerDiagnosticsSummary), {
+                get: function() {
+                    return serverDiagnosticsSummary_var;
+                },
+                set: null
+            });
+
+            var serverDiagnosticsSummary = self.findObject(makeNodeId(VariableIds.Server_ServerDiagnostics_ServerDiagnosticsSummary));
+            if(serverDiagnosticsSummary) {
+                serverDiagnosticsSummary.bindExtensionObject();
+            }
+
+        }
+
+        function bindServerStatus() {
+
+
+            var serverStatus_var = new Variant({
+                dataType: DataType.ExtensionObject,
+                value: self.serverStatus
+            });
+
+
+            bindVariableIfPresent(makeNodeId(VariableIds.Server_ServerStatus), {
+                get: function() {
+                    return serverStatus_var;
+                },
+                set: null
+            });
+
+            var serverStatus = self.findObject(makeNodeId(VariableIds.Server_ServerStatus));
+            if(serverStatus) {
+                serverStatus.bindExtensionObject();
+                serverStatus.miminumSamplingInterval = 250;
+            }
+
+            var currentTimeNode = self.findObject(makeNodeId(VariableIds.Server_ServerStatus_CurrentTime));
+
+            if (currentTimeNode){
+                currentTimeNode.bindVariable({
+                    get: function () {
+                        var currentTime = self.currentTime;
+                        return new Variant({
+                            // scalar
+                            value: currentTime,
+                            dataType: DataType.DateTime
+                        });
+                    }
+                }, true);
+                currentTimeNode.miminumSamplingInterval = 250;
+            }
+
+        }
+
+        function bindServerCapabilities() {
+
+            bindStandardArray(VariableIds.Server_ServerCapabilities_ServerProfileArray,
+                DataType.String, &quot;String&quot;, function () {
+                    return self.serverCapabilities.serverProfileArray;
+                });
+
+            bindStandardArray(VariableIds.Server_ServerCapabilities_LocaleIdArray,
+                DataType.String, &quot;LocaleId&quot;, function () {
+                    return self.serverCapabilities.localeIdArray;
+                });
+
+            bindStandardScalar(VariableIds.Server_ServerCapabilities_MinSupportedSampleRate,
+                DataType.Duration, function () {
+                    return self.serverCapabilities.minSupportedSampleRate;
+                });
+
+            bindStandardScalar(VariableIds.Server_ServerCapabilities_MaxBrowseContinuationPoints,
+                DataType.UInt16, function () {
+                    return self.serverCapabilities.maxBrowseContinuationPoints;
+                });
+
+            bindStandardScalar(VariableIds.Server_ServerCapabilities_MaxQueryContinuationPoints,
+                DataType.UInt16, function () {
+                    return self.serverCapabilities.maxQueryContinuationPoints;
+                });
+
+            bindStandardScalar(VariableIds.Server_ServerCapabilities_MaxHistoryContinuationPoints,
+                DataType.UInt16, function () {
+                    return self.serverCapabilities.maxHistoryContinuationPoints;
+                });
+
+            bindStandardArray(VariableIds.Server_ServerCapabilities_SoftwareCertificates,
+                DataType.ByteString, &quot;SoftwareCertificates&quot;, function () {
+                    return self.serverCapabilities.softwareCertificates;
+                });
+
+            bindStandardScalar(VariableIds.Server_ServerCapabilities_MaxArrayLength,
+                DataType.UInt32, function () {
+                    return self.serverCapabilities.maxArrayLength;
+                });
+
+            bindStandardScalar(VariableIds.Server_ServerCapabilities_MaxStringLength,
+                DataType.UInt32, function () {
+                    return self.serverCapabilities.maxStringLength;
+                });
+
+           function bindOperationLimits(operationLimits) {
+
+                assert(_.isObject(operationLimits));
+
+                function upperCaseFirst(str) {
+                    return str.slice(0, 1).toUpperCase() + str.slice(1);
+                }
+
+                //Xx bindStandardArray(VariableIds.Server_ServerCapabilities_OperationLimits_MaxNodesPerWrite,
+                //Xx     DataType.UInt32, &quot;UInt32&quot;, function () {  return operationLimits.maxNodesPerWrite;  });
+                var keys = Object.keys(operationLimits);
+
+                keys.forEach(function (key) {
+
+                    var uid = &quot;Server_ServerCapabilities_OperationLimits_&quot; + upperCaseFirst(key);
+                    var nodeId = makeNodeId(VariableIds[uid]);
+                    //xx console.log(&quot;xxx Binding &quot;.bgCyan,uid,nodeId.toString());
+                    assert(!nodeId.isEmpty());
+
+                    bindStandardScalar(VariableIds[uid],
+                        DataType.UInt32, function () {
+                            return operationLimits[key];
+                        });
+                });
+            }
+            bindOperationLimits(self.serverCapabilities.operationLimits);
+
+        }
+
+        bindServerDiagnostics();
+
+        bindServerStatus();
+
+        bindServerCapabilities();
+
+        function bindExtraStuff() {
+            // mainly for compliance
+
+            //The version number for the data type description. i=104
+            bindStandardScalar(VariableIds.DataTypeDescriptionType_DataTypeVersion,
+                DataType.UInt16, function () {
+                    return 0.0;
+                });
+
+            // i=111
+            bindStandardScalar(VariableIds.ModellingRuleType_NamingRule,
+                DataType.UInt16, function () {
+                    return 0.0;
+                });
+
+            // i=112
+            bindStandardScalar(VariableIds.ModellingRule_Mandatory_NamingRule,
+                DataType.UInt16, function () {
+                    return 0.0;
+                });
+
+            // i=113
+            bindStandardScalar(VariableIds.ModellingRule_Optional_NamingRule,
+                DataType.UInt16, function () {
+                    return 0.0;
+                });
+
+
+        }
+
+        bindExtraStuff();
+
+        self.bindMethod(MethodIds.Server_GetMonitoredItems, getMonitoredItemsId.bind(self));
+
+        function prepareServerDiagnostics() {
+
+            var addressSpace = self.addressSpace;
+            var eoan = require(&quot;lib/address_space/extension_object_array_node&quot;);
+
+            var serverObject = self.findObjectByBrowseName(&quot;Server&quot;);
+
+            if (!serverObject) {
+                return;
+            }
+
+            // create SessionsDiagnosticsSummary
+            var serverDiagnostics = serverObject.getComponentByName(&quot;ServerDiagnostics&quot;);
+
+            if (!serverDiagnostics) {
+                return;
+            }
+            var subscriptionDiagnosticsArray = serverDiagnostics.getComponentByName(&quot;SubscriptionDiagnosticsArray&quot;);
+
+            assert(subscriptionDiagnosticsArray instanceof UAVariable);
+
+            eoan.bindExtObjArrayNode(subscriptionDiagnosticsArray,&quot;SubscriptionDiagnosticsType&quot;,&quot;subscriptionId&quot;);
+
+
+        }
+        prepareServerDiagnostics();
+
+
+
+        self.status = &quot;initialized&quot;;
+        setImmediate(callback);
+
+    });
+
+};
+
+/**
+ * @method resolveNodeId
+ * @param nodeId
+ * @return {NodeId}
+ */
+ServerEngine.prototype.resolveNodeId = function (nodeId) {
+    var self = this;
+    assert(self.addressSpace instanceof AddressSpace); // initialize not called
+    return self.addressSpace.resolveNodeId(nodeId);
+};
+
+ServerEngine.prototype._build_new_NodeId = function () {
+    var self = this;
+    assert(self.addressSpace instanceof AddressSpace); // initialize not called
+    return self.addressSpace._build_new_NodeId();
+//xx    var nodeId = makeNodeId(this._internal_id_counter, this._private_namespace);
+//xx    this._internal_id_counter += 1;
+//xx    return nodeId;
+};
+ServerEngine.prototype.getFolder = function (folder) {
+    var self = this;
+    assert(self.addressSpace instanceof AddressSpace); // initialize not called
+    return self.addressSpace.getFolder(folder);
+};
+
+
+ServerEngine.prototype.addFolder = function (parentFolder, options) {
+    var self = this;
+    assert(self.addressSpace instanceof AddressSpace); // initialize not called
+    return self.addressSpace.addFolder(parentFolder, options);
+};
+
+function _DEPRECATED_RENAMED(oldName, newName) {
+    return function () {
+        console.log(&quot; WARNING : method &quot;.yellow + oldName.cyan + &quot; is deprecated and has been renamed as &quot;.yellow + newName.cyan);
+        return this.constructor.prototype[newName].apply(this, arguments);
+    };
+}
+
+ServerEngine.prototype.createFolder = _DEPRECATED_RENAMED(&quot;createdFolder&quot;, &quot;addFolder&quot;);
+ServerEngine.prototype.addVariableInFolder = _DEPRECATED_RENAMED(&quot;addVariableInFolder&quot;, &quot;addVariable&quot;);
+
+/**
+ *
+ * @method findObject
+ * @param nodeId
+ * @return {BaseNode}
+ */
+ServerEngine.prototype.findObject = function (nodeId) {
+    var self = this;
+    assert(self.addressSpace instanceof AddressSpace); // initialize not called
+    return self.addressSpace.findObject(nodeId);
+};
+
+/**
+ *
+ * @method findObjectByBrowseName
+ * @param browseName
+ * @return {BaseNode}
+ * Root.Folders.Server.ServerStatus
+ */
+ServerEngine.prototype.findObjectByBrowseName = function (browseName) {
+    var self = this;
+    assert(self.addressSpace instanceof AddressSpace); // initialize not called
+    return self.addressSpace.findObjectByBrowseName(browseName);
+};
+
+
+var UAVariable = require(&quot;lib/address_space/ua_variable&quot;).UAVariable;
+/**
+ * add a new variable inside an object
+ * @method addVariable
+ * @param options
+ * @param options.browseName  {String}   : the variable browse name
+ * @param [options.nodeId]    {String|NodeId}   : the variable nodeid. If not specified a new nodeId will be generated
+ * @param [options.historizing] {Boolean}   : default value : false
+ * @param [options.valueRank] {Integer}   : default value : -1
+ * @param [options.minimumSamplingInterval] [UInt32] : default value: 10 ms
+ * @param options.value      {Object} : parameters describing how the value of this variable can be access.
+ *                                      Same as {{#crossLink &quot;Variable/bindVariable&quot;}}{{/crossLink}} options parameter. see {{#crossLink &quot;Variable/bindVariable&quot;}}{{/crossLink}} for more info.
+ * @param options.dataType   {NodeId|string} : the nodeId of the variable DataType;
+ * @param options.typeDefinition {NodeId|string} : the nodeId of the HasTypeDefinition;
+ * @return {UAVariable}
+ *
+ */
+ServerEngine.prototype.addVariable = function (options) {
+    var self = this;
+    assert(self.addressSpace instanceof AddressSpace); // initialize not called
+    return self.addressSpace.addVariable(options);
+};
+
+require(&quot;lib/address_space/address_space_add_method&quot;);
+
+var Argument = require(&quot;lib/datamodel/argument_list&quot;).Argument;
+/**
+ * @method addMethod
+ * @param parentObject {Object}
+ * @param options {Object}
+ * @param [options.nodeId=null] {NodeId} the object nodeid.
+ * @param [options.browseName=&quot;&quot;] {String} the object browse name.
+ * @param [options.description=&quot;&quot;] {String} the object description.
+ * @param options.inputArguments  {Array&lt;Argument&gt;}
+ * @param options.outputArguments {Array&lt;Argument&gt;}
+ * @return {Object}
+ */
+ServerEngine.prototype.addMethod = function (parentObject, options) {
+    var self = this;
+    assert(self.addressSpace instanceof AddressSpace); // initialize not called
+    return self.addressSpace.addMethod(parentObject, options);
+};
+
+
+ServerEngine.prototype.addObjectInFolder = function (parentObject, options) {
+    var self = this;
+    assert(self.addressSpace instanceof AddressSpace); // initialize not called
+    return self.addressSpace.addObjectInFolder(parentObject, options);
+};
+
+ServerEngine.prototype.addView = function (parentObject, options) {
+    var self = this;
+    return self.addressSpace.addView(parentObject, options);
+};
+
+ServerEngine.prototype.__findObject = function (nodeId) {
+    // coerce nodeToBrowse to NodeId
+    try {
+        nodeId = resolveNodeId(nodeId);
+    }
+    catch (err) {
+        return null;
+    }
+    assert(nodeId instanceof NodeId);
+    return this.findObject(nodeId);
+};
+
+/**
+ *
+ * @method browseSingleNode
+ * @param nodeId {NodeId|String} : the nodeid of the element to browse
+ * @param browseDescription
+ * @param browseDescription.browseDirection {BrowseDirection} :
+ * @param browseDescription.referenceTypeId {String|NodeId}
+ * @return {BrowseResult}
+ */
+ServerEngine.prototype.browseSingleNode = function (nodeId, browseDescription) {
+
+    // create default browseDescription
+    browseDescription = browseDescription || {};
+    browseDescription.browseDirection = browseDescription.browseDirection || BrowseDirection.Forward;
+
+
+    var self = this;
+    assert(self.addressSpace instanceof AddressSpace); // initialize not called
+    assert(browseDescription.browseDirection);
+
+    //xx console.log(util.inspect(browseDescription,{colors:true,depth:5}));
+    browseDescription = browseDescription || {};
+
+    if (typeof nodeId === &quot;string&quot;) {
+        var node = self.addressSpace.findObjectByBrowseName(nodeId);
+        if (node) {
+            nodeId = node.nodeId;
+        }
+    }
+
+
+    var browseResult = {
+        statusCode: StatusCodes.Good,
+        continuationPoint: null,
+        references: null
+    };
+    if (browseDescription.browseDirection === BrowseDirection.Invalid) {
+        browseResult.statusCode = StatusCodes.BadBrowseDirectionInvalid;
+        return new BrowseResult(browseResult);
+    }
+
+    // check if referenceTypeId is correct
+    if (browseDescription.referenceTypeId instanceof NodeId) {
+        if (browseDescription.referenceTypeId.value === 0) {
+            browseDescription.referenceTypeId = null;
+        } else {
+            var rf = self.findObject(browseDescription.referenceTypeId);
+            if (!rf || !(rf instanceof ReferenceType)) {
+                browseResult.statusCode = StatusCodes.BadReferenceTypeIdInvalid;
+                return new BrowseResult(browseResult);
+            }
+        }
+    }
+
+    var obj = self.__findObject(nodeId);
+    if (!obj) {
+        // Object Not Found
+        browseResult.statusCode = StatusCodes.BadNodeIdUnknown;
+        //xx console.log(&quot;xxxxxx browsing &quot;,nodeId.toString() , &quot; not found&quot; );
+    } else {
+        browseResult.statusCode = StatusCodes.Good;
+        browseResult.references = obj.browseNode(browseDescription);
+    }
+    return new BrowseResult(browseResult);
+};
+
+/**
+ *
+ * @method browse
+ * @param nodesToBrowse {BrowseDescription[]}
+ * @return {BrowseResult[]}
+ */
+ServerEngine.prototype.browse = function (nodesToBrowse) {
+    var self = this;
+    assert(self.addressSpace instanceof AddressSpace); // initialize not called
+    assert(_.isArray(nodesToBrowse));
+
+    var results = [];
+    nodesToBrowse.forEach(function (browseDescription) {
+
+
+        var nodeId = resolveNodeId(browseDescription.nodeId);
+
+        var r = self.browseSingleNode(nodeId, browseDescription);
+        results.push(r);
+    });
+    return results;
+};
+var apply_timestamps = require(&quot;lib/datamodel/datavalue&quot;).apply_timestamps;
+
+/**
+ *
+ * @method readSingleNode
+ * @param nodeId
+ * @param attributeId {AttributeId}
+ * @param [timestampsToReturn=TimestampsToReturn.Neither]
+ * @return {DataValue}
+ */
+ServerEngine.prototype.readSingleNode = function (nodeId, attributeId, timestampsToReturn) {
+
+
+    return this._readSingleNode({
+        nodeId: nodeId,
+        attributeId: attributeId
+    }, timestampsToReturn);
+};
+
+ServerEngine.prototype._readSingleNode = function (nodeToRead, timestampsToReturn) {
+
+    var self = this;
+    var nodeId = nodeToRead.nodeId;
+    var attributeId = nodeToRead.attributeId;
+    var indexRange = nodeToRead.indexRange;
+    var dataEncoding = nodeToRead.dataEncoding;
+    assert(self.addressSpace instanceof AddressSpace); // initialize not called
+
+    if (timestampsToReturn === TimestampsToReturn.Invalid) {
+        return new DataValue({statusCode: StatusCodes.BadTimestampsToReturnInvalid});
+    }
+
+    timestampsToReturn = (_.isObject(timestampsToReturn)) ? timestampsToReturn : TimestampsToReturn.Neither;
+
+    var obj = self.__findObject(nodeId);
+
+    if (!obj) {
+        // may be return BadNodeIdUnknown in dataValue instead ?
+        // Object Not Found
+        return new DataValue({statusCode: StatusCodes.BadNodeIdUnknown});
+    } else {
+
+        // check access
+        //    BadUserAccessDenied
+        //    BadNotReadable
+        //    invalid attributes : BadNodeAttributesInvalid
+        //    invalid range      : BadIndexRangeInvalid
+        var dataValue = obj.readAttribute(attributeId, indexRange, dataEncoding);
+
+        assert(dataValue.statusCode instanceof StatusCode);
+        assert(dataValue.isValid());
+
+
+        dataValue = apply_timestamps(dataValue, timestampsToReturn, attributeId);
+
+        return dataValue;
+    }
+};
+
+/**
+ *
+ *  @method read
+ *  @param readRequest {ReadRequest}
+ *  @param readRequest.timestampsToReturn  {TimestampsToReturn}
+ *  @param readRequest.nodesToRead
+ *  @param readRequest.maxAge {Number} maxAge - must be greater or equal than zero.
+ *
+ *    Maximum age of the value to be read in milliseconds. The age of the value is based on the difference between the
+ *    ServerTimestamp and the time when the  Server starts processing the request. For example if the Client specifies a
+ *    maxAge of 500 milliseconds and it takes 100 milliseconds until the Server starts  processing the request, the age
+ *    of the returned value could be 600 milliseconds  prior to the time it was requested.
+ *    If the Server has one or more values of an Attribute that are within the maximum age, it can return any one of the
+ *    values or it can read a new value from the data  source. The number of values of an Attribute that a Server has
+ *    depends on the  number of MonitoredItems that are defined for the Attribute. In any case, the Client can make no
+ *    assumption about which copy of the data will be returned.
+ *    If the Server does not have a value that is within the maximum age, it shall attempt to read a new value from the
+ *    data source.
+ *    If the Server cannot meet the requested maxAge, it returns its &#x27;best effort&#x27; value rather than rejecting the
+ *    request.
+ *    This may occur when the time it takes the Server to process and return the new data value after it has been
+ *    accessed is greater than the specified maximum age.
+ *    If maxAge is set to 0, the Server shall attempt to read a new value from the data source.
+ *    If maxAge is set to the max Int32 value or greater, the Server shall attempt to geta cached value. Negative values
+ *    are invalid for maxAge.
+ *
+ *  @return {DataValue[]}
+ */
+ServerEngine.prototype.read = function (readRequest) {
+
+    assert(readRequest instanceof ReadRequest);
+    assert(readRequest.maxAge &gt;= 0);
+
+    var self = this;
+    var timestampsToReturn = readRequest.timestampsToReturn;
+
+    var nodesToRead = readRequest.nodesToRead;
+
+    assert(self.addressSpace instanceof AddressSpace); // initialize not called
+    assert(_.isArray(nodesToRead));
+
+    var dataValues = nodesToRead.map(function (readValueId) {
+        assert(readValueId.indexRange instanceof NumericRange);
+        return self._readSingleNode(readValueId, timestampsToReturn);
+    });
+
+    assert(dataValues.length === readRequest.nodesToRead.length);
+    return dataValues;
+};
+
+/**
+ *
+ * @method writeSingleNode
+ * @param writeValue {DataValue}
+ * @param callback {Function}
+ * @param callback.err {Error|null}
+ * @param callback.statusCode {StatusCode}
+ * @async
+ */
+ServerEngine.prototype.writeSingleNode = function (writeValue, callback) {
+
+    var self = this;
+    assert(_.isFunction(callback));
+    assert(writeValue._schema.name === &quot;WriteValue&quot;);
+    assert(writeValue.value instanceof DataValue);
+
+    if (writeValue.value.value === null) {
+        return callback(null, StatusCodes.BadTypeMismatch);
+    }
+
+    assert(writeValue.value.value instanceof Variant);
+    assert(self.addressSpace instanceof AddressSpace); // initialize not called
+
+    var nodeId = writeValue.nodeId;
+
+    var obj = self.__findObject(nodeId);
+    if (!obj) {
+        callback(null, StatusCodes.BadNodeIdUnknown);
+    } else {
+        obj.writeAttribute(writeValue, callback);
+    }
+};
+
+
+var WriteValue = require(&quot;lib/services/write_service&quot;).WriteValue;
+
+/**
+ * write a collection of nodes
+ * @method write
+ * @param nodesToWrite {Object[]}
+ * @param callback {Function}
+ * @param callback.err
+ * @param callback.results {StatusCode[]}
+ * @async
+ */
+ServerEngine.prototype.write = function (nodesToWrite, callback) {
+
+    assert(_.isFunction(callback));
+
+    var self = this;
+
+    assert(self.addressSpace instanceof AddressSpace); // initialize not called
+
+    function performWrite(writeValue, inner_callback) {
+        assert(writeValue instanceof WriteValue);
+        self.writeSingleNode(writeValue, inner_callback);
+    }
+
+    async.map(nodesToWrite, performWrite, function (err, statusCodes) {
+
+        assert(_.isArray(statusCodes));
+        callback(err, statusCodes);
+
+    });
+
+};
+
+/**
+ * bind a variable
+ * @method bindVariable
+ * @param nodeId {NodeId} the variable nodeid to configure.
+ * @param options {Object}  see {{#crossLink &quot;UAVariable/bindVariable&quot;}}{{/crossLink}} for description of this parameter.
+ * @return void
+ *
+ */
+ServerEngine.prototype.bindVariable = function (nodeId, options) {
+
+    options = options || {};
+
+    // must have a get and a set property
+    assert(_.difference([&quot;get&quot;, &quot;set&quot;], _.keys(options)).length === 0);
+
+    var obj = this.findObject(nodeId);
+    if (obj &amp;&amp; obj.bindVariable) {
+        obj.bindVariable(options);
+        assert(_.isFunction(obj.asyncRefresh));
+        assert(_.isFunction(obj.refreshFunc));
+    } else {
+        //xx console.log((new Error()).stack);
+        console.log(&quot;Warning: cannot bind object with id &quot;, nodeId.toString(), &quot; please check your nodeset.xml file or add this node programmatically&quot;);
+    }
+};
+
+/**
+ * @method bindMethod
+ * @param nodeId {NodeId} the node id of the method
+ * @param func
+ * @param func.inputArguments               {Array&lt;Variant&gt;}
+ * @param func.context                      {Object}
+ * @param func.callback                     {Function}
+ * @param func.callback.err                 {Error}
+ * @param func.callback.callMethodResult    {CallMethodResult}
+ */
+ServerEngine.prototype.bindMethod = function (nodeId, func) {
+
+    assert(_.isFunction(func));
+    var obj = this.findObject(nodeId);
+    if (obj &amp;&amp; obj.bindMethod) {
+        obj.bindMethod(func);
+    } else {
+        //xx console.log((new Error()).stack);
+        console.log(&quot;WARNING:  cannot bind a method with id &quot;.yellow + nodeId.toString().cyan + &quot;. please check your nodeset.xml file or add this node programmatically&quot;.yellow);
+    }
+};
+
+var ServerSession = require(&quot;lib/server/server_session&quot;).ServerSession;
+
+
+/**
+ * create a new server session object.
+ * @class ServerEngine
+ * @method createSession
+ * @param  [options] {Object}
+ * @param  [options.sessionTimeout = 1000] {Number} sessionTimeout
+ * @return {ServerSession}
+ */
+ServerEngine.prototype.createSession = function (options) {
+
+    options = options || {};
+
+    var self = this;
+
+    self.serverDiagnosticsSummary.cumulatedSessionCount += 1;
+
+    var sessionTimeout = options.sessionTimeout || 1000;
+
+    assert(_.isNumber(sessionTimeout));
+
+    var session = new ServerSession(self, self.cumulatedSessionCount, sessionTimeout);
+
+    var key = session.authenticationToken.toString();
+
+    self._sessions[key] = session;
+
+    // see spec OPC Unified Architecture,  Part 2 page 26 Release 1.02
+    // TODO : When a Session is created, the Server adds an entry for the Client
+    // in its SessionDiagnosticsArray Variable
+
+
+    session.on(&quot;new_subscription&quot;, function (subscription) {
+
+        self.serverDiagnosticsSummary.cumulatedSubscriptionCount += 1;
+
+        // add the subscription diagnostics in our subscriptions diagnostics array
+
+    });
+    session.on(&quot;subscription_terminated&quot;, function (subscription) {
+
+        // remove the subscription diagnostics in our subscriptions diagnostics array
+
+    });
+
+    session.on(&quot;timeout&quot;, function () {
+        // the session hasn&#x27;t been active for a while , probably because the client has disconnected abruptly
+        // it is now time to close the session completely
+        self.serverDiagnosticsSummary.sessionTimeoutCount += 1;
+        session.sessionName = session.sessionName || &quot;&quot;;
+        console.log(&quot;closing SESSION &quot;.cyan, session.sessionName.yellow, &quot; because of timeout = &quot;.cyan, session.sessionTimeout, &quot; has expired without a keep alive&quot;.cyan);
+        self.closeSession(session.authenticationToken, true);
+    });
+
+    return session;
+};
+
+/**
+ * @method closeSession
+ * @param authenticationToken
+ * @param {Boolean} deleteSubscriptions : true if sessions&#x27;s subscription shall be deleted
+ *
+ *
+ * what the specs say:
+ * -------------------
+ *
+ * If a Client invokes the CloseSession Service then all Subscriptions associated with the Session are also deleted
+ * if the deleteSubscriptions flag is set to TRUE. If a Server terminates a Session for any other reason, Subscriptions
+ * associated with the Session, are not deleted. Each Subscription has its own lifetime to protect against data loss
+ * in the case of a Session termination. In these cases, the Subscription can be reassigned to another Client before
+ * its lifetime expires.
+ */
+ServerEngine.prototype.closeSession = function (authenticationToken, deleteSubscriptions) {
+
+    var self = this;
+    debugLog(&quot;ServerEngine.closeSession &quot;, authenticationToken.toString(), deleteSubscriptions);
+    var key = authenticationToken.toString();
+    var session = self.getSession(key);
+    assert(session);
+
+    session.close(deleteSubscriptions);
+
+    assert(session.status === &quot;closed&quot;);
+    self._closedSessions[key] = session;
+
+    delete self._sessions[key];
+
+};
+
+/**
+ * retrieve a session by its authenticationToken.
+ *
+ * @method getSession
+ * @param authenticationToken
+ * @param activeOnly
+ * @return {ServerSession}
+ */
+ServerEngine.prototype.getSession = function (authenticationToken, activeOnly) {
+
+    var self = this;
+    if (!authenticationToken || ( authenticationToken.identifierType &amp;&amp; ( authenticationToken.identifierType.value !== NodeIdType.BYTESTRING.value))) {
+        return null;     // wrong type !
+    }
+    var key = authenticationToken.toString();
+    var session = self._sessions[key];
+    if (!activeOnly &amp;&amp; !session) {
+        session = self._closedSessions[key];
+    }
+    return session;
+};
+
+
+/**
+ * @method browsePath
+ * @param browsePath
+ * @return {BrowsePathResult}
+ */
+ServerEngine.prototype.browsePath = function (browsePath) {
+    return this.addressSpace.browsePath(browsePath);
+};
+
+
+/**
+ *
+ * performs a call to &#x60;&#x60;&#x60;asyncRefresh&#x60;&#x60;&#x60; on all variable nodes that provide an async refresh func.
+ *
+ * @method refreshValues
+ * @param nodesToRefresh {Array&lt;Object&gt;}  an array containing the node to consider
+ * Each element of the array shall be of the form { nodeId: &lt;xxx&gt;, attributeIds: &lt;value&gt; }.
+ *
+ * @param callback {Function}
+ * @param callback.err {null|Error}
+ * @param callback.data {Array} : an array containing value read
+ * The array length matches the number of  nodeIds that are candidate for an async refresh (i.e: nodes that are of type
+ * Variable with asyncRefresh func }
+ *
+ * @async
+ */
+ServerEngine.prototype.refreshValues = function (nodesToRefresh, callback) {
+
+    var self = this;
+
+    // filter out nodeIds
+    // ... for which the caller wants to read the Value attribute
+    //     assuming that Value is requested if attributeId is missing,
+    nodesToRefresh = _.filter(nodesToRefresh, function (n) {
+        return (!n.attributeId || n.attributeId === AttributeIds.Value);
+    });
+
+    // ... and that are valid object and instances of Variables ...
+    var objs = _.map(nodesToRefresh, function (n) {
+        return self.findObject(n.nodeId);
+    });
+    objs = _.filter(objs, function (n) {
+        return n &amp;&amp; n instanceof UAVariable;
+    });
+
+    // ... and that have been declared as asynchronously updating
+    objs = _.filter(objs, function (o) {
+        return _.isFunction(o.refreshFunc);
+    });
+
+    // ... avoiding duplication
+    objs = _.uniq(objs, false, function (o) {
+        return o.nodeId.toString();
+    });
+
+    // perform all asyncRefresh in parallel
+    async.map(objs, function (obj, inner_callback) {
+        obj.asyncRefresh(inner_callback);
+    }, function (err, arrResult) {
+        callback(err, arrResult);
+    });
+
+};
+
+exports.ServerEngine = ServerEngine;
+
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

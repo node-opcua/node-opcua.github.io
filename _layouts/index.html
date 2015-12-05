@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="author" content="Script Tutorials"/>
+    <meta name="description" content="node-opcua: the Javascript OPCUA stack for nodejs ">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <title>NodeOPCUA! the OPCUA sdk for NodeJS</title>
+
+    <!-- css stylesheets -->
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.css" media="screen"/>
+    <link href="stylesheets/style.css" rel="stylesheet">
+    <link href="stylesheets/simple-sidebar.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment.css" media="screen"/>
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+</head>
+<body>
+
+{% include topnavbar.html %}
+
+
+
+<div class="container">
+    <div class="jumbotron hidden-print">
+        <h1>Build OPC UA applications in JavaScript and NodeJS</h1>
+
+        <div class="row">
+
+            <div class="col-md-3">
+                <img src="/images/nodeopcua-logo.png"></img>
+            </div>
+            <div class="col-md-6">
+                <h3>
+                    NodeOPCUA is a <a href="https://opcfoundation.org/about/what-is-opc/">OPC UA</a> stack fully written in javascript and <a href="http://nodejs.org/">NodeJS</a>.
+                    <img src="https://nodei.co/npm/node-opcua.png?downloads=true&stars=true"></img>
+                </h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="hidden-print">
+        {% include featurelist.html %}
+    </div>
+</div>
+
+
+
+
+<!-- BODY PAGE CONTENT -->
+
+<div class="container">
+    <div class="page-header">
+        <h1>Learn how to use</h1>
+    </div>
+    <div class="row">
+
+        <div class="col-md-6">
+            <h3>Creating a simple Server</h3>
+
+            <p>check this <a href="https://github.com/node-opcua/node-opcua-sampleserver">example</a> to see an simple
+                OPCUA server
+                that exposes 3 simple variables.</p>
+            <a href="https://github.com/node-opcua/node-opcua/blob/master/documentation/sample_server.js"
+               class="btn btn-default btn-small">View Code</a>
+            <a href="https://github.com/node-opcua/node-opcua/blob/master/documentation/creating_a_server.md"
+               class="btn btn-default btn-small">Read Tutorial</a>
+        </div>
+
+
+        <div class="col-md-6">
+            <h3>Creating a simple Client</h3>
+
+            <p>check this <a href="https://github.com/node-opcua/node-opcua-sample">example</a> to see an simple OPCUA
+                client that
+                attempts to connect to a OPCUA server,
+                print the end point and browse some variables.</p>
+            <a href="https://github.com/node-opcua/node-opcua/blob/master/documentation/sample_client.js"
+               class="btn btn-default btn-small">View Code</a>
+            <a href="https://github.com/node-opcua/node-opcua/blob/master/documentation/creating_a_client.md"
+               class="btn btn-default btn-small">Read Tutorial</a>
+
+        </div>
+
+        <div class="col-md-6">
+            <h3>Creating a virtual Weather Station OPC/UA Server </h3>
+
+            <p>In this tutorial, we will use a REST API to access free weather data from cities around the world and
+                expose them though a OPC/UA server.</p>
+            <a href="/weather_station_episode1.html"
+               class="btn btn-default btn-small">Read tutorial</a>
+
+
+        </div>
+
+        <div class="col-md-6">
+            <h3>Creating a HTML Dashboard to monitor a </h3>
+
+            <p>check this <a href="https://github.com/node-opcua/node-opcua-htmlpanel">example</a> to see an simple
+                OPCUA client that
+                attempts to connect to a OPCUA server,
+                print the end point and browse some variables.</p>
+            <a href="https://github.com/node-opcua/node-opcua-htmlpanel" class="btn btn-default">View Code</a>
+            <a href="#" class="btn btn-default btn-small">Read Tutorial</a>
+
+        </div>
+    </div>
+
+</div>
+
+
+<div class="container">
+
+    {% include fork_me.html %}
+    <div class="page-header">
+        <h1>Get involved</h1>
+    </div>
+    <div class="col-md-6">
+        <h4>Submit an issue or a suggestion</h4>
+
+        submit any issue <a href="https://github.com/node-opcua/node-opcua/issues"> here</a>.
+
+    </div>
+
+    <div class="col-md-6">
+        <h4>Fork and contribute</h4>
+        If you find an issue in the documentation or in the code, you can fork and send a pull request to the master
+        branch.
+
+    </div>
+
+    <div class="col-md-6">
+        <h4>The project repositories</h4>
+{% include github.html %}
+    </div>
+
+    <div class="col-md-6">
+        <h4>Follow us</h4>
+        <a class="twitter-timeline" href="https://twitter.com/NodeOPCUA" data-widget-id="463419792737579008">Tweets de @NodeOPCUA</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+
+    </div>
+
+</div>
+
+<div class="container">
+    {% include footer.html %}
+</div>
+{% include analytics_partial.html %}
+
+
+<!-- add javascripts -->
+<script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

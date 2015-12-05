@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>lib/misc/crypto_explore_certificate.js - The NodeOPCUA API</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.0.46</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/AcknowledgeMessage.html">AcknowledgeMessage</a></li>
+                                <li><a href="../classes/ActivateSessionRequest.html">ActivateSessionRequest</a></li>
+                                <li><a href="../classes/ActivateSessionResponse.html">ActivateSessionResponse</a></li>
+                                <li><a href="../classes/AddNodesItem.html">AddNodesItem</a></li>
+                                <li><a href="../classes/AddNodesRequest.html">AddNodesRequest</a></li>
+                                <li><a href="../classes/AddNodesResponse.html">AddNodesResponse</a></li>
+                                <li><a href="../classes/AddNodesResult.html">AddNodesResult</a></li>
+                                <li><a href="../classes/AddReferencesItem.html">AddReferencesItem</a></li>
+                                <li><a href="../classes/AddReferencesRequest.html">AddReferencesRequest</a></li>
+                                <li><a href="../classes/AddReferencesResponse.html">AddReferencesResponse</a></li>
+                                <li><a href="../classes/AddressSpace.html">AddressSpace</a></li>
+                                <li><a href="../classes/AggregateConfiguration.html">AggregateConfiguration</a></li>
+                                <li><a href="../classes/AnonymousIdentityToken.html">AnonymousIdentityToken</a></li>
+                                <li><a href="../classes/ApplicationDescription.html">ApplicationDescription</a></li>
+                                <li><a href="../classes/ApplicationType.html">ApplicationType</a></li>
+                                <li><a href="../classes/Argument.html">Argument</a></li>
+                                <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
+                                <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+                                <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
+                                <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
+                                <li><a href="../classes/BaseNode.html">BaseNode</a></li>
+                                <li><a href="../classes/BaseUAObject.html">BaseUAObject</a></li>
+                                <li><a href="../classes/BinaryStream.html">BinaryStream</a></li>
+                                <li><a href="../classes/BinaryStreamSizeCalculator.html">BinaryStreamSizeCalculator</a></li>
+                                <li><a href="../classes/BrowseDescription.html">BrowseDescription</a></li>
+                                <li><a href="../classes/BrowseNextRequest.html">BrowseNextRequest</a></li>
+                                <li><a href="../classes/BrowseNextResponse.html">BrowseNextResponse</a></li>
+                                <li><a href="../classes/BrowsePath.html">BrowsePath</a></li>
+                                <li><a href="../classes/BrowsePathResult.html">BrowsePathResult</a></li>
+                                <li><a href="../classes/BrowsePathTarget.html">BrowsePathTarget</a></li>
+                                <li><a href="../classes/BrowseRequest.html">BrowseRequest</a></li>
+                                <li><a href="../classes/BrowseResponse.html">BrowseResponse</a></li>
+                                <li><a href="../classes/BrowseResult.html">BrowseResult</a></li>
+                                <li><a href="../classes/BuildInfo.html">BuildInfo</a></li>
+                                <li><a href="../classes/CallMethodRequest.html">CallMethodRequest</a></li>
+                                <li><a href="../classes/CallMethodResult.html">CallMethodResult</a></li>
+                                <li><a href="../classes/CallRequest.html">CallRequest</a></li>
+                                <li><a href="../classes/CallResponse.html">CallResponse</a></li>
+                                <li><a href="../classes/CancelRequest.html">CancelRequest</a></li>
+                                <li><a href="../classes/CancelResponse.html">CancelResponse</a></li>
+                                <li><a href="../classes/ChannelSecurityToken.html">ChannelSecurityToken</a></li>
+                                <li><a href="../classes/ChunkManager.html">ChunkManager</a></li>
+                                <li><a href="../classes/ClientMonitoredItem.html">ClientMonitoredItem</a></li>
+                                <li><a href="../classes/ClientSecureChannelLayer.html">ClientSecureChannelLayer</a></li>
+                                <li><a href="../classes/ClientSession.html">ClientSession</a></li>
+                                <li><a href="../classes/ClientSidePublishEngine.html">ClientSidePublishEngine</a></li>
+                                <li><a href="../classes/ClientSubscription.html">ClientSubscription</a></li>
+                                <li><a href="../classes/ClientTCP_transport.html">ClientTCP_transport</a></li>
+                                <li><a href="../classes/CloseSecureChannelRequest.html">CloseSecureChannelRequest</a></li>
+                                <li><a href="../classes/CloseSecureChannelResponse.html">CloseSecureChannelResponse</a></li>
+                                <li><a href="../classes/CloseSessionRequest.html">CloseSessionRequest</a></li>
+                                <li><a href="../classes/CloseSessionResponse.html">CloseSessionResponse</a></li>
+                                <li><a href="../classes/ContentFilter.html">ContentFilter</a></li>
+                                <li><a href="../classes/ContentFilterElement.html">ContentFilterElement</a></li>
+                                <li><a href="../classes/ContentFilterElementResult.html">ContentFilterElementResult</a></li>
+                                <li><a href="../classes/ContentFilterResult.html">ContentFilterResult</a></li>
+                                <li><a href="../classes/CreateMonitoredItemsRequest.html">CreateMonitoredItemsRequest</a></li>
+                                <li><a href="../classes/CreateMonitoredItemsResponse.html">CreateMonitoredItemsResponse</a></li>
+                                <li><a href="../classes/CreateSessionRequest.html">CreateSessionRequest</a></li>
+                                <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
+                                <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
+                                <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
+                                <li><a href="../classes/cryptoutils.html">cryptoutils</a></li>
+                                <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
+                                <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
+                                <li><a href="../classes/DataValue.html">DataValue</a></li>
+                                <li><a href="../classes/DeleteMonitoredItemsRequest.html">DeleteMonitoredItemsRequest</a></li>
+                                <li><a href="../classes/DeleteMonitoredItemsResponse.html">DeleteMonitoredItemsResponse</a></li>
+                                <li><a href="../classes/DeleteNodesItem.html">DeleteNodesItem</a></li>
+                                <li><a href="../classes/DeleteNodesRequest.html">DeleteNodesRequest</a></li>
+                                <li><a href="../classes/DeleteNodesResponse.html">DeleteNodesResponse</a></li>
+                                <li><a href="../classes/DeleteReferencesItem.html">DeleteReferencesItem</a></li>
+                                <li><a href="../classes/DeleteReferencesRequest.html">DeleteReferencesRequest</a></li>
+                                <li><a href="../classes/DeleteReferencesResponse.html">DeleteReferencesResponse</a></li>
+                                <li><a href="../classes/DeleteSubscriptionsRequest.html">DeleteSubscriptionsRequest</a></li>
+                                <li><a href="../classes/DeleteSubscriptionsResponse.html">DeleteSubscriptionsResponse</a></li>
+                                <li><a href="../classes/DiagnosticInfo.html">DiagnosticInfo</a></li>
+                                <li><a href="../classes/ElementOperand.html">ElementOperand</a></li>
+                                <li><a href="../classes/EncodeDecode.html">EncodeDecode</a></li>
+                                <li><a href="../classes/EndpointDescription.html">EndpointDescription</a></li>
+                                <li><a href="../classes/Enum.html">Enum</a></li>
+                                <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
+                                <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
+                                <li><a href="../classes/EUInformation.html">EUInformation</a></li>
+                                <li><a href="../classes/EventField.html">EventField</a></li>
+                                <li><a href="../classes/EventFilter.html">EventFilter</a></li>
+                                <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
+                                <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
+                                <li><a href="../classes/ExpandedNodeId.html">ExpandedNodeId</a></li>
+                                <li><a href="../classes/Factory.html">Factory</a></li>
+                                <li><a href="../classes/FilterOperand.html">FilterOperand</a></li>
+                                <li><a href="../classes/FilterOperator.html">FilterOperator</a></li>
+                                <li><a href="../classes/FindServersRequest.html">FindServersRequest</a></li>
+                                <li><a href="../classes/FindServersResponse.html">FindServersResponse</a></li>
+                                <li><a href="../classes/GetEndpointsRequest.html">GetEndpointsRequest</a></li>
+                                <li><a href="../classes/GetEndpointsResponse.html">GetEndpointsResponse</a></li>
+                                <li><a href="../classes/HelloMessage.html">HelloMessage</a></li>
+                                <li><a href="../classes/HistoryData.html">HistoryData</a></li>
+                                <li><a href="../classes/HistoryModifiedData.html">HistoryModifiedData</a></li>
+                                <li><a href="../classes/HistoryReadDetails.html">HistoryReadDetails</a></li>
+                                <li><a href="../classes/HistoryReadRequest.html">HistoryReadRequest</a></li>
+                                <li><a href="../classes/HistoryReadResponse.html">HistoryReadResponse</a></li>
+                                <li><a href="../classes/HistoryReadResult.html">HistoryReadResult</a></li>
+                                <li><a href="../classes/HistoryReadValueId.html">HistoryReadValueId</a></li>
+                                <li><a href="../classes/HistoryUpdateRequest.html">HistoryUpdateRequest</a></li>
+                                <li><a href="../classes/HistoryUpdateResponse.html">HistoryUpdateResponse</a></li>
+                                <li><a href="../classes/HistoryUpdateResult.html">HistoryUpdateResult</a></li>
+                                <li><a href="../classes/IssuedIdentityToken.html">IssuedIdentityToken</a></li>
+                                <li><a href="../classes/LiteralOperand.html">LiteralOperand</a></li>
+                                <li><a href="../classes/LocalizedText.html">LocalizedText</a></li>
+                                <li><a href="../classes/MessageBuilder.html">MessageBuilder</a></li>
+                                <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
+                                <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
+                                <li><a href="../classes/MessageSecurityMode.html">MessageSecurityMode</a></li>
+                                <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
+                                <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
+                                <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
+                                <li><a href="../classes/ModifySubscriptionRequest.html">ModifySubscriptionRequest</a></li>
+                                <li><a href="../classes/ModifySubscriptionResponse.html">ModifySubscriptionResponse</a></li>
+                                <li><a href="../classes/MonitoredItem.html">MonitoredItem</a></li>
+                                <li><a href="../classes/MonitoredItemCreateRequest.html">MonitoredItemCreateRequest</a></li>
+                                <li><a href="../classes/MonitoredItemCreateResult.html">MonitoredItemCreateResult</a></li>
+                                <li><a href="../classes/MonitoredItemModifyRequest.html">MonitoredItemModifyRequest</a></li>
+                                <li><a href="../classes/MonitoredItemModifyResult.html">MonitoredItemModifyResult</a></li>
+                                <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
+                                <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
+                                <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+                                <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
+                                <li><a href="../classes/NodeId.html">NodeId</a></li>
+                                <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
+                                <li><a href="../classes/NodeTypeDescription.html">NodeTypeDescription</a></li>
+                                <li><a href="../classes/NotificationMessage.html">NotificationMessage</a></li>
+                                <li><a href="../classes/opcua.html">opcua</a></li>
+                                <li><a href="../classes/OPCUABaseServer.html">OPCUABaseServer</a></li>
+                                <li><a href="../classes/OPCUAClient.html">OPCUAClient</a></li>
+                                <li><a href="../classes/OPCUAClientBase.html">OPCUAClientBase</a></li>
+                                <li><a href="../classes/OPCUASecureObject.html">OPCUASecureObject</a></li>
+                                <li><a href="../classes/OPCUAServer.html">OPCUAServer</a></li>
+                                <li><a href="../classes/OPCUAServerEndPoint
+                
+                A sever end point is listening to one port.html">OPCUAServerEndPoint
+                
+                A sever end point is listening to one port</a></li>
+                                <li><a href="../classes/OpenSecureChannelRequest.html">OpenSecureChannelRequest</a></li>
+                                <li><a href="../classes/OpenSecureChannelResponse.html">OpenSecureChannelResponse</a></li>
+                                <li><a href="../classes/PacketAssembler.html">PacketAssembler</a></li>
+                                <li><a href="../classes/ParsingResult.html">ParsingResult</a></li>
+                                <li><a href="../classes/PublishRequest.html">PublishRequest</a></li>
+                                <li><a href="../classes/PublishResponse.html">PublishResponse</a></li>
+                                <li><a href="../classes/QualifiedName.html">QualifiedName</a></li>
+                                <li><a href="../classes/QueryDataDescription.html">QueryDataDescription</a></li>
+                                <li><a href="../classes/QueryDataSet.html">QueryDataSet</a></li>
+                                <li><a href="../classes/QueryFirstRequest.html">QueryFirstRequest</a></li>
+                                <li><a href="../classes/QueryFirstResponse.html">QueryFirstResponse</a></li>
+                                <li><a href="../classes/QueryNextRequest.html">QueryNextRequest</a></li>
+                                <li><a href="../classes/QueryNextResponse.html">QueryNextResponse</a></li>
+                                <li><a href="../classes/Range.html">Range</a></li>
+                                <li><a href="../classes/ReadAtTimeDetails.html">ReadAtTimeDetails</a></li>
+                                <li><a href="../classes/ReaderState.html">ReaderState</a></li>
+                                <li><a href="../classes/ReadEventDetails.html">ReadEventDetails</a></li>
+                                <li><a href="../classes/ReadProcessedDetails.html">ReadProcessedDetails</a></li>
+                                <li><a href="../classes/ReadRawModifiedDetails.html">ReadRawModifiedDetails</a></li>
+                                <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
+                                <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
+                                <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+                                <li><a href="../classes/Reference.html">Reference</a></li>
+                                <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
+                                <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
+                                <li><a href="../classes/RegisteredServer.html">RegisteredServer</a></li>
+                                <li><a href="../classes/RegisterNodesRequest.html">RegisterNodesRequest</a></li>
+                                <li><a href="../classes/RegisterNodesResponse.html">RegisterNodesResponse</a></li>
+                                <li><a href="../classes/RegisterServerRequest.html">RegisterServerRequest</a></li>
+                                <li><a href="../classes/RegisterServerResponse.html">RegisterServerResponse</a></li>
+                                <li><a href="../classes/RelativePath.html">RelativePath</a></li>
+                                <li><a href="../classes/RelativePathElement.html">RelativePathElement</a></li>
+                                <li><a href="../classes/RepublishRequest.html">RepublishRequest</a></li>
+                                <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
+                                <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
+                                <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+                                <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
+                                <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
+                                <li><a href="../classes/SecurityTokenRequestType.html">SecurityTokenRequestType</a></li>
+                                <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
+                                <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
+                                <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
+                                <li><a href="../classes/ServerEngine.html">ServerEngine</a></li>
+                                <li><a href="../classes/ServerSecureChannelLayer.html">ServerSecureChannelLayer</a></li>
+                                <li><a href="../classes/ServerSession.html">ServerSession</a></li>
+                                <li><a href="../classes/ServerSidePublishEngine.html">ServerSidePublishEngine</a></li>
+                                <li><a href="../classes/ServerStatus.html">ServerStatus</a></li>
+                                <li><a href="../classes/ServerTCP_transport.html">ServerTCP_transport</a></li>
+                                <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
+                                <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
+                                <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+                                <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
+                                <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
+                                <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
+                                <li><a href="../classes/SetPublishingModeResponse.html">SetPublishingModeResponse</a></li>
+                                <li><a href="../classes/SetTriggeringRequest.html">SetTriggeringRequest</a></li>
+                                <li><a href="../classes/SetTriggeringResponse.html">SetTriggeringResponse</a></li>
+                                <li><a href="../classes/SignatureData.html">SignatureData</a></li>
+                                <li><a href="../classes/SignedSoftwareCertificate.html">SignedSoftwareCertificate</a></li>
+                                <li><a href="../classes/SimpleAttributeOperand.html">SimpleAttributeOperand</a></li>
+                                <li><a href="../classes/Simulator.html">Simulator</a></li>
+                                <li><a href="../classes/StatusChangeNotification.html">StatusChangeNotification</a></li>
+                                <li><a href="../classes/StatusCode.html">StatusCode</a></li>
+                                <li><a href="../classes/Subscription.html">Subscription</a></li>
+                                <li><a href="../classes/SubscriptionAcknowledgement.html">SubscriptionAcknowledgement</a></li>
+                                <li><a href="../classes/SubscriptionDiagnostics.html">SubscriptionDiagnostics</a></li>
+                                <li><a href="../classes/SymmetricAlgorithmSecurityHeader.html">SymmetricAlgorithmSecurityHeader</a></li>
+                                <li><a href="../classes/TCP_transport.html">TCP_transport</a></li>
+                                <li><a href="../classes/TCPErrorMessage.html">TCPErrorMessage</a></li>
+                                <li><a href="../classes/TimestampsToReturn.html">TimestampsToReturn</a></li>
+                                <li><a href="../classes/ToolBrowsePath.html">ToolBrowsePath</a></li>
+                                <li><a href="../classes/TransferResult.html">TransferResult</a></li>
+                                <li><a href="../classes/TransferSubscriptionsRequest.html">TransferSubscriptionsRequest</a></li>
+                                <li><a href="../classes/TransferSubscriptionsResponse.html">TransferSubscriptionsResponse</a></li>
+                                <li><a href="../classes/TranslateBrowsePathsToNodeIdsRequest.html">TranslateBrowsePathsToNodeIdsRequest</a></li>
+                                <li><a href="../classes/TranslateBrowsePathsToNodeIdsResponse.html">TranslateBrowsePathsToNodeIdsResponse</a></li>
+                                <li><a href="../classes/TypeSchema.html">TypeSchema</a></li>
+                                <li><a href="../classes/UADataType.html">UADataType</a></li>
+                                <li><a href="../classes/UAObject.html">UAObject</a></li>
+                                <li><a href="../classes/UAObjectType.html">UAObjectType</a></li>
+                                <li><a href="../classes/UAVariable.html">UAVariable</a></li>
+                                <li><a href="../classes/UAVariableType.html">UAVariableType</a></li>
+                                <li><a href="../classes/UnregisterNodesRequest.html">UnregisterNodesRequest</a></li>
+                                <li><a href="../classes/UnregisterNodesResponse.html">UnregisterNodesResponse</a></li>
+                                <li><a href="../classes/UserIdentityTokenType.html">UserIdentityTokenType</a></li>
+                                <li><a href="../classes/UserNameIdentityToken.html">UserNameIdentityToken</a></li>
+                                <li><a href="../classes/UserTokenPolicy.html">UserTokenPolicy</a></li>
+                                <li><a href="../classes/Variant.html">Variant</a></li>
+                                <li><a href="../classes/View.html">View</a></li>
+                                <li><a href="../classes/ViewDescription.html">ViewDescription</a></li>
+                                <li><a href="../classes/WriteRequest.html">WriteRequest</a></li>
+                                <li><a href="../classes/WriteResponse.html">WriteResponse</a></li>
+                                <li><a href="../classes/WriteValue.html">WriteValue</a></li>
+                                <li><a href="../classes/X509IdentityToken.html">X509IdentityToken</a></li>
+                                <li><a href="../classes/Xml2Json.html">Xml2Json</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/opcua.address_space.html">opcua.address_space</a></li>
+                                <li><a href="../modules/opcua.address_space.types.html">opcua.address_space.types</a></li>
+                                <li><a href="../modules/opcua.client.html">opcua.client</a></li>
+                                <li><a href="../modules/opcua.datamodel.html">opcua.datamodel</a></li>
+                                <li><a href="../modules/opcua.helpers.html">opcua.helpers</a></li>
+                                <li><a href="../modules/opcua.miscellaneous.html">opcua.miscellaneous</a></li>
+                                <li><a href="../modules/opcua.server.html">opcua.server</a></li>
+                                <li><a href="../modules/opcua.server.simulation.html">opcua.server.simulation</a></li>
+                                <li><a href="../modules/opcua.transport.html">opcua.transport</a></li>
+                                <li><a href="../modules/services.browse.html">services.browse</a></li>
+                                <li><a href="../modules/services.get_endpoints.html">services.get_endpoints</a></li>
+                                <li><a href="../modules/services.historizing.html">services.historizing</a></li>
+                                <li><a href="../modules/services.method.html">services.method</a></li>
+                                <li><a href="../modules/services.read.html">services.read</a></li>
+                                <li><a href="../modules/services.register.html">services.register</a></li>
+                                <li><a href="../modules/services.session.html">services.session</a></li>
+                                <li><a href="../modules/services.subscription.html">services.subscription</a></li>
+                                <li><a href="../modules/services.write.html">services.write</a></li>
+                                <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
+                                <li><a href="../modules/xml2json.html">xml2json</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: lib/misc/crypto_explore_certificate.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+&quot;use strict&quot;;
+/*jslint bitwise: true */
+// ---------------------------------------------------------------------------------------------------------------------
+// crypto_read_certificate
+// ---------------------------------------------------------------------------------------------------------------------
+// Copyright (c) 2014-2015 - Etienne Rossignon
+// ---------------------------------------------------------------------------------------------------------------------
+//
+// This  project is licensed under the terms of the MIT license.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+// documentation files (the &quot;Software&quot;), to deal in the Software without restriction, including without limitation the
+// rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to
+// permit persons to whom the Software is furnished to do so,  subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in all copies or substantial portions of the
+// Software.
+//
+// THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+// WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+// COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+//
+//
+// ---------------------------------------------------------------------------------------------------------------------
+// ASN.1 JavaScript decoder Copyright (c) 2008-2014 Lapo Luchini lapo@lapo.it
+// Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby
+// granted, provided that the above copyright notice and this permission notice appear in all copies.
+// THE SOFTWARE IS PROVIDED &quot;AS IS&quot; AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+// INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN
+// AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+// PERFORMANCE OF THIS SOFTWARE.
+// ---------------------------------------------------------------------------------------------------------------------
+
+// references:
+//  - http://tools.ietf.org/html/rfc5280
+//  - http://www-lor.int-evry.fr/~michel/Supports/presentation.pdf
+//  - ftp://ftp.rsa.com/pub/pkcs/ascii/layman.asc
+//  - pubs.opengroup.org/onlinepubs/009609799/7a_nch02.htm#tagcjh_49_03
+//  - https://github.com/lapo-luchini/asn1js/blob/master/asn1.js
+//  - http://lapo.it/asn1js
+//  - https://www.cs.auckland.ac.nz/~pgut001/dumpasn1.cfg
+//  - http://pubs.opengroup.org/onlinepubs/009609799/7a_nch02.htm
+//  - http://stackoverflow.com/questions/5929050/how-does-asn-1-encode-an-object-identifier
+//  - http://luca.ntop.org/Teaching/Appunti/asn1.html
+
+// note:
+//  - http://commandlinefanatic.com/cgi-bin/showarticle.cgi?article=art030
+//  openssl can be also used to discover the content of a DER file
+//  $ openssl asn1parse -in cert.pem
+
+var assert = require(&quot;better-assert&quot;);
+var hexDump = require(&quot;./utils&quot;).hexDump;
+var _ = require(&quot;underscore&quot;);
+
+// Converted from: https://www.cs.auckland.ac.nz/~pgut001/dumpasn1.cfg
+// which is made by Peter Gutmann and whose license states:
+// You can use this code in whatever way you want,
+// as long as you don&#x27;t try to claim you wrote it.
+
+// https://github.com/lapo-luchini/asn1js/blob/master/asn1.js
+var tagTypes = {
+    BOOLEAN: 0x01,
+    INTEGER: 0x02,
+    BIT_STRING: 0x03,
+    OCTET_STRING: 0x04,
+    NULL: 0x05,
+    OBJECT_IDENTIFIER: 0x06,
+    UTF8String: 0x0C,
+    NumericString: 0x12,
+    PrintableString: 0x13,
+    TeletexString: 0x14,
+    IA5String: 0x16,
+    UTCTime: 0x17,
+    GeneralizedTime: 0x18
+
+};
+
+// https://github.com/lapo-luchini/asn1js/blob/master/oids.js
+var oid_map = {
+
+    &quot;1.2.840.113549.1.1&quot;: {&quot;d&quot;: &quot;pkcs-1&quot;, &quot;c&quot;: &quot;&quot;, &quot;w&quot;: false},
+    &quot;1.2.840.113549.1.1.1&quot;: {&quot;d&quot;: &quot;rsaEncryption&quot;, &quot;c&quot;: &quot;PKCS #1&quot;, &quot;w&quot;: false},
+    &quot;1.2.840.113549.1.1.2&quot;: {&quot;d&quot;: &quot;md2WithRSAEncryption&quot;, &quot;c&quot;: &quot;PKCS #1&quot;, &quot;w&quot;: false},
+    &quot;1.2.840.113549.1.1.3&quot;: {&quot;d&quot;: &quot;md4WithRSAEncryption&quot;, &quot;c&quot;: &quot;PKCS #1&quot;, &quot;w&quot;: false},
+    &quot;1.2.840.113549.1.1.4&quot;: {&quot;d&quot;: &quot;md5WithRSAEncryption&quot;, &quot;c&quot;: &quot;PKCS #1&quot;, &quot;w&quot;: false},
+    &quot;1.2.840.113549.1.1.5&quot;: {&quot;d&quot;: &quot;sha1WithRSAEncryption&quot;, &quot;c&quot;: &quot;PKCS #1&quot;, &quot;w&quot;: false},
+    &quot;1.2.840.113549.1.1.7&quot;: {&quot;d&quot;: &quot;rsaOAEP&quot;, &quot;c&quot;: &quot;PKCS #1&quot;, &quot;w&quot;: false},
+    &quot;1.2.840.113549.1.1.8&quot;: {&quot;d&quot;: &quot;pkcs1-MGF&quot;, &quot;c&quot;: &quot;PKCS #1&quot;, &quot;w&quot;: false},
+    &quot;1.2.840.113549.1.1.9&quot;: {&quot;d&quot;: &quot;rsaOAEP-pSpecified&quot;, &quot;c&quot;: &quot;PKCS #1&quot;, &quot;w&quot;: false},
+    &quot;1.2.840.113549.1.1.10&quot;: {&quot;d&quot;: &quot;rsaPSS&quot;, &quot;c&quot;: &quot;PKCS #1&quot;, &quot;w&quot;: false},
+    &quot;1.2.840.113549.1.1.11&quot;: {&quot;d&quot;: &quot;sha256WithRSAEncryption&quot;, &quot;c&quot;: &quot;PKCS #1&quot;, &quot;w&quot;: false},
+    &quot;1.2.840.113549.1.1.12&quot;: {&quot;d&quot;: &quot;sha384WithRSAEncryption&quot;, &quot;c&quot;: &quot;PKCS #1&quot;, &quot;w&quot;: false},
+    &quot;1.2.840.113549.1.1.13&quot;: {&quot;d&quot;: &quot;sha512WithRSAEncryption&quot;, &quot;c&quot;: &quot;PKCS #1&quot;, &quot;w&quot;: false},
+    &quot;1.2.840.113549.1.1.14&quot;: {&quot;d&quot;: &quot;sha224WithRSAEncryption&quot;, &quot;c&quot;: &quot;PKCS #1&quot;, &quot;w&quot;: false},
+
+    &quot;1.2.840.113549.1.9.1&quot;: {
+        &quot;d&quot;: &quot;emailAddress&quot;,
+        &quot;c&quot;: &quot;PKCS #9. Deprecated, use an altName extension instead&quot;,
+        &quot;w&quot;: false
+    },
+    &quot;1.2.840.113549.1.9.2&quot;: {&quot;d&quot;: &quot;unstructuredName&quot;, &quot;c&quot;: &quot;PKCS #9&quot;, &quot;w&quot;: false},
+    &quot;1.2.840.113549.1.9.3&quot;: {&quot;d&quot;: &quot;contentType&quot;, &quot;c&quot;: &quot;PKCS #9&quot;, &quot;w&quot;: false},
+    &quot;1.2.840.113549.1.9.4&quot;: {&quot;d&quot;: &quot;messageDigest&quot;, &quot;c&quot;: &quot;PKCS #9&quot;, &quot;w&quot;: false},
+    &quot;1.2.840.113549.1.9.5&quot;: {&quot;d&quot;: &quot;signingTime&quot;, &quot;c&quot;: &quot;PKCS #9&quot;, &quot;w&quot;: false},
+    &quot;1.2.840.113549.1.9.6&quot;: {&quot;d&quot;: &quot;countersignature&quot;, &quot;c&quot;: &quot;PKCS #9&quot;, &quot;w&quot;: false},
+    &quot;1.2.840.113549.1.9.7&quot;: {&quot;d&quot;: &quot;challengePassword&quot;, &quot;c&quot;: &quot;PKCS #9&quot;, &quot;w&quot;: false},
+    &quot;1.2.840.113549.1.9.8&quot;: {&quot;d&quot;: &quot;unstructuredAddress&quot;, &quot;c&quot;: &quot;PKCS #9&quot;, &quot;w&quot;: false},
+    &quot;1.2.840.113549.1.9.9&quot;: {&quot;d&quot;: &quot;extendedCertificateAttributes&quot;, &quot;c&quot;: &quot;PKCS #9&quot;, &quot;w&quot;: false},
+    &quot;1.2.840.113549.1.9.10&quot;: {&quot;d&quot;: &quot;issuerAndSerialNumber&quot;, &quot;c&quot;: &quot;PKCS #9 experimental&quot;, &quot;w&quot;: true},
+    &quot;1.2.840.113549.1.9.11&quot;: {&quot;d&quot;: &quot;passwordCheck&quot;, &quot;c&quot;: &quot;PKCS #9 experimental&quot;, &quot;w&quot;: true},
+    &quot;1.2.840.113549.1.9.12&quot;: {&quot;d&quot;: &quot;publicKey&quot;, &quot;c&quot;: &quot;PKCS #9 experimental&quot;, &quot;w&quot;: true},
+    &quot;1.2.840.113549.1.9.13&quot;: {&quot;d&quot;: &quot;signingDescription&quot;, &quot;c&quot;: &quot;PKCS #9&quot;, &quot;w&quot;: false},
+    &quot;1.2.840.113549.1.9.14&quot;: {&quot;d&quot;: &quot;extensionRequest&quot;, &quot;c&quot;: &quot;PKCS #9 via CRMF&quot;, &quot;w&quot;: false},
+
+    &quot;2.5.4.0&quot;: {&quot;d&quot;: &quot;objectClass&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.1&quot;: {&quot;d&quot;: &quot;aliasedEntryName&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.2&quot;: {&quot;d&quot;: &quot;knowledgeInformation&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.3&quot;: {&quot;d&quot;: &quot;commonName&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.4&quot;: {&quot;d&quot;: &quot;surname&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.5&quot;: {&quot;d&quot;: &quot;serialNumber&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.6&quot;: {&quot;d&quot;: &quot;countryName&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.7&quot;: {&quot;d&quot;: &quot;localityName&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.7.1&quot;: {&quot;d&quot;: &quot;collectiveLocalityName&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.8&quot;: {&quot;d&quot;: &quot;stateOrProvinceName&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.8.1&quot;: {&quot;d&quot;: &quot;collectiveStateOrProvinceName&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.9&quot;: {&quot;d&quot;: &quot;streetAddress&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.9.1&quot;: {&quot;d&quot;: &quot;collectiveStreetAddress&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.10&quot;: {&quot;d&quot;: &quot;organizationName&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.10.1&quot;: {&quot;d&quot;: &quot;collectiveOrganizationName&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.11&quot;: {&quot;d&quot;: &quot;organizationalUnitName&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.11.1&quot;: {&quot;d&quot;: &quot;collectiveOrganizationalUnitName&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.12&quot;: {&quot;d&quot;: &quot;title&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.13&quot;: {&quot;d&quot;: &quot;description&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.14&quot;: {&quot;d&quot;: &quot;searchGuide&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.15&quot;: {&quot;d&quot;: &quot;businessCategory&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.16&quot;: {&quot;d&quot;: &quot;postalAddress&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.16.1&quot;: {&quot;d&quot;: &quot;collectivePostalAddress&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.17&quot;: {&quot;d&quot;: &quot;postalCode&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.17.1&quot;: {&quot;d&quot;: &quot;collectivePostalCode&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.18&quot;: {&quot;d&quot;: &quot;postOfficeBox&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.18.1&quot;: {&quot;d&quot;: &quot;collectivePostOfficeBox&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.19&quot;: {&quot;d&quot;: &quot;physicalDeliveryOfficeName&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.19.1&quot;: {&quot;d&quot;: &quot;collectivePhysicalDeliveryOfficeName&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.20&quot;: {&quot;d&quot;: &quot;telephoneNumber&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.20.1&quot;: {&quot;d&quot;: &quot;collectiveTelephoneNumber&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.21&quot;: {&quot;d&quot;: &quot;telexNumber&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.21.1&quot;: {&quot;d&quot;: &quot;collectiveTelexNumber&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.22&quot;: {&quot;d&quot;: &quot;teletexTerminalIdentifier&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.22.1&quot;: {&quot;d&quot;: &quot;collectiveTeletexTerminalIdentifier&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.23&quot;: {&quot;d&quot;: &quot;facsimileTelephoneNumber&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.23.1&quot;: {&quot;d&quot;: &quot;collectiveFacsimileTelephoneNumber&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.24&quot;: {&quot;d&quot;: &quot;x121Address&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.25&quot;: {&quot;d&quot;: &quot;internationalISDNNumber&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.25.1&quot;: {&quot;d&quot;: &quot;collectiveInternationalISDNNumber&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.26&quot;: {&quot;d&quot;: &quot;registeredAddress&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.27&quot;: {&quot;d&quot;: &quot;destinationIndicator&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.28&quot;: {&quot;d&quot;: &quot;preferredDeliveryMehtod&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.29&quot;: {&quot;d&quot;: &quot;presentationAddress&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.30&quot;: {&quot;d&quot;: &quot;supportedApplicationContext&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.31&quot;: {&quot;d&quot;: &quot;member&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.32&quot;: {&quot;d&quot;: &quot;owner&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.33&quot;: {&quot;d&quot;: &quot;roleOccupant&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.34&quot;: {&quot;d&quot;: &quot;seeAlso&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.35&quot;: {&quot;d&quot;: &quot;userPassword&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.36&quot;: {&quot;d&quot;: &quot;userCertificate&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.37&quot;: {&quot;d&quot;: &quot;caCertificate&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.38&quot;: {&quot;d&quot;: &quot;authorityRevocationList&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.39&quot;: {&quot;d&quot;: &quot;certificateRevocationList&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.40&quot;: {&quot;d&quot;: &quot;crossCertificatePair&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.41&quot;: {&quot;d&quot;: &quot;name&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.42&quot;: {&quot;d&quot;: &quot;givenName&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.43&quot;: {&quot;d&quot;: &quot;initials&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.44&quot;: {&quot;d&quot;: &quot;generationQualifier&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.45&quot;: {&quot;d&quot;: &quot;uniqueIdentifier&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.46&quot;: {&quot;d&quot;: &quot;dnQualifier&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.47&quot;: {&quot;d&quot;: &quot;enhancedSearchGuide&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.48&quot;: {&quot;d&quot;: &quot;protocolInformation&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.49&quot;: {&quot;d&quot;: &quot;distinguishedName&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.50&quot;: {&quot;d&quot;: &quot;uniqueMember&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.51&quot;: {&quot;d&quot;: &quot;houseIdentifier&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.52&quot;: {&quot;d&quot;: &quot;supportedAlgorithms&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.53&quot;: {&quot;d&quot;: &quot;deltaRevocationList&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.54&quot;: {&quot;d&quot;: &quot;dmdName&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.55&quot;: {&quot;d&quot;: &quot;clearance&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.56&quot;: {&quot;d&quot;: &quot;defaultDirQop&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.57&quot;: {&quot;d&quot;: &quot;attributeIntegrityInfo&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.58&quot;: {&quot;d&quot;: &quot;attributeCertificate&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.59&quot;: {&quot;d&quot;: &quot;attributeCertificateRevocationList&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.60&quot;: {&quot;d&quot;: &quot;confKeyInfo&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.61&quot;: {&quot;d&quot;: &quot;aACertificate&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.62&quot;: {&quot;d&quot;: &quot;attributeDescriptorCertificate&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.63&quot;: {&quot;d&quot;: &quot;attributeAuthorityRevocationList&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.64&quot;: {&quot;d&quot;: &quot;familyInformation&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.65&quot;: {&quot;d&quot;: &quot;pseudonym&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.66&quot;: {&quot;d&quot;: &quot;communicationsService&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.67&quot;: {&quot;d&quot;: &quot;communicationsNetwork&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.68&quot;: {&quot;d&quot;: &quot;certificationPracticeStmt&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.69&quot;: {&quot;d&quot;: &quot;certificatePolicy&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.70&quot;: {&quot;d&quot;: &quot;pkiPath&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.71&quot;: {&quot;d&quot;: &quot;privPolicy&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.72&quot;: {&quot;d&quot;: &quot;role&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.73&quot;: {&quot;d&quot;: &quot;delegationPath&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.74&quot;: {&quot;d&quot;: &quot;protPrivPolicy&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.75&quot;: {&quot;d&quot;: &quot;xMLPrivilegeInfo&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.76&quot;: {&quot;d&quot;: &quot;xmlPrivPolicy&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.4.82&quot;: {&quot;d&quot;: &quot;permission&quot;, &quot;c&quot;: &quot;X.520 DN component&quot;, &quot;w&quot;: false},
+    &quot;2.5.6.0&quot;: {&quot;d&quot;: &quot;top&quot;, &quot;c&quot;: &quot;X.520 objectClass&quot;, &quot;w&quot;: false},
+    &quot;2.5.6.1&quot;: {&quot;d&quot;: &quot;alias&quot;, &quot;c&quot;: &quot;X.520 objectClass&quot;, &quot;w&quot;: false},
+    &quot;2.5.6.2&quot;: {&quot;d&quot;: &quot;country&quot;, &quot;c&quot;: &quot;X.520 objectClass&quot;, &quot;w&quot;: false},
+    &quot;2.5.6.3&quot;: {&quot;d&quot;: &quot;locality&quot;, &quot;c&quot;: &quot;X.520 objectClass&quot;, &quot;w&quot;: false},
+    &quot;2.5.6.4&quot;: {&quot;d&quot;: &quot;organization&quot;, &quot;c&quot;: &quot;X.520 objectClass&quot;, &quot;w&quot;: false},
+    &quot;2.5.6.5&quot;: {&quot;d&quot;: &quot;organizationalUnit&quot;, &quot;c&quot;: &quot;X.520 objectClass&quot;, &quot;w&quot;: false},
+    &quot;2.5.6.6&quot;: {&quot;d&quot;: &quot;person&quot;, &quot;c&quot;: &quot;X.520 objectClass&quot;, &quot;w&quot;: false},
+    &quot;2.5.6.7&quot;: {&quot;d&quot;: &quot;organizationalPerson&quot;, &quot;c&quot;: &quot;X.520 objectClass&quot;, &quot;w&quot;: false},
+    &quot;2.5.6.8&quot;: {&quot;d&quot;: &quot;organizationalRole&quot;, &quot;c&quot;: &quot;X.520 objectClass&quot;, &quot;w&quot;: false},
+    &quot;2.5.6.9&quot;: {&quot;d&quot;: &quot;groupOfNames&quot;, &quot;c&quot;: &quot;X.520 objectClass&quot;, &quot;w&quot;: false},
+    &quot;2.5.6.10&quot;: {&quot;d&quot;: &quot;residentialPerson&quot;, &quot;c&quot;: &quot;X.520 objectClass&quot;, &quot;w&quot;: false},
+    &quot;2.5.6.11&quot;: {&quot;d&quot;: &quot;applicationProcess&quot;, &quot;c&quot;: &quot;X.520 objectClass&quot;, &quot;w&quot;: false},
+    &quot;2.5.6.12&quot;: {&quot;d&quot;: &quot;applicationEntity&quot;, &quot;c&quot;: &quot;X.520 objectClass&quot;, &quot;w&quot;: false},
+    &quot;2.5.6.13&quot;: {&quot;d&quot;: &quot;dSA&quot;, &quot;c&quot;: &quot;X.520 objectClass&quot;, &quot;w&quot;: false},
+    &quot;2.5.6.14&quot;: {&quot;d&quot;: &quot;device&quot;, &quot;c&quot;: &quot;X.520 objectClass&quot;, &quot;w&quot;: false},
+    &quot;2.5.6.15&quot;: {&quot;d&quot;: &quot;strongAuthenticationUser&quot;, &quot;c&quot;: &quot;X.520 objectClass&quot;, &quot;w&quot;: false},
+    &quot;2.5.6.16&quot;: {&quot;d&quot;: &quot;certificateAuthority&quot;, &quot;c&quot;: &quot;X.520 objectClass&quot;, &quot;w&quot;: false},
+    &quot;2.5.6.17&quot;: {&quot;d&quot;: &quot;groupOfUniqueNames&quot;, &quot;c&quot;: &quot;X.520 objectClass&quot;, &quot;w&quot;: false},
+    &quot;2.5.6.21&quot;: {&quot;d&quot;: &quot;pkiUser&quot;, &quot;c&quot;: &quot;X.520 objectClass&quot;, &quot;w&quot;: false},
+    &quot;2.5.6.22&quot;: {&quot;d&quot;: &quot;pkiCA&quot;, &quot;c&quot;: &quot;X.520 objectClass&quot;, &quot;w&quot;: false},
+
+    &quot;2.5.29.1&quot;: {&quot;d&quot;: &quot;authorityKeyIdentifier&quot;, &quot;c&quot;: &quot;X.509 extension. Deprecated, use 2 5 29 35 instead&quot;, &quot;w&quot;: true},
+    &quot;2.5.29.2&quot;: {&quot;d&quot;: &quot;keyAttributes&quot;, &quot;c&quot;: &quot;X.509 extension. Obsolete, use keyUsage/extKeyUsage instead&quot;, &quot;w&quot;: true},
+    &quot;2.5.29.3&quot;: {&quot;d&quot;: &quot;certificatePolicies&quot;, &quot;c&quot;: &quot;X.509 extension. Deprecated, use 2 5 29 32 instead&quot;, &quot;w&quot;: true},
+    &quot;2.5.29.4&quot;: {
+        &quot;d&quot;: &quot;keyUsageRestriction&quot;,
+        &quot;c&quot;: &quot;X.509 extension. Obsolete, use keyUsage/extKeyUsage instead&quot;,
+        &quot;w&quot;: true
+    },
+    &quot;2.5.29.5&quot;: {&quot;d&quot;: &quot;policyMapping&quot;, &quot;c&quot;: &quot;X.509 extension. Deprecated, use 2 5 29 33 instead&quot;, &quot;w&quot;: true},
+    &quot;2.5.29.6&quot;: {&quot;d&quot;: &quot;subtreesConstraint&quot;, &quot;c&quot;: &quot;X.509 extension. Obsolete, use nameConstraints instead&quot;, &quot;w&quot;: true},
+    &quot;2.5.29.7&quot;: {&quot;d&quot;: &quot;subjectAltName&quot;, &quot;c&quot;: &quot;X.509 extension. Deprecated, use 2 5 29 17 instead&quot;, &quot;w&quot;: true},
+    &quot;2.5.29.8&quot;: {&quot;d&quot;: &quot;issuerAltName&quot;, &quot;c&quot;: &quot;X.509 extension. Deprecated, use 2 5 29 18 instead&quot;, &quot;w&quot;: true},
+    &quot;2.5.29.9&quot;: {&quot;d&quot;: &quot;subjectDirectoryAttributes&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.10&quot;: {&quot;d&quot;: &quot;basicConstraints&quot;, &quot;c&quot;: &quot;X.509 extension. Deprecated, use 2 5 29 19 instead&quot;, &quot;w&quot;: true},
+    &quot;2.5.29.11&quot;: {&quot;d&quot;: &quot;nameConstraints&quot;, &quot;c&quot;: &quot;X.509 extension. Deprecated, use 2 5 29 30 instead&quot;, &quot;w&quot;: true},
+    &quot;2.5.29.12&quot;: {&quot;d&quot;: &quot;policyConstraints&quot;, &quot;c&quot;: &quot;X.509 extension. Deprecated, use 2 5 29 36 instead&quot;, &quot;w&quot;: true},
+    &quot;2.5.29.13&quot;: {&quot;d&quot;: &quot;basicConstraints&quot;, &quot;c&quot;: &quot;X.509 extension. Deprecated, use 2 5 29 19 instead&quot;, &quot;w&quot;: true},
+    &quot;2.5.29.14&quot;: {&quot;d&quot;: &quot;subjectKeyIdentifier&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.15&quot;: {&quot;d&quot;: &quot;keyUsage&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.16&quot;: {&quot;d&quot;: &quot;privateKeyUsagePeriod&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.17&quot;: {&quot;d&quot;: &quot;subjectAltName&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.18&quot;: {&quot;d&quot;: &quot;issuerAltName&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.19&quot;: {&quot;d&quot;: &quot;basicConstraints&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.20&quot;: {&quot;d&quot;: &quot;cRLNumber&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.21&quot;: {&quot;d&quot;: &quot;cRLReason&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.22&quot;: {&quot;d&quot;: &quot;expirationDate&quot;, &quot;c&quot;: &quot;X.509 extension. Deprecated, alternative OID uncertain&quot;, &quot;w&quot;: true},
+    &quot;2.5.29.23&quot;: {&quot;d&quot;: &quot;instructionCode&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.24&quot;: {&quot;d&quot;: &quot;invalidityDate&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.25&quot;: {&quot;d&quot;: &quot;cRLDistributionPoints&quot;, &quot;c&quot;: &quot;X.509 extension. Deprecated, use 2 5 29 31 instead&quot;, &quot;w&quot;: true},
+    &quot;2.5.29.26&quot;: {
+        &quot;d&quot;: &quot;issuingDistributionPoint&quot;,
+        &quot;c&quot;: &quot;X.509 extension. Deprecated, use 2 5 29 28 instead&quot;,
+        &quot;w&quot;: true
+    },
+    &quot;2.5.29.27&quot;: {&quot;d&quot;: &quot;deltaCRLIndicator&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.28&quot;: {&quot;d&quot;: &quot;issuingDistributionPoint&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.29&quot;: {&quot;d&quot;: &quot;certificateIssuer&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.30&quot;: {&quot;d&quot;: &quot;nameConstraints&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.31&quot;: {&quot;d&quot;: &quot;cRLDistributionPoints&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.32&quot;: {&quot;d&quot;: &quot;certificatePolicies&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.32.0&quot;: {&quot;d&quot;: &quot;anyPolicy&quot;, &quot;c&quot;: &quot;X.509 certificate policy&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.33&quot;: {&quot;d&quot;: &quot;policyMappings&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.34&quot;: {&quot;d&quot;: &quot;policyConstraints&quot;, &quot;c&quot;: &quot;X.509 extension. Deprecated, use 2 5 29 36 instead&quot;, &quot;w&quot;: true},
+    &quot;2.5.29.35&quot;: {&quot;d&quot;: &quot;authorityKeyIdentifier&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.36&quot;: {&quot;d&quot;: &quot;policyConstraints&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.37&quot;: {&quot;d&quot;: &quot;extKeyUsage&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.37.0&quot;: {&quot;d&quot;: &quot;anyExtendedKeyUsage&quot;, &quot;c&quot;: &quot;X.509 extended key usage&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.38&quot;: {&quot;d&quot;: &quot;authorityAttributeIdentifier&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.39&quot;: {&quot;d&quot;: &quot;roleSpecCertIdentifier&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.40&quot;: {&quot;d&quot;: &quot;cRLStreamIdentifier&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.41&quot;: {&quot;d&quot;: &quot;basicAttConstraints&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.42&quot;: {&quot;d&quot;: &quot;delegatedNameConstraints&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.43&quot;: {&quot;d&quot;: &quot;timeSpecification&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.44&quot;: {&quot;d&quot;: &quot;cRLScope&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.45&quot;: {&quot;d&quot;: &quot;statusReferrals&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.46&quot;: {&quot;d&quot;: &quot;freshestCRL&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.47&quot;: {&quot;d&quot;: &quot;orderedList&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.48&quot;: {&quot;d&quot;: &quot;attributeDescriptor&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.49&quot;: {&quot;d&quot;: &quot;userNotice&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.50&quot;: {&quot;d&quot;: &quot;sOAIdentifier&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.51&quot;: {&quot;d&quot;: &quot;baseUpdateTime&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.52&quot;: {&quot;d&quot;: &quot;acceptableCertPolicies&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.53&quot;: {&quot;d&quot;: &quot;deltaInfo&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.54&quot;: {&quot;d&quot;: &quot;inhibitAnyPolicy&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.55&quot;: {&quot;d&quot;: &quot;targetInformation&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.56&quot;: {&quot;d&quot;: &quot;noRevAvail&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.57&quot;: {&quot;d&quot;: &quot;acceptablePrivilegePolicies&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.58&quot;: {&quot;d&quot;: &quot;toBeRevoked&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.59&quot;: {&quot;d&quot;: &quot;revokedGroups&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.60&quot;: {&quot;d&quot;: &quot;expiredCertsOnCRL&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.61&quot;: {&quot;d&quot;: &quot;indirectIssuer&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.62&quot;: {&quot;d&quot;: &quot;noAssertion&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.63&quot;: {&quot;d&quot;: &quot;aAissuingDistributionPoint&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.64&quot;: {&quot;d&quot;: &quot;issuedOnBehalfOf&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.65&quot;: {&quot;d&quot;: &quot;singleUse&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.66&quot;: {&quot;d&quot;: &quot;groupAC&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.67&quot;: {&quot;d&quot;: &quot;allowedAttAss&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.68&quot;: {&quot;d&quot;: &quot;attributeMappings&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;2.5.29.69&quot;: {&quot;d&quot;: &quot;holderNameConstraints&quot;, &quot;c&quot;: &quot;X.509 extension&quot;, &quot;w&quot;: false},
+    &quot;done&quot;: {}
+};
+
+function readTag(buf, pos) {
+
+    assert(buf instanceof Buffer);
+    assert(_.isNumber(pos));
+    var tag = buf.readUInt8(pos);
+    pos += 1;
+
+    var length = buf.readUInt8(pos);
+    pos += 1;
+
+    if (length &gt; 127) {
+        var nbBytes = (length &amp; 0x7F);
+        length = 0;
+        for (var i = 0; i &lt; nbBytes; i++) {
+            length = length * 256 + buf.readUInt8(pos);
+            pos += 1;
+        }
+    }
+    return {tag: tag, position: pos, length: length};
+}
+
+
+function readStruct(buf, block_info) {
+
+    var length = block_info.length;
+    var cursor = block_info.position;
+    var end = block_info.position + length;
+    var blocks = [];
+    while (cursor &lt; end) {
+        var inner = readTag(buf, cursor);
+        cursor = inner.position + inner.length;
+        blocks.push(inner);
+    }
+    return blocks;
+}
+
+function get_block(buffer, block) {
+    var start = block.position;
+    var end = block.position + block.length;
+    return buffer.slice(start, end);
+}
+
+
+function parseBitString(buffer, start, end, maxLength) {
+
+    var unusedBit = buffer.readUInt8(start),
+        lenBit = ((end - start - 1) &lt;&lt; 3) - unusedBit,
+        intro = &quot;(&quot; + lenBit + &quot; bit)\n&quot;,
+        s = &quot;&quot;,
+        skip = unusedBit;
+
+    for (var i = end - 1; i &gt; start; --i) {
+
+        var b = buffer.readUInt8(i);
+
+        for (var j = skip; j &lt; 8; ++j) {
+            s += ((b &gt;&gt; j) &amp; 1) ? &quot;1&quot; : &quot;0&quot;;
+        }
+
+        skip = 0;
+        assert(s.length &lt;= maxLength);
+
+    }
+
+    return intro + s;
+}
+
+function read_BitString(buffer, block) {
+
+    assert(block.tag === tagTypes.BIT_STRING);
+
+    var data = get_block(buffer, block);
+
+    // number of skipped bits
+    var ignore_bits = data.readUInt8(0);
+
+    return {
+        lengthInBits: data.length * 8 - ignore_bits,
+        lengthInBytes: data.length - 1,
+        data: data.slice(1),
+        debug: parseBitString(buffer, block.position, block.length + block.position, 5000)
+    };
+}
+
+function read_OctetString(buffer,block) {
+
+    assert(block.tag === tagTypes.OCTET_STRING);
+    var tag = readTag(buffer,block.position);
+    assert(tag.tag === tagTypes.OCTET_STRING);
+
+    var nbBytes = tag.length;
+    var pos = tag.position;
+
+    var value = [];
+    for (var i = 0; i &lt; nbBytes; i++) {
+        value.push((&#x27;00&#x27; + buffer.readUInt8(pos).toString(16)).substr(-2, 2));
+        pos += 1;
+    }
+    return value.join(&quot;:&quot;);
+}
+
+function read_SignatureValue(buffer, block) {
+    return get_block(buffer, block).toString(&quot;hex&quot;);
+}
+
+function read_LongIntegerValue(buffer, block) {
+    assert(block.tag === tagTypes.INTEGER, &quot;expecting a INTEGER tag&quot;);
+    var pos = block.position;
+    var nbBytes = block.length;
+    var value = [];
+    for (var i = 0; i &lt; nbBytes; i++) {
+        value.push((&#x27;00&#x27; + buffer.readUInt8(pos).toString(16)).substr(-2, 2));
+        pos += 1;
+    }
+    return value.join(&quot;:&quot;);
+}
+
+function read_IntegerValue(buffer, block) {
+    assert(block.tag === tagTypes.INTEGER, &quot;expecting a INTEGER tag&quot;);
+    var pos = block.position;
+    var nbBytes = block.length;
+    assert(nbBytes &lt; 4);
+    var value = 0;
+    for (var i = 0; i &lt; nbBytes; i++) {
+        value = value * 256 + buffer.readUInt8(pos);
+        pos += 1;
+    }
+    return value;
+
+}
+function read_VersionValue(buffer, block) {
+    block = readTag(buffer, block.position);
+    return read_IntegerValue(buffer, block);
+}
+
+
+/*
+ http://tools.ietf.org/html/rfc5280
+
+ 4.1.2.5. Validity
+ [...]
+ As conforming to this profile MUST always encode certificate
+ validity dates through the year 2049 as UTCTime; certificate validity
+ dates in 2050 or later MUST be encoded as GeneralizedTime.
+ Conforming applications MUST be able to process validity dates that
+ are encoded in either UTCTime or GeneralizedTime.
+ [...]
+
+ 4.1.2.5.1  UTCTime
+
+ The universal time type, UTCTime, is a standard ASN.1 type intended
+ for representation of dates and time.  UTCTime specifies the year
+ through the two low order digits and time is specified to the
+ precision of one minute or one second.  UTCTime includes either Z
+ (for Zulu, or Greenwich Mean Time) or a time differential.
+
+ For the purposes of this profile, UTCTime values MUST be expressed
+ Greenwich Mean Time (Zulu) and MUST include seconds (i.e., times are
+ YYMMDDHHMMSSZ), even where the number of seconds is zero.  Conforming
+ systems MUST interpret the year field (YY) as follows:
+
+ Where YY is greater than or equal to 50, the year SHALL be
+ interpreted as 19YY; and
+
+ Where YY is less than 50, the year SHALL be interpreted as 20YY.
+ */
+function convertUTCTime(str) {
+
+    var year, month, day, hours, mins, secs;
+    year = parseInt(str.substr(0, 2), 10);
+    month = parseInt(str.substr(2, 2), 10) - 1;
+    day = parseInt(str.substr(4, 2), 10);
+    hours = parseInt(str.substr(6, 2), 10);
+    mins = parseInt(str.substr(8, 2), 10);
+    secs = parseInt(str.substr(10, 2), 10);
+
+    year += year &gt;= 50 ? 1900 : 2000;
+
+    return new Date(Date.UTC(year, month, day, hours, mins, secs));
+
+}
+
+/*
+ 4.1.2.5.2  GeneralizedTime
+
+ The generalized time type, GeneralizedTime, is a standard ASN.1 type
+ for variable precision representation of time.  Optionally, the
+ GeneralizedTime field can include a representation of the time
+ differential between local and Greenwich Mean Time.
+
+ For the purposes of this profile, GeneralizedTime values MUST be
+ expressed Greenwich Mean Time (Zulu) and MUST include seconds (i.e.,
+ times are YYYYMMDDHHMMSSZ), even where the number of seconds is zero.
+ GeneralizedTime values MUST NOT include fractional seconds.
+
+ */
+function convertGeneralizedTime(str) {
+
+    var year, month, day, hours, mins, secs;
+
+    year = parseInt(str.substr(0, 4), 10);
+    month = parseInt(str.substr(4, 2), 10) - 1;
+    day = parseInt(str.substr(6, 2), 10);
+    hours = parseInt(str.substr(8, 2), 10);
+    mins = parseInt(str.substr(10, 2), 10);
+    secs = parseInt(str.substr(12, 2), 10);
+
+    return new Date(Date.UTC(year, month, day, hours, mins, secs));
+
+}
+
+function read_Value(buffer, block) {
+    switch (block.tag) {
+        case tagTypes.PrintableString:
+        case tagTypes.TeletexString:
+        case tagTypes.UTF8String:
+        case tagTypes.NumericString:
+        case tagTypes.IA5String:
+            return get_block(buffer, block).toString(&quot;ascii&quot;);
+        case tagTypes.UTCTime:
+            return convertUTCTime(get_block(buffer, block).toString(&quot;ascii&quot;));
+        case tagTypes.GeneralizedTime:
+            return convertGeneralizedTime(get_block(buffer, block).toString(&quot;ascii&quot;));
+        default:
+            console.log(&quot;Invalid tag 0x&quot;, block.tag.toString(16), &quot;&quot;);
+            return &quot; ??? &lt;&quot; + block.tag + &quot;&gt;&quot;;
+    }
+}
+
+function read_AttributeTypeAndValue(buffer, block) {
+
+    var inner_blocks = readStruct(buffer, block);
+    inner_blocks = readStruct(buffer, inner_blocks[0]);
+
+    var data = {
+        identifier: read_ObjectIdentifier(buffer, inner_blocks[0]),
+        value: read_Value(buffer, inner_blocks[1])
+    };
+
+    var result = {};
+    _.forEach(data, function (value, key) {
+        result[key] = value;
+    });
+    return result;
+}
+
+function read_RelativeDistinguishedName(buffer, block) {
+    var inner_blocks = readStruct(buffer, block);
+    var data = inner_blocks.map(function (block) {
+        return read_AttributeTypeAndValue(buffer, block);
+    });
+    var result = {};
+    _.forEach(data, function (e) {
+        result[e.identifier] = e.value;
+    });
+    return result;
+}
+
+function read_Name(buffer, block) {
+    return read_RelativeDistinguishedName(buffer, block);
+}
+
+function read_time(buffer, block) {
+    return read_Value(buffer, block);
+}
+function read_Validity(buffer, block) {
+    var inner_blocks = readStruct(buffer, block);
+    return {
+        notBefore: read_time(buffer, inner_blocks[0]),
+        notAfter: read_time(buffer, inner_blocks[1])
+    };
+}
+
+function read_authorityKeyIdentifier(buffer) {
+    // see: https://www.ietf.org/rfc/rfc3280.txt page 25
+    // AuthorityKeyIdentifier ::= SEQUENCE {
+    //      keyIdentifier             [0] KeyIdentifier           OPTIONAL,
+    //      authorityCertIssuer       [1] GeneralNames            OPTIONAL,
+    //      authorityCertSerialNumber [2] CertificateSerialNumber OPTIONAL  }
+    // KeyIdentifier ::= OCTET STRING
+
+    var block = readTag(buffer, 0);
+    var inner_blocks = readStruct(buffer, block);
+
+    var keyIdentifier_block              = find_block_at_index(inner_blocks, 0);
+    var authorityCertIssuer_block        = find_block_at_index(inner_blocks, 1);
+    var authorityCertSerialNumber_block  = find_block_at_index(inner_blocks, 2);
+
+    function readNames(buffer,block) {
+        // AttributeTypeAndValue ::= SEQUENCE {
+        //    type   ATTRIBUTE.&amp;id({SupportedAttributes}),
+        //    value  ATTRIBUTE.&amp;Type({SupportedAttributes}{@type}),
+        var inner_blocks = readStruct(buffer,block);
+        var names = {};
+        inner_blocks.forEach(function(sequence_block) {
+
+            assert(sequence_block.tag === 0x30);
+
+            var set_blocks = readStruct(buffer,sequence_block);
+
+            set_blocks.forEach(function(set_block){
+                assert(set_block.tag === 0x31);
+
+                var blocks = readStruct(buffer,set_block);
+                assert(blocks.length === 1);
+                assert(blocks[0].tag === 0x30);
+
+                var _blocks = readStruct(buffer,blocks[0]);
+                assert(_blocks.length === 2);
+
+                var type  =  read_ObjectIdentifier(buffer, _blocks[0]);
+
+                var value =  read_Value(buffer, _blocks[1]);
+                names[type] = value;
+
+            });
+        });
+        return names;
+    }
+    function read_authorithyCertIssuer(block) {
+        var inner_blocks = readStruct(buffer,block);
+
+        var directoryName_block = find_block_at_index(inner_blocks, 4);
+        if (directoryName_block) {
+            return {
+                directoryName: readNames(buffer,directoryName_block)
+            };
+        }
+        return read_GeneralNames(buffer,directoryName_block);
+    }
+    return {
+        authorityCertIssuer: authorityCertIssuer_block ? read_authorithyCertIssuer(authorityCertIssuer_block) : null
+    };
+}
+/*
+ Extension  ::=  SEQUENCE  {
+ extnID      OBJECT IDENTIFIER,
+ critical    BOOLEAN DEFAULT FALSE,
+ extnValue   OCTET STRING
+ -- contains the DER encoding of an ASN.1 value
+ -- corresponding to the extension type identified
+ -- by extnID
+ }
+ */
+function read_Extension(buffer, block) {
+
+
+    var inner_blocks = readStruct(buffer, block);
+
+    if (inner_blocks.length === 3) {
+        assert(inner_blocks[1].tag === tagTypes.BOOLEAN);
+        inner_blocks[1] = inner_blocks[2];
+    }
+
+    var identifier = read_ObjectIdentifier(buffer, inner_blocks[0]);
+    var buf = get_block(buffer, inner_blocks[1]);
+
+    var value = null;
+    switch (identifier) {
+        case &quot;subjectKeyIdentifier&quot;:
+            value = read_OctetString(buffer,inner_blocks[1]);
+            break;
+        case &quot;subjectAltName&quot;:
+            value = read_subjectAltNames(buf);
+            break;
+        case &quot;authorityKeyIdentifier&quot;:
+            value = read_authorityKeyIdentifier(buf);
+            break;
+        case &quot;basicConstraints&quot;:
+            break;
+        default:
+            value = &quot;Unknown &quot; + hexDump(buf);
+    }
+    return {
+        identifier: identifier,
+        value: value
+    };
+}
+
+
+// Extensions  ::=  SEQUENCE SIZE (1..MAX) OF Extension
+function read_Extensions(buffer, block) {
+
+    assert(block.tag === 0xa3);
+
+    var inner_blocks = readStruct(buffer, block);
+    inner_blocks = readStruct(buffer, inner_blocks[0]);
+
+    var exts = inner_blocks.map(function (block) {
+        return read_Extension(buffer, block);
+    });
+
+    var result = {};
+    _.forEach(exts, function (e) {
+        result[e.identifier] = e.value;
+    });
+    return result;
+}
+
+function parseOID(buffer, start, end) {
+    // ASN.1 JavaScript decoder
+    // Copyright (c) 2008-2014 Lapo Luchini &lt;lapo@lapo.it&gt;
+    var s = &#x27;&#x27;,
+        n = 0,
+        bits = 0;
+    for (var i = start; i &lt; end; ++i) {
+
+        var v = buffer.readUInt8(i);
+
+        n = n * 128 + (v &amp; 0x7F);
+        bits += 7;
+
+        if (!(v &amp; 0x80)) { // finished
+            if (s === &#x27;&#x27;) {
+                var m = n &lt; 80 ? n &lt; 40 ? 0 : 1 : 2;
+                s = m + &quot;.&quot; + (n - m * 40);
+            } else {
+                s += &quot;.&quot; + n.toString();
+            }
+            n = 0;
+            bits = 0;
+        }
+    }
+    assert(bits === 0); // if (bits &gt; 0) { s += &quot;.incomplete&quot;; }
+    return s;
+}
+
+
+function read_ObjectIdentifier(buffer, block) {
+    assert(block.tag === tagTypes.OBJECT_IDENTIFIER);
+    var b = buffer.slice(block.position, block.position + block.length);
+    var oid = parseOID(b, 0, block.length);
+    return oid_map[oid] ? oid_map[oid].d : oid;
+}
+
+function read_UniqueIdentifier(buffer, block) {
+    // TODO
+    return null;
+}
+
+function find_block_at_index(blocks, index) {
+    var tmp = blocks.filter(function (b) {
+        return b.tag === 0xa0 + index;
+    });
+    if (tmp.length === 0) {
+        return null;
+    }
+    return tmp[0];
+}
+
+// function read_GeneralNames
+// GeneralNames ::= SEQUENCE SIZE (1..MAX) OF GeneralName
+// GeneralName ::= CHOICE {
+//        otherName                 [0]  AnotherName,
+//        rfc822Name                [1]  IA5String,
+//        dNSName                   [2]  IA5String,
+//        x400Address               [3]  ORAddress,
+//        directoryName             [4]  Name,
+//        ediPartyName              [5]  EDIPartyName,
+//        uniformResourceIdentifier [6]  IA5String,
+//        iPAddress                 [7]  OCTET STRING,
+//        registeredID              [8]  OBJECT IDENTIFIER }
+function read_GeneralNames(buffer, block) {
+
+    var _data = {
+        1: {name: &quot;rfc822Name&quot;,    type: &quot;IA5String&quot;},
+        2: {name: &quot;dNSName&quot;,       type: &quot;IA5String&quot;},
+        3: {name: &quot;x400Address&quot;,   type: &quot;ORAddress&quot;},
+        4: {name: &quot;directoryName&quot;, type: &quot;Name&quot;},
+        5: {name: &quot;ediPartyName&quot;,  type: &quot;EDIPartyName&quot;},
+        6: {name: &quot;uniformResourceIdentifier&quot;, type: &quot;IA5String&quot;},
+        7: {name: &quot;iPAddress&quot;,     type: &quot;OCTET_STRING&quot;},
+        8: {name: &quot;registeredID&quot;,  type: &quot;OBJECT_IDENTIFIER&quot;},
+    };
+    var blocks = readStruct(buffer, block);
+
+    function read_from_type(buffer, block, type) {
+        switch (type) {
+            case &quot;IA5String&quot;:
+                return buffer.slice(block.position, block.position + block.length).toString(&quot;ascii&quot;);
+            default:
+                return buffer.slice(block.position, block.position + block.length).toString(&quot;hex&quot;);
+        }
+    }
+
+    var n = {};
+    for (var i = 0; i &lt; blocks.length; i++) {
+        block = blocks[i];
+        assert((block.tag &amp; 0x80) === 0x80);
+        var t = (block.tag &amp; 0x7F);
+        var type = _data[t];
+
+        // istanbul ignore next
+        if (!type) {
+            console.log(&quot; INVALID TYPE =&gt;&quot;,t,&quot;0x&quot;+ t.toString(16));
+        }
+        n[type.name] = n[type.name] || [];
+        n[type.name].push(read_from_type(buffer, block, type.type));
+    }
+    return n;
+}
+
+function read_subjectAltNames(buffer) {
+    var block_info = readTag(buffer, 0);
+    return read_GeneralNames(buffer, block_info);
+}
+
+/*
+ SEQUENCE {
+ 204   13:       SEQUENCE {
+ 206    9:         OBJECT IDENTIFIER
+ :           rsaEncryption (1 2 840 113549 1 1 1)
+ 217    0:         NULL
+ :         }
+ 219  141:       BIT STRING, encapsulates {
+ 223  137:         SEQUENCE {
+ 226  129:           INTEGER
+ :             00 C2 D7 97 6D 28 70 AA 5B CF 23 2E 80 70 39 EE
+ :             DB 6F D5 2D D5 6A 4F 7A 34 2D F9 22 72 47 70 1D
+ :             EF 80 E9 CA 30 8C 00 C4 9A 6E 5B 45 B4 6E A5 E6
+ :             6C 94 0D FA 91 E9 40 FC 25 9D C7 B7 68 19 56 8F
+ :             11 70 6A D7 F1 C9 11 4F 3A 7E 3F 99 8D 6E 76 A5
+ :             74 5F 5E A4 55 53 E5 C7 68 36 53 C7 1D 3B 12 A6
+ :             85 FE BD 6E A1 CA DF 35 50 AC 08 D7 B9 B4 7E 5C
+ :             FE E2 A3 2C D1 23 84 AA 98 C0 9B 66 18 9A 68 47
+ :             E9
+ 358    3:           INTEGER 65537
+ :           }
+ :         }
+ :       }
+ */
+function read_IntegerAsByteString(buffer, block) {
+    return get_block(buffer, block);
+}
+function read_ListOfInteger(buffer) {
+    var block = readTag(buffer, 0);
+    var inner_blocks = readStruct(buffer, block);
+
+    return inner_blocks.map(function (block) {
+        return read_IntegerAsByteString(buffer, block);
+    });
+}
+function read_SubjectPublicKeyInfo(buffer, block) {
+    var inner_blocks = readStruct(buffer, block);
+
+    // algorithm identifier
+    var algorithm = read_AlgorithmIdentifier(buffer, inner_blocks[0]);
+    //var parameters         = read_BitString(buffer,inner_blocks[1]);
+    var subjectPublicKey = read_BitString(buffer, inner_blocks[1]);
+
+    // read the 2 big integers of the key
+    var data = subjectPublicKey.data;
+    var values = read_ListOfInteger(data);
+    // xx var value = read_ListOfInteger(data);
+    return {
+        algorithm: algorithm.identifier,
+        subjectPublicKey: subjectPublicKey,
+        keyLength: values[0].length - 1
+        //xx values: values,
+        //xx values_length : values.map(function (a){ return a.length; })
+    };
+}
+function read_tbsCertificate(buffer, block) {
+
+    var blocks = readStruct(buffer, block);
+
+    var version, serialNumber, signature, issuer, validity, subject, subjectPublicKeyInfo, extensions;
+
+    if (blocks.length === 6 ) {
+        // X509 Version 1:
+        version = 1;
+
+        serialNumber  = read_LongIntegerValue(buffer, blocks[0]);
+        signature     = read_AlgorithmIdentifier(buffer, blocks[1]);
+        issuer        = read_Name(buffer, blocks[2]);
+        validity      = read_Validity(buffer, blocks[3]);
+        subject       = read_Name(buffer, blocks[4]);
+        subjectPublicKeyInfo = read_SubjectPublicKeyInfo(buffer, blocks[5]);
+
+        extensions    = null;
+    } else {
+        // X509 Version 3:
+
+        var version_block = find_block_at_index(blocks, 0);
+
+        version       = read_VersionValue(buffer,version_block)  + 1 ;
+        serialNumber  = read_LongIntegerValue(buffer, blocks[1]);
+        signature     = read_AlgorithmIdentifier(buffer, blocks[2]);
+        issuer        = read_Name(buffer, blocks[3]);
+        validity      = read_Validity(buffer, blocks[4]);
+        subject       = read_Name(buffer, blocks[5]);
+        subjectPublicKeyInfo = read_SubjectPublicKeyInfo(buffer, blocks[6]);
+
+        var extensionBlock  = find_block_at_index(blocks, 3);
+        extensions    = read_Extensions(buffer,extensionBlock);
+
+    }
+
+    return {
+        version:      version,
+
+        serialNumber: serialNumber,
+        signature:    signature,
+        issuer:       issuer,
+        validity:     validity,
+        subject:      subject,
+        subjectPublicKeyInfo:  subjectPublicKeyInfo,
+
+        extensions:      extensions
+    };
+
+}
+function read_AlgorithmIdentifier(buffer, block) {
+
+    var inner_blocks = readStruct(buffer, block);
+    return {
+        identifier: read_ObjectIdentifier(buffer, inner_blocks[0])
+    };
+}
+function exploreCertificate(buffer) {
+
+    assert(buffer instanceof Buffer);
+    if (!buffer._exploreCertificate_cache) {
+        var block_info = readTag(buffer, 0);
+        var blocks = readStruct(buffer, block_info);
+        buffer._exploreCertificate_cache = {
+            tbsCertificate: read_tbsCertificate(buffer, blocks[0]),
+            signatureAlgorithm: read_AlgorithmIdentifier(buffer, blocks[1]),
+            signatureValue: read_SignatureValue(buffer, blocks[2])
+        };
+    }
+    return buffer._exploreCertificate_cache;
+
+}
+
+exports.exploreCertificate = exploreCertificate;
+
+
+/**
+ * @method combine_der
+ * combine an array of certificates into a single blob
+ * @param certificates {Buffer[]}
+ * @return {Buffer}
+  */
+exports.combine_der = function (certificates) {
+
+    assert(_.isArray(certificates));
+
+    // perform some sanity check
+    certificates.forEach(function(cert) {
+        var block_info = readTag(cert, 0);
+        //xx console.log(&quot;xxxx&quot; ,cert.length,block_info);
+        //xx console.log(cert.toString(&quot;base64&quot;));
+        assert(block_info.position + block_info.length == cert.length);
+
+    });
+    return Buffer.concat(certificates);
+};
+
+/**
+ * @method split_der
+ * split a multi chain certificates
+ * @param buffer {Buffer}
+ * @return {Buffer[]}
+ */
+exports.split_der = function (buffer) {
+
+    var certificate_chain = [];
+
+    do {
+        var block_info = readTag(buffer, 0);
+
+        var length = block_info.position + block_info.length;
+
+        var der_certificate = buffer.slice(0,length);
+
+        certificate_chain.push(der_certificate);
+
+        buffer = buffer.slice(length);
+
+    } while (buffer.length&gt;0);
+
+    return certificate_chain;
+};
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

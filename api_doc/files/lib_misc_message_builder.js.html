@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>lib/misc/message_builder.js - The NodeOPCUA API</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.0.46</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/AcknowledgeMessage.html">AcknowledgeMessage</a></li>
+                                <li><a href="../classes/ActivateSessionRequest.html">ActivateSessionRequest</a></li>
+                                <li><a href="../classes/ActivateSessionResponse.html">ActivateSessionResponse</a></li>
+                                <li><a href="../classes/AddNodesItem.html">AddNodesItem</a></li>
+                                <li><a href="../classes/AddNodesRequest.html">AddNodesRequest</a></li>
+                                <li><a href="../classes/AddNodesResponse.html">AddNodesResponse</a></li>
+                                <li><a href="../classes/AddNodesResult.html">AddNodesResult</a></li>
+                                <li><a href="../classes/AddReferencesItem.html">AddReferencesItem</a></li>
+                                <li><a href="../classes/AddReferencesRequest.html">AddReferencesRequest</a></li>
+                                <li><a href="../classes/AddReferencesResponse.html">AddReferencesResponse</a></li>
+                                <li><a href="../classes/AddressSpace.html">AddressSpace</a></li>
+                                <li><a href="../classes/AggregateConfiguration.html">AggregateConfiguration</a></li>
+                                <li><a href="../classes/AnonymousIdentityToken.html">AnonymousIdentityToken</a></li>
+                                <li><a href="../classes/ApplicationDescription.html">ApplicationDescription</a></li>
+                                <li><a href="../classes/ApplicationType.html">ApplicationType</a></li>
+                                <li><a href="../classes/Argument.html">Argument</a></li>
+                                <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
+                                <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+                                <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
+                                <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
+                                <li><a href="../classes/BaseNode.html">BaseNode</a></li>
+                                <li><a href="../classes/BaseUAObject.html">BaseUAObject</a></li>
+                                <li><a href="../classes/BinaryStream.html">BinaryStream</a></li>
+                                <li><a href="../classes/BinaryStreamSizeCalculator.html">BinaryStreamSizeCalculator</a></li>
+                                <li><a href="../classes/BrowseDescription.html">BrowseDescription</a></li>
+                                <li><a href="../classes/BrowseNextRequest.html">BrowseNextRequest</a></li>
+                                <li><a href="../classes/BrowseNextResponse.html">BrowseNextResponse</a></li>
+                                <li><a href="../classes/BrowsePath.html">BrowsePath</a></li>
+                                <li><a href="../classes/BrowsePathResult.html">BrowsePathResult</a></li>
+                                <li><a href="../classes/BrowsePathTarget.html">BrowsePathTarget</a></li>
+                                <li><a href="../classes/BrowseRequest.html">BrowseRequest</a></li>
+                                <li><a href="../classes/BrowseResponse.html">BrowseResponse</a></li>
+                                <li><a href="../classes/BrowseResult.html">BrowseResult</a></li>
+                                <li><a href="../classes/BuildInfo.html">BuildInfo</a></li>
+                                <li><a href="../classes/CallMethodRequest.html">CallMethodRequest</a></li>
+                                <li><a href="../classes/CallMethodResult.html">CallMethodResult</a></li>
+                                <li><a href="../classes/CallRequest.html">CallRequest</a></li>
+                                <li><a href="../classes/CallResponse.html">CallResponse</a></li>
+                                <li><a href="../classes/CancelRequest.html">CancelRequest</a></li>
+                                <li><a href="../classes/CancelResponse.html">CancelResponse</a></li>
+                                <li><a href="../classes/ChannelSecurityToken.html">ChannelSecurityToken</a></li>
+                                <li><a href="../classes/ChunkManager.html">ChunkManager</a></li>
+                                <li><a href="../classes/ClientMonitoredItem.html">ClientMonitoredItem</a></li>
+                                <li><a href="../classes/ClientSecureChannelLayer.html">ClientSecureChannelLayer</a></li>
+                                <li><a href="../classes/ClientSession.html">ClientSession</a></li>
+                                <li><a href="../classes/ClientSidePublishEngine.html">ClientSidePublishEngine</a></li>
+                                <li><a href="../classes/ClientSubscription.html">ClientSubscription</a></li>
+                                <li><a href="../classes/ClientTCP_transport.html">ClientTCP_transport</a></li>
+                                <li><a href="../classes/CloseSecureChannelRequest.html">CloseSecureChannelRequest</a></li>
+                                <li><a href="../classes/CloseSecureChannelResponse.html">CloseSecureChannelResponse</a></li>
+                                <li><a href="../classes/CloseSessionRequest.html">CloseSessionRequest</a></li>
+                                <li><a href="../classes/CloseSessionResponse.html">CloseSessionResponse</a></li>
+                                <li><a href="../classes/ContentFilter.html">ContentFilter</a></li>
+                                <li><a href="../classes/ContentFilterElement.html">ContentFilterElement</a></li>
+                                <li><a href="../classes/ContentFilterElementResult.html">ContentFilterElementResult</a></li>
+                                <li><a href="../classes/ContentFilterResult.html">ContentFilterResult</a></li>
+                                <li><a href="../classes/CreateMonitoredItemsRequest.html">CreateMonitoredItemsRequest</a></li>
+                                <li><a href="../classes/CreateMonitoredItemsResponse.html">CreateMonitoredItemsResponse</a></li>
+                                <li><a href="../classes/CreateSessionRequest.html">CreateSessionRequest</a></li>
+                                <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
+                                <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
+                                <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
+                                <li><a href="../classes/cryptoutils.html">cryptoutils</a></li>
+                                <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
+                                <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
+                                <li><a href="../classes/DataValue.html">DataValue</a></li>
+                                <li><a href="../classes/DeleteMonitoredItemsRequest.html">DeleteMonitoredItemsRequest</a></li>
+                                <li><a href="../classes/DeleteMonitoredItemsResponse.html">DeleteMonitoredItemsResponse</a></li>
+                                <li><a href="../classes/DeleteNodesItem.html">DeleteNodesItem</a></li>
+                                <li><a href="../classes/DeleteNodesRequest.html">DeleteNodesRequest</a></li>
+                                <li><a href="../classes/DeleteNodesResponse.html">DeleteNodesResponse</a></li>
+                                <li><a href="../classes/DeleteReferencesItem.html">DeleteReferencesItem</a></li>
+                                <li><a href="../classes/DeleteReferencesRequest.html">DeleteReferencesRequest</a></li>
+                                <li><a href="../classes/DeleteReferencesResponse.html">DeleteReferencesResponse</a></li>
+                                <li><a href="../classes/DeleteSubscriptionsRequest.html">DeleteSubscriptionsRequest</a></li>
+                                <li><a href="../classes/DeleteSubscriptionsResponse.html">DeleteSubscriptionsResponse</a></li>
+                                <li><a href="../classes/DiagnosticInfo.html">DiagnosticInfo</a></li>
+                                <li><a href="../classes/ElementOperand.html">ElementOperand</a></li>
+                                <li><a href="../classes/EncodeDecode.html">EncodeDecode</a></li>
+                                <li><a href="../classes/EndpointDescription.html">EndpointDescription</a></li>
+                                <li><a href="../classes/Enum.html">Enum</a></li>
+                                <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
+                                <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
+                                <li><a href="../classes/EUInformation.html">EUInformation</a></li>
+                                <li><a href="../classes/EventField.html">EventField</a></li>
+                                <li><a href="../classes/EventFilter.html">EventFilter</a></li>
+                                <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
+                                <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
+                                <li><a href="../classes/ExpandedNodeId.html">ExpandedNodeId</a></li>
+                                <li><a href="../classes/Factory.html">Factory</a></li>
+                                <li><a href="../classes/FilterOperand.html">FilterOperand</a></li>
+                                <li><a href="../classes/FilterOperator.html">FilterOperator</a></li>
+                                <li><a href="../classes/FindServersRequest.html">FindServersRequest</a></li>
+                                <li><a href="../classes/FindServersResponse.html">FindServersResponse</a></li>
+                                <li><a href="../classes/GetEndpointsRequest.html">GetEndpointsRequest</a></li>
+                                <li><a href="../classes/GetEndpointsResponse.html">GetEndpointsResponse</a></li>
+                                <li><a href="../classes/HelloMessage.html">HelloMessage</a></li>
+                                <li><a href="../classes/HistoryData.html">HistoryData</a></li>
+                                <li><a href="../classes/HistoryModifiedData.html">HistoryModifiedData</a></li>
+                                <li><a href="../classes/HistoryReadDetails.html">HistoryReadDetails</a></li>
+                                <li><a href="../classes/HistoryReadRequest.html">HistoryReadRequest</a></li>
+                                <li><a href="../classes/HistoryReadResponse.html">HistoryReadResponse</a></li>
+                                <li><a href="../classes/HistoryReadResult.html">HistoryReadResult</a></li>
+                                <li><a href="../classes/HistoryReadValueId.html">HistoryReadValueId</a></li>
+                                <li><a href="../classes/HistoryUpdateRequest.html">HistoryUpdateRequest</a></li>
+                                <li><a href="../classes/HistoryUpdateResponse.html">HistoryUpdateResponse</a></li>
+                                <li><a href="../classes/HistoryUpdateResult.html">HistoryUpdateResult</a></li>
+                                <li><a href="../classes/IssuedIdentityToken.html">IssuedIdentityToken</a></li>
+                                <li><a href="../classes/LiteralOperand.html">LiteralOperand</a></li>
+                                <li><a href="../classes/LocalizedText.html">LocalizedText</a></li>
+                                <li><a href="../classes/MessageBuilder.html">MessageBuilder</a></li>
+                                <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
+                                <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
+                                <li><a href="../classes/MessageSecurityMode.html">MessageSecurityMode</a></li>
+                                <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
+                                <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
+                                <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
+                                <li><a href="../classes/ModifySubscriptionRequest.html">ModifySubscriptionRequest</a></li>
+                                <li><a href="../classes/ModifySubscriptionResponse.html">ModifySubscriptionResponse</a></li>
+                                <li><a href="../classes/MonitoredItem.html">MonitoredItem</a></li>
+                                <li><a href="../classes/MonitoredItemCreateRequest.html">MonitoredItemCreateRequest</a></li>
+                                <li><a href="../classes/MonitoredItemCreateResult.html">MonitoredItemCreateResult</a></li>
+                                <li><a href="../classes/MonitoredItemModifyRequest.html">MonitoredItemModifyRequest</a></li>
+                                <li><a href="../classes/MonitoredItemModifyResult.html">MonitoredItemModifyResult</a></li>
+                                <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
+                                <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
+                                <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+                                <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
+                                <li><a href="../classes/NodeId.html">NodeId</a></li>
+                                <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
+                                <li><a href="../classes/NodeTypeDescription.html">NodeTypeDescription</a></li>
+                                <li><a href="../classes/NotificationMessage.html">NotificationMessage</a></li>
+                                <li><a href="../classes/opcua.html">opcua</a></li>
+                                <li><a href="../classes/OPCUABaseServer.html">OPCUABaseServer</a></li>
+                                <li><a href="../classes/OPCUAClient.html">OPCUAClient</a></li>
+                                <li><a href="../classes/OPCUAClientBase.html">OPCUAClientBase</a></li>
+                                <li><a href="../classes/OPCUASecureObject.html">OPCUASecureObject</a></li>
+                                <li><a href="../classes/OPCUAServer.html">OPCUAServer</a></li>
+                                <li><a href="../classes/OPCUAServerEndPoint
+                
+                A sever end point is listening to one port.html">OPCUAServerEndPoint
+                
+                A sever end point is listening to one port</a></li>
+                                <li><a href="../classes/OpenSecureChannelRequest.html">OpenSecureChannelRequest</a></li>
+                                <li><a href="../classes/OpenSecureChannelResponse.html">OpenSecureChannelResponse</a></li>
+                                <li><a href="../classes/PacketAssembler.html">PacketAssembler</a></li>
+                                <li><a href="../classes/ParsingResult.html">ParsingResult</a></li>
+                                <li><a href="../classes/PublishRequest.html">PublishRequest</a></li>
+                                <li><a href="../classes/PublishResponse.html">PublishResponse</a></li>
+                                <li><a href="../classes/QualifiedName.html">QualifiedName</a></li>
+                                <li><a href="../classes/QueryDataDescription.html">QueryDataDescription</a></li>
+                                <li><a href="../classes/QueryDataSet.html">QueryDataSet</a></li>
+                                <li><a href="../classes/QueryFirstRequest.html">QueryFirstRequest</a></li>
+                                <li><a href="../classes/QueryFirstResponse.html">QueryFirstResponse</a></li>
+                                <li><a href="../classes/QueryNextRequest.html">QueryNextRequest</a></li>
+                                <li><a href="../classes/QueryNextResponse.html">QueryNextResponse</a></li>
+                                <li><a href="../classes/Range.html">Range</a></li>
+                                <li><a href="../classes/ReadAtTimeDetails.html">ReadAtTimeDetails</a></li>
+                                <li><a href="../classes/ReaderState.html">ReaderState</a></li>
+                                <li><a href="../classes/ReadEventDetails.html">ReadEventDetails</a></li>
+                                <li><a href="../classes/ReadProcessedDetails.html">ReadProcessedDetails</a></li>
+                                <li><a href="../classes/ReadRawModifiedDetails.html">ReadRawModifiedDetails</a></li>
+                                <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
+                                <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
+                                <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+                                <li><a href="../classes/Reference.html">Reference</a></li>
+                                <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
+                                <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
+                                <li><a href="../classes/RegisteredServer.html">RegisteredServer</a></li>
+                                <li><a href="../classes/RegisterNodesRequest.html">RegisterNodesRequest</a></li>
+                                <li><a href="../classes/RegisterNodesResponse.html">RegisterNodesResponse</a></li>
+                                <li><a href="../classes/RegisterServerRequest.html">RegisterServerRequest</a></li>
+                                <li><a href="../classes/RegisterServerResponse.html">RegisterServerResponse</a></li>
+                                <li><a href="../classes/RelativePath.html">RelativePath</a></li>
+                                <li><a href="../classes/RelativePathElement.html">RelativePathElement</a></li>
+                                <li><a href="../classes/RepublishRequest.html">RepublishRequest</a></li>
+                                <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
+                                <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
+                                <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+                                <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
+                                <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
+                                <li><a href="../classes/SecurityTokenRequestType.html">SecurityTokenRequestType</a></li>
+                                <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
+                                <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
+                                <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
+                                <li><a href="../classes/ServerEngine.html">ServerEngine</a></li>
+                                <li><a href="../classes/ServerSecureChannelLayer.html">ServerSecureChannelLayer</a></li>
+                                <li><a href="../classes/ServerSession.html">ServerSession</a></li>
+                                <li><a href="../classes/ServerSidePublishEngine.html">ServerSidePublishEngine</a></li>
+                                <li><a href="../classes/ServerStatus.html">ServerStatus</a></li>
+                                <li><a href="../classes/ServerTCP_transport.html">ServerTCP_transport</a></li>
+                                <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
+                                <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
+                                <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+                                <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
+                                <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
+                                <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
+                                <li><a href="../classes/SetPublishingModeResponse.html">SetPublishingModeResponse</a></li>
+                                <li><a href="../classes/SetTriggeringRequest.html">SetTriggeringRequest</a></li>
+                                <li><a href="../classes/SetTriggeringResponse.html">SetTriggeringResponse</a></li>
+                                <li><a href="../classes/SignatureData.html">SignatureData</a></li>
+                                <li><a href="../classes/SignedSoftwareCertificate.html">SignedSoftwareCertificate</a></li>
+                                <li><a href="../classes/SimpleAttributeOperand.html">SimpleAttributeOperand</a></li>
+                                <li><a href="../classes/Simulator.html">Simulator</a></li>
+                                <li><a href="../classes/StatusChangeNotification.html">StatusChangeNotification</a></li>
+                                <li><a href="../classes/StatusCode.html">StatusCode</a></li>
+                                <li><a href="../classes/Subscription.html">Subscription</a></li>
+                                <li><a href="../classes/SubscriptionAcknowledgement.html">SubscriptionAcknowledgement</a></li>
+                                <li><a href="../classes/SubscriptionDiagnostics.html">SubscriptionDiagnostics</a></li>
+                                <li><a href="../classes/SymmetricAlgorithmSecurityHeader.html">SymmetricAlgorithmSecurityHeader</a></li>
+                                <li><a href="../classes/TCP_transport.html">TCP_transport</a></li>
+                                <li><a href="../classes/TCPErrorMessage.html">TCPErrorMessage</a></li>
+                                <li><a href="../classes/TimestampsToReturn.html">TimestampsToReturn</a></li>
+                                <li><a href="../classes/ToolBrowsePath.html">ToolBrowsePath</a></li>
+                                <li><a href="../classes/TransferResult.html">TransferResult</a></li>
+                                <li><a href="../classes/TransferSubscriptionsRequest.html">TransferSubscriptionsRequest</a></li>
+                                <li><a href="../classes/TransferSubscriptionsResponse.html">TransferSubscriptionsResponse</a></li>
+                                <li><a href="../classes/TranslateBrowsePathsToNodeIdsRequest.html">TranslateBrowsePathsToNodeIdsRequest</a></li>
+                                <li><a href="../classes/TranslateBrowsePathsToNodeIdsResponse.html">TranslateBrowsePathsToNodeIdsResponse</a></li>
+                                <li><a href="../classes/TypeSchema.html">TypeSchema</a></li>
+                                <li><a href="../classes/UADataType.html">UADataType</a></li>
+                                <li><a href="../classes/UAObject.html">UAObject</a></li>
+                                <li><a href="../classes/UAObjectType.html">UAObjectType</a></li>
+                                <li><a href="../classes/UAVariable.html">UAVariable</a></li>
+                                <li><a href="../classes/UAVariableType.html">UAVariableType</a></li>
+                                <li><a href="../classes/UnregisterNodesRequest.html">UnregisterNodesRequest</a></li>
+                                <li><a href="../classes/UnregisterNodesResponse.html">UnregisterNodesResponse</a></li>
+                                <li><a href="../classes/UserIdentityTokenType.html">UserIdentityTokenType</a></li>
+                                <li><a href="../classes/UserNameIdentityToken.html">UserNameIdentityToken</a></li>
+                                <li><a href="../classes/UserTokenPolicy.html">UserTokenPolicy</a></li>
+                                <li><a href="../classes/Variant.html">Variant</a></li>
+                                <li><a href="../classes/View.html">View</a></li>
+                                <li><a href="../classes/ViewDescription.html">ViewDescription</a></li>
+                                <li><a href="../classes/WriteRequest.html">WriteRequest</a></li>
+                                <li><a href="../classes/WriteResponse.html">WriteResponse</a></li>
+                                <li><a href="../classes/WriteValue.html">WriteValue</a></li>
+                                <li><a href="../classes/X509IdentityToken.html">X509IdentityToken</a></li>
+                                <li><a href="../classes/Xml2Json.html">Xml2Json</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/opcua.address_space.html">opcua.address_space</a></li>
+                                <li><a href="../modules/opcua.address_space.types.html">opcua.address_space.types</a></li>
+                                <li><a href="../modules/opcua.client.html">opcua.client</a></li>
+                                <li><a href="../modules/opcua.datamodel.html">opcua.datamodel</a></li>
+                                <li><a href="../modules/opcua.helpers.html">opcua.helpers</a></li>
+                                <li><a href="../modules/opcua.miscellaneous.html">opcua.miscellaneous</a></li>
+                                <li><a href="../modules/opcua.server.html">opcua.server</a></li>
+                                <li><a href="../modules/opcua.server.simulation.html">opcua.server.simulation</a></li>
+                                <li><a href="../modules/opcua.transport.html">opcua.transport</a></li>
+                                <li><a href="../modules/services.browse.html">services.browse</a></li>
+                                <li><a href="../modules/services.get_endpoints.html">services.get_endpoints</a></li>
+                                <li><a href="../modules/services.historizing.html">services.historizing</a></li>
+                                <li><a href="../modules/services.method.html">services.method</a></li>
+                                <li><a href="../modules/services.read.html">services.read</a></li>
+                                <li><a href="../modules/services.register.html">services.register</a></li>
+                                <li><a href="../modules/services.session.html">services.session</a></li>
+                                <li><a href="../modules/services.subscription.html">services.subscription</a></li>
+                                <li><a href="../modules/services.write.html">services.write</a></li>
+                                <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
+                                <li><a href="../modules/xml2json.html">xml2json</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: lib/misc/message_builder.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+&quot;use strict&quot;;
+/**
+ * @module opcua.miscellaneous
+ */
+require(&quot;requirish&quot;)._(module);
+
+var util = require(&quot;util&quot;);
+var assert = require(&quot;better-assert&quot;);
+
+var MessageBuilderBase = require(&quot;lib/misc/message_builder_base&quot;).MessageBuilderBase;
+
+
+var chooseSecurityHeader = require(&quot;lib/services/secure_channel_service&quot;).chooseSecurityHeader;
+
+
+var SymmetricAlgorithmSecurityHeader = require(&quot;lib/services/secure_channel_service&quot;).SymmetricAlgorithmSecurityHeader;
+var SequenceHeader = require(&quot;lib/services/secure_channel_service&quot;).SequenceHeader;
+var BinaryStream = require(&quot;lib/misc/binaryStream&quot;).BinaryStream;
+var ec = require(&quot;lib/misc/encode_decode&quot;);
+var packet_analyzer = require(&quot;lib/misc/packet_analyzer&quot;).packet_analyzer;
+var hexDump = require(&quot;lib/misc/utils&quot;).hexDump;
+var _ = require(&quot;underscore&quot;);
+
+//xx require(&quot;./utils&quot;).setDebugFlag(__filename,true);
+var debugLog = require(&quot;lib/misc/utils&quot;).make_debugLog(__filename);
+var doDebug = require(&quot;lib/misc/utils&quot;).checkDebugFlag(__filename);
+
+var securityPolicy_m = require(&quot;lib/misc/security_policy&quot;);
+var SecurityPolicy = securityPolicy_m.SecurityPolicy;
+
+var MessageSecurityMode = require(&quot;schemas/MessageSecurityMode_enum&quot;).MessageSecurityMode;
+
+var crypto_utils = require(&quot;lib/misc/crypto_utils&quot;);
+
+var decodeStatusCode = require(&quot;lib/datamodel/opcua_status_code&quot;).decodeStatusCode;
+var decodeString = require(&quot;lib/misc/encode_decode&quot;).decodeString;
+
+/**
+ * @class MessageBuilder
+ * @extends MessageBuilderBase
+ * @constructor
+ *
+ * @param options
+ * @param options.securityMode {MessageSecurityMode} the security Mode
+ * @param [options.objectFactory=factories] a object that provides a constructObject(id) method
+ */
+var MessageBuilder = function (options) {
+
+    options = options || {};
+    MessageBuilderBase.call(this, options);
+
+    this.securityPolicy = SecurityPolicy.Invalid; // not known yet
+    this.securityMode = options.securityMode || MessageSecurityMode.INVALID; // not known yet
+
+    this.objectFactory = options.objectFactory || require(&quot;lib/misc/factories_factories&quot;);
+
+    assert(_.isFunction(this.objectFactory.constructObject), &quot; the objectFactory must provide a constructObject method&quot;);
+
+    this.previous_sequenceNumber = -1; // means unknown
+    assert(_.isFinite(this.previous_sequenceNumber));
+};
+util.inherits(MessageBuilder, MessageBuilderBase);
+
+MessageBuilder.prototype.setSecurity = function (securityMode, securityPolicy) {
+    assert(this.securityMode === MessageSecurityMode.INVALID, &quot;security already set&quot;);
+    this.securityPolicy = SecurityPolicy.get(securityPolicy);
+    this.securityMode = MessageSecurityMode.get(securityMode);
+    assert(this.securityPolicy !== undefined, &quot;invalid security policy &quot; + securityPolicy);
+    assert(this.securityMode !== undefined, &quot;invalid security mode &quot; + securityMode);
+    assert(this.securityPolicy !== SecurityPolicy.Invalid);
+    assert(this.securityMode !== MessageSecurityMode.INVALID);
+};
+
+
+MessageBuilder.prototype._validateSequenceNumber = function (sequenceNumber) {
+
+    // checking that sequenceNumber is increasing
+    assert(_.isFinite(this.previous_sequenceNumber));
+    assert(_.isFinite(sequenceNumber) &amp;&amp; sequenceNumber &gt;= 0);
+
+    var expectedSequenceNumber;
+    if (this.previous_sequenceNumber !== -1) {
+
+        expectedSequenceNumber = this.previous_sequenceNumber + 1;
+
+        if (expectedSequenceNumber !== sequenceNumber) {
+            var errMessage = &quot;Invalid Sequence Number found ( expected &quot; + expectedSequenceNumber + &quot;, got &quot; + sequenceNumber + &quot;)&quot;;
+            debugLog(errMessage.red.bold);
+            /**
+             * notify the observers that a message with an invalid sequence number has been received.
+             * @event invalid_sequence_number
+             * @param {Number} expected sequence Number
+             * @param {Number} actual sequence Number
+             */
+            this.emit(&quot;invalid_sequence_number&quot;, expectedSequenceNumber, sequenceNumber);
+        }
+        // todo : handle the case where sequenceNumber wraps back to &lt; 1024
+    }
+    /* istanbul ignore next */
+    if (doDebug) {
+        debugLog(&quot; Sequence Number = &quot;.yellow.bold, sequenceNumber);
+    }
+    this.previous_sequenceNumber = sequenceNumber;
+};
+
+MessageBuilder.prototype._decrypt_OPN = function (binaryStream) {
+
+    assert(this.securityPolicy !== SecurityPolicy.None);
+    assert(this.securityPolicy !== SecurityPolicy.Invalid);
+    assert(this.securityMode !== MessageSecurityMode.NONE);
+    //xx assert(this.securityMode !== MessageSecurityMode.INVALID);
+
+    /* istanbul ignore next */
+    if (doDebug) {
+        debugLog(&quot;securityHeader&quot;, JSON.stringify(this.securityHeader, null, &quot; &quot;));
+    }
+
+    // OpcUA part 2 V 1.02 page 15
+    // 4.11 OPC UA Security Related Services
+    // [...]
+    // The OPC UA Client sends its Public Key in a Digital Certificate and secret information with the
+    // OpenSecureChannel service Message to the Server. This Message is secured by applying
+    // Asymmetric Encryption with the Server&#x27;s Public Key and by generating Asymmetric Signatures with
+    // the Client&#x27;s Private Key. However the Digital Certificate is sent unencrypted so that the receiver can
+    // use it to verify the Asymmetric Signature.
+    // [...]
+    //
+
+    /* istanbul ignore next */
+    if (doDebug) {
+        debugLog(&quot;EN------------------------------&quot;.cyan);
+        debugLog(hexDump(binaryStream._buffer));
+        debugLog(&quot;---------------------- SENDER CERTIFICATE&quot;);
+        debugLog(hexDump(this.securityHeader.senderCertificate));
+    }
+
+    /* istanbul ignore next */
+    if (!crypto_utils.isFullySupported()) {
+        this._report_error(&quot;YOUR NODE CONFIGURATION DOES NOT ALLOW SIGN and ENCRYPT YET - &quot;);
+        return false;
+    }
+
+    if (!this.cryptoFactory) {
+        this._report_error(&quot; Security Policy &quot; + this.securityPolicy.key + &quot; is not implemented yet&quot;);
+        return false;
+    }
+
+    // The message has been signed  with sender private key and has been encrypted with receiver public key.
+    // We shall decrypt it with the receiver private key.
+    var buf = binaryStream._buffer.slice(binaryStream.length);
+
+    if (this.securityHeader.receiverCertificateThumbprint) { // this mean that the message has been encrypted ....
+
+        assert(typeof this.privateKey === &quot;string&quot;, &quot;expecting valid key&quot;);
+
+        var decryptedBuffer = this.cryptoFactory.asymmetricDecrypt(buf, this.privateKey);
+
+        // replace decrypted buffer in initial buffer
+        decryptedBuffer.copy(binaryStream._buffer, binaryStream.length);
+
+        // adjust length
+        binaryStream._buffer = binaryStream._buffer.slice(0, binaryStream.length + decryptedBuffer.length);
+
+        /* istanbul ignore next */
+        if (doDebug) {
+            debugLog(&quot;DE-----------------------------&quot;.cyan);
+            debugLog(hexDump(binaryStream._buffer));
+            debugLog(&quot;-------------------------------&quot;.cyan);
+            debugLog(&quot;Certificate :&quot;, hexDump(this.securityHeader.senderCertificate));
+        }
+    }
+
+    var cert = crypto_utils.exploreCertificate(this.securityHeader.senderCertificate);
+    // then verify the signature
+    var signatureLength = cert.publicKeyLength; // 1024 bits = 128Bytes or 2048=256Bytes
+    assert(signatureLength === 128 || signatureLength === 256);
+
+    var chunk = binaryStream._buffer;
+
+    var signatureIsOK = this.cryptoFactory.asymmetricVerifyChunk(chunk, this.securityHeader.senderCertificate);
+
+    if (!signatureIsOK) {
+        console.log(hexDump(binaryStream._buffer));
+        this._report_error(&quot;SIGN and ENCRYPT asymmetricVerify : Invalid packet signature&quot;);
+        return false;
+    }
+
+    // remove signature
+    binaryStream._buffer = crypto_utils.reduceLength(binaryStream._buffer, signatureLength);
+
+    // remove padding
+    if (this.securityHeader.receiverCertificateThumbprint) {
+        binaryStream._buffer = crypto_utils.removePadding(binaryStream._buffer);
+    }
+
+    return true; // success
+};
+
+MessageBuilder.prototype.pushNewToken = function (securityToken, derivedKeys) {
+
+    assert(securityToken.hasOwnProperty(&quot;tokenId&quot;));
+    //xx assert(derivedKeys ); in fact, can be null
+
+    this._tokenStack = this._tokenStack || [];
+    assert(this._tokenStack.length === 0 || this._tokenStack[0].tokenId !== securityToken.tokenId);
+    this._tokenStack.push({securityToken: securityToken, derivedKeys: derivedKeys});
+
+};
+
+MessageBuilder.prototype._select_matching_token = function (tokenId) {
+
+    var got_new_token = false;
+    this._tokenStack = this._tokenStack || [];
+    while (this._tokenStack.length) {
+        if (this._tokenStack.length === 0) {
+            return null; // no token
+        }
+        if (this._tokenStack[0].securityToken.tokenId === tokenId) {
+            if (got_new_token) {
+                this.emit(&quot;new_token&quot;, tokenId);
+            }
+            return this._tokenStack[0];
+        }
+        // remove first
+        this._tokenStack = this._tokenStack.slice(1);
+        got_new_token = true;
+    }
+
+};
+
+
+MessageBuilder.prototype._decrypt_MSG = function (binaryStream) {
+
+    assert(this.securityHeader instanceof SymmetricAlgorithmSecurityHeader);
+    assert(this.securityMode !== MessageSecurityMode.NONE);
+    assert(this.securityMode !== MessageSecurityMode.INVALID);
+    assert(this.securityPolicy !== SecurityPolicy.None);
+    assert(this.securityPolicy !== SecurityPolicy.Invalid);
+
+    // Check  security token
+    // securityToken may have been renewed
+    var securityTokenData = this._select_matching_token(this.securityHeader.tokenId);
+    if (!securityTokenData) {
+        this._report_error(&quot;Security token data for token &quot; + this.securityHeader.tokenId + &quot; doesn&#x27;t exist&quot;);
+        return false;
+    }
+
+    assert(securityTokenData.hasOwnProperty(&quot;derivedKeys&quot;));
+
+    // SecurityToken may have expired, in this case the MessageBuilder shall reject the message
+    if (securityTokenData.securityToken.expired) {
+        this._report_error(&quot;Security token has expired : tokenId &quot; + securityTokenData.securityToken.tokenId);
+        return false;
+    }
+
+    // We shall decrypt it with the receiver private key.
+    var buf = binaryStream._buffer.slice(binaryStream.length);
+
+    var derivedKeys = securityTokenData.derivedKeys;
+
+    assert(derivedKeys !== null);
+    assert(derivedKeys.signatureLength, &quot; must provide a signature length&quot;);
+
+    if (this.securityMode === MessageSecurityMode.SIGNANDENCRYPT) {
+
+        var decryptedBuffer = crypto_utils.decryptBufferWithDerivedKeys(buf, derivedKeys);
+
+        // replace decrypted buffer in initial buffer
+        decryptedBuffer.copy(binaryStream._buffer, binaryStream.length);
+
+        // adjust length
+        binaryStream._buffer = binaryStream._buffer.slice(0, binaryStream.length + decryptedBuffer.length);
+
+        /* istanbul ignore next */
+        if (doDebug) {
+            debugLog(&quot;DE-----------------------------&quot;.cyan);
+            debugLog(hexDump(binaryStream._buffer));
+            debugLog(&quot;-------------------------------&quot;.cyan);
+        }
+    }
+
+    // now check signature ....
+    var chunk = binaryStream._buffer;
+
+    var signatureIsOK = crypto_utils.verifyChunkSignatureWithDerivedKeys(chunk, derivedKeys);
+    if (!signatureIsOK) {
+        this._report_error(&quot;SIGN and ENCRYPT : Invalid packet signature&quot;);
+        return false;
+    }
+
+    // remove signature
+    binaryStream._buffer = crypto_utils.reduceLength(binaryStream._buffer, derivedKeys.signatureLength);
+
+    if (this.securityMode === MessageSecurityMode.SIGNANDENCRYPT) {
+        // remove padding
+        binaryStream._buffer = crypto_utils.removePadding(binaryStream._buffer);
+    }
+
+    return true;
+};
+
+MessageBuilder.prototype._decrypt = function (binaryStream) {
+
+    if (this.securityPolicy === SecurityPolicy.Invalid) {
+        // this._report_error(&quot;SecurityPolicy&quot;);
+        // return false;
+        return true;
+    }
+
+    var msgType = this.messageHeader.msgType;
+
+    // check if security is active or not
+    if (this.securityPolicy === SecurityPolicy.None) {
+        this.securityMode = MessageSecurityMode.NONE;
+        assert(this.securityMode === MessageSecurityMode.NONE, &quot;expecting securityMode = None when securityPolicy is None&quot;);
+        return true; // nothing to do
+    }
+    assert(this.securityMode !== MessageSecurityMode.NONE);
+
+
+    if (msgType === &quot;OPN&quot;) {
+        return this._decrypt_OPN(binaryStream);
+    } else {
+        return this._decrypt_MSG(binaryStream);
+    }
+
+};
+
+
+/**
+ * @method _read_headers
+ * @param binaryStream
+ * @return {Boolean}
+ * @private
+ */
+MessageBuilder.prototype._read_headers = function (binaryStream) {
+
+    MessageBuilderBase.prototype._read_headers.apply(this, arguments);
+    assert(binaryStream.length === 12);
+
+    var msgType = this.messageHeader.msgType;
+
+    if (msgType === &quot;HEL&quot; || msgType === &quot;ACK&quot;) {
+
+        this.securityPolicy = SecurityPolicy.None;
+    } else if (msgType === &quot;ERR&quot;) {
+
+        // extract Error StatusCode and additional message
+        binaryStream.length = 8;
+        var errorCode = decodeStatusCode(binaryStream);
+        var message = decodeString(binaryStream);
+
+        console.log(&quot; ERROR RECEIVED FROM SENDER&quot;.red.bold, errorCode.toString().cyan, message);
+        console.log(hexDump(binaryStream._buffer));
+        return true;
+
+    } else {
+
+        this.securityHeader = chooseSecurityHeader(msgType);
+        this.securityHeader.decode(binaryStream);
+
+        if (msgType === &quot;OPN&quot;) {
+            this.securityPolicy = securityPolicy_m.fromURI(this.securityHeader.securityPolicyUri);
+            this.cryptoFactory = securityPolicy_m.getCryptoFactory(this.securityPolicy);
+        }
+
+        if (!this._decrypt(binaryStream)) {
+            return false;
+        }
+
+        this.sequenceHeader = new SequenceHeader();
+        this.sequenceHeader.decode(binaryStream);
+
+        /* istanbul ignore next */
+        if (doDebug) {
+            debugLog(&quot; Sequence Header&quot;, this.sequenceHeader);
+        }
+
+        this._validateSequenceNumber(this.sequenceHeader.sequenceNumber);
+    }
+    return true;
+};
+
+
+MessageBuilder.prototype._safe_decode_message_body = function (full_message_body, objMessage, binaryStream) {
+    try {
+        // de-serialize the object from the binary stream
+        var options = this.objectFactory;
+        objMessage.decode(binaryStream, options);
+    }
+    catch (err) {
+        console.log(err);
+        console.log(err.stack);
+        console.log(hexDump(full_message_body));
+        packet_analyzer(full_message_body);
+
+        console.log(&quot; ---------------- block&quot;);
+        this.message_chunks.forEach(function (messageChunk) {
+            console.log(hexDump(messageChunk));
+        });
+        return false;
+    }
+    return true;
+};
+
+MessageBuilder.prototype._decode_message_body = function (full_message_body) {
+
+    var binaryStream = new BinaryStream(full_message_body);
+    var msgType = this.messageHeader.msgType;
+
+    if (msgType === &quot;ERR&quot;) {
+        // invalid message type
+        this._report_error(&quot;ERROR RECEIVED&quot;);
+        return false;
+    }
+    if (msgType === &quot;HEL&quot; || msgType === &quot;ACK&quot;) {
+        // invalid message type
+        this._report_error(&quot;Invalid message type ( HEL/ACK )&quot;);
+        return false;
+    }
+
+    // read expandedNodeId:
+    var id = ec.decodeExpandedNodeId(binaryStream);
+
+    // construct the object
+    var objMessage = this.objectFactory.constructObject(id);
+
+    if (!objMessage) {
+        this._report_error(&quot;cannot construct object with nodeID &quot; + id);
+        return false;
+
+    } else {
+
+        if (this._safe_decode_message_body(full_message_body, objMessage, binaryStream)) {
+            try {
+                /**
+                 * notify the observers that a full message has been received
+                 * @event message
+                 * @param {Object} objMessage the decoded message object
+                 * @param {String} msgType the message type ( &quot;HEL&quot;,&quot;ACK&quot;,&quot;OPN&quot;,&quot;CLO&quot; or &quot;MSG&quot; )
+                 * @param {Number} the request Id
+                 */
+                this.emit(&quot;message&quot;, objMessage, msgType, this.sequenceHeader.requestId, this.secureChannelId);
+            }
+            catch (err) {
+                // this code catches a uncaught exception somewhere in one of the event handler
+                // this indicates a bug in the code that uses this class
+                // please check the stack trace to find the problem
+                console.log(&quot;MessageBuilder : ERROR DETECTED IN event handler&quot;.red);
+                console.log(err);
+                console.log(err.stack);
+            }
+        } else {
+            var message = &quot;cannot decode message  for valid object of type &quot; + id.toString() + &quot; &quot; + objMessage.constructor.name;
+            console.log(message);
+            this._report_error(message);
+            return false;
+        }
+    }
+    return true;
+};
+
+exports.MessageBuilder = MessageBuilder;
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

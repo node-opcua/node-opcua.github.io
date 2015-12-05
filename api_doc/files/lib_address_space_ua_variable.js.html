@@ -1,0 +1,1711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>lib/address_space/ua_variable.js - The NodeOPCUA API</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.0.46</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/AcknowledgeMessage.html">AcknowledgeMessage</a></li>
+                                <li><a href="../classes/ActivateSessionRequest.html">ActivateSessionRequest</a></li>
+                                <li><a href="../classes/ActivateSessionResponse.html">ActivateSessionResponse</a></li>
+                                <li><a href="../classes/AddNodesItem.html">AddNodesItem</a></li>
+                                <li><a href="../classes/AddNodesRequest.html">AddNodesRequest</a></li>
+                                <li><a href="../classes/AddNodesResponse.html">AddNodesResponse</a></li>
+                                <li><a href="../classes/AddNodesResult.html">AddNodesResult</a></li>
+                                <li><a href="../classes/AddReferencesItem.html">AddReferencesItem</a></li>
+                                <li><a href="../classes/AddReferencesRequest.html">AddReferencesRequest</a></li>
+                                <li><a href="../classes/AddReferencesResponse.html">AddReferencesResponse</a></li>
+                                <li><a href="../classes/AddressSpace.html">AddressSpace</a></li>
+                                <li><a href="../classes/AggregateConfiguration.html">AggregateConfiguration</a></li>
+                                <li><a href="../classes/AnonymousIdentityToken.html">AnonymousIdentityToken</a></li>
+                                <li><a href="../classes/ApplicationDescription.html">ApplicationDescription</a></li>
+                                <li><a href="../classes/ApplicationType.html">ApplicationType</a></li>
+                                <li><a href="../classes/Argument.html">Argument</a></li>
+                                <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
+                                <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+                                <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
+                                <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
+                                <li><a href="../classes/BaseNode.html">BaseNode</a></li>
+                                <li><a href="../classes/BaseUAObject.html">BaseUAObject</a></li>
+                                <li><a href="../classes/BinaryStream.html">BinaryStream</a></li>
+                                <li><a href="../classes/BinaryStreamSizeCalculator.html">BinaryStreamSizeCalculator</a></li>
+                                <li><a href="../classes/BrowseDescription.html">BrowseDescription</a></li>
+                                <li><a href="../classes/BrowseNextRequest.html">BrowseNextRequest</a></li>
+                                <li><a href="../classes/BrowseNextResponse.html">BrowseNextResponse</a></li>
+                                <li><a href="../classes/BrowsePath.html">BrowsePath</a></li>
+                                <li><a href="../classes/BrowsePathResult.html">BrowsePathResult</a></li>
+                                <li><a href="../classes/BrowsePathTarget.html">BrowsePathTarget</a></li>
+                                <li><a href="../classes/BrowseRequest.html">BrowseRequest</a></li>
+                                <li><a href="../classes/BrowseResponse.html">BrowseResponse</a></li>
+                                <li><a href="../classes/BrowseResult.html">BrowseResult</a></li>
+                                <li><a href="../classes/BuildInfo.html">BuildInfo</a></li>
+                                <li><a href="../classes/CallMethodRequest.html">CallMethodRequest</a></li>
+                                <li><a href="../classes/CallMethodResult.html">CallMethodResult</a></li>
+                                <li><a href="../classes/CallRequest.html">CallRequest</a></li>
+                                <li><a href="../classes/CallResponse.html">CallResponse</a></li>
+                                <li><a href="../classes/CancelRequest.html">CancelRequest</a></li>
+                                <li><a href="../classes/CancelResponse.html">CancelResponse</a></li>
+                                <li><a href="../classes/ChannelSecurityToken.html">ChannelSecurityToken</a></li>
+                                <li><a href="../classes/ChunkManager.html">ChunkManager</a></li>
+                                <li><a href="../classes/ClientMonitoredItem.html">ClientMonitoredItem</a></li>
+                                <li><a href="../classes/ClientSecureChannelLayer.html">ClientSecureChannelLayer</a></li>
+                                <li><a href="../classes/ClientSession.html">ClientSession</a></li>
+                                <li><a href="../classes/ClientSidePublishEngine.html">ClientSidePublishEngine</a></li>
+                                <li><a href="../classes/ClientSubscription.html">ClientSubscription</a></li>
+                                <li><a href="../classes/ClientTCP_transport.html">ClientTCP_transport</a></li>
+                                <li><a href="../classes/CloseSecureChannelRequest.html">CloseSecureChannelRequest</a></li>
+                                <li><a href="../classes/CloseSecureChannelResponse.html">CloseSecureChannelResponse</a></li>
+                                <li><a href="../classes/CloseSessionRequest.html">CloseSessionRequest</a></li>
+                                <li><a href="../classes/CloseSessionResponse.html">CloseSessionResponse</a></li>
+                                <li><a href="../classes/ContentFilter.html">ContentFilter</a></li>
+                                <li><a href="../classes/ContentFilterElement.html">ContentFilterElement</a></li>
+                                <li><a href="../classes/ContentFilterElementResult.html">ContentFilterElementResult</a></li>
+                                <li><a href="../classes/ContentFilterResult.html">ContentFilterResult</a></li>
+                                <li><a href="../classes/CreateMonitoredItemsRequest.html">CreateMonitoredItemsRequest</a></li>
+                                <li><a href="../classes/CreateMonitoredItemsResponse.html">CreateMonitoredItemsResponse</a></li>
+                                <li><a href="../classes/CreateSessionRequest.html">CreateSessionRequest</a></li>
+                                <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
+                                <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
+                                <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
+                                <li><a href="../classes/cryptoutils.html">cryptoutils</a></li>
+                                <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
+                                <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
+                                <li><a href="../classes/DataValue.html">DataValue</a></li>
+                                <li><a href="../classes/DeleteMonitoredItemsRequest.html">DeleteMonitoredItemsRequest</a></li>
+                                <li><a href="../classes/DeleteMonitoredItemsResponse.html">DeleteMonitoredItemsResponse</a></li>
+                                <li><a href="../classes/DeleteNodesItem.html">DeleteNodesItem</a></li>
+                                <li><a href="../classes/DeleteNodesRequest.html">DeleteNodesRequest</a></li>
+                                <li><a href="../classes/DeleteNodesResponse.html">DeleteNodesResponse</a></li>
+                                <li><a href="../classes/DeleteReferencesItem.html">DeleteReferencesItem</a></li>
+                                <li><a href="../classes/DeleteReferencesRequest.html">DeleteReferencesRequest</a></li>
+                                <li><a href="../classes/DeleteReferencesResponse.html">DeleteReferencesResponse</a></li>
+                                <li><a href="../classes/DeleteSubscriptionsRequest.html">DeleteSubscriptionsRequest</a></li>
+                                <li><a href="../classes/DeleteSubscriptionsResponse.html">DeleteSubscriptionsResponse</a></li>
+                                <li><a href="../classes/DiagnosticInfo.html">DiagnosticInfo</a></li>
+                                <li><a href="../classes/ElementOperand.html">ElementOperand</a></li>
+                                <li><a href="../classes/EncodeDecode.html">EncodeDecode</a></li>
+                                <li><a href="../classes/EndpointDescription.html">EndpointDescription</a></li>
+                                <li><a href="../classes/Enum.html">Enum</a></li>
+                                <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
+                                <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
+                                <li><a href="../classes/EUInformation.html">EUInformation</a></li>
+                                <li><a href="../classes/EventField.html">EventField</a></li>
+                                <li><a href="../classes/EventFilter.html">EventFilter</a></li>
+                                <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
+                                <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
+                                <li><a href="../classes/ExpandedNodeId.html">ExpandedNodeId</a></li>
+                                <li><a href="../classes/Factory.html">Factory</a></li>
+                                <li><a href="../classes/FilterOperand.html">FilterOperand</a></li>
+                                <li><a href="../classes/FilterOperator.html">FilterOperator</a></li>
+                                <li><a href="../classes/FindServersRequest.html">FindServersRequest</a></li>
+                                <li><a href="../classes/FindServersResponse.html">FindServersResponse</a></li>
+                                <li><a href="../classes/GetEndpointsRequest.html">GetEndpointsRequest</a></li>
+                                <li><a href="../classes/GetEndpointsResponse.html">GetEndpointsResponse</a></li>
+                                <li><a href="../classes/HelloMessage.html">HelloMessage</a></li>
+                                <li><a href="../classes/HistoryData.html">HistoryData</a></li>
+                                <li><a href="../classes/HistoryModifiedData.html">HistoryModifiedData</a></li>
+                                <li><a href="../classes/HistoryReadDetails.html">HistoryReadDetails</a></li>
+                                <li><a href="../classes/HistoryReadRequest.html">HistoryReadRequest</a></li>
+                                <li><a href="../classes/HistoryReadResponse.html">HistoryReadResponse</a></li>
+                                <li><a href="../classes/HistoryReadResult.html">HistoryReadResult</a></li>
+                                <li><a href="../classes/HistoryReadValueId.html">HistoryReadValueId</a></li>
+                                <li><a href="../classes/HistoryUpdateRequest.html">HistoryUpdateRequest</a></li>
+                                <li><a href="../classes/HistoryUpdateResponse.html">HistoryUpdateResponse</a></li>
+                                <li><a href="../classes/HistoryUpdateResult.html">HistoryUpdateResult</a></li>
+                                <li><a href="../classes/IssuedIdentityToken.html">IssuedIdentityToken</a></li>
+                                <li><a href="../classes/LiteralOperand.html">LiteralOperand</a></li>
+                                <li><a href="../classes/LocalizedText.html">LocalizedText</a></li>
+                                <li><a href="../classes/MessageBuilder.html">MessageBuilder</a></li>
+                                <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
+                                <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
+                                <li><a href="../classes/MessageSecurityMode.html">MessageSecurityMode</a></li>
+                                <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
+                                <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
+                                <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
+                                <li><a href="../classes/ModifySubscriptionRequest.html">ModifySubscriptionRequest</a></li>
+                                <li><a href="../classes/ModifySubscriptionResponse.html">ModifySubscriptionResponse</a></li>
+                                <li><a href="../classes/MonitoredItem.html">MonitoredItem</a></li>
+                                <li><a href="../classes/MonitoredItemCreateRequest.html">MonitoredItemCreateRequest</a></li>
+                                <li><a href="../classes/MonitoredItemCreateResult.html">MonitoredItemCreateResult</a></li>
+                                <li><a href="../classes/MonitoredItemModifyRequest.html">MonitoredItemModifyRequest</a></li>
+                                <li><a href="../classes/MonitoredItemModifyResult.html">MonitoredItemModifyResult</a></li>
+                                <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
+                                <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
+                                <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+                                <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
+                                <li><a href="../classes/NodeId.html">NodeId</a></li>
+                                <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
+                                <li><a href="../classes/NodeTypeDescription.html">NodeTypeDescription</a></li>
+                                <li><a href="../classes/NotificationMessage.html">NotificationMessage</a></li>
+                                <li><a href="../classes/opcua.html">opcua</a></li>
+                                <li><a href="../classes/OPCUABaseServer.html">OPCUABaseServer</a></li>
+                                <li><a href="../classes/OPCUAClient.html">OPCUAClient</a></li>
+                                <li><a href="../classes/OPCUAClientBase.html">OPCUAClientBase</a></li>
+                                <li><a href="../classes/OPCUASecureObject.html">OPCUASecureObject</a></li>
+                                <li><a href="../classes/OPCUAServer.html">OPCUAServer</a></li>
+                                <li><a href="../classes/OPCUAServerEndPoint
+                
+                A sever end point is listening to one port.html">OPCUAServerEndPoint
+                
+                A sever end point is listening to one port</a></li>
+                                <li><a href="../classes/OpenSecureChannelRequest.html">OpenSecureChannelRequest</a></li>
+                                <li><a href="../classes/OpenSecureChannelResponse.html">OpenSecureChannelResponse</a></li>
+                                <li><a href="../classes/PacketAssembler.html">PacketAssembler</a></li>
+                                <li><a href="../classes/ParsingResult.html">ParsingResult</a></li>
+                                <li><a href="../classes/PublishRequest.html">PublishRequest</a></li>
+                                <li><a href="../classes/PublishResponse.html">PublishResponse</a></li>
+                                <li><a href="../classes/QualifiedName.html">QualifiedName</a></li>
+                                <li><a href="../classes/QueryDataDescription.html">QueryDataDescription</a></li>
+                                <li><a href="../classes/QueryDataSet.html">QueryDataSet</a></li>
+                                <li><a href="../classes/QueryFirstRequest.html">QueryFirstRequest</a></li>
+                                <li><a href="../classes/QueryFirstResponse.html">QueryFirstResponse</a></li>
+                                <li><a href="../classes/QueryNextRequest.html">QueryNextRequest</a></li>
+                                <li><a href="../classes/QueryNextResponse.html">QueryNextResponse</a></li>
+                                <li><a href="../classes/Range.html">Range</a></li>
+                                <li><a href="../classes/ReadAtTimeDetails.html">ReadAtTimeDetails</a></li>
+                                <li><a href="../classes/ReaderState.html">ReaderState</a></li>
+                                <li><a href="../classes/ReadEventDetails.html">ReadEventDetails</a></li>
+                                <li><a href="../classes/ReadProcessedDetails.html">ReadProcessedDetails</a></li>
+                                <li><a href="../classes/ReadRawModifiedDetails.html">ReadRawModifiedDetails</a></li>
+                                <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
+                                <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
+                                <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+                                <li><a href="../classes/Reference.html">Reference</a></li>
+                                <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
+                                <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
+                                <li><a href="../classes/RegisteredServer.html">RegisteredServer</a></li>
+                                <li><a href="../classes/RegisterNodesRequest.html">RegisterNodesRequest</a></li>
+                                <li><a href="../classes/RegisterNodesResponse.html">RegisterNodesResponse</a></li>
+                                <li><a href="../classes/RegisterServerRequest.html">RegisterServerRequest</a></li>
+                                <li><a href="../classes/RegisterServerResponse.html">RegisterServerResponse</a></li>
+                                <li><a href="../classes/RelativePath.html">RelativePath</a></li>
+                                <li><a href="../classes/RelativePathElement.html">RelativePathElement</a></li>
+                                <li><a href="../classes/RepublishRequest.html">RepublishRequest</a></li>
+                                <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
+                                <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
+                                <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+                                <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
+                                <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
+                                <li><a href="../classes/SecurityTokenRequestType.html">SecurityTokenRequestType</a></li>
+                                <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
+                                <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
+                                <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
+                                <li><a href="../classes/ServerEngine.html">ServerEngine</a></li>
+                                <li><a href="../classes/ServerSecureChannelLayer.html">ServerSecureChannelLayer</a></li>
+                                <li><a href="../classes/ServerSession.html">ServerSession</a></li>
+                                <li><a href="../classes/ServerSidePublishEngine.html">ServerSidePublishEngine</a></li>
+                                <li><a href="../classes/ServerStatus.html">ServerStatus</a></li>
+                                <li><a href="../classes/ServerTCP_transport.html">ServerTCP_transport</a></li>
+                                <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
+                                <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
+                                <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+                                <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
+                                <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
+                                <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
+                                <li><a href="../classes/SetPublishingModeResponse.html">SetPublishingModeResponse</a></li>
+                                <li><a href="../classes/SetTriggeringRequest.html">SetTriggeringRequest</a></li>
+                                <li><a href="../classes/SetTriggeringResponse.html">SetTriggeringResponse</a></li>
+                                <li><a href="../classes/SignatureData.html">SignatureData</a></li>
+                                <li><a href="../classes/SignedSoftwareCertificate.html">SignedSoftwareCertificate</a></li>
+                                <li><a href="../classes/SimpleAttributeOperand.html">SimpleAttributeOperand</a></li>
+                                <li><a href="../classes/Simulator.html">Simulator</a></li>
+                                <li><a href="../classes/StatusChangeNotification.html">StatusChangeNotification</a></li>
+                                <li><a href="../classes/StatusCode.html">StatusCode</a></li>
+                                <li><a href="../classes/Subscription.html">Subscription</a></li>
+                                <li><a href="../classes/SubscriptionAcknowledgement.html">SubscriptionAcknowledgement</a></li>
+                                <li><a href="../classes/SubscriptionDiagnostics.html">SubscriptionDiagnostics</a></li>
+                                <li><a href="../classes/SymmetricAlgorithmSecurityHeader.html">SymmetricAlgorithmSecurityHeader</a></li>
+                                <li><a href="../classes/TCP_transport.html">TCP_transport</a></li>
+                                <li><a href="../classes/TCPErrorMessage.html">TCPErrorMessage</a></li>
+                                <li><a href="../classes/TimestampsToReturn.html">TimestampsToReturn</a></li>
+                                <li><a href="../classes/ToolBrowsePath.html">ToolBrowsePath</a></li>
+                                <li><a href="../classes/TransferResult.html">TransferResult</a></li>
+                                <li><a href="../classes/TransferSubscriptionsRequest.html">TransferSubscriptionsRequest</a></li>
+                                <li><a href="../classes/TransferSubscriptionsResponse.html">TransferSubscriptionsResponse</a></li>
+                                <li><a href="../classes/TranslateBrowsePathsToNodeIdsRequest.html">TranslateBrowsePathsToNodeIdsRequest</a></li>
+                                <li><a href="../classes/TranslateBrowsePathsToNodeIdsResponse.html">TranslateBrowsePathsToNodeIdsResponse</a></li>
+                                <li><a href="../classes/TypeSchema.html">TypeSchema</a></li>
+                                <li><a href="../classes/UADataType.html">UADataType</a></li>
+                                <li><a href="../classes/UAObject.html">UAObject</a></li>
+                                <li><a href="../classes/UAObjectType.html">UAObjectType</a></li>
+                                <li><a href="../classes/UAVariable.html">UAVariable</a></li>
+                                <li><a href="../classes/UAVariableType.html">UAVariableType</a></li>
+                                <li><a href="../classes/UnregisterNodesRequest.html">UnregisterNodesRequest</a></li>
+                                <li><a href="../classes/UnregisterNodesResponse.html">UnregisterNodesResponse</a></li>
+                                <li><a href="../classes/UserIdentityTokenType.html">UserIdentityTokenType</a></li>
+                                <li><a href="../classes/UserNameIdentityToken.html">UserNameIdentityToken</a></li>
+                                <li><a href="../classes/UserTokenPolicy.html">UserTokenPolicy</a></li>
+                                <li><a href="../classes/Variant.html">Variant</a></li>
+                                <li><a href="../classes/View.html">View</a></li>
+                                <li><a href="../classes/ViewDescription.html">ViewDescription</a></li>
+                                <li><a href="../classes/WriteRequest.html">WriteRequest</a></li>
+                                <li><a href="../classes/WriteResponse.html">WriteResponse</a></li>
+                                <li><a href="../classes/WriteValue.html">WriteValue</a></li>
+                                <li><a href="../classes/X509IdentityToken.html">X509IdentityToken</a></li>
+                                <li><a href="../classes/Xml2Json.html">Xml2Json</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/opcua.address_space.html">opcua.address_space</a></li>
+                                <li><a href="../modules/opcua.address_space.types.html">opcua.address_space.types</a></li>
+                                <li><a href="../modules/opcua.client.html">opcua.client</a></li>
+                                <li><a href="../modules/opcua.datamodel.html">opcua.datamodel</a></li>
+                                <li><a href="../modules/opcua.helpers.html">opcua.helpers</a></li>
+                                <li><a href="../modules/opcua.miscellaneous.html">opcua.miscellaneous</a></li>
+                                <li><a href="../modules/opcua.server.html">opcua.server</a></li>
+                                <li><a href="../modules/opcua.server.simulation.html">opcua.server.simulation</a></li>
+                                <li><a href="../modules/opcua.transport.html">opcua.transport</a></li>
+                                <li><a href="../modules/services.browse.html">services.browse</a></li>
+                                <li><a href="../modules/services.get_endpoints.html">services.get_endpoints</a></li>
+                                <li><a href="../modules/services.historizing.html">services.historizing</a></li>
+                                <li><a href="../modules/services.method.html">services.method</a></li>
+                                <li><a href="../modules/services.read.html">services.read</a></li>
+                                <li><a href="../modules/services.register.html">services.register</a></li>
+                                <li><a href="../modules/services.session.html">services.session</a></li>
+                                <li><a href="../modules/services.subscription.html">services.subscription</a></li>
+                                <li><a href="../modules/services.write.html">services.write</a></li>
+                                <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
+                                <li><a href="../modules/xml2json.html">xml2json</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: lib/address_space/ua_variable.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+&quot;use strict&quot;;
+/**
+ * @module opcua.address_space
+ */
+require(&quot;requirish&quot;)._(module);
+
+var NodeClass = require(&quot;lib/datamodel/nodeclass&quot;).NodeClass;
+var NodeId = require(&quot;lib/datamodel/nodeid&quot;).NodeId;
+var resolveNodeId = require(&quot;lib/datamodel/nodeid&quot;).resolveNodeId;
+
+
+var DataValue = require(&quot;lib/datamodel/datavalue&quot;).DataValue;
+var extractRange = require(&quot;lib/datamodel/datavalue&quot;).extractRange;
+
+var Variant = require(&quot;lib/datamodel/variant&quot;).Variant;
+var DataType = require(&quot;lib/datamodel/variant&quot;).DataType;
+var VariantArrayType = require(&quot;lib/datamodel/variant&quot;).VariantArrayType;
+var NumericRange = require(&quot;lib/datamodel/numeric_range&quot;).NumericRange;
+
+var StatusCodes = require(&quot;lib/datamodel/opcua_status_code&quot;).StatusCodes;
+var read_service = require(&quot;lib/services/read_service&quot;);
+var AttributeIds = read_service.AttributeIds;
+
+var assert = require(&quot;better-assert&quot;);
+var util = require(&quot;util&quot;);
+var utils = require(&quot;lib/misc/utils&quot;);
+
+var _ = require(&quot;underscore&quot;);
+
+var BaseNode = require(&quot;lib/address_space/base_node&quot;).BaseNode;
+var makeAccessLevel = require(&quot;lib/datamodel/access_level&quot;).makeAccessLevel;
+var write_service = require(&quot;lib/services/write_service&quot;);
+var WriteValue = write_service.WriteValue;
+
+var doDebug = false;
+var debugLog = function(){ if(doDebug) { console.log.apply(console,arguments); }};
+
+function isGoodish(statusCode) {
+    return statusCode.value &lt; 0x10000000;
+}
+
+function adjust_accessLevel(accessLevel) {
+
+    accessLevel = utils.isNullOrUndefined(accessLevel) ?  &quot;CurrentRead | CurrentWrite&quot; : accessLevel;
+    accessLevel = makeAccessLevel(accessLevel);
+    assert(_.isFinite(accessLevel.value));
+    return accessLevel;
+}
+
+function adjust_userAccessLevel(accessLevel) {
+    accessLevel = utils.isNullOrUndefined(accessLevel) ?  &quot;CurrentRead | CurrentWrite&quot; : accessLevel;
+    accessLevel = makeAccessLevel(accessLevel);
+    return accessLevel;
+}
+
+function adjust_samplingInterval(minimumSamplingInterval) {
+    assert(_.isFinite(minimumSamplingInterval));
+    return minimumSamplingInterval;
+}
+
+function is_Variant(v) {
+    return v instanceof Variant;
+}
+
+function is_StatusCode(v) {
+    return v &amp;&amp; v.constructor &amp;&amp; v.constructor.name === &quot;StatusCode&quot;;
+}
+
+function is_Variant_or_StatusCode(v) {
+    if (is_Variant(v)) {
+        // /@@assert(v.isValid());
+    }
+    return is_Variant(v) || is_StatusCode(v);
+}
+
+
+var is_valid_dataEncoding = require(&quot;lib/misc/data_encoding&quot;).is_valid_dataEncoding;
+var is_dataEncoding = require(&quot;lib/misc/data_encoding&quot;).is_dataEncoding;
+
+
+var UADataType = require(&quot;./ua_data_type&quot;).UADataType;
+function _dataType_toUADataType(__address_space, dataType) {
+
+    assert(__address_space);
+    assert(dataType &amp;&amp; dataType.hasOwnProperty(&quot;key&quot;));
+
+    var dataTypeNode = __address_space.findDataType(dataType.key);
+    /* istanbul ignore next */
+    if (!dataTypeNode) {
+        throw new Error(&quot; Cannot find DataType &quot; + dataType.key + &quot; in address Space&quot;);
+    }
+    return dataTypeNode;
+}
+
+var findBuiltInType = require(&quot;lib/misc/factories_builtin_types&quot;).findBuiltInType;
+
+/*==
+ *
+ *
+ * @param __address_space
+ * @param dataTypeNodeId : the nodeId matching the dataType of the destination variable.
+ * @param variantDataType: the dataType of the variant to write to the destination variable
+ * @param nodeId
+ * @return {boolean} true if the variant datatype is compatible with the Variable DataType
+ */
+function validateDataType(__address_space, dataTypeNodeId, variantDataType, nodeId) {
+
+    if (variantDataType === DataType.ExtensionObject) {
+        return true;
+    }
+    var builtInType, builtInUADataType;
+
+    var destUADataType = __address_space.findObject(dataTypeNodeId);
+    assert(destUADataType instanceof UADataType);
+
+    if (destUADataType.isAbstract) {
+        builtInUADataType = destUADataType;
+    } else {
+        builtInType = findBuiltInType(destUADataType.browseName).name;
+        builtInUADataType = __address_space.findDataType(builtInType);
+    }
+    assert(builtInUADataType instanceof UADataType);
+
+
+    // The value supplied for the attribute is not of the same type as the  value.
+    var variantUADataType = _dataType_toUADataType(__address_space, variantDataType);
+    assert(variantUADataType instanceof UADataType);
+
+    var dest_isSuperTypeOf_variant = variantUADataType.isSupertypeOf(builtInUADataType);
+
+    function debugValidateDataType() {
+        if (dest_isSuperTypeOf_variant) {
+            /* istanbul ignore next*/
+            console.log(&quot; ---------- Type match !!! &quot;.green, &quot; on &quot;, nodeId.toString());
+        } else {
+            /* istanbul ignore next*/
+            console.log(&quot; ---------- Type mismatch &quot;.red, &quot; on &quot;, nodeId.toString());
+        }
+        console.log(&quot; Variable data Type is    = &quot;.cyan, destUADataType.browseName.toString());
+        console.log(&quot; which matches basic Type = &quot;.cyan, builtInUADataType.browseName.toString());
+        console.log(&quot;        Actual   dataType = &quot;.yellow, variantUADataType.browseName.toString());
+
+    }
+
+    /* istanbul ignore next */
+    if (doDebug) {
+        debugValidateDataType();
+    }
+
+    return (dest_isSuperTypeOf_variant);
+
+}
+
+function isSameVariant(va,vb) {
+    assert( va instanceof Variant);
+    assert( vb instanceof Variant);
+    if (va.dataType !== vb.dataType) { return false; }
+    if (va.arrayType !== vb.arrayType) { return false; }
+
+    return (_.isEqual(va.value,vb.value));
+}
+/**
+ * A OPCUA Variable Node
+ *
+ * @class UAVariable
+ * @constructor
+ * @extends  BaseNode
+ * @param options  {Object}
+ * @param options.value
+ * @param options.browseName {string}
+ * @param options.dataType   {NodeId|String}
+ * @param options.valueRank  {Int32}
+ * @param options.arrayDimensions {null|Array&lt;Integer&gt;}
+ * @param options.accessLevel {AccessLevel}
+ * @param options.userAccessLevel {AccessLevel}
+ * @param [options.minimumSamplingInterval = -1]
+ * @param [options.historizing = false] {Boolean}
+ * @param options.parentNodeId {NodeId}
+ *
+ *  The AccessLevel Attribute is used to indicate how the Value of a Variable can be accessed (read/write) and if it
+ *  contains current and/or historic data. The AccessLevel does not take any user access rights into account,
+ *  i.e. although the Variable is writable this may be restricted to a certain user / user group.
+ *  The AccessLevel is an 8-bit unsigned integer with the structure defined in the following table:
+ *
+ *  Field            Bit    Description
+ *  CurrentRead      0      Indicates if the current value is readable
+ *                          (0 means not readable, 1 means readable).
+ *  CurrentWrite     1      Indicates if the current value is writable
+ *                          (0 means not writable, 1 means writable).
+ *  HistoryRead      2      Indicates if the history of the value is readable
+ *                          (0 means not readable, 1 means readable).
+ *  HistoryWrite     3      Indicates if the history of the value is writable (0 means not writable, 1 means writable).
+ *  SemanticChange   4      Indicates if the Variable used as Property generates SemanticChangeEvents (see 9.31).
+ *  Reserved         5:7    Reserved for future use. Shall always be zero.
+ *
+ *  The first two bits also indicate if a current value of this Variable is available and the second two bits
+ *  indicates if the history of the Variable is available via the OPC UA server.
+ *
+ */
+
+function UAVariable(options) {
+
+    var self = this;
+
+    BaseNode.apply(this, arguments);
+
+    // assert(self.typeDefinition.value === self.resolveNodeId(&quot;VariableTypeNode&quot;).value);
+
+    /**
+     * @property dataType
+     * @type {NodeId}
+     */
+    self.dataType = self.resolveNodeId(options.dataType);    // DataType (NodeId)
+    assert(self.dataType instanceof NodeId);
+
+    /**
+     * @property valueRank
+     * @type {number} UInt32
+     * This Attribute indicates whether the Value Attribute of the Variable is an array and how many dimensions
+     * the array has.
+     * It may have the following values:
+     *  n &gt; 1:                      the Value is an array with the specified number of dimensions.
+     *  OneDimension (1):           The value is an array with one dimension.
+     *  OneOrMoreDimensions (0):    The value is an array with one or more dimensions.
+     *  Scalar (?1):                The value is not an array.
+     *  Any (?2):                   The value can be a scalar or an array with any number of dimensions.
+     *  ScalarOrOneDimension (?3):  The value can be a scalar or a one dimensional array.
+     *  NOTE All DataTypes are considered to be scalar, even if they have array-like semantics
+     *  like ByteString and String.
+     */
+    self.valueRank = options.valueRank || 0;  // UInt32
+    assert(typeof self.valueRank === &quot;number&quot;);
+
+    /**
+     * This Attribute specifies the length of each dimension for an array value. T
+     * @property arrayDimensions
+     * @type {number[]} UInt32
+     * The Attribute is intended to describe the capability of the Variable, not the current size.
+     * The number of elements shall be equal to the value of the ValueRank Attribute. Shall be null
+     * if ValueRank ? 0.
+     * A value of 0 for an individual dimension indicates that the dimension has a variable length.
+     * For example, if a Variable is defined by the following C array:
+     * Int32 myArray[346];
+     *     then this Variable�s DataType would point to an Int32, the Variable�s ValueRank has the
+     *     value 1 and the ArrayDimensions is an array with one entry having the value 346.
+     *     Note that the maximum length of an array transferred on the wire is 2147483647 (max Int32)
+     *     and a multidimentional array is encoded as a one dimensional array.
+     */
+    self.arrayDimensions = options.arrayDimensions || null;
+    assert(_.isNull(self.arrayDimensions) || _.isArray(self.arrayDimensions));
+
+    /**
+     * @property accessLevel
+     * @type {number}
+     */
+    self.accessLevel = adjust_accessLevel(options.accessLevel);
+
+    /**
+     * @property userAccessLevel
+     * @type {number}
+     *
+     */
+    self.userAccessLevel = adjust_userAccessLevel(options.userAccessLevel);
+
+    /**
+     * The MinimumSamplingInterval Attribute indicates how �current� the Value of the Variable will
+     * be kept.
+     * @property minimumSamplingInterval
+     * @type {number} [Optional]
+     *  It specifies (in milliseconds) how fast the Server can reasonably sample the value
+     * for changes (see Part 4 for a detailed description of sampling interval).
+     * A MinimumSamplingInterval of 0 indicates that the Server is to monitor the item continuously.
+     * A MinimumSamplingInterval of -1 means indeterminate.
+     */
+    self.minimumSamplingInterval = adjust_samplingInterval(options.minimumSamplingInterval);
+
+    self.parentNodeId = options.parentNodeId;
+
+    /**
+     * The Historizing Attribute indicates whether the Server is actively collecting data for the
+     * history of the Variable.
+     * @property historizing
+     * @type {Boolean}
+     *  This differs from the AccessLevel Attribute which identifies if the
+     * Variable has any historical data. A value of TRUE indicates that the Server is actively c
+     * ollecting data. A value of FALSE indicates the Server is not actively collecting data.
+     * Default value is FALSE.
+     */
+    self.historizing = options.historizing;
+
+    self._dataValue = new DataValue({statusCode: StatusCodes.BadNodeIdUnknown, value: {}});
+
+    if (options.value) {
+        self.bindVariable(options.value);
+    }
+
+    this.setMaxListeners(5000);
+}
+util.inherits(UAVariable, BaseNode);
+UAVariable.prototype.nodeClass = NodeClass.Variable;
+
+
+
+UAVariable.prototype.isReadable = function () {
+    return this.accessLevel.has(&quot;CurrentRead&quot;) &amp;&amp; this.userAccessLevel.has(&quot;CurrentRead&quot;);
+};
+
+UAVariable.prototype.isWritable = function () {
+    return this.accessLevel.has(&quot;CurrentWrite&quot;) &amp;&amp; this.userAccessLevel.has(&quot;CurrentWrite&quot;);
+};
+
+
+/**
+ *
+ * @method readValue
+ * @param [indexRange] {NumericRange|null}
+ * @param [dataEncoding] {String}
+ * @return {DataValue}
+ *
+ *
+ * from OPC.UA.Spec 1.02 part 4
+ *  5.10.2.4 StatusCodes
+ *  Table 51 defines values for the operation level statusCode contained in the DataValue structure of
+ *  each values element. Common StatusCodes are defined in Table 166.
+ *
+ * Table 51 Read Operation Level Result Codes
+ *
+ *  Symbolic Id                 Description
+ *
+ *  BadNodeIdInvalid            The syntax of the node id is not valid.
+ *  BadNodeIdUnknown            The node id refers to a node that does not exist in the server address space.
+ *  BadAttributeIdInvalid       Bad_AttributeIdInvalid The attribute is not supported for the specified node.
+ *  BadIndexRangeInvalid        The syntax of the index range parameter is invalid.
+ *  BadIndexRangeNoData         No data exists within the range of indexes specified.
+ *  BadDataEncodingInvalid      The data encoding is invalid.
+ *                              This result is used if no dataEncoding can be applied because an Attribute other than
+ *                              Value was requested or the DataType of the Value Attribute is not a subtype of the
+ *                              Structure DataType.
+ *  BadDataEncodingUnsupported  The server does not support the requested data encoding for the node.
+ *                              This result is used if a dataEncoding can be applied but the passed data encoding is not
+ *                              known to the Server.
+ *  BadNotReadable              The access level does not allow reading or subscribing to the Node.
+ *  BadUserAccessDenied         User does not have permission to perform the requested operation. (table 165)
+ */
+UAVariable.prototype.readValue = function (indexRange, dataEncoding) {
+
+    var self = this;
+
+    if (!self.isReadable()) {
+        return new DataValue({statusCode: StatusCodes.BadNotReadable});
+    }
+
+    if (!is_valid_dataEncoding(dataEncoding)) {
+        return new DataValue({statusCode: StatusCodes.BadDataEncodingInvalid});
+    }
+
+    if (self._timestamped_get_func) {
+        self._timestamped_get_func();
+    }
+
+
+    var dataValue = self._dataValue;
+
+    if (isGoodish(dataValue.statusCode)) {
+
+        dataValue = extractRange(dataValue, indexRange);
+    }
+
+    /* istanbul ignore next */
+    if (dataValue.statusCode === StatusCodes.BadNodeIdUnknown) {
+        console.log(&quot; Warning:  &quot;, self.browseName, self.nodeId.toString(), &quot;exists but dataValue has not been defined&quot;);
+    }
+    return dataValue;
+};
+
+UAVariable.prototype._readDataType = function () {
+    assert(this.dataType instanceof NodeId);
+    var options = {
+        value: {dataType: DataType.NodeId, value: this.dataType},
+        statusCode: StatusCodes.Good
+    };
+    return new DataValue(options);
+};
+
+UAVariable.prototype._readValueRank = function () {
+    assert(typeof this.valueRank === &quot;number&quot;);
+    var options = {
+        value: {dataType: DataType.Int32, value: this.valueRank},
+        statusCode: StatusCodes.Good
+    };
+    return new DataValue(options);
+};
+
+UAVariable.prototype._readArrayDimensions = function () {
+    assert(_.isArray(this.arrayDimensions) || this.arrayDimensions === null);
+    var options = {
+        value: {dataType: DataType.UInt32, arrayType: VariantArrayType.Array, value: this.arrayDimensions},
+        statusCode: StatusCodes.Good
+    };
+    return new DataValue(options);
+};
+
+UAVariable.prototype._readAccessLevel = function () {
+    var options = {
+        value: {dataType: DataType.Byte, value: this.accessLevel.value},
+        statusCode: StatusCodes.Good
+    };
+    return new DataValue(options);
+};
+
+UAVariable.prototype._readUserAccessLevel = function () {
+    var options = {
+        value: {dataType: DataType.Byte, value: this.userAccessLevel.value},
+        statusCode: StatusCodes.Good
+    };
+    return new DataValue(options);
+};
+
+UAVariable.prototype._readMinimumSamplingInterval = function () {
+    var options = {};
+    if (this.minimumSamplingInterval === undefined) {
+        options.statusCode = StatusCodes.BadAttributeIdInvalid;
+    } else {
+        options.value = {dataType: DataType.Int32, value: this.minimumSamplingInterval};
+        options.statusCode = StatusCodes.Good;
+    }
+    return new DataValue(options);
+};
+
+UAVariable.prototype._readHistorizing = function () {
+    var options = {
+        value: {dataType: DataType.Boolean, value: this.historizing},
+        statusCode: StatusCodes.Good
+    };
+    return new DataValue(options);
+};
+
+/**
+ * @method readAttribute
+ * @param attributeId {AttributeIds} the attributeId to read
+ * @param indexRange {NumericRange || null}
+ * @param dataEncoding {String}
+ * @return {DataValue}
+ */
+UAVariable.prototype.readAttribute = function (attributeId, indexRange, dataEncoding) {
+
+    var options = {};
+
+    if (attributeId !== AttributeIds.Value) {
+        if (indexRange &amp;&amp; indexRange.isDefined()) {
+            options.statusCode = StatusCodes.BadIndexRangeNoData;
+            return new DataValue(options);
+        }
+        if (is_dataEncoding(dataEncoding)) {
+            options.statusCode = StatusCodes.BadDataEncodingInvalid;
+            return new DataValue(options);
+        }
+    }
+
+    switch (attributeId) {
+        case AttributeIds.Value:
+            return this.readValue(indexRange, dataEncoding);
+
+        case AttributeIds.DataType:
+            return this._readDataType();
+
+        case AttributeIds.ValueRank:
+            return this._readValueRank();
+
+        case AttributeIds.ArrayDimensions:
+            return this._readArrayDimensions();
+
+        case AttributeIds.AccessLevel:
+            return this._readAccessLevel();
+
+        case AttributeIds.UserAccessLevel:
+            return this._readUserAccessLevel();
+
+        case AttributeIds.MinimumSamplingInterval:
+            return this._readMinimumSamplingInterval();
+
+        case AttributeIds.Historizing:
+            return this._readHistorizing();
+
+        default:
+            return BaseNode.prototype.readAttribute.call(this, attributeId);
+    }
+
+};
+
+
+UAVariable.prototype._validate_DataType = function (variantDataType) {
+
+    return validateDataType(this.__address_space, this.dataType, variantDataType, this.nodeId);
+};
+
+
+function check_valid_array(dataType, array) {
+    if (_.isArray(array)) {
+        return true;
+    }
+    switch (dataType) {
+        case DataType.Double:
+            return array instanceof Float64Array;
+        case DataType.Float:
+            return array instanceof Float32Array;
+        case DataType.Int32:
+            return array instanceof Int32Array;
+        case DataType.Int16:
+            return array instanceof Int16Array;
+        case DataType.SByte:
+            return array instanceof Int8Array;
+        case DataType.UInt32:
+            return array instanceof Uint32Array;
+        case DataType.UInt16:
+            return array instanceof Uint16Array;
+        case DataType.Byte:
+            return array instanceof Uint8Array || array instanceof Buffer;
+    }
+    return false;
+}
+
+
+/**
+ * setValueFromSource is used to let the device sets the variable values
+ * this method also records the current time as sourceTimestamp and serverTimestamp.
+ * the method broadcasts an &quot;value_changed&quot; event
+ * @method setValueFromSource
+ * @param variant
+ * @param statusCode
+ */
+UAVariable.prototype.setValueFromSource = function (variant, statusCode) {
+
+    // istanbul ignore next
+    if (variant.hasOwnProperty(&quot;value&quot;)) {
+        if (!variant.dataType) {
+            throw new Error(&quot;Variant must provide a valid dataType&quot;);
+        }
+    }
+    variant = (variant instanceof Variant) ? variant : new Variant(variant);
+    assert(variant instanceof Variant);
+    var self = this;
+    var now = new Date();
+    var dataValue = new DataValue({
+        sourceTimestamp: now,
+        sourcePicoseconds: 0,
+        serverTimestamp: now,
+        serverPicoseconds: 0,
+        statusCode: statusCode || StatusCodes.Good
+    });
+    dataValue.value = variant;
+    self._internal_set_dataValue(dataValue, null);
+};
+
+var Range = require(&quot;lib/data_access/Range&quot;).Range;
+function validate_value_range(range, variant) {
+    assert(range instanceof Range);
+    assert(variant instanceof Variant);
+    if (variant.value &lt; range.low || variant.value &gt; range.high) {
+        return false;
+    }
+    return true;
+}
+
+UAVariable.prototype.isValueInRange = function (value) {
+
+    assert(value instanceof Variant);
+    var self = this;
+    // test dataType
+    if (!self._validate_DataType(value.dataType)) {
+        return  StatusCodes.BadTypeMismatch;
+    }
+
+    // AnalogDataItem
+    if (self.instrumentRange) {
+        if (!validate_value_range(self.instrumentRange.readValue().value.value, value)) {
+            return StatusCodes.BadOutOfRange;
+        }
+    }
+
+    // MultiStateDiscreteType
+    if (self.enumStrings) {
+        var arrayEnumStrings = self.enumStrings.readValue().value.value;
+        // MultiStateDiscreteType
+        assert(value.dataType === DataType.UInt32);
+        if(value.value &gt;= arrayEnumStrings.length) {
+            return StatusCodes.BadOutOfRange;
+        }
+    }
+
+    // MultiStateValueDiscreteType
+    if (self.enumValues &amp;&amp; self.enumValues._index) {
+
+        var e = self.enumValues._index[value.value];
+        if (!e) {
+            return StatusCodes.BadOutOfRange;
+        }
+    }
+
+    return StatusCodes.Good;
+};
+
+
+function _apply_default_timestamps(dataValue)
+{
+    assert(dataValue instanceof DataValue);
+
+    if (!dataValue.sourceTimestamp) {
+        dataValue.sourceTimestamp = new Date();
+        dataValue.sourcePicoseconds = 0;
+    }
+    if (!dataValue.serverTimestamp) {
+        dataValue.serverTimestamp = new Date();
+        dataValue.serverPicosecons = 0;
+    }
+}
+
+/**
+ * @method writeValue
+ * @param dataValue {DataValue}
+ * @param [indexRange] {NumericRange}
+ * @param callback {Function}
+ * @param callback.err {Error|null}
+ * @param callback.statusCode {StatusCode}
+ * @async
+ *
+ */
+UAVariable.prototype.writeValue = function (dataValue, indexRange, callback) {
+
+    var self = this;
+
+    _apply_default_timestamps(dataValue);
+
+    // adjust arguments if optional indexRange Parameter is not given
+    if (!_.isFunction(callback) &amp;&amp; _.isFunction(indexRange)) {
+        callback = indexRange;
+        indexRange = new NumericRange();
+    }
+    assert(_.isFunction(callback));
+    assert(dataValue instanceof DataValue);
+
+    indexRange = NumericRange.coerce(indexRange);
+
+    // test write permission
+    if (!self.isWritable()) {
+        return callback(null, StatusCodes.BadNotWritable);
+    }
+
+    // adjust special case
+    // convert Variant( Scalar|ByteString) =&gt;  Variant(Array|ByteArray)
+    var variant = dataValue.value;
+    if (variant.arrayType === VariantArrayType.Scalar &amp;&amp; variant.dataType === DataType.ByteString) {
+        if ((self.dataType.value === 3) &amp;&amp; (self.dataType.namespace === 0)) { // Byte
+            variant.arrayType = VariantArrayType.Array;
+            variant.dataType = DataType.Byte;
+        }
+    }
+
+    var statusCode = self.isValueInRange(dataValue.value);
+    if (statusCode !== StatusCodes.Good) {
+        return callback(null,statusCode);
+    }
+
+    if(!self._timestamped_set_func) {
+        return callback(null,StatusCodes.BadNotWritable);
+    }
+
+    assert(self._timestamped_set_func);
+    self._timestamped_set_func(dataValue, indexRange, function (err, statusCode, correctedDataValue) {
+
+        if (!err) {
+
+            correctedDataValue = correctedDataValue || dataValue;
+            assert(correctedDataValue instanceof DataValue);
+            assert(correctedDataValue.serverTimestamp);
+
+            if (indexRange &amp;&amp; !indexRange.isEmpty()) {
+
+                if (!indexRange.isValid()) {
+                    return callback(null, StatusCodes.BadIndexRangeInvalid);
+                }
+
+                var newArr = dataValue.value.value;
+                // check that source data is an array
+                if (dataValue.value.arrayType !== VariantArrayType.Array) {
+                    return callback(null, StatusCodes.BadTypeMismatch);
+                }
+
+                // check that destination data is also an array
+                assert(check_valid_array(self._dataValue.value.dataType, self._dataValue.value.value));
+                var destArr = self._dataValue.value.value;
+                var result = indexRange.set_values(destArr, newArr);
+
+                if (result.statusCode !== StatusCodes.Good) {
+                    return callback(null, result.statusCode);
+                }
+                dataValue.value.value = result.array;
+            }
+            self._internal_set_dataValue(correctedDataValue, indexRange);
+            //xx self._dataValue = correctedDataValue;
+        }
+        callback(err, statusCode);
+    });
+};
+/**
+ * @method writeAttribute
+ * @param writeValue              {WriteValue}
+ * @param writeValue.nodeId       {NodeId}
+ * @param writeValue.attributeId  {AttributeId}*
+ * @param writeValue.value        {DataValue}
+ * @param writeValue.indexRange   {NumericRange}
+ * @param callback                {Function}
+ * @param callback.err            {Error|null}
+ * @param callback.statusCode     {StatusCode}
+ * @async
+ */
+UAVariable.prototype.writeAttribute = function (writeValue, callback) {
+
+    assert(writeValue instanceof WriteValue);
+    assert(writeValue.value instanceof DataValue);
+    assert(writeValue.value.value instanceof Variant);
+    assert(_.isFunction(callback));
+
+    // Spec 1.0.2 Part 4 page 58
+    // If the SourceTimestamp or the ServerTimestamp is specified, the Server shall
+    // use these values.
+    _apply_default_timestamps(writeValue.value);
+
+    switch (writeValue.attributeId) {
+            case AttributeIds.Value:
+            this.writeValue(writeValue.value, writeValue.indexRange, callback);
+            break;
+        default:
+            BaseNode.prototype.writeAttribute.call(this, writeValue, callback);
+    }
+};
+
+function _not_writable_timestamped_set_func(dataValue, callback) {
+    assert(dataValue instanceof DataValue);
+    callback(null, StatusCodes.BadNotWritable, null);
+}
+
+function _default_writable_timestamped_set_func(dataValue, callback) {
+    /* jshint validthis: true */
+    assert(dataValue instanceof DataValue);
+    callback(null, StatusCodes.Good, dataValue);
+}
+
+function turn_sync_to_async(f, numberOfArgs) {
+    if (f.length &lt;= numberOfArgs) {
+        return function (data, callback) {
+            var r = f(data);
+            setImmediate(function () {
+                return callback(null, r);
+            });
+        };
+    } else {
+        assert(f.length === numberOfArgs + 1);
+        return f;
+    }
+}
+
+var MonitoredItem = require(&quot;lib/server/monitored_item&quot;).MonitoredItem;
+
+
+// variation #3 :
+function _Variable_bind_with_async_refresh(options) {
+    /* jshint validthis: true */
+    var self = this;
+    assert(self instanceof UAVariable);
+
+    assert(_.isFunction(options.refreshFunc));
+    assert(!options.get, &quot;a getter shall not be specified when refreshFunc is set&quot;);
+    assert(!options.timestamped_get, &quot;a getter shall not be specified when refreshFunc is set&quot;);
+
+    assert(!self.asyncRefresh);
+    assert(!self.refreshFunc);
+
+    self.refreshFunc = options.refreshFunc;
+
+    function coerceDataValue(dataValue) {
+        if (dataValue instanceof DataValue) {
+            return dataValue;
+        }
+        return new DataValue(dataValue);
+    }
+
+    self.asyncRefresh = function (callback) {
+
+        self.refreshFunc.call(self, function (err, dataValue) {
+            if (err || !dataValue) {
+                dataValue = {statusCode: StatusCodes.BadNoDataAvailable};
+            }
+            dataValue = coerceDataValue(dataValue);
+            self._internal_set_dataValue(dataValue, null);
+            callback(err, self._dataValue);
+        });
+    };
+
+    //assert(self._dataValue.statusCode === StatusCodes.BadNodeIdUnknown);
+    self._dataValue.statusCode = StatusCodes.UncertainInitialValue;
+
+    if (self.minimumSamplingInterval === 0 ) {
+        // when a getter /timestamped_getter or async_getter is provided
+        // samplingInterval cannot be 0, as the item value must be scanned to be updated.
+        self.minimumSamplingInterval = MonitoredItem.minimumSamplingInterval;
+        debugLog(&quot;adapting  minimumSamplingInterval on &quot; + self.browseName.toString() + &quot; to &quot; +  self.minimumSamplingInterval);
+    }
+
+}
+
+// variation 2
+function _Variable_bind_with_timestamped_get(options) {
+    /* jshint validthis: true */
+    var self = this;
+    assert(self instanceof UAVariable);
+    assert(_.isFunction(options.timestamped_get));
+    assert(!options.get, &quot;should not specify &#x27;get&#x27; when &#x27;timestamped_get&#x27; exists &quot;);
+    assert(!self._timestamped_get_func);
+
+    self._timestamped_get_func = options.timestamped_get;
+
+    var dataValue_verify = self._timestamped_get_func();
+    /* istanbul ignore next */
+    if (!(dataValue_verify instanceof DataValue)) {
+        console.log(&quot; Bind variable error: &quot;.red, &quot; : the timestamped_get function must return a DataValue&quot;);
+        console.log(&quot;value_check.constructor.name &quot;, dataValue_verify ? dataValue_verify.constructor.name : &quot;null&quot;);
+        throw new Error(&quot; Bind variable error: &quot;.red, &quot; : the timestamped_get function must return a DataValue&quot;);
+    }
+
+    function async_refresh_func(callback) {
+        var dataValue = self._timestamped_get_func();
+        callback(null, dataValue);
+    }
+
+    _Variable_bind_with_async_refresh.call(self, {refreshFunc: async_refresh_func});
+
+}
+
+
+// variation 1
+function _Variable_bind_with_simple_get(options) {
+    /* jshint validthis: true */
+    var self = this;
+    assert(self instanceof UAVariable);
+    assert(_.isFunction(options.get), &quot;should specify get function&quot;);
+    assert(options.get.length === 0,  &quot;get function should not have arguments&quot;);
+    assert(!options.timestamped_get,  &quot;should not specify a timestamped_get function when get is specified&quot;);
+    assert(!self._timestamped_get_func);
+    assert(!self._get_func);
+
+    self._get_func = options.get;
+
+    function timestamped_get_func_from__Variable_bind_with_simple_get() {
+
+        var value = self._get_func();
+
+        /* istanbul ignore next */
+        if (!is_Variant_or_StatusCode(value)) {
+            console.log(&quot; Bind variable error: &quot;.red, &quot; : the getter must return a Variant or a StatusCode&quot;);
+            console.log(&quot;value_check.constructor.name &quot;, value ? value.constructor.name : &quot;null&quot;);
+            throw new Error(&quot; bindVariable : the value getter function returns a invalid result ( expecting a Variant or a StatusCode !!!&quot;);
+        }
+        if (is_StatusCode(value)) {
+            return new DataValue({statusCode: value});
+
+        } else {
+
+            if (!self._dataValue || !isSameVariant(self._dataValue.value,value) || self._dataValue.statusCode !== StatusCodes.Good) {
+                self.setValueFromSource(value,StatusCodes.Good);
+            } else {
+                //XXXY console.log(&quot;YYYYYYYYYYYYYYYYYYYYYYYYYY&quot;.red,self.browseName.toString());
+            }
+            return self._dataValue;
+        }
+    }
+
+    _Variable_bind_with_timestamped_get.call(self, {timestamped_get: timestamped_get_func_from__Variable_bind_with_simple_get});
+}
+
+function _Variable_bind_with_simple_set(options) {
+    /* jshint validthis: true */
+    var self = this;
+    assert(self instanceof UAVariable);
+    assert(_.isFunction(options.set), &quot;should specify set function&quot;);
+    assert(!options.timestamped_set, &quot;should not specify a timestamped_set function&quot;);
+
+    assert(!self._timestamped_set_func);
+    assert(!self._set_func);
+
+    self._set_func = turn_sync_to_async(options.set, 1);
+    assert(self._set_func.length === 2, &quot; set function must have 2 arguments ( variant, callback)&quot;);
+
+    self._timestamped_set_func = function (timestamped_value, indexRange, callback) {
+        assert(timestamped_value instanceof DataValue);
+        self._set_func(timestamped_value.value, function (err, statusCode) {
+            callback(err, statusCode, timestamped_value);
+        });
+    };
+}
+function _Variable_bind_with_timestamped_set(options) {
+
+    /* jshint validthis: true */
+    var self = this;
+    assert(self instanceof UAVariable);
+    assert(_.isFunction(options.timestamped_set));
+    assert(!options.set, &quot;should not specify set when timestamped_set_func exists &quot;);
+    self._timestamped_set_func = function (dataValue, indexRange, callback) {
+        //xx assert(!indexRange,&quot;indexRange Not Implemented&quot;);
+        return options.timestamped_set(dataValue, callback);
+    };
+}
+
+
+var sameDataValue = require(&quot;lib/datamodel/datavalue&quot;).sameDataValue;
+
+function bind_setter(self,options) {
+
+    if (_.isFunction(options.set)) {                                    // variation 1
+        _Variable_bind_with_simple_set.call(self, options);
+
+    } else if (_.isFunction(options.timestamped_set)) {                 // variation 2
+        assert(_.isFunction(options.timestamped_get, &quot;timestamped_set must be used with timestamped_get &quot;));
+        _Variable_bind_with_timestamped_set.call(self, options);
+
+    } else if (_.isFunction(options.timestamped_get)) {
+        // timestamped_get is  specified but timestamped_set is not
+        // =&gt; Value is read-only
+        _Variable_bind_with_timestamped_set.call(self, {timestamped_set: _not_writable_timestamped_set_func});
+
+    } else {
+        _Variable_bind_with_timestamped_set.call(self, {timestamped_set: _default_writable_timestamped_set_func});
+    }
+}
+
+function bind_getter(self,options) {
+
+
+    if (_.isFunction(options.get)) {                                   // variation 1
+        _Variable_bind_with_simple_get.call(self, options);
+
+    } else if (_.isFunction(options.timestamped_get)) {                // variation 2
+        _Variable_bind_with_timestamped_get.call(self, options);
+
+    } else if (_.isFunction(options.refreshFunc)) {                     // variation 3
+        _Variable_bind_with_async_refresh.call(self, options);
+
+    } else {
+
+
+        assert(!options.set, &quot;getter is missing : a getter must be provided if a setter is provided&quot;);
+        //xx bind_variant.call(self,options);
+        self.setValueFromSource(options);
+    }
+}
+
+UAVariable.prototype._internal_set_dataValue = function (dataValue, indexRange) {
+
+    var self = this;
+    assert(dataValue,&quot;expecting a dataValue&quot;);
+    assert(dataValue instanceof DataValue,&quot;expecting dataValue to be a DataValue&quot;);
+
+    var old_dataValue = self._dataValue;
+
+    self._dataValue = dataValue;
+    self._dataValue.statusCode = self._dataValue.statusCode || StatusCodes.Good;
+
+    if (!sameDataValue(old_dataValue, dataValue)) {
+        self.emit(&quot;value_changed&quot;, self._dataValue, indexRange);
+    }
+};
+
+/**
+ * bind a variable with a get and set functions.
+ *
+ * @method bindVariable
+ * @param options
+ * @param [options.dataType=null]   {DataType} the nodeId of the dataType
+ * @param [options.accessLevel]     {Number} AccessLevelFlagItem
+ * @param [options.userAccessLevel] {Number} AccessLevelFlagItem
+ * @param [options.set]             {Function} the variable setter function
+ * @param [options.get]             {Function} the variable getter function. the function must return a Variant or a status code
+ * @param [options.timestamped_get] {Function} the getter function. this function must return a object with the following
+ *  properties:
+ *    - value: a Variant or a status code
+ *    - sourceTimestamp
+ *    - sourcePicoseconds
+ * @param [options.timestamped_set] {Function}
+ * @param [options.refreshFunc] {Function} the variable asynchronous getter function.
+ * @param [overwrite {Boolean} = false] set overwrite to true to overwrite existing binding
+ * @return void
+ *
+ *
+ * ### Providing read access to the underlying value
+ *
+ * #### Variation 1
+ *
+ * In this variation, the user provides a function that returns a Variant with the current value.
+ *
+ * The sourceTimestamp will be set automatically.
+ *
+ * The get function is called synchronously.
+ *
+ * @example
+ *
+ *
+ * &#x60;&#x60;&#x60;javascript
+ *     ...
+ *     var options =  {
+ *       get : function() {
+ *          return new Variant({...});
+ *       },
+ *       set : function(variant) {
+ *          // store the variant somewhere
+ *          return StatusCodes.Good;
+ *       }
+ *    };
+ *    ...
+ *    engine.bindVariable(nodeId,options):
+ *    ...
+ * &#x60;&#x60;&#x60;
+ *
+ *
+ * #### Variation 2:
+ *
+ * This variation can be used when the user wants to specify a specific &#x27;&#x27;&#x27;sourceTimestamp&#x27;&#x27;&#x27; associated
+ * with the current value of the UAVariable.
+ *
+ * The provided &#x60;&#x60;&#x60;timestamped_get&#x60;&#x60;&#x60; function should return an object with three properties:
+ * * value: containing the variant value or a error StatusCode,
+ * * sourceTimestamp
+ * * sourcePicoseconds
+ *
+ * &#x60;&#x60;&#x60;javascript
+ * ...
+ * var myDataValue = new DataValue({
+ *   value: {dataType: DataType.Double , value: 10.0},
+ *   sourceTimestamp : new Date(),
+ *   sourcePicoseconds: 0
+ * });
+ * ...
+ * var options =  {
+ *   timestamped_get : function() { return myDataValue;  }
+ * };
+ * ...
+ * engine.bindVariable(nodeId,options):
+ * ...
+ * // record a new value
+ * myDataValue.value.value = 5.0;
+ * myDataValue.sourceTimestamp = new Date();
+ * ...
+ * &#x60;&#x60;&#x60;
+ *
+ *
+ * #### Variation 3:
+ *
+ * This variation can be used when the value associated with the variables requires a asynchronous function call to be
+ * extracted. In this case, the user should provide an async method &#x60;&#x60;&#x60;refreshFunc&#x60;&#x60;&#x60;.
+ *
+ *
+ * The &#x60;&#x60;&#x60;refreshFunc&#x60;&#x60;&#x60; shall do whatever is necessary to fetch the most up to date version of the variable value, and
+ * call the &#x60;&#x60;&#x60;callback&#x60;&#x60;&#x60; function when the data is ready.
+ *
+ *
+ * The &#x60;&#x60;&#x60;callback&#x60;&#x60;&#x60; function follow the standard callback function signature:
+ * * the first argument shall be **null** or **Error**, depending of the outcome of the fetch operation,
+ * * the second argument shall be a DataValuewith the new UAVariable Value,  a StatusCode, and time stamps.
+ *
+ *
+ * Optionally, it is possible to pass a sourceTimestamp and a sourcePicoseconds value as a third and fourth arguments
+ * of the callback. When sourceTimestamp and sourcePicoseconds are missing, the system will set their default value
+ * to the current time..
+ *
+ *
+ * &#x60;&#x60;&#x60;javascript
+ * ...
+ * var options =  {
+ *    refreshFunc : function(callback) {
+ *      ... do_some_async_stuff_to_get_the_new_variable_value
+ *      var dataValue = new DataValue({
+ *          value: new Variant({...}),
+ *          statusCode: StatusCodes.Good,
+ *          sourceTimestamp: new Date()
+ *      });
+ *      callback(null,dataValue);
+ *    }
+ * };
+ * ...
+ * engine.bindVariable(nodeId,options):
+ * ...
+ * &#x60;&#x60;&#x60;
+ *
+ * ### Providing write access to the underlying value
+ *
+ * #### Variation1 - provide a simple synchronous set function
+ *
+ *
+ * #### Notes
+ *   to do : explain return StatusCodes.GoodCompletesAsynchronously;
+ *
+ */
+
+UAVariable.prototype.bindVariable = function (options, overwrite) {
+
+    var self = this;
+
+    if (overwrite) {
+        self._timestamped_set_func = null;
+        self._timestamped_get_func = null;
+        self._get_func = null;
+        self.asyncRefresh = null;
+        self.refreshFunc = null;
+    }
+    options = options || {};
+
+    assert(!_.isFunction(self._timestamped_set_func),&quot;UAVariable already bounded&quot;);
+    assert(!_.isFunction(self._timestamped_get_func),&quot;UAVariable already bounded&quot;);
+    bind_getter(self,options);
+    bind_setter(self,options);
+    assert(_.isFunction(self._timestamped_set_func));
+    assert(self._timestamped_set_func.length === 3);
+};
+
+
+/**
+ * @method readValueAsync
+ * @param callback {Function}
+ * @param callback.err   {null|Error}
+ * @param callback.dataValue {DataValue|null} the value read
+ * @async
+ */
+UAVariable.prototype.readValueAsync = function (callback) {
+
+    var self = this;
+
+    self.__waiting_callbacks = self.__waiting_callbacks || [];
+    self.__waiting_callbacks.push(callback);
+
+    var _readValueAsync_in_progress = self.__waiting_callbacks.length &gt;= 2;
+    if (_readValueAsync_in_progress) {
+        return;
+    }
+
+
+    function readImmediate(callback) {
+        assert(self._dataValue instanceof DataValue);
+        var dataValue = this.readValue();
+        callback(null, dataValue);
+    }
+
+    var func = null;
+    if (!self.isReadable()) {
+        func = function(callback) {
+            var dataValue = new DataValue({statusCode: StatusCodes.BadNotReadable});
+            callback(null, dataValue);
+        }
+    } else {
+        func = _.isFunction(self.asyncRefresh) ? self.asyncRefresh : readImmediate;
+    }
+
+    function satisfy_callbacks(err, dataValue) {
+        // now call all pending callbacks
+        var callbacks = self.__waiting_callbacks;
+        self.__waiting_callbacks = [];
+        callbacks.forEach(function (callback) {
+            callback.call(self, err, dataValue);
+        });
+    }
+
+    try {
+        func.call(this, satisfy_callbacks);
+    }
+    catch (err) {
+        // istanbul ignore next
+        console.log(&quot;func readValueAsync has failed &quot;.red);
+        console.log(&quot; stack&quot;,err.stack);
+        satisfy_callbacks(err);
+    }
+};
+
+UAVariable.prototype.getWriteMask = function () {
+    return BaseNode.prototype.getWriteMask.call(this);
+};
+
+UAVariable.prototype.getUserWriteMask = function () {
+    return BaseNode.prototype.getUserWriteMask.call(this);
+};
+
+UAVariable.prototype.clone = function (extraInfo) {
+
+    var self = this;
+    var options = {
+        eventNotifier: self.eventNotifier,
+        symbolicName: self.symbolicName,
+        //xx value: self.value,
+        dataType: self.dataType,
+        valueRank: self.valueRank,
+        arrayDimensions: self.arrayDimensions,
+        accessLevel: self.accessLevel,
+        userAccessLevel: self.userAccessLevel,
+        minimumSamplingInterval: self.minimumSamplingInterval,
+        historizing: self.historizing
+    };
+    var newVariable = self._clone(UAVariable, options,extraInfo);
+
+    newVariable.bindVariable();
+    assert(_.isFunction(newVariable._timestamped_set_func));
+
+    assert(newVariable.dataType === self.dataType);
+    newVariable._dataValue = self._dataValue.clone();
+    return newVariable;
+
+};
+
+
+function _bindComponent(variable,addressSpace,prop, name,dataTypeId, valueRank) {
+
+    assert(dataTypeId instanceof NodeId);
+    // install a getter function to retrieve the underlying object
+
+    var isArray = ( valueRank === 1);
+
+    var dataType = addressSpace.findCorrespondingBasicDataType(dataTypeId);
+
+    //DataType.ExtensionObject
+    prop.bindVariable({
+
+        timestamped_get: function () {
+
+            var dv = variable.readValue();
+
+            this._dataValue.statusCode = dv.statusCode;
+
+            this._dataValue.serverTimestamp =   dv.serverTimestamp;
+            this._dataValue.serverPicoseconds = dv.serverPicoseconds;
+
+            this._dataValue.sourceTimestamp = dv.sourceTimestamp;
+            this._dataValue.sourcePicoseconds = dv.sourcePicoseconds;
+
+            if (isArray) {
+
+                //console.log(&quot;xxxxxxxxxxxxxxxxxxxxxxx &quot;.yellow,dv.value.value[name]);
+                //console.log(&quot;xxxxxxxxxxxxxxxxxxxxxxx &quot;.yellow,dataType.toString());
+                assert( !dv.value.value[name] || _.isArray(dv.value.value[name]));
+                this._dataValue.value = new Variant({
+                    arrayType: VariantArrayType.Array,
+                    value: dv.value.value[name] || [],
+                    dataType: dataType
+
+                });
+
+            } else {
+                this._dataValue.value = new Variant({
+                    arrayType: VariantArrayType.Scalar,
+                    value: dv.value.value[name],
+                    dataType: dataType
+                });
+
+            }
+
+            //xx this._dataValue.value.value = dv.value.value[name];
+            //xx console.log( &quot;there &quot;,this._dataValue.toString());
+            return this._dataValue;
+        }
+    }, true);
+
+    // to do
+    prop.bindExtensionObject();
+
+}
+
+var lowerFirstLetter = require(&quot;lib/misc/utils&quot;).lowerFirstLetter;
+UAVariable.prototype.bindExtensionObject = function() {
+
+    var self = this;
+    var addressSpace = self.__address_space;
+
+    var structure = addressSpace.findDataType(&quot;Structure&quot;);
+
+
+    if (!structure) {
+        // the addressSpace is limited and doesn&#x27;t provide extension object
+        // bindExtensionObject cannot be performed and shall finish here.
+        return;
+    }
+    assert(structure &amp;&amp; structure.browseName.toString() === &quot;Structure&quot;,&quot; expecting DataType Structure to be in AddressSpace&quot;);
+
+    var components = self.getComponents();
+    var dt = addressSpace.findObject(self.dataType);
+
+    // istanbul ignore next
+    if (!dt)  {
+        throw new Error(&quot;cannot find dataType &quot;+ self.dataType.toString());
+    }
+
+    if(dt.isSupertypeOf(structure)) {
+
+        // ------------------------------------------------------
+        // make sure we have a structure
+        // ------------------------------------------------------
+        var s = self.readValue();
+
+        if (s.value &amp;&amp; s.value.dataType === DataType.Null) {
+            //xx console.log(&quot;xxxxx s=&quot;.bgRed, s.toString());
+            // create a structure and bind it
+            var theValue = new Variant({
+                dataType: DataType.ExtensionObject,
+                value: addressSpace.constructExtensionObject(self.dataType)
+            });
+
+            self.setValueFromSource(theValue,StatusCodes.Good);
+
+        } else {
+            // verify that variant has the correct type
+            assert(s.value.dataType === DataType.ExtensionObject);
+            assert(s.value.value.constructor.name === addressSpace.constructExtensionObject(self.dataType).constructor.name);
+        }
+
+        // ------------------------------------------------------
+        // now bind each member
+        // ------------------------------------------------------
+        dt.definition.forEach(function(field) {
+
+            var component = components.filter(function(f){
+                return f.browseName.name.toString() === field.name;
+            });
+            var name = lowerFirstLetter(field.name.toString());
+
+            if (component.length === 1) {
+
+                //xx var x = addressSpace.findObject(field.dataType).browseName.toString();
+                //xx  var basicType = addressSpace.findCorrespondingBasicDataType(field.dataType);
+                //xx console.log(&quot;xxxxxxxxxxxxxxxx = &quot;.bgCyan,field.dataType.toString(), field.name ,&quot;array&quot;, field.valueRank,x,basicType.toString().yellow,field.dataType.toString() );
+
+                _bindComponent(self,addressSpace,component[0], name, field.dataType,field.valueRank );
+            } else {
+                assert(component.length===0);
+                // create a variable
+                // Note we may use ns=1;s=parentName/0:PropertyName
+
+                var newProp = addressSpace.addVariable({
+                    browseName: field.name.toString(),
+                    dataType: field.dataType,
+                    componentOf: self
+                });
+                _bindComponent(self,addressSpace,newProp, name, field.dataType,field.valueRank );
+
+            }
+        });
+    }
+};
+
+exports.UAVariable = UAVariable;
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>
