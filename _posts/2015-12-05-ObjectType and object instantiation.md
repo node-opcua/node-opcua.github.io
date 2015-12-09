@@ -101,7 +101,7 @@ A instance of our TemperatureSensor Type can now be easily created.
 
 {% highlight javascript %}
 
-var temperatureSensor = temperatureSensorType.instanciate({
+var temperatureSensor = temperatureSensorType.instantiate({
   browseName: "MyTemperatureSensor"
 });
 
@@ -136,14 +136,14 @@ Note that the name of the javascript property doesn't match exactly the nameof t
 In javacript, we follow the camel case naming convention. For this reason, the "Temperature" component is
 accessible throught the javascript "temperature" (starting with a lower case 't' ).
 
-By default, ObjectType#instanciate only instantiate components and properties
+By default, ObjectType#instantiate only instantiate components and properties
 that have a "Mandatory" modelling rule.
 Component or property marked as optional in the ObjectType definition will be
 instatiated if their browseName appear in the ```options.optional```  array.
 
 {% highlight javascript %}
 
-var temperatureSensor = temperatureSensorType.instanciate({
+var temperatureSensor = temperatureSensorType.instantiate({
   browseName: "MyTemperatureSensor",
   optional: ["IdentificationNumber"]
 });
