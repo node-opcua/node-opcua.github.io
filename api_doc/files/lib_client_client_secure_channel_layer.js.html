@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>lib/client/client_secure_channel_layer.js - The NodeOPCUA API</title>
+    <title>lib\client\client_secure_channel_layer.js - The NodeOPCUA API</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.46</em>
+            <em>API Docs for: 0.0.52</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -56,6 +56,7 @@
                                 <li><a href="../classes/Argument.html">Argument</a></li>
                                 <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
                                 <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+                                <li><a href="../classes/AttributeNameById.html">AttributeNameById</a></li>
                                 <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
                                 <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
                                 <li><a href="../classes/BaseNode.html">BaseNode</a></li>
@@ -122,7 +123,7 @@
                                 <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
                                 <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
                                 <li><a href="../classes/EUInformation.html">EUInformation</a></li>
-                                <li><a href="../classes/EventField.html">EventField</a></li>
+                                <li><a href="../classes/EventFieldList.html">EventFieldList</a></li>
                                 <li><a href="../classes/EventFilter.html">EventFilter</a></li>
                                 <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
                                 <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
@@ -152,6 +153,7 @@
                                 <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
                                 <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
                                 <li><a href="../classes/MessageSecurityMode.html">MessageSecurityMode</a></li>
+                                <li><a href="../classes/ModelChangeStructure.html">ModelChangeStructure</a></li>
                                 <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
@@ -165,6 +167,7 @@
                                 <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
                                 <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
                                 <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+                                <li><a href="../classes/MyStructure.html">MyStructure</a></li>
                                 <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
                                 <li><a href="../classes/NodeId.html">NodeId</a></li>
                                 <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
@@ -203,6 +206,7 @@
                                 <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
                                 <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
                                 <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+                                <li><a href="../classes/RedundantServer.html">RedundantServer</a></li>
                                 <li><a href="../classes/Reference.html">Reference</a></li>
                                 <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
                                 <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
@@ -217,9 +221,11 @@
                                 <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
                                 <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
                                 <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+                                <li><a href="../classes/SamplingIntervalDiagnostics.html">SamplingIntervalDiagnostics</a></li>
                                 <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
                                 <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
                                 <li><a href="../classes/SecurityTokenRequestType.html">SecurityTokenRequestType</a></li>
+                                <li><a href="../classes/SemanticChangeStructure.html">SemanticChangeStructure</a></li>
                                 <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
                                 <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
                                 <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
@@ -232,6 +238,7 @@
                                 <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
                                 <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
                                 <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+                                <li><a href="../classes/SessionSecurityDiagnostics.html">SessionSecurityDiagnostics</a></li>
                                 <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
                                 <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
                                 <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
@@ -333,7 +340,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-<h1 class="file-heading">File: lib/client/client_secure_channel_layer.js</h1>
+<h1 class="file-heading">File: lib\client\client_secure_channel_layer.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
@@ -374,8 +381,10 @@ var ClientTCP_transport = require(&quot;lib/transport/client_tcp_transport&quot;
 var AsymmetricAlgorithmSecurityHeader = require(&quot;lib/services/secure_channel_service&quot;).AsymmetricAlgorithmSecurityHeader;
 var crypto_utils = require(&quot;lib/misc/crypto_utils&quot;);
 
-var debugLog = require(&quot;lib/misc/utils&quot;).make_debugLog(__filename);
-var doDebug = require(&quot;lib/misc/utils&quot;).checkDebugFlag(__filename);
+var utils =  require(&quot;lib/misc/utils&quot;);
+var debugLog = utils.make_debugLog(__filename);
+var doDebug = utils.checkDebugFlag(__filename);
+
 var get_clock_tick = require(&quot;lib/misc/utils&quot;).get_clock_tick;
 
 var readMessageHeader = require(&quot;lib/misc/message_header&quot;).readMessageHeader;
@@ -383,8 +392,8 @@ var readMessageHeader = require(&quot;lib/misc/message_header&quot;).readMessage
 var securityPolicy_m = require(&quot;lib/misc/security_policy&quot;);
 var SecurityPolicy = securityPolicy_m.SecurityPolicy;
 
-var do_trace_message = process.env.DEBUG &amp;&amp; (process.env.DEBUG.indexOf(&quot;TRACE&quot;)) &gt;= 0;
-
+var do_trace_message    =   process.env.DEBUG &amp;&amp; (process.env.DEBUG.indexOf(&quot;TRACE&quot;)) &gt;= 0;
+var do_trace_statistics =   process.env.DEBUG &amp;&amp; (process.env.DEBUG.indexOf(&quot;STATS&quot;)) &gt;= 0;
 function process_request_callback(request_data, err, response) {
 
     assert(_.isFunction(request_data.callback));
@@ -434,21 +443,24 @@ function _on_message_received(response, msgType, requestId) {
         &quot;  but got 0x&quot; + actual.toString(16) + &quot; &quot;).red.bold, moreinfo.yellow);
     }
 
+    request_data.response = response;
+
     /* istanbul ignore next */
     if (doDebug) {
         console.log(&quot; RESPONSE &quot;.red);
         console.log(response.toString());
     }
     // record tick2 : after response message has been received, before message processing
-    request_data._tick2 = self.messageBuilder._tick0;
+    request_data._tick2 = self.messageBuilder._tick1;
+    request_data.bytesRead = self.messageBuilder.total_message_size;
+
     // record tick3 : after response message has been received, before message processing
     request_data._tick3 = get_clock_tick();
-
     process_request_callback(request_data, null, response);
+
 
     // record tick4 after callback
     request_data._tick4 = get_clock_tick();
-
     // store some statistics
     self._record_transaction_statistics(request_data);
 
@@ -466,12 +478,17 @@ var g_channelId = 0;
  * @uses MessageChunker
  * @uses MessageBuilder
  * @param options
- * @param {Number} [options.defaultSecureTokenLifetime=3000]
+ * @param {Number} [options.defaultSecureTokenLifetime=30000 = 30 seconds]
  * @param [options.securityMode=MessageSecurityMode.NONE]
  * @param [options.securityPolicy=SecurityPolicy.None]
  * @param [options.serverCertificate=null] the serverCertificate (required if securityMode!=None)
  * @param options.parent {OPCUAClientBase} parent
  * @param [options.factory] an factory that provides a method createObjectId(id) for the message builder
+ * @param [options.transportTimeout = 10000 = 10 seconds] the transport timeout interval in ms
+ * @param [options.connectionStrategy] {Object}
+ * @param [options.connectionStrategy.maxRetry      = 10]
+ * @param [options.connectionStrategy.initialDelay  = 10]
+ * @param [options.connectionStrategy.maxDelay      = 10000]
  * @constructor
  */
 var ClientSecureChannelLayer = function (options) {
@@ -513,7 +530,6 @@ var ClientSecureChannelLayer = function (options) {
     self.messageBuilder.securityMode = self.securityMode;
     self.messageBuilder.privateKey = self.getPrivateKey();
 
-
     self._request_data = {};
 
     self.messageBuilder
@@ -523,13 +539,13 @@ var ClientSecureChannelLayer = function (options) {
             // request_data._tick2 = get_clock_tick();
         }).on(&quot;error&quot;, function (err, requestId) {
             //
-            console.log(&quot;request id = &quot;, requestId,err);
+            debugLog(&quot;request id = &quot;, requestId,err);
             var request_data = self._request_data[requestId];
             console.log(&quot; message was &quot;);
             console.log(request_data);
             if (!request_data) {
                 request_data = self._request_data[requestId + 1];
-                console.log(&quot; message was 2:&quot;, request_data.request.toString());
+                console.log(&quot; message was 2:&quot;, request_data ? request_data.request.toString() : &quot;&lt;null&gt;&quot;);
             }
             // xx console.log(request_data.request.toString());
 
@@ -539,8 +555,22 @@ var ClientSecureChannelLayer = function (options) {
 
     self._renew_security_token_requested = 0;
 
+    self._timedout_request_count = 0;
+
+    self.transportTimeout = options.transportTimeout || 10000;
+
     self.channelId = g_channelId;
     g_channelId += 1;
+
+
+    options.connectionStrategy = options.connectionStrategy || {};
+    self.connectionStrategy = {};
+    self.connectionStrategy.maxRetry     = options.connectionStrategy.maxRetry     || 10    ;
+    self.connectionStrategy.initialDelay = options.connectionStrategy.initialDelay || 10    ;
+    self.connectionStrategy.maxDelay     = options.connectionStrategy.maxDelay     || 10000 ;
+
+    var r = options.connectionStrategy.randomisationFactor;
+    self.connectionStrategy.randomisationFactor = ( r === undefined ) ? 0 : r;
 
 };
 util.inherits(ClientSecureChannelLayer, EventEmitter);
@@ -561,14 +591,23 @@ ClientSecureChannelLayer.prototype.getCertificateChain = function () {
 function _dump_transaction_statistics() {
     /* jshint validthis: true */
     var transaction_stats = this;
+    function w( str) {
+        return (&quot;                  &quot;+str).substr(-12);
+    }
 
     console.log(&quot;---------------------------------------------------------------------&gt;&gt; Stats&quot;.green.bold);
-    console.log(&quot;   time to send request      : &quot;, transaction_stats.lap_sending_request / 1000, &quot; sec&quot;);
-    console.log(&quot;   Bytes Written             : &quot;, transaction_stats.bytesWritten);
-    console.log(&quot;   time waiting for response : &quot;, transaction_stats.lap_waiting_response / 1000, &quot; sec&quot;);
-    console.log(&quot;   time to receive response  : &quot;, transaction_stats.lap_receiving_response / 1000, &quot; sec&quot;);
-    console.log(&quot;   Bytes Read                : &quot;, transaction_stats.bytesRead);
-    console.log(&quot;   time processing response  : &quot;, transaction_stats.lap_processing_response / 1000, &quot; sec&quot;);
+    console.log(&quot;   request                   : &quot;,
+        transaction_stats.request._schema.name.toString().yellow , &quot; / &quot;,
+        transaction_stats.response._schema.name.toString().yellow , &quot; - &quot;,
+        transaction_stats.response.responseHeader.serviceResult.toString());
+    console.log(&quot;   Bytes Read                : &quot;, w(transaction_stats.bytesRead) ,  &quot; bytes&quot;);
+    console.log(&quot;   Bytes Written             : &quot;, w(transaction_stats.bytesWritten) , &quot; bytes&quot;);
+    console.log(&quot;   transaction duration      : &quot;, w(transaction_stats.lap_transaction.toFixed(3)),           &quot; milliseconds&quot;);
+    console.log(&quot;   time to send request      : &quot;, w((transaction_stats.lap_sending_request).toFixed(3)),     &quot; milliseconds&quot;);
+    console.log(&quot;   time waiting for response : &quot;, w((transaction_stats.lap_waiting_response).toFixed(3)),    &quot; milliseconds&quot;);
+    console.log(&quot;   time to receive response  : &quot;, w((transaction_stats.lap_receiving_response).toFixed(3)),  &quot; milliseconds&quot;);
+    console.log(&quot;   time processing response  : &quot;, w((transaction_stats.lap_processing_response).toFixed(3)), &quot; milliseconds&quot;);
+
     console.log(&quot;---------------------------------------------------------------------&lt;&lt; Stats&quot;.green.bold);
 
 }
@@ -586,22 +625,37 @@ ClientSecureChannelLayer.prototype.on_transaction_completed = function (transact
 ClientSecureChannelLayer.prototype._record_transaction_statistics = function (request_data) {
 
     var self = this;
-    self._bytesRead_before = self._bytesRead_before || 0;
-    self._bytesWritten_before = self._bytesWritten_before || 0;
 
+    //assert(request_data._tick1&gt;0);
+    //assert(request_data._tick2&gt;0);
+    //assert(request_data._tick3&gt;0);
+    //assert(request_data._tick4&gt;0);
+    //assert(request_data.bytesWritten_after&gt;0);
+    //assert(request_data.bytesWritten_before&gt;0);
+
+    //---------------------------------------------------------------------------------------------------------|-
+    //      _tick0                _tick1                         _tick2                       _tick3          _tick4
+    //          sending request
+    //        |---------------------|  waiting response
+    //                              |------------------------------|      receiving response
+    //                                                             |---------------------------| process.resp
+    //                                                                                         |---------------|
     self.last_transaction_stats = {
-        bytesRead: self.bytesRead - self._bytesRead_before,
-        bytesWritten: self.bytesWritten - self._bytesWritten_before,
-        lap_sending_request: request_data._tick1 - request_data._tick0,
-        lap_waiting_response: request_data._tick2 - request_data._tick1,
-        lap_receiving_response: request_data._tick3 - request_data._tick2,
-        lap_processing_response: request_data._tick4 - request_data._tick3
+        request: request_data.request,
+        response: request_data.response,
+        bytesWritten:             request_data.bytesWritten_after - request_data.bytesWritten_before,
+        bytesRead:                request_data.bytesRead,
+        lap_sending_request:      request_data._tick1 - request_data._tick0,
+        lap_waiting_response:     request_data._tick2 - request_data._tick1,
+        lap_receiving_response:   request_data._tick3 - request_data._tick2,
+        lap_processing_response:  request_data._tick4 - request_data._tick3,
+        lap_transaction:          request_data._tick4 - request_data._tick0
     };
     self.last_transaction_stats.dump = _dump_transaction_statistics;
 
-    // final operation in statistics
-    self._bytesRead_before = self.bytesRead;
-    self._bytesWritten_before = self.bytesWritten;
+    if(do_trace_statistics) {
+        self.last_transaction_stats.dump();
+    }
 
 };
 
@@ -630,6 +684,7 @@ function _cancel_pending_transactions(err) {
 
 function _on_transport_closed(error) {
 
+    debugLog(&quot; =&gt;_on_transport_closed&quot;);
     /* jshint validthis: true */
     var self = this;
 
@@ -655,7 +710,7 @@ function _on_security_token_about_to_expire() {
     /* jshint validthis: true */
     var self = this;
 
-    debugLog(&quot; client: Security Token is about to expired, let&#x27;s raise lifetime_75 event &quot;);
+    debugLog(&quot; client: Security Token &quot;, self.securityToken.tokenId,&quot; is about to expired, let&#x27;s raise lifetime_75 event &quot;);
 
     /**
      * notify the observer that the secure channel has now reach 75% of its allowed live time and
@@ -841,7 +896,17 @@ function _on_connection(transport, callback, err) {
             self._on_receive_message_chunk(message_chunk);
         });
 
+
         self._transport.on(&quot;close&quot;, _on_transport_closed.bind(this));
+
+        self._transport.on(&quot;connection_break&quot;,function(){
+            debugLog(&quot;Client =&gt; CONNECTION BREAK  &lt;=&quot;.red);
+            _on_transport_closed.call(self,new Error(&quot;Connection Break&quot;));
+        });
+
+        self._transport.on(&quot;error&quot;,function(){
+        });
+
 
         var is_initial = true;
         _open_secure_channel_request.call(self, is_initial, callback);
@@ -905,6 +970,7 @@ ClientSecureChannelLayer.prototype.create = function (endpoint_url, callback) {
                     return callback(err);
                 }
                 self.receiverPublicKey = publicKey;
+                assert(!_.isUndefined(self.receiverPublicKey)); // make sure we wont go into infinite recursion calling create again.
                 self.create(endpoint_url, callback);
             });
             return undefined;
@@ -913,13 +979,119 @@ ClientSecureChannelLayer.prototype.create = function (endpoint_url, callback) {
     }
 
 
-    this.endpoint_url = endpoint_url;
+    self.endpoint_url = endpoint_url;
     var transport = new ClientTCP_transport();
+    transport.timeout = self.transportTimeout;
     transport.protocolVersion = self.protocolVersion;
 
-    transport.connect(endpoint_url, _on_connection.bind(this, transport, callback));
+
+    // -------------------------------------------------------------------------
+    // Handle reconnection
+    // --------------------------------------------------------------------------
+    var _establish_connection = function (transport,endpoint_url,callback) {
+
+        var backoff = require(&#x27;backoff&#x27;);
+
+        var last_err= null;
+
+        function _connect(_i_callback) {
+
+            if (self.__call._cancelBackoff) {
+                setImmediate(function() {
+                    self.__call.abort();
+                    _i_callback(null,new Error(&quot;Connection abandonned&quot;));
+                });
+                return;
+            }
+            transport.connect(endpoint_url, function (err) {
+
+                // force Backoff to fail if err is not ECONNRESET or ECONNREFUSE
+                // this mean that the connection to the server has succeeded but for some reason
+                // the server has denied the connection
+                // the cause could be:
+                //   - invalid protocol version specified by client
+                //   - server going to shutdown
+                //   - server too busy -
+                //   - server shielding itself from a DOS attack
+                if (err) {
+
+                    last_err = err;
+
+                    if (true) {
+                        // connection cannot be establish ? if not, abort the backoff process
+                        if (err.message.match(/ECONNRESET/)) {
+                            debugLog(&quot; Aborting backoff process prematuraly - err = &quot;, err.message);
+                            self.__call.abort();
+                            //xx call emit fail ( this line should be removed when new version of backoff will be posted)
+                            //xx self.__call.backoff_.emit(&quot;fail&quot;,err);
+                            //xx self.__call.failAfter(1);
+
+                        } else {
+                        console.log(&quot; backoff - keep trying - err = &quot;, err.message);
+                            debugLog(&quot; backoff - keep trying - err = &quot;, err.message);
+                        }
+                    }
+                }
+                _i_callback(err);
+            });
+        }
+        self.__call = backoff.call(_connect, function(err) {
+
+            transport.numberOfRetry =self.__call.getNumRetries();
+            //console.log(&#x27;xxx Num retries: &#x27; + transport.numberOfRetry );
+            if (err) {
+                //xx console.log(&#x27;xxx Error: &#x27; + err.message,last_err.message);
+                callback(last_err);
+            } else {
+                callback();
+            }
+            self.__call.removeAllListeners();
+            self.__call = null;
+        });
+        self.__call._cancelBackoff = false;
+        self.__call.failAfter(self.connectionStrategy.maxRetry);
+
+        self.__call.on(&#x27;backoff&#x27;, function(number, delay) {
+
+            debugLog(&quot; Backoff #&quot;.bgWhite.cyan,number,&quot;delay = &quot;,delay);
+            // Do something when backoff starts, e.g. show to the
+            // user the delay before next reconnection attempt.
+            /**
+             * @event backoff
+             */
+            self.emit(&quot;backoff&quot;,number,delay);
+        });
+        self.__call.on(&#x27;abort&#x27;, function(err) {
+            debugLog(&quot; abort #&quot;.bgWhite.cyan,&quot; after &quot;,self.__call.getNumRetries(), &quot; retries&quot;);
+            // Do something when backoff starts, e.g. show to the
+            // user the delay before next reconnection attempt.
+            /**
+             * @event backoff
+             */
+            self.emit(&quot;abort&quot;);
+        });
+
+        self.__call.setStrategy(new backoff.ExponentialStrategy(self.connectionStrategy));
+        self.__call.start();
+    };
+
+    _establish_connection(transport,endpoint_url, _on_connection.bind(this, transport, callback));
 
 };
+
+ClientSecureChannelLayer.prototype.abortConnection = function(callback)
+{
+    assert(_.isFunction(callback));
+    var self = this;
+    if (self.__call) {
+        self.__call.once(&quot;abort&quot;,function() {
+            callback();
+        });
+
+        self.__call._cancelBackoff = true;
+    }
+};
+
 
 ClientSecureChannelLayer.prototype._renew_security_token = function () {
 
@@ -950,7 +1122,6 @@ ClientSecureChannelLayer.prototype._renew_security_token = function () {
         });
         self._renew_security_token_requested = 0;
     }
-
 };
 
 ClientSecureChannelLayer.prototype._on_receive_message_chunk = function (message_chunk) {
@@ -962,7 +1133,7 @@ ClientSecureChannelLayer.prototype._on_receive_message_chunk = function (message
         var _stream = new BinaryStream(message_chunk);
         var messageHeader = readMessageHeader(_stream);
         debugLog(&quot;CLIENT RECEIVED &quot; + (JSON.stringify(messageHeader) + &quot;&quot;).yellow);
-        debugLog(hexDump(message_chunk).blue.bold);
+        debugLog(&quot;\n&quot;+hexDump(message_chunk).blue);
         debugLog(messageHeaderToString(message_chunk));
     }
     self.messageBuilder.feed(message_chunk);
@@ -1073,6 +1244,16 @@ ClientSecureChannelLayer.prototype._performMessageTransaction = function (msgTyp
     timerId = setTimeout(function () {
         console.log(&quot; Timeout .... waiting for response for &quot;, requestMessage.requestHeader.toString());
         modified_callback(new Error(&quot;Transaction has timed out&quot;));
+
+        self._timedout_request_count += 1;
+        /**
+         * @event timed_out_request
+         * notify the observer that the response from the request has not been
+         * received within the timeoutHint specified
+         * @param message_chunk {Object}  the message chunk
+         */
+        self.emit(&quot;timed_out_request&quot;, requestMessage);
+
     }, timeout);
 
     var transaction_data = {msgType: msgType, request: requestMessage, callback: modified_callback};
@@ -1089,7 +1270,9 @@ ClientSecureChannelLayer.prototype._internal_perform_transaction = function (tra
     assert(_.isFunction(transaction_data.callback));
 
     if (!self._transport) {
-        transaction_data.callback(new Error(&quot;Client not connected&quot;));
+        setTimeout(function(){
+            transaction_data.callback(new Error(&quot;Client not connected&quot;));
+        },1000);
         return;
     }
     assert(self._transport, &quot; must have a valid transport&quot;);
@@ -1112,6 +1295,10 @@ ClientSecureChannelLayer.prototype._internal_perform_transaction = function (tra
         request: requestMessage,
         msgType: msgType,
         callback: transaction_data.callback,
+
+        bytesWritten_before: self.bytesWritten,
+        bytesWritten_after : 0,
+
         //record tick0 : before request is being sent to server
         _tick0: get_clock_tick(),
         //record tick1:  after request has been sent to server
@@ -1121,7 +1308,8 @@ ClientSecureChannelLayer.prototype._internal_perform_transaction = function (tra
         // record tick3 : after response message has been received, before message processing
         _tick3: null,
         // record tick4 after callback
-        _tick4: null
+        _tick4: null,
+        chunk_count: 0
     };
 
     self._sendSecureOpcUARequest(msgType, requestMessage, requestId);
@@ -1131,6 +1319,8 @@ ClientSecureChannelLayer.prototype._internal_perform_transaction = function (tra
 ClientSecureChannelLayer.prototype._send_chunk = function (requestId, messageChunk) {
 
     var self = this;
+    var request_data = self._request_data[requestId];
+
     if (messageChunk) {
 
         /**
@@ -1141,7 +1331,7 @@ ClientSecureChannelLayer.prototype._send_chunk = function (requestId, messageChu
         self.emit(&quot;send_chunk&quot;, messageChunk);
 
         /* istanbul ignore next */
-        if (doDebug) {
+        if (doDebug &amp;&amp; false) {
             verify_message_chunk(messageChunk);
             debugLog(&quot;CLIENT SEND chunk &quot;.yellow);
             debugLog(messageHeaderToString(messageChunk).yellow);
@@ -1149,17 +1339,19 @@ ClientSecureChannelLayer.prototype._send_chunk = function (requestId, messageChu
         }
         assert(self._transport);
         self._transport.write(messageChunk);
+        request_data.chunk_count +=1;
+
     } else {
+        // last chunk ....
 
         /* istanbul ignore next */
         if (doDebug) {
             debugLog(&quot;CLIENT SEND done.&quot;.yellow.bold);
         }
-
-        var request_data = self._request_data[requestId];
         if (request_data) {
             //record tick1: when request has been sent to server
             request_data._tick1 = get_clock_tick();
+            request_data.bytesWritten_after = self.bytesWritten;
         }
     }
 };
@@ -1243,7 +1435,6 @@ ClientSecureChannelLayer.prototype._get_security_options_for_OPN = function () {
 
     return options;
 };
-
 
 ClientSecureChannelLayer.prototype._get_security_options_for_MSG = function () {
 
@@ -1348,6 +1539,11 @@ ClientSecureChannelLayer.prototype.__defineGetter__(&quot;bytesWritten&quot;, fu
 ClientSecureChannelLayer.prototype.__defineGetter__(&quot;transactionsPerformed&quot;, function () {
     var self = this;
     return self._lastRequestId;
+});
+
+ClientSecureChannelLayer.prototype.__defineGetter__(&quot;timedOutRequestCount&quot;, function () {
+    var self = this;
+    return self._timedout_request_count;
 });
 
 exports.ClientSecureChannelLayer = ClientSecureChannelLayer;

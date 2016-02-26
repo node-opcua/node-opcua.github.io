@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.46</em>
+            <em>API Docs for: 0.0.52</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -56,6 +56,7 @@
                                 <li><a href="../classes/Argument.html">Argument</a></li>
                                 <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
                                 <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+                                <li><a href="../classes/AttributeNameById.html">AttributeNameById</a></li>
                                 <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
                                 <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
                                 <li><a href="../classes/BaseNode.html">BaseNode</a></li>
@@ -122,7 +123,7 @@
                                 <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
                                 <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
                                 <li><a href="../classes/EUInformation.html">EUInformation</a></li>
-                                <li><a href="../classes/EventField.html">EventField</a></li>
+                                <li><a href="../classes/EventFieldList.html">EventFieldList</a></li>
                                 <li><a href="../classes/EventFilter.html">EventFilter</a></li>
                                 <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
                                 <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
@@ -152,6 +153,7 @@
                                 <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
                                 <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
                                 <li><a href="../classes/MessageSecurityMode.html">MessageSecurityMode</a></li>
+                                <li><a href="../classes/ModelChangeStructure.html">ModelChangeStructure</a></li>
                                 <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
@@ -165,6 +167,7 @@
                                 <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
                                 <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
                                 <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+                                <li><a href="../classes/MyStructure.html">MyStructure</a></li>
                                 <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
                                 <li><a href="../classes/NodeId.html">NodeId</a></li>
                                 <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
@@ -203,6 +206,7 @@
                                 <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
                                 <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
                                 <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+                                <li><a href="../classes/RedundantServer.html">RedundantServer</a></li>
                                 <li><a href="../classes/Reference.html">Reference</a></li>
                                 <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
                                 <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
@@ -217,9 +221,11 @@
                                 <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
                                 <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
                                 <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+                                <li><a href="../classes/SamplingIntervalDiagnostics.html">SamplingIntervalDiagnostics</a></li>
                                 <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
                                 <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
                                 <li><a href="../classes/SecurityTokenRequestType.html">SecurityTokenRequestType</a></li>
+                                <li><a href="../classes/SemanticChangeStructure.html">SemanticChangeStructure</a></li>
                                 <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
                                 <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
                                 <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
@@ -232,6 +238,7 @@
                                 <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
                                 <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
                                 <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+                                <li><a href="../classes/SessionSecurityDiagnostics.html">SessionSecurityDiagnostics</a></li>
                                 <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
                                 <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
                                 <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
@@ -347,7 +354,7 @@
         </div>
 
         <div class="foundat">
-            Defined in: <a href="../files/lib_server_server_engine.js.html#l1190"><code>lib&#x2F;server&#x2F;server_engine.js:1190</code></a>
+            Defined in: <a href="../files/lib_server_server_engine.js.html#l1075"><code>lib\server\server_engine.js:1075</code></a>
         </div>
 
             Module: <a href="../modules/opcua.server.html">opcua.server</a>
@@ -386,7 +393,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_server_engine.js.html#l1190"><code>lib&#x2F;server&#x2F;server_engine.js:1190</code></a>
+        <a href="../files/lib_server_server_engine.js.html#l1075"><code>lib\server\server_engine.js:1075</code></a>
         </p>
 
 
@@ -460,19 +467,21 @@
                                 <a href="#method_add_subscription">add_subscription</a>
 
                             </li>
-                            <li class="index-item method">
+                            <li class="index-item method deprecated inherited">
                                 <a href="#method_addMethod">addMethod</a>
 
+                                    <span class="flag deprecated">deprecated</span>
                             </li>
-                            <li class="index-item method">
+                            <li class="index-item method deprecated inherited">
                                 <a href="#method_addVariable">addVariable</a>
 
+                                    <span class="flag deprecated">deprecated</span>
                             </li>
                             <li class="index-item method">
                                 <a href="#method_bindMethod">bindMethod</a>
 
                             </li>
-                            <li class="index-item method">
+                            <li class="index-item method inherited">
                                 <a href="#method_bindVariable">bindVariable</a>
 
                             </li>
@@ -492,13 +501,10 @@
                                 <a href="#method_closeSession">closeSession</a>
 
                             </li>
-                            <li class="index-item method">
-                                <a href="#method_findObject">findObject</a>
+                            <li class="index-item method deprecated inherited">
+                                <a href="#method_findNode">findNode</a>
 
-                            </li>
-                            <li class="index-item method">
-                                <a href="#method_findObjectByBrowseName">findObjectByBrowseName</a>
-
+                                    <span class="flag deprecated">deprecated</span>
                             </li>
                             <li class="index-item method">
                                 <a href="#method_getSession">getSession</a>
@@ -528,13 +534,10 @@
                                 <a href="#method_registerShutdownTask">registerShutdownTask</a>
 
                             </li>
-                            <li class="index-item method inherited">
-                                <a href="#method_remove_subscription">remove_subscription</a>
-
-                            </li>
-                            <li class="index-item method">
+                            <li class="index-item method deprecated inherited">
                                 <a href="#method_resolveNodeId">resolveNodeId</a>
 
+                                    <span class="flag deprecated">deprecated</span>
                             </li>
                             <li class="index-item method">
                                 <a href="#method_secondsTillShutdown">secondsTillShutdown</a>
@@ -600,6 +603,10 @@
 
                             </li>
                             <li class="index-item property inherited">
+                                <a href="#property_subscription">subscription</a>
+
+                            </li>
+                            <li class="index-item property inherited">
                                 <a href="#property_subscriptionCount">subscriptionCount</a>
 
                             </li>
@@ -633,7 +640,7 @@
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/ServerSidePublishEngine.html#method_add_subscription">ServerSidePublishEngine</a>:
-        <a href="../files/lib_server_server_publish_engine.js.html#l323"><code>lib&#x2F;server&#x2F;server_publish_engine.js:323</code></a>
+        <a href="../files/lib_server_server_publish_engine.js.html#l340"><code>lib\server\server_publish_engine.js:340</code></a>
         </p>
 
 
@@ -664,7 +671,7 @@
 
 
 </div>
-<div id="method_addMethod" class="method item">
+<div id="method_addMethod" class="method item deprecated inherited">
     <h3 class="name"><code>addMethod</code></h3>
 
         <div class="args">
@@ -682,6 +689,7 @@
             <span class="type">Object</span>
         </span>
 
+        <span class="flag deprecated">deprecated</span>
 
 
 
@@ -689,9 +697,9 @@
 
 
     <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/lib_server_server_engine.js.html#l834"><code>lib&#x2F;server&#x2F;server_engine.js:834</code></a>
+                <p>Inherited from
+                <a href="../classes/ServerSidePublishEngine.html#method_addMethod">ServerSidePublishEngine</a>:
+        <a href="../files/lib_server_server_engine_deprecated.js.html#l69"><code>lib\server\server_engine_deprecated.js:69</code></a>
         </p>
 
 
@@ -712,7 +720,7 @@
 
 
                     <div class="param-description">
-                        
+                         
                     </div>
 
                 </li>
@@ -722,7 +730,7 @@
 
 
                     <div class="param-description">
-                        
+                         
                     </div>
 
                         <ul class="params-list">
@@ -792,7 +800,7 @@
 
 
 </div>
-<div id="method_addVariable" class="method item">
+<div id="method_addVariable" class="method item deprecated inherited">
     <h3 class="name"><code>addVariable</code></h3>
 
         <div class="args">
@@ -807,6 +815,7 @@
             <span class="type"><a href="../classes/UAVariable.html" class="crosslink">UAVariable</a></span>
         </span>
 
+        <span class="flag deprecated">deprecated</span>
 
 
 
@@ -814,9 +823,9 @@
 
 
     <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/lib_server_server_engine.js.html#l809"><code>lib&#x2F;server&#x2F;server_engine.js:809</code></a>
+                <p>Inherited from
+                <a href="../classes/ServerSidePublishEngine.html#method_addVariable">ServerSidePublishEngine</a>:
+        <a href="../files/lib_server_server_engine_deprecated.js.html#l46"><code>lib\server\server_engine_deprecated.js:46</code></a>
         </p>
 
 
@@ -824,8 +833,7 @@
     </div>
 
     <div class="description">
-        <p>add a new variable inside an object</p>
-
+        add a new variable inside an object
     </div>
 
         <div class="params">
@@ -838,7 +846,7 @@
 
 
                     <div class="param-description">
-                        
+                         
                     </div>
 
                         <ul class="params-list">
@@ -966,7 +974,7 @@ Same as Variable/bindVariable options parameter. see Variable/bindVariable for m
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_server_engine.js.html#l1165"><code>lib&#x2F;server&#x2F;server_engine.js:1165</code></a>
+        <a href="../files/lib_server_server_engine.js.html#l1043"><code>lib\server\server_engine.js:1043</code></a>
         </p>
 
 
@@ -1055,7 +1063,7 @@ Same as Variable/bindVariable options parameter. see Variable/bindVariable for m
 
 
 </div>
-<div id="method_bindVariable" class="method item">
+<div id="method_bindVariable" class="method item inherited">
     <h3 class="name"><code>bindVariable</code></h3>
 
         <div class="args">
@@ -1080,9 +1088,9 @@ Same as Variable/bindVariable options parameter. see Variable/bindVariable for m
 
 
     <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/lib_server_server_engine.js.html#l1139"><code>lib&#x2F;server&#x2F;server_engine.js:1139</code></a>
+                <p>Inherited from
+                <a href="../classes/ServerSidePublishEngine.html#method_bindVariable">ServerSidePublishEngine</a>:
+        <a href="../files/lib_server_server_engine_deprecated.js.html#l96"><code>lib\server\server_engine_deprecated.js:96</code></a>
         </p>
 
 
@@ -1090,8 +1098,7 @@ Same as Variable/bindVariable options parameter. see Variable/bindVariable for m
     </div>
 
     <div class="description">
-        <p>bind a variable</p>
-
+        bind a variable
     </div>
 
         <div class="params">
@@ -1104,8 +1111,7 @@ Same as Variable/bindVariable options parameter. see Variable/bindVariable for m
 
 
                     <div class="param-description">
-                        <p>the variable nodeid to configure.</p>
-
+                        the variable nodeid to configure.
                     </div>
 
                 </li>
@@ -1115,8 +1121,7 @@ Same as Variable/bindVariable options parameter. see Variable/bindVariable for m
 
 
                     <div class="param-description">
-                        <p>see <a href="../classes/UAVariable.html#method_bindVariable" class="crosslink">bindVariable</a> for description of this parameter.</p>
-
+                        see {{#crossLink "UAVariable/bindVariable"}}{{/crossLink}} for description of this parameter.
                     </div>
 
                 </li>
@@ -1127,8 +1132,7 @@ Same as Variable/bindVariable options parameter. see Variable/bindVariable for m
             <h4>Returns:</h4>
 
             <div class="returns-description">
-                    <p>void</p>
-
+                    void
             </div>
         </div>
 
@@ -1158,7 +1162,7 @@ Same as Variable/bindVariable options parameter. see Variable/bindVariable for m
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_server_engine.js.html#l941"><code>lib&#x2F;server&#x2F;server_engine.js:941</code></a>
+        <a href="../files/lib_server_server_engine.js.html#l828"><code>lib\server\server_engine.js:828</code></a>
         </p>
 
 
@@ -1220,7 +1224,7 @@ Same as Variable/bindVariable options parameter. see Variable/bindVariable for m
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_server_engine.js.html#l1301"><code>lib&#x2F;server&#x2F;server_engine.js:1301</code></a>
+        <a href="../files/lib_server_server_engine.js.html#l1186"><code>lib\server\server_engine.js:1186</code></a>
         </p>
 
 
@@ -1285,7 +1289,7 @@ Same as Variable/bindVariable options parameter. see Variable/bindVariable for m
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_server_engine.js.html#l875"><code>lib&#x2F;server&#x2F;server_engine.js:875</code></a>
+        <a href="../files/lib_server_server_engine.js.html#l762"><code>lib\server\server_engine.js:762</code></a>
         </p>
 
 
@@ -1379,7 +1383,7 @@ Same as Variable/bindVariable options parameter. see Variable/bindVariable for m
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_server_engine.js.html#l1246"><code>lib&#x2F;server&#x2F;server_engine.js:1246</code></a>
+        <a href="../files/lib_server_server_engine.js.html#l1131"><code>lib\server\server_engine.js:1131</code></a>
         </p>
 
 
@@ -1427,8 +1431,8 @@ its lifetime expires.</p>
 
 
 </div>
-<div id="method_findObject" class="method item">
-    <h3 class="name"><code>findObject</code></h3>
+<div id="method_findNode" class="method item deprecated inherited">
+    <h3 class="name"><code>findNode</code></h3>
 
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
@@ -1442,6 +1446,7 @@ its lifetime expires.</p>
             <span class="type"><a href="../classes/BaseNode.html" class="crosslink">BaseNode</a></span>
         </span>
 
+        <span class="flag deprecated">deprecated</span>
 
 
 
@@ -1449,9 +1454,9 @@ its lifetime expires.</p>
 
 
     <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/lib_server_server_engine.js.html#l782"><code>lib&#x2F;server&#x2F;server_engine.js:782</code></a>
+                <p>Inherited from
+                <a href="../classes/ServerSidePublishEngine.html#method_findNode">ServerSidePublishEngine</a>:
+        <a href="../files/lib_server_server_engine_deprecated.js.html#l32"><code>lib\server\server_engine_deprecated.js:32</code></a>
         </p>
 
 
@@ -1472,7 +1477,7 @@ its lifetime expires.</p>
 
 
                     <div class="param-description">
-                        
+                         
                     </div>
 
                 </li>
@@ -1484,70 +1489,6 @@ its lifetime expires.</p>
 
             <div class="returns-description">
                         <span class="type"><a href="../classes/BaseNode.html" class="crosslink">BaseNode</a></span>:
-            </div>
-        </div>
-
-
-</div>
-<div id="method_findObjectByBrowseName" class="method item">
-    <h3 class="name"><code>findObjectByBrowseName</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>browseName</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-        <span class="returns-inline">
-            <span class="type"><a href="../classes/BaseNode.html" class="crosslink">BaseNode</a></span>
-        </span>
-
-
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/lib_server_server_engine.js.html#l794"><code>lib&#x2F;server&#x2F;server_engine.js:794</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">browseName</code>
-                        <span class="type">Object</span>
-
-
-                    <div class="param-description">
-                        
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type"><a href="../classes/BaseNode.html" class="crosslink">BaseNode</a></span>:
-                    <p>Root.Folders.Server.ServerStatus</p>
-
             </div>
         </div>
 
@@ -1580,7 +1521,7 @@ its lifetime expires.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_server_engine.js.html#l1278"><code>lib&#x2F;server&#x2F;server_engine.js:1278</code></a>
+        <a href="../files/lib_server_server_engine.js.html#l1163"><code>lib\server\server_engine.js:1163</code></a>
         </p>
 
 
@@ -1653,7 +1594,7 @@ its lifetime expires.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/ServerSidePublishEngine.html#method_getSubscriptionById">ServerSidePublishEngine</a>:
-        <a href="../files/lib_server_server_publish_engine.js.html#l387"><code>lib&#x2F;server&#x2F;server_publish_engine.js:387</code></a>
+        <a href="../files/lib_server_server_publish_engine.js.html#l419"><code>lib\server\server_publish_engine.js:419</code></a>
         </p>
 
 
@@ -1716,7 +1657,7 @@ its lifetime expires.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_server_engine.js.html#l357"><code>lib&#x2F;server&#x2F;server_engine.js:357</code></a>
+        <a href="../files/lib_server_server_engine.js.html#l368"><code>lib\server\server_engine.js:368</code></a>
         </p>
 
 
@@ -1795,7 +1736,7 @@ its lifetime expires.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_server_engine.js.html#l1022"><code>lib&#x2F;server&#x2F;server_engine.js:1022</code></a>
+        <a href="../files/lib_server_server_engine.js.html#l909"><code>lib\server\server_engine.js:909</code></a>
         </p>
 
 
@@ -1910,7 +1851,7 @@ are invalid for maxAge.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_server_engine.js.html#l965"><code>lib&#x2F;server&#x2F;server_engine.js:965</code></a>
+        <a href="../files/lib_server_server_engine.js.html#l852"><code>lib\server\server_engine.js:852</code></a>
         </p>
 
 
@@ -1994,7 +1935,7 @@ are invalid for maxAge.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_server_engine.js.html#l1311"><code>lib&#x2F;server&#x2F;server_engine.js:1311</code></a>
+        <a href="../files/lib_server_server_engine.js.html#l1196"><code>lib\server\server_engine.js:1196</code></a>
         </p>
 
 
@@ -2076,7 +2017,7 @@ Variable with asyncRefresh func }</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_server_engine.js.html#l180"><code>lib&#x2F;server&#x2F;server_engine.js:180</code></a>
+        <a href="../files/lib_server_server_engine.js.html#l181"><code>lib\server\server_engine.js:181</code></a>
         </p>
 
 
@@ -2092,59 +2033,7 @@ Variable with asyncRefresh func }</p>
 
 
 </div>
-<div id="method_remove_subscription" class="method item inherited">
-    <h3 class="name"><code>remove_subscription</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>subscription</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-
-
-
-
-
-
-
-    <div class="meta">
-                <p>Inherited from
-                <a href="../classes/ServerSidePublishEngine.html#method_remove_subscription">ServerSidePublishEngine</a>:
-        <a href="../files/lib_server_server_publish_engine.js.html#l338"><code>lib&#x2F;server&#x2F;server_publish_engine.js:338</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">subscription</code>
-                        <span class="type"><a href="../classes/Subscription.html" class="crosslink">Subscription</a></span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-
-
-</div>
-<div id="method_resolveNodeId" class="method item">
+<div id="method_resolveNodeId" class="method item deprecated inherited">
     <h3 class="name"><code>resolveNodeId</code></h3>
 
         <div class="args">
@@ -2159,6 +2048,7 @@ Variable with asyncRefresh func }</p>
             <span class="type"><a href="../classes/NodeId.html" class="crosslink">NodeId</a></span>
         </span>
 
+        <span class="flag deprecated">deprecated</span>
 
 
 
@@ -2166,9 +2056,9 @@ Variable with asyncRefresh func }</p>
 
 
     <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/lib_server_server_engine.js.html#l740"><code>lib&#x2F;server&#x2F;server_engine.js:740</code></a>
+                <p>Inherited from
+                <a href="../classes/ServerSidePublishEngine.html#method_resolveNodeId">ServerSidePublishEngine</a>:
+        <a href="../files/lib_server_server_engine_deprecated.js.html#l6"><code>lib\server\server_engine_deprecated.js:6</code></a>
         </p>
 
 
@@ -2189,7 +2079,7 @@ Variable with asyncRefresh func }</p>
 
 
                     <div class="param-description">
-                        
+                         
                     </div>
 
                 </li>
@@ -2224,7 +2114,7 @@ Variable with asyncRefresh func }</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_server_engine.js.html#l276"><code>lib&#x2F;server&#x2F;server_engine.js:276</code></a>
+        <a href="../files/lib_server_server_engine.js.html#l287"><code>lib\server\server_engine.js:287</code></a>
         </p>
 
 
@@ -2276,7 +2166,7 @@ value is only relevant once the state changes into SHUTDOWN.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/ServerSidePublishEngine.html#method_send_keep_alive_response">ServerSidePublishEngine</a>:
-        <a href="../files/lib_server_server_publish_engine.js.html#l180"><code>lib&#x2F;server&#x2F;server_publish_engine.js:180</code></a>
+        <a href="../files/lib_server_server_publish_engine.js.html#l197"><code>lib\server\server_publish_engine.js:197</code></a>
         </p>
 
 
@@ -2348,7 +2238,7 @@ expired.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/ServerSidePublishEngine.html#method_send_notification_message">ServerSidePublishEngine</a>:
-        <a href="../files/lib_server_server_publish_engine.js.html#l267"><code>lib&#x2F;server&#x2F;server_publish_engine.js:267</code></a>
+        <a href="../files/lib_server_server_publish_engine.js.html#l284"><code>lib\server\server_publish_engine.js:284</code></a>
         </p>
 
 
@@ -2444,7 +2334,7 @@ expired.
                 ServerSidePublishEngine
             </a>
             but overwritten in
-        <a href="../files/lib_server_server_engine.js.html#l190"><code>lib&#x2F;server&#x2F;server_engine.js:190</code></a>
+        <a href="../files/lib_server_server_engine.js.html#l199"><code>lib\server\server_engine.js:199</code></a>
         </p>
 
 
@@ -2484,7 +2374,7 @@ expired.
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_server_engine.js.html#l1108"><code>lib&#x2F;server&#x2F;server_engine.js:1108</code></a>
+        <a href="../files/lib_server_server_engine.js.html#l995"><code>lib\server\server_engine.js:995</code></a>
         </p>
 
 
@@ -2571,7 +2461,7 @@ expired.
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_server_engine.js.html#l1072"><code>lib&#x2F;server&#x2F;server_engine.js:1072</code></a>
+        <a href="../files/lib_server_server_engine.js.html#l959"><code>lib\server\server_engine.js:959</code></a>
         </p>
 
 
@@ -2648,7 +2538,7 @@ expired.
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_server_engine.js.html#l230"><code>lib&#x2F;server&#x2F;server_engine.js:230</code></a>
+        <a href="../files/lib_server_server_engine.js.html#l241"><code>lib\server\server_engine.js:241</code></a>
         </p>
 
 
@@ -2673,7 +2563,7 @@ expired.
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_server_engine.js.html#l247"><code>lib&#x2F;server&#x2F;server_engine.js:247</code></a>
+        <a href="../files/lib_server_server_engine.js.html#l258"><code>lib\server\server_engine.js:258</code></a>
         </p>
 
 
@@ -2698,7 +2588,7 @@ expired.
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_server_engine.js.html#l221"><code>lib&#x2F;server&#x2F;server_engine.js:221</code></a>
+        <a href="../files/lib_server_server_engine.js.html#l232"><code>lib\server\server_engine.js:232</code></a>
         </p>
 
 
@@ -2723,7 +2613,7 @@ expired.
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_server_engine.js.html#l239"><code>lib&#x2F;server&#x2F;server_engine.js:239</code></a>
+        <a href="../files/lib_server_server_engine.js.html#l250"><code>lib\server\server_engine.js:250</code></a>
         </p>
 
 
@@ -2748,7 +2638,7 @@ expired.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/ServerSidePublishEngine.html#property_pendingPublishRequestCount">ServerSidePublishEngine</a>:
-        <a href="../files/lib_server_server_publish_engine.js.html#l369"><code>lib&#x2F;server&#x2F;server_publish_engine.js:369</code></a>
+        <a href="../files/lib_server_server_publish_engine.js.html#l389"><code>lib\server\server_publish_engine.js:389</code></a>
         </p>
 
 
@@ -2772,7 +2662,7 @@ expired.
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_server_engine.js.html#l323"><code>lib&#x2F;server&#x2F;server_engine.js:323</code></a>
+        <a href="../files/lib_server_server_engine.js.html#l334"><code>lib\server\server_engine.js:334</code></a>
         </p>
 
 
@@ -2797,7 +2687,7 @@ expired.
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_server_engine.js.html#l341"><code>lib&#x2F;server&#x2F;server_engine.js:341</code></a>
+        <a href="../files/lib_server_server_engine.js.html#l352"><code>lib\server\server_engine.js:352</code></a>
         </p>
 
 
@@ -2822,7 +2712,7 @@ expired.
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_server_engine.js.html#l332"><code>lib&#x2F;server&#x2F;server_engine.js:332</code></a>
+        <a href="../files/lib_server_server_engine.js.html#l343"><code>lib\server\server_engine.js:343</code></a>
         </p>
 
 
@@ -2831,6 +2721,30 @@ expired.
     <div class="description">
         <p>the server urn</p>
 
+    </div>
+
+
+
+</div>
+<div id="property_subscription" class="property item inherited">
+    <h3 class="name"><code>subscription</code></h3>
+    <span class="type"><a href="../classes/Subscription.html" class="crosslink">Subscription[]</a></span>
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/ServerSidePublishEngine.html#property_subscription">ServerSidePublishEngine</a>:
+        <a href="../files/lib_server_server_publish_engine.js.html#l70"><code>lib\server\server_publish_engine.js:70</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        get a array of subscription handled by the publish engine.
     </div>
 
 
@@ -2847,7 +2761,7 @@ expired.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/ServerSidePublishEngine.html#property_subscriptionCount">ServerSidePublishEngine</a>:
-        <a href="../files/lib_server_server_publish_engine.js.html#l378"><code>lib&#x2F;server&#x2F;server_publish_engine.js:378</code></a>
+        <a href="../files/lib_server_server_publish_engine.js.html#l398"><code>lib\server\server_publish_engine.js:398</code></a>
         </p>
 
 

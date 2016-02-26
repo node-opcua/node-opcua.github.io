@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.46</em>
+            <em>API Docs for: 0.0.52</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -56,6 +56,7 @@
                                 <li><a href="../classes/Argument.html">Argument</a></li>
                                 <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
                                 <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+                                <li><a href="../classes/AttributeNameById.html">AttributeNameById</a></li>
                                 <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
                                 <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
                                 <li><a href="../classes/BaseNode.html">BaseNode</a></li>
@@ -122,7 +123,7 @@
                                 <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
                                 <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
                                 <li><a href="../classes/EUInformation.html">EUInformation</a></li>
-                                <li><a href="../classes/EventField.html">EventField</a></li>
+                                <li><a href="../classes/EventFieldList.html">EventFieldList</a></li>
                                 <li><a href="../classes/EventFilter.html">EventFilter</a></li>
                                 <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
                                 <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
@@ -152,6 +153,7 @@
                                 <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
                                 <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
                                 <li><a href="../classes/MessageSecurityMode.html">MessageSecurityMode</a></li>
+                                <li><a href="../classes/ModelChangeStructure.html">ModelChangeStructure</a></li>
                                 <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
@@ -165,6 +167,7 @@
                                 <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
                                 <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
                                 <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+                                <li><a href="../classes/MyStructure.html">MyStructure</a></li>
                                 <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
                                 <li><a href="../classes/NodeId.html">NodeId</a></li>
                                 <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
@@ -203,6 +206,7 @@
                                 <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
                                 <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
                                 <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+                                <li><a href="../classes/RedundantServer.html">RedundantServer</a></li>
                                 <li><a href="../classes/Reference.html">Reference</a></li>
                                 <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
                                 <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
@@ -217,9 +221,11 @@
                                 <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
                                 <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
                                 <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+                                <li><a href="../classes/SamplingIntervalDiagnostics.html">SamplingIntervalDiagnostics</a></li>
                                 <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
                                 <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
                                 <li><a href="../classes/SecurityTokenRequestType.html">SecurityTokenRequestType</a></li>
+                                <li><a href="../classes/SemanticChangeStructure.html">SemanticChangeStructure</a></li>
                                 <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
                                 <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
                                 <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
@@ -232,6 +238,7 @@
                                 <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
                                 <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
                                 <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+                                <li><a href="../classes/SessionSecurityDiagnostics.html">SessionSecurityDiagnostics</a></li>
                                 <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
                                 <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
                                 <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
@@ -341,7 +348,7 @@
         </div>
 
         <div class="foundat">
-            Defined in: <a href="../files/lib_misc_message_builder.js.html#l38"><code>lib&#x2F;misc&#x2F;message_builder.js:38</code></a>
+            Defined in: <a href="../files/lib_misc_message_builder.js.html#l38"><code>lib\misc\message_builder.js:38</code></a>
         </div>
 
             Module: <a href="../modules/opcua.miscellaneous.html">opcua.miscellaneous</a>
@@ -376,7 +383,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_misc_message_builder.js.html#l38"><code>lib&#x2F;misc&#x2F;message_builder.js:38</code></a>
+        <a href="../files/lib_misc_message_builder.js.html#l38"><code>lib\misc\message_builder.js:38</code></a>
         </p>
 
 
@@ -546,7 +553,7 @@
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/MessageBuilderBase.html#method__append">MessageBuilderBase</a>:
-        <a href="../files/lib_misc_message_builder_base.js.html#l91"><code>lib&#x2F;misc&#x2F;message_builder_base.js:91</code></a>
+        <a href="../files/lib_misc_message_builder_base.js.html#l93"><code>lib\misc\message_builder_base.js:93</code></a>
         </p>
 
 
@@ -602,7 +609,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_misc_message_builder.js.html#l330"><code>lib&#x2F;misc&#x2F;message_builder.js:330</code></a>
+        <a href="../files/lib_misc_message_builder.js.html#l330"><code>lib\misc\message_builder.js:330</code></a>
         </p>
 
 
@@ -655,7 +662,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_misc_factories_schema_helpers.js.html#l94"><code>lib&#x2F;misc&#x2F;factories_schema_helpers.js:94</code></a>
+        <a href="../files/lib_misc_factories_schema_helpers.js.html#l94"><code>lib\misc\factories_schema_helpers.js:94</code></a>
         </p>
 
 
@@ -692,7 +699,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_misc_factories_schema_helpers.js.html#l20"><code>lib&#x2F;misc&#x2F;factories_schema_helpers.js:20</code></a>
+        <a href="../files/lib_misc_factories_schema_helpers.js.html#l20"><code>lib\misc\factories_schema_helpers.js:20</code></a>
         </p>
 
 
@@ -739,7 +746,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_misc_factories_schema_helpers.js.html#l64"><code>lib&#x2F;misc&#x2F;factories_schema_helpers.js:64</code></a>
+        <a href="../files/lib_misc_factories_schema_helpers.js.html#l64"><code>lib\misc\factories_schema_helpers.js:64</code></a>
         </p>
 
 
@@ -777,7 +784,7 @@
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/MessageBuilderBase.html#method_feed">MessageBuilderBase</a>:
-        <a href="../files/lib_misc_message_builder_base.js.html#l139"><code>lib&#x2F;misc&#x2F;message_builder_base.js:139</code></a>
+        <a href="../files/lib_misc_message_builder_base.js.html#l142"><code>lib\misc\message_builder_base.js:142</code></a>
         </p>
 
 
@@ -832,7 +839,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_misc_factories_schema_helpers.js.html#l34"><code>lib&#x2F;misc&#x2F;factories_schema_helpers.js:34</code></a>
+        <a href="../files/lib_misc_factories_schema_helpers.js.html#l34"><code>lib\misc\factories_schema_helpers.js:34</code></a>
         </p>
 
 
@@ -897,7 +904,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_misc_factories_schema_helpers.js.html#l254"><code>lib&#x2F;misc&#x2F;factories_schema_helpers.js:254</code></a>
+        <a href="../files/lib_misc_factories_schema_helpers.js.html#l254"><code>lib\misc\factories_schema_helpers.js:254</code></a>
         </p>
 
 
@@ -972,7 +979,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_misc_factories_schema_helpers.js.html#l201"><code>lib&#x2F;misc&#x2F;factories_schema_helpers.js:201</code></a>
+        <a href="../files/lib_misc_factories_schema_helpers.js.html#l201"><code>lib\misc\factories_schema_helpers.js:201</code></a>
         </p>
 
 
@@ -1038,7 +1045,7 @@
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/MessageBuilderBase.html#event_chunk">MessageBuilderBase</a>:
-                            <a href="../files/lib_misc_message_builder_base.js.html#l157"><code>lib&#x2F;misc&#x2F;message_builder_base.js:157</code></a>
+                            <a href="../files/lib_misc_message_builder_base.js.html#l160"><code>lib\misc\message_builder_base.js:160</code></a>
                             </p>
                     
                     
@@ -1078,7 +1085,7 @@
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/MessageBuilderBase.html#event_error">MessageBuilderBase</a>:
-                            <a href="../files/lib_misc_message_builder_base.js.html#l203"><code>lib&#x2F;misc&#x2F;message_builder_base.js:203</code></a>
+                            <a href="../files/lib_misc_message_builder_base.js.html#l206"><code>lib\misc\message_builder_base.js:206</code></a>
                             </p>
                     
                     
@@ -1118,7 +1125,7 @@
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/MessageBuilderBase.html#event_full_message_body">MessageBuilderBase</a>:
-                            <a href="../files/lib_misc_message_builder_base.js.html#l175"><code>lib&#x2F;misc&#x2F;message_builder_base.js:175</code></a>
+                            <a href="../files/lib_misc_message_builder_base.js.html#l178"><code>lib\misc\message_builder_base.js:178</code></a>
                             </p>
                     
                     
@@ -1158,7 +1165,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/lib_misc_message_builder.js.html#l89"><code>lib&#x2F;misc&#x2F;message_builder.js:89</code></a>
+                            <a href="../files/lib_misc_message_builder.js.html#l89"><code>lib\misc\message_builder.js:89</code></a>
                             </p>
                     
                     
@@ -1211,7 +1218,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/lib_misc_message_builder.js.html#l436"><code>lib&#x2F;misc&#x2F;message_builder.js:436</code></a>
+                            <a href="../files/lib_misc_message_builder.js.html#l438"><code>lib\misc\message_builder.js:438</code></a>
                             </p>
                     
                     
@@ -1275,7 +1282,7 @@
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/MessageBuilderBase.html#event_start_chunk">MessageBuilderBase</a>:
-                            <a href="../files/lib_misc_message_builder_base.js.html#l52"><code>lib&#x2F;misc&#x2F;message_builder_base.js:52</code></a>
+                            <a href="../files/lib_misc_message_builder_base.js.html#l52"><code>lib\misc\message_builder_base.js:52</code></a>
                             </p>
                     
                     

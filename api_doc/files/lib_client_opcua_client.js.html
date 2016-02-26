@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>lib/client/opcua_client.js - The NodeOPCUA API</title>
+    <title>lib\client\opcua_client.js - The NodeOPCUA API</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.46</em>
+            <em>API Docs for: 0.0.52</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -56,6 +56,7 @@
                                 <li><a href="../classes/Argument.html">Argument</a></li>
                                 <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
                                 <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+                                <li><a href="../classes/AttributeNameById.html">AttributeNameById</a></li>
                                 <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
                                 <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
                                 <li><a href="../classes/BaseNode.html">BaseNode</a></li>
@@ -122,7 +123,7 @@
                                 <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
                                 <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
                                 <li><a href="../classes/EUInformation.html">EUInformation</a></li>
-                                <li><a href="../classes/EventField.html">EventField</a></li>
+                                <li><a href="../classes/EventFieldList.html">EventFieldList</a></li>
                                 <li><a href="../classes/EventFilter.html">EventFilter</a></li>
                                 <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
                                 <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
@@ -152,6 +153,7 @@
                                 <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
                                 <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
                                 <li><a href="../classes/MessageSecurityMode.html">MessageSecurityMode</a></li>
+                                <li><a href="../classes/ModelChangeStructure.html">ModelChangeStructure</a></li>
                                 <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
@@ -165,6 +167,7 @@
                                 <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
                                 <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
                                 <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+                                <li><a href="../classes/MyStructure.html">MyStructure</a></li>
                                 <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
                                 <li><a href="../classes/NodeId.html">NodeId</a></li>
                                 <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
@@ -203,6 +206,7 @@
                                 <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
                                 <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
                                 <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+                                <li><a href="../classes/RedundantServer.html">RedundantServer</a></li>
                                 <li><a href="../classes/Reference.html">Reference</a></li>
                                 <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
                                 <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
@@ -217,9 +221,11 @@
                                 <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
                                 <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
                                 <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+                                <li><a href="../classes/SamplingIntervalDiagnostics.html">SamplingIntervalDiagnostics</a></li>
                                 <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
                                 <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
                                 <li><a href="../classes/SecurityTokenRequestType.html">SecurityTokenRequestType</a></li>
+                                <li><a href="../classes/SemanticChangeStructure.html">SemanticChangeStructure</a></li>
                                 <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
                                 <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
                                 <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
@@ -232,6 +238,7 @@
                                 <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
                                 <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
                                 <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+                                <li><a href="../classes/SessionSecurityDiagnostics.html">SessionSecurityDiagnostics</a></li>
                                 <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
                                 <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
                                 <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
@@ -333,7 +340,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-<h1 class="file-heading">File: lib/client/opcua_client.js</h1>
+<h1 class="file-heading">File: lib\client\opcua_client.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
@@ -347,7 +354,7 @@ var util = require(&quot;util&quot;);
 var _ = require(&quot;underscore&quot;);
 var assert = require(&quot;better-assert&quot;);
 var crypto = require(&quot;crypto&quot;);
-
+var async = require(&quot;async&quot;);
 
 var OPCUAClientBase = require(&quot;lib/client/client_base&quot;).OPCUAClientBase;
 
@@ -380,7 +387,9 @@ var UserIdentityTokenType = s.UserIdentityTokenType;
 
 var ClientSession = require(&quot;lib/client/client_session&quot;).ClientSession;
 
-var debugLog = require(&quot;lib/misc/utils&quot;).make_debugLog(__filename);
+var utils =  require(&quot;lib/misc/utils&quot;);
+var debugLog = utils.make_debugLog(__filename);
+var doDebug = utils.checkDebugFlag(__filename);
 
 
 function validateServerNonce(serverNonce) {
@@ -461,13 +470,19 @@ OPCUAClient.prototype.__resolveEndPoint = function () {
 
     if (!this.endpoint) {
         if (this.endpoint_must_exist) {
+            debugLog(&quot;OPCUAClient#endpoint_must_exist = true and endpoint with url &quot; ,this._secureChannel.endpoint_url, &quot; cannot be found&quot;);
             return false;
         } else {
             // fallback :
-            // our strategy is to take the first server_end_point instead as a default
+            // our strategy is to take the first server_end_point that match the secutity settings
             // ( is this really OK ?)
             // this will permit us to access a OPCUA Server using it&#x27;s IP address instead of its hostname
-            this.endpoint = this._server_endpoints[0];
+
+            endpoint = this.findEndpointForSecurity(this.securityMode, this.securityPolicy);
+            if (!endpoint) {
+                return false;
+            }
+            this.endpoint = endpoint;
         }
     }
     return true;
@@ -777,7 +792,7 @@ OPCUAClient.prototype._activateSession = function (session, callback) {
 
         session.performMessageTransaction(request, function (err, response) {
 
-            if (!err) {
+            if (!err &amp;&amp; response.responseHeader.serviceResult === StatusCodes.Good) {
 
                 assert(response instanceof ActivateSessionResponse);
 
@@ -789,6 +804,8 @@ OPCUAClient.prototype._activateSession = function (session, callback) {
                 callback(null, session);
 
             } else {
+
+                err = err || new Error(response.responseHeader.serviceResult.toString());
                 session._client = _old_client;
                 callback(err, null);
             }
@@ -815,18 +832,22 @@ OPCUAClient.prototype.reactivateSession = function (session, callback) {
     if (!this.__resolveEndPoint() || !this.endpoint) {
         return callback(new Error(&quot; End point must exist &quot; + this._secureChannel.endpoint_url));
     }
-    assert(session._client !== self, &quot;cannot reactivateSession on its current connection&quot;);
+
+    assert(session._client.endpointUrl === self.endpointUrl, &quot;cannot reactivateSession on a different endpoint&quot;);
     var old_client = session._client;
 
     this._activateSession(session, function (err) {
         if (!err) {
-            // remove session from old client:
 
-            old_client._removeSession(session);
-            assert(!_.contains(old_client._sessions, session));
+            if (old_client !== self) {
+                // remove session from old client:
+                old_client._removeSession(session);
+                assert(!_.contains(old_client._sessions, session));
 
-            self._addSession(session);
-            assert(_.contains(self._sessions, session));
+                self._addSession(session);
+                assert(_.contains(self._sessions, session));
+            }
+
         } else {
             console.log(&quot;reactivateSession has failed !&quot;.red.bgWhite, err);
         }
@@ -859,15 +880,15 @@ OPCUAClient.prototype.reactivateSession = function (session, callback) {
  *     });
  *
  */
-OPCUAClient.prototype.createSession = function (options, callback) {
+OPCUAClient.prototype.createSession = function (userIdentityInfo, callback) {
 
     var self = this;
-    if (_.isFunction(options)) {
-        callback = options;
-        options = {};
+    if (_.isFunction(userIdentityInfo)) {
+        callback = userIdentityInfo;
+        userIdentityInfo = {};
     }
 
-    self.userIdentityInfo = options;
+    self.userIdentityInfo = userIdentityInfo;
 
     assert(_.isFunction(callback));
 
@@ -883,6 +904,21 @@ OPCUAClient.prototype.createSession = function (options, callback) {
             });
         }
     });
+};
+
+OPCUAClient.prototype.changeSessionIdentity = function(session,userIdentityInfo,callback) {
+
+    var self = this;
+    assert(_.isFunction(callback));
+
+    var old_userIdentity = self.userIdentityInfo;
+    self.userIdentityInfo = userIdentityInfo;
+
+    self._activateSession(session, function (err) {
+        callback(err);
+    });
+
+
 };
 
 OPCUAClient.prototype._closeSession = function (session, callback) {
@@ -934,6 +970,143 @@ OPCUAClient.prototype.closeSession = function (session, callback) {
         callback(err);
     });
 };
+
+OPCUAClient.prototype._ask_for_subscription_republish = function(session,callback) {
+
+    if (doDebug) { debugLog(&quot;_ask_for_subscription_republish &quot;.bgCyan.yellow.bold);}
+    session.getPublishEngine().republish(function(err) {
+        callback(err);
+    });
+};
+
+
+OPCUAClient.prototype._on_connection_reestablished = function(callback) {
+
+    var self = this;
+    assert(_.isFunction(callback));
+
+    // call base class implementation first
+    OPCUAClientBase.prototype._on_connection_reestablished.call(self,function(err){
+
+        //
+        // a new secure channel has be created, we need to reactivate the session,
+        // and reestablish the subscription and restart the publish engine.
+        //
+        //
+        // see OPC UA part 4 ( version 1.03 ) figure 34 page 106
+        // 6.5 Reestablishing subscription....
+        //
+        //
+        //
+        //                      +---------------------+
+        //                      | CreateSecureChannel |
+        //                      | CreateSession       |
+        //                      | ActivateSession     |
+        //                      +---------------------+
+        //                                |
+        //                                |
+        //                                v
+        //                      +---------------------+
+        //                      | CreateSubscription  |&lt;-------------------------------------------------------------+
+        //                      +---------------------+                                                              |
+        //                                |                                                                         (1)
+        //                                |
+        //                                v
+        //                      +---------------------+
+        //     (2)-------------&gt;| StartPublishEngine  |
+        //                      +---------------------+
+        //                                |
+        //                                V
+        //                      +---------------------+
+        //             +-------&gt;| Monitor Connection  |
+        //             |        +---------------------+
+        //             |                    |
+        //             |                    v
+        //             |          Good    /   \
+        //             +-----------------/ SR? \______Broken_____+
+        //                               \     /                 |
+        //                                \   /                  |
+        //                                                       |
+        //                                                       v
+        //                                                 +---------------------+
+        //                                                 |                     |
+        //                                                 | CreateSecureChannel |&lt;-----+
+        //                                                 |                     |      |
+        //                                                 +---------------------+      |
+        //                                                         |                    |
+        //                                                         v                    |
+        //                                                       /   \                  |
+        //                                                      / SR? \______Bad________+
+        //                                                      \     /
+        //                                                       \   /
+        //                                                         |
+        //                                                         |Good
+        //                                                         v
+        //                                                 +---------------------+
+        //                                                 |                     |
+        //                                                 | ActivateSession     |
+        //                                                 |                     |
+        //                                                 +---------------------+
+        //                                                         |
+        //                                                         v                    +-------------------+       +----------------------+
+        //                                                       /   \                  | CreateSession     |       |                      |
+        //                                                      / SR? \______Bad_______&gt;| ActivateSession   |-----&gt; | TransferSubscription |
+        //                                                      \     /                 |                   |       |                      |       (1)
+        //                                                       \   /                  +-------------------+       +----------------------+        ^
+        //                                                         | Good                                                      |                    |
+        //                                                         v   (for each subscription)                                   |                    |
+        //                                                 +--------------------+                                            /   \                  |
+        //                                                 |                    |                                     OK    / OK? \______Bad________+
+        //                                                 | RePublish          |&lt;----------------------------------------- \     /
+        //                                             +--&gt;|                    |                                            \   /
+        //                                             |   +--------------------+
+        //                                             |           |
+        //                                             |           v
+        //                                             | GOOD    /   \
+        //                                             +------  / SR? \______Bad SubscriptionInvalidId______&gt;(1)
+        // (2)                                                  \     /
+        //  ^                                                    \   /
+        //  |                                                      |
+        //  |                                                      |
+        //  |                             BadMessageNotAvailable   |
+        //  +------------------------------------------------------+
+        //
+
+
+
+        debugLog(&quot; Starting Session reactivation&quot;.red.bgWhite);
+        // repair session
+        var sessions = self._sessions;
+        async.map(sessions, function (session, next) {
+
+            debugLog(&quot;OPCUAClient#_on_connection_reestablished TRYING TO REACTIVATE SESSION&quot;);
+            self._activateSession(session,function(err){
+                //
+                // Note: current limitation :
+                //  - The reconnection doesn&#x27;t work if connection break is cause by a server that crashes and restarts yet.
+                //
+                // todo :
+                //   if failed =&gt; recreate a new Channel and transfer the subscription
+                //   else
+                //      call Republish
+                //
+                debugLog(&quot;ActivateSession : &quot;,err ? err.message : &quot;&quot;);
+                console.log(&quot;err = &quot;,err);
+                if (!err)  {
+                    return self._ask_for_subscription_republish(session,next);
+                }
+                next(err);
+            });
+
+        },function(err,results) {
+            var err = err;
+            return callback(err);
+        });
+
+    });
+
+};
+
 
 exports.OPCUAClient = OPCUAClient;
 exports.ClientSession = ClientSession;

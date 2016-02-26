@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.46</em>
+            <em>API Docs for: 0.0.52</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -56,6 +56,7 @@
                                 <li><a href="../classes/Argument.html">Argument</a></li>
                                 <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
                                 <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+                                <li><a href="../classes/AttributeNameById.html">AttributeNameById</a></li>
                                 <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
                                 <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
                                 <li><a href="../classes/BaseNode.html">BaseNode</a></li>
@@ -122,7 +123,7 @@
                                 <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
                                 <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
                                 <li><a href="../classes/EUInformation.html">EUInformation</a></li>
-                                <li><a href="../classes/EventField.html">EventField</a></li>
+                                <li><a href="../classes/EventFieldList.html">EventFieldList</a></li>
                                 <li><a href="../classes/EventFilter.html">EventFilter</a></li>
                                 <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
                                 <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
@@ -152,6 +153,7 @@
                                 <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
                                 <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
                                 <li><a href="../classes/MessageSecurityMode.html">MessageSecurityMode</a></li>
+                                <li><a href="../classes/ModelChangeStructure.html">ModelChangeStructure</a></li>
                                 <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
@@ -165,6 +167,7 @@
                                 <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
                                 <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
                                 <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+                                <li><a href="../classes/MyStructure.html">MyStructure</a></li>
                                 <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
                                 <li><a href="../classes/NodeId.html">NodeId</a></li>
                                 <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
@@ -203,6 +206,7 @@
                                 <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
                                 <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
                                 <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+                                <li><a href="../classes/RedundantServer.html">RedundantServer</a></li>
                                 <li><a href="../classes/Reference.html">Reference</a></li>
                                 <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
                                 <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
@@ -217,9 +221,11 @@
                                 <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
                                 <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
                                 <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+                                <li><a href="../classes/SamplingIntervalDiagnostics.html">SamplingIntervalDiagnostics</a></li>
                                 <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
                                 <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
                                 <li><a href="../classes/SecurityTokenRequestType.html">SecurityTokenRequestType</a></li>
+                                <li><a href="../classes/SemanticChangeStructure.html">SemanticChangeStructure</a></li>
                                 <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
                                 <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
                                 <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
@@ -232,6 +238,7 @@
                                 <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
                                 <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
                                 <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+                                <li><a href="../classes/SessionSecurityDiagnostics.html">SessionSecurityDiagnostics</a></li>
                                 <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
                                 <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
                                 <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
@@ -338,7 +345,7 @@
 
 
         <div class="foundat">
-            Defined in: <a href="../files/lib_client_client_publish_engine.js.html#l10"><code>lib&#x2F;client&#x2F;client_publish_engine.js:10</code></a>
+            Defined in: <a href="../files/lib_client_client_publish_engine.js.html#l15"><code>lib\client\client_publish_engine.js:15</code></a>
         </div>
 
             Module: <a href="../modules/opcua.client.html">opcua.client</a>
@@ -377,7 +384,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_client_publish_engine.js.html#l10"><code>lib&#x2F;client&#x2F;client_publish_engine.js:10</code></a>
+        <a href="../files/lib_client_client_publish_engine.js.html#l15"><code>lib\client\client_publish_engine.js:15</code></a>
         </p>
 
 
@@ -447,7 +454,11 @@
 
                             </li>
                             <li class="index-item method">
-                                <a href="#method_registerSubscriptionCallback">registerSubscriptionCallback</a>
+                                <a href="#method_getSubscription">getSubscription</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_registerSubscription">registerSubscription</a>
 
                             </li>
                             <li class="index-item method">
@@ -455,7 +466,7 @@
 
                             </li>
                             <li class="index-item method">
-                                <a href="#method_unregisterSubscriptionCallback">unregisterSubscriptionCallback</a>
+                                <a href="#method_unregisterSubscription">unregisterSubscription</a>
 
                             </li>
                     </ul>
@@ -502,7 +513,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_client_publish_engine.js.html#l37"><code>lib&#x2F;client&#x2F;client_publish_engine.js:37</code></a>
+        <a href="../files/lib_client_client_publish_engine.js.html#l48"><code>lib\client\client_publish_engine.js:48</code></a>
         </p>
 
 
@@ -545,19 +556,83 @@
 
 
 </div>
-<div id="method_registerSubscriptionCallback" class="method item">
-    <h3 class="name"><code>registerSubscriptionCallback</code></h3>
+<div id="method_getSubscription" class="method item">
+    <h3 class="name"><code>getSubscription</code></h3>
 
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
                 <li class="arg">
                         <code>subscriptionId</code>
                 </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/Subscription.html" class="crosslink">Subscription</a> | Null</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_client_client_publish_engine.js.html#l234"><code>lib\client\client_publish_engine.js:234</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>get the client subscription from Id</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">subscriptionId</code>
+                        <span class="type">Number</span>
+
+
+                    <div class="param-description">
+                        <p>the subscription Id</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type"><a href="../classes/Subscription.html" class="crosslink">Subscription</a> | Null</span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_registerSubscription" class="method item">
+    <h3 class="name"><code>registerSubscription</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
                 <li class="arg">
-                        <code>timeoutHint</code>
+                        <code>subscription.subscriptionId</code>
                 </li>
                 <li class="arg">
-                        <code>callback</code>
+                        <code>subscription.timeoutHint</code>
+                </li>
+                <li class="arg">
+                        <code>subscription.onNotificationMessage</code>
                 </li>
             </ul><span class="paren">)</span>
         </div>
@@ -572,7 +647,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_client_publish_engine.js.html#l134"><code>lib&#x2F;client&#x2F;client_publish_engine.js:134</code></a>
+        <a href="../files/lib_client_client_publish_engine.js.html#l180"><code>lib\client\client_publish_engine.js:180</code></a>
         </p>
 
 
@@ -588,7 +663,7 @@
 
             <ul class="params-list">
                 <li class="param">
-                        <code class="param-name">subscriptionId</code>
+                        <code class="param-name">subscription.subscriptionId</code>
                         <span class="type">Object</span>
 
 
@@ -598,7 +673,7 @@
 
                 </li>
                 <li class="param">
-                        <code class="param-name">timeoutHint</code>
+                        <code class="param-name">subscription.timeoutHint</code>
                         <span class="type">Object</span>
 
 
@@ -608,12 +683,13 @@
 
                 </li>
                 <li class="param">
-                        <code class="param-name">callback</code>
+                        <code class="param-name">subscription.onNotificationMessage</code>
                         <span class="type">Function</span>
 
 
                     <div class="param-description">
-                         
+                        <p>callback</p>
+
                     </div>
 
                 </li>
@@ -638,7 +714,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_client_publish_engine.js.html#l56"><code>lib&#x2F;client&#x2F;client_publish_engine.js:56</code></a>
+        <a href="../files/lib_client_client_publish_engine.js.html#l67"><code>lib\client\client_publish_engine.js:67</code></a>
         </p>
 
 
@@ -653,8 +729,8 @@
 
 
 </div>
-<div id="method_unregisterSubscriptionCallback" class="method item">
-    <h3 class="name"><code>unregisterSubscriptionCallback</code></h3>
+<div id="method_unregisterSubscription" class="method item">
+    <h3 class="name"><code>unregisterSubscription</code></h3>
 
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
@@ -674,7 +750,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_client_publish_engine.js.html#l163"><code>lib&#x2F;client&#x2F;client_publish_engine.js:163</code></a>
+        <a href="../files/lib_client_client_publish_engine.js.html#l218"><code>lib\client\client_publish_engine.js:218</code></a>
         </p>
 
 
@@ -721,7 +797,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_client_publish_engine.js.html#l122"><code>lib&#x2F;client&#x2F;client_publish_engine.js:122</code></a>
+        <a href="../files/lib_client_client_publish_engine.js.html#l168"><code>lib\client\client_publish_engine.js:168</code></a>
         </p>
 
 

@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.46</em>
+            <em>API Docs for: 0.0.52</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -56,6 +56,7 @@
                                 <li><a href="../classes/Argument.html">Argument</a></li>
                                 <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
                                 <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+                                <li><a href="../classes/AttributeNameById.html">AttributeNameById</a></li>
                                 <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
                                 <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
                                 <li><a href="../classes/BaseNode.html">BaseNode</a></li>
@@ -122,7 +123,7 @@
                                 <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
                                 <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
                                 <li><a href="../classes/EUInformation.html">EUInformation</a></li>
-                                <li><a href="../classes/EventField.html">EventField</a></li>
+                                <li><a href="../classes/EventFieldList.html">EventFieldList</a></li>
                                 <li><a href="../classes/EventFilter.html">EventFilter</a></li>
                                 <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
                                 <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
@@ -152,6 +153,7 @@
                                 <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
                                 <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
                                 <li><a href="../classes/MessageSecurityMode.html">MessageSecurityMode</a></li>
+                                <li><a href="../classes/ModelChangeStructure.html">ModelChangeStructure</a></li>
                                 <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
@@ -165,6 +167,7 @@
                                 <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
                                 <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
                                 <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+                                <li><a href="../classes/MyStructure.html">MyStructure</a></li>
                                 <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
                                 <li><a href="../classes/NodeId.html">NodeId</a></li>
                                 <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
@@ -203,6 +206,7 @@
                                 <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
                                 <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
                                 <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+                                <li><a href="../classes/RedundantServer.html">RedundantServer</a></li>
                                 <li><a href="../classes/Reference.html">Reference</a></li>
                                 <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
                                 <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
@@ -217,9 +221,11 @@
                                 <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
                                 <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
                                 <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+                                <li><a href="../classes/SamplingIntervalDiagnostics.html">SamplingIntervalDiagnostics</a></li>
                                 <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
                                 <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
                                 <li><a href="../classes/SecurityTokenRequestType.html">SecurityTokenRequestType</a></li>
+                                <li><a href="../classes/SemanticChangeStructure.html">SemanticChangeStructure</a></li>
                                 <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
                                 <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
                                 <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
@@ -232,6 +238,7 @@
                                 <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
                                 <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
                                 <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+                                <li><a href="../classes/SessionSecurityDiagnostics.html">SessionSecurityDiagnostics</a></li>
                                 <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
                                 <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
                                 <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
@@ -347,7 +354,7 @@
         </div>
 
         <div class="foundat">
-            Defined in: <a href="../files/lib_server_opcua_server.js.html#l159"><code>lib&#x2F;server&#x2F;opcua_server.js:159</code></a>
+            Defined in: <a href="../files/lib_server_opcua_server.js.html#l161"><code>lib\server\opcua_server.js:161</code></a>
         </div>
 
             Module: <a href="../modules/opcua.server.html">opcua.server</a>
@@ -382,7 +389,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_opcua_server.js.html#l159"><code>lib&#x2F;server&#x2F;opcua_server.js:159</code></a>
+        <a href="../files/lib_server_opcua_server.js.html#l161"><code>lib\server\opcua_server.js:161</code></a>
         </p>
 
 
@@ -642,10 +649,6 @@ UserNameIdentityToken is valid.</p>
 
                             </li>
                             <li class="index-item method inherited">
-                                <a href="#method_addMethod">addMethod</a>
-
-                            </li>
-                            <li class="index-item method inherited">
                                 <a href="#method_addSubscriber
 
 add a subscriber to the WatchDog.
@@ -664,15 +667,7 @@ if the subscriber failed to call keepAlive withing the timeout period.</a>
 
                             </li>
                             <li class="index-item method inherited">
-                                <a href="#method_addVariable">addVariable</a>
-
-                            </li>
-                            <li class="index-item method inherited">
                                 <a href="#method_bindMethod">bindMethod</a>
-
-                            </li>
-                            <li class="index-item method inherited">
-                                <a href="#method_bindVariable">bindVariable</a>
 
                             </li>
                             <li class="index-item method inherited">
@@ -697,14 +692,6 @@ if the subscriber failed to call keepAlive withing the timeout period.</a>
                             </li>
                             <li class="index-item method">
                                 <a href="#method_createSession">createSession</a>
-
-                            </li>
-                            <li class="index-item method inherited">
-                                <a href="#method_findObject">findObject</a>
-
-                            </li>
-                            <li class="index-item method inherited">
-                                <a href="#method_findObjectByBrowseName">findObjectByBrowseName</a>
 
                             </li>
                             <li class="index-item method inherited">
@@ -766,7 +753,7 @@ turn a string make of hexadecimal bytes into a buffer</a>
 
                             </li>
                             <li class="index-item method inherited">
-                                <a href="#method_resolveNodeId">resolveNodeId</a>
+                                <a href="#method_resumeEndPoints">resumeEndPoints</a>
 
                             </li>
                             <li class="index-item method inherited">
@@ -783,6 +770,10 @@ turn a string make of hexadecimal bytes into a buffer</a>
                             </li>
                             <li class="index-item method inherited">
                                 <a href="#method_start">start</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_suspendEndPoints">suspendEndPoints</a>
 
                             </li>
                             <li class="index-item method inherited">
@@ -885,7 +876,7 @@ turn a string make of hexadecimal bytes into a buffer</a>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_opcua_server.js.html#l1050"><code>lib&#x2F;server&#x2F;opcua_server.js:1050</code></a>
+        <a href="../files/lib_server_opcua_server.js.html#l1130"><code>lib\server\opcua_server.js:1130</code></a>
         </p>
 
 
@@ -926,7 +917,7 @@ turn a string make of hexadecimal bytes into a buffer</a>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_opcua_server.js.html#l858"><code>lib&#x2F;server&#x2F;opcua_server.js:858</code></a>
+        <a href="../files/lib_server_opcua_server.js.html#l922"><code>lib\server\opcua_server.js:922</code></a>
         </p>
 
 
@@ -992,7 +983,7 @@ turn a string make of hexadecimal bytes into a buffer</a>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_opcua_server.js.html#l1107"><code>lib&#x2F;server&#x2F;opcua_server.js:1107</code></a>
+        <a href="../files/lib_server_opcua_server.js.html#l1187"><code>lib\server\opcua_server.js:1187</code></a>
         </p>
 
 
@@ -1058,7 +1049,7 @@ turn a string make of hexadecimal bytes into a buffer</a>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/OPCUABaseServer.html#method__on_FindServersRequest">OPCUABaseServer</a>:
-        <a href="../files/lib_server_base_server.js.html#l297"><code>lib&#x2F;server&#x2F;base_server.js:297</code></a>
+        <a href="../files/lib_server_base_server.js.html#l306"><code>lib\server\base_server.js:306</code></a>
         </p>
 
 
@@ -1124,7 +1115,7 @@ turn a string make of hexadecimal bytes into a buffer</a>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/OPCUABaseServer.html#method__on_GetEndpointsRequest">OPCUABaseServer</a>:
-        <a href="../files/lib_server_base_server.js.html#l249"><code>lib&#x2F;server&#x2F;base_server.js:249</code></a>
+        <a href="../files/lib_server_base_server.js.html#l258"><code>lib\server\base_server.js:258</code></a>
         </p>
 
 
@@ -1162,134 +1153,6 @@ turn a string make of hexadecimal bytes into a buffer</a>
             </ul>
         </div>
 
-
-
-</div>
-<div id="method_addMethod" class="method item inherited">
-    <h3 class="name"><code>addMethod</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>parentObject</code>
-                </li>
-                <li class="arg">
-                        <code>options</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-        <span class="returns-inline">
-            <span class="type">Object</span>
-        </span>
-
-
-
-
-
-
-
-    <div class="meta">
-                <p>Inherited from
-                <a href="../classes/ServerEngine.html#method_addMethod">ServerEngine</a>:
-        <a href="../files/lib_server_server_engine.js.html#l834"><code>lib&#x2F;server&#x2F;server_engine.js:834</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">parentObject</code>
-                        <span class="type">Object</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-                <li class="param">
-                        <code class="param-name">options</code>
-                        <span class="type">Object</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                        <ul class="params-list">
-                            <li class="param">
-                                    <code class="param-name optional">[nodeId=null]</code>
-                                    <span class="type"><a href="../classes/NodeId.html" class="crosslink">NodeId</a></span>
-                                    <span class="flag optional" title="This parameter is optional.">optional</span>
-
-                                <div class="param-description">
-                                    <p>the object nodeid.</p>
-
-                                </div>
-
-                            </li>
-                            <li class="param">
-                                    <code class="param-name optional">[browseName=&quot;&quot;]</code>
-                                    <span class="type">String</span>
-                                    <span class="flag optional" title="This parameter is optional.">optional</span>
-
-                                <div class="param-description">
-                                    <p>the object browse name.</p>
-
-                                </div>
-
-                            </li>
-                            <li class="param">
-                                    <code class="param-name optional">[description=&quot;&quot;]</code>
-                                    <span class="type">String</span>
-                                    <span class="flag optional" title="This parameter is optional.">optional</span>
-
-                                <div class="param-description">
-                                    <p>the object description.</p>
-
-                                </div>
-
-                            </li>
-                            <li class="param">
-                                    <code class="param-name">inputArguments</code>
-                                    <span class="type">Array<Argument></span>
-
-                                <div class="param-description">
-                                    
-                                </div>
-
-                            </li>
-                            <li class="param">
-                                    <code class="param-name">outputArguments</code>
-                                    <span class="type">Array<Argument></span>
-
-                                <div class="param-description">
-                                    
-                                </div>
-
-                            </li>
-                        </ul>
-                </li>
-            </ul>
-        </div>
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type">Object</span>:
-            </div>
-        </div>
 
 
 </div>
@@ -1341,7 +1204,7 @@ This method modifies the subscriber be adding a
 new method to it called &#x27;keepAlive&#x27;
 The subscriber must also provide a &quot;watchdogReset&quot;. watchdogReset will be called
 if the subscriber failed to call keepAlive withing the timeout period.">OPCUABaseServer</a>:
-        <a href="../files/lib_misc_watchdog.js.html#l68"><code>lib&#x2F;misc&#x2F;watchdog.js:68</code></a>
+        <a href="../files/lib_misc_watchdog.js.html#l68"><code>lib\misc\watchdog.js:68</code></a>
         </p>
 
 
@@ -1390,155 +1253,6 @@ if the subscriber failed to call keepAlive withing the timeout period.">OPCUABas
 
 
 </div>
-<div id="method_addVariable" class="method item inherited">
-    <h3 class="name"><code>addVariable</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>options</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-        <span class="returns-inline">
-            <span class="type"><a href="../classes/UAVariable.html" class="crosslink">UAVariable</a></span>
-        </span>
-
-
-
-
-
-
-
-    <div class="meta">
-                <p>Inherited from
-                <a href="../classes/ServerEngine.html#method_addVariable">ServerEngine</a>:
-        <a href="../files/lib_server_server_engine.js.html#l809"><code>lib&#x2F;server&#x2F;server_engine.js:809</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        add a new variable inside an object
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">options</code>
-                        <span class="type">Object</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                        <ul class="params-list">
-                            <li class="param">
-                                    <code class="param-name">browseName</code>
-                                    <span class="type">String</span>
-
-                                <div class="param-description">
-                                    <p>: the variable browse name</p>
-
-                                </div>
-
-                            </li>
-                            <li class="param">
-                                    <code class="param-name optional">[nodeId]</code>
-                                    <span class="type">String | <a href="../classes/NodeId.html" class="crosslink">NodeId</a></span>
-                                    <span class="flag optional" title="This parameter is optional.">optional</span>
-
-                                <div class="param-description">
-                                    <p>: the variable nodeid. If not specified a new nodeId will be generated</p>
-
-                                </div>
-
-                            </li>
-                            <li class="param">
-                                    <code class="param-name optional">[historizing]</code>
-                                    <span class="type">Boolean</span>
-                                    <span class="flag optional" title="This parameter is optional.">optional</span>
-
-                                <div class="param-description">
-                                    <p>: default value : false</p>
-
-                                </div>
-
-                            </li>
-                            <li class="param">
-                                    <code class="param-name optional">[valueRank]</code>
-                                    <span class="type">Integer</span>
-                                    <span class="flag optional" title="This parameter is optional.">optional</span>
-
-                                <div class="param-description">
-                                    <p>: default value : -1</p>
-
-                                </div>
-
-                            </li>
-                            <li class="param">
-                                    <code class="param-name optional">[minimumSamplingInterval] [UInt32]</code>
-                                    <span class="type"></span>
-                                    <span class="flag optional" title="This parameter is optional.">optional</span>
-
-                                <div class="param-description">
-                                    <p>: default value: 10 ms</p>
-
-                                </div>
-
-                            </li>
-                            <li class="param">
-                                    <code class="param-name">value</code>
-                                    <span class="type">Object</span>
-
-                                <div class="param-description">
-                                    <p>: parameters describing how the value of this variable can be access.
-Same as Variable/bindVariable options parameter. see Variable/bindVariable for more info.</p>
-
-                                </div>
-
-                            </li>
-                            <li class="param">
-                                    <code class="param-name">dataType</code>
-                                    <span class="type"><a href="../classes/NodeId.html" class="crosslink">NodeId</a> | String</span>
-
-                                <div class="param-description">
-                                    <p>: the nodeId of the variable DataType;</p>
-
-                                </div>
-
-                            </li>
-                            <li class="param">
-                                    <code class="param-name">typeDefinition</code>
-                                    <span class="type"><a href="../classes/NodeId.html" class="crosslink">NodeId</a> | String</span>
-
-                                <div class="param-description">
-                                    <p>: the nodeId of the HasTypeDefinition;</p>
-
-                                </div>
-
-                            </li>
-                        </ul>
-                </li>
-            </ul>
-        </div>
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type"><a href="../classes/UAVariable.html" class="crosslink">UAVariable</a></span>:
-            </div>
-        </div>
-
-
-</div>
 <div id="method_bindMethod" class="method item inherited">
     <h3 class="name"><code>bindMethod</code></h3>
 
@@ -1563,7 +1277,7 @@ Same as Variable/bindVariable options parameter. see Variable/bindVariable for m
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/ServerEngine.html#method_bindMethod">ServerEngine</a>:
-        <a href="../files/lib_server_server_engine.js.html#l1165"><code>lib&#x2F;server&#x2F;server_engine.js:1165</code></a>
+        <a href="../files/lib_server_server_engine.js.html#l1043"><code>lib\server\server_engine.js:1043</code></a>
         </p>
 
 
@@ -1651,81 +1365,6 @@ Same as Variable/bindVariable options parameter. see Variable/bindVariable for m
 
 
 </div>
-<div id="method_bindVariable" class="method item inherited">
-    <h3 class="name"><code>bindVariable</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>nodeId</code>
-                </li>
-                <li class="arg">
-                        <code>options</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-        <span class="returns-inline">
-            <span class="type"></span>
-        </span>
-
-
-
-
-
-
-
-    <div class="meta">
-                <p>Inherited from
-                <a href="../classes/ServerEngine.html#method_bindVariable">ServerEngine</a>:
-        <a href="../files/lib_server_server_engine.js.html#l1139"><code>lib&#x2F;server&#x2F;server_engine.js:1139</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        bind a variable
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">nodeId</code>
-                        <span class="type"><a href="../classes/NodeId.html" class="crosslink">NodeId</a></span>
-
-
-                    <div class="param-description">
-                        the variable nodeid to configure.
-                    </div>
-
-                </li>
-                <li class="param">
-                        <code class="param-name">options</code>
-                        <span class="type">Object</span>
-
-
-                    <div class="param-description">
-                        see {{#crossLink "UAVariable/bindVariable"}}{{/crossLink}} for description of this parameter.
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                    void
-            </div>
-        </div>
-
-
-</div>
 <div id="method_browse" class="method item inherited">
     <h3 class="name"><code>browse</code></h3>
 
@@ -1750,7 +1389,7 @@ Same as Variable/bindVariable options parameter. see Variable/bindVariable for m
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/ServerEngine.html#method_browse">ServerEngine</a>:
-        <a href="../files/lib_server_server_engine.js.html#l941"><code>lib&#x2F;server&#x2F;server_engine.js:941</code></a>
+        <a href="../files/lib_server_server_engine.js.html#l828"><code>lib\server\server_engine.js:828</code></a>
         </p>
 
 
@@ -1812,7 +1451,7 @@ Same as Variable/bindVariable options parameter. see Variable/bindVariable for m
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/ServerEngine.html#method_browsePath">ServerEngine</a>:
-        <a href="../files/lib_server_server_engine.js.html#l1301"><code>lib&#x2F;server&#x2F;server_engine.js:1301</code></a>
+        <a href="../files/lib_server_server_engine.js.html#l1186"><code>lib\server\server_engine.js:1186</code></a>
         </p>
 
 
@@ -1877,7 +1516,7 @@ Same as Variable/bindVariable options parameter. see Variable/bindVariable for m
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/ServerEngine.html#method_browseSingleNode">ServerEngine</a>:
-        <a href="../files/lib_server_server_engine.js.html#l875"><code>lib&#x2F;server&#x2F;server_engine.js:875</code></a>
+        <a href="../files/lib_server_server_engine.js.html#l762"><code>lib\server\server_engine.js:762</code></a>
         </p>
 
 
@@ -1973,7 +1612,7 @@ Same as Variable/bindVariable options parameter. see Variable/bindVariable for m
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/OPCUABaseServer.html#method_check_flag">OPCUABaseServer</a>:
-        <a href="../files/lib_misc_utils.js.html#l25"><code>lib&#x2F;misc&#x2F;utils.js:25</code></a>
+        <a href="../files/lib_misc_utils.js.html#l25"><code>lib\misc\utils.js:25</code></a>
         </p>
 
 
@@ -2046,7 +1685,7 @@ Same as Variable/bindVariable options parameter. see Variable/bindVariable for m
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/ServerEngine.html#method_closeSession">ServerEngine</a>:
-        <a href="../files/lib_server_server_engine.js.html#l1246"><code>lib&#x2F;server&#x2F;server_engine.js:1246</code></a>
+        <a href="../files/lib_server_server_engine.js.html#l1131"><code>lib\server\server_engine.js:1131</code></a>
         </p>
 
 
@@ -2115,7 +1754,7 @@ its lifetime expires.
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_opcua_server.js.html#l364"><code>lib&#x2F;server&#x2F;opcua_server.js:364</code></a>
+        <a href="../files/lib_server_opcua_server.js.html#l369"><code>lib\server\opcua_server.js:369</code></a>
         </p>
 
 
@@ -2133,131 +1772,6 @@ its lifetime expires.
 
             <div class="returns-description">
                         <span class="type"><a href="../classes/ServerSession.html" class="crosslink">ServerSession</a></span>:
-            </div>
-        </div>
-
-
-</div>
-<div id="method_findObject" class="method item inherited">
-    <h3 class="name"><code>findObject</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>nodeId</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-        <span class="returns-inline">
-            <span class="type"><a href="../classes/BaseNode.html" class="crosslink">BaseNode</a></span>
-        </span>
-
-
-
-
-
-
-
-    <div class="meta">
-                <p>Inherited from
-                <a href="../classes/ServerEngine.html#method_findObject">ServerEngine</a>:
-        <a href="../files/lib_server_server_engine.js.html#l782"><code>lib&#x2F;server&#x2F;server_engine.js:782</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">nodeId</code>
-                        <span class="type">Object</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type"><a href="../classes/BaseNode.html" class="crosslink">BaseNode</a></span>:
-            </div>
-        </div>
-
-
-</div>
-<div id="method_findObjectByBrowseName" class="method item inherited">
-    <h3 class="name"><code>findObjectByBrowseName</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>browseName</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-        <span class="returns-inline">
-            <span class="type"><a href="../classes/BaseNode.html" class="crosslink">BaseNode</a></span>
-        </span>
-
-
-
-
-
-
-
-    <div class="meta">
-                <p>Inherited from
-                <a href="../classes/ServerEngine.html#method_findObjectByBrowseName">ServerEngine</a>:
-        <a href="../files/lib_server_server_engine.js.html#l794"><code>lib&#x2F;server&#x2F;server_engine.js:794</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">browseName</code>
-                        <span class="type">Object</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type"><a href="../classes/BaseNode.html" class="crosslink">BaseNode</a></span>:
-                    Root.Folders.Server.ServerStatus
             </div>
         </div>
 
@@ -2281,7 +1795,7 @@ its lifetime expires.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/OPCUABaseServer.html#method_getChannels">OPCUABaseServer</a>:
-        <a href="../files/lib_server_base_server.js.html#l339"><code>lib&#x2F;server&#x2F;base_server.js:339</code></a>
+        <a href="../files/lib_server_base_server.js.html#l348"><code>lib\server\base_server.js:348</code></a>
         </p>
 
 
@@ -2328,7 +1842,7 @@ its lifetime expires.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/OPCUABaseServer.html#method_getObjectClassName">OPCUABaseServer</a>:
-        <a href="../files/lib_misc_utils.js.html#l39"><code>lib&#x2F;misc&#x2F;utils.js:39</code></a>
+        <a href="../files/lib_misc_utils.js.html#l39"><code>lib\misc\utils.js:39</code></a>
         </p>
 
 
@@ -2393,7 +1907,7 @@ its lifetime expires.
                 ServerEngine
             </a>
             but overwritten in
-        <a href="../files/lib_server_opcua_server.js.html#l383"><code>lib&#x2F;server&#x2F;opcua_server.js:383</code></a>
+        <a href="../files/lib_server_opcua_server.js.html#l388"><code>lib\server\opcua_server.js:388</code></a>
         </p>
 
 
@@ -2425,7 +1939,7 @@ its lifetime expires.
 
 
                     <div class="param-description">
-                        <p>search only for session that are not closed</p>
+                        <p>search only within sessions that are not closed</p>
 
                     </div>
 
@@ -2461,7 +1975,7 @@ its lifetime expires.
                 ServerEngine
             </a>
             but overwritten in
-        <a href="../files/lib_server_opcua_server.js.html#l407"><code>lib&#x2F;server&#x2F;opcua_server.js:407</code></a>
+        <a href="../files/lib_server_opcua_server.js.html#l412"><code>lib\server\opcua_server.js:412</code></a>
         </p>
 
 
@@ -2517,7 +2031,7 @@ its lifetime expires.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/OPCUABaseServer.html#method_make_debugLog">OPCUABaseServer</a>:
-        <a href="../files/lib_misc_utils.js.html#l112"><code>lib&#x2F;misc&#x2F;utils.js:112</code></a>
+        <a href="../files/lib_misc_utils.js.html#l117"><code>lib\misc\utils.js:117</code></a>
         </p>
 
 
@@ -2584,7 +2098,7 @@ turn a string make of hexadecimal bytes into a buffer</code></h3>
                 <p>Inherited from
                 <a href="../classes/OPCUABaseServer.html#method_makeBuffer
 turn a string make of hexadecimal bytes into a buffer">OPCUABaseServer</a>:
-        <a href="../files/lib_misc_utils.js.html#l226"><code>lib&#x2F;misc&#x2F;utils.js:226</code></a>
+        <a href="../files/lib_misc_utils.js.html#l242"><code>lib\misc\utils.js:242</code></a>
         </p>
 
 
@@ -2654,7 +2168,7 @@ turn a string make of hexadecimal bytes into a buffer">OPCUABaseServer</a>:
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/OPCUABaseServer.html#method_makeServiceFault">OPCUABaseServer</a>:
-        <a href="../files/lib_server_base_server.js.html#l149"><code>lib&#x2F;server&#x2F;base_server.js:149</code></a>
+        <a href="../files/lib_server_base_server.js.html#l153"><code>lib\server\base_server.js:153</code></a>
         </p>
 
 
@@ -2720,7 +2234,7 @@ turn a string make of hexadecimal bytes into a buffer">OPCUABaseServer</a>:
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/OPCUABaseServer.html#method_normalize_require_file">OPCUABaseServer</a>:
-        <a href="../files/lib_misc_utils.js.html#l319"><code>lib&#x2F;misc&#x2F;utils.js:319</code></a>
+        <a href="../files/lib_misc_utils.js.html#l348"><code>lib\misc\utils.js:348</code></a>
         </p>
 
 
@@ -2794,7 +2308,7 @@ normalize_require_file(&quot;/home/bob/folder1/&quot;,&quot;/home/bob/folder1/fo
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/ServerEngine.html#method_read">ServerEngine</a>:
-        <a href="../files/lib_server_server_engine.js.html#l1022"><code>lib&#x2F;server&#x2F;server_engine.js:1022</code></a>
+        <a href="../files/lib_server_server_engine.js.html#l909"><code>lib\server\server_engine.js:909</code></a>
         </p>
 
 
@@ -2909,7 +2423,7 @@ are invalid for maxAge.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/ServerEngine.html#method_readSingleNode">ServerEngine</a>:
-        <a href="../files/lib_server_server_engine.js.html#l965"><code>lib&#x2F;server&#x2F;server_engine.js:965</code></a>
+        <a href="../files/lib_server_server_engine.js.html#l852"><code>lib\server\server_engine.js:852</code></a>
         </p>
 
 
@@ -2995,7 +2509,7 @@ are invalid for maxAge.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/OPCUABaseServer.html#method_redirectToFile">OPCUABaseServer</a>:
-        <a href="../files/lib_misc_utils.js.html#l142"><code>lib&#x2F;misc&#x2F;utils.js:142</code></a>
+        <a href="../files/lib_misc_utils.js.html#l158"><code>lib\misc\utils.js:158</code></a>
         </p>
 
 
@@ -3075,7 +2589,7 @@ are invalid for maxAge.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/ServerEngine.html#method_refreshValues">ServerEngine</a>:
-        <a href="../files/lib_server_server_engine.js.html#l1311"><code>lib&#x2F;server&#x2F;server_engine.js:1311</code></a>
+        <a href="../files/lib_server_server_engine.js.html#l1196"><code>lib\server\server_engine.js:1196</code></a>
         </p>
 
 
@@ -3165,7 +2679,7 @@ Variable with asyncRefresh func }</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_opcua_server.js.html#l2146"><code>lib&#x2F;server&#x2F;opcua_server.js:2146</code></a>
+        <a href="../files/lib_server_opcua_server.js.html#l2235"><code>lib\server\opcua_server.js:2235</code></a>
         </p>
 
 
@@ -3221,7 +2735,7 @@ Variable with asyncRefresh func }</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/ServerEngine.html#method_registerShutdownTask">ServerEngine</a>:
-        <a href="../files/lib_server_server_engine.js.html#l180"><code>lib&#x2F;server&#x2F;server_engine.js:180</code></a>
+        <a href="../files/lib_server_server_engine.js.html#l181"><code>lib\server\server_engine.js:181</code></a>
         </p>
 
 
@@ -3236,20 +2750,17 @@ Variable with asyncRefresh func }</p>
 
 
 </div>
-<div id="method_resolveNodeId" class="method item inherited">
-    <h3 class="name"><code>resolveNodeId</code></h3>
+<div id="method_resumeEndPoints" class="method item inherited">
+    <h3 class="name"><code>resumeEndPoints</code></h3>
 
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
                 <li class="arg">
-                        <code>nodeId</code>
+                        <code>callback</code>
                 </li>
             </ul><span class="paren">)</span>
         </div>
 
-        <span class="returns-inline">
-            <span class="type"><a href="../classes/NodeId.html" class="crosslink">NodeId</a></span>
-        </span>
 
 
 
@@ -3259,8 +2770,8 @@ Variable with asyncRefresh func }</p>
 
     <div class="meta">
                 <p>Inherited from
-                <a href="../classes/ServerEngine.html#method_resolveNodeId">ServerEngine</a>:
-        <a href="../files/lib_server_server_engine.js.html#l740"><code>lib&#x2F;server&#x2F;server_engine.js:740</code></a>
+                <a href="../classes/OPCUABaseServer.html#method_resumeEndPoints">OPCUABaseServer</a>:
+        <a href="../files/lib_server_base_server.js.html#l378"><code>lib\server\base_server.js:378</code></a>
         </p>
 
 
@@ -3268,7 +2779,8 @@ Variable with asyncRefresh func }</p>
     </div>
 
     <div class="description">
-        
+        <p>set all the end point into a state where they do  accept  connections</p>
+
     </div>
 
         <div class="params">
@@ -3276,7 +2788,7 @@ Variable with asyncRefresh func }</p>
 
             <ul class="params-list">
                 <li class="param">
-                        <code class="param-name">nodeId</code>
+                        <code class="param-name">callback</code>
                         <span class="type">Object</span>
 
 
@@ -3288,13 +2800,6 @@ Variable with asyncRefresh func }</p>
             </ul>
         </div>
 
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type"><a href="../classes/NodeId.html" class="crosslink">NodeId</a></span>:
-            </div>
-        </div>
 
 
 </div>
@@ -3316,7 +2821,7 @@ Variable with asyncRefresh func }</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/ServerEngine.html#method_secondsTillShutdown">ServerEngine</a>:
-        <a href="../files/lib_server_server_engine.js.html#l276"><code>lib&#x2F;server&#x2F;server_engine.js:276</code></a>
+        <a href="../files/lib_server_server_engine.js.html#l287"><code>lib\server\server_engine.js:287</code></a>
         </p>
 
 
@@ -3367,7 +2872,7 @@ value is only relevant once the state changes into SHUTDOWN.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/OPCUABaseServer.html#method_set_flag">OPCUABaseServer</a>:
-        <a href="../files/lib_misc_utils.js.html#l13"><code>lib&#x2F;misc&#x2F;utils.js:13</code></a>
+        <a href="../files/lib_misc_utils.js.html#l13"><code>lib\misc\utils.js:13</code></a>
         </p>
 
 
@@ -3444,7 +2949,7 @@ value is only relevant once the state changes into SHUTDOWN.
                 ServerEngine
             </a>
             but overwritten in
-        <a href="../files/lib_server_opcua_server.js.html#l465"><code>lib&#x2F;server&#x2F;opcua_server.js:465</code></a>
+        <a href="../files/lib_server_opcua_server.js.html#l470"><code>lib\server\opcua_server.js:470</code></a>
         </p>
 
 
@@ -3526,7 +3031,7 @@ server.shutdown(10000,function(err) {
                 OPCUABaseServer
             </a>
             but overwritten in
-        <a href="../files/lib_server_opcua_server.js.html#l433"><code>lib&#x2F;server&#x2F;opcua_server.js:433</code></a>
+        <a href="../files/lib_server_opcua_server.js.html#l438"><code>lib\server\opcua_server.js:438</code></a>
         </p>
 
 
@@ -3545,6 +3050,59 @@ server.shutdown(10000,function(err) {
                 <li class="param">
                         <code class="param-name">done</code>
                         <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_suspendEndPoints" class="method item inherited">
+    <h3 class="name"><code>suspendEndPoints</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>callback</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/OPCUABaseServer.html#method_suspendEndPoints">OPCUABaseServer</a>:
+        <a href="../files/lib_server_base_server.js.html#l363"><code>lib\server\base_server.js:363</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>set all the end point into a state where they do not accept further connections</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">callback</code>
+                        <span class="type">Object</span>
 
 
                     <div class="param-description">
@@ -3583,7 +3141,7 @@ server.shutdown(10000,function(err) {
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/ServerEngine.html#method_write">ServerEngine</a>:
-        <a href="../files/lib_server_server_engine.js.html#l1108"><code>lib&#x2F;server&#x2F;server_engine.js:1108</code></a>
+        <a href="../files/lib_server_server_engine.js.html#l995"><code>lib\server\server_engine.js:995</code></a>
         </p>
 
 
@@ -3669,7 +3227,7 @@ server.shutdown(10000,function(err) {
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/ServerEngine.html#method_writeSingleNode">ServerEngine</a>:
-        <a href="../files/lib_server_server_engine.js.html#l1072"><code>lib&#x2F;server&#x2F;server_engine.js:1072</code></a>
+        <a href="../files/lib_server_server_engine.js.html#l959"><code>lib\server\server_engine.js:959</code></a>
         </p>
 
 
@@ -3746,7 +3304,7 @@ server.shutdown(10000,function(err) {
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_opcua_server.js.html#l316"><code>lib&#x2F;server&#x2F;opcua_server.js:316</code></a>
+        <a href="../files/lib_server_opcua_server.js.html#l321"><code>lib\server\opcua_server.js:321</code></a>
         </p>
 
 
@@ -3771,7 +3329,7 @@ server.shutdown(10000,function(err) {
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_opcua_server.js.html#l293"><code>lib&#x2F;server&#x2F;opcua_server.js:293</code></a>
+        <a href="../files/lib_server_opcua_server.js.html#l298"><code>lib\server\opcua_server.js:298</code></a>
         </p>
 
 
@@ -3796,7 +3354,7 @@ server.shutdown(10000,function(err) {
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_opcua_server.js.html#l281"><code>lib&#x2F;server&#x2F;opcua_server.js:281</code></a>
+        <a href="../files/lib_server_opcua_server.js.html#l286"><code>lib\server\opcua_server.js:286</code></a>
         </p>
 
 
@@ -3821,7 +3379,7 @@ server.shutdown(10000,function(err) {
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/ServerEngine.html#property_cumulatedSessionCount">ServerEngine</a>:
-        <a href="../files/lib_server_server_engine.js.html#l230"><code>lib&#x2F;server&#x2F;server_engine.js:230</code></a>
+        <a href="../files/lib_server_server_engine.js.html#l241"><code>lib\server\server_engine.js:241</code></a>
         </p>
 
 
@@ -3845,7 +3403,7 @@ server.shutdown(10000,function(err) {
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/ServerEngine.html#property_cumulatedSubscriptionCount">ServerEngine</a>:
-        <a href="../files/lib_server_server_engine.js.html#l247"><code>lib&#x2F;server&#x2F;server_engine.js:247</code></a>
+        <a href="../files/lib_server_server_engine.js.html#l258"><code>lib\server\server_engine.js:258</code></a>
         </p>
 
 
@@ -3871,7 +3429,7 @@ TODO : move to base</span>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_opcua_server.js.html#l325"><code>lib&#x2F;server&#x2F;opcua_server.js:325</code></a>
+        <a href="../files/lib_server_opcua_server.js.html#l330"><code>lib\server\opcua_server.js:330</code></a>
         </p>
 
 
@@ -3899,7 +3457,7 @@ TODO : move to base</span>
                 ServerEngine
             </a>
             but overwritten in
-        <a href="../files/lib_server_opcua_server.js.html#l374"><code>lib&#x2F;server&#x2F;opcua_server.js:374</code></a>
+        <a href="../files/lib_server_opcua_server.js.html#l379"><code>lib\server\opcua_server.js:379</code></a>
         </p>
 
 
@@ -3927,7 +3485,7 @@ TODO : move to base</span>
                 ServerEngine
             </a>
             but overwritten in
-        <a href="../files/lib_server_opcua_server.js.html#l341"><code>lib&#x2F;server&#x2F;opcua_server.js:341</code></a>
+        <a href="../files/lib_server_opcua_server.js.html#l346"><code>lib\server\opcua_server.js:346</code></a>
         </p>
 
 
@@ -3952,7 +3510,7 @@ TODO : move to base</span>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_opcua_server.js.html#l395"><code>lib&#x2F;server&#x2F;opcua_server.js:395</code></a>
+        <a href="../files/lib_server_opcua_server.js.html#l400"><code>lib\server\opcua_server.js:400</code></a>
         </p>
 
 
@@ -3977,7 +3535,7 @@ TODO : move to base</span>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/ServerEngine.html#property_serverName">ServerEngine</a>:
-        <a href="../files/lib_server_server_engine.js.html#l323"><code>lib&#x2F;server&#x2F;server_engine.js:323</code></a>
+        <a href="../files/lib_server_server_engine.js.html#l334"><code>lib\server\server_engine.js:334</code></a>
         </p>
 
 
@@ -4001,7 +3559,7 @@ TODO : move to base</span>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/ServerEngine.html#property_serverNamespaceName">ServerEngine</a>:
-        <a href="../files/lib_server_server_engine.js.html#l341"><code>lib&#x2F;server&#x2F;server_engine.js:341</code></a>
+        <a href="../files/lib_server_server_engine.js.html#l352"><code>lib\server\server_engine.js:352</code></a>
         </p>
 
 
@@ -4025,7 +3583,7 @@ TODO : move to base</span>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/ServerEngine.html#property_serverNameUrn">ServerEngine</a>:
-        <a href="../files/lib_server_server_engine.js.html#l332"><code>lib&#x2F;server&#x2F;server_engine.js:332</code></a>
+        <a href="../files/lib_server_server_engine.js.html#l343"><code>lib\server\server_engine.js:343</code></a>
         </p>
 
 
@@ -4049,7 +3607,7 @@ TODO : move to base</span>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/OPCUABaseServer.html#property_serverType">OPCUABaseServer</a>:
-        <a href="../files/lib_server_base_server.js.html#l96"><code>lib&#x2F;server&#x2F;base_server.js:96</code></a>
+        <a href="../files/lib_server_base_server.js.html#l100"><code>lib\server\base_server.js:100</code></a>
         </p>
 
 
@@ -4074,7 +3632,7 @@ TODO : move to base</span>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/OPCUABaseServer.html#property_subscriberCount">OPCUABaseServer</a>:
-        <a href="../files/lib_misc_watchdog.js.html#l15"><code>lib&#x2F;misc&#x2F;watchdog.js:15</code></a>
+        <a href="../files/lib_misc_watchdog.js.html#l15"><code>lib\misc\watchdog.js:15</code></a>
         </p>
 
 
@@ -4099,7 +3657,7 @@ TODO : move to base</span>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_opcua_server.js.html#l304"><code>lib&#x2F;server&#x2F;opcua_server.js:304</code></a>
+        <a href="../files/lib_server_opcua_server.js.html#l309"><code>lib\server\opcua_server.js:309</code></a>
         </p>
 
 

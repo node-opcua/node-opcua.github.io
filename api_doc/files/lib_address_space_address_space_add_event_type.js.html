@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>lib/address_space/address_space_add_event_type.js - The NodeOPCUA API</title>
+    <title>lib\address_space\address_space_add_event_type.js - The NodeOPCUA API</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.46</em>
+            <em>API Docs for: 0.0.52</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -56,6 +56,7 @@
                                 <li><a href="../classes/Argument.html">Argument</a></li>
                                 <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
                                 <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+                                <li><a href="../classes/AttributeNameById.html">AttributeNameById</a></li>
                                 <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
                                 <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
                                 <li><a href="../classes/BaseNode.html">BaseNode</a></li>
@@ -122,7 +123,7 @@
                                 <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
                                 <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
                                 <li><a href="../classes/EUInformation.html">EUInformation</a></li>
-                                <li><a href="../classes/EventField.html">EventField</a></li>
+                                <li><a href="../classes/EventFieldList.html">EventFieldList</a></li>
                                 <li><a href="../classes/EventFilter.html">EventFilter</a></li>
                                 <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
                                 <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
@@ -152,6 +153,7 @@
                                 <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
                                 <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
                                 <li><a href="../classes/MessageSecurityMode.html">MessageSecurityMode</a></li>
+                                <li><a href="../classes/ModelChangeStructure.html">ModelChangeStructure</a></li>
                                 <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
@@ -165,6 +167,7 @@
                                 <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
                                 <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
                                 <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+                                <li><a href="../classes/MyStructure.html">MyStructure</a></li>
                                 <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
                                 <li><a href="../classes/NodeId.html">NodeId</a></li>
                                 <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
@@ -203,6 +206,7 @@
                                 <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
                                 <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
                                 <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+                                <li><a href="../classes/RedundantServer.html">RedundantServer</a></li>
                                 <li><a href="../classes/Reference.html">Reference</a></li>
                                 <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
                                 <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
@@ -217,9 +221,11 @@
                                 <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
                                 <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
                                 <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+                                <li><a href="../classes/SamplingIntervalDiagnostics.html">SamplingIntervalDiagnostics</a></li>
                                 <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
                                 <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
                                 <li><a href="../classes/SecurityTokenRequestType.html">SecurityTokenRequestType</a></li>
+                                <li><a href="../classes/SemanticChangeStructure.html">SemanticChangeStructure</a></li>
                                 <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
                                 <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
                                 <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
@@ -232,6 +238,7 @@
                                 <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
                                 <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
                                 <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+                                <li><a href="../classes/SessionSecurityDiagnostics.html">SessionSecurityDiagnostics</a></li>
                                 <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
                                 <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
                                 <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
@@ -333,7 +340,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-<h1 class="file-heading">File: lib/address_space/address_space_add_event_type.js</h1>
+<h1 class="file-heading">File: lib\address_space\address_space_add_event_type.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
@@ -341,6 +348,7 @@
 
 /**
  * @module opcua.address_space
+ * @class AddressSpace
  */
 require(&quot;requirish&quot;)._(module);
 
@@ -348,10 +356,78 @@ var assert = require(&quot;better-assert&quot;);
 var _ = require(&quot;underscore&quot;);
 var UAVariable = require(&quot;lib/address_space/ua_variable&quot;).UAVariable;
 var Variant = require(&quot;lib/datamodel/variant&quot;).Variant;
+var DataType = require(&quot;lib/datamodel/variant&quot;).DataType;
+var StatusCodes = require(&quot;lib/datamodel/opcua_status_code&quot;).StatusCodes;
+
 var capitalizeFirstLetter = require(&quot;lib/misc/utils&quot;).capitalizeFirstLetter;
 var lowerFirstLetter = require(&quot;lib/misc/utils&quot;).lowerFirstLetter;
 
+var doDebug = false;
+
 exports.install = function (AddressSpace) {
+
+
+
+    /*=
+     * Helper function to print a EventData
+     * @method _eventDataToString
+     * @param baseObjectType {UAObjectType}
+     * @param addressSpace {AddressSpace}
+     * @param eventType {UAObjectType}
+     * @param eventData {Object}
+     * @return {String}
+     * @private
+     */
+    function _eventDataToString(baseObjectType,addressSpace,eventType,eventData) {
+
+        if (baseObjectType.nodeId === eventType.nodeId) {
+            return; // nothing to do
+        }
+        var baseTypeNodeId = eventType.subtypeOf;
+        // istanbul ignore next
+        if (!baseTypeNodeId) {
+            throw new Error(&quot;Object with nodeId &quot; + eventType.nodeId + &quot; has no Type&quot;);
+        }
+
+        var baseType = addressSpace.findNode(baseTypeNodeId);
+        // istanbul ignore next
+        if (!baseType) {
+            throw new Error(&quot;Cannot find object with nodeId &quot;.red + baseTypeNodeId);
+        }
+
+        var str = &quot;&quot;;
+        str = str + _eventDataToString(baseObjectType,addressSpace,baseType,eventData);
+
+        // get properties and components from base class
+        var refProperties = eventType.getProperties();
+
+        var opts = { addressSpace: addressSpace };
+
+        var s = refProperties.map(function (ref) {
+            var node = addressSpace.findNode(ref.nodeId);
+            var lowerName = lowerFirstLetter(node.browseName.name);
+            var value = eventData[lowerName];
+            var extra = &quot;&quot;;
+            if (value.dataType ===DataType.NodeId) {
+                extra = addressSpace.findNode(value.value).browseName.toString();
+            }
+            return (&quot;  &quot; + lowerName+&quot;           &quot;).substr(0,15).yellow + &quot; value = &quot; + value.toString(opts).cyan + &quot; &quot; + extra;
+        });
+        return str + &quot;\n&quot; + eventType.browseName.toString().green  + &quot; (&quot; + eventType.nodeId.toString()  + &quot;)&quot; + &quot;\n&quot; + s.join(&quot;\n&quot;);
+    }
+    function EventData(eventTypeNode) {
+        this.__nodes = {};
+        this.$eventType = eventTypeNode;
+    }
+    EventData.prototype.toString = function( opts) {
+
+        var addressSpace = this.$eventType.__address_space;
+        var baseObjectType = addressSpace.findObjectType(&quot;BaseObjectType&quot;); // i=58
+        assert(baseObjectType, &quot;Ba seObjectType must be defined in the address space&quot;);
+
+        return _eventDataToString(baseObjectType,addressSpace,this.$eventType,this);
+    };
+
 
     /**
      * add a new event type to the address space
@@ -361,19 +437,27 @@ exports.install = function (AddressSpace) {
      * @param [options.subtypeOf =&quot;BaseEventType&quot;]
      * @return {UAObjectType} : the object type
      *
-     * @example:
+     * @example
      *
-     *    var evtType = addressSpace.addEventType({
-     *      browseName: &quot;MyAuditEventType&quot;,
-     *      subtypeOf:  &quot;AuditEventType&quot;
-     *    });
+     *      var evtType = addressSpace.addEventType({
+     *          browseName: &quot;MyAuditEventType&quot;,
+     *          subtypeOf:  &quot;AuditEventType&quot;
+     *      });
      *
      */
     AddressSpace.prototype.addEventType = function (options) {
         options.subtypeOf = options.subtypeOf || &quot;BaseEventType&quot;;
-        options.isAbstract = options.hasOwnProperty(&quot;isAbstract&quot;) ? options.isAbstract : true; // eventType always abstract
+        // are eventType always abstract ?? (todo check this assertion)
+        options.isAbstract = options.hasOwnProperty(&quot;isAbstract&quot;) ? options.isAbstract : true;
         return this.addObjectType(options);
     };
+
+    //function _coerceEventType(addressSpace, eventType) {
+    //
+    //    var nodeid = makeNodeId(ObjectTypeIds[eventType]);
+    //    var eventTypeNode = addressSpace.findNode(nodeid);
+    //    return eventTypeNode;
+    //}
     /**
      * find an EventType node in the address space
      * @method findEventType
@@ -392,16 +476,17 @@ exports.install = function (AddressSpace) {
     AddressSpace.prototype.findEventType = function (eventTypeId) {
 
         var eventType;
-        if (eventTypeId.nodeId) {
+        if (eventTypeId &amp;&amp; eventTypeId.nodeId) {
             eventType = eventTypeId;
         } else {
             eventType = this.findObjectType(eventTypeId);
         }
-
         if (!eventType) {
             return null;
         }
         var baseEventType = this.findObjectType(&quot;BaseEventType&quot;);
+        assert(baseEventType,&quot;expecting BaseEventType - please check you nodeset xml file!&quot;);
+
         if (eventType.nodeId === baseEventType.nodeId) {
             return eventType;
         }
@@ -440,33 +525,74 @@ exports.install = function (AddressSpace) {
         return new Variant({value: new Buffer(self._eventIdCounter), dataType: &quot;ByteString&quot;});
     };
 
-    /*
+    /*=
      * construct a simple javascript object with all the default properties of the event
      * @method constructEventData
      *
+     * @return result.$eventType {BaseNode} the event type node
+     * @return result.eventId {NodeId} the
+     * ...
      * @private
      */
-    AddressSpace.prototype.constructEventData = function (eventTypeId, options) {
+    AddressSpace.prototype.constructEventData = function (eventTypeId, data) {
 
         var addressSpace = this;
 
-        options = options || {};
-
+        data = data || {};
 
         // construct the reference dataStructure to store event Data
         var eventTypeNode = addressSpace.findEventType(eventTypeId);
-
         /* istanbul ignore next */
         if (!eventTypeNode) {
             throw new Error(&quot; cannot find EvenType for &quot; + eventTypeId);
         }
-        // reminder : event type cannot be instantiated directly !
-        assert(eventTypeNode.isAbstract);
+
+        // eventId
+        assert(data.hasOwnProperty,&quot;eventId&quot;,&quot;constructEventData : options object should not have eventId property&quot;);
+        data.eventId = addressSpace.generateEventId();
+
+        // eventType
+        data.eventType = { dataType: DataType.NodeId, value: eventTypeNode.nodeId};
+
+        // sourceNode
+        assert(data.hasOwnProperty(&quot;sourceNode&quot;), &quot;expecting a source node to be defined&quot;);
+        data.sourceNode = new Variant(data.sourceNode);
+        assert(data.sourceNode.dataType ===  DataType.NodeId);
+
+        // sourceName
+        var sourceNode = addressSpace.findNode(data.sourceNode.value);
+
+        data.sourceName = data.sourceName || { dataType:  DataType.String, value: sourceNode.getDisplayName(&quot;en&quot;) };
+
+        var nowUTC = (new Date());
+
+        // time (UtcTime)
+        // TODO
+        data.time = data.time  ||  { dataType: DataType.DateTime, value: nowUTC};
+
+        // receivedTime  (UtcTime)
+        // TODO
+        data.receiveTime = data.receiveTime  ||  { dataType: DataType.DateTime, value: nowUTC};
+
+        // localTime  (UtcTime)
+        // TODO
+        data.localTime = data.localTime  ||  { dataType: DataType.DateTime, value: nowUTC};
+
+        // message  (LocalizedText)
+        data.message = data.message  ||  { dataType: DataType.LocalizedText, value: { text: &quot;&quot; } };
+
+        // severity  (UInt16)
+        data.severity = data.severity  ||  { dataType: DataType.UInt16, value: 0 };
+
+        //xx // reminder : event type cannot be instantiated directly !
+        //xx assert(eventTypeNode.isAbstract);
 
         var baseObjectType = addressSpace.findObjectType(&quot;BaseObjectType&quot;); // i=58
-        assert(baseObjectType, &quot;BaseObjectType must be defined in the address space&quot;);
+        assert(baseObjectType, &quot;Ba seObjectType must be defined in the address space&quot;);
 
-        function initialize_properties_and_components(self, data) {
+
+        var visitedProperties = [];
+        function populate_data(self, result) {
 
             if (baseObjectType.nodeId === self.nodeId) {
                 return; // nothing to do
@@ -478,170 +604,234 @@ exports.install = function (AddressSpace) {
                 throw new Error(&quot;Object with nodeId &quot; + self.nodeId + &quot; has no Type&quot;);
             }
 
-            var baseType = addressSpace.findObject(baseTypeNodeId);
+            var baseType = addressSpace.findNode(baseTypeNodeId);
             // istanbul ignore next
             if (!baseType) {
                 throw new Error(&quot;Cannot find object with nodeId &quot;.red + baseTypeNodeId);
             }
 
-            initialize_properties_and_components(baseType, data);
+            function _coerceVariant(variantLike) {
+                var value =  (variantLike instanceof Variant) ? variantLike : new Variant(variantLike);
+                return value;
+            }
+
+            populate_data(baseType, result);
 
             // get properties and components from base class
-            var refProperties = self.getProperties();
+            var properties = self.getProperties();
+            var components = self.getComponents();
+            var children = [].concat(properties,components);
 
-            refProperties.forEach(function (ref) {
-                var node = addressSpace.findObject(ref.nodeId);
+            // istanbul ignore next
+            if (doDebug) { console.log(&quot; &quot;+self.browseName.toString().bgWhite.cyan ); }
+
+            children.forEach(function (node) {
+
                 var lowerName = lowerFirstLetter(node.browseName.name);
 
-                if (options.hasOwnProperty(lowerName)) {
+                // istanbul ignore next
+                if (doDebug) { console.log(&quot;      &quot;+lowerName.toString()); }
 
-                    data[lowerName] = (lowerName instanceof Variant) ?
-                        options[lowerName] : new Variant(options[lowerName]);
+                visitedProperties[lowerName] = node;
+
+                if (data.hasOwnProperty(lowerName)) {
+                    result[lowerName] = _coerceVariant(data[lowerName]);
                 } else {
-                    data[lowerName] = node.readValue().value;
+
+                    // add a property , but with a null variant
+                    result[lowerName] =  _coerceVariant({ dataType: DataType.Null});
+
+                    if (node.modellingRule === &quot;Mandatory&quot;) {
+
+                        console.log(&quot;ERROR : AddressSpace#constructEventData(eventType,options) cannot find property &quot;.red
+                            + self.browseName.toString()+ &quot; =&gt; &quot;+ lowerName.cyan );
+                    } else {
+
+                        console.log(&quot;Warning : AddressSpace#constructEventData(eventType,options) cannot find property &quot;.yellow
+                            + self.browseName.toString()+ &quot; =&gt; &quot;+ lowerName.cyan );
+                    }
+                    //xx data[lowerName] = node.readValue().value;
                 }
                 // also store value in index
-                data.__nodes[node.nodeId.toString()] = data[lowerName];
+                result.__nodes[node.nodeId.toString()] = result[lowerName];
 
             });
         }
 
-        var data = {};
-        data.__nodes = {};
-        initialize_properties_and_components(eventTypeNode, data);
+        var result = new EventData(eventTypeNode);
 
-        return data;
-    };
+        // verify standard properties...
+        populate_data(eventTypeNode, result);
 
-    /**
-     * Verify and complete the event data.
-     *
-     * @param eventTypeId
-     * @param eventData
-     */
-    AddressSpace.prototype.deprecated_createEventData = function (eventTypeId, eventData) {
-
-        var self = this;
-
-        var eventTypeNode = self.findEventType(eventTypeId);
-        /* istanbul ignore next */
-        if (!eventTypeNode) {
-            throw new Error(&quot; cannot find EvenType for &quot; + eventTypeId);
-        }
-
-        if (!eventTypeNode._refImpl) {
-            eventTypeNode._refImpl = self.instantiateEvent(eventTypeNode, {});
-            eventTypeNode._refData = self.constructEventData(eventTypeNode);
-        }
-        // reminder : event type cannot be instantiated directly !
-        assert(eventTypeNode.isAbstract);
-
-        eventData.eventId = self.generateEventId();
-
-        // phase 1: create simple data structure
-        // Has Properties, has components
-        var components = eventTypeNode.getComponents();
-
-        //xx console.log(&quot; Components =&quot;,components.toString());
-        //console.log(&quot; Properties =&quot;,eventTypeNode.getProperties());
-        console.log(eventTypeNode.toString());
-
-        var eventTypeNodeImpl = eventTypeNode._refImpl;
-
-        // phase 2: verify that existing properties
-        Object.keys(eventData).forEach(function (key) {
-
-            console.log(&quot; Kkey =&quot;, key, &quot; options =&quot;, eventData[key]);
-
-            var uKey = capitalizeFirstLetter(key);
-
-            var varNode = eventTypeNodeImpl.getPropertyByName(uKey);
-            assert(varNode !== null);
-
-            assert(varNode instanceof UAVariable);
-
-            var variant = new Variant(eventData[key]);
-            //xx console.log(&quot;xxxx &quot;,variant);
-            //xx console.log(&quot;xxxx &quot;,varNode.toString());
-
-            // check that Variant DataType is compatible with the UAVariable dataType
-            var nodeDataType = self.findObject(varNode.dataType).browseName;
-
-            /* istanbul ignore next */
-            if (!varNode._validate_DataType(variant.dataType)) {
-                throw new Error(&quot; Invalid variant dataType&quot;);
+        // verify that all elements of data are valid
+        Object.keys(data).map(function(k) {
+            if(k === &quot;$eventType&quot;) {
+                return;
+            }
+            if (!visitedProperties.hasOwnProperty(k)) {
+                throw new Error(&quot; cannot find property &#x27;&quot; + k + &quot;&#x27; in [ &quot;
+                    + Object.keys(visitedProperties).join(&quot;, &quot;) + &quot;] when filling &quot; +
+                    eventTypeNode.browseName.toString() );
             }
         });
-        // now merge
-        eventData = _.defaults(eventData, eventTypeNode._refData);
-        //xx console.log(&quot;eventNode&quot;,eventNode.toString());
-        return eventData;
 
+        return result;
     };
 
     /**
-     * instantiate an event.
-     * this will create the unique EventId and will set eventType
-     * @method instantiateEvent
-     * @param eventTypeId {String|NodeId} the EventType to instantiate
-     * @param options {object} a object containing the value to set
-     * @param options.eventId {String|NodeId} the EventType Identifier to instantiate (type cannot be abstract)
-     * @return node {UADataType}
+     * @method _getCompositeKey
+     * @param node {BaseNode}
+     * @param key {String}
+     * @return {BaseNode}
+     * @private
+     *
+     * @example
+     *
+     *     var node  = _getComposite(node,&quot;enabledState.id&quot;);
+     *
      */
-    AddressSpace.prototype.instantiateEvent = function (eventTypeId, options) {
+    function _getCompositeKey(node,key) {
+
+        var cur = node;
+        var elements = key.split(&quot;.&quot;);
+        for (var i = 0; i&lt; elements.length ; i++ ) {
+            var e = elements[i];
+
+            // istanbul ignore next
+            if (!cur.hasOwnProperty(e)) {
+                throw new Error(&quot; cannot extract &#x27;&quot; + key +&quot;&#x27; from &quot; + node.browseName.toString() );
+            }
+
+            cur = cur[e];
+
+        }
+        return cur;
+    }
+
+    /**
+     * instantiate a Condition.
+     * this will create the unique EventId and will set eventType
+     * @method instantiateCondition
+     * @param conditionTypeId  {String|NodeId}  the EventType to instantiate
+     * @param options      {object}
+     * @param data         {object}         a object containing the value to set
+     * @param data.eventId {String|NodeId}  the EventType Identifier to instantiate (type cannot be abstract)
+     * @return node        {UADataType}
+     */
+    AddressSpace.prototype.instantiateCondition = function (conditionTypeId, options,data ) {
 
         var self = this;
 
-        options.eventId = self.generateEventId();
-
-        var eventTypeNode = self.findEventType(eventTypeId);
+        var conditionType = self.findEventType(conditionTypeId);
 
         /* istanbul ignore next */
-        if (!eventTypeNode) {
-            throw new Error(&quot; cannot find EvenType for &quot; + eventTypeId);
+        if (!conditionType) {
+            throw new Error(&quot; cannot find Condition Type for &quot; + conditionTypeId);
         }
 
         // reminder : abstract event type cannot be instantiated directly !
-        assert(! eventTypeNode.isAbstract);
+        assert(! conditionType.isAbstract);
+
+        var baseConditionEventType = self.findEventType(&quot;ConditionType&quot;);
+        /* istanbul ignore next */
+        if (!baseConditionEventType) {
+            throw new Error(&quot; cannot find Condition Type for ConditionType :&quot; + baseConditionEventType);
+        }
+
+        assert(conditionType.isSupertypeOf(baseConditionEventType));
 
         // assert(_.isString(options.browseName));
         options.browseName = options.browseName || &quot;???&quot;;
 
-        var eventNode = eventTypeNode.instantiate({
-            browseName: options.browseName
-            //xx organizedBy: &quot;i=58&quot;
-        });
+        var conditionNode = conditionType.instantiate(options);
+
+        data = data || {};
+        data.eventId = self.generateEventId();
+
+
+
+        // set enabled state
+        AddressSpace._install_TwoStateVariable_machinery(conditionNode.enabledState);
+
+
+        conditionNode._setEnableState = function(requestedEnableState) {
+            var enabledState =  conditionNode.enabledState.id.readValue().value.value;
+            if (enabledState &amp;&amp; requestedEnableState) {
+                return StatusCodes.BadConditionAlreadyEnabled;
+            }
+            if (!enabledState &amp;&amp; !requestedEnableState) {
+                return StatusCodes.BadConditionAlreadyDisabled;
+            }
+            conditionNode.enabledState.setValue(requestedEnableState);
+
+            return StatusCodes.Good;
+        };
+
+
 
         // set properties
-        Object.keys(options).forEach(function (key) {
+        Object.keys(data).forEach(function (key) {
 
-            // ignore special attributes
-            if (key === &quot;browseName&quot;) {
-                return;
-            }
-            //xxconsole.log(&quot; Kkey =&quot;,key, &quot; options =&quot;,options[key]);
-            assert(eventNode.hasOwnProperty(key));
-
-            var varNode = eventNode[key];
+            var varNode = _getCompositeKey(conditionNode,key);
             assert(varNode instanceof UAVariable);
 
-            var variant = new Variant(options[key]);
-            //xx console.log(&quot;xxxx &quot;,variant);
-            //xx console.log(&quot;xxxx &quot;,varNode.toString());
+            var variant = new Variant(data[key]);
 
             // check that Variant DataType is compatible with the UAVariable dataType
-            var nodeDataType = self.findObject(varNode.dataType).browseName;
+            var nodeDataType = self.findNode(varNode.dataType).browseName;
 
             /* istanbul ignore next */
             if (!varNode._validate_DataType(variant.dataType)) {
-                throw new Error(&quot; Invalid variant dataType&quot;);
+                throw new Error(&quot; Invalid variant dataType &quot; + variant + &quot; &quot; + varNode.browseName.toString());
             }
 
-            varNode.setValueFromSource(new Variant(options[key]));
+            var value =new Variant(data[key]);
+
+            varNode.setValueFromSource(value);
 
         });
-        //xx console.log(&quot;eventNode&quot;,eventNode.toString());
-        return eventNode;
+
+
+        // bind condition methods
+        //xx var method = conditionNode.getComponentByName(&quot;Enable&quot;);
+        conditionNode.enable.bindMethod(function (inputArguments, context, callback) {
+            var statusCode = conditionNode._setEnableState(true);
+            return callback(null,{statusCode: statusCode });
+        });
+
+        //xx var method = conditionNode.getComponentByName(&quot;Disable&quot;);
+        conditionNode.disable.bindMethod(function (inputArguments, context, callback) {
+            var statusCode = conditionNode._setEnableState(false);
+            return callback(null,{statusCode: statusCode });
+
+        });
+
+        // set enabled state
+        if (conditionNode.ackedState) {
+            AddressSpace._install_TwoStateVariable_machinery(conditionNode.ackedState);
+
+            conditionNode._setAckedState = function(requestedAckedState,eventId,comment) {
+                var ackedState =  conditionNode.ackedState.id.readValue().value.value;
+                if (ackedState &amp;&amp; requestedAckedState) {
+                    return StatusCodes.BadConditionBranchAlreadyAcked;
+                }
+                conditionNode.ackedState.setValue(ackedState);
+                return StatusCodes.Good;
+            };
+            //xx var method = conditionNode.getComponentByName(&quot;Disable&quot;);
+            conditionNode.acknowledge.bindMethod(function (inputArguments, context, callback) {
+                // inputArguments has 2 arguments
+                // EventId  =&gt; NodeId The Identifier of the event to comment
+                // Comment  =&gt; NodeId The Comment to add to the condition
+                assert(inputArguments.length === 2);
+                var eventId = inputArguments[0].value;
+                var comment = inputArguments[1].comment;
+                var statusCode = conditionNode._setAckedState(false,eventId,comment);
+                return callback(null,{statusCode: statusCode });
+
+            });
+        }
+        return conditionNode;
 
     };
 };

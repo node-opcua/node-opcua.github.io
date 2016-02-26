@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.46</em>
+            <em>API Docs for: 0.0.52</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -56,6 +56,7 @@
                                 <li><a href="../classes/Argument.html">Argument</a></li>
                                 <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
                                 <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+                                <li><a href="../classes/AttributeNameById.html">AttributeNameById</a></li>
                                 <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
                                 <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
                                 <li><a href="../classes/BaseNode.html">BaseNode</a></li>
@@ -122,7 +123,7 @@
                                 <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
                                 <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
                                 <li><a href="../classes/EUInformation.html">EUInformation</a></li>
-                                <li><a href="../classes/EventField.html">EventField</a></li>
+                                <li><a href="../classes/EventFieldList.html">EventFieldList</a></li>
                                 <li><a href="../classes/EventFilter.html">EventFilter</a></li>
                                 <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
                                 <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
@@ -152,6 +153,7 @@
                                 <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
                                 <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
                                 <li><a href="../classes/MessageSecurityMode.html">MessageSecurityMode</a></li>
+                                <li><a href="../classes/ModelChangeStructure.html">ModelChangeStructure</a></li>
                                 <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
@@ -165,6 +167,7 @@
                                 <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
                                 <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
                                 <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+                                <li><a href="../classes/MyStructure.html">MyStructure</a></li>
                                 <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
                                 <li><a href="../classes/NodeId.html">NodeId</a></li>
                                 <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
@@ -203,6 +206,7 @@
                                 <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
                                 <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
                                 <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+                                <li><a href="../classes/RedundantServer.html">RedundantServer</a></li>
                                 <li><a href="../classes/Reference.html">Reference</a></li>
                                 <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
                                 <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
@@ -217,9 +221,11 @@
                                 <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
                                 <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
                                 <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+                                <li><a href="../classes/SamplingIntervalDiagnostics.html">SamplingIntervalDiagnostics</a></li>
                                 <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
                                 <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
                                 <li><a href="../classes/SecurityTokenRequestType.html">SecurityTokenRequestType</a></li>
+                                <li><a href="../classes/SemanticChangeStructure.html">SemanticChangeStructure</a></li>
                                 <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
                                 <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
                                 <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
@@ -232,6 +238,7 @@
                                 <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
                                 <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
                                 <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+                                <li><a href="../classes/SessionSecurityDiagnostics.html">SessionSecurityDiagnostics</a></li>
                                 <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
                                 <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
                                 <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
@@ -338,7 +345,7 @@
 
 
         <div class="foundat">
-            Defined in: <a href="../files/lib_server_base_server.js.html#l47"><code>lib&#x2F;server&#x2F;base_server.js:47</code></a>
+            Defined in: <a href="../files/lib_server_base_server.js.html#l51"><code>lib\server\base_server.js:51</code></a>
         </div>
 
             Module: <a href="../modules/opcua.server.html">opcua.server</a>
@@ -373,7 +380,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_base_server.js.html#l47"><code>lib&#x2F;server&#x2F;base_server.js:47</code></a>
+        <a href="../files/lib_server_base_server.js.html#l51"><code>lib\server\base_server.js:51</code></a>
         </p>
 
 
@@ -570,6 +577,10 @@ turn a string make of hexadecimal bytes into a buffer</a>
 
                             </li>
                             <li class="index-item method">
+                                <a href="#method_resumeEndPoints">resumeEndPoints</a>
+
+                            </li>
+                            <li class="index-item method">
                                 <a href="#method_set_flag">set_flag</a>
 
                             </li>
@@ -579,6 +590,10 @@ turn a string make of hexadecimal bytes into a buffer</a>
                             </li>
                             <li class="index-item method">
                                 <a href="#method_start">start</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_suspendEndPoints">suspendEndPoints</a>
 
                             </li>
                     </ul>
@@ -630,7 +645,7 @@ turn a string make of hexadecimal bytes into a buffer</a>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_base_server.js.html#l297"><code>lib&#x2F;server&#x2F;base_server.js:297</code></a>
+        <a href="../files/lib_server_base_server.js.html#l306"><code>lib\server\base_server.js:306</code></a>
         </p>
 
 
@@ -696,7 +711,7 @@ turn a string make of hexadecimal bytes into a buffer</a>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_base_server.js.html#l249"><code>lib&#x2F;server&#x2F;base_server.js:249</code></a>
+        <a href="../files/lib_server_base_server.js.html#l258"><code>lib\server\base_server.js:258</code></a>
         </p>
 
 
@@ -779,7 +794,7 @@ if the subscriber failed to call keepAlive withing the timeout period.</code></h
                     <p>Provided by the <a href="../modules/opcua.miscellaneous.html">opcua.miscellaneous</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/lib_misc_watchdog.js.html#l68"><code>lib&#x2F;misc&#x2F;watchdog.js:68</code></a>
+        <a href="../files/lib_misc_watchdog.js.html#l68"><code>lib\misc\watchdog.js:68</code></a>
         </p>
 
 
@@ -856,7 +871,7 @@ if the subscriber failed to call keepAlive withing the timeout period.</code></h
                     <p>Provided by the <a href="../modules/opcua.miscellaneous.html">opcua.miscellaneous</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/lib_misc_utils.js.html#l25"><code>lib&#x2F;misc&#x2F;utils.js:25</code></a>
+        <a href="../files/lib_misc_utils.js.html#l25"><code>lib\misc\utils.js:25</code></a>
         </p>
 
 
@@ -923,7 +938,7 @@ if the subscriber failed to call keepAlive withing the timeout period.</code></h
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_base_server.js.html#l339"><code>lib&#x2F;server&#x2F;base_server.js:339</code></a>
+        <a href="../files/lib_server_base_server.js.html#l348"><code>lib\server\base_server.js:348</code></a>
         </p>
 
 
@@ -971,7 +986,7 @@ if the subscriber failed to call keepAlive withing the timeout period.</code></h
                     <p>Provided by the <a href="../modules/opcua.miscellaneous.html">opcua.miscellaneous</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/lib_misc_utils.js.html#l39"><code>lib&#x2F;misc&#x2F;utils.js:39</code></a>
+        <a href="../files/lib_misc_utils.js.html#l39"><code>lib\misc\utils.js:39</code></a>
         </p>
 
 
@@ -1034,7 +1049,7 @@ if the subscriber failed to call keepAlive withing the timeout period.</code></h
                     <p>Provided by the <a href="../modules/opcua.miscellaneous.html">opcua.miscellaneous</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/lib_misc_utils.js.html#l112"><code>lib&#x2F;misc&#x2F;utils.js:112</code></a>
+        <a href="../files/lib_misc_utils.js.html#l117"><code>lib\misc\utils.js:117</code></a>
         </p>
 
 
@@ -1101,7 +1116,7 @@ turn a string make of hexadecimal bytes into a buffer</code></h3>
                     <p>Provided by the <a href="../modules/opcua.miscellaneous.html">opcua.miscellaneous</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/lib_misc_utils.js.html#l226"><code>lib&#x2F;misc&#x2F;utils.js:226</code></a>
+        <a href="../files/lib_misc_utils.js.html#l242"><code>lib\misc\utils.js:242</code></a>
         </p>
 
 
@@ -1171,7 +1186,7 @@ turn a string make of hexadecimal bytes into a buffer</code></h3>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_base_server.js.html#l149"><code>lib&#x2F;server&#x2F;base_server.js:149</code></a>
+        <a href="../files/lib_server_base_server.js.html#l153"><code>lib\server\base_server.js:153</code></a>
         </p>
 
 
@@ -1238,7 +1253,7 @@ turn a string make of hexadecimal bytes into a buffer</code></h3>
                     <p>Provided by the <a href="../modules/opcua.miscellaneous.html">opcua.miscellaneous</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/lib_misc_utils.js.html#l319"><code>lib&#x2F;misc&#x2F;utils.js:319</code></a>
+        <a href="../files/lib_misc_utils.js.html#l348"><code>lib\misc\utils.js:348</code></a>
         </p>
 
 
@@ -1316,7 +1331,7 @@ normalize_require_file(&quot;/home/bob/folder1/&quot;,&quot;/home/bob/folder1/fo
                     <p>Provided by the <a href="../modules/opcua.miscellaneous.html">opcua.miscellaneous</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/lib_misc_utils.js.html#l142"><code>lib&#x2F;misc&#x2F;utils.js:142</code></a>
+        <a href="../files/lib_misc_utils.js.html#l158"><code>lib\misc\utils.js:158</code></a>
         </p>
 
 
@@ -1371,6 +1386,59 @@ normalize_require_file(&quot;/home/bob/folder1/&quot;,&quot;/home/bob/folder1/fo
 
 
 </div>
+<div id="method_resumeEndPoints" class="method item">
+    <h3 class="name"><code>resumeEndPoints</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>callback</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_server_base_server.js.html#l378"><code>lib\server\base_server.js:378</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>set all the end point into a state where they do  accept  connections</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">callback</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
 <div id="method_set_flag" class="method item">
     <h3 class="name"><code>set_flag</code></h3>
 
@@ -1399,7 +1467,7 @@ normalize_require_file(&quot;/home/bob/folder1/&quot;,&quot;/home/bob/folder1/fo
                     <p>Provided by the <a href="../modules/opcua.miscellaneous.html">opcua.miscellaneous</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/lib_misc_utils.js.html#l13"><code>lib&#x2F;misc&#x2F;utils.js:13</code></a>
+        <a href="../files/lib_misc_utils.js.html#l13"><code>lib\misc\utils.js:13</code></a>
         </p>
 
 
@@ -1470,7 +1538,7 @@ normalize_require_file(&quot;/home/bob/folder1/&quot;,&quot;/home/bob/folder1/fo
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_base_server.js.html#l126"><code>lib&#x2F;server&#x2F;base_server.js:126</code></a>
+        <a href="../files/lib_server_base_server.js.html#l130"><code>lib\server\base_server.js:130</code></a>
         </p>
 
 
@@ -1535,7 +1603,7 @@ normalize_require_file(&quot;/home/bob/folder1/&quot;,&quot;/home/bob/folder1/fo
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_base_server.js.html#l106"><code>lib&#x2F;server&#x2F;base_server.js:106</code></a>
+        <a href="../files/lib_server_base_server.js.html#l110"><code>lib\server\base_server.js:110</code></a>
         </p>
 
 
@@ -1567,6 +1635,59 @@ normalize_require_file(&quot;/home/bob/folder1/&quot;,&quot;/home/bob/folder1/fo
 
 
 </div>
+<div id="method_suspendEndPoints" class="method item">
+    <h3 class="name"><code>suspendEndPoints</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>callback</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_server_base_server.js.html#l363"><code>lib\server\base_server.js:363</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>set all the end point into a state where they do not accept further connections</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">callback</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
             </div>
 
             <div id="properties" class="api-class-tabpanel">
@@ -1583,7 +1704,7 @@ normalize_require_file(&quot;/home/bob/folder1/&quot;,&quot;/home/bob/folder1/fo
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_base_server.js.html#l96"><code>lib&#x2F;server&#x2F;base_server.js:96</code></a>
+        <a href="../files/lib_server_base_server.js.html#l100"><code>lib\server\base_server.js:100</code></a>
         </p>
 
 
@@ -1609,7 +1730,7 @@ normalize_require_file(&quot;/home/bob/folder1/&quot;,&quot;/home/bob/folder1/fo
                     <p>Provided by the <a href="../modules/opcua.miscellaneous.html">opcua.miscellaneous</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/lib_misc_watchdog.js.html#l15"><code>lib&#x2F;misc&#x2F;watchdog.js:15</code></a>
+        <a href="../files/lib_misc_watchdog.js.html#l15"><code>lib\misc\watchdog.js:15</code></a>
         </p>
 
 

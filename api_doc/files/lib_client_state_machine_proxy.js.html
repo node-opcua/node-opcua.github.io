@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>lib/client/state_machine_proxy.js - The NodeOPCUA API</title>
+    <title>lib\client\state_machine_proxy.js - The NodeOPCUA API</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.46</em>
+            <em>API Docs for: 0.0.52</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -56,6 +56,7 @@
                                 <li><a href="../classes/Argument.html">Argument</a></li>
                                 <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
                                 <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+                                <li><a href="../classes/AttributeNameById.html">AttributeNameById</a></li>
                                 <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
                                 <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
                                 <li><a href="../classes/BaseNode.html">BaseNode</a></li>
@@ -122,7 +123,7 @@
                                 <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
                                 <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
                                 <li><a href="../classes/EUInformation.html">EUInformation</a></li>
-                                <li><a href="../classes/EventField.html">EventField</a></li>
+                                <li><a href="../classes/EventFieldList.html">EventFieldList</a></li>
                                 <li><a href="../classes/EventFilter.html">EventFilter</a></li>
                                 <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
                                 <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
@@ -152,6 +153,7 @@
                                 <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
                                 <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
                                 <li><a href="../classes/MessageSecurityMode.html">MessageSecurityMode</a></li>
+                                <li><a href="../classes/ModelChangeStructure.html">ModelChangeStructure</a></li>
                                 <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
@@ -165,6 +167,7 @@
                                 <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
                                 <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
                                 <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+                                <li><a href="../classes/MyStructure.html">MyStructure</a></li>
                                 <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
                                 <li><a href="../classes/NodeId.html">NodeId</a></li>
                                 <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
@@ -203,6 +206,7 @@
                                 <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
                                 <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
                                 <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+                                <li><a href="../classes/RedundantServer.html">RedundantServer</a></li>
                                 <li><a href="../classes/Reference.html">Reference</a></li>
                                 <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
                                 <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
@@ -217,9 +221,11 @@
                                 <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
                                 <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
                                 <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+                                <li><a href="../classes/SamplingIntervalDiagnostics.html">SamplingIntervalDiagnostics</a></li>
                                 <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
                                 <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
                                 <li><a href="../classes/SecurityTokenRequestType.html">SecurityTokenRequestType</a></li>
+                                <li><a href="../classes/SemanticChangeStructure.html">SemanticChangeStructure</a></li>
                                 <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
                                 <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
                                 <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
@@ -232,6 +238,7 @@
                                 <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
                                 <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
                                 <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+                                <li><a href="../classes/SessionSecurityDiagnostics.html">SessionSecurityDiagnostics</a></li>
                                 <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
                                 <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
                                 <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
@@ -333,11 +340,13 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-<h1 class="file-heading">File: lib/client/state_machine_proxy.js</h1>
+<h1 class="file-heading">File: lib\client\state_machine_proxy.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
 &quot;use strict&quot;;
+require(&quot;requirish&quot;)._(module);
+
 var async = require(&quot;async&quot;);
 var assert = require(&quot;better-assert&quot;);
 var EventEmitter = require(&quot;events&quot;).EventEmitter;
@@ -349,6 +358,9 @@ var util = require(&quot;util&quot;);
 
 var UAProxyManager = require(&quot;./proxy&quot;).UAProxyManager;
 var makeRefId = require(&quot;./proxy&quot;).makeRefId;
+
+var dumpStateMachineToGraphViz = require(&quot;lib/misc/dump_statemachine&quot;).dumpStateMachineToGraphViz;
+var dumpStateMachineToPlantUML = require(&quot;lib/misc/dump_statemachine&quot;).dumpStateMachineToPlantUML;
 
 function UAStateMachineProxy(proxyManager, nodeId, reference) {
 
@@ -392,6 +404,7 @@ Object.defineProperty(ProxyState.prototype, &quot;browseName&quot;, {
         return self._node.browseName.toString();
     }, hidden: false, enumerable: true
 });
+
 //xx ProxyState.prototype.__defineGetter__(&quot;name&quot;,function() {
 //xx     var self = this;
 //xx     return self._node.browseName.toString();
@@ -401,17 +414,22 @@ ProxyState.prototype.__defineGetter__(&quot;stateNumber&quot;, function () {
     var self = this;
     return self._node.stateNumber.nodeId.value.toString();
 });
+
 ProxyState.prototype.__defineGetter__(&quot;nodeId&quot;, function () {
     // note stateNumber has no real dataValue
     var self = this;
-    return self._node.nodeId.value.toString();
+    return self._node.nodeId;
 });
+
+
+
 Object.defineProperty(ProxyState.prototype, &quot;stateNumber&quot;, {hidden: false, enumerable: true});
 
 ProxyState.prototype.toString = function () {
 
     return &quot;state &quot; + this.browseName + &quot; stateNumber :&quot; + this.stateNumber.toString();
 };
+
 function makeProxyState(node) {
     var ret = new ProxyState(node);
     return ret;
@@ -427,6 +445,8 @@ ProxyTransition.prototype.__defineGetter__(&quot;nodeId&quot;, function () {
     var self = this;
     return self._node.nodeId.value.toString();
 });
+
+
 Object.defineProperty(ProxyTransition.prototype, &quot;browseName&quot;, {
     get: function () {
         var self = this;
@@ -434,13 +454,14 @@ Object.defineProperty(ProxyTransition.prototype, &quot;browseName&quot;, {
     }, hidden: false, enumerable: true
 });
 
-ProxyTransition.prototype.__defineGetter__(&quot;fromState&quot;, function () {
+
+ProxyTransition.prototype.__defineGetter__(&quot;fromStateNode&quot;, function () {
     var self = this;
-    return self._node.$fromState.nodeId.value.toString();
+    return self._node.$fromState;
 });
-ProxyTransition.prototype.__defineGetter__(&quot;toState&quot;, function () {
+ProxyTransition.prototype.__defineGetter__(&quot;toStateNode&quot;, function () {
     var self = this;
-    return self._node.$toState.nodeId.value.toString();
+    return self._node.$toState;
 });
 
 function makeProxyTransition(node) {
@@ -472,8 +493,8 @@ function UAStateMachineType(obj) {
     }).map(makeProxyTransition);
 
 
-    dumpStateMachineToGraphViz(self);
-    dumpStateMachineToPlantUML(self);
+//xx    dumpStateMachineToGraphViz(self);
+//xx    dumpStateMachineToPlantUML(self);
 }
 
 
@@ -510,129 +531,6 @@ UAProxyManager.prototype.getStateMachineType = function (nodeId, callback) {
 
 };
 
-function dumpStateMachineToPlantUML(stateMachineType) {
-    function w(str) {
-        console.log(str);
-    }
-
-    function s(state) {
-        return state.nodeId.toString();
-    }
-
-
-    function n(state) {
-        return state.browseName.toString();
-    }
-    w(&quot;@startuml &quot; ); //+ stateMachineType.browseName.toString() + &quot;.png&quot;);
-    // initial state if any
-
-    if (stateMachineType.initialState) {
-        w(&quot; [*] --&gt; &quot;+ s(stateMachineType.initialState));
-        w(&quot; &quot; + s(stateMachineType.initialState) + &quot;:&quot; + n(stateMachineType.initialState));
-    }else {
-        w(&quot;[*] --&gt; [*]&quot;)
-    }
-
-    function t(transition) {
-        var name = n(transition);
-        name = name.replace(&quot;:&quot;,&quot;&quot;);
-        name = name.replace(&quot;To&quot;,&quot;\\nTo\\n&quot;);
-        name = name.replace(&quot;Transition&quot;,&quot;\\nTransition&quot;);
-        return name;
-    }
-    stateMachineType.states.forEach(function (state) {
-        w(&quot; &quot; + s(state) + &quot;: &quot; + n(state));
-    });
-
-    stateMachineType.transitions.forEach(function(transition) {
-
-        w(&quot;  &quot; + transition.fromState + &quot; --&gt; &quot; + transition.toState + &quot; : &quot; + t(transition));
-    });
-
-    w(&quot;@enduml&quot;);
-
-}
-/*
- @startuml
-
- 2930: Unshelved
-
- 2932: TimedShelved
-
- 2933: OneShotShelved
-
- 2930 --&gt; 2932 :   &quot;2935\nUnshelvedToTimedShelved&quot;
-
- 2930 --&gt; 2933 :   &quot;2936\nUnshelvedToOneShotShelved&quot;
-
- 2932 --&gt; 2930 :   &quot;2940\nTimedShelvedToUnshelved&quot;
-
- 2932 --&gt; 2933 :   &quot;2942\nTimedShelvedToOneShotShelved&quot;
-
- 2933 --&gt; 2930 :   &quot;2943\nOneShotShelvedToUnshelved&quot;
-
- 2933 --&gt; 2932 :   &quot;2945\nOneShotShelvedToTimedShelved&quot;
-
- @enduml
-
- */
-/*
- digraph finite_state_machine {
- rankdir=LR;
- size=&quot;8,5&quot;
- node [shape = doublecircle]; LR_0 LR_3 LR_4 LR_8;
- node [shape = circle];
- LR_0 -&gt; LR_2 [ label = &quot;SS(B)&quot; ];
- LR_0 -&gt; LR_1 [ label = &quot;SS(S)&quot; ];
- LR_1 -&gt; LR_3 [ label = &quot;S($end)&quot; ];
- LR_2 -&gt; LR_6 [ label = &quot;SS(b)&quot; ];
- LR_2 -&gt; LR_5 [ label = &quot;SS(a)&quot; ];
- LR_2 -&gt; LR_4 [ label = &quot;S(A)&quot; ];
- LR_5 -&gt; LR_7 [ label = &quot;S(b)&quot; ];
- LR_5 -&gt; LR_5 [ label = &quot;S(a)&quot; ];
- LR_6 -&gt; LR_6 [ label = &quot;S(b)&quot; ];
- LR_6 -&gt; LR_5 [ label = &quot;S(a)&quot; ];
- LR_7 -&gt; LR_8 [ label = &quot;S(b)&quot; ];
- LR_7 -&gt; LR_5 [ label = &quot;S(a)&quot; ];
- LR_8 -&gt; LR_6 [ label = &quot;S(b)&quot; ];
- LR_8 -&gt; LR_5 [ label = &quot;S(a)&quot; ];
- }
- */
-function dumpStateMachineToGraphViz(/*UAStateMachineProxy*/ stateMachineType) {
-
-    function w(str) {
-        console.log(str);
-    }
-
-    function s(state) {
-        return state.nodeId.toString();
-    }
-
-    function s_full(state) {
-        return s(state) + &quot; [ label = \&quot;&quot; + state.browseName.toString() + &quot;\&quot; ]&quot;;
-    }
-
-    w(&quot;digraph finite_state_machine {&quot;);
-    // initial state if any
-
-    if (stateMachineType.initialState) {
-        w(&quot;node [ shape = doublecircle];&quot;);
-        w(&quot;  _&quot; + s_full(stateMachineType.initialState) + &quot; ;&quot;);
-    }
-    w(&quot;node [ shape = circle];&quot;);
-    stateMachineType.states.forEach(function (state) {
-        w(&quot;   _&quot; + s_full(state));
-    });
-
-    stateMachineType.transitions.forEach(function(transition) {
-
-        w(&quot;  _&quot; + transition.fromState + &quot; -&gt; _&quot; + transition.toState + &quot; [ &quot; +
-            &quot; labeltooltip = \&quot;&quot; + transition.nodeId.toString() + &quot;\&quot; &quot; +
-            &quot;, label = \&quot;&quot; + transition.browseName.toString() +  &quot;\&quot; ];&quot;);
-    });
-
-    w(&quot;}&quot;);
-}
 exports.UAProxyManager = UAProxyManager;
 
     </pre>

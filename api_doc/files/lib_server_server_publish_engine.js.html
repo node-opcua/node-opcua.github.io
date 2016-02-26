@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>lib/server/server_publish_engine.js - The NodeOPCUA API</title>
+    <title>lib\server\server_publish_engine.js - The NodeOPCUA API</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.46</em>
+            <em>API Docs for: 0.0.52</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -56,6 +56,7 @@
                                 <li><a href="../classes/Argument.html">Argument</a></li>
                                 <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
                                 <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+                                <li><a href="../classes/AttributeNameById.html">AttributeNameById</a></li>
                                 <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
                                 <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
                                 <li><a href="../classes/BaseNode.html">BaseNode</a></li>
@@ -122,7 +123,7 @@
                                 <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
                                 <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
                                 <li><a href="../classes/EUInformation.html">EUInformation</a></li>
-                                <li><a href="../classes/EventField.html">EventField</a></li>
+                                <li><a href="../classes/EventFieldList.html">EventFieldList</a></li>
                                 <li><a href="../classes/EventFilter.html">EventFilter</a></li>
                                 <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
                                 <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
@@ -152,6 +153,7 @@
                                 <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
                                 <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
                                 <li><a href="../classes/MessageSecurityMode.html">MessageSecurityMode</a></li>
+                                <li><a href="../classes/ModelChangeStructure.html">ModelChangeStructure</a></li>
                                 <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
@@ -165,6 +167,7 @@
                                 <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
                                 <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
                                 <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+                                <li><a href="../classes/MyStructure.html">MyStructure</a></li>
                                 <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
                                 <li><a href="../classes/NodeId.html">NodeId</a></li>
                                 <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
@@ -203,6 +206,7 @@
                                 <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
                                 <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
                                 <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+                                <li><a href="../classes/RedundantServer.html">RedundantServer</a></li>
                                 <li><a href="../classes/Reference.html">Reference</a></li>
                                 <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
                                 <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
@@ -217,9 +221,11 @@
                                 <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
                                 <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
                                 <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+                                <li><a href="../classes/SamplingIntervalDiagnostics.html">SamplingIntervalDiagnostics</a></li>
                                 <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
                                 <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
                                 <li><a href="../classes/SecurityTokenRequestType.html">SecurityTokenRequestType</a></li>
+                                <li><a href="../classes/SemanticChangeStructure.html">SemanticChangeStructure</a></li>
                                 <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
                                 <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
                                 <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
@@ -232,6 +238,7 @@
                                 <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
                                 <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
                                 <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+                                <li><a href="../classes/SessionSecurityDiagnostics.html">SessionSecurityDiagnostics</a></li>
                                 <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
                                 <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
                                 <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
@@ -333,7 +340,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-<h1 class="file-heading">File: lib/server/server_publish_engine.js</h1>
+<h1 class="file-heading">File: lib\server\server_publish_engine.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
@@ -383,6 +390,7 @@ function ServerSidePublishEngine(options) {
     self._publish_request_queue = [];
 
     self._subscriptions = {};
+    self._closed_subscriptions = [];
 
     self.maxPublishRequestInQueue = options.maxPublishRequestInQueue || 100;
 }
@@ -405,6 +413,10 @@ ServerSidePublishEngine.prototype.process_subscriptionAcknowledgements = functio
     return results;
 };
 
+/**
+ * get a array of subscription handled by the publish engine.
+ * @property subscription {Subscription[]}
+ */
 ServerSidePublishEngine.prototype.__defineGetter__(&quot;subscriptions&quot;, function () {
     return _.map(this._subscriptions);
 });
@@ -424,11 +436,13 @@ ServerSidePublishEngine.prototype._feed_late_subscription = function () {
 };
 
 ServerSidePublishEngine.prototype._feed_closed_subscription = function () {
+
     var self = this;
     if (!self.pendingPublishRequestCount) {
         return;
     }
-    var closed_subscription = self.findFirstClosedSubscription();
+
+    var closed_subscription = self._closed_subscriptions[0];
     if (closed_subscription) {
 
         traceLog(&quot;_feed_closed_subscription for closed_subscription &quot;, closed_subscription.id);
@@ -436,7 +450,8 @@ ServerSidePublishEngine.prototype._feed_closed_subscription = function () {
 
         closed_subscription._attempt_to_publish_notification();
 
-        self.remove_subscription(closed_subscription);
+        self._closed_subscriptions.shift();
+        //xx self._internal_remove_subscription(closed_subscription);
     }
 };
 
@@ -489,16 +504,25 @@ ServerSidePublishEngine.prototype._on_PublishRequest = function (request, callba
 
     assert(request instanceof subscription_service.PublishRequest);
 
-    if (self.subscriptionCount === 0) {
+    if (self.subscriptionCount === 0 &amp;&amp; self._closed_subscriptions.length === 0) {
         traceLog(&quot;server has received a PublishRequest but has no subscription opened&quot;);
-        self.send_response_for_request(request, new subscription_service.PublishResponse({
-            responseHeader: {serviceResult: StatusCodes.BadNoSubscription}
-        }));
+
+        setTimeout(function() {
+            self.send_response_for_request(request, new subscription_service.PublishResponse({
+                responseHeader: {serviceResult: StatusCodes.BadNoSubscription}
+            }));
+        },1000);
+
     } else if (self.pendingPublishRequestCount &gt;= self.maxPublishRequestInQueue) {
+
         traceLog(&quot;server has received too many PublishRequest&quot;, self.pendingPublishRequestCount, &quot;/&quot;, self.maxPublishRequestInQueue);
-        self.send_response_for_request(request, new subscription_service.PublishResponse({
-            responseHeader: {serviceResult: StatusCodes.BadTooManyPublishRequests}
-        }));
+
+        //xx setTimeout(function() {
+            self.send_response_for_request(request, new subscription_service.PublishResponse({
+                responseHeader: {serviceResult: StatusCodes.BadTooManyPublishRequests}
+            }));
+        //xx },1000);
+
     } else {
 
         prepare_timeout_info(request);
@@ -674,24 +698,24 @@ ServerSidePublishEngine.prototype.add_subscription = function (subscription) {
     self._subscriptions[subscription.id] = subscription;
 };
 
-/**
- * @method remove_subscription
- * @param subscription {Subscription}
- */
-ServerSidePublishEngine.prototype.remove_subscription = function (subscription) {
-
-    assert(subscription instanceof Subscription);
-    assert(_.isFinite(subscription.id));
-    assert(this._subscriptions.hasOwnProperty(subscription.id));
-
-    debugLog(&quot; removing subscription with Id:&quot;, subscription.id, &quot; state  = &quot;, subscription.state.toString());
-
-    //xx assert(subscription.state === SubscriptionState.CLOSED);
-    //xx subscription.terminate();
-
-    delete this._subscriptions[subscription.id];
-
-};
+///**
+// * @method _internal_remove_subscription
+// * @param subscription {Subscription}
+// */
+//ServerSidePublishEngine.prototype._internal_remove_subscription = function (subscription) {
+//
+//    assert(subscription instanceof Subscription);
+//    assert(_.isFinite(subscription.id));
+//    assert(this._subscriptions.hasOwnProperty(subscription.id));
+//
+//    debugLog(&quot; removing subscription with Id:&quot;, subscription.id, &quot; state  = &quot;, subscription.state.toString());
+//
+//    //xx assert(subscription.state === SubscriptionState.CLOSED);
+//    //xx subscription.terminate();
+//
+//    delete this._subscriptions[subscription.id];
+//
+//};
 
 /**
  * @method shutdown
@@ -703,6 +727,9 @@ ServerSidePublishEngine.prototype.shutdown = function () {
 
     // purge _publish_request_queue
     self._publish_request_queue = [];
+
+    self._closed_subscriptions = [];
+
 };
 
 /**
@@ -723,6 +750,18 @@ ServerSidePublishEngine.prototype.__defineGetter__(&quot;subscriptionCount&quot;
     return Object.keys(this._subscriptions).length;
 });
 
+ServerSidePublishEngine.prototype.__defineGetter__(&quot;pendingClosedSubscriptionCount&quot;, function () {
+    return this._closed_subscriptions.length;
+});
+
+ServerSidePublishEngine.prototype.on_close_subscription = function(subscription) {
+    debugLog(&quot;ServerSidePublishEngine#on_close_subscription&quot;,subscription.id);
+    assert(this._subscriptions.hasOwnProperty(subscription.id));
+    this._closed_subscriptions.push(subscription);
+    delete this._subscriptions[subscription.id];
+
+};
+
 /**
  * retrieve a subscription by id.
  * @method getSubscriptionById
@@ -733,12 +772,6 @@ ServerSidePublishEngine.prototype.getSubscriptionById = function (subscriptionId
     return this._subscriptions[subscriptionId];
 };
 
-ServerSidePublishEngine.prototype.findFirstClosedSubscription = function () {
-
-    return _.find(this._subscriptions, function (subscription) {
-        return subscription.state === SubscriptionState.CLOSED;
-    });
-};
 
 ServerSidePublishEngine.prototype.findLateSubscriptionsSortedByAge = function () {
     // find all subscriptions that are late and sort them by urgency

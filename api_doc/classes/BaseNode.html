@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.46</em>
+            <em>API Docs for: 0.0.52</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -56,6 +56,7 @@
                                 <li><a href="../classes/Argument.html">Argument</a></li>
                                 <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
                                 <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+                                <li><a href="../classes/AttributeNameById.html">AttributeNameById</a></li>
                                 <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
                                 <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
                                 <li><a href="../classes/BaseNode.html">BaseNode</a></li>
@@ -122,7 +123,7 @@
                                 <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
                                 <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
                                 <li><a href="../classes/EUInformation.html">EUInformation</a></li>
-                                <li><a href="../classes/EventField.html">EventField</a></li>
+                                <li><a href="../classes/EventFieldList.html">EventFieldList</a></li>
                                 <li><a href="../classes/EventFilter.html">EventFilter</a></li>
                                 <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
                                 <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
@@ -152,6 +153,7 @@
                                 <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
                                 <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
                                 <li><a href="../classes/MessageSecurityMode.html">MessageSecurityMode</a></li>
+                                <li><a href="../classes/ModelChangeStructure.html">ModelChangeStructure</a></li>
                                 <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
@@ -165,6 +167,7 @@
                                 <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
                                 <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
                                 <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+                                <li><a href="../classes/MyStructure.html">MyStructure</a></li>
                                 <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
                                 <li><a href="../classes/NodeId.html">NodeId</a></li>
                                 <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
@@ -203,6 +206,7 @@
                                 <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
                                 <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
                                 <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+                                <li><a href="../classes/RedundantServer.html">RedundantServer</a></li>
                                 <li><a href="../classes/Reference.html">Reference</a></li>
                                 <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
                                 <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
@@ -217,9 +221,11 @@
                                 <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
                                 <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
                                 <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+                                <li><a href="../classes/SamplingIntervalDiagnostics.html">SamplingIntervalDiagnostics</a></li>
                                 <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
                                 <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
                                 <li><a href="../classes/SecurityTokenRequestType.html">SecurityTokenRequestType</a></li>
+                                <li><a href="../classes/SemanticChangeStructure.html">SemanticChangeStructure</a></li>
                                 <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
                                 <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
                                 <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
@@ -232,6 +238,7 @@
                                 <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
                                 <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
                                 <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+                                <li><a href="../classes/SessionSecurityDiagnostics.html">SessionSecurityDiagnostics</a></li>
                                 <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
                                 <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
                                 <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
@@ -338,7 +345,7 @@
 
 
         <div class="foundat">
-            Defined in: <a href="../files/lib_address_space_base_node.js.html#l111"><code>lib&#x2F;address_space&#x2F;base_node.js:111</code></a>
+            Defined in: <a href="../files/lib_address_space_base_node.js.html#l53"><code>lib\address_space\base_node.js:53</code></a>
         </div>
 
             Module: <a href="../modules/opcua.address_space.html">opcua.address_space</a>
@@ -374,7 +381,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_base_node.js.html#l111"><code>lib&#x2F;address_space&#x2F;base_node.js:111</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l53"><code>lib\address_space\base_node.js:53</code></a>
         </p>
 
 
@@ -474,28 +481,22 @@
 
                     <ul class="index-list methods">
                             <li class="index-item method private">
-                                <a href="#method__check_reference_type_validity">_check_reference_type_validity</a>
-
-                            </li>
-                            <li class="index-item method private">
                                 <a href="#method__clone">_clone</a>
 
                             </li>
                             <li class="index-item method private">
-                                <a href="#method__clone_references">_clone_references</a>
+                                <a href="#method__clone_children_references">_clone_children_references</a>
 
                             </li>
-                            <li class="index-item method">
-                                <a href="#method_addEnumeration">addEnumeration</a>
+                            <li class="index-item method deprecated">
+                                <a href="#method_addObjectInFolder">addObjectInFolder</a>
 
+                                    <span class="flag deprecated">deprecated</span>
                             </li>
-                            <li class="index-item method">
-                                <a href="#method_addEventType">addEventType</a>
+                            <li class="index-item method deprecated">
+                                <a href="#method_addProperty">addProperty</a>
 
-                            </li>
-                            <li class="index-item method">
-                                <a href="#method_addMethod">addMethod</a>
-
+                                    <span class="flag deprecated">deprecated</span>
                             </li>
                             <li class="index-item method">
                                 <a href="#method_addReference">addReference</a>
@@ -510,25 +511,13 @@
 
                             </li>
                             <li class="index-item method">
-                                <a href="#method_browsePath">browsePath</a>
-
-                            </li>
-                            <li class="index-item method">
-                                <a href="#method_constructBrowsePath">constructBrowsePath</a>
-
-                            </li>
-                            <li class="index-item method">
-                                <a href="#method_constructExtensionObject">constructExtensionObject</a>
+                                <a href="#method_dispose">dispose</a>
 
                             </li>
                             <li class="index-item method">
                                 <a href="#method_dumpReferences">dumpReferences</a>
 
                                     <span class="flag static">static</span>
-                            </li>
-                            <li class="index-item method">
-                                <a href="#method_findEventType">findEventType</a>
-
                             </li>
                             <li class="index-item method">
                                 <a href="#method_findReference">findReference</a>
@@ -539,15 +528,7 @@
 
                             </li>
                             <li class="index-item method">
-                                <a href="#method_findReferencesEx">findReferencesEx</a>
-
-                            </li>
-                            <li class="index-item method">
                                 <a href="#method_full_name">full_name</a>
-
-                            </li>
-                            <li class="index-item method">
-                                <a href="#method_generateEventId">generateEventId</a>
 
                             </li>
                             <li class="index-item method">
@@ -557,6 +538,15 @@
                             <li class="index-item method">
                                 <a href="#method_getComponents">getComponents</a>
 
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getFalseSubStates">getFalseSubStates</a>
+
+                            </li>
+                            <li class="index-item method deprecated">
+                                <a href="#method_getFolder">getFolder</a>
+
+                                    <span class="flag deprecated">deprecated</span>
                             </li>
                             <li class="index-item method">
                                 <a href="#method_getFolderElements">getFolderElements</a>
@@ -579,7 +569,7 @@
 
                             </li>
                             <li class="index-item method">
-                                <a href="#method_instantiateEvent">instantiateEvent</a>
+                                <a href="#method_getTrueSubStates">getTrueSubStates</a>
 
                             </li>
                             <li class="index-item method">
@@ -596,10 +586,6 @@
                             </li>
                             <li class="index-item method">
                                 <a href="#method_resolveNodeId">resolveNodeId</a>
-
-                            </li>
-                            <li class="index-item method">
-                                <a href="#method_simpleBrowsePath">simpleBrowsePath</a>
 
                             </li>
                             <li class="index-item method private">
@@ -631,15 +617,19 @@
 
                             </li>
                             <li class="index-item property">
-                                <a href="#property_encodingBinary">encodingBinary</a>
-
-                            </li>
-                            <li class="index-item property">
-                                <a href="#property_encodingXML">encodingXML</a>
-
-                            </li>
-                            <li class="index-item property">
                                 <a href="#property_hasMethods">hasMethods</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_isFalseSubStateOf">isFalseSubStateOf</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_isTrueSubStateOf">isTrueSubStateOf</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_modellingRule">modellingRule</a>
 
                             </li>
                             <li class="index-item property">
@@ -689,74 +679,6 @@
             <div id="methods" class="api-class-tabpanel">
                 <h2 class="off-left">Methods</h2>
 
-<div id="method__check_reference_type_validity" class="method item private">
-    <h3 class="name"><code>_check_reference_type_validity</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>addressSpace</code>
-                </li>
-                <li class="arg">
-                        <code>references</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-
-
-        <span class="flag private">private</span>
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/lib_address_space_base_node.js.html#l71"><code>lib&#x2F;address_space&#x2F;base_node.js:71</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>verifies that references are existing referenceType. This function
-will assert, for instance, if a referenceType is given by it's inverse name.</p>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">addressSpace</code>
-                        <span class="type"><a href="../classes/AddressSpace.html" class="crosslink">AddressSpace</a></span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-                <li class="param">
-                        <code class="param-name">references</code>
-                        <span class="type">Array<reference></span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-
-
-</div>
 <div id="method__clone" class="method item private">
     <h3 class="name"><code>_clone</code></h3>
 
@@ -785,7 +707,7 @@ will assert, for instance, if a referenceType is given by it's inverse name.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_base_node.js.html#l1391"><code>lib&#x2F;address_space&#x2F;base_node.js:1391</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l1517"><code>lib\address_space\base_node.js:1517</code></a>
         </p>
 
 
@@ -833,11 +755,14 @@ will assert, for instance, if a referenceType is given by it's inverse name.</p>
 
 
 </div>
-<div id="method__clone_references" class="method item private">
-    <h3 class="name"><code>_clone_references</code></h3>
+<div id="method__clone_children_references" class="method item private">
+    <h3 class="name"><code>_clone_children_references</code></h3>
 
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>newParent</code>
+                </li>
                 <li class="arg">
                         <code class="optional">[optionalFilter  = null]</code>
                 </li>
@@ -861,7 +786,7 @@ will assert, for instance, if a referenceType is given by it's inverse name.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_base_node.js.html#l1361"><code>lib&#x2F;address_space&#x2F;base_node.js:1361</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l1492"><code>lib\address_space\base_node.js:1492</code></a>
         </p>
 
 
@@ -877,6 +802,17 @@ will assert, for instance, if a referenceType is given by it's inverse name.</p>
             <h4>Parameters:</h4>
 
             <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">newParent</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>the new parent object to which references of type HasChild  will be attached</p>
+
+                    </div>
+
+                </li>
                 <li class="param">
                         <code class="param-name optional">[optionalFilter  = null]</code>
                         <span class="type">Function</span>
@@ -913,206 +849,8 @@ will assert, for instance, if a referenceType is given by it's inverse name.</p>
 
 
 </div>
-<div id="method_addEnumeration" class="method item">
-    <h3 class="name"><code>addEnumeration</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>options</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-
-
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/lib_address_space_address_space_add_enumeration_type.js.html#l14"><code>lib&#x2F;address_space&#x2F;address_space_add_enumeration_type.js:14</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">options</code>
-                        <span class="type">Object</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                        <ul class="params-list">
-                            <li class="param">
-                                    <code class="param-name">browseName</code>
-                                    <span class="type">String</span>
-
-                                <div class="param-description">
-                                    
-                                </div>
-
-                            </li>
-                            <li class="param">
-                                    <code class="param-name">enumeration</code>
-                                    <span class="type"><a href="../classes/Enum.html" class="crosslink">Enum</a></span>
-
-                                <div class="param-description">
-                                    
-                                </div>
-
-                            </li>
-                            <li class="param">
-                                    <code class="param-name">enumeration[].name</code>
-                                    <span class="type">String</span>
-
-                                <div class="param-description">
-                                    
-                                </div>
-
-                            </li>
-                            <li class="param">
-                                    <code class="param-name">enumeration[].value</code>
-                                    <span class="type">Integer</span>
-
-                                <div class="param-description">
-                                    
-                                </div>
-
-                            </li>
-                            <li class="param">
-                                    <code class="param-name">enumeration[].description</code>
-                                    <span class="type">String</span>
-
-                                <div class="param-description">
-                                    
-                                </div>
-
-                            </li>
-                        </ul>
-                </li>
-            </ul>
-        </div>
-
-
-
-</div>
-<div id="method_addEventType" class="method item">
-    <h3 class="name"><code>addEventType</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>options</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-        <span class="returns-inline">
-            <span class="type"><a href="../classes/UAObjectType.html" class="crosslink">UAObjectType</a></span>
-        </span>
-
-
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/lib_address_space_address_space_add_event_type.js.html#l17"><code>lib&#x2F;address_space&#x2F;address_space_add_event_type.js:17</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>add a new event type to the address space</p>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">options</code>
-                        <span class="type">Object</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                        <ul class="params-list">
-                            <li class="param">
-                                    <code class="param-name">browseName</code>
-                                    <span class="type">String</span>
-
-                                <div class="param-description">
-                                    <p>the eventType name</p>
-
-                                </div>
-
-                            </li>
-                            <li class="param">
-                                    <code class="param-name optional">[subtypeOf=&quot;BaseEventType&quot;]</code>
-                                    <span class="type"></span>
-                                    <span class="flag optional" title="This parameter is optional.">optional</span>
-
-                                <div class="param-description">
-                                    
-                                </div>
-
-                            </li>
-                        </ul>
-                </li>
-            </ul>
-        </div>
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type"><a href="../classes/UAObjectType.html" class="crosslink">UAObjectType</a></span>:
-                    <p>: the object type</p>
-
-            </div>
-        </div>
-
-
-        <div class="example">
-            <h4>Example:</h4>
-
-            <div class="example-content">
-                <p>:</p>
-<p>var evtType = addressSpace.addEventType({
-browseName: &quot;MyAuditEventType&quot;,
-subtypeOf:  &quot;AuditEventType&quot;
-});</p>
-
-            </div>
-        </div>
-</div>
-<div id="method_addMethod" class="method item">
-    <h3 class="name"><code>addMethod</code></h3>
+<div id="method_addObjectInFolder" class="method item deprecated">
+    <h3 class="name"><code>addObjectInFolder</code></h3>
 
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
@@ -1129,6 +867,7 @@ subtypeOf:  &quot;AuditEventType&quot;
             <span class="type">Object</span>
         </span>
 
+        <span class="flag deprecated">deprecated</span>
 
 
 
@@ -1138,7 +877,7 @@ subtypeOf:  &quot;AuditEventType&quot;
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_address_space_add_method.js.html#l45"><code>lib&#x2F;address_space&#x2F;address_space_add_method.js:45</code></a>
+        <a href="../files/lib_address_space_address_space_deprecated.js.html#l7"><code>lib\address_space\address_space_deprecated.js:7</code></a>
         </p>
 
 
@@ -1155,11 +894,12 @@ subtypeOf:  &quot;AuditEventType&quot;
             <ul class="params-list">
                 <li class="param">
                         <code class="param-name">parentObject</code>
-                        <span class="type">Object</span>
+                        <span class="type"><a href="../classes/BaseNode.html" class="crosslink">BaseNode</a> | String | <a href="../classes/NodeId.html" class="crosslink">NodeId</a></span>
 
 
                     <div class="param-description">
-                         
+                        <p>the parent folder (must be of type FolderType or a subtype of it)</p>
+
                     </div>
 
                 </li>
@@ -1207,17 +947,19 @@ subtypeOf:  &quot;AuditEventType&quot;
 
                             </li>
                             <li class="param">
-                                    <code class="param-name">inputArguments</code>
-                                    <span class="type">Array<Argument></span>
+                                    <code class="param-name">eventNotifier</code>
+                                    <span class="type">Number</span>
 
                                 <div class="param-description">
-                                    
+                                    <p>the event notifier flag.</p>
+
                                 </div>
 
                             </li>
                             <li class="param">
-                                    <code class="param-name">outputArguments</code>
-                                    <span class="type">Array<Argument></span>
+                                    <code class="param-name optional">[typeDefinition=&quot;BaseObjectType&quot;]</code>
+                                    <span class="type"></span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
 
                                 <div class="param-description">
                                     
@@ -1234,6 +976,147 @@ subtypeOf:  &quot;AuditEventType&quot;
 
             <div class="returns-description">
                         <span class="type">Object</span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_addProperty" class="method item deprecated">
+    <h3 class="name"><code>addProperty</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>parent</code>
+                </li>
+                <li class="arg">
+                        <code>options</code>
+                </li>
+                <li class="arg">
+                        <code>options</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+
+        <span class="flag deprecated">deprecated</span>
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_address_space_address_space_deprecated.js.html#l35"><code>lib\address_space\address_space_deprecated.js:35</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>DEPRECATED :
+use this instead:
+addVariable({
+propertyOf: parent
+});
+add a variable as a property of the parent node</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">parent</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">options</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">options</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name"></code>
+                                    <span class="type">String</span>
+
+                                <div class="param-description">
+                                    <p>the variable name</p>
+
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name"></code>
+                                    <span class="type">String</span>
+
+                                <div class="param-description">
+                                    <p>the variable datatype ( &quot;Double&quot;, &quot;UInt8&quot; etc...)</p>
+
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name optional">[=&quot;BaseDataVariableType&quot;]</code>
+                                    <span class="type"></span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name optional">[=null]</code>
+                                    <span class="type"></span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                        </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Object</span>:
+                    <ul>
+<li></li>
+</ul>
+
             </div>
         </div>
 
@@ -1260,7 +1143,7 @@ subtypeOf:  &quot;AuditEventType&quot;
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_base_node.js.html#l721"><code>lib&#x2F;address_space&#x2F;base_node.js:721</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l789"><code>lib\address_space\base_node.js:789</code></a>
         </p>
 
 
@@ -1295,8 +1178,9 @@ subtypeOf:  &quot;AuditEventType&quot;
 
                             </li>
                             <li class="param">
-                                    <code class="param-name">isForward</code>
+                                    <code class="param-name optional">[isForward= true]</code>
                                     <span class="type">Boolean</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
 
                                 <div class="param-description">
                                     
@@ -1305,7 +1189,7 @@ subtypeOf:  &quot;AuditEventType&quot;
                             </li>
                             <li class="param">
                                     <code class="param-name">nodeId</code>
-                                    <span class="type"><a href="../classes/NodeId.html" class="crosslink">NodeId</a> | String</span>
+                                    <span class="type">Node | <a href="../classes/NodeId.html" class="crosslink">NodeId</a> | String</span>
 
                                 <div class="param-description">
                                     
@@ -1319,6 +1203,17 @@ subtypeOf:  &quot;AuditEventType&quot;
 
 
 
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>view.addReference({ referenceType: &quot;Organizes&quot;, nodeId: myDevice });
+</code></pre>
+<p>or</p>
+<pre class="code prettyprint"><code>myDevice1.addReference({ referenceType: &quot;OrganizedBy&quot;, nodeId: view });</code></pre>
+
+            </div>
+        </div>
 </div>
 <div id="method_browseNode" class="method item">
     <h3 class="name"><code>browseNode</code></h3>
@@ -1344,7 +1239,7 @@ subtypeOf:  &quot;AuditEventType&quot;
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_base_node.js.html#l1200"><code>lib&#x2F;address_space&#x2F;base_node.js:1200</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l1330"><code>lib\address_space\base_node.js:1330</code></a>
         </p>
 
 
@@ -1369,6 +1264,44 @@ subtypeOf:  &quot;AuditEventType&quot;
                          
                     </div>
 
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name">referenceTypeId</code>
+                                    <span class="type"><a href="../classes/NodeId.html" class="crosslink">NodeId</a></span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">browseDirection</code>
+                                    <span class="type">BrowseDirection</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">nodeClassMask</code>
+                                    <span class="type">NodeClassMask</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">resultMask</code>
+                                    <span class="type">UInt32</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                        </ul>
                 </li>
             </ul>
         </div>
@@ -1389,7 +1322,7 @@ subtypeOf:  &quot;AuditEventType&quot;
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
                 <li class="arg">
-                        <code>relativePath</code>
+                        <code>relativePathElement</code>
                 </li>
             </ul><span class="paren">)</span>
         </div>
@@ -1407,7 +1340,7 @@ subtypeOf:  &quot;AuditEventType&quot;
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_base_node.js.html#l901"><code>lib&#x2F;address_space&#x2F;base_node.js:901</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l977"><code>lib\address_space\base_node.js:977</code></a>
         </p>
 
 
@@ -1423,8 +1356,8 @@ subtypeOf:  &quot;AuditEventType&quot;
 
             <ul class="params-list">
                 <li class="param">
-                        <code class="param-name">relativePath</code>
-                        <span class="type">Object</span>
+                        <code class="param-name">relativePathElement</code>
+                        <span class="type"><a href="../classes/RelativePathElement.html" class="crosslink">RelativePathElement</a></span>
 
 
                     <div class="param-description">
@@ -1501,223 +1434,10 @@ subtypeOf:  &quot;AuditEventType&quot;
 
 
 </div>
-<div id="method_browsePath" class="method item">
-    <h3 class="name"><code>browsePath</code></h3>
+<div id="method_dispose" class="method item">
+    <h3 class="name"><code>dispose</code></h3>
 
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>browsePath</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-        <span class="returns-inline">
-            <span class="type"><a href="../classes/BrowsePathResult.html" class="crosslink">BrowsePathResult</a></span>
-        </span>
-
-
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/lib_address_space_address_space_browse.js.html#l31"><code>lib&#x2F;address_space&#x2F;address_space_browse.js:31</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>browse some path.</p>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">browsePath</code>
-                        <span class="type"><a href="../classes/BrowsePath.html" class="crosslink">BrowsePath</a></span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type"><a href="../classes/BrowsePathResult.html" class="crosslink">BrowsePathResult</a></span>:
-                    <p>This service can be used translates one or more browse paths into NodeIds.
-A browse path is constructed of a starting Node and a RelativePath. The specified starting Node
-identifies the Node from which the RelativePath is based. The RelativePath contains a sequence of
-ReferenceTypes and BrowseNames.</p>
-<table>
-<thead>
-<tr>
-<th>StatusCode</th>
-<th style="text-align:left"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>BadNodeIdUnknown</td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td>BadNodeIdInvalid</td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td>BadNothingToDo</td>
-<td style="text-align:left">- the relative path contains an empty list )</td>
-</tr>
-<tr>
-<td>BadBrowseNameInvalid</td>
-<td style="text-align:left">- target name is missing in relative path</td>
-</tr>
-<tr>
-<td>UncertainReferenceOutOfServer</td>
-<td style="text-align:left">- The path element has targets which are in another server.</td>
-</tr>
-<tr>
-<td>BadTooManyMatches</td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td>BadQueryTooComplex</td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td>BadNoMatch</td>
-<td style="text-align:left"></td>
-</tr>
-</tbody>
-</table>
-
-            </div>
-        </div>
-
-
-</div>
-<div id="method_constructBrowsePath" class="method item">
-    <h3 class="name"><code>constructBrowsePath</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>startingNode</code>
-                </li>
-                <li class="arg">
-                        <code>path</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-        <span class="returns-inline">
-            <span class="type"><a href="../classes/BrowsePath.html" class="crosslink">BrowsePath</a></span>
-        </span>
-
-
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/lib_address_space_address_space_browse.js.html#l126"><code>lib&#x2F;address_space&#x2F;address_space_browse.js:126</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>convert a path string to a BrowsePath</p>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">startingNode</code>
-                        <span class="type"><a href="../classes/NodeId.html" class="crosslink">NodeId</a> | String</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-                <li class="param">
-                        <code class="param-name">path</code>
-                        <span class="type">String</span>
-
-
-                    <div class="param-description">
-                        <p>path such as Objects.Server</p>
-
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type"><a href="../classes/BrowsePath.html" class="crosslink">BrowsePath</a></span>:
-            </div>
-        </div>
-
-
-        <div class="example">
-            <h4>Example:</h4>
-
-            <div class="example-content">
-                <p>:</p>
-<pre class="code prettyprint"><code class="language-javascript">constructBrowsePath(&quot;/&quot;,&quot;Objects&quot;);
-constructBrowsePath(&quot;/&quot;,&quot;Objects.Server&quot;);
-constructBrowsePath(&quot;/&quot;,&quot;Objects.4:Boilers&quot;);
-</code></pre>
-<ul>
-<li>'#' : HasSubtype</li>
-<li>'.' : Organizes , HasProperty, HasComponent, HasNotifier</li>
-<li>'&amp;' : HasTypeDefinition</li>
-</ul>
-
-            </div>
-        </div>
-</div>
-<div id="method_constructExtensionObject" class="method item">
-    <h3 class="name"><code>constructExtensionObject</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>dataType</code>
-                </li>
-                <li class="arg">
-                        <code class="optional">[options  =null]</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
+        <span class="paren">()</span>
 
 
 
@@ -1729,7 +1449,7 @@ constructBrowsePath(&quot;/&quot;,&quot;Objects.4:Boilers&quot;);
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_address_space_construct_extension_object.js.html#l25"><code>lib&#x2F;address_space&#x2F;address_space_construct_extension_object.js:25</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l1696"><code>lib\address_space\base_node.js:1696</code></a>
         </p>
 
 
@@ -1737,36 +1457,11 @@ constructBrowsePath(&quot;/&quot;,&quot;Objects.4:Boilers&quot;);
     </div>
 
     <div class="description">
-        
+        <p>the dispose method should be called when the node is no longer used, to release
+back pointer to the address space and clear caches.</p>
+
     </div>
 
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">dataType</code>
-                        <span class="type"><a href="../classes/UADataType.html" class="crosslink">UADataType</a></span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-                <li class="param">
-                        <code class="param-name optional">[options  =null]</code>
-                        <span class="type">Object</span>
-                        <span class="flag optional" title="This parameter is optional.">optional</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-            </ul>
-        </div>
 
 
 
@@ -1796,7 +1491,7 @@ constructBrowsePath(&quot;/&quot;,&quot;Objects.4:Boilers&quot;);
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_base_node.js.html#l1093"><code>lib&#x2F;address_space&#x2F;base_node.js:1093</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l1215"><code>lib\address_space\base_node.js:1215</code></a>
         </p>
 
 
@@ -1837,86 +1532,6 @@ constructBrowsePath(&quot;/&quot;,&quot;Objects.4:Boilers&quot;);
 
 
 </div>
-<div id="method_findEventType" class="method item">
-    <h3 class="name"><code>findEventType</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>eventTypeId</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-        <span class="returns-inline">
-            <span class="type"><a href="../classes/UAObjectType.html" class="crosslink">UAObjectType</a> | Null</span>
-        </span>
-
-
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/lib_address_space_address_space_add_event_type.js.html#l38"><code>lib&#x2F;address_space&#x2F;address_space_add_event_type.js:38</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>find an EventType node in the address space</p>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">eventTypeId</code>
-                        <span class="type">String | <a href="../classes/NodeId.html" class="crosslink">NodeId</a></span>
-
-
-                    <div class="param-description">
-                        <p>the eventType to find</p>
-
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type"><a href="../classes/UAObjectType.html" class="crosslink">UAObjectType</a> | Null</span>:
-                    <p>the EventType found or null.</p>
-<p>note:</p>
-<ul>
-<li>the method with throw an exception if a node is found
-that is not a BaseEventType or a subtype of it.</li>
-</ul>
-
-            </div>
-        </div>
-
-
-        <div class="example">
-            <h4>Example:</h4>
-
-            <div class="example-content">
-                <pre class="code prettyprint"><code>var evtType = addressSpace.findEventType(&quot;AuditEventType&quot;);
-</code></pre>
-
-            </div>
-        </div>
-</div>
 <div id="method_findReference" class="method item">
     <h3 class="name"><code>findReference</code></h3>
 
@@ -1947,7 +1562,7 @@ that is not a BaseEventType or a subtype of it.</li>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_base_node.js.html#l327"><code>lib&#x2F;address_space&#x2F;base_node.js:327</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l310"><code>lib\address_space\base_node.js:310</code></a>
         </p>
 
 
@@ -2035,7 +1650,7 @@ that is not a BaseEventType or a subtype of it.</li>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_base_node.js.html#l296"><code>lib&#x2F;address_space&#x2F;base_node.js:296</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l271"><code>lib\address_space\base_node.js:271</code></a>
         </p>
 
 
@@ -2085,84 +1700,6 @@ that is not a BaseEventType or a subtype of it.</li>
 
 
 </div>
-<div id="method_findReferencesEx" class="method item">
-    <h3 class="name"><code>findReferencesEx</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>strReference</code>
-                </li>
-                <li class="arg">
-                        <code class="optional">[browseDirection=BrowseDirection.Forward]</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-        <span class="returns-inline">
-            <span class="type">Array<ReferenceDescription></span>
-        </span>
-
-
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/lib_address_space_base_node.js.html#l260"><code>lib&#x2F;address_space&#x2F;base_node.js:260</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>find all references that have the provided referenceType or are subType of this referenceType</p>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">strReference</code>
-                        <span class="type">String</span>
-
-
-                    <div class="param-description">
-                        <p>the referenceType as a string.</p>
-
-                    </div>
-
-                </li>
-                <li class="param">
-                        <code class="param-name optional">[browseDirection=BrowseDirection.Forward]</code>
-                        <span class="type">BrowseDirection</span>
-                        <span class="flag optional" title="This parameter is optional.">optional</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type">Array<ReferenceDescription></span>:
-            </div>
-        </div>
-
-
-</div>
 <div id="method_full_name" class="method item">
     <h3 class="name"><code>full_name</code></h3>
 
@@ -2181,7 +1718,7 @@ that is not a BaseEventType or a subtype of it.</li>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_base_node.js.html#l881"><code>lib&#x2F;address_space&#x2F;base_node.js:881</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l956"><code>lib\address_space\base_node.js:956</code></a>
         </p>
 
 
@@ -2200,47 +1737,6 @@ that is not a BaseEventType or a subtype of it.</li>
                         <span class="type">String</span>:
                     <p>the full path name of the node</p>
 
-            </div>
-        </div>
-
-
-</div>
-<div id="method_generateEventId" class="method item">
-    <h3 class="name"><code>generateEventId</code></h3>
-
-        <span class="paren">()</span>
-
-        <span class="returns-inline">
-            <span class="type">Number |  | <a href="../classes/Variant.html" class="crosslink">Variant</a></span>
-        </span>
-
-
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/lib_address_space_address_space_add_event_type.js.html#l78"><code>lib&#x2F;address_space&#x2F;address_space_add_event_type.js:78</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>EventId is generated by the Server to uniquely identify a particular Event Notification.</p>
-
-    </div>
-
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type">Number |  | <a href="../classes/Variant.html" class="crosslink">Variant</a></span>:
             </div>
         </div>
 
@@ -2270,7 +1766,7 @@ that is not a BaseEventType or a subtype of it.</li>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_base_node.js.html#l455"><code>lib&#x2F;address_space&#x2F;base_node.js:455</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l456"><code>lib\address_space\base_node.js:456</code></a>
         </p>
 
 
@@ -2327,7 +1823,7 @@ that is not a BaseEventType or a subtype of it.</li>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_base_node.js.html#l434"><code>lib&#x2F;address_space&#x2F;base_node.js:434</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l435"><code>lib\address_space\base_node.js:435</code></a>
         </p>
 
 
@@ -2345,6 +1841,114 @@ that is not a BaseEventType or a subtype of it.</li>
             <div class="returns-description">
                         <span class="type"><a href="../classes/BaseNode.html" class="crosslink">BaseNode[]</a></span>:
                     <p>return an array with the components of this object.</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getFalseSubStates" class="method item">
+    <h3 class="name"><code>getFalseSubStates</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/BaseNode.html" class="crosslink">BaseNode[]</a></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_address_space_base_node.js.html#l1768"><code>lib\address_space\base_node.js:1768</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type"><a href="../classes/BaseNode.html" class="crosslink">BaseNode[]</a></span>:
+                    <p>return an array with the SubStates of this object.</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getFolder" class="method item deprecated">
+    <h3 class="name"><code>getFolder</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>folder</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/UAObject.html" class="crosslink">UAObject</a></span>
+        </span>
+
+        <span class="flag deprecated">deprecated</span>
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_address_space_address_space_deprecated.js.html#l71"><code>lib\address_space\address_space_deprecated.js:71</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">folder</code>
+                        <span class="type">Object | String | <a href="../classes/NodeId.html" class="crosslink">NodeId</a></span>
+
+
+                    <div class="param-description">
+                        <p>the folder identifier either as an object, a nodeid string, or a NodeId.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type"><a href="../classes/UAObject.html" class="crosslink">UAObject</a></span>:
+                    <p>(ref(hasTypeDefinition)=&quot;FolderType&quot;)</p>
 
             </div>
         </div>
@@ -2369,7 +1973,7 @@ that is not a BaseEventType or a subtype of it.</li>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_base_node.js.html#l494"><code>lib&#x2F;address_space&#x2F;base_node.js:494</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l497"><code>lib\address_space\base_node.js:497</code></a>
         </p>
 
 
@@ -2416,7 +2020,7 @@ that is not a BaseEventType or a subtype of it.</li>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_base_node.js.html#l533"><code>lib&#x2F;address_space&#x2F;base_node.js:533</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l536"><code>lib\address_space\base_node.js:536</code></a>
         </p>
 
 
@@ -2472,7 +2076,7 @@ that is not a BaseEventType or a subtype of it.</li>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_base_node.js.html#l504"><code>lib&#x2F;address_space&#x2F;base_node.js:504</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l507"><code>lib\address_space\base_node.js:507</code></a>
         </p>
 
 
@@ -2516,7 +2120,7 @@ that is not a BaseEventType or a subtype of it.</li>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_base_node.js.html#l444"><code>lib&#x2F;address_space&#x2F;base_node.js:444</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l445"><code>lib\address_space\base_node.js:445</code></a>
         </p>
 
 
@@ -2564,7 +2168,7 @@ that is not a BaseEventType or a subtype of it.</li>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_base_node.js.html#l469"><code>lib&#x2F;address_space&#x2F;base_node.js:469</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l471"><code>lib\address_space\base_node.js:471</code></a>
         </p>
 
 
@@ -2603,22 +2207,13 @@ that is not a BaseEventType or a subtype of it.</li>
 
 
 </div>
-<div id="method_instantiateEvent" class="method item">
-    <h3 class="name"><code>instantiateEvent</code></h3>
+<div id="method_getTrueSubStates" class="method item">
+    <h3 class="name"><code>getTrueSubStates</code></h3>
 
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>eventTypeId</code>
-                </li>
-                <li class="arg">
-                        <code>options</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
+        <span class="paren">()</span>
 
         <span class="returns-inline">
-            <span class="type"><a href="../classes/UADataType.html" class="crosslink">UADataType</a></span>
+            <span class="type"><a href="../classes/BaseNode.html" class="crosslink">BaseNode[]</a></span>
         </span>
 
 
@@ -2630,7 +2225,7 @@ that is not a BaseEventType or a subtype of it.</li>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_address_space_add_event_type.js.html#l243"><code>lib&#x2F;address_space&#x2F;address_space_add_event_type.js:243</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l1776"><code>lib\address_space\base_node.js:1776</code></a>
         </p>
 
 
@@ -2638,58 +2233,16 @@ that is not a BaseEventType or a subtype of it.</li>
     </div>
 
     <div class="description">
-        <p>instantiate an event.
-this will create the unique EventId and will set eventType</p>
-
+        
     </div>
 
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">eventTypeId</code>
-                        <span class="type">String | <a href="../classes/NodeId.html" class="crosslink">NodeId</a></span>
-
-
-                    <div class="param-description">
-                        <p>the EventType to instantiate</p>
-
-                    </div>
-
-                </li>
-                <li class="param">
-                        <code class="param-name">options</code>
-                        <span class="type">Object</span>
-
-
-                    <div class="param-description">
-                        <p>a object containing the value to set</p>
-
-                    </div>
-
-                        <ul class="params-list">
-                            <li class="param">
-                                    <code class="param-name">eventId</code>
-                                    <span class="type">String | <a href="../classes/NodeId.html" class="crosslink">NodeId</a></span>
-
-                                <div class="param-description">
-                                    <p>the EventType Identifier to instantiate (type cannot be abstract)</p>
-
-                                </div>
-
-                            </li>
-                        </ul>
-                </li>
-            </ul>
-        </div>
 
         <div class="returns">
             <h4>Returns:</h4>
 
             <div class="returns-description">
-                        <span class="type"><a href="../classes/UADataType.html" class="crosslink">UADataType</a></span>:
-                    <p>node</p>
+                        <span class="type"><a href="../classes/BaseNode.html" class="crosslink">BaseNode[]</a></span>:
+                    <p>return an array with the SubStates of this object.</p>
 
             </div>
         </div>
@@ -2723,7 +2276,7 @@ this will create the unique EventId and will set eventType</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_base_node.js.html#l1046"><code>lib&#x2F;address_space&#x2F;base_node.js:1046</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l1168"><code>lib\address_space\base_node.js:1168</code></a>
         </p>
 
 
@@ -2793,7 +2346,7 @@ this will create the unique EventId and will set eventType</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_base_node.js.html#l704"><code>lib&#x2F;address_space&#x2F;base_node.js:704</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l710"><code>lib\address_space\base_node.js:710</code></a>
         </p>
 
 
@@ -2856,7 +2409,7 @@ by inserting backward references to the counter part node</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_base_node.js.html#l804"><code>lib&#x2F;address_space&#x2F;base_node.js:804</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l879"><code>lib\address_space\base_node.js:879</code></a>
         </p>
 
 
@@ -2883,7 +2436,7 @@ by inserting backward references to the counter part node</p>
                 </li>
                 <li class="param">
                         <code class="param-name optional">[indexRange]</code>
-                        <span class="type">NumericalRange</span>
+                        <span class="type">NumericRange</span>
                         <span class="flag optional" title="This parameter is optional.">optional</span>
 
 
@@ -2940,7 +2493,7 @@ by inserting backward references to the counter part node</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_base_node.js.html#l619"><code>lib&#x2F;address_space&#x2F;base_node.js:619</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l613"><code>lib\address_space\base_node.js:613</code></a>
         </p>
 
 
@@ -2978,93 +2531,10 @@ by inserting backward references to the counter part node</p>
 
 
 </div>
-<div id="method_simpleBrowsePath" class="method item">
-    <h3 class="name"><code>simpleBrowsePath</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>startingNode</code>
-                </li>
-                <li class="arg">
-                        <code>pathname</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-        <span class="returns-inline">
-            <span class="type"><a href="../classes/BrowsePathTarget.html" class="crosslink">BrowsePathTarget</a></span>
-        </span>
-
-
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/lib_address_space_address_space_browse.js.html#l177"><code>lib&#x2F;address_space&#x2F;address_space_browse.js:177</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>a simplified version of browsePath that takes a path as a string
-and returns a single node or null if not found.</p>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">startingNode</code>
-                        <span class="type">Object</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-                <li class="param">
-                        <code class="param-name">pathname</code>
-                        <span class="type">Object</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type"><a href="../classes/BrowsePathTarget.html" class="crosslink">BrowsePathTarget</a></span>:
-            </div>
-        </div>
-
-
-</div>
 <div id="method_unpropagate_back_references" class="method item private">
     <h3 class="name"><code>unpropagate_back_references</code></h3>
 
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>addressSpace</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
+        <span class="paren">()</span>
 
 
 
@@ -3077,7 +2547,7 @@ and returns a single node or null if not found.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_base_node.js.html#l749"><code>lib&#x2F;address_space&#x2F;base_node.js:749</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l823"><code>lib\address_space\base_node.js:823</code></a>
         </p>
 
 
@@ -3089,22 +2559,6 @@ and returns a single node or null if not found.</p>
 
     </div>
 
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">addressSpace</code>
-                        <span class="type">Object</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-            </ul>
-        </div>
 
 
 
@@ -3134,7 +2588,7 @@ and returns a single node or null if not found.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_base_node.js.html#l857"><code>lib&#x2F;address_space&#x2F;base_node.js:857</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l932"><code>lib\address_space\base_node.js:932</code></a>
         </p>
 
 
@@ -3241,7 +2695,7 @@ and returns a single node or null if not found.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_base_node.js.html#l153"><code>lib&#x2F;address_space&#x2F;base_node.js:153</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l96"><code>lib\address_space\base_node.js:96</code></a>
         </p>
 
 
@@ -3266,7 +2720,7 @@ and returns a single node or null if not found.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_base_node.js.html#l213"><code>lib&#x2F;address_space&#x2F;base_node.js:213</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l176"><code>lib\address_space\base_node.js:176</code></a>
         </p>
 
 
@@ -3290,55 +2744,7 @@ and returns a single node or null if not found.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_base_node.js.html#l187"><code>lib&#x2F;address_space&#x2F;base_node.js:187</code></a>
-        </p>
-
-
-    </div>
-
-    <div class="description">
-        
-    </div>
-
-
-
-</div>
-<div id="property_encodingBinary" class="property item">
-    <h3 class="name"><code>encodingBinary</code></h3>
-    <span class="type"><a href="../classes/NodeId.html" class="crosslink">NodeId</a></span>
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/lib_address_space_base_node.js.html#l562"><code>lib&#x2F;address_space&#x2F;base_node.js:562</code></a>
-        </p>
-
-
-    </div>
-
-    <div class="description">
-        
-    </div>
-
-
-
-</div>
-<div id="property_encodingXML" class="property item">
-    <h3 class="name"><code>encodingXML</code></h3>
-    <span class="type"><a href="../classes/NodeId.html" class="crosslink">NodeId</a></span>
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/lib_address_space_base_node.js.html#l574"><code>lib&#x2F;address_space&#x2F;base_node.js:574</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l147"><code>lib\address_space\base_node.js:147</code></a>
         </p>
 
 
@@ -3362,7 +2768,7 @@ and returns a single node or null if not found.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_base_node.js.html#l524"><code>lib&#x2F;address_space&#x2F;base_node.js:524</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l527"><code>lib\address_space\base_node.js:527</code></a>
         </p>
 
 
@@ -3371,6 +2777,78 @@ and returns a single node or null if not found.</p>
     <div class="description">
         <p>returns true if the object has some opcua methods</p>
 
+    </div>
+
+
+
+</div>
+<div id="property_isFalseSubStateOf" class="property item">
+    <h3 class="name"><code>isFalseSubStateOf</code></h3>
+    <span class="type"><a href="../classes/BaseNode.html" class="crosslink">BaseNode</a> | Null</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_address_space_base_node.js.html#l1752"><code>lib\address_space\base_node.js:1752</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_isTrueSubStateOf" class="property item">
+    <h3 class="name"><code>isTrueSubStateOf</code></h3>
+    <span class="type"><a href="../classes/BaseNode.html" class="crosslink">BaseNode</a> | Null</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_address_space_base_node.js.html#l1738"><code>lib\address_space\base_node.js:1738</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_modellingRule" class="property item">
+    <h3 class="name"><code>modellingRule</code></h3>
+    <span class="type">String | Undefined</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_address_space_base_node.js.html#l1724"><code>lib\address_space\base_node.js:1724</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
     </div>
 
 
@@ -3387,7 +2865,7 @@ and returns a single node or null if not found.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_base_node.js.html#l588"><code>lib&#x2F;address_space&#x2F;base_node.js:588</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l582"><code>lib\address_space\base_node.js:582</code></a>
         </p>
 
 
@@ -3411,7 +2889,7 @@ and returns a single node or null if not found.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_base_node.js.html#l596"><code>lib&#x2F;address_space&#x2F;base_node.js:596</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l590"><code>lib\address_space\base_node.js:590</code></a>
         </p>
 
 
@@ -3435,7 +2913,7 @@ and returns a single node or null if not found.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_base_node.js.html#l607"><code>lib&#x2F;address_space&#x2F;base_node.js:607</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l601"><code>lib\address_space\base_node.js:601</code></a>
         </p>
 
 
@@ -3460,14 +2938,14 @@ and returns a single node or null if not found.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_base_node.js.html#l547"><code>lib&#x2F;address_space&#x2F;base_node.js:547</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l550"><code>lib\address_space\base_node.js:550</code></a>
         </p>
 
 
     </div>
 
     <div class="description">
-        <p>returns the nodeId of the DataType which is the super type of this</p>
+        <p>returns the nodeId of the Type which is the super type of this</p>
 
     </div>
 
@@ -3485,7 +2963,7 @@ and returns a single node or null if not found.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_base_node.js.html#l407"><code>lib&#x2F;address_space&#x2F;base_node.js:407</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l408"><code>lib\address_space\base_node.js:408</code></a>
         </p>
 
 
@@ -3510,7 +2988,7 @@ and returns a single node or null if not found.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_base_node.js.html#l421"><code>lib&#x2F;address_space&#x2F;base_node.js:421</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l422"><code>lib\address_space\base_node.js:422</code></a>
         </p>
 
 
@@ -3541,7 +3019,7 @@ and returns a single node or null if not found.</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/lib_address_space_base_node.js.html#l231"><code>lib&#x2F;address_space&#x2F;base_node.js:231</code></a>
+                            <a href="../files/lib_address_space_base_node.js.html#l194"><code>lib\address_space\base_node.js:194</code></a>
                             </p>
                     
                     
@@ -3582,7 +3060,7 @@ and returns a single node or null if not found.</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/lib_address_space_base_node.js.html#l203"><code>lib&#x2F;address_space&#x2F;base_node.js:203</code></a>
+                            <a href="../files/lib_address_space_base_node.js.html#l163"><code>lib\address_space\base_node.js:163</code></a>
                             </p>
                     
                     

@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.46</em>
+            <em>API Docs for: 0.0.52</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -56,6 +56,7 @@
                                 <li><a href="../classes/Argument.html">Argument</a></li>
                                 <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
                                 <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+                                <li><a href="../classes/AttributeNameById.html">AttributeNameById</a></li>
                                 <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
                                 <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
                                 <li><a href="../classes/BaseNode.html">BaseNode</a></li>
@@ -122,7 +123,7 @@
                                 <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
                                 <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
                                 <li><a href="../classes/EUInformation.html">EUInformation</a></li>
-                                <li><a href="../classes/EventField.html">EventField</a></li>
+                                <li><a href="../classes/EventFieldList.html">EventFieldList</a></li>
                                 <li><a href="../classes/EventFilter.html">EventFilter</a></li>
                                 <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
                                 <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
@@ -152,6 +153,7 @@
                                 <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
                                 <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
                                 <li><a href="../classes/MessageSecurityMode.html">MessageSecurityMode</a></li>
+                                <li><a href="../classes/ModelChangeStructure.html">ModelChangeStructure</a></li>
                                 <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
@@ -165,6 +167,7 @@
                                 <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
                                 <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
                                 <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+                                <li><a href="../classes/MyStructure.html">MyStructure</a></li>
                                 <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
                                 <li><a href="../classes/NodeId.html">NodeId</a></li>
                                 <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
@@ -203,6 +206,7 @@
                                 <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
                                 <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
                                 <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+                                <li><a href="../classes/RedundantServer.html">RedundantServer</a></li>
                                 <li><a href="../classes/Reference.html">Reference</a></li>
                                 <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
                                 <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
@@ -217,9 +221,11 @@
                                 <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
                                 <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
                                 <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+                                <li><a href="../classes/SamplingIntervalDiagnostics.html">SamplingIntervalDiagnostics</a></li>
                                 <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
                                 <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
                                 <li><a href="../classes/SecurityTokenRequestType.html">SecurityTokenRequestType</a></li>
+                                <li><a href="../classes/SemanticChangeStructure.html">SemanticChangeStructure</a></li>
                                 <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
                                 <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
                                 <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
@@ -232,6 +238,7 @@
                                 <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
                                 <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
                                 <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+                                <li><a href="../classes/SessionSecurityDiagnostics.html">SessionSecurityDiagnostics</a></li>
                                 <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
                                 <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
                                 <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
@@ -341,7 +348,7 @@
         </div>
 
         <div class="foundat">
-            Defined in: <a href="../files/lib_client_opcua_client.js.html#l51"><code>lib&#x2F;client&#x2F;opcua_client.js:51</code></a>
+            Defined in: <a href="../files/lib_client_opcua_client.js.html#l53"><code>lib\client\opcua_client.js:53</code></a>
         </div>
 
             Module: <a href="../modules/opcua.client.html">opcua.client</a>
@@ -376,7 +383,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_opcua_client.js.html#l51"><code>lib&#x2F;client&#x2F;opcua_client.js:51</code></a>
+        <a href="../files/lib_client_opcua_client.js.html#l53"><code>lib\client\opcua_client.js:53</code></a>
         </p>
 
 
@@ -499,7 +506,7 @@
                                 <a href="#method_disconnect">disconnect</a>
 
                             </li>
-                            <li class="index-item method inherited">
+                            <li class="index-item method inherited inherited">
                                 <a href="#method_findEndpoint">findEndpoint</a>
 
                             </li>
@@ -531,6 +538,14 @@
 
                             </li>
                             <li class="index-item property inherited">
+                                <a href="#property_isReconnecting">isReconnecting</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#property_knowsServerEndpoint">knowsServerEndpoint</a>
+
+                            </li>
+                            <li class="index-item property inherited">
                                 <a href="#property_transactionsPerformed">transactionsPerformed</a>
 
                             </li>
@@ -542,8 +557,18 @@
                     <h3>Events</h3>
 
                     <ul class="index-list events extends">
+                            <li class="index-item event inherited">
+                                <a href="#event_after_reconnection">after_reconnection</a>
+
+                            </li>
                             <li class="index-item event inherited inherited">
                                 <a href="#event_close">close</a>
+
+                            </li>
+                            <li class="index-item event inherited">
+                                <a href="#event_connection_reestablished
+       send when the connection is reestablished after a connection break">connection_reestablished
+       send when the connection is reestablished after a connection break</a>
 
                             </li>
                             <li class="index-item event inherited">
@@ -560,6 +585,14 @@
                             </li>
                             <li class="index-item event inherited">
                                 <a href="#event_send_request">send_request</a>
+
+                            </li>
+                            <li class="index-item event inherited">
+                                <a href="#event_start_reconnection">start_reconnection</a>
+
+                            </li>
+                            <li class="index-item event inherited">
+                                <a href="#event_timed_out_request">timed_out_request</a>
 
                             </li>
                     </ul>
@@ -594,7 +627,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_opcua_client.js.html#l577"><code>lib&#x2F;client&#x2F;opcua_client.js:577</code></a>
+        <a href="../files/lib_client_opcua_client.js.html#l606"><code>lib\client\opcua_client.js:606</code></a>
         </p>
 
 
@@ -680,7 +713,7 @@
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/OPCUAClientBase.html#method_connect">OPCUAClientBase</a>:
-        <a href="../files/lib_client_client_base.js.html#l108"><code>lib&#x2F;client&#x2F;client_base.js:108</code></a>
+        <a href="../files/lib_client_client_base.js.html#l467"><code>lib\client\client_base.js:467</code></a>
         </p>
 
 
@@ -747,7 +780,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_opcua_client.js.html#l497"><code>lib&#x2F;client&#x2F;opcua_client.js:497</code></a>
+        <a href="../files/lib_client_opcua_client.js.html#l511"><code>lib\client\opcua_client.js:511</code></a>
         </p>
 
 
@@ -857,7 +890,7 @@ client.createSession({userName: &quot;JoeDoe&quot;, password:&quot;secret&quot;}
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/OPCUAClientBase.html#method_disconnect">OPCUAClientBase</a>:
-        <a href="../files/lib_client_client_base.js.html#l425"><code>lib&#x2F;client&#x2F;client_base.js:425</code></a>
+        <a href="../files/lib_client_client_base.js.html#l715"><code>lib\client\client_base.js:715</code></a>
         </p>
 
 
@@ -906,9 +939,12 @@ client.createSession({userName: &quot;JoeDoe&quot;, password:&quot;secret&quot;}
 
 
     <div class="meta">
-                <p>Inherited from
-                <a href="../classes/OPCUAClientBase.html#method_findEndpoint">OPCUAClientBase</a>:
-        <a href="../files/lib_client_client_base.js.html#l272"><code>lib&#x2F;client&#x2F;client_base.js:272</code></a>
+            <p>Inherited from
+            <a href="../classes/OPCUAClientBase.html#method_findEndpoint">
+                OPCUAClientBase
+            </a>
+            but overwritten in
+        <a href="../files/lib_client_client_base.js.html#l549"><code>lib\client\client_base.js:549</code></a>
         </p>
 
 
@@ -916,7 +952,7 @@ client.createSession({userName: &quot;JoeDoe&quot;, password:&quot;secret&quot;}
     </div>
 
     <div class="description">
-        <p>return the endpoint information matching the specified url , security mode and security policy.</p>
+        <p>return the endpoint information matching  security mode and security policy.</p>
 
     </div>
 
@@ -956,7 +992,7 @@ client.createSession({userName: &quot;JoeDoe&quot;, password:&quot;secret&quot;}
                 OPCUAClientBase
             </a>
             but overwritten in
-        <a href="../files/lib_client_client_base.js.html#l335"><code>lib&#x2F;client&#x2F;client_base.js:335</code></a>
+        <a href="../files/lib_client_client_base.js.html#l626"><code>lib\client\client_base.js:626</code></a>
         </p>
 
 
@@ -1020,7 +1056,7 @@ client.createSession({userName: &quot;JoeDoe&quot;, password:&quot;secret&quot;}
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/OPCUAClientBase.html#method_getEndpointsRequest">OPCUAClientBase</a>:
-        <a href="../files/lib_client_client_base.js.html#l287"><code>lib&#x2F;client&#x2F;client_base.js:287</code></a>
+        <a href="../files/lib_client_client_base.js.html#l579"><code>lib\client\client_base.js:579</code></a>
         </p>
 
 
@@ -1145,7 +1181,7 @@ client.createSession({userName: &quot;JoeDoe&quot;, password:&quot;secret&quot;}
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_opcua_client.js.html#l462"><code>lib&#x2F;client&#x2F;opcua_client.js:462</code></a>
+        <a href="../files/lib_client_opcua_client.js.html#l472"><code>lib\client\opcua_client.js:472</code></a>
         </p>
 
 
@@ -1210,7 +1246,7 @@ client.createSession({userName: &quot;JoeDoe&quot;, password:&quot;secret&quot;}
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/OPCUAClientBase.html#property_bytesRead">OPCUAClientBase</a>:
-        <a href="../files/lib_client_client_base.js.html#l464"><code>lib&#x2F;client&#x2F;client_base.js:464</code></a>
+        <a href="../files/lib_client_client_base.js.html#l769"><code>lib\client\client_base.js:769</code></a>
         </p>
 
 
@@ -1235,7 +1271,7 @@ client.createSession({userName: &quot;JoeDoe&quot;, password:&quot;secret&quot;}
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/OPCUAClientBase.html#property_bytesWritten">OPCUAClientBase</a>:
-        <a href="../files/lib_client_client_base.js.html#l474"><code>lib&#x2F;client&#x2F;client_base.js:474</code></a>
+        <a href="../files/lib_client_client_base.js.html#l779"><code>lib\client\client_base.js:779</code></a>
         </p>
 
 
@@ -1243,6 +1279,55 @@ client.createSession({userName: &quot;JoeDoe&quot;, password:&quot;secret&quot;}
 
     <div class="description">
         <p>total number of bytes written by the client</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_isReconnecting" class="property item inherited">
+    <h3 class="name"><code>isReconnecting</code></h3>
+    <span class="type">Boolean true if the client is trying to reconnect to the server after a connection break.</span>
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/OPCUAClientBase.html#property_isReconnecting">OPCUAClientBase</a>:
+        <a href="../files/lib_client_client_base.js.html#l177"><code>lib\client\client_base.js:177</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_knowsServerEndpoint" class="property item inherited">
+    <h3 class="name"><code>knowsServerEndpoint</code></h3>
+    <span class="type">Boolean</span>
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/OPCUAClientBase.html#property_knowsServerEndpoint">OPCUAClientBase</a>:
+        <a href="../files/lib_client_client_base.js.html#l109"><code>lib\client\client_base.js:109</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>is true when the client has already requested the server end points.</p>
 
     </div>
 
@@ -1260,7 +1345,7 @@ client.createSession({userName: &quot;JoeDoe&quot;, password:&quot;secret&quot;}
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/OPCUAClientBase.html#property_transactionsPerformed">OPCUAClientBase</a>:
-        <a href="../files/lib_client_client_base.js.html#l484"><code>lib&#x2F;client&#x2F;client_base.js:484</code></a>
+        <a href="../files/lib_client_client_base.js.html#l789"><code>lib\client\client_base.js:789</code></a>
         </p>
 
 
@@ -1280,6 +1365,47 @@ client.createSession({userName: &quot;JoeDoe&quot;, password:&quot;secret&quot;}
             <div id="events" class="api-class-tabpanel">
                 <h2 class="off-left">Events</h2>
 
+                    <div id="event_after_reconnection" class="events item inherited">
+                        <h3 class="name"><code>after_reconnection</code></h3>
+                        <span class="type"></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/OPCUAClientBase.html#event_after_reconnection">OPCUAClientBase</a>:
+                            <a href="../files/lib_client_client_base.js.html#l249"><code>lib\client\client_base.js:249</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>notify the observers that the reconnection process has been completed</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Event Payload:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">err</code>
+                                            <span class="type">Object</span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
                     <div id="event_close" class="events item inherited">
                         <h3 class="name"><code>close</code></h3>
                         <span class="type"></span>
@@ -1294,7 +1420,7 @@ client.createSession({userName: &quot;JoeDoe&quot;, password:&quot;secret&quot;}
                                     OPCUAClientBase
                                 </a>
                                 but overwritten in
-                            <a href="../files/lib_client_client_base.js.html#l200"><code>lib&#x2F;client&#x2F;client_base.js:200</code></a>
+                            <a href="../files/lib_client_client_base.js.html#l410"><code>lib\client\client_base.js:410</code></a>
                             </p>
                     
                     
@@ -1323,6 +1449,33 @@ client.createSession({userName: &quot;JoeDoe&quot;, password:&quot;secret&quot;}
                     
                     
                     </div>
+                    <div id="event_connection_reestablished
+                           send when the connection is reestablished after a connection break" class="events item inherited">
+                        <h3 class="name"><code>connection_reestablished
+                           send when the connection is reestablished after a connection break</code></h3>
+                        <span class="type"></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/OPCUAClientBase.html#event_connection_reestablished
+                           send when the connection is reestablished after a connection break">OPCUAClientBase</a>:
+                            <a href="../files/lib_client_client_base.js.html#l429"><code>lib\client\client_base.js:429</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                    
+                    
+                    </div>
                     <div id="event_receive_chunk" class="events item inherited">
                         <h3 class="name"><code>receive_chunk</code></h3>
                         <span class="type"></span>
@@ -1334,7 +1487,7 @@ client.createSession({userName: &quot;JoeDoe&quot;, password:&quot;secret&quot;}
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/OPCUAClientBase.html#event_receive_chunk">OPCUAClientBase</a>:
-                            <a href="../files/lib_client_client_base.js.html#l159"><code>lib&#x2F;client&#x2F;client_base.js:159</code></a>
+                            <a href="../files/lib_client_client_base.js.html#l368"><code>lib\client\client_base.js:368</code></a>
                             </p>
                     
                     
@@ -1375,7 +1528,7 @@ client.createSession({userName: &quot;JoeDoe&quot;, password:&quot;secret&quot;}
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/OPCUAClientBase.html#event_receive_response">OPCUAClientBase</a>:
-                            <a href="../files/lib_client_client_base.js.html#l177"><code>lib&#x2F;client&#x2F;client_base.js:177</code></a>
+                            <a href="../files/lib_client_client_base.js.html#l386"><code>lib\client\client_base.js:386</code></a>
                             </p>
                     
                     
@@ -1416,7 +1569,7 @@ client.createSession({userName: &quot;JoeDoe&quot;, password:&quot;secret&quot;}
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/OPCUAClientBase.html#event_send_chunk">OPCUAClientBase</a>:
-                            <a href="../files/lib_client_client_base.js.html#l150"><code>lib&#x2F;client&#x2F;client_base.js:150</code></a>
+                            <a href="../files/lib_client_client_base.js.html#l359"><code>lib\client\client_base.js:359</code></a>
                             </p>
                     
                     
@@ -1457,7 +1610,7 @@ client.createSession({userName: &quot;JoeDoe&quot;, password:&quot;secret&quot;}
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/OPCUAClientBase.html#event_send_request">OPCUAClientBase</a>:
-                            <a href="../files/lib_client_client_base.js.html#l168"><code>lib&#x2F;client&#x2F;client_base.js:168</code></a>
+                            <a href="../files/lib_client_client_base.js.html#l377"><code>lib\client\client_base.js:377</code></a>
                             </p>
                     
                     
@@ -1474,6 +1627,73 @@ client.createSession({userName: &quot;JoeDoe&quot;, password:&quot;secret&quot;}
                                 <ul class="params-list">
                                     <li class="param">
                                             <code class="param-name">message</code>
+                                            <span class="type">Object</span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
+                    <div id="event_start_reconnection" class="events item inherited">
+                        <h3 class="name"><code>start_reconnection</code></h3>
+                        <span class="type"></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/OPCUAClientBase.html#event_start_reconnection">OPCUAClientBase</a>:
+                            <a href="../files/lib_client_client_base.js.html#l220"><code>lib\client\client_base.js:220</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>notifies the observer that the OPCUA is now trying to reestablish the connection
+                    after having received a connection break...</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="event_timed_out_request" class="events item inherited">
+                        <h3 class="name"><code>timed_out_request</code></h3>
+                        <span class="type"></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/OPCUAClientBase.html#event_timed_out_request">OPCUAClientBase</a>:
+                            <a href="../files/lib_client_client_base.js.html#l454"><code>lib\client\client_base.js:454</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>send when a request has timed out without receiving a response</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Event Payload:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">request</code>
                                             <span class="type">Object</span>
                     
                     

@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.46</em>
+            <em>API Docs for: 0.0.52</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -56,6 +56,7 @@
                                 <li><a href="../classes/Argument.html">Argument</a></li>
                                 <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
                                 <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+                                <li><a href="../classes/AttributeNameById.html">AttributeNameById</a></li>
                                 <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
                                 <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
                                 <li><a href="../classes/BaseNode.html">BaseNode</a></li>
@@ -122,7 +123,7 @@
                                 <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
                                 <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
                                 <li><a href="../classes/EUInformation.html">EUInformation</a></li>
-                                <li><a href="../classes/EventField.html">EventField</a></li>
+                                <li><a href="../classes/EventFieldList.html">EventFieldList</a></li>
                                 <li><a href="../classes/EventFilter.html">EventFilter</a></li>
                                 <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
                                 <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
@@ -152,6 +153,7 @@
                                 <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
                                 <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
                                 <li><a href="../classes/MessageSecurityMode.html">MessageSecurityMode</a></li>
+                                <li><a href="../classes/ModelChangeStructure.html">ModelChangeStructure</a></li>
                                 <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
@@ -165,6 +167,7 @@
                                 <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
                                 <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
                                 <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+                                <li><a href="../classes/MyStructure.html">MyStructure</a></li>
                                 <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
                                 <li><a href="../classes/NodeId.html">NodeId</a></li>
                                 <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
@@ -203,6 +206,7 @@
                                 <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
                                 <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
                                 <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+                                <li><a href="../classes/RedundantServer.html">RedundantServer</a></li>
                                 <li><a href="../classes/Reference.html">Reference</a></li>
                                 <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
                                 <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
@@ -217,9 +221,11 @@
                                 <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
                                 <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
                                 <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+                                <li><a href="../classes/SamplingIntervalDiagnostics.html">SamplingIntervalDiagnostics</a></li>
                                 <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
                                 <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
                                 <li><a href="../classes/SecurityTokenRequestType.html">SecurityTokenRequestType</a></li>
+                                <li><a href="../classes/SemanticChangeStructure.html">SemanticChangeStructure</a></li>
                                 <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
                                 <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
                                 <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
@@ -232,6 +238,7 @@
                                 <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
                                 <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
                                 <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+                                <li><a href="../classes/SessionSecurityDiagnostics.html">SessionSecurityDiagnostics</a></li>
                                 <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
                                 <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
                                 <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
@@ -338,7 +345,7 @@
 
 
         <div class="foundat">
-            Defined in: <a href="../files/lib_server_server_publish_engine.js.html#l30"><code>lib&#x2F;server&#x2F;server_publish_engine.js:30</code></a>
+            Defined in: <a href="../files/lib_server_server_publish_engine.js.html#l30"><code>lib\server\server_publish_engine.js:30</code></a>
         </div>
 
             Module: <a href="../modules/opcua.server.html">opcua.server</a>
@@ -373,7 +380,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_server_publish_engine.js.html#l30"><code>lib&#x2F;server&#x2F;server_publish_engine.js:30</code></a>
+        <a href="../files/lib_server_server_publish_engine.js.html#l30"><code>lib\server\server_publish_engine.js:30</code></a>
         </p>
 
 
@@ -438,13 +445,33 @@
                                 <a href="#method_add_subscription">add_subscription</a>
 
                             </li>
+                            <li class="index-item method deprecated">
+                                <a href="#method_addMethod">addMethod</a>
+
+                                    <span class="flag deprecated">deprecated</span>
+                            </li>
+                            <li class="index-item method deprecated">
+                                <a href="#method_addVariable">addVariable</a>
+
+                                    <span class="flag deprecated">deprecated</span>
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_bindVariable">bindVariable</a>
+
+                            </li>
+                            <li class="index-item method deprecated">
+                                <a href="#method_findNode">findNode</a>
+
+                                    <span class="flag deprecated">deprecated</span>
+                            </li>
                             <li class="index-item method">
                                 <a href="#method_getSubscriptionById">getSubscriptionById</a>
 
                             </li>
-                            <li class="index-item method">
-                                <a href="#method_remove_subscription">remove_subscription</a>
+                            <li class="index-item method deprecated">
+                                <a href="#method_resolveNodeId">resolveNodeId</a>
 
+                                    <span class="flag deprecated">deprecated</span>
                             </li>
                             <li class="index-item method">
                                 <a href="#method_send_keep_alive_response">send_keep_alive_response</a>
@@ -467,6 +494,10 @@
                     <ul class="index-list properties">
                             <li class="index-item property">
                                 <a href="#property_pendingPublishRequestCount">pendingPublishRequestCount</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_subscription">subscription</a>
 
                             </li>
                             <li class="index-item property">
@@ -503,7 +534,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_server_publish_engine.js.html#l323"><code>lib&#x2F;server&#x2F;server_publish_engine.js:323</code></a>
+        <a href="../files/lib_server_server_publish_engine.js.html#l340"><code>lib\server\server_publish_engine.js:340</code></a>
         </p>
 
 
@@ -534,6 +565,428 @@
 
 
 </div>
+<div id="method_addMethod" class="method item deprecated">
+    <h3 class="name"><code>addMethod</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>parentObject</code>
+                </li>
+                <li class="arg">
+                        <code>options</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+
+        <span class="flag deprecated">deprecated</span>
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_server_server_engine_deprecated.js.html#l69"><code>lib\server\server_engine_deprecated.js:69</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">parentObject</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">options</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        
+                    </div>
+
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name optional">[nodeId=null]</code>
+                                    <span class="type"><a href="../classes/NodeId.html" class="crosslink">NodeId</a></span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    <p>the object nodeid.</p>
+
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name optional">[browseName=&quot;&quot;]</code>
+                                    <span class="type">String</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    <p>the object browse name.</p>
+
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name optional">[description=&quot;&quot;]</code>
+                                    <span class="type">String</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    <p>the object description.</p>
+
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">inputArguments</code>
+                                    <span class="type">Array<Argument></span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">outputArguments</code>
+                                    <span class="type">Array<Argument></span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                        </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Object</span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_addVariable" class="method item deprecated">
+    <h3 class="name"><code>addVariable</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>options</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/UAVariable.html" class="crosslink">UAVariable</a></span>
+        </span>
+
+        <span class="flag deprecated">deprecated</span>
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_server_server_engine_deprecated.js.html#l46"><code>lib\server\server_engine_deprecated.js:46</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>add a new variable inside an object</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">options</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        
+                    </div>
+
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name">browseName</code>
+                                    <span class="type">String</span>
+
+                                <div class="param-description">
+                                    <p>: the variable browse name</p>
+
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name optional">[nodeId]</code>
+                                    <span class="type">String | <a href="../classes/NodeId.html" class="crosslink">NodeId</a></span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    <p>: the variable nodeid. If not specified a new nodeId will be generated</p>
+
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name optional">[historizing]</code>
+                                    <span class="type">Boolean</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    <p>: default value : false</p>
+
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name optional">[valueRank]</code>
+                                    <span class="type">Integer</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    <p>: default value : -1</p>
+
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name optional">[minimumSamplingInterval] [UInt32]</code>
+                                    <span class="type"></span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    <p>: default value: 10 ms</p>
+
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">value</code>
+                                    <span class="type">Object</span>
+
+                                <div class="param-description">
+                                    <p>: parameters describing how the value of this variable can be access.
+Same as Variable/bindVariable options parameter. see Variable/bindVariable for more info.</p>
+
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">dataType</code>
+                                    <span class="type"><a href="../classes/NodeId.html" class="crosslink">NodeId</a> | String</span>
+
+                                <div class="param-description">
+                                    <p>: the nodeId of the variable DataType;</p>
+
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">typeDefinition</code>
+                                    <span class="type"><a href="../classes/NodeId.html" class="crosslink">NodeId</a> | String</span>
+
+                                <div class="param-description">
+                                    <p>: the nodeId of the HasTypeDefinition;</p>
+
+                                </div>
+
+                            </li>
+                        </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type"><a href="../classes/UAVariable.html" class="crosslink">UAVariable</a></span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_bindVariable" class="method item">
+    <h3 class="name"><code>bindVariable</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>nodeId</code>
+                </li>
+                <li class="arg">
+                        <code>options</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type"></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_server_server_engine_deprecated.js.html#l96"><code>lib\server\server_engine_deprecated.js:96</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>bind a variable</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">nodeId</code>
+                        <span class="type"><a href="../classes/NodeId.html" class="crosslink">NodeId</a></span>
+
+
+                    <div class="param-description">
+                        <p>the variable nodeid to configure.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">options</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>see <a href="../classes/UAVariable.html#method_bindVariable" class="crosslink">bindVariable</a> for description of this parameter.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                    <p>void</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_findNode" class="method item deprecated">
+    <h3 class="name"><code>findNode</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>nodeId</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/BaseNode.html" class="crosslink">BaseNode</a></span>
+        </span>
+
+        <span class="flag deprecated">deprecated</span>
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_server_server_engine_deprecated.js.html#l32"><code>lib\server\server_engine_deprecated.js:32</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">nodeId</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type"><a href="../classes/BaseNode.html" class="crosslink">BaseNode</a></span>:
+            </div>
+        </div>
+
+
+</div>
 <div id="method_getSubscriptionById" class="method item">
     <h3 class="name"><code>getSubscriptionById</code></h3>
 
@@ -558,7 +1011,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_server_publish_engine.js.html#l387"><code>lib&#x2F;server&#x2F;server_publish_engine.js:387</code></a>
+        <a href="../files/lib_server_server_publish_engine.js.html#l419"><code>lib\server\server_publish_engine.js:419</code></a>
         </p>
 
 
@@ -597,18 +1050,22 @@
 
 
 </div>
-<div id="method_remove_subscription" class="method item">
-    <h3 class="name"><code>remove_subscription</code></h3>
+<div id="method_resolveNodeId" class="method item deprecated">
+    <h3 class="name"><code>resolveNodeId</code></h3>
 
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
                 <li class="arg">
-                        <code>subscription</code>
+                        <code>nodeId</code>
                 </li>
             </ul><span class="paren">)</span>
         </div>
 
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/NodeId.html" class="crosslink">NodeId</a></span>
+        </span>
 
+        <span class="flag deprecated">deprecated</span>
 
 
 
@@ -618,7 +1075,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_server_publish_engine.js.html#l338"><code>lib&#x2F;server&#x2F;server_publish_engine.js:338</code></a>
+        <a href="../files/lib_server_server_engine_deprecated.js.html#l6"><code>lib\server\server_engine_deprecated.js:6</code></a>
         </p>
 
 
@@ -634,8 +1091,8 @@
 
             <ul class="params-list">
                 <li class="param">
-                        <code class="param-name">subscription</code>
-                        <span class="type"><a href="../classes/Subscription.html" class="crosslink">Subscription</a></span>
+                        <code class="param-name">nodeId</code>
+                        <span class="type">Object</span>
 
 
                     <div class="param-description">
@@ -646,6 +1103,13 @@
             </ul>
         </div>
 
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type"><a href="../classes/NodeId.html" class="crosslink">NodeId</a></span>:
+            </div>
+        </div>
 
 
 </div>
@@ -676,7 +1140,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_server_publish_engine.js.html#l180"><code>lib&#x2F;server&#x2F;server_publish_engine.js:180</code></a>
+        <a href="../files/lib_server_server_publish_engine.js.html#l197"><code>lib\server\server_publish_engine.js:197</code></a>
         </p>
 
 
@@ -750,7 +1214,7 @@ expired.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_server_publish_engine.js.html#l267"><code>lib&#x2F;server&#x2F;server_publish_engine.js:267</code></a>
+        <a href="../files/lib_server_server_publish_engine.js.html#l284"><code>lib\server\server_publish_engine.js:284</code></a>
         </p>
 
 
@@ -843,7 +1307,7 @@ expired.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_server_publish_engine.js.html#l357"><code>lib&#x2F;server&#x2F;server_publish_engine.js:357</code></a>
+        <a href="../files/lib_server_server_publish_engine.js.html#l374"><code>lib\server\server_publish_engine.js:374</code></a>
         </p>
 
 
@@ -874,7 +1338,7 @@ expired.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_server_publish_engine.js.html#l369"><code>lib&#x2F;server&#x2F;server_publish_engine.js:369</code></a>
+        <a href="../files/lib_server_server_publish_engine.js.html#l389"><code>lib\server\server_publish_engine.js:389</code></a>
         </p>
 
 
@@ -882,6 +1346,31 @@ expired.</p>
 
     <div class="description">
         <p>number of pending PublishRequest available in queue</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_subscription" class="property item">
+    <h3 class="name"><code>subscription</code></h3>
+    <span class="type"><a href="../classes/Subscription.html" class="crosslink">Subscription[]</a></span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_server_server_publish_engine.js.html#l70"><code>lib\server\server_publish_engine.js:70</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>get a array of subscription handled by the publish engine.</p>
 
     </div>
 
@@ -899,7 +1388,7 @@ expired.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_server_publish_engine.js.html#l378"><code>lib&#x2F;server&#x2F;server_publish_engine.js:378</code></a>
+        <a href="../files/lib_server_server_publish_engine.js.html#l398"><code>lib\server\server_publish_engine.js:398</code></a>
         </p>
 
 

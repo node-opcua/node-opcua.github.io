@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>lib/client/client_session.js - The NodeOPCUA API</title>
+    <title>lib\client\client_session.js - The NodeOPCUA API</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.46</em>
+            <em>API Docs for: 0.0.52</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -56,6 +56,7 @@
                                 <li><a href="../classes/Argument.html">Argument</a></li>
                                 <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
                                 <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+                                <li><a href="../classes/AttributeNameById.html">AttributeNameById</a></li>
                                 <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
                                 <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
                                 <li><a href="../classes/BaseNode.html">BaseNode</a></li>
@@ -122,7 +123,7 @@
                                 <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
                                 <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
                                 <li><a href="../classes/EUInformation.html">EUInformation</a></li>
-                                <li><a href="../classes/EventField.html">EventField</a></li>
+                                <li><a href="../classes/EventFieldList.html">EventFieldList</a></li>
                                 <li><a href="../classes/EventFilter.html">EventFilter</a></li>
                                 <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
                                 <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
@@ -152,6 +153,7 @@
                                 <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
                                 <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
                                 <li><a href="../classes/MessageSecurityMode.html">MessageSecurityMode</a></li>
+                                <li><a href="../classes/ModelChangeStructure.html">ModelChangeStructure</a></li>
                                 <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
@@ -165,6 +167,7 @@
                                 <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
                                 <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
                                 <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+                                <li><a href="../classes/MyStructure.html">MyStructure</a></li>
                                 <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
                                 <li><a href="../classes/NodeId.html">NodeId</a></li>
                                 <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
@@ -203,6 +206,7 @@
                                 <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
                                 <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
                                 <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+                                <li><a href="../classes/RedundantServer.html">RedundantServer</a></li>
                                 <li><a href="../classes/Reference.html">Reference</a></li>
                                 <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
                                 <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
@@ -217,9 +221,11 @@
                                 <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
                                 <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
                                 <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+                                <li><a href="../classes/SamplingIntervalDiagnostics.html">SamplingIntervalDiagnostics</a></li>
                                 <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
                                 <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
                                 <li><a href="../classes/SecurityTokenRequestType.html">SecurityTokenRequestType</a></li>
+                                <li><a href="../classes/SemanticChangeStructure.html">SemanticChangeStructure</a></li>
                                 <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
                                 <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
                                 <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
@@ -232,6 +238,7 @@
                                 <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
                                 <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
                                 <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+                                <li><a href="../classes/SessionSecurityDiagnostics.html">SessionSecurityDiagnostics</a></li>
                                 <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
                                 <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
                                 <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
@@ -333,7 +340,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-<h1 class="file-heading">File: lib/client/client_session.js</h1>
+<h1 class="file-heading">File: lib\client\client_session.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
@@ -481,6 +488,7 @@ ClientSession.prototype.browse = function (nodes, callback) {
 
             var i, r;
 
+
             /* istanbul ignore next */
             if (err) {
                 return callback(err, null, response);
@@ -502,10 +510,15 @@ ClientSession.prototype.browse = function (nodes, callback) {
                     }
                 }
             }
+            for (i = 0; i &lt; response.results.length; i++) {
+                r = response.results[i];
+                r.references = r.references || [];
+            }
             // detect unsupported case :
             // todo implement proper support for r.continuationPoint
             for (i = 0; i &lt; response.results.length; i++) {
                 r = response.results[i];
+
                 if (r.continuationPoint !== null) {
                     console.log(&quot; warning:&quot;.yellow, &quot; BrowseResponse : server didn&#x27;t send all references and has provided a continuationPoint. Unfortunately we do not support this yet&quot;);
                     console.log(&quot;           self.requestedMaxReferencesPerNode = &quot;, self.requestedMaxReferencesPerNode);
@@ -1099,17 +1112,18 @@ ClientSession.prototype.setPublishingMode = function (publishingEnabled, subscri
  *
  * @method translateBrowsePath
  * @async
- * @param browsePath
+ * @param browsePath {BrowsePath|Array&lt;BrowsePathResult&gt;}
  * @param callback {Function}
+ * @param callback.err {Error|null}
+ * @param callback.response {BrowsePathResult|Array&lt;BrowsePathResult&gt;}
+ *
+ *
+ *
  */
 ClientSession.prototype.translateBrowsePath = function (browsePath, callback) {
     assert(_.isFunction(callback));
     var self = this;
 
-    var constructBrowsePath = require(&quot;lib/address_space/address_space&quot;).constructBrowsePath;
-    if (typeof browsePath === &quot;string&quot;) {
-        browsePath = constructBrowsePath(&quot;/&quot;, browsePath);
-    }
     var translate_service = require(&quot;lib/services/translate_browse_paths_to_node_ids_service&quot;);
 
     var has_single_element = !_.isArray(browsePath);
@@ -1125,7 +1139,6 @@ ClientSession.prototype.translateBrowsePath = function (browsePath, callback) {
         if (err) {
             return callback(err, response);
         }
-
         assert(response instanceof translate_service.TranslateBrowsePathsToNodeIdsResponse);
         callback(null, has_single_element ? response.results[0] : response.results);
 
@@ -1178,6 +1191,34 @@ ClientSession.prototype.close = function (callback) {
 
 };
 
+/**
+ *
+ * @param methodsToCall {CallMethodRequest[]} the call method request array
+ * @param callback {Function}
+ * @param callback.err {Error|null}
+ * @param callback.response {CallMethodResult[]}
+ *
+ *
+ * @example :
+ *
+ * var methodsToCall = [ {
+ *     objectId: &quot;ns=2;i=12&quot;,
+ *     methodId: &quot;ns=2;i=13&quot;,
+ *     inputArguments: [
+ *         new Variant({...}),
+ *         new Variant({...}),
+ *     ]
+ * }];
+ * session.call(methodsToCall,function(err,response) {
+ *    if (!err) {
+ *         var rep = response[0];
+ *         console.log(&quot; statusCode = &quot;,rep.statusCode);
+ *         console.log(&quot; inputArgumentResults[0] = &quot;,rep.inputArgumentResults[0].toString());
+ *         console.log(&quot; inputArgumentResults[1] = &quot;,rep.inputArgumentResults[1].toString());
+ *         console.log(&quot; outputArgument[0]       = &quot;,rep.outputArgument[0].toString()); // array of variant
+ *    }
+ * });
+ */
 ClientSession.prototype.call = function (methodsToCall, callback) {
 
     var self = this;
@@ -1362,6 +1403,33 @@ ClientSession.prototype.getArgumentDefinition = function (methodId, callback) {
 ClientSession.prototype.__defineGetter__(&quot;endpoint&quot;, function () {
     return this._client.endpoint;
 });
+
+
+var query_service = require(&quot;lib/services/query_service&quot;);
+/**
+ * @method queryFirst
+ * @param queryFirstRequest {queryFirstRequest}
+ * @param callback {Function}
+ * @param callback.err {Error|null}
+ * @param callback.response {queryFirstResponse}
+ *
+ */
+ClientSession.prototype.queryFirst = function(queryFirstRequest,callback) {
+    var self = this;
+    assert(_.isFunction(callback));
+
+    var request = new query_service.QueryFirstRequest(queryFirstRequest);
+
+    self.performMessageTransaction(request, function (err, response) {
+        /* istanbul ignore next */
+        if (err) {
+            return callback(err);
+        }
+        assert(response instanceof query_service.QueryFirstResponse);
+        callback(null, response.results);
+    });
+};
+
 
 exports.ClientSession = ClientSession;
 

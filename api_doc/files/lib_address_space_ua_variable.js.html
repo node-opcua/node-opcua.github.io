@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>lib/address_space/ua_variable.js - The NodeOPCUA API</title>
+    <title>lib\address_space\ua_variable.js - The NodeOPCUA API</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.46</em>
+            <em>API Docs for: 0.0.52</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -56,6 +56,7 @@
                                 <li><a href="../classes/Argument.html">Argument</a></li>
                                 <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
                                 <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+                                <li><a href="../classes/AttributeNameById.html">AttributeNameById</a></li>
                                 <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
                                 <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
                                 <li><a href="../classes/BaseNode.html">BaseNode</a></li>
@@ -122,7 +123,7 @@
                                 <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
                                 <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
                                 <li><a href="../classes/EUInformation.html">EUInformation</a></li>
-                                <li><a href="../classes/EventField.html">EventField</a></li>
+                                <li><a href="../classes/EventFieldList.html">EventFieldList</a></li>
                                 <li><a href="../classes/EventFilter.html">EventFilter</a></li>
                                 <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
                                 <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
@@ -152,6 +153,7 @@
                                 <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
                                 <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
                                 <li><a href="../classes/MessageSecurityMode.html">MessageSecurityMode</a></li>
+                                <li><a href="../classes/ModelChangeStructure.html">ModelChangeStructure</a></li>
                                 <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
@@ -165,6 +167,7 @@
                                 <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
                                 <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
                                 <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+                                <li><a href="../classes/MyStructure.html">MyStructure</a></li>
                                 <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
                                 <li><a href="../classes/NodeId.html">NodeId</a></li>
                                 <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
@@ -203,6 +206,7 @@
                                 <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
                                 <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
                                 <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+                                <li><a href="../classes/RedundantServer.html">RedundantServer</a></li>
                                 <li><a href="../classes/Reference.html">Reference</a></li>
                                 <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
                                 <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
@@ -217,9 +221,11 @@
                                 <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
                                 <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
                                 <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+                                <li><a href="../classes/SamplingIntervalDiagnostics.html">SamplingIntervalDiagnostics</a></li>
                                 <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
                                 <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
                                 <li><a href="../classes/SecurityTokenRequestType.html">SecurityTokenRequestType</a></li>
+                                <li><a href="../classes/SemanticChangeStructure.html">SemanticChangeStructure</a></li>
                                 <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
                                 <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
                                 <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
@@ -232,6 +238,7 @@
                                 <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
                                 <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
                                 <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+                                <li><a href="../classes/SessionSecurityDiagnostics.html">SessionSecurityDiagnostics</a></li>
                                 <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
                                 <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
                                 <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
@@ -333,7 +340,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-<h1 class="file-heading">File: lib/address_space/ua_variable.js</h1>
+<h1 class="file-heading">File: lib\address_space\ua_variable.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
@@ -449,7 +456,7 @@ function validateDataType(__address_space, dataTypeNodeId, variantDataType, node
     }
     var builtInType, builtInUADataType;
 
-    var destUADataType = __address_space.findObject(dataTypeNodeId);
+    var destUADataType = __address_space.findNode(dataTypeNodeId);
     assert(destUADataType instanceof UADataType);
 
     if (destUADataType.isAbstract) {
@@ -707,7 +714,7 @@ UAVariable.prototype.readValue = function (indexRange, dataEncoding) {
 
     /* istanbul ignore next */
     if (dataValue.statusCode === StatusCodes.BadNodeIdUnknown) {
-        console.log(&quot; Warning:  &quot;, self.browseName, self.nodeId.toString(), &quot;exists but dataValue has not been defined&quot;);
+        debugLog(&quot; Warning:  UAVariable#readValue &quot;.red +  self.browseName.toString().cyan+ &quot; (&quot;+ self.nodeId.toString().yellow + &quot;) exists but dataValue has not been defined&quot;);
     }
     return dataValue;
 };
@@ -873,7 +880,7 @@ UAVariable.prototype.setValueFromSource = function (variant, statusCode) {
     // istanbul ignore next
     if (variant.hasOwnProperty(&quot;value&quot;)) {
         if (!variant.dataType) {
-            throw new Error(&quot;Variant must provide a valid dataType&quot;);
+            throw new Error(&quot;Variant must provide a valid dataType&quot; + variant.toString());
         }
     }
     variant = (variant instanceof Variant) ? variant : new Variant(variant);
@@ -1143,7 +1150,7 @@ function _Variable_bind_with_async_refresh(options) {
         // when a getter /timestamped_getter or async_getter is provided
         // samplingInterval cannot be 0, as the item value must be scanned to be updated.
         self.minimumSamplingInterval = MonitoredItem.minimumSamplingInterval;
-        debugLog(&quot;adapting  minimumSamplingInterval on &quot; + self.browseName.toString() + &quot; to &quot; +  self.minimumSamplingInterval);
+        debugLog(&quot;adapting minimumSamplingInterval on &quot; + self.browseName.toString() + &quot; to &quot; +  self.minimumSamplingInterval);
     }
 
 }
@@ -1447,6 +1454,7 @@ UAVariable.prototype.bindVariable = function (options, overwrite) {
         self._timestamped_set_func = null;
         self._timestamped_get_func = null;
         self._get_func = null;
+        self._set_func = null;
         self.asyncRefresh = null;
         self.refreshFunc = null;
     }
@@ -1525,22 +1533,24 @@ UAVariable.prototype.getUserWriteMask = function () {
     return BaseNode.prototype.getUserWriteMask.call(this);
 };
 
-UAVariable.prototype.clone = function (extraInfo) {
+
+UAVariable.prototype.clone = function (options, extraInfo) {
 
     var self = this;
-    var options = {
-        eventNotifier: self.eventNotifier,
-        symbolicName: self.symbolicName,
-        //xx value: self.value,
-        dataType: self.dataType,
-        valueRank: self.valueRank,
-        arrayDimensions: self.arrayDimensions,
-        accessLevel: self.accessLevel,
-        userAccessLevel: self.userAccessLevel,
+    options = options || {};
+    options = _.extend(_.clone(options),{
+        eventNotifier:           self.eventNotifier,
+        symbolicName:            self.symbolicName,
+        //xx value:                self.value,
+        dataType:                self.dataType,
+        valueRank:               self.valueRank,
+        arrayDimensions:         self.arrayDimensions,
+        accessLevel:             self.accessLevel,
+        userAccessLevel:         self.userAccessLevel,
         minimumSamplingInterval: self.minimumSamplingInterval,
-        historizing: self.historizing
-    };
-    var newVariable = self._clone(UAVariable, options,extraInfo);
+        historizing:             self.historizing
+    });
+    var newVariable = self._clone(UAVariable, options, extraInfo);
 
     newVariable.bindVariable();
     assert(_.isFunction(newVariable._timestamped_set_func));
@@ -1600,8 +1610,26 @@ function _bindComponent(variable,addressSpace,prop, name,dataTypeId, valueRank) 
             //xx this._dataValue.value.value = dv.value.value[name];
             //xx console.log( &quot;there &quot;,this._dataValue.toString());
             return this._dataValue;
+        },
+
+        set: function(variant) {
+            assert(variant instanceof Variant);
+            var dv = variable.readValue();
+            assert(dv.value.value.hasOwnProperty(name));
+
+            dv.value.value[name] = variant.value;
+            return StatusCodes.Good;
         }
+
     }, true);
+
+    prop.setValueFromSource = function(variant,statusCode) {
+        var dv = variable.readValue();
+        if (!statusCode || statusCode === StatusCodes.Good) {
+            assert(dv.value.value.hasOwnProperty(name));
+            dv.value.value[name] = variant.value;
+        }
+    };
 
     // to do
     prop.bindExtensionObject();
@@ -1625,7 +1653,7 @@ UAVariable.prototype.bindExtensionObject = function() {
     assert(structure &amp;&amp; structure.browseName.toString() === &quot;Structure&quot;,&quot; expecting DataType Structure to be in AddressSpace&quot;);
 
     var components = self.getComponents();
-    var dt = addressSpace.findObject(self.dataType);
+    var dt = addressSpace.findNode(self.dataType);
 
     // istanbul ignore next
     if (!dt)  {
@@ -1667,7 +1695,7 @@ UAVariable.prototype.bindExtensionObject = function() {
 
             if (component.length === 1) {
 
-                //xx var x = addressSpace.findObject(field.dataType).browseName.toString();
+                //xx var x = addressSpace.findNode(field.dataType).browseName.toString();
                 //xx  var basicType = addressSpace.findCorrespondingBasicDataType(field.dataType);
                 //xx console.log(&quot;xxxxxxxxxxxxxxxx = &quot;.bgCyan,field.dataType.toString(), field.name ,&quot;array&quot;, field.valueRank,x,basicType.toString().yellow,field.dataType.toString() );
 
@@ -1688,6 +1716,14 @@ UAVariable.prototype.bindExtensionObject = function() {
         });
     }
 };
+
+
+UAVariable.prototype.__defineGetter__(&quot;dataTypeObj&quot;,function() {
+    var self = this;
+    var addressSpace = self.__address_space;
+    var d = addressSpace.findNode(self.dataType);
+    return d;
+});
 
 exports.UAVariable = UAVariable;
 

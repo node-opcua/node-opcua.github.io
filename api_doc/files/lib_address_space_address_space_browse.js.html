@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>lib/address_space/address_space_browse.js - The NodeOPCUA API</title>
+    <title>lib\address_space\address_space_browse.js - The NodeOPCUA API</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.46</em>
+            <em>API Docs for: 0.0.52</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -56,6 +56,7 @@
                                 <li><a href="../classes/Argument.html">Argument</a></li>
                                 <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
                                 <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+                                <li><a href="../classes/AttributeNameById.html">AttributeNameById</a></li>
                                 <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
                                 <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
                                 <li><a href="../classes/BaseNode.html">BaseNode</a></li>
@@ -122,7 +123,7 @@
                                 <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
                                 <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
                                 <li><a href="../classes/EUInformation.html">EUInformation</a></li>
-                                <li><a href="../classes/EventField.html">EventField</a></li>
+                                <li><a href="../classes/EventFieldList.html">EventFieldList</a></li>
                                 <li><a href="../classes/EventFilter.html">EventFilter</a></li>
                                 <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
                                 <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
@@ -152,6 +153,7 @@
                                 <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
                                 <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
                                 <li><a href="../classes/MessageSecurityMode.html">MessageSecurityMode</a></li>
+                                <li><a href="../classes/ModelChangeStructure.html">ModelChangeStructure</a></li>
                                 <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
@@ -165,6 +167,7 @@
                                 <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
                                 <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
                                 <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+                                <li><a href="../classes/MyStructure.html">MyStructure</a></li>
                                 <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
                                 <li><a href="../classes/NodeId.html">NodeId</a></li>
                                 <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
@@ -203,6 +206,7 @@
                                 <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
                                 <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
                                 <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+                                <li><a href="../classes/RedundantServer.html">RedundantServer</a></li>
                                 <li><a href="../classes/Reference.html">Reference</a></li>
                                 <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
                                 <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
@@ -217,9 +221,11 @@
                                 <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
                                 <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
                                 <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+                                <li><a href="../classes/SamplingIntervalDiagnostics.html">SamplingIntervalDiagnostics</a></li>
                                 <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
                                 <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
                                 <li><a href="../classes/SecurityTokenRequestType.html">SecurityTokenRequestType</a></li>
+                                <li><a href="../classes/SemanticChangeStructure.html">SemanticChangeStructure</a></li>
                                 <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
                                 <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
                                 <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
@@ -232,6 +238,7 @@
                                 <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
                                 <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
                                 <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+                                <li><a href="../classes/SessionSecurityDiagnostics.html">SessionSecurityDiagnostics</a></li>
                                 <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
                                 <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
                                 <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
@@ -333,7 +340,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-<h1 class="file-heading">File: lib/address_space/address_space_browse.js</h1>
+<h1 class="file-heading">File: lib\address_space\address_space_browse.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
@@ -341,29 +348,19 @@
 
 /**
  * @module opcua.address_space
+ * @class AddressSpace
  */
 require(&quot;requirish&quot;)._(module);
 var assert = require(&quot;better-assert&quot;);
 
-var NodeClass = require(&quot;lib/datamodel/nodeclass&quot;).NodeClass;
-var NodeId = require(&quot;lib/datamodel/nodeid&quot;).NodeId;
-var makeNodeId = require(&quot;lib/datamodel/nodeid&quot;).makeNodeId;
-var resolveNodeId = require(&quot;lib/datamodel/nodeid&quot;).resolveNodeId;
-
-var DataValue = require(&quot;lib/datamodel/datavalue&quot;).DataValue;
-var DataType = require(&quot;lib/datamodel/variant&quot;).DataType;
 var StatusCodes = require(&quot;lib/datamodel/opcua_status_code&quot;).StatusCodes;
 
 var util = require(&quot;util&quot;);
 var _ = require(&quot;underscore&quot;);
 
-var dumpIf = require(&quot;lib/misc/utils&quot;).dumpIf;
-
 var translate_service = require(&quot;lib/services/translate_browse_paths_to_node_ids_service&quot;);
 var BrowsePathResult = translate_service.BrowsePathResult;
 var BrowsePath = translate_service.BrowsePath;
-
-var stringToQualifiedName = require(&quot;lib/tools/tools_browse_path&quot;).stringToQualifiedName;
 
 exports.install = function (AddressSpace) {
 
@@ -396,7 +393,7 @@ exports.install = function (AddressSpace) {
 
         assert(browsePath instanceof translate_service.BrowsePath);
 
-        var startingNode = self.findObject(browsePath.startingNode);
+        var startingNode = self.findNode(browsePath.startingNode);
         if (!startingNode) {
             return new BrowsePathResult({statusCode: StatusCodes.BadNodeIdUnknown});
         }
@@ -420,6 +417,7 @@ exports.install = function (AddressSpace) {
             var element = elements[index];
             assert(element instanceof translate_service.RelativePathElement);
 
+
             var nodeIds = curNodeObject.browseNodeByTargetName(element);
 
             var targets = nodeIds.map(function (nodeId) {
@@ -434,7 +432,7 @@ exports.install = function (AddressSpace) {
             if (!is_last) {
                 // explorer
                 targets.forEach(function (target) {
-                    var node = self.findObject(target.targetId);
+                    var node = self.findNode(target.targetId);
                     explore_element(node, elements, index + 1);
                 });
             } else {
@@ -457,81 +455,6 @@ exports.install = function (AddressSpace) {
             statusCode: StatusCodes.Good,
             targets: res
         });
-    };
-
-    var rootFolderId = makeNodeId(84); // RootFolder
-
-
-    /**
-     * convert a path string to a BrowsePath
-     *
-     * @method constructBrowsePath
-     * @param startingNode {NodeId|string}
-     * @param path {string} path such as Objects.Server
-     * @return {BrowsePath}
-     *
-     * @example:
-     *
-     *   &#x60;&#x60;&#x60;javascript
-     *   constructBrowsePath(&quot;/&quot;,&quot;Objects&quot;);
-     *   constructBrowsePath(&quot;/&quot;,&quot;Objects.Server&quot;);
-     *   constructBrowsePath(&quot;/&quot;,&quot;Objects.4:Boilers&quot;);
-     *   &#x60;&#x60;&#x60;
-     *
-     *  - &#x27;#&#x27; : HasSubtype
-     *  - &#x27;.&#x27; : Organizes , HasProperty, HasComponent, HasNotifier
-     *  - &#x27;&amp;&#x27; : HasTypeDefinition
-     *
-     */
-    function constructBrowsePath(startingNode, path) {
-
-        if (startingNode === &quot;/&quot;) {
-            startingNode = rootFolderId;
-        }
-
-        var arr = path.split(&quot;.&quot;);
-        var elements = arr.map(function (browsePathElement) {
-
-            var targetName = stringToQualifiedName(browsePathElement);
-
-            return {
-                referenceTypeId: makeNodeId(0),
-                isInverse: false,
-                includeSubtypes: false,
-                targetName: targetName
-            };
-        });
-
-        var browsePath = new BrowsePath({
-            startingNode: rootFolderId, // ROOT
-            relativePath: {
-                elements: elements
-            }
-        });
-        return browsePath;
-    }
-
-    exports.constructBrowsePath = constructBrowsePath;
-
-    /**
-     * a simplified version of browsePath that takes a path as a string
-     * and returns a single node or null if not found.
-     * @method simpleBrowsePath
-     * @param startingNode
-     * @param pathname
-     * @return {BrowsePathTarget}
-     */
-    AddressSpace.prototype.simpleBrowsePath = function (startingNode, pathname) {
-        var browsePath = constructBrowsePath(startingNode, pathname);
-        var browsePathResult = this.browsePath(browsePath);
-        if (browsePathResult.statusCode !== StatusCodes.Good) {
-            console.log(&quot;browsePathResult.statusCode = &quot;, browsePathResult.statusCode.toString());
-            return null; // not found
-        } else {
-            assert(browsePathResult.targets.length &gt;= 1);
-            browsePathResult.targets[browsePathResult.targets.length - 1].remainingPathIndex.should.equal(0xFFFFFFFF);
-            return browsePathResult.targets[browsePathResult.targets.length - 1].targetId;
-        }
     };
 
 };

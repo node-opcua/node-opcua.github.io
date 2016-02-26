@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>lib/address_space/reference.js - The NodeOPCUA API</title>
+    <title>lib\address_space\reference.js - The NodeOPCUA API</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.46</em>
+            <em>API Docs for: 0.0.52</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -56,6 +56,7 @@
                                 <li><a href="../classes/Argument.html">Argument</a></li>
                                 <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
                                 <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+                                <li><a href="../classes/AttributeNameById.html">AttributeNameById</a></li>
                                 <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
                                 <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
                                 <li><a href="../classes/BaseNode.html">BaseNode</a></li>
@@ -122,7 +123,7 @@
                                 <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
                                 <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
                                 <li><a href="../classes/EUInformation.html">EUInformation</a></li>
-                                <li><a href="../classes/EventField.html">EventField</a></li>
+                                <li><a href="../classes/EventFieldList.html">EventFieldList</a></li>
                                 <li><a href="../classes/EventFilter.html">EventFilter</a></li>
                                 <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
                                 <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
@@ -152,6 +153,7 @@
                                 <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
                                 <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
                                 <li><a href="../classes/MessageSecurityMode.html">MessageSecurityMode</a></li>
+                                <li><a href="../classes/ModelChangeStructure.html">ModelChangeStructure</a></li>
                                 <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
@@ -165,6 +167,7 @@
                                 <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
                                 <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
                                 <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+                                <li><a href="../classes/MyStructure.html">MyStructure</a></li>
                                 <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
                                 <li><a href="../classes/NodeId.html">NodeId</a></li>
                                 <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
@@ -203,6 +206,7 @@
                                 <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
                                 <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
                                 <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+                                <li><a href="../classes/RedundantServer.html">RedundantServer</a></li>
                                 <li><a href="../classes/Reference.html">Reference</a></li>
                                 <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
                                 <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
@@ -217,9 +221,11 @@
                                 <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
                                 <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
                                 <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+                                <li><a href="../classes/SamplingIntervalDiagnostics.html">SamplingIntervalDiagnostics</a></li>
                                 <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
                                 <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
                                 <li><a href="../classes/SecurityTokenRequestType.html">SecurityTokenRequestType</a></li>
+                                <li><a href="../classes/SemanticChangeStructure.html">SemanticChangeStructure</a></li>
                                 <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
                                 <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
                                 <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
@@ -232,6 +238,7 @@
                                 <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
                                 <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
                                 <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+                                <li><a href="../classes/SessionSecurityDiagnostics.html">SessionSecurityDiagnostics</a></li>
                                 <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
                                 <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
                                 <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
@@ -333,7 +340,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-<h1 class="file-heading">File: lib/address_space/reference.js</h1>
+<h1 class="file-heading">File: lib\address_space\reference.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
@@ -377,17 +384,28 @@ function Reference(options) {
 }
 
 /**
- *  ---- some text -----&gt;
+ * @method _arrow
+ * @private
+ *
+ * @example
+ *       ---- some text -----&gt;
  */
 function _arrow(text,length,isForward) {
 
     length = Math.max(length,text.length+ 8);
-    var nb = Math.floor((length  - text.length )/2);
+    var nb = Math.floor((length  - text.length - 2)/2);
     var h = Array(nb).join(&#x27;-&#x27;);
+
+    var extra = (text.length %2 === 1) ? &quot;-&quot; : &quot;&quot;;
+
     if (isForward) {
-        return h + &quot; &quot;+ text +&quot; &quot;+  h + &quot;&gt; &quot;
+        return extra + h + &quot; &quot;+ text +&quot; &quot;+  h + &quot;&gt; &quot;
     }
-    return &#x27;&lt;&#x27;  + h +&quot; &quot;+  text +&quot; &quot;+  h + &quot; &quot;;
+    return &#x27;&lt;&#x27;  + h +&quot; &quot;+  text +&quot; &quot;+  h + extra + &quot; &quot;;
+}
+
+function _w(str,width) {
+    return (str + &quot;                                         &quot;).substr(0,width);
 }
 
 /**
@@ -397,20 +415,55 @@ function _arrow(text,length,isForward) {
  */
 Reference.prototype.toString = function (options) {
 
-    var node    = this.nodeId.toString();
-    var refType = this.referenceType.toString();
+    var infoNode   = _w(this.nodeId.toString(),24);
+    var refType    = this.referenceType.toString();
 
     if (options &amp;&amp; options.addressSpace) {
-        var obj = options.addressSpace.findObject(this.nodeId);
-        node = obj.browseName.toString() + &quot;[&quot; + node  +&quot;]&quot;;
+        var node = options.addressSpace.findNode(this.nodeId);
+        infoNode = &quot;[&quot; + infoNode  +&quot;]&quot; + _w(node.browseName.toString(),40) ;
 
         var ref = options.addressSpace.findReferenceType(this.referenceType);
         refType +=  &quot;[&quot; + ref.nodeId.toString()  +&quot;]&quot;;
     }
-    return _arrow(refType,40,this.isForward) + node ;
+    return _arrow(refType,40,this.isForward) + infoNode ;
+};
+
+Reference.prototype.__defineGetter__(&quot;hash&quot;,function() {
+
+    if (!this.__hash) {
+        this.__hash = (this.isForward ? &quot;&quot; : &quot;!&quot;) + this.referenceType + &quot;-&quot; + this.nodeId.toString();
+    }
+    return this.__hash;
+});
+
+Reference.prototype.dispose = function() {
+    this.__hash = null;
+    this._referenceType =null;
+    this.node = null;
+    this.nodeId = null;
+    this.referenceType = null;
 };
 
 exports.Reference = Reference;
+
+function _resolveReferenceNode(addressSpace, reference) {
+    if (!reference.node) {
+        reference.node = addressSpace.findNode(reference.nodeId);
+    }
+    return reference.node;
+}
+Reference._resolveReferenceNode = _resolveReferenceNode;
+function _resolveReferenceType(addressSpace, reference) {
+    if (!reference._referenceType) {
+        if (!reference.referenceType) {
+            console.log(&quot;ERROR MISSING reference&quot;.red,reference)
+        }
+        reference._referenceType  =  addressSpace.findReferenceType(reference.referenceType);
+    }
+    return reference._referenceType;
+}
+Reference._resolveReferenceType = _resolveReferenceType;
+
 
     </pre>
 </div>

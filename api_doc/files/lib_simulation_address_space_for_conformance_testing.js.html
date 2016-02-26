@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>lib/simulation/address_space_for_conformance_testing.js - The NodeOPCUA API</title>
+    <title>lib\simulation\address_space_for_conformance_testing.js - The NodeOPCUA API</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.46</em>
+            <em>API Docs for: 0.0.52</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -56,6 +56,7 @@
                                 <li><a href="../classes/Argument.html">Argument</a></li>
                                 <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
                                 <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+                                <li><a href="../classes/AttributeNameById.html">AttributeNameById</a></li>
                                 <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
                                 <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
                                 <li><a href="../classes/BaseNode.html">BaseNode</a></li>
@@ -122,7 +123,7 @@
                                 <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
                                 <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
                                 <li><a href="../classes/EUInformation.html">EUInformation</a></li>
-                                <li><a href="../classes/EventField.html">EventField</a></li>
+                                <li><a href="../classes/EventFieldList.html">EventFieldList</a></li>
                                 <li><a href="../classes/EventFilter.html">EventFilter</a></li>
                                 <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
                                 <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
@@ -152,6 +153,7 @@
                                 <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
                                 <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
                                 <li><a href="../classes/MessageSecurityMode.html">MessageSecurityMode</a></li>
+                                <li><a href="../classes/ModelChangeStructure.html">ModelChangeStructure</a></li>
                                 <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
@@ -165,6 +167,7 @@
                                 <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
                                 <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
                                 <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+                                <li><a href="../classes/MyStructure.html">MyStructure</a></li>
                                 <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
                                 <li><a href="../classes/NodeId.html">NodeId</a></li>
                                 <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
@@ -203,6 +206,7 @@
                                 <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
                                 <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
                                 <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+                                <li><a href="../classes/RedundantServer.html">RedundantServer</a></li>
                                 <li><a href="../classes/Reference.html">Reference</a></li>
                                 <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
                                 <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
@@ -217,9 +221,11 @@
                                 <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
                                 <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
                                 <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+                                <li><a href="../classes/SamplingIntervalDiagnostics.html">SamplingIntervalDiagnostics</a></li>
                                 <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
                                 <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
                                 <li><a href="../classes/SecurityTokenRequestType.html">SecurityTokenRequestType</a></li>
+                                <li><a href="../classes/SemanticChangeStructure.html">SemanticChangeStructure</a></li>
                                 <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
                                 <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
                                 <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
@@ -232,6 +238,7 @@
                                 <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
                                 <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
                                 <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+                                <li><a href="../classes/SessionSecurityDiagnostics.html">SessionSecurityDiagnostics</a></li>
                                 <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
                                 <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
                                 <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
@@ -333,11 +340,11 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-<h1 class="file-heading">File: lib/simulation/address_space_for_conformance_testing.js</h1>
+<h1 class="file-heading">File: lib\simulation\address_space_for_conformance_testing.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
-&quot;use strict&quot;;
+    &quot;use strict&quot;;
 /**
  * @module opcua.server.simulation
  * @type {async|exports}
@@ -473,10 +480,10 @@ function makeVariant(dataTypeName, isArray, current_value) {
     return variant;
 }
 
-function _add_variable(server_engine, parent, varName, dataTypeName, current_value, isArray, extra_name) {
+function _add_variable(addressSpace, parent, varName, dataTypeName, current_value, isArray, extra_name) {
 
     assert(typeof extra_name === &quot;string&quot;);
-    assert(server_engine.addressSpace instanceof AddressSpace);
+    assert(addressSpace instanceof AddressSpace);
 
     var variant = makeVariant(dataTypeName, isArray, current_value);
 
@@ -488,7 +495,7 @@ function _add_variable(server_engine, parent, varName, dataTypeName, current_val
         variant: variant
     };
 
-    var variable = server_engine.addVariable({
+    var variable = addressSpace.addVariable({
         componentOf:   parent,
         browseName:    name,
         description:   {locale: &quot;en&quot;, text: name},
@@ -498,16 +505,16 @@ function _add_variable(server_engine, parent, varName, dataTypeName, current_val
         value:         variant
     });
     variable._backdoor_placeholder = placeholder;
-    assert(server_engine.findObject(nodeId));
+    assert(addressSpace.findNode(nodeId));
     return variable;
 }
 
 
-function add_variable(server_engine, parent, name, realType, default_value, extra_name) {
+function add_variable(addressSpace, parent, name, realType, default_value, extra_name) {
 
     assert(typeof extra_name === &quot;string&quot;);
     var initialValue = _.isFunction(default_value) ? default_value() : default_value;
-    var variable = _add_variable(server_engine, parent, name, realType, initialValue, false, extra_name);
+    var variable = _add_variable(addressSpace, parent, name, realType, initialValue, false, extra_name);
     assert(variable.valueRank === -1);
     assert(variable.accessLevel.key === &quot;CurrentRead | CurrentWrite&quot;);
     assert(variable.userAccessLevel.key === &quot;CurrentRead | CurrentWrite&quot;);
@@ -515,7 +522,7 @@ function add_variable(server_engine, parent, name, realType, default_value, extr
     return variable;
 }
 
-function add_variable_array(server_engine, parent, dataTypeName, default_value, realTypeName, arrayLength, extra_name) {
+function add_variable_array(addressSpace, parent, dataTypeName, default_value, realTypeName, arrayLength, extra_name) {
 
     assert(typeof dataTypeName === &quot;string&quot;);
     assert(typeof realTypeName === &quot;string&quot;);
@@ -533,7 +540,7 @@ function add_variable_array(server_engine, parent, dataTypeName, default_value, 
 
     var current_value = buildVariantArray(DataType[realTypeName], arrayLength, local_defaultValue);
 
-    var variable = _add_variable(server_engine, parent, dataTypeName, realTypeName, current_value, true, extra_name);
+    var variable = _add_variable(addressSpace, parent, dataTypeName, realTypeName, current_value, true, extra_name);
 
     assert(variable.accessLevel.key === &quot;CurrentRead | CurrentWrite&quot;);
     assert(variable.userAccessLevel.key === &quot;CurrentRead | CurrentWrite&quot;);
@@ -542,12 +549,13 @@ function add_variable_array(server_engine, parent, dataTypeName, default_value, 
 }
 
 
-function add_mass_variables_of_type(server_engine, parent, dataTypeName, default_value, realType) {
+function add_mass_variables_of_type(addressSpace, parent, dataTypeName, default_value, realType) {
     // Mass Mass_Boolean -&gt; Mass_Boolean_Boolean_00 ...
     var nodeName = &quot;Scalar_Mass_&quot; + dataTypeName;
 
     //xx console.log(&quot;xxxx adding mass variable &quot;, nodeName);
-    var scalarMass_Type = server_engine.addObjectInFolder(parent, {
+    var scalarMass_Type = addressSpace.addObject({
+        organizedBy: parent,
         browseName: nodeName,
         description: &quot;This folder will contain 100 items per supported data-type.&quot;,
         nodeId: makeNodeId(nodeName, namespaceIndex)
@@ -555,13 +563,13 @@ function add_mass_variables_of_type(server_engine, parent, dataTypeName, default
     for (var i = 0; i &lt;= 99; i++) {
         var extra_name = &quot;_&quot; + (&quot;00&quot; + i.toString()).substr(-2);
         var local_defaultValue = _.isFunction(default_value) ? default_value() : default_value;
-        _add_variable(server_engine, scalarMass_Type, dataTypeName, realType, local_defaultValue, false, extra_name);
+        _add_variable(addressSpace, scalarMass_Type, dataTypeName, realType, local_defaultValue, false, extra_name);
     }
 
 }
-function add_mass_variables(server_engine, scalarFolder) {
+function add_mass_variables(addressSpace, scalarFolder) {
 
-    var scalarMass = server_engine.addFolder(scalarFolder, {
+    var scalarMass = addressSpace.addFolder(scalarFolder, {
         browseName: &quot;Scalar_Mass&quot;,
         description: &quot;This folder will contain 100 items per supported data-type.&quot;,
         nodeId: makeNodeId(&quot;Scalar_Mass&quot;, namespaceIndex)
@@ -570,13 +578,13 @@ function add_mass_variables(server_engine, scalarFolder) {
     typeAndDefaultValue.forEach(function (e) {
         var dataType = e.type;
         var realType = e.realType || dataType;
-        add_mass_variables_of_type(server_engine, scalarMass, dataType, e.defaultValue, realType);
+        add_mass_variables_of_type(addressSpace, scalarMass, dataType, e.defaultValue, realType);
     });
 }
 
 /**
  * @method build_address_space_for_conformance_testing
- * @param server_engine {ServerEngine}
+ * @param addressSpace {ServerEngine}
  * @param options
  * @param options.mass_variable {Boolean}
  */
@@ -641,6 +649,8 @@ var typeAndDefaultValue = [
 
 function add_simulation_variables(server_engine, scalarFolder) {
 
+    assert(server_engine.addressSpace  instanceof AddressSpace);
+    var addressSpace = server_engine.addressSpace;
 
     var values_to_change = [];
 
@@ -657,7 +667,7 @@ function add_simulation_variables(server_engine, scalarFolder) {
             throw new Error(&quot;a random function must exist for basicType &quot; + dataTypeName);
         }
 
-        var variable = _add_variable(server_engine, parent, dataTypeName, realTypeName, defaultValue, false, &quot;&quot;);
+        var variable = _add_variable(addressSpace, parent, dataTypeName, realTypeName, defaultValue, false, &quot;&quot;);
 
         var value_to_change = {
             dataType: dataType,
@@ -670,7 +680,8 @@ function add_simulation_variables(server_engine, scalarFolder) {
         return variable;
     }
 
-    var simulation = server_engine.addObjectInFolder(scalarFolder, {
+    var simulation = addressSpace.addObject({
+        organizedBy: scalarFolder,
         browseName: &quot;Scalar_Simulation&quot;,
         description: &quot;This folder will contain one item per supported data-type.&quot;,
         nodeId: makeNodeId(&quot;Scalar_Simulation&quot;, namespaceIndex)
@@ -727,7 +738,7 @@ function add_simulation_variables(server_engine, scalarFolder) {
     }
 
     // var name = &quot;Interval&quot;, &quot;UInt16&quot;
-    var intervalVariable = server_engine.addVariable({
+    var intervalVariable = addressSpace.addVariable({
         componentOf: simulation,
         browseName: &quot;Interval&quot;,
         description: {locale: &quot;en&quot;, text: &quot;The rate (in msec) of change for all Simulated items.&quot;},
@@ -749,7 +760,7 @@ function add_simulation_variables(server_engine, scalarFolder) {
     });
 
 
-    var enabledVariable = server_engine.addVariable({
+    var enabledVariable = addressSpace.addVariable({
         componentOf: simulation,
         browseName: &quot;Enabled&quot;,
         description: {locale: &quot;en&quot;, text: &quot;Enabled&quot;},
@@ -774,9 +785,10 @@ function add_simulation_variables(server_engine, scalarFolder) {
 
 }
 
-function add_scalar_static_variables(server_engine, scalarFolder) {
+function add_scalar_static_variables(addressSpace, scalarFolder) {
 
-    var scalarStatic = server_engine.addObjectInFolder(scalarFolder, {
+    var scalarStatic = addressSpace.addObject({
+        organizedBy: scalarFolder,
         browseName: &quot;Scalar_Static&quot;,
         description: &quot;This folder will contain one item per supported data-type.&quot;,
         nodeId: makeNodeId(&quot;Scalar_Static&quot;, namespaceIndex)
@@ -787,12 +799,13 @@ function add_scalar_static_variables(server_engine, scalarFolder) {
         var dataType = e.type;
         var realType = e.realType || dataType;
         var defaultValue = _.isFunction(e.defaultValue) ? e.defaultValue() : e.defaultValue;
-        add_variable(server_engine, scalarStatic, dataType, realType, defaultValue, &quot;&quot;);
+        add_variable(addressSpace, scalarStatic, dataType, realType, defaultValue, &quot;&quot;);
     });
 
 
     // add statics Array Variables
-    var scalarStaticArray = server_engine.addObjectInFolder(scalarFolder, {
+    var scalarStaticArray = addressSpace.addObject({
+        organizedBy: scalarFolder,
         browseName: &quot;Scalar_Static_Array&quot;,
         description: &quot;Single dimension, suggested size of 10-elements per array. Unsupported types will be missing from the address-space.&quot;,
         nodeId: makeNodeId(&quot;Scalar_Static_Array&quot;, namespaceIndex)
@@ -801,22 +814,22 @@ function add_scalar_static_variables(server_engine, scalarFolder) {
     typeAndDefaultValue.forEach(function (e) {
         var dataType = e.type;
         var realType = e.realType || dataType;
-        add_variable_array(server_engine, scalarStaticArray, dataType, e.defaultValue, realType, 10, &quot;&quot;);
+        add_variable_array(addressSpace, scalarStaticArray, dataType, e.defaultValue, realType, 10, &quot;&quot;);
     });
     // add static Mass
 
 }
 
 
-function add_access_right_variables(server_engine, parentFolder) {
+function add_access_right_variables(addressSpace, parentFolder) {
 
-    var accessRight_Folder = server_engine.addFolder(parentFolder, {
+    var accessRight_Folder = addressSpace.addFolder(parentFolder, {
         browseName: &quot;AccessRight&quot;,
         description: &quot;Folder containing various nodes with different access right behavior&quot;,
         nodeId: makeNodeId(&quot;AccessRight&quot;, namespaceIndex)
     });
 
-    var accessLevel_All_Folder = server_engine.addFolder(accessRight_Folder, {
+    var accessLevel_All_Folder = addressSpace.addFolder(accessRight_Folder, {
         browseName: &quot;AccessLevel&quot;,
         description: &quot;Various node with different access right behavior&quot;,
         nodeId: makeNodeId(&quot;AccessLevel&quot;, namespaceIndex)
@@ -826,7 +839,7 @@ function add_access_right_variables(server_engine, parentFolder) {
     var name;
 
     name = &quot;AccessLevel_CurrentRead&quot;;
-    server_engine.addVariable({
+    addressSpace.addVariable({
         componentOf:  accessLevel_All_Folder,
         browseName:   name,
         description:  {locale: &quot;en&quot;, text: name},
@@ -845,7 +858,7 @@ function add_access_right_variables(server_engine, parentFolder) {
     });
 
     name = &quot;AccessLevel_CurrentWrite&quot;;
-    server_engine.addVariable({
+    addressSpace.addVariable({
         componentOf:  accessLevel_All_Folder,
         browseName:    name,
         description:   {locale: &quot;en&quot;, text: name},
@@ -860,7 +873,7 @@ function add_access_right_variables(server_engine, parentFolder) {
     });
 
     name = &quot;AccessLevel_CurrentRead_NotUser&quot;;
-    server_engine.addVariable({
+    addressSpace.addVariable({
         componentOf:  accessLevel_All_Folder,
         browseName: name,
         description: {locale: &quot;en&quot;, text: name},
@@ -880,7 +893,7 @@ function add_access_right_variables(server_engine, parentFolder) {
     });
 
     name = &quot;AccessLevel_CurrentWrite_NotUser&quot;;
-    server_engine.addVariable({
+    addressSpace.addVariable({
         componentOf:  accessLevel_All_Folder,
         browseName: name,
         description: {locale: &quot;en&quot;, text: name},
@@ -900,7 +913,7 @@ function add_access_right_variables(server_engine, parentFolder) {
     });
 
     name = &quot;AccessLevel_CurrentRead_NotCurrentWrite&quot;;
-    server_engine.addVariable({
+    addressSpace.addVariable({
         componentOf:  accessLevel_All_Folder,
         browseName: name,
         description: {locale: &quot;en&quot;, text: name},
@@ -921,7 +934,7 @@ function add_access_right_variables(server_engine, parentFolder) {
 
 
     name = &quot;AccessLevel_CurrentWrite_NotCurrentRead&quot;;
-    server_engine.addVariable({
+    addressSpace.addVariable({
         componentOf:  accessLevel_All_Folder,
         browseName: name,
         description: {locale: &quot;en&quot;, text: name},
@@ -943,13 +956,14 @@ function add_access_right_variables(server_engine, parentFolder) {
 
 
 }
-function add_path_10deep(server_engine, simulation_folder) {
+function add_path_10deep(addressSpace, simulation_folder) {
 
     var parent = simulation_folder;
     for (var i = 1; i &lt; 10; i++) {
         var name = &quot;Path_&quot; + i.toString() + &quot;Deep&quot;;
 
-        var child = server_engine.addObjectInFolder(parent, {
+        var child = addressSpace.addObject({
+            organizedBy: parent,
             browseName: name,
             description: &quot;A folder at the top of &quot; + i + &quot; elements&quot;,
             typeDefinition: &quot;FolderType&quot;,
@@ -958,10 +972,11 @@ function add_path_10deep(server_engine, simulation_folder) {
         parent = child;
     }
 }
-function add_very_large_array_variables(server_engine, objectsFolder) {
+function add_very_large_array_variables(addressSpace, objectsFolder) {
 
     // add statics Array Variables
-    var scalarStaticLargeArray = server_engine.addObjectInFolder(objectsFolder, {
+    var scalarStaticLargeArray = addressSpace.addObject({
+        organizedBy: objectsFolder,
         browseName: &quot;Scalar_Static_Large_Array&quot;,
         description: &quot;Single dimension, suggested size of 100k-elements per array.&quot;,
         nodeId: makeNodeId(&quot;Scalar_Static_Large_Array&quot;, namespaceIndex)
@@ -969,7 +984,7 @@ function add_very_large_array_variables(server_engine, objectsFolder) {
     typeAndDefaultValue.forEach(function (e) {
         var dataType = e.type;
         var realType = e.realType || dataType;
-        add_variable_array(server_engine, scalarStaticLargeArray, dataType, e.defaultValue, realType, 50 * 1024, &quot;&quot;);
+        add_variable_array(addressSpace, scalarStaticLargeArray, dataType, e.defaultValue, realType, 50 * 1024, &quot;&quot;);
     });
 
 }
@@ -987,11 +1002,9 @@ function add_very_large_array_variables(server_engine, objectsFolder) {
 //                |                             |                                 |
 //           TwoStateDiscreteType     MultiStateDiscreteType                MutliStateValueDiscreteType
 //
-function add_analog_data_items(server_engine, parentFolder) {
+function add_analog_data_items(addressSpace, parentFolder) {
 
     var standardUnits = require(&quot;lib/data_access/EUInformation&quot;).standardUnits;
-
-    var addressSpace = server_engine.addressSpace;
 
     function _addDataItem(localParentFolder, dataType, initialValue) {
 
@@ -1049,7 +1062,8 @@ function add_analog_data_items(server_engine, parentFolder) {
     }
 
     // add statics Array Variables
-    var analogItemFolder = server_engine.addObjectInFolder(parentFolder, {
+    var analogItemFolder = addressSpace.addObject({
+        organizedBy: parentFolder,
         browseName: &quot;Simulation_AnalogDataItem&quot;,
         nodeId: makeNodeId(&quot;Simulation_AnalogDataItem&quot;, namespaceIndex)
     });
@@ -1080,7 +1094,7 @@ function add_analog_data_items(server_engine, parentFolder) {
             _addAnalogDataItem(analogItemFolder, dataType);
         });
 
-    [{dataType: &quot;Double&quot;, value: 3.14},
+    [   {dataType: &quot;Double&quot;, value: 3.14},
         {dataType: &quot;Float&quot;, value: 3.14},
         {dataType: &quot;Int16&quot;, value: -10},
         {dataType: &quot;UInt16&quot;, value: 10},
@@ -1099,6 +1113,80 @@ function add_analog_data_items(server_engine, parentFolder) {
 
 
 }
+
+function add_eventGeneratorObject(addressSpace, parentFolder) {
+
+
+    var myEvtType = addressSpace.addEventType({
+        browseName: &quot;MyEventType&quot;,
+        subtypeOf: &quot;BaseEventType&quot; // should be implicit
+    });
+
+    var myObject = addressSpace.addObject({
+        organizedBy: parentFolder,
+        browseName: &quot;EventGeneratorObject&quot;
+    });
+
+    myObject.addReference({referenceType: &quot;AlwaysGeneratesEvent&quot;, nodeId: myEvtType});
+
+    var method = addressSpace.addMethod(myObject, {
+        browseName: &quot;EventGeneratorMethod&quot;,
+        inputArguments: [
+            {
+                name: &quot;message&quot;,
+                description: {text: &quot;Event Message&quot;},
+                dataType: DataType.String
+            },
+            {
+                name: &quot;severity&quot;,
+                description: {text: &quot;Event Severity&quot;},
+                dataType: DataType.UInt32
+            }
+        ],
+        outputArguments: []
+    });
+    
+    method.bindMethod(function (inputArguments, context, callback) {
+
+        //xx console.log(&quot;In Event Generator Method&quot;);
+        //xx console.log(this.toString());
+        //xx console.log(context.object.toString());
+
+        console.log(&quot;inputArguments &quot;, inputArguments[0].toString());
+
+        var message = inputArguments[0].value || &quot;Hello from Event Generator Object&quot;;
+        var severity = inputArguments[1].value || 0;
+
+        context.object.raiseEvent(&quot;MyEventType&quot;, {
+            message: {
+                dataType: DataType.LocalizedText,
+                value: {text: message}
+            },
+            severity: {
+                dataType: DataType.UInt32,
+                value: severity
+            }
+
+        });
+        // console.log(require(&quot;util&quot;).inspect(context).toString());
+        var callMethodResult = {
+            statusCode: StatusCodes.Good,
+            outputArguments: []
+        };
+        callback(null, callMethodResult);
+    });
+
+}
+exports.add_eventGeneratorObject = add_eventGeneratorObject;
+
+function add_sampleView(addressSpace) {
+
+    addressSpace.addView({
+        organizedBy: addressSpace.rootFolder.views,
+        browseName: &quot;SampleView&quot;,
+        nodeId: &quot;ns=411;s=SampleView&quot;
+    });
+}
 build_address_space_for_conformance_testing = function (server_engine, options) {
 
     options = options || {};
@@ -1106,32 +1194,39 @@ build_address_space_for_conformance_testing = function (server_engine, options) 
 
     assert(server_engine instanceof ServerEngine);
     assert(server_engine.addressSpace instanceof AddressSpace);
+    var addressSpace = server_engine.addressSpace;
 
-    var objectsFolder = server_engine.findObject(&quot;ObjectsFolder&quot;);
+    var objectsFolder = addressSpace.findNode(&quot;ObjectsFolder&quot;);
 
-    var simulationFolder = server_engine.addFolder(objectsFolder, &quot;Simulation&quot;);
+    var simulationFolder = addressSpace.addFolder(objectsFolder, &quot;Simulation&quot;);
 
-    add_access_right_variables(server_engine, simulationFolder);
+    add_access_right_variables(addressSpace, simulationFolder);
 
-    var scalarFolder = server_engine.addFolder(simulationFolder, {
+    var scalarFolder = addressSpace.addFolder(simulationFolder, {
         browseName: &quot;Scalar&quot;,
         description: &quot;Simply a parent folder&quot;
     });
 
-    add_scalar_static_variables(server_engine, scalarFolder);
+    add_scalar_static_variables(addressSpace, scalarFolder);
     if (options.mass_variables) {
-        add_mass_variables(server_engine, scalarFolder);
+        add_mass_variables(addressSpace, scalarFolder);
     }
     add_simulation_variables(server_engine, scalarFolder);
 
-    add_very_large_array_variables(server_engine, scalarFolder);
+    add_very_large_array_variables(addressSpace, scalarFolder);
 
-    add_analog_data_items(server_engine, simulationFolder);
+    add_analog_data_items(addressSpace, simulationFolder);
 
-    add_path_10deep(server_engine,simulationFolder);
+    add_path_10deep(addressSpace,simulationFolder);
+
+    add_eventGeneratorObject(addressSpace,simulationFolder);
+
+    add_sampleView(addressSpace);
 
 };
 exports.build_address_space_for_conformance_testing = build_address_space_for_conformance_testing;
+
+
 
     </pre>
 </div>

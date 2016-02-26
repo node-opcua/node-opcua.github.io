@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>lib/misc/utils.js - The NodeOPCUA API</title>
+    <title>lib\misc\utils.js - The NodeOPCUA API</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.46</em>
+            <em>API Docs for: 0.0.52</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -56,6 +56,7 @@
                                 <li><a href="../classes/Argument.html">Argument</a></li>
                                 <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
                                 <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+                                <li><a href="../classes/AttributeNameById.html">AttributeNameById</a></li>
                                 <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
                                 <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
                                 <li><a href="../classes/BaseNode.html">BaseNode</a></li>
@@ -122,7 +123,7 @@
                                 <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
                                 <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
                                 <li><a href="../classes/EUInformation.html">EUInformation</a></li>
-                                <li><a href="../classes/EventField.html">EventField</a></li>
+                                <li><a href="../classes/EventFieldList.html">EventFieldList</a></li>
                                 <li><a href="../classes/EventFilter.html">EventFilter</a></li>
                                 <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
                                 <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
@@ -152,6 +153,7 @@
                                 <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
                                 <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
                                 <li><a href="../classes/MessageSecurityMode.html">MessageSecurityMode</a></li>
+                                <li><a href="../classes/ModelChangeStructure.html">ModelChangeStructure</a></li>
                                 <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
@@ -165,6 +167,7 @@
                                 <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
                                 <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
                                 <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+                                <li><a href="../classes/MyStructure.html">MyStructure</a></li>
                                 <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
                                 <li><a href="../classes/NodeId.html">NodeId</a></li>
                                 <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
@@ -203,6 +206,7 @@
                                 <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
                                 <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
                                 <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+                                <li><a href="../classes/RedundantServer.html">RedundantServer</a></li>
                                 <li><a href="../classes/Reference.html">Reference</a></li>
                                 <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
                                 <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
@@ -217,9 +221,11 @@
                                 <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
                                 <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
                                 <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+                                <li><a href="../classes/SamplingIntervalDiagnostics.html">SamplingIntervalDiagnostics</a></li>
                                 <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
                                 <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
                                 <li><a href="../classes/SecurityTokenRequestType.html">SecurityTokenRequestType</a></li>
+                                <li><a href="../classes/SemanticChangeStructure.html">SemanticChangeStructure</a></li>
                                 <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
                                 <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
                                 <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
@@ -232,6 +238,7 @@
                                 <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
                                 <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
                                 <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+                                <li><a href="../classes/SessionSecurityDiagnostics.html">SessionSecurityDiagnostics</a></li>
                                 <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
                                 <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
                                 <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
@@ -333,7 +340,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-<h1 class="file-heading">File: lib/misc/utils.js</h1>
+<h1 class="file-heading">File: lib\misc\utils.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
@@ -435,16 +442,21 @@ function compare_buffers(buf1, buf2, max_length) {
 
 var debug_flags = {};
 function setDebugFlag(script_fullpath, flag) {
-    debug_flags[script_fullpath] = flag;
+    var filename = path.basename(script_fullpath, &quot;.js&quot;);
+    if (process.env.DEBUG) {
+        console.log(&quot; Setting debug for &quot;,filename, &quot; to &quot;, flag.toString()[flag ? &quot;cyan&quot; : &quot;red&quot;]);
+    }
+    debug_flags[filename] = flag;
 }
-
+var path = require(&quot;path&quot;);
 function checkDebugFlag(script_fullpath) {
 
-    var doDebug = debug_flags[script_fullpath] ? true : false;
-    if (process.env.DEBUG) {
-        var path = require(&quot;path&quot;);
-        var filename = path.basename(script_fullpath, &quot;.js&quot;);
+    var filename = path.basename(script_fullpath, &quot;.js&quot;);
+    var doDebug = debug_flags[filename] ? true : false;
+
+    if (process.env.DEBUG &amp;&amp; !debug_flags.hasOwnProperty(filename) ) {
         doDebug = process.env.DEBUG.indexOf(filename) &gt;= 0 || process.env.DEBUG.indexOf(&quot;ALL&quot;) &gt;= 0;
+        setDebugFlag(filename,doDebug);
     }
     return doDebug;
 }
@@ -457,11 +469,22 @@ function checkDebugFlag(script_fullpath) {
  */
 function make_debugLog(script_fullpath) {
 
+    function w(str,l) {
+        return (str+&quot;                                    &quot;).substr(0,l);
+    }
+    function file_line(filename,caller_line) {
+        return (w(filename,30)+ &quot;:&quot; + w(caller_line,5)).bgWhite.cyan;
+    }
     var doDebug = checkDebugFlag(script_fullpath);
-
+    var filename = path.basename(script_fullpath, &quot;.js&quot;);
     function debugLogFunc() {
-        if (doDebug) {
-            console.log.apply(console, arguments);
+        if (debug_flags[filename] ) {
+
+            // caller line number
+            var l = (new Error()).stack.split(&quot;\n&quot;)[2].split(&quot;:&quot;);
+            var caller_line = l[l.length-2];
+            var args = [].concat([file_line(filename,caller_line)]  ,Object.values(arguments)           );
+            console.log.apply(console, args);
         }
     }
 
@@ -596,11 +619,12 @@ function replaceBufferWithHexDump(obj) {
     return obj;
 }
 
-function display_trace_from_this_projet_only(err) {
+function trace_from_this_projet_only(err) {
 
-    console.log(&quot; display_trace_from_this_projet_only = &quot;.cyan.bold);
+    var str = [];
+    str.push(&quot; display_trace_from_this_project_only = &quot;.cyan.bold);
     if (err) {
-        console.log(err.message);
+        str.push(err.message);
     }
     err = err || new Error();
     var stack = err.stack;
@@ -609,11 +633,17 @@ function display_trace_from_this_projet_only(err) {
             return el.match(/node-opcua/) &amp;&amp; !el.match(/node_modules/);
         }));
         //xx stack.shift();
-        console.log(stack.join(&quot;\n&quot;).yellow);
+        str.push(stack.join(&quot;\n&quot;).yellow);
     } else {
-        console.log(&quot; NO STACK TO TRACE !!!!&quot;.red);
+        str.push(&quot; NO STACK TO TRACE !!!!&quot;.red);
     }
+    return str.join(&quot;\n&quot;);
+}
 
+exports.trace_from_this_projet_only = trace_from_this_projet_only;
+
+function display_trace_from_this_projet_only(err) {
+    console.log(trace_from_this_projet_only(err));
 }
 
 function dump(obj) {
@@ -626,8 +656,14 @@ function dumpIf(condition, obj) {
     }
 }
 
+var tick_origin = process.hrtime()[0];
+// clock it as a double in millisecond
+// so we can measure very tiny time intervals
 function get_clock_tick() {
-    return Date.now();
+    var hrt =  process.hrtime();
+    var r =  (hrt[0]-tick_origin)*1000.0 +  Math.ceil(hrt[1]/1E6*1000)/1000;
+    return r;
+    // Date.now();
 }
 
 function clone_buffer(buffer) {
@@ -742,6 +778,26 @@ function isNullOrUndefined(value)  {
 }
 
 exports.isNullOrUndefined = isNullOrUndefined;
+
+
+exports._DEPRECATED_SOON_REMOVED = function _DEPRECATED_SOON_REMOVED(name,func,extra_info) {
+    extra_info = extra_info || &quot;&quot;;
+    return function () {
+        console.log(&quot;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~&quot;.red);
+        console.log(&quot; WARNING : method &quot;.yellow + name.cyan + &quot; is deprecated &quot;.yellow);
+        console.log(trace_from_this_projet_only(new Error()));
+        console.log(&quot;          &quot; + extra_info.yellow);
+        console.log(&quot;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~&quot;.red);
+        return func.apply(this,arguments);
+    };
+};
+
+exports._DEPRECATED_RENAMED = function _DEPRECATED_RENAMED(oldName, newName) {
+    return function () {
+        console.log(&quot; WARNING : method &quot;.yellow + oldName.cyan + &quot; is deprecated and has been renamed as &quot;.yellow + newName.cyan);
+        return this.constructor.prototype[newName].apply(this, arguments);
+    };
+};
 
     </pre>
 </div>

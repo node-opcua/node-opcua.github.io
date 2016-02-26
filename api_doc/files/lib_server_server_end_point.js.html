@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>lib/server/server_end_point.js - The NodeOPCUA API</title>
+    <title>lib\server\server_end_point.js - The NodeOPCUA API</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.46</em>
+            <em>API Docs for: 0.0.52</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -56,6 +56,7 @@
                                 <li><a href="../classes/Argument.html">Argument</a></li>
                                 <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
                                 <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+                                <li><a href="../classes/AttributeNameById.html">AttributeNameById</a></li>
                                 <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
                                 <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
                                 <li><a href="../classes/BaseNode.html">BaseNode</a></li>
@@ -122,7 +123,7 @@
                                 <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
                                 <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
                                 <li><a href="../classes/EUInformation.html">EUInformation</a></li>
-                                <li><a href="../classes/EventField.html">EventField</a></li>
+                                <li><a href="../classes/EventFieldList.html">EventFieldList</a></li>
                                 <li><a href="../classes/EventFilter.html">EventFilter</a></li>
                                 <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
                                 <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
@@ -152,6 +153,7 @@
                                 <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
                                 <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
                                 <li><a href="../classes/MessageSecurityMode.html">MessageSecurityMode</a></li>
+                                <li><a href="../classes/ModelChangeStructure.html">ModelChangeStructure</a></li>
                                 <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
@@ -165,6 +167,7 @@
                                 <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
                                 <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
                                 <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+                                <li><a href="../classes/MyStructure.html">MyStructure</a></li>
                                 <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
                                 <li><a href="../classes/NodeId.html">NodeId</a></li>
                                 <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
@@ -203,6 +206,7 @@
                                 <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
                                 <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
                                 <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+                                <li><a href="../classes/RedundantServer.html">RedundantServer</a></li>
                                 <li><a href="../classes/Reference.html">Reference</a></li>
                                 <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
                                 <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
@@ -217,9 +221,11 @@
                                 <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
                                 <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
                                 <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+                                <li><a href="../classes/SamplingIntervalDiagnostics.html">SamplingIntervalDiagnostics</a></li>
                                 <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
                                 <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
                                 <li><a href="../classes/SecurityTokenRequestType.html">SecurityTokenRequestType</a></li>
+                                <li><a href="../classes/SemanticChangeStructure.html">SemanticChangeStructure</a></li>
                                 <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
                                 <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
                                 <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
@@ -232,6 +238,7 @@
                                 <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
                                 <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
                                 <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+                                <li><a href="../classes/SessionSecurityDiagnostics.html">SessionSecurityDiagnostics</a></li>
                                 <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
                                 <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
                                 <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
@@ -333,7 +340,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-<h1 class="file-heading">File: lib/server/server_end_point.js</h1>
+<h1 class="file-heading">File: lib\server\server_end_point.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
@@ -358,7 +365,9 @@ var UserIdentityTokenType = s.UserIdentityTokenType;
 var endpoints_service = require(&quot;lib/services/get_endpoints_service&quot;);
 var MessageSecurityMode = endpoints_service.MessageSecurityMode;
 
-var debugLog = require(&quot;lib/misc/utils&quot;).make_debugLog(__filename);
+var utils= require(&quot;lib/misc/utils&quot;);
+var debugLog = utils.make_debugLog(__filename);
+var doDebug = utils.checkDebugFlag(__filename);
 
 var ServerSecureChannelLayer = require(&quot;lib/server/server_secure_channel_layer&quot;).ServerSecureChannelLayer;
 var EndpointDescription = require(&quot;lib/services/get_endpoints_service&quot;).EndpointDescription;
@@ -372,11 +381,12 @@ var crypto_utils = require(&quot;lib/misc/crypto_utils&quot;);
  * A sever end point is listening to one port
  *
  * @param options {Object}
- * @param options.port         {Number} the tcp port
- * @param options.certificate  {Buffer} the DER certificate
- * @param options.privateKey   {String} PEM string of the private key
- * @param [options.defaultSecureTokenLifetime=30000] the default secure token lifetime
- * @param [options.timeout=3000] the  timeout for the TCP HEL/ACK transaction
+ * @param options.port                                {Number} the tcp port
+ * @param options.certificate                         {Buffer} the DER certificate
+ * @param options.privateKey                          {String} PEM string of the private key
+ * @param [options.defaultSecureTokenLifetime=600000] {Number} the default secure token lifetime
+ * @param [options.timeout=30000]                     {Number} the  timeout for the TCP HEL/ACK transaction (in ms)
+ * @param [options.maxConnections = 20 ]{Number}       {Number} the maximum number of connection allowed on the TCP server socket
  * @param options.objectFactory
  * @constructor
  */
@@ -397,19 +407,14 @@ function OPCUAServerEndPoint(options) {
 
     self.defaultSecureTokenLifetime = options.defaultSecureTokenLifetime || 600000;
 
-    self.timeout = options.timeout || 10000;
+    self.maxConnections = options.maxConnections || 20;
 
-    self._server = net.createServer(self._on_client_connection.bind(self));
+    self.timeout = options.timeout || 30000;
 
-    self._listen_callback = null;
-    self._server.on(&quot;connection&quot;, function (socket) {
-        debugLog(&quot;server connected  with : &quot; + socket.remoteAddress + &quot;:&quot; + socket.remotePort);
-    }).on(&quot;close&quot;, function () {
-        debugLog(&quot;server closed : all connections have ended&quot;);
-    }).on(&quot;error&quot;, function (err) {
-        // this could be because the port is already in use
-        console.log(&quot;server error: &quot;.red.bold, err.message);
-    });
+    self._server = null;
+
+    self._setup_server();
+
 
     self._endpoints = [];
 
@@ -426,10 +431,50 @@ function OPCUAServerEndPoint(options) {
 }
 util.inherits(OPCUAServerEndPoint, EventEmitter);
 
+
+OPCUAServerEndPoint.prototype._setup_server = function() {
+    var self = this;
+    assert(self._server === null);
+    self._server = net.createServer(self._on_client_connection.bind(self));
+
+    console.log(&quot; Server with max connections &quot;, self.maxConnections);
+    self._server.maxConnections = self.maxConnections;
+
+    self._listen_callback = null;
+    self._server.on(&quot;connection&quot;, function (socket) {
+
+        if (doDebug) {
+            self._server.getConnections(function(err,count){
+                debugLog(&quot;server connected  with : &quot; + socket.remoteAddress + &quot;:&quot; + socket.remotePort);
+                console.log(&quot; CONCURRENT CONNECTION = &quot;,count);
+            });
+            console.log(&quot; MAX CONNECTIONS =&quot; ,self._server.maxConnections);
+        }
+
+    }).on(&quot;close&quot;, function () {
+        debugLog(&quot;server closed : all connections have ended&quot;);
+    }).on(&quot;error&quot;, function (err) {
+        // this could be because the port is already in use
+        console.log(&quot;server error: &quot;.red.bold, err.message);
+    });
+};
+
+
+
+
 OPCUAServerEndPoint.prototype._on_client_connection = function (socket) {
 
     // a client is attempting a connection on the socket
     var self = this;
+
+    debugLog(&quot;OPCUAServerEndPoint#_on_client_connection&quot;,self._started);
+    if (!self._started) {
+        debugLog(&quot;OPCUAServerEndPoint#_on_client_connection SERVER END POINT IS PROBABLY SHUTTING DOWN !!! - Connection is refused&quot;.bgWhite.cyan);
+        socket.end();
+        return;
+    }
+
+    debugLog(&quot;OPCUAServerEndPoint._on_client_connection successful =&gt; New Channel&quot;);
 
     var channel = new ServerSecureChannelLayer({
         parent: self,
@@ -493,26 +538,26 @@ var SecurityPolicy = securityPolicy_m.SecurityPolicy;
 var get_fully_qualified_domain_name = require(&quot;lib/misc/hostname&quot;).get_fully_qualified_domain_name;
 
 var default_transportProfileUri = &quot;http://opcfoundation.org/UA-Profile/Transport/uatcp-uasc-uabinary&quot;;
+
 /**
  * @method _makeEndpointDescription
  * @param options.port
  * @param options.serverCertificate
  * @param options.securityMode
  * @param options.securityPolicy
- * @param options.securityLevel {Integer}
- * @param options.server.applicationUri    {String}
- * @param options.server.productUri       {String}
- * @param options.server.applicationName  {LocalizedText} // {text: &quot;SampleServer&quot;, locale: null},
- * @param options.server.applicationType  {ApplicationType}
- * @param options.server.gatewayServerUri {String}
+ * @param options.securityLevel              {Number}
+ * @param options.server.applicationUri      {String}
+ * @param options.server.productUri          {String}
+ * @param options.server.applicationName     {LocalizedText} // {text: &quot;SampleServer&quot;, locale: null},
+ * @param options.server.applicationType     {ApplicationType}
+ * @param options.server.gatewayServerUri    {String}
  * @param options.server.discoveryProfileUri {String}
- * @param options.server.discoveryUrls {String}
- * @param [options.resourcePath=&quot;&quot;] {String} resource Path is a string added at the end of the url such as &quot;/UA/Server&quot;
+ * @param options.server.discoveryUrls       {String}
+ * @param [options.resourcePath=&quot;&quot;]          {String} resource Path is a string added at the end of the url such as &quot;/UA/Server&quot;
  * @param [options.hostname=get_fully_qualified_domain_name()] {string} default hostname
  * @return {EndpointDescription}
  * @private
  */
-
 function _makeEndpointDescription(options) {
 
     assert(_.isFinite(options.port), &quot;expecting a valid port number&quot;);
@@ -722,8 +767,14 @@ OPCUAServerEndPoint.prototype.endpointDescriptions = function () {
  */
 OPCUAServerEndPoint.prototype._registerChannel = function (channel) {
     var self = this;
-    assert(self._channels[channel.securityToken.secureChannelId] === undefined);
-    self._channels[channel.securityToken.secureChannelId] = channel;
+    if (self._started) {
+        assert(self._channels[channel.securityToken.secureChannelId] === undefined);
+        self._channels[channel.securityToken.secureChannelId] = channel;
+    } else {
+        debugLog(&quot;OPCUAServerEndPoint#_registerChannel called when end point is shutdown !&quot;);
+        debugLog(&quot;  -&gt; channel will be forcefully terminated&quot;);
+        channel.close();
+    }
 };
 
 /**
@@ -754,8 +805,9 @@ OPCUAServerEndPoint.prototype._end_listen = function (err) {
  */
 OPCUAServerEndPoint.prototype.listen = function (callback) {
 
-    assert(_.isFunction(callback));
     var self = this;
+    assert(_.isFunction(callback));
+    assert(!self._started);
 
     self._listen_callback = callback;
 
@@ -764,12 +816,28 @@ OPCUAServerEndPoint.prototype.listen = function (callback) {
         self._end_listen(err);
     });
 
-    self._server.listen(self.port, function () { //&#x27;listening&#x27; listener
-
+    self._server.listen(self.port, function (err) { //&#x27;listening&#x27; listener
         debugLog(&quot;LISTENING TO PORT &quot;.green.bold, self.port);
         self._started = true;
         self._end_listen();
     });
+};
+
+
+OPCUAServerEndPoint.prototype.suspendConnection = function (callback) {
+
+    var self = this;
+    assert(self._started);
+    self._server.close(function () {
+        assert(self._started);
+        self._started = false;
+    });
+    callback();
+};
+
+OPCUAServerEndPoint.prototype.restoreConnection = function (callback) {
+    var self = this;
+    self.listen(callback);
 };
 
 /**
@@ -789,19 +857,14 @@ OPCUAServerEndPoint.prototype.shutdown = function (callback) {
     }
 
     if (self._started) {
-
-        self._started = false;
-
-        // filter
-        var chnls = _.values(self._channels); // .filter(function(e){ return !!e; });
-
-        async.each(chnls, disconnect_channel, function (err) {
-
-            self._server.close(function () {
+        self.suspendConnection(function() {
+            debugLog(&quot;OPCUAServerEndPoint#shutdown&quot;);
+            // filter
+            var chnls = _.values(self._channels); // .filter(function(e){ return !!e; });
+            async.each(chnls, disconnect_channel, function (err) {
                 assert(Object.keys(self._channels).length === 0, &quot;channel must have unregistered themselves&quot;);
                 callback(err);
             });
-
         });
     } else {
         callback();

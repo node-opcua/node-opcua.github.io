@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>lib/server/subscription.js - The NodeOPCUA API</title>
+    <title>lib\server\subscription.js - The NodeOPCUA API</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.46</em>
+            <em>API Docs for: 0.0.52</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -56,6 +56,7 @@
                                 <li><a href="../classes/Argument.html">Argument</a></li>
                                 <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
                                 <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+                                <li><a href="../classes/AttributeNameById.html">AttributeNameById</a></li>
                                 <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
                                 <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
                                 <li><a href="../classes/BaseNode.html">BaseNode</a></li>
@@ -122,7 +123,7 @@
                                 <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
                                 <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
                                 <li><a href="../classes/EUInformation.html">EUInformation</a></li>
-                                <li><a href="../classes/EventField.html">EventField</a></li>
+                                <li><a href="../classes/EventFieldList.html">EventFieldList</a></li>
                                 <li><a href="../classes/EventFilter.html">EventFilter</a></li>
                                 <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
                                 <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
@@ -152,6 +153,7 @@
                                 <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
                                 <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
                                 <li><a href="../classes/MessageSecurityMode.html">MessageSecurityMode</a></li>
+                                <li><a href="../classes/ModelChangeStructure.html">ModelChangeStructure</a></li>
                                 <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
@@ -165,6 +167,7 @@
                                 <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
                                 <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
                                 <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+                                <li><a href="../classes/MyStructure.html">MyStructure</a></li>
                                 <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
                                 <li><a href="../classes/NodeId.html">NodeId</a></li>
                                 <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
@@ -203,6 +206,7 @@
                                 <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
                                 <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
                                 <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+                                <li><a href="../classes/RedundantServer.html">RedundantServer</a></li>
                                 <li><a href="../classes/Reference.html">Reference</a></li>
                                 <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
                                 <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
@@ -217,9 +221,11 @@
                                 <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
                                 <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
                                 <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+                                <li><a href="../classes/SamplingIntervalDiagnostics.html">SamplingIntervalDiagnostics</a></li>
                                 <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
                                 <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
                                 <li><a href="../classes/SecurityTokenRequestType.html">SecurityTokenRequestType</a></li>
+                                <li><a href="../classes/SemanticChangeStructure.html">SemanticChangeStructure</a></li>
                                 <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
                                 <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
                                 <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
@@ -232,6 +238,7 @@
                                 <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
                                 <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
                                 <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+                                <li><a href="../classes/SessionSecurityDiagnostics.html">SessionSecurityDiagnostics</a></li>
                                 <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
                                 <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
                                 <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
@@ -333,7 +340,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-<h1 class="file-heading">File: lib/server/subscription.js</h1>
+<h1 class="file-heading">File: lib\server\subscription.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
@@ -360,10 +367,11 @@ var SequenceNumberGenerator = require(&quot;lib/misc/sequence_number_generator&q
 
 var EventEmitter = require(&quot;events&quot;).EventEmitter;
 var util = require(&quot;util&quot;);
-var debugLog = require(&quot;lib/misc/utils&quot;).make_debugLog(__filename);
-// debugLog = console.log.bind(console);
 
-var doDebug = true;
+var debugLog = require(&quot;lib/misc/utils&quot;).make_debugLog(__filename);
+var doDebug = false;
+/// debugLog = console.log.bind(console);
+
 
 var SubscriptionState = new Enum([
     &quot;CLOSED&quot;,   // The Subscription has not yet been created or has terminated.
@@ -405,6 +413,8 @@ function _adjust_lifeTimeCount(lifeTimeCount, maxKeepAliveCount) {
     lifeTimeCount = lifeTimeCount || 1;
 
     // let&#x27;s make sure that lifeTimeCount is at least three time maxKeepAliveCount
+    // Note : the specs say ( part 3  - CreateSubscriptionParameter )
+    //        &quot;The lifetime count shall be a minimum of three times the keep keep-alive count.&quot;
     lifeTimeCount = Math.max(lifeTimeCount, maxKeepAliveCount * 3);
     return lifeTimeCount;
 }
@@ -423,6 +433,7 @@ function _assert_valid_publish_engine(publishEngine) {
     assert(_.isNumber(publishEngine.pendingPublishRequestCount));
     assert(_.isFunction(publishEngine.send_notification_message));
     assert(_.isFunction(publishEngine.send_keep_alive_response));
+    assert(_.isFunction(publishEngine.on_close_subscription));
 }
 
 
@@ -443,8 +454,6 @@ function installSubscriptionDiagnostics(self) {
     self.subscriptionDiagnostics.__defineGetter__(&quot;nextSequenceNumber&quot;,         function() { return self._get_future_sequence_number(); });
     self.subscriptionDiagnostics.__defineGetter__(&quot;disabledMonitoredItemCount&quot;, function() { return self.disabledMonitoredItemCount; });
 
-
-
     /* those member of self.subscriptionDiagnostics are handled directly
 
      modifyCount
@@ -458,9 +467,7 @@ function installSubscriptionDiagnostics(self) {
     */
 
     /*
-
-     those members have not be correcly updated yet in the code :
-
+     those members are not updated yet in the code :
      &quot;republishMessageRequestCount&quot;,
      &quot;republishMessageCount&quot;,
      &quot;transferRequestCount&quot;,
@@ -474,9 +481,8 @@ function installSubscriptionDiagnostics(self) {
      &quot;monitoringQueueOverflowCount&quot;,
      &quot;eventQueueOverFlowCount&quot;
      */
-
     // add object in Variable SubscriptionDiagnosticArray (i=2290) ( Array of SubscriptionDiagnostics)
-    // add propertiies in Variable to reflect
+    // add properties in Variable to reflect
 }
 /**
  * The Subscription class used in the OPCUA server side.
@@ -591,9 +597,7 @@ function Subscription(options) {
 
 util.inherits(Subscription, EventEmitter);
 
-var ObjectRegisty = require(&quot;lib/misc/objectRegistry&quot;).ObjectRegisty;
-var g_running_Subscriptions = new ObjectRegisty();
-Subscription.getRunningSubscriptionsCount = g_running_Subscriptions.count.bind(g_running_Subscriptions);
+Subscription.registry = new (require(&quot;lib/misc/objectRegistry&quot;).ObjectRegistry)();
 
 Subscription.prototype.toString = function () {
 
@@ -652,7 +656,7 @@ Subscription.prototype._stop_timer = function () {
         //xx console.log(&quot;xxxx Subscription.prototype._stop_timer&quot;.bgWhite.red);
         clearInterval(self.timerId);
         self.timerId = null;
-        g_running_Subscriptions.unregister(self);
+        Subscription.registry.unregister(self);
     }
 };
 
@@ -679,7 +683,7 @@ Subscription.prototype._start_timer = function () {
 
     assert(self.publishingInterval &gt; 0);
     self.timerId = setInterval(self._tick.bind(self), self.publishingInterval);
-    g_running_Subscriptions.register(self);
+    Subscription.registry.register(self);
 
 };
 
@@ -731,6 +735,17 @@ Subscription.prototype.setPublishingMode = function (publishingEnabled) {
 Subscription.prototype._attempt_to_publish_notification = function () {
 
     var self = this;
+
+    function _count_notification_message(notifData) {
+        if (notifData instanceof DataChangeNotification) {
+            self.subscriptionDiagnostics.dataChangeNotificationsCount += 1;
+        } else if (notifData instanceof EventNotificationList) {
+            self.subscriptionDiagnostics.eventNotificationsCount += 1;
+        } else {
+            // TODO
+        }
+    }
+
     assert(self.hasPendingNotifications);
 
     self.emit(&quot;notification&quot;);
@@ -742,15 +757,14 @@ Subscription.prototype._attempt_to_publish_notification = function () {
 
         var notificationMessage = self.popNotificationToSend().notification;
 
+        self.emit(&quot;notificationMessage&quot;,notificationMessage);
 
         // update diagnostics
         self.subscriptionDiagnostics.notificationsCount += 1;
-        if (notificationMessage instanceof DataChangeNotification) {
-            self.subscriptionDiagnostics.dataChangeNotificationsCount += 1;
-        }
-        if (notificationMessage instanceof EventNotificationList) {
-            self.subscriptionDiagnostics.eventNotificationsCount += 1;
-        }
+
+        assert(_.isArray(notificationMessage.notificationData));
+
+        notificationMessage.notificationData.forEach(_count_notification_message);
 
         var availableSequenceNumbers = (self.state === SubscriptionState.CLOSED) ? [] : self.getAvailableSequenceNumbers();
 
@@ -783,6 +797,7 @@ Subscription.prototype._attempt_to_publish_notification = function () {
             return;
         }
         if (self.state !== SubscriptionState.LATE) {
+            // only notify first time we get to LATE state
             debugLog(&quot;Subscription is now Late due to a lack of PublishRequest to process&quot;);
         }
         // publishEngine has no PublishRequest available to process :
@@ -1035,9 +1050,12 @@ Subscription.prototype.terminate = function () {
 
     // notify new terminated status
     debugLog(&quot;adding StatusChangeNotification notification message for BadTimeout subscription = &quot;, self.id);
-    self.addNotificationMessage(new StatusChangeNotification({statusCode: StatusCodes.BadTimeout}));
+    self.addNotificationMessage([new StatusChangeNotification({statusCode: StatusCodes.BadTimeout})]);
 
     self.state = SubscriptionState.CLOSED;
+
+    self.publishEngine.on_close_subscription(self);
+
     /**
      * notify the subscription owner that the subscription has been terminated.
      * @event &quot;terminated&quot;
@@ -1045,20 +1063,36 @@ Subscription.prototype.terminate = function () {
     self.emit(&quot;terminated&quot;);
 };
 
+function assert_validNotificationData(n) {
+    assert(
+        n instanceof DataChangeNotification ||
+        n instanceof EventNotificationList  ||
+        n instanceof StatusChangeNotification
+    );
+}
+
 /**
  * @method addNotificationMessage
- * @param notificationData {DataChangeNotification|EventNotificationList|StatusChangeNotification}
+ * @param notificationData {Array&lt;DataChangeNotification|EventNotificationList|StatusChangeNotification&gt;}
  */
 Subscription.prototype.addNotificationMessage = function (notificationData) {
 
+    assert(_.isArray(notificationData));
+    assert(notificationData.length === 1 || notificationData.length === 2); // as per spec part 3.
+
     //xx console.log(&quot;xxxxx addNotificationMessage&quot;.yellow,notificationData.toString());
     var self = this;
-    assert(_.isObject(notificationData));
+    assert(_.isObject(notificationData[0]));
+
+    assert_validNotificationData(notificationData[0]);
+    if (notificationData.length === 2) {
+        assert_validNotificationData(notificationData[1]);
+    }
 
     var notification_message = new NotificationMessage({
         sequenceNumber: self._get_next_sequence_number(),
         publishTime: new Date(),
-        notificationData: [notificationData]
+        notificationData: notificationData
     });
 
     self._pending_notifications.push({
@@ -1341,7 +1375,7 @@ function analyseEventFilterResult(node, eventFilter) {
 }
 function analyseDataChangeFilterResult(node, dataChangeFilter) {
     assert(dataChangeFilter instanceof subscription_service.DataChangeFilter);
-    // the opcu specification doesn&#x27;t provide dataChangeFilterResult
+    // the opcua specification doesn&#x27;t provide dataChangeFilterResult
     return null;
 }
 function analyseAggregateFilterResult(node, aggregateFilter) {
@@ -1372,6 +1406,11 @@ function __validateDataChangeFilter(filter,itemToMonitor,node) {
 
     assert(itemToMonitor.attributeId  === AttributeIds.Value);
     assert(filter instanceof subscription_service.DataChangeFilter);
+
+    if (!(node instanceof UAVariable)) {
+        return StatusCodes.BadNodeIdInvalid;
+    }
+
     assert(node instanceof UAVariable);
 
     // if node is not Numerical=&gt; DataChangeFilter
@@ -1432,10 +1471,17 @@ Subscription.prototype.createMonitoredItem = function (addressSpace, timestampsT
 
     var itemToMonitor = monitoredItemCreateRequest.itemToMonitor;
 
-    var node = addressSpace.findObject(itemToMonitor.nodeId);
+    var node = addressSpace.findNode(itemToMonitor.nodeId);
     if (!node) {
         return handle_error(StatusCodes.BadNodeIdUnknown);
     }
+
+
+    if (itemToMonitor.attributeId === AttributeIds.Value &amp;&amp; !(node instanceof UAVariable)) {
+        // AttributeIds.Value is only valid for monitoring value of UAVariables.
+        return handle_error(StatusCodes.BadAttributeIdInvalid);
+    }
+
 
     if (itemToMonitor.attributeId === AttributeIds.INVALID) {
         return handle_error(StatusCodes.BadAttributeIdInvalid);
@@ -1624,8 +1670,10 @@ Subscription.prototype.removeMonitoredItem = function (monitoredItemId) {
 var DataChangeNotification = subscription_service.DataChangeNotification;
 var EventNotificationList = subscription_service.EventNotificationList;
 
+
+
 // collect DataChangeNotification
-Subscription.prototype.collectDataChangeNotification = function () {
+Subscription.prototype.collectNotificationData = function () {
 
     var self = this;
     var all_notifications = new Dequeue();
@@ -1637,11 +1685,15 @@ Subscription.prototype.collectDataChangeNotification = function () {
         var notifications = monitoredItem.extractMonitoredItemNotifications();
         all_notifications = all_notifications.concat(notifications);
     });
-
     assert(all_notifications instanceof Dequeue);
 
-    function extract_monitoredItems(monitoredItems, maxNotificationsPerPublish) {
-
+    /**
+     * extract up to maxNotificationsPerPublish notificiation into a Dequeue
+     * @param monitoredItems
+     * @param maxNotificationsPerPublish
+     * @return {Deque|exports|module.exports}
+     */
+    function extract_notifications_chunk(monitoredItems, maxNotificationsPerPublish) {
         var n = maxNotificationsPerPublish === 0 ?
             monitoredItems.length :
             Math.min(monitoredItems.length, maxNotificationsPerPublish);
@@ -1654,23 +1706,53 @@ Subscription.prototype.collectDataChangeNotification = function () {
         return chunk_monitoredItems;
     }
 
-    var dataChangeNotifications = new Dequeue();
+    var notificationsMessage = new Dequeue();
+
+    function filter_instanceof(Class,e) {
+        return (e instanceof Class);
+    }
+
     while (all_notifications.length &gt; 0) {
 
         // split into one or multiple dataChangeNotification with no more than
         //  self.maxNotificationsPerPublish monitoredItems
-        var chunk_monitoredItems = extract_monitoredItems(all_notifications, self.maxNotificationsPerPublish);
-        var dataChangeNotification = new DataChangeNotification({
-            monitoredItems: chunk_monitoredItems.toArray(),
-            diagnosticInfos: []
-        });
-        assert(self.maxNotificationsPerPublish === 0 || dataChangeNotification.monitoredItems.length &lt;= self.maxNotificationsPerPublish);
-        //
-        //xx console.log(&quot;xxxxxxxxx Pushing dataChangeNotifications &quot;);
-        //xx console.log(&quot;xxxxxxxxxxxxxxx                monitoredItems length = &quot;.yellow,dataChangeNotification.monitoredItems.length);
-        dataChangeNotifications.push(dataChangeNotification);
+        var notifications_chunk = extract_notifications_chunk(all_notifications, self.maxNotificationsPerPublish);
+
+        notifications_chunk = notifications_chunk.toArray();
+
+        // separate data for DataChangeNotification (MonitoredItemNotification) from data for EventNotificationList(EventFieldList)
+        var dataChangedNotificationData = notifications_chunk.filter(filter_instanceof.bind(null,subscription_service.MonitoredItemNotification));
+        var eventNotificationListData = notifications_chunk.filter(filter_instanceof.bind(null,subscription_service.EventFieldList));
+        assert(notifications_chunk.length === dataChangedNotificationData.length +  eventNotificationListData.length);
+
+
+
+        var notifications = [];
+
+
+        // add dataChangeNotification
+        if (dataChangedNotificationData.length) {
+            var dataChangeNotification = new DataChangeNotification({
+                monitoredItems: dataChangedNotificationData,
+                diagnosticInfos: []
+            });
+            notifications.push(dataChangeNotification);
+        }
+
+        // add dataChangeNotification
+        if (eventNotificationListData.length) {
+            var eventNotificationList = new EventNotificationList({
+                events: eventNotificationListData
+            });
+            notifications.push(eventNotificationList);
+        }
+
+        assert(notifications.length === 1 || notifications.length === 2);
+        notificationsMessage.push(notifications);
     }
-    return dataChangeNotifications;
+
+    assert(notificationsMessage instanceof Dequeue);
+    return notificationsMessage;
 };
 
 Subscription.prototype.prepareNotification = function () {
@@ -1680,14 +1762,16 @@ Subscription.prototype.prepareNotification = function () {
     if (self.publishEngine.pendingPublishRequestCount === 0) {
         return;
     }
-    // Only collect data change notification for the
-    var dataChangeNotifications = self.collectDataChangeNotification();
-    assert(dataChangeNotifications instanceof Dequeue);
+
+    // Only collect data change notification for the time being
+    var notificationData = self.collectNotificationData();
+    assert(notificationData instanceof Dequeue);
     //xx console.log(&quot;xxxxxx prepareNotification dataChangeNotifications.length&quot;,dataChangeNotifications.length);
-    dataChangeNotifications.forEach(function (notificationMessage) {
+    notificationData.forEach(function (notificationMessage) {
         //xx console.log(&quot;xxxxxx before self.addNotificationMessage&quot;,dataChangeNotifications.length);
         self.addNotificationMessage(notificationMessage);
     });
+
 };
 
 

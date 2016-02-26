@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>schemas/QueryNextRequest_schema.js - The NodeOPCUA API</title>
+    <title>SemanticChangeStructure - The NodeOPCUA API</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.46</em>
+            <em>API Docs for: 0.0.52</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -56,6 +56,7 @@
                                 <li><a href="../classes/Argument.html">Argument</a></li>
                                 <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
                                 <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+                                <li><a href="../classes/AttributeNameById.html">AttributeNameById</a></li>
                                 <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
                                 <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
                                 <li><a href="../classes/BaseNode.html">BaseNode</a></li>
@@ -122,7 +123,7 @@
                                 <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
                                 <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
                                 <li><a href="../classes/EUInformation.html">EUInformation</a></li>
-                                <li><a href="../classes/EventField.html">EventField</a></li>
+                                <li><a href="../classes/EventFieldList.html">EventFieldList</a></li>
                                 <li><a href="../classes/EventFilter.html">EventFilter</a></li>
                                 <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
                                 <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
@@ -152,6 +153,7 @@
                                 <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
                                 <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
                                 <li><a href="../classes/MessageSecurityMode.html">MessageSecurityMode</a></li>
+                                <li><a href="../classes/ModelChangeStructure.html">ModelChangeStructure</a></li>
                                 <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
@@ -165,6 +167,7 @@
                                 <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
                                 <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
                                 <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+                                <li><a href="../classes/MyStructure.html">MyStructure</a></li>
                                 <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
                                 <li><a href="../classes/NodeId.html">NodeId</a></li>
                                 <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
@@ -203,6 +206,7 @@
                                 <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
                                 <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
                                 <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+                                <li><a href="../classes/RedundantServer.html">RedundantServer</a></li>
                                 <li><a href="../classes/Reference.html">Reference</a></li>
                                 <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
                                 <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
@@ -217,9 +221,11 @@
                                 <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
                                 <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
                                 <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+                                <li><a href="../classes/SamplingIntervalDiagnostics.html">SamplingIntervalDiagnostics</a></li>
                                 <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
                                 <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
                                 <li><a href="../classes/SecurityTokenRequestType.html">SecurityTokenRequestType</a></li>
+                                <li><a href="../classes/SemanticChangeStructure.html">SemanticChangeStructure</a></li>
                                 <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
                                 <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
                                 <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
@@ -232,6 +238,7 @@
                                 <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
                                 <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
                                 <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+                                <li><a href="../classes/SessionSecurityDiagnostics.html">SessionSecurityDiagnostics</a></li>
                                 <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
                                 <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
                                 <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
@@ -333,38 +340,424 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-<h1 class="file-heading">File: schemas/QueryNextRequest_schema.js</h1>
+<h1>SemanticChangeStructure Class</h1>
+<div class="box meta">
 
-<div class="file">
-    <pre class="code prettyprint linenums">
+        <div class="extends">
+            Extends <a href="../classes/BaseUAObject.html" class="crosslink">BaseUAObject</a>
+        </div>
+
+        <div class="foundat">
+            Defined in: <a href="../files/_generated___auto_generated_SemanticChangeStructure.js.html#l27"><code>_generated_\_auto_generated_SemanticChangeStructure.js:27</code></a>
+        </div>
+
+            Module: <a href="../modules/opcua.address_space.types.html">opcua.address_space.types</a>
+
+</div>
 
 
-var QueryNextRequest_Schema = {
-    name: &quot;QueryNextRequest&quot;,
-    fields: [
-        { name:&quot;requestHeader&quot;,               fieldType:&quot;RequestHeader&quot;,   documentation: &quot;A standard header included in all requests sent to a server.&quot;},
-    /**
-     * A Boolean parameter with the following values:
-     *      TRUE passed continuationPoint shall be reset to free resources for the continuation point in the Server.
-     *      FALSE passed continuationPoint shall be used to get the next set of QueryDataSets.
-     * A Client shall always use the continuation point returned by a QueryFirst or QueryNext response to free the
-     * resources for the continuation point in the Server. If the Client does not want to get the next set of Query
-     * information, QueryNext shall be called with this parameter set to TRUE
-     * If the parameter is set to TRUE all array parameters in the response shall contain empty arrays.
-     */
-        { name:&quot;releaseContinuationPoint&quot;,    fieldType:&quot;Boolean&quot;},
-    /**
-     * Server defined opaque value that represents the continuation point. T
-     * he value of the continuation point was returned to the Client in a previous QueryFirst or QueryNext response.
-     * This value is used to identify the previously processed QueryFirst or QueryNext request that is being continued,
-     * and the point in the result set from which the browse response is to continue.
-     */
-        { name:&quot;continuationPoint&quot;,           fieldType:&quot;ContinuationPoint&quot;}
-    ]
-};
-exports.QueryNextRequest_Schema = QueryNextRequest_Schema;
+<div class="box intro">
+    
+</div>
 
-    </pre>
+    <div class="constructor">
+        <h2>Constructor</h2>
+<div id="method_SemanticChangeStructure" class="method item">
+    <h3 class="name"><code>SemanticChangeStructure</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>options</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/_generated___auto_generated_SemanticChangeStructure.js.html#l27"><code>_generated_\_auto_generated_SemanticChangeStructure.js:27</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">options</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name optional">[affected]</code>
+                                    <span class="type"><a href="../classes/NodeId.html" class="crosslink">NodeId</a></span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name optional">[affectedType]</code>
+                                    <span class="type"><a href="../classes/NodeId.html" class="crosslink">NodeId</a></span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                        </ul>
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+    </div>
+
+<div id="classdocs" class="tabview">
+    <ul class="api-class-tabs">
+        <li class="api-class-tab index"><a href="#index">Index</a></li>
+
+            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
+            <li class="api-class-tab properties"><a href="#properties">Properties</a></li>
+    </ul>
+
+    <div>
+        <div id="index" class="api-class-tabpanel index">
+            <h2 class="off-left">Item Index</h2>
+
+                <div class="index-section methods">
+                    <h3>Methods</h3>
+
+                    <ul class="index-list methods extends">
+                            <li class="index-item method inherited">
+                                <a href="#method_binaryStoreSize">binaryStoreSize</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_decode_debug">decode_debug</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_encode">encode</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_isValid">isValid</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_toString">toString</a>
+
+                            </li>
+                    </ul>
+                </div>
+
+                <div class="index-section properties">
+                    <h3>Properties</h3>
+
+                    <ul class="index-list properties extends">
+                            <li class="index-item property">
+                                <a href="#property_affected">affected</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_affectedType">affectedType</a>
+
+                            </li>
+                    </ul>
+                </div>
+
+
+        </div>
+
+            <div id="methods" class="api-class-tabpanel">
+                <h2 class="off-left">Methods</h2>
+
+<div id="method_binaryStoreSize" class="method item inherited">
+    <h3 class="name"><code>binaryStoreSize</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Number</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/BaseUAObject.html#method_binaryStoreSize">BaseUAObject</a>:
+        <a href="../files/lib_misc_factories_baseobject.js.html#l47"><code>lib\misc\factories_baseobject.js:47</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        Calculate the required size to store this object in a binary stream.
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Number</span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_decode_debug" class="method item inherited">
+    <h3 class="name"><code>decode_debug</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/BaseUAObject.html#method_decode_debug">BaseUAObject</a>:
+        <a href="../files/lib_misc_factories_baseobject.js.html#l124"><code>lib\misc\factories_baseobject.js:124</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+
+</div>
+<div id="method_encode" class="method item">
+    <h3 class="name"><code>encode</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>stream</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/_generated___auto_generated_SemanticChangeStructure.js.html#l69"><code>_generated_\_auto_generated_SemanticChangeStructure.js:69</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>encode the object into a binary stream</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">stream</code>
+                        <span class="type"><a href="../classes/BinaryStream.html" class="crosslink">BinaryStream</a></span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_isValid" class="method item inherited">
+    <h3 class="name"><code>isValid</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/BaseUAObject.html#method_isValid">BaseUAObject</a>:
+        <a href="../files/lib_misc_factories_baseobject.js.html#l81"><code>lib\misc\factories_baseobject.js:81</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        verify that all object attributes values are valid according to schema
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Boolean</span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_toString" class="method item inherited">
+    <h3 class="name"><code>toString</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">String</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/BaseUAObject.html#method_toString">BaseUAObject</a>:
+        <a href="../files/lib_misc_factories_baseobject.js.html#l59"><code>lib\misc\factories_baseobject.js:59</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">String</span>:
+            </div>
+        </div>
+
+
+</div>
+            </div>
+
+            <div id="properties" class="api-class-tabpanel">
+                <h2 class="off-left">Properties</h2>
+
+<div id="property_affected" class="property item">
+    <h3 class="name"><code>affected</code></h3>
+    <span class="type"><a href="../classes/NodeId.html" class="crosslink">NodeId</a></span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/_generated___auto_generated_SemanticChangeStructure.js.html#l47"><code>_generated_\_auto_generated_SemanticChangeStructure.js:47</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_affectedType" class="property item">
+    <h3 class="name"><code>affectedType</code></h3>
+    <span class="type"><a href="../classes/NodeId.html" class="crosslink">NodeId</a></span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/_generated___auto_generated_SemanticChangeStructure.js.html#l54"><code>_generated_\_auto_generated_SemanticChangeStructure.js:54</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+            </div>
+
+
+    </div>
 </div>
                     </div>
                 </div>

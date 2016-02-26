@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>lib/address_space/base_node.js - The NodeOPCUA API</title>
+    <title>lib\address_space\base_node.js - The NodeOPCUA API</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.46</em>
+            <em>API Docs for: 0.0.52</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -56,6 +56,7 @@
                                 <li><a href="../classes/Argument.html">Argument</a></li>
                                 <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
                                 <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+                                <li><a href="../classes/AttributeNameById.html">AttributeNameById</a></li>
                                 <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
                                 <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
                                 <li><a href="../classes/BaseNode.html">BaseNode</a></li>
@@ -122,7 +123,7 @@
                                 <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
                                 <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
                                 <li><a href="../classes/EUInformation.html">EUInformation</a></li>
-                                <li><a href="../classes/EventField.html">EventField</a></li>
+                                <li><a href="../classes/EventFieldList.html">EventFieldList</a></li>
                                 <li><a href="../classes/EventFilter.html">EventFilter</a></li>
                                 <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
                                 <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
@@ -152,6 +153,7 @@
                                 <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
                                 <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
                                 <li><a href="../classes/MessageSecurityMode.html">MessageSecurityMode</a></li>
+                                <li><a href="../classes/ModelChangeStructure.html">ModelChangeStructure</a></li>
                                 <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
@@ -165,6 +167,7 @@
                                 <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
                                 <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
                                 <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+                                <li><a href="../classes/MyStructure.html">MyStructure</a></li>
                                 <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
                                 <li><a href="../classes/NodeId.html">NodeId</a></li>
                                 <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
@@ -203,6 +206,7 @@
                                 <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
                                 <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
                                 <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+                                <li><a href="../classes/RedundantServer.html">RedundantServer</a></li>
                                 <li><a href="../classes/Reference.html">Reference</a></li>
                                 <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
                                 <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
@@ -217,9 +221,11 @@
                                 <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
                                 <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
                                 <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+                                <li><a href="../classes/SamplingIntervalDiagnostics.html">SamplingIntervalDiagnostics</a></li>
                                 <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
                                 <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
                                 <li><a href="../classes/SecurityTokenRequestType.html">SecurityTokenRequestType</a></li>
+                                <li><a href="../classes/SemanticChangeStructure.html">SemanticChangeStructure</a></li>
                                 <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
                                 <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
                                 <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
@@ -232,6 +238,7 @@
                                 <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
                                 <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
                                 <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+                                <li><a href="../classes/SessionSecurityDiagnostics.html">SessionSecurityDiagnostics</a></li>
                                 <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
                                 <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
                                 <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
@@ -333,7 +340,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-<h1 class="file-heading">File: lib/address_space/base_node.js</h1>
+<h1 class="file-heading">File: lib\address_space\base_node.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
@@ -379,68 +386,10 @@ var ReferenceType = null;// will be defined after baseNode is defined
 var lowerFirstLetter = require(&quot;lib/misc/utils&quot;).lowerFirstLetter;
 var capitalizeFirstLetter = require(&quot;lib/misc/utils&quot;).capitalizeFirstLetter;
 
+var doDebug = false;
 
 var Reference = require(&quot;lib/address_space/reference&quot;).Reference;
-
-
-function same_reference(r1, r2) {
-    assert(r1 instanceof Reference);
-    assert(r2 instanceof Reference);
-    //xx assert(is_valid_reference(r1));
-    //xx assert(is_valid_reference(r2));
-    return r1.referenceType === r2.referenceType &amp;&amp;
-        r1.nodeId.toString() === r2.nodeId.toString();
-}
-
-function find_reference(referenceArray, referenceToFind) {
-    assert(_.isArray(referenceArray));
-    assert(referenceToFind instanceof Reference);
-    var found = referenceArray.filter(function (ref) {
-        if (ref === referenceToFind) {
-            return true;
-        }
-        return !!same_reference(ref, referenceToFind);
-
-    });
-    //xx if (found.length) { console.log(JSON.stringify(found,null,&quot; &quot;).yellow);}
-    return found;
-}
-
-
-/**
- * verifies that references are existing referenceType. This function
- * will assert, for instance, if a referenceType is given by it&#x27;s inverse name.
- * @method _check_reference_type_validity
- * @param addressSpace {AddressSpace}
- * @param references {Array&lt;reference&gt;}
- *
- * @private
- */
-function _check_reference_type_validity(addressSpace, references) {
-    // assert( addressSpace instanceof AddressSpace);
-    _.forEach(references, function (reference) {
-
-        assert(reference instanceof Reference);
-        //xx assert(is_valid_reference(reference));
-        if (reference.referenceType === &quot;HasSubtype&quot; || reference.referenceType === &quot;HasTypeDefinition&quot;) {
-            return; // this reference type is known to be correct
-        }
-
-        var ref = addressSpace.findReferenceType(reference.referenceType);
-
-        /* istanbul ignore next */
-        if (!ref) {
-            console.log(&quot; cannot find reference&quot;, reference.referenceType, &quot; ref = &quot;, ref);
-        }
-
-        // istanbul ignore next
-        if (!_.isObject(ref)) {
-            throw new Error(&quot;Cannot find reference with type &quot; + reference.referenceType.toString());
-        }
-    });
-}
-
-
+var sameNodeId = require(&quot;lib/datamodel/nodeid&quot;).sameNodeId;
 
 var QualifiedName = require(&quot;lib/datamodel/qualified_name&quot;).QualifiedName;
 
@@ -478,13 +427,14 @@ function _get_QualifiedBrowseName(browseName) {
  */
 function BaseNode(options) {
 
+    var self = this;
     assert(this.nodeClass);
     assert(options.addressSpace); // expecting an address space
     options.references = options.references || [];
 
     // this.__address_space = options.addressSpace;
     // make address space non enumerable
-    Object.defineProperty(this, &quot;__address_space&quot;, {value: options.addressSpace, enumerable: false});
+    Object.defineProperty(this, &quot;__address_space&quot;, {configurable: true,value: options.addressSpace, enumerable: false});
 
     this.nodeId = resolveNodeId(options.nodeId);
 
@@ -504,21 +454,38 @@ function BaseNode(options) {
 
     this._setDescription(options.description);
 
+    this._cache = {};
+    this._referenceIdx = {};
+    this._back_referenceIdx = {};
+    this._cache_subtypeOfObj = null;
     // normalize reference type
     // this will convert any referenceType expressed with its inverseName into
     // its normal name and fix the isForward flag accordingly.
     // ( e.g &quot;ComponentOf&quot; isForward:true =&gt; &quot;HasComponent&quot;, isForward:false)
-    this._references = this.__address_space.normalizeReferenceTypes(options.references);
-
-    this._back_references = [];
-
-    this._cache = {};
-
-    _setup_parent_item.call(this, options.references);
+    options.references.forEach(function(reference) {
+        self.__addReference(reference);
+    });
 
 }
 util.inherits(BaseNode, EventEmitter);
-Object.defineProperty(BaseNode.prototype, &quot;__address_space&quot;, {writable: true, hidden: true, enumerable: false});
+
+var reservedNames = {
+    &quot;nodeClass&quot;:0,
+    &quot;_cache&quot;:0,
+    &quot;__displayName&quot;:0,
+    &quot;displayName&quot;:0,
+    &quot;description&quot;:0,
+    &quot;__description&quot;:0,
+    &quot;_referenceIdx&quot;:0,
+    &quot;__back_referenceIdx&quot;:0,
+    &quot;typeDefinition&quot;:0
+};
+
+Object.defineProperty(BaseNode.prototype, &quot;__address_space&quot;, {
+    writable: true,
+    hidden: true,
+    enumerable: false
+});
 
 BaseNode.Reference = Reference;
 
@@ -548,6 +515,9 @@ Object.defineProperty(BaseNode.prototype, &quot;displayName&quot;, {
     }
 });
 
+BaseNode.prototype.getDisplayName = function(locale) {
+    return this.__displayName[0].text;
+};
 
 /**
  * @property description
@@ -557,7 +527,7 @@ Object.defineProperty(BaseNode.prototype, &quot;__description&quot;, {writable: 
 
 BaseNode.prototype._setDescription = function (description) {
 
-    this.__description = description ? coerceLocalizedText(description) : null;
+    this.__description = coerceLocalizedText(description);
 };
 
 Object.defineProperty(BaseNode.prototype, &quot;description&quot;, {
@@ -596,42 +566,54 @@ function _is_valid_BrowseDirection(browseDirection) {
         ;
 }
 
-/**
- * find all references that have the provided referenceType or are subType of this referenceType
- * @method findReferencesEx
- * @param strReference {String} the referenceType as a string.
- * @param  [browseDirection=BrowseDirection.Forward] {BrowseDirection}
- * @return {Array&lt;ReferenceDescription&gt;}
- */
-BaseNode.prototype.findReferencesEx = function (strReference, browseDirection)
-{
+
+BaseNode.prototype.findReferencesEx = function (strReference, browseDirection) {
     browseDirection = browseDirection || BrowseDirection.Forward;
+
     assert(_is_valid_BrowseDirection(browseDirection));
+    assert(browseDirection !== BrowseDirection.Both);
 
     var addressSpace = this.__address_space;
 
-    var referenceId = addressSpace.findReferenceType(strReference);
-    if (!referenceId) {
+    var referenceType = addressSpace.findReferenceType(strReference);
+    if (!referenceType) {
         // note: when loading nodeset2.xml files, reference type may not exit yet
         // throw new Error(&quot;expecting valid reference name &quot; + strReference);
         return [];
     }
+    assert(referenceType.nodeId instanceof NodeId);
 
-    if (referenceId) {
-        assert(referenceId.nodeId instanceof NodeId);
+    var keys = referenceType.getSubtypeIndex();
 
-        var browseResults = this.browseNode({
-            browseDirection: browseDirection,
-            referenceTypeId: referenceId.nodeId,
-            includeSubtypes: true,
-            nodeClassMask: 0,
-            resultMask: 0x3F
-        });
-        return browseResults;
-    } else {
-        return [];
+    var isForward = (browseDirection === BrowseDirection.Forward);
+    function check_ref(reference) {
+        assert(reference instanceof Reference);
+        //xx assert(_.isString(reference.referenceType));
+        return keys[reference.referenceType] &amp;&amp; reference.isForward === isForward
     }
+
+    var references = [];
+    function check_and_push(ref) {
+        if (check_ref(ref)) {
+            references.push(ref);
+        }
+    }
+    _.forEach(this._referenceIdx,check_and_push);
+    _.forEach(this._back_referenceIdx,check_and_push);
+    return references;
 };
+
+BaseNode.prototype.findReferencesExDescription = function (strReference, browseDirection) {
+
+    var refs= this.findReferencesEx(strReference,browseDirection);
+    var addressSpace = this.__address_space;
+    var r = refs.map(function(ref) {
+        return _makeReferenceDescription(addressSpace, ref,0x3F);
+    });
+    return r;
+};
+
+
 /**
  * @method findReferences
  * @param strReference {String} the referenceType as a string.
@@ -646,21 +628,29 @@ BaseNode.prototype.findReferences = function (strReference, isForward) {
     assert(_.isBoolean(isForward));
 
     // istanbul ignore next
-    if (!(this.__address_space.findReferenceType(strReference))) {
+    if (doDebug &amp;&amp; !(this.__address_space.findReferenceType(strReference))) {
         throw new Error(&quot;expecting valid reference name &quot; + strReference);
     }
 
-    assert(this._references);
-    assert(this._references);
 
-    var refs1 = _.filter(this._references, function (ref) {
-        return ref.referenceType === strReference &amp;&amp; ref.isForward === isForward;
-    });
-    var refs2 = _.filter(this._back_references, function (ref) {
-        return ref.referenceType === strReference &amp;&amp; ref.isForward === isForward;
+    var result = [];
+    _.forEach(this._referenceIdx, function (ref) {
+        if (ref.isForward === isForward) {
+            if(ref.referenceType === strReference) {
+                result.push(ref);
+            }
+        }
     });
 
-    return [].concat(refs1, refs2);
+    _.forEach(this._back_referenceIdx, function (ref) {
+        if (ref.isForward === isForward) {
+            if(ref.referenceType === strReference) {
+                result.push(ref);
+            }
+        }
+    });
+
+    return result;
 };
 
 /**
@@ -689,33 +679,53 @@ var displayWarning = true;
 
 
 
+function toString_ReferenceDescription(ref,options) {
+
+    var addressSpace = options.addressSpace;
+    //xx assert(ref instanceof ReferenceDescription);
+    var r = new Reference({
+        referenceType: addressSpace.findNode(ref.referenceTypeId).browseName.toString(),
+        nodeId:        ref.nodeId,
+        isForward:     ref.isForward
+    });
+    var str =  r.toString(options);
+    r.dispose();
+    return str;
+}
+
 /* jshint latedef: false */
 function _setup_parent_item(references) {
+
+    references = _.map(references);
+
     /* jshint validthis: true */
     assert(this instanceof BaseNode);
     assert(_.isArray(references));
     assert(!this._cache.parent &amp;&amp; &quot;_setup_parent_item has been already called&quot;);
 
+    var addressSpace = this.__address_space;
+
     if (references.length &gt; 0) {
 
-        var browseResults = this.findReferencesEx(&quot;HierarchicalReferences&quot;,BrowseDirection.Inverse);
+        var references = this.findReferencesEx(&quot;HasChild&quot;,BrowseDirection.Inverse);
 
-        if (browseResults.length &gt;= 1) {
+        if (references.length &gt;= 1) {
             // istanbul ignore next
-            if (browseResults.length &gt; 1) {
+            if (references.length &gt; 1) {
 
                 if (displayWarning) {
 
-                    console.log(&quot;  More than one hierarchicalReference has been found for parent of object&quot;);
+                    var options = { addressSpace: addressSpace};
+                    console.log(&quot;  More than one HasChild reference have been found for parent of object&quot;);
                     console.log(&quot;    object node id:&quot;, this.nodeId.toString(), this.browseName.toString().cyan);
-                    //xx console.log(&quot;    browseResults:&quot;);
-                    //xx console.log(browseResults.map(function (f) {return f.toString();}).join(&quot;\n&quot;));
+                    console.log(&quot;    browseResults:&quot;);
+                    console.log(references.map(function (f) {return toString_ReferenceDescription(f,options);}).join(&quot;\n&quot;));
                     console.log(&quot;    first one will be used as parent&quot;);
                     //xx assert(browseResults.length === 1);
                     displayWarning = false;
                 }
             }
-            this._cache.parent = browseResults[0].nodeId;
+            this._cache.parent = Reference._resolveReferenceNode(addressSpace,references[0]);
         }
     }
 }
@@ -723,11 +733,11 @@ function _setup_parent_item(references) {
 
 BaseNode.prototype.findReferencesAsObject = function (strReference, isForward) {
 
-    var componentsIds = this.findReferences(strReference, isForward);
+    var nodeIds = this.findReferences(strReference, isForward);
     var addressSpace = this.__address_space;
 
     function toObject(reference) {
-        var obj = addressSpace.findObject(reference.nodeId);
+        var obj = _resolveReferenceNode(addressSpace,reference);
 
         // istanbul ignore next
         if (false &amp;&amp; !obj) {
@@ -737,10 +747,8 @@ BaseNode.prototype.findReferencesAsObject = function (strReference, isForward) {
     }
 
     function remove_null(o) { return !!o; }
-    return componentsIds.map(toObject).filter(remove_null);
+    return nodeIds.map(toObject).filter(remove_null);
 };
-
-
 
 
 /**
@@ -764,8 +772,8 @@ BaseNode.prototype.__defineGetter__(&quot;typeDefinition&quot;, function () {
  */
 BaseNode.prototype.__defineGetter__(&quot;typeDefinitionObj&quot;, function () {
     if (undefined === this._cache.typeDefinitionObj) {
-        var tmp = this.findReferencesAsObject(&quot;HasTypeDefinition&quot;, true);
-        this._cache.typeDefinitionObj = tmp.length &gt; 0 ? tmp[0] : null;
+        var nodeId = this.typeDefinition;
+        this._cache.typeDefinitionObj = nodeId ? this.__address_space.findNode(nodeId) :null;
     }
     return this._cache.typeDefinitionObj;
 });
@@ -803,6 +811,7 @@ BaseNode.prototype.getComponentByName = function (browseName) {
     var select = components.filter(function (c) {
         return c.browseName.toString() === browseName;
     });
+    assert(select.length &lt;=1, &quot;BaseNode#getComponentByName found duplicated reference&quot;);
     return select.length === 1 ? select[0] : null;
 };
 /**
@@ -817,6 +826,7 @@ BaseNode.prototype.getPropertyByName = function (browseName) {
     var select = properties.filter(function (c) {
         return c.browseName.toString() === browseName;
     });
+    assert(select.length &lt;=1, &quot;BaseNode#getPropertyByName found duplicated reference&quot;);
     return select.length === 1 ? select[0] : null;
 };
 
@@ -884,44 +894,35 @@ BaseNode.prototype.getMethodById = function (nodeId) {
 
 
 /**
- * returns the nodeId of the DataType which is the super type of this
+ * returns the nodeId of the Type which is the super type of this
  * @property subtypeOf
  * @type {NodeId}
  */
 BaseNode.prototype.__defineGetter__(&quot;subtypeOf&quot;, function () {
+    return this.subtypeOfObj ? this.subtypeOfObj.nodeId:null;
+});
 
-    if (!this._cache.is_subtype_of) {
+BaseNode.prototype.__defineGetter__(&quot;subtypeOfObj&quot;, function () {
+    if (!this._cache_subtypeOfObj) {
         var is_subtype_of_ref = this.findReference(&quot;HasSubtype&quot;, false);
-        this._cache.is_subtype_of = is_subtype_of_ref ? is_subtype_of_ref.nodeId : null;
+        if (is_subtype_of_ref) {
+            this._cache_subtypeOfObj = Reference._resolveReferenceNode(this.__address_space,is_subtype_of_ref);
+        }
     }
-    return this._cache.is_subtype_of;
+    return this._cache_subtypeOfObj;
 });
 
 
-/**
- * @property encodingBinary
- * @type {NodeId}
- */
-BaseNode.prototype.__defineGetter__(&quot;encodingDefaultBinary&quot;, function () {
 
-    if (!this._cache.encodingBinary) {
-        var is_subtype_of_ref = this.findReference(&quot;HasEncoding&quot;, false, &quot;DefaultBinary&quot;);
-        this._cache.encodingBinary = is_subtype_of_ref ? is_subtype_of_ref.nodeId : null;
-    }
-    return this._cache.encodingBinary;
-});
-/**
- * @property encodingXML
- * @type {NodeId}
- */
-BaseNode.prototype.__defineGetter__(&quot;encodingDefaultXml&quot;, function () {
+BaseNode.prototype.__findReferenceWithBrowseName = function(referenceType,browseName) {
+    var refs = this.findReferencesAsObject(referenceType);
 
-    if (!this._cache.encodingXML) {
-        var is_subtype_of_ref = this.findReference(&quot;HasSubtype&quot;, false, &quot;DefaultXml&quot;);
-        this._cache.encodingXML = is_subtype_of_ref ? is_subtype_of_ref.nodeId : null;
+    function hasBrowseName(node) {
+        return node.browseName.toString() === browseName;
     }
-    return this._cache.encodingXML;
-});
+    var ref = refs.filter(hasBrowseName)[0];
+    return ref;
+};
 
 
 /**
@@ -950,7 +951,7 @@ BaseNode.prototype.__defineGetter__(&quot;namespaceUri&quot;, function () {
  */
 BaseNode.prototype.__defineGetter__(&quot;parent&quot;, function () {
     if (this._cache.parent === undefined) {
-        _setup_parent_item.call(this, this._references);
+        _setup_parent_item.call(this, this._referenceIdx);
     }
     return this._cache.parent;
 });
@@ -967,10 +968,13 @@ BaseNode.prototype.resolveNodeId = function (nodeId) {
 BaseNode.prototype._remove_backward_reference = function (reference) {
     var self = this;
     assert(reference instanceof Reference);
-    //xx assert(is_valid_reference(reference));
-    self._back_references = _.reject(self._back_references, function (r) {
-        return same_reference(r, reference);
-    });
+
+    _remove_HierarchicalReference(self,reference);
+    var h = reference.hash;
+    assert(self._back_referenceIdx[h]);
+    self._back_referenceIdx[h].dispose();
+    delete self._back_referenceIdx[h];
+    reference.dispose();
 };
 
 BaseNode.prototype._add_backward_reference = function (reference) {
@@ -979,16 +983,27 @@ BaseNode.prototype._add_backward_reference = function (reference) {
     assert(reference instanceof Reference);
     //xx assert(Reference.is_valid_reference(reference));
 
-    // make sure we keep reference integrity
-    //xx SLOW !!! assert((find_reference(self._back_references, reference).length === 0) &amp;&amp; &quot; reference exists already in _back_references&quot;);
-    if (find_reference(self._references, reference).length &gt; 0) {
+    var h = reference.hash; assert(_.isString(h));
+    // istanbul ignore next
+    if (self._referenceIdx[h]) {
         //  the reference exists already in the forward references
         //  this append for instance when the XML NotSetFile has redundant &lt;Reference&gt;
         //  in this case there is nothing to do
         return;
     }
-
-    self._back_references.push(reference);
+    // istanbul ignore next
+    if (self._back_referenceIdx[h]) {
+        var opts = { addressSpace: self.__address_space};
+        console.log(&quot; Warning !&quot;,self.browseName.toString());
+        console.log(&quot;    &quot;,reference.toString(opts));
+        console.log(&quot; already found in ===&gt;&quot;);
+        console.log(_.map(self._back_referenceIdx.map(function(c){ return c.toString(opts);})).join(&quot;\n&quot;));
+        console.log(&quot;===&gt;&quot;);
+        throw new Error(&quot;reference exists already in _back_references&quot;);
+        return;
+    }
+    self._back_referenceIdx[h] = reference;
+    _handle_HierarchicalReference(self,reference);
     self._clear_caches();
 
 };
@@ -998,7 +1013,7 @@ var displayWarningReferencePointingToItsef = true;
 function _propagate_ref(self, addressSpace, reference) {
 
     // filter out non  Hierarchical References
-    var referenceType = addressSpace.findReferenceType(reference.referenceType);
+    var referenceType = _resolveReferenceType(addressSpace,reference);
 
     // istanbul ignore next
     if (!referenceType) {
@@ -1006,12 +1021,11 @@ function _propagate_ref(self, addressSpace, reference) {
     }
 
     //xx if (!referenceType.isSupertypeOf(hierarchicalReferencesId)) { return; }
-    var related_node = addressSpace.findObject(reference.nodeId);
+    var related_node = _resolveReferenceNode(addressSpace,reference);
     if (related_node) {
 
         // verify that reference doesn&#x27;t point to object itself (see mantis 3099)
-        if (reference.nodeId.toString() === self.nodeId.toString()) {
-
+        if (sameNodeId(reference.nodeId,self.nodeId)) {
 
             // istanbul ignore next
             if (displayWarningReferencePointingToItsef) {
@@ -1022,7 +1036,6 @@ function _propagate_ref(self, addressSpace, reference) {
 
         }
         //xx ignore this assert(reference.nodeId.toString() !== self.nodeId.toString());
-
         //function w(s,l) { return (s+&quot;                                                          &quot;).substr(0,l);}
         //if (reference.isForward) {
         //    console.log(&quot;  CHILD =&gt; &quot;,w(related_node.browseName   + &quot; &quot; + related_node.nodeId.toString(),30),
@@ -1038,7 +1051,7 @@ function _propagate_ref(self, addressSpace, reference) {
             nodeId: self.nodeId
         }));
 
-    } // else addressSpace may be incomplete
+    } // else addressSpace may be incomplete and under construction (while loading a nodeset.xml file for instance)
 }
 /**
  * this methods propagates the forward references to the pointed node
@@ -1051,44 +1064,111 @@ BaseNode.prototype.propagate_back_references = function () {
 
     var self = this;
     var addressSpace = self.__address_space;
-
-    self._references.forEach(function (reference) {
+    _.forEach(self._referenceIdx,function (reference) {
         _propagate_ref(self, addressSpace, reference);
     });
+};
+
+
+var cetools = require(&quot;./address_space_change_event_tools&quot;);
+
+
+function _handle_HierarchicalReference(node,reference) {
+
+    if (node._cache_childByNameMap) {
+        var addressSpace = node.__address_space;
+        var referenceType = Reference._resolveReferenceType(addressSpace,reference);
+
+        if (referenceType) {
+
+            var HierarchicalReferencesType = addressSpace.findReferenceType(&quot;HierarchicalReferences&quot;);
+
+            //xx console.log (&quot;HierarchicalReferencesType&quot;,HierarchicalReferencesType.toString());
+            if (referenceType.isSupertypeOf(HierarchicalReferencesType)) {
+                assert(reference.isForward);
+                var targetNode = Reference._resolveReferenceNode(addressSpace,reference);
+                //Xx console.log(&quot; adding object to map&quot;);
+                node._cache_childByNameMap[targetNode.browseName.toString()] = targetNode;
+            }
+        }
+
+    }
+}
+function _remove_HierarchicalReference(node,reference) {
+
+    if (node._cache_childByNameMap) {
+        var addressSpace = node.__address_space;
+        var referenceType = Reference._resolveReferenceType(addressSpace,reference);
+
+        if (referenceType) {
+            var HierarchicalReferencesType = addressSpace.findReferenceType(&quot;HierarchicalReferences&quot;);
+            if (referenceType.isSupertypeOf(HierarchicalReferencesType)) {
+                assert(reference.isForward);
+                var targetNode = Reference._resolveReferenceNode(addressSpace,reference);
+                //Xx console.log(&quot; adding object to map&quot;);
+                delete node._cache_childByNameMap[targetNode.browseName.toString()];
+            }
+        }
+    }
+}
+BaseNode.prototype.__addReference = function (reference) {
+
+    var self = this;
+
+    assert(reference.hasOwnProperty(&quot;referenceType&quot;));
+    //xx isForward is optional : assert(reference.hasOwnProperty(&quot;isForward&quot;));
+    assert(reference.hasOwnProperty(&quot;nodeId&quot;));
+
+    var addressSpace = self.__address_space;
+    reference = addressSpace.normalizeReferenceTypes([reference])[0];
+
+    var h = reference.hash;
+    assert(!self._back_referenceIdx[h],&quot;reference exists already in _back_references&quot;);
+    assert(!self._referenceIdx[h],&quot;reference exists already in _references&quot;);
+
+///    self._references.push(reference);
+    self._referenceIdx[h] = reference;
+    _handle_HierarchicalReference(self,reference);
+    return reference;
 };
 
 /**
  * @method addReference
  * @param reference
  * @param reference.referenceType {String}
- * @param reference.isForward {Boolean}
- * @param reference.nodeId {NodeId|String}
+ * @param [reference.isForward = true] {Boolean}
+ * @param reference.nodeId {Node|NodeId|String}
+ *
+ * @example
+ *
+ *     view.addReference({ referenceType: &quot;Organizes&quot;, nodeId: myDevice });
+ *
+ * or
+ *
+ *     myDevice1.addReference({ referenceType: &quot;OrganizedBy&quot;, nodeId: view });
  */
 BaseNode.prototype.addReference = function (reference) {
+
     var self = this;
 
-    assert(reference.hasOwnProperty(&quot;referenceType&quot;));
-    assert(reference.hasOwnProperty(&quot;isForward&quot;));
-    assert(reference.hasOwnProperty(&quot;nodeId&quot;));
+    reference = self.__addReference(reference);
 
-    var addressSpace = self.__address_space;
-    reference = addressSpace.normalizeReferenceTypes([reference])[0];
-
-    assert((find_reference(self._back_references, reference).length === 0) &amp;&amp; &quot; reference exists already in _back_references&quot;);
-    assert((find_reference(self._references,      reference).length === 0) &amp;&amp; &quot; reference exists already in referernces&quot;);
-
-    self._references.push(reference);
-
+    var addressSpace = this.__address_space;
+    if (!_resolveReferenceType(addressSpace,reference)) {
+       throw new Error(&quot;BaseNode#addReference : invalid reference &quot; + h + &quot; &quot; +reference.toString());
+    }
     self._clear_caches();
-    self.propagate_back_references();
+
+
+    _propagate_ref(self, addressSpace, reference);
     self.install_extra_properties();
+    cetools._handle_add_reference_change_event(self,reference.nodeId);
 
 };
 
 /**
  * Undo the effect of propagate_back_references
  * @method unpropagate_back_references
- * @param addressSpace
  * @private
  */
 BaseNode.prototype.unpropagate_back_references = function () {
@@ -1096,17 +1176,17 @@ BaseNode.prototype.unpropagate_back_references = function () {
     var self = this;
     var addressSpace = self.__address_space;
     //xx assert(addressSpace instanceof AddressSpace);
-    self._references.forEach(function (reference) {
+    _.forEach(self._referenceIdx,function (reference) {
 
         // filter out non  Hierarchical References
-        var referenceType = addressSpace.findReferenceType(reference.referenceType);
+        var referenceType = _resolveReferenceType(addressSpace,reference);
 
         // istanbul ignore next
         if (!referenceType) {
             console.log(&quot; ERROR&quot;.red, &quot; cannot find reference &quot;, reference.referenceType, reference.toString());
         }
 
-        var related_node = addressSpace.findObject(reference.nodeId);
+        var related_node = _resolveReferenceNode(addressSpace,reference);
         if (related_node) {
             assert(reference.nodeId.toString() !== self.nodeId.toString());
             related_node._remove_backward_reference(new Reference({
@@ -1115,14 +1195,16 @@ BaseNode.prototype.unpropagate_back_references = function () {
                 nodeId: self.nodeId
             }));
         } // else addressSpace may be incomplete
+
     });
 };
 
 BaseNode.prototype._clear_caches = function() {
     var self = this;
     // clean caches
-    self._cache ={};
+    self._cache = {};
 };
+
 BaseNode.prototype._on_child_added = function(/*obj*/) {
     var self = this;
     self._clear_caches();
@@ -1143,7 +1225,7 @@ BaseNode.prototype.getUserWriteMask = function () {
 /**
  * @method readAttribute
  * @param attributeId {AttributeId}
- * @param [indexRange {NumericalRange}]
+ * @param [indexRange {NumericRange}]
  * @param [dataEncoding {String}]
  * @return {DataValue}
  */
@@ -1185,7 +1267,7 @@ BaseNode.prototype.readAttribute = function (attributeId, indexRange, dataEncodi
 
         default:
             options.value = null;
-            console.log(&quot;class Name &quot;, this.constructor.name, (&quot; BaseNode : &#x27;&quot; + this.browseName + &quot;&#x27; nodeid=&quot; + this.nodeId.toString()).yellow, &quot; cannot get attribute &quot;, AttributeNameById[attributeId], &quot;(&quot;, attributeId, &quot;)&quot;);
+            //xx debugLog(&quot;class Name &quot;, this.constructor.name, (&quot; BaseNode : &#x27;&quot; + this.browseName + &quot;&#x27; nodeid=&quot; + this.nodeId.toString()).yellow, &quot; cannot get attribute &quot;, AttributeNameById[attributeId], &quot;(&quot;, attributeId, &quot;)&quot;);
             options.statusCode = StatusCodes.BadAttributeIdInvalid;
             break;
     }
@@ -1223,8 +1305,9 @@ BaseNode.prototype.writeAttribute = function (writeValue, callback) {
  *
  */
 BaseNode.prototype.full_name = function () {
+
     if (this.parentNodeId) {
-        var parent = this.__address_space.findObject(this.parentNodeId);
+        var parent = this.__address_space.findNode(this.parentNodeId);
 
         // istanbul ignore else
         if (parent) {
@@ -1239,47 +1322,92 @@ BaseNode.prototype.full_name = function () {
 
 /**
  * @method browseNodeByTargetName
- * @param relativePath
- * @param relativePath.targetName {QualifiedName}
- * @param relativePath.targetName.name {String}
- * @param relativePath.targetName.namespaceIndex {UInt32}
- * @param relativePath.referenceTypeId {NodeId}
- * @param relativePath.isInverse {Boolean}
- * @param relativePath.includeSubtypes {Boolean}
+ *
+ * @param relativePathElement                           {RelativePathElement}
+ * @param relativePathElement.targetName                {QualifiedName}
+ * @param relativePathElement.targetName.name           {String}
+ * @param relativePathElement.targetName.namespaceIndex {UInt32}
+ * @param relativePathElement.referenceTypeId           {NodeId}
+ * @param relativePathElement.isInverse                 {Boolean}
+ * @param relativePathElement.includeSubtypes           {Boolean}
+ *
  * @return {NodeId[]}
  */
-BaseNode.prototype.browseNodeByTargetName = function (relativePath) {
+BaseNode.prototype.browseNodeByTargetName = function (relativePathElement) {
+
     var self = this;
 
-    assert(relativePath.targetName instanceof QualifiedName);
-    assert(relativePath.targetName.namespaceIndex &gt;= 0);
-    assert(relativePath.targetName.name.length &gt; 0);
-    assert(relativePath.hasOwnProperty(&quot;referenceTypeId&quot;));
-    assert(relativePath.hasOwnProperty(&quot;isInverse&quot;));
-    assert(relativePath.hasOwnProperty(&quot;includeSubtypes&quot;));
+    // part 4.0 v1.03 $7.26 RelativePath
+    // The BrowseName of the target node.
+    // The final element may have an empty targetName. In this situation all targets of the references identified by
+    // the referenceTypeId are the targets of the RelativePath.
+    // The targetName shall be specified for all other elements.
+    // The current path cannot be followed any further if no targets with the specified BrowseName exist.
+    assert(relativePathElement.targetName instanceof QualifiedName);
+    assert(relativePathElement.targetName.namespaceIndex &gt;= 0);
+    assert(relativePathElement.targetName.name.length &gt; 0);
 
-    var references = self._references.concat(self._back_references);
+    // The type of reference to follow from the current node.
+    // The current path cannot be followed any further if the referenceTypeId is not available on the Node instance.
+    // If not specified then all References are included and the parameter includeSubtypes is ignored.
+    assert(relativePathElement.hasOwnProperty(&quot;referenceTypeId&quot;));
 
+    // Indicates whether the inverse Reference should be followed. The inverse reference is followed if this value is TRUE.
+    assert(relativePathElement.hasOwnProperty(&quot;isInverse&quot;));
+
+    //Indicates whether subtypes of the ReferenceType should be followed. Subtypes are included if this value is TRUE.
+    assert(relativePathElement.hasOwnProperty(&quot;includeSubtypes&quot;));
+
+
+    var references = [].concat(_.map(self._referenceIdx),_.map(self._back_referenceIdx));
+
+    function _check_reference(reference) {
+
+        if (relativePathElement.referenceTypeId.isEmpty()) {
+            return true;
+        }
+        assert(relativePathElement.referenceTypeId instanceof NodeId);
+        if ((relativePathElement.isInverse &amp;&amp; reference.isForward) ||
+            (!relativePathElement.isInverse &amp;&amp; !reference.isForward )) {
+            return false;
+        }
+        assert(reference.hasOwnProperty(&quot;isForward&quot;));
+        var referenceType = _resolveReferenceType(self.__address_space,reference);
+        var referenceTypeId = referenceType.nodeId;
+
+        if (sameNodeId(relativePathElement.referenceTypeId,referenceTypeId)) {
+            return true;
+        }
+        if (relativePathElement.includeSubtypes) {
+            var baseType = self.__address_space.findNode(relativePathElement.referenceTypeId);
+            if(referenceType.isSupertypeOf(baseType)) {
+                return true;
+            }
+        }
+        return false;
+    }
     var nodeIds = [];
     references.forEach(function (reference) {
-        var referenceTypeId = self.__address_space.findReferenceType(reference.referenceType).nodeId;
-        assert(referenceTypeId instanceof NodeId);
 
-        var obj = self.__address_space.findObject(reference.nodeId);
+        if (!_check_reference(reference)) {
+            return;
+        }
+
+        var obj = _resolveReferenceNode(self.__address_space,reference);
 
         // istanbul ignore next
         if (!obj) {
             throw new Error(&quot; cannot find node with id &quot;, reference.nodeId.toString());
         }
 
-        if (_.isEqual(obj.browseName, relativePath.targetName)) { // compare QualifiedName
+        if (_.isEqual(obj.browseName, relativePathElement.targetName)) { // compare QualifiedName
             nodeIds.push(obj.nodeId);
         }
     });
     if (self.subtypeOf) {
-        // browsing a InstanceDeclaration included browsing base type
-        var baseType = self.__address_space.findObject(self.subtypeOf);
-        var n = baseType.browseNodeByTargetName(relativePath);
+        // browsing also InstanceDeclarations included in base type
+        var baseType = self.__address_space.findNode(self.subtypeOf);
+        var n = baseType.browseNodeByTargetName(relativePathElement);
         nodeIds = [].concat(nodeIds, n);
     }
     return nodeIds;
@@ -1288,14 +1416,15 @@ BaseNode.prototype.browseNodeByTargetName = function (relativePath) {
 var check_flag = require(&quot;lib/misc/utils&quot;).check_flag;
 var rm = ResultMask;
 
+
 var _makeReferenceDescription = function (addressSpace, reference, resultMask) {
 
     var isForward = reference.isForward;
 
-    var referenceTypeId = addressSpace.findReferenceType(reference.referenceType).nodeId;
+    var referenceTypeId =  _resolveReferenceType(addressSpace,reference).nodeId;
     assert(referenceTypeId instanceof NodeId);
 
-    var obj = addressSpace.findObject(reference.nodeId);
+    var obj = _resolveReferenceNode(addressSpace,reference);
 
     var data = {};
 
@@ -1340,14 +1469,14 @@ function referenceTypeToString(addressSpace, referenceTypeId) {
     if (!referenceTypeId) {
         return &quot;&lt;null&gt; &quot;;
     } else {
-        var referenceType = addressSpace.findObject(referenceTypeId);
+        var referenceType = addressSpace.findNode(referenceTypeId);
         return referenceTypeId.toString() + &quot; &quot; + referenceType.browseName.toString() + &quot;/&quot; + referenceType.inverseName.text;
     }
 }
 
 function nodeIdInfo(addressSpace, nodeId) {
 
-    var obj = addressSpace.findObject(nodeId);
+    var obj = addressSpace.findNode(nodeId);
     var name = obj ? obj.browseName.toString() : &quot; &lt;????&gt;&quot;;
     return nodeId.toString() + &quot; [ &quot; + name + &quot; ]&quot;;
 
@@ -1438,25 +1567,26 @@ function dumpBrowseDescription(node, browseDescription) {
 function dumpReferences(addressSpace, references) {
 
     assert(addressSpace);
-    assert(_.isArray(references));
 
+    _.forEach(references,function (reference) {
 
-    references.forEach(function (reference) {
-
-        var ref = addressSpace.findObject(reference.referenceType);
-        if (!ref) {
+        var referenceType = Reference._resolveReferenceType(addressSpace,reference);
+        if (!referenceType) {
             // unknown type ... this may happen when the address space is not fully build
             return;
         }
         var dir = reference.isForward ? &quot;(=&gt;)&quot; : &quot;(&lt;-)&quot;;
         var objectName = nodeIdInfo(addressSpace, reference.nodeId);
 
-        console.log(&quot; referenceType : &quot;, dir, ref ? ref.browseName.toString() : reference.referenceType.toString(), &quot; &quot;, objectName);
+        console.log(&quot; referenceType : &quot;, dir, referenceType ? referenceType.browseName.toString() : reference.referenceType.toString(), &quot; &quot;, objectName);
     });
 }
 
 exports.dumpBrowseDescription = dumpBrowseDescription;
 exports.dumpReferences = dumpReferences;
+
+var _resolveReferenceNode = Reference._resolveReferenceNode;
+var _resolveReferenceType = Reference._resolveReferenceType;
 
 
 function _filter_by_referenceType(self, browseDescription, references, referenceTypeId) {
@@ -1465,7 +1595,7 @@ function _filter_by_referenceType(self, browseDescription, references, reference
     if (!nodeid_is_nothing(referenceTypeId)) {
 
         assert(referenceTypeId instanceof NodeId);
-        var referenceType = self.__address_space.findObject(referenceTypeId);
+        var referenceType = self.__address_space.findNode(referenceTypeId);
 
         dumpIf(!referenceType, referenceTypeId);
         assert(referenceType instanceof ReferenceType);
@@ -1473,19 +1603,20 @@ function _filter_by_referenceType(self, browseDescription, references, reference
         references = references.filter(function (reference) {
 
             // xxx if (reference.referenceType === &quot;HasSubtype&quot;){ return false;  }
+            /// var ref = self.__address_space.findReferenceType(reference.referenceType);
+            var ref = _resolveReferenceType(self.__address_space,reference);
 
-            var ref = self.__address_space.findReferenceType(reference.referenceType);
             if (!ref) {
                 return false;
             } // unknown type ... this may happen when the address space is not fully build
-            dumpIf(!ref, reference);
             assert(ref instanceof ReferenceType);
 
             var is_of_type = ref.nodeId.toString() === referenceType.nodeId.toString();
+            if (is_of_type) { return true; }
             if (browseDescription.includeSubtypes) {
-                return ref.isSupertypeOf(referenceType) || is_of_type;
+                return ref.isSupertypeOf(referenceType) ;
             } else {
-                return is_of_type;
+                return false;
             }
         });
     }
@@ -1522,14 +1653,20 @@ function _filter_by_nodeclass(self, references, nodeClassMask) {
     var addressSpace = self.__address_space;
     return references.filter(function (reference) {
 
-        var obj = addressSpace.findObject(reference.nodeId);
+        var obj = _resolveReferenceNode(addressSpace,reference);
 
         if (!obj) {
             return false;
         }
 
         var nodeClassName = obj.nodeClass.key;
+        if (!nodeClassName) {
+            console.log(&quot; xxxxxxxxxxxxxxx = &gt;&quot;,obj.nodeClass);
+            console.log(&quot;XXXXXXXXXXXXXXXXXXxx &quot;,obj.toString());
+            process.exit(-3);
+            return nodeClassMask === 255;
 
+        }
         var value = browse_service.makeNodeClassMask(nodeClassName);
         return (value &amp; nodeClassMask ) === value;
 
@@ -1539,7 +1676,11 @@ function _filter_by_nodeclass(self, references, nodeClassMask) {
 /**
  * browse the node to extract information requested in browseDescription
  * @method browseNode
- * @param browseDescription {BrowseDescription}
+ * @param browseDescription                  {BrowseDescription}
+ * @param browseDescription.referenceTypeId {NodeId}
+ * @param browseDescription.browseDirection {BrowseDirection}
+ * @param browseDescription.nodeClassMask   {NodeClassMask}
+ * @param browseDescription.resultMask      {UInt32}
  * @return {ReferenceDescription[]}
  */
 BaseNode.prototype.browseNode = function (browseDescription) {
@@ -1553,12 +1694,6 @@ BaseNode.prototype.browseNode = function (browseDescription) {
 
     var self = this;
 
-    /* istanbul ignore next */
-    if (do_debug) {
-        var references = self._clone_references();
-        dumpBrowseDescription(self, browseDescription);
-    }
-
     var referenceTypeId = normalize_referenceTypeId(this.__address_space, browseDescription.referenceTypeId);
     assert(referenceTypeId instanceof NodeId);
 
@@ -1567,12 +1702,12 @@ BaseNode.prototype.browseNode = function (browseDescription) {
     var addressSpace = self.__address_space;
 
     // get all possible references
-    references = self._references.concat(self._back_references);
+    var references = [].concat(_.map(self._referenceIdx),_.map(self._back_referenceIdx));
 
     /* istanbul ignore next */
     if (do_debug) {
         console.log(&quot;all references :&quot;, self.nodeId.toString(), self.browseName.toString());
-        dumpReferences(addressSpace, self._references);
+        dumpReferences(addressSpace, _.map(self._referenceIdx));
     }
 
     // filter out references not matching referenceType
@@ -1592,35 +1727,41 @@ BaseNode.prototype.browseNode = function (browseDescription) {
     return referenceDescriptions;
 };
 
+/*
+ * install hierachical references as javascripts properties
+ * Components/Properties/Organizes
+ */
 function install_components_as_object_properties(parentObj) {
 
     if (!parentObj) {
         return;
     }
-    //xx console.log(&quot;xxxx install_components_as_object_properties on &quot;.yellow,parentObj.browseName);
 
-    var a1 = parentObj.findReferencesAsObject(&quot;Organizes&quot;);
-    var a2 = parentObj.findReferencesAsObject(&quot;HasComponent&quot;);
-    var a3 = parentObj.findReferencesAsObject(&quot;HasProperty&quot;);
-    var children = a1.concat(a2, a3);
+    var addressSpace = parentObj.__address_space;
+    var hierarchicalRefs = parentObj.findHierarchicalReferences();
+
+    var children = hierarchicalRefs.map(function(r){
+        return _resolveReferenceNode(addressSpace,r);
+    });
+
 
     children.forEach(function (child) {
 
         if (!child) {
             return;
         }
-
         // assumption: we ignore namespace here .
         var name = lowerFirstLetter(child.browseName.name.toString());
-        //xx console.log(&quot;xxxx Installating property : &quot;.yellow,name);
 
+
+        if (reservedNames.hasOwnProperty(name)) {
+            console.log((&quot;Ignoring reversed keyword                                               &quot;+ name).bgWhite.red);
+            return;
+        }
         /* istanbul ignore next */
         if (parentObj.hasOwnProperty(name)) {
-            //xx console.log(&quot; parent has already a property named &quot; + name);
             return;
-            //xx throw new Error(&quot; parent has already a property named &quot;+name);
         }
-        //xxx console.log(parentObj.browseName + &quot; adding property &quot;+name);
 
         Object.defineProperty(parentObj, name, {
             enumerable: true,
@@ -1634,11 +1775,6 @@ function install_components_as_object_properties(parentObj) {
     });
 }
 
-//BaseNode.prototype.install_extra_properties_ = function () {
-//    install_components_as_object_properties(this);
-//};
-//
-
 BaseNode.prototype.install_extra_properties = function () {
 
     var self = this;
@@ -1648,24 +1784,24 @@ BaseNode.prototype.install_extra_properties = function () {
     var addressSpace = self.__address_space;
 
     function install_extra_properties_on_parent(ref) {
-        var o = addressSpace.findObject(ref.nodeId);
-        //xx console.log(&quot;installing property on &quot;,ref.toString());
-        install_components_as_object_properties(o);
+        var node = Reference._resolveReferenceNode(addressSpace,ref);
+        install_components_as_object_properties(node);
     }
-
     // make sure parent have extra properties updated
     var components = self.findReferences(&quot;HasComponent&quot;, false);
     var subfolders = self.findReferences(&quot;Organizes&quot;, false);
     var properties = self.findReferences(&quot;HasProperty&quot;, false);
-    var rf = [].concat(components, subfolders, properties);
-    //xx console.log(&quot;xxxxx &quot;.yellow,rf);
-    rf.forEach(install_extra_properties_on_parent);
+    components.forEach(install_extra_properties_on_parent);
+    subfolders.forEach(install_extra_properties_on_parent);
+    properties.forEach(install_extra_properties_on_parent);
 
 
 };
 
 
-function _clone_collection(collection, references, referenceType,optionalFilter, extraInfo) {
+function _clone_collection(newParent,collection,referenceType,optionalFilter, extraInfo) {
+
+    assert(!optionalFilter || _.isFunction(optionalFilter));
 
     collection.forEach(function (node) {
         // ensure node is of the correct type,
@@ -1678,53 +1814,50 @@ function _clone_collection(collection, references, referenceType,optionalFilter,
         }
 
         if (optionalFilter) {
-            assert(_.isFunction(optionalFilter));
             if (!optionalFilter(node)) {
                 return ; // skip this node
             }
         }
-        var clone = node.clone(extraInfo);
+
+        var options = {
+            references: [
+                {referenceType: referenceType, isForward: false, nodeId: newParent.nodeId}
+            ]
+        };
+
+        var clone = node.clone(options,extraInfo);
 
         clone.propagate_back_references();
-
 
         if (extraInfo) {
             extraInfo.registerClonedObject(node,clone);
         }
-
-        references.push({referenceType: referenceType, isForward: true, nodeId: clone.nodeId});
     });
-
 }
 
 /**
  * clone properties and methods
- * @method _clone_references
+ * @method _clone_children_references
+ * @param newParent the new parent object to which references of type HasChild  will be attached
  * @param [optionalFilter {Function} = null] a filter
  * @param [extraInfo]
  * @return {Array}
  * @private
  */
-BaseNode.prototype._clone_references = function (optionalFilter, extraInfo) {
+BaseNode.prototype._clone_children_references = function (newParent,optionalFilter, extraInfo) {
 
     var self = this;
 
-    var references = [];
+    assert(newParent instanceof BaseNode);
 
     // now create instance members - HasComponent
     var components = self.getComponents();
-    _clone_collection(components, references, &quot;HasComponent&quot; , optionalFilter, extraInfo);
+    _clone_collection(newParent,components, &quot;HasComponent&quot;, optionalFilter, extraInfo);
 
     // now create instance members - HasProperty
     var properties = self.getProperties();
-    _clone_collection(properties, references, &quot;HasProperty&quot;, optionalFilter, extraInfo);
+    _clone_collection(newParent,properties, &quot;HasProperty&quot;, optionalFilter, extraInfo);
 
-    assert(references.length &lt;= components.length + properties.length);
-
-    if (self.typeDefinition) {
-        references.push({referenceType: &quot;HasTypeDefinition&quot;, isForward: true, nodeId: self.typeDefinition});
-    }
-    return references;
 };
 
 /**
@@ -1741,25 +1874,26 @@ BaseNode.prototype._clone = function (Constructor, options, extraInfo) {
     assert(_.isFunction(Constructor));
     assert(_.isObject(options));
     assert(!extraInfo || (_.isObject(extraInfo) &amp;&amp; _.isFunction(extraInfo.registerClonedObject)));
-
-    var references = self._clone_references(/*optionalFilter*/null,extraInfo);
-
-    var new_node_id = self.__address_space._build_new_NodeId();
+    assert(!self.subtypeOf,&quot;We do not cloning Type yet&quot;);
 
     options = _.extend(options, {
         addressSpace: self.__address_space,
-        nodeId: new_node_id,
-        references: references,
-        browseName: self.browseName,
-        displayName: self.displayName,
-        description: self.description
-        //
+        browseName:   self.browseName,
+        displayName:  self.displayName,
+        description:  self.description
     });
+    options.references = options.references || [];
+    if (self.typeDefinition) {
+        options.references.push({referenceType: &quot;HasTypeDefinition&quot;, isForward: true, nodeId: self.typeDefinition});
+    }
+
+    options.nodeId = self.__address_space._construct_nodeId(options);
     assert(options.nodeId instanceof NodeId);
 
     var cloneObj = new Constructor(options);
-
     self.__address_space._register(cloneObj);
+
+    self._clone_children_references(cloneObj,/*optionalFilter*/null,extraInfo);
 
     cloneObj.install_extra_properties();
 
@@ -1827,13 +1961,14 @@ BaseNode.prototype._toString = function(str,options)
     add(options.padding + &quot;          displayName   : &quot;.yellow + self.displayName.map(function (f) {
             return f.locale + &quot; &quot; + f.text;
         }).join(&quot; | &quot;));
-    add(options.padding + &quot;          description   : &quot;.yellow + (self.description ? self.description.text.toString() : &quot;&quot;));
+
+    add(options.padding + &quot;          description   : &quot;.yellow + (self.description ? self.description.toString() : &quot;&quot;));
 
 
     if (self.dataType) {
 
         var addressSpace = self.__address_space;
-        var d = addressSpace.findObject(self.dataType);
+        var d = addressSpace.findNode(self.dataType);
         var n = d ? &quot;(&quot; + d.browseName.toString() + &quot;)&quot; : &quot; (???)&quot;;
         add(options.padding + &quot;                dataType: &quot;.yellow + self.dataType +  &quot;  &quot; +n );
     }
@@ -1853,12 +1988,15 @@ BaseNode.prototype._toString = function(str,options)
     if (self.userAccessLevel) {
         add(options.padding + &quot;         userAccessLevel: &quot;.yellow + &quot; &quot; + self.userAccessLevel.toString());
     }
+    if (self.hasOwnProperty(&quot;valueRank&quot;)) {
+        add(options.padding + &quot;               valueRank: &quot;.yellow + &quot; &quot; + self.valueRank.toString());
+    }
     if (self.minimumSamplingInterval !== undefined) {
         add(options.padding + &quot; minimumSamplingInterval: &quot;.yellow + &quot; &quot; + self.minimumSamplingInterval.toString() + &quot; ms&quot;);
     }
 
 
-    add(options.padding + &quot;          references    : &quot;.yellow + &quot;  length =&quot; + self._references.length);
+    add(options.padding + &quot;          references    : &quot;.yellow + &quot;  length =&quot; + Object.keys(self._referenceIdx).length);
 
     var dispOptions = {
         addressSpace: self.__address_space
@@ -1869,7 +2007,7 @@ BaseNode.prototype._toString = function(str,options)
         //xx if (!reference.isForward) {
         //xx     return;
         //xx }
-        var o = self.__address_space.findObject(reference.nodeId);
+        var o = _resolveReferenceNode(self.__address_space,reference);
         var name = o ? o.browseName.toString() : &quot;&lt;???&gt;&quot;;
         add(options.padding + &quot;               +-&gt; &quot;.yellow + reference.toString(dispOptions) + &quot; &quot; + name.cyan);
 
@@ -1892,16 +2030,140 @@ BaseNode.prototype._toString = function(str,options)
         }
     }
     // direct reference
-    self._references.forEach(dump_reference.bind(null,true));
+    _.forEach(self._referenceIdx,dump_reference.bind(null,true));
 
-    add(options.padding + &quot;         back_references: &quot;.yellow + &quot;  length =&quot; + self._back_references.length + &quot; ( references hold by other nodes pointing to me)&quot;);
+    var  br = _.map(self._back_referenceIdx);
+    add(options.padding + &quot;         back_references: &quot;.yellow + &quot;  length =&quot; + br.length + &quot; ( references held by other nodes involving this node)&quot;.grey);
     // backward reference
-    self._back_references.forEach(dump_reference.bind(null,false));
+    br.forEach(dump_reference.bind(null,false));
 
 };
 
+/**
+ * the dispose method should be called when the node is no longer used, to release
+ * back pointer to the address space and clear caches.
+ *
+ * @method dispose
+ *
+ */
+BaseNode.prototype.dispose = function() {
+
+    var self = this;
+    self.emit(&quot;dispose&quot;);
+
+    self.removeAllListeners();
+    self._clear_caches();
+    self._cache_childByNameMap = null;
+    self._cache_subtypeOfObj = null;
+
+    _.forEach(self._back_referenceIdx,function(ref){ ref.dispose(); });
+    _.forEach(self._referenceIdx,function(ref){ ref.dispose(); });
+
+    Object.defineProperty(self, &quot;__address_space&quot;, {value: null, enumerable: false});
+};
+
+
 exports.BaseNode = BaseNode;
 ReferenceType = require(&quot;lib/address_space/referenceType&quot;).ReferenceType;
+
+
+/**
+ * @property modellingRule
+ * @type {String|undefined}
+ */
+BaseNode.prototype.__defineGetter__(&quot;modellingRule&quot;,function() {
+    var node = this;
+    var r = node.findReferencesAsObject(&quot;HasModellingRule&quot;);
+    if (!r || r.length === 0) {
+        return &quot;? modellingRule missing ?&quot;; // consider &quot;Mandatory&quot;
+    }
+    r = r[0];
+    return r.browseName.toString();
+});
+
+/**
+ * @property isTrueSubStateOf
+ * @type {BaseNode|null}
+ */
+BaseNode.prototype.__defineGetter__(&quot;isTrueSubStateOf&quot;,function() {
+    var node = this;
+    var r = node.findReferencesAsObject(&quot;HasTrueSubState&quot;,false);
+    if (!r || r.length === 0) {
+        return null;
+    }
+    assert(r.length === 1);
+    r = r[0];
+    return r;
+});
+/**
+ * @property isFalseSubStateOf
+ * @type {BaseNode|null}
+ */
+BaseNode.prototype.__defineGetter__(&quot;isFalseSubStateOf&quot;,function() {
+    var node = this;
+    var r = node.findReferencesAsObject(&quot;HasFalseSubState&quot;,false);
+    if (!r || r.length === 0) {
+        return null;
+    }
+    assert(r.length === 1);
+    r = r[0];
+    return r;
+});
+
+
+/**
+ * @method getFalseSubStates
+ * @return {BaseNode[]} return an array with the SubStates of this object.
+ */
+BaseNode.prototype.getFalseSubStates = function () {
+    return this.findReferencesAsObject(&quot;HasFalseSubState&quot;);
+};
+
+/**
+ * @method getTrueSubStates
+ * @return {BaseNode[]} return an array with the SubStates of this object.
+ */
+BaseNode.prototype.getTrueSubStates = function () {
+    return  this.findReferencesAsObject(&quot;HasTrueSubState&quot;);
+};
+
+
+
+BaseNode.prototype.findHierarchicalReferences = function() {
+
+    var node  = this;
+    if (!node._cache._HasChildReferences) {
+        //xx console.log(&quot;node &quot;,node.nodeId.toString());
+        //xx node._cache._HasChildReferences =  node.findReferencesEx(&quot;HierarchicalReferences&quot;,BrowseDirection.Forward);
+        var r1 = node.findReferencesEx(&quot;HasChild&quot;,BrowseDirection.Forward);
+        var r2 = node.findReferencesEx(&quot;Organizes&quot;,BrowseDirection.Forward);
+        node._cache._HasChildReferences = r1.concat(r2);
+    }
+    return node._cache._HasChildReferences;
+};
+
+BaseNode.prototype.getChildByName = function(browseName) {
+
+    var node = this;
+
+    browseName = browseName.toString();
+
+    var addressSpace = node.__address_space;
+
+    if (!node._cache_childByNameMap) {
+
+        node._cache_childByNameMap = {};
+        var childrenRef = node.findHierarchicalReferences();
+
+        _.forEach(childrenRef,function(r){
+            var child = _resolveReferenceNode(addressSpace,r);
+            node._cache_childByNameMap[child.browseName.toString()] = child;
+        });
+    }
+    var ret = node._cache_childByNameMap[browseName] || null;
+    return ret;
+};
+
 
     </pre>
 </div>

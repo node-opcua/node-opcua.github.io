@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.46</em>
+            <em>API Docs for: 0.0.52</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -56,6 +56,7 @@
                                 <li><a href="../classes/Argument.html">Argument</a></li>
                                 <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
                                 <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+                                <li><a href="../classes/AttributeNameById.html">AttributeNameById</a></li>
                                 <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
                                 <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
                                 <li><a href="../classes/BaseNode.html">BaseNode</a></li>
@@ -122,7 +123,7 @@
                                 <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
                                 <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
                                 <li><a href="../classes/EUInformation.html">EUInformation</a></li>
-                                <li><a href="../classes/EventField.html">EventField</a></li>
+                                <li><a href="../classes/EventFieldList.html">EventFieldList</a></li>
                                 <li><a href="../classes/EventFilter.html">EventFilter</a></li>
                                 <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
                                 <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
@@ -152,6 +153,7 @@
                                 <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
                                 <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
                                 <li><a href="../classes/MessageSecurityMode.html">MessageSecurityMode</a></li>
+                                <li><a href="../classes/ModelChangeStructure.html">ModelChangeStructure</a></li>
                                 <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
@@ -165,6 +167,7 @@
                                 <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
                                 <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
                                 <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+                                <li><a href="../classes/MyStructure.html">MyStructure</a></li>
                                 <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
                                 <li><a href="../classes/NodeId.html">NodeId</a></li>
                                 <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
@@ -203,6 +206,7 @@
                                 <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
                                 <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
                                 <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+                                <li><a href="../classes/RedundantServer.html">RedundantServer</a></li>
                                 <li><a href="../classes/Reference.html">Reference</a></li>
                                 <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
                                 <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
@@ -217,9 +221,11 @@
                                 <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
                                 <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
                                 <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+                                <li><a href="../classes/SamplingIntervalDiagnostics.html">SamplingIntervalDiagnostics</a></li>
                                 <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
                                 <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
                                 <li><a href="../classes/SecurityTokenRequestType.html">SecurityTokenRequestType</a></li>
+                                <li><a href="../classes/SemanticChangeStructure.html">SemanticChangeStructure</a></li>
                                 <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
                                 <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
                                 <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
@@ -232,6 +238,7 @@
                                 <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
                                 <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
                                 <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+                                <li><a href="../classes/SessionSecurityDiagnostics.html">SessionSecurityDiagnostics</a></li>
                                 <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
                                 <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
                                 <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
@@ -341,7 +348,7 @@
         </div>
 
         <div class="foundat">
-            Defined in: <a href="../files/lib_client_client_subscription.js.html#l28"><code>lib&#x2F;client&#x2F;client_subscription.js:28</code></a>
+            Defined in: <a href="../files/lib_client_client_subscription.js.html#l31"><code>lib\client\client_subscription.js:31</code></a>
         </div>
 
             Module: <a href="../modules/opcua.client.html">opcua.client</a>
@@ -380,7 +387,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_client_subscription.js.html#l28"><code>lib&#x2F;client&#x2F;client_subscription.js:28</code></a>
+        <a href="../files/lib_client_client_subscription.js.html#l31"><code>lib\client\client_subscription.js:31</code></a>
         </p>
 
 
@@ -505,6 +512,10 @@
 
                             </li>
                             <li class="index-item method">
+                                <a href="#method_recreateSubscriptionAndMonitoredItem">recreateSubscriptionAndMonitoredItem</a>
+
+                            </li>
+                            <li class="index-item method">
                                 <a href="#method_terminate">terminate</a>
 
                             </li>
@@ -515,6 +526,10 @@
                     <h3>Properties</h3>
 
                     <ul class="index-list properties extends">
+                            <li class="index-item property">
+                                <a href="#property_hasTimedOut">hasTimedOut</a>
+
+                            </li>
                             <li class="index-item property">
                                 <a href="#property_session">session</a>
 
@@ -596,7 +611,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_client_subscription.js.html#l308"><code>lib&#x2F;client&#x2F;client_subscription.js:308</code></a>
+        <a href="../files/lib_client_client_subscription.js.html#l386"><code>lib\client\client_subscription.js:386</code></a>
         </p>
 
 
@@ -852,7 +867,7 @@ TimestampToReturn.Neither
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_client_subscription.js.html#l283"><code>lib&#x2F;client&#x2F;client_subscription.js:283</code></a>
+        <a href="../files/lib_client_client_subscription.js.html#l361"><code>lib\client\client_subscription.js:361</code></a>
         </p>
 
 
@@ -861,6 +876,37 @@ TimestampToReturn.Neither
 
     <div class="description">
         
+    </div>
+
+
+
+
+</div>
+<div id="method_recreateSubscriptionAndMonitoredItem" class="method item">
+    <h3 class="name"><code>recreateSubscriptionAndMonitoredItem</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_client_client_subscription.js.html#l599"><code>lib\client\client_subscription.js:599</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>utility function to recreate new subscription</p>
+
     </div>
 
 
@@ -882,7 +928,7 @@ TimestampToReturn.Neither
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_client_subscription.js.html#l252"><code>lib&#x2F;client&#x2F;client_subscription.js:252</code></a>
+        <a href="../files/lib_client_client_subscription.js.html#l320"><code>lib\client\client_subscription.js:320</code></a>
         </p>
 
 
@@ -902,6 +948,32 @@ TimestampToReturn.Neither
             <div id="properties" class="api-class-tabpanel">
                 <h2 class="off-left">Properties</h2>
 
+<div id="property_hasTimedOut" class="property item">
+    <h3 class="name"><code>hasTimedOut</code></h3>
+    <span class="type">Boolean</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_client_client_subscription.js.html#l93"><code>lib\client\client_subscription.js:93</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>set to True when the server has notified us that this sbuscription has timed out
+( maxLifeCounter x published interval without being able to process a PublishRequest</p>
+
+    </div>
+
+
+
+</div>
 <div id="property_session" class="property item">
     <h3 class="name"><code>session</code></h3>
     <span class="type"><a href="../classes/ClientSession.html" class="crosslink">ClientSession</a></span>
@@ -913,7 +985,7 @@ TimestampToReturn.Neither
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_client_subscription.js.html#l227"><code>lib&#x2F;client&#x2F;client_subscription.js:227</code></a>
+        <a href="../files/lib_client_client_subscription.js.html#l295"><code>lib\client\client_subscription.js:295</code></a>
         </p>
 
 
@@ -944,7 +1016,7 @@ TimestampToReturn.Neither
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/lib_client_client_subscription.js.html#l267"><code>lib&#x2F;client&#x2F;client_subscription.js:267</code></a>
+                            <a href="../files/lib_client_client_subscription.js.html#l345"><code>lib\client\client_subscription.js:345</code></a>
                             </p>
                     
                     
@@ -986,7 +1058,7 @@ TimestampToReturn.Neither
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/lib_client_client_subscription.js.html#l299"><code>lib&#x2F;client&#x2F;client_subscription.js:299</code></a>
+                            <a href="../files/lib_client_client_subscription.js.html#l377"><code>lib\client\client_subscription.js:377</code></a>
                             </p>
                     
                     
@@ -1028,7 +1100,7 @@ TimestampToReturn.Neither
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/lib_client_client_subscription.js.html#l188"><code>lib&#x2F;client&#x2F;client_subscription.js:188</code></a>
+                            <a href="../files/lib_client_client_subscription.js.html#l256"><code>lib\client\client_subscription.js:256</code></a>
                             </p>
                     
                     
@@ -1053,7 +1125,7 @@ TimestampToReturn.Neither
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/lib_client_client_subscription.js.html#l196"><code>lib&#x2F;client&#x2F;client_subscription.js:196</code></a>
+                            <a href="../files/lib_client_client_subscription.js.html#l264"><code>lib\client\client_subscription.js:264</code></a>
                             </p>
                     
                     
@@ -1079,7 +1151,7 @@ TimestampToReturn.Neither
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/lib_client_client_subscription.js.html#l115"><code>lib&#x2F;client&#x2F;client_subscription.js:115</code></a>
+                            <a href="../files/lib_client_client_subscription.js.html#l107"><code>lib\client\client_subscription.js:107</code></a>
                             </p>
                     
                     
@@ -1104,7 +1176,7 @@ TimestampToReturn.Neither
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/lib_client_client_subscription.js.html#l157"><code>lib&#x2F;client&#x2F;client_subscription.js:157</code></a>
+                            <a href="../files/lib_client_client_subscription.js.html#l222"><code>lib\client\client_subscription.js:222</code></a>
                             </p>
                     
                     
@@ -1129,7 +1201,7 @@ TimestampToReturn.Neither
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/lib_client_client_subscription.js.html#l242"><code>lib&#x2F;client&#x2F;client_subscription.js:242</code></a>
+                            <a href="../files/lib_client_client_subscription.js.html#l310"><code>lib\client\client_subscription.js:310</code></a>
                             </p>
                     
                     

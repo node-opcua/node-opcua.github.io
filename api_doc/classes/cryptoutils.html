@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.46</em>
+            <em>API Docs for: 0.0.52</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -56,6 +56,7 @@
                                 <li><a href="../classes/Argument.html">Argument</a></li>
                                 <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
                                 <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+                                <li><a href="../classes/AttributeNameById.html">AttributeNameById</a></li>
                                 <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
                                 <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
                                 <li><a href="../classes/BaseNode.html">BaseNode</a></li>
@@ -122,7 +123,7 @@
                                 <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
                                 <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
                                 <li><a href="../classes/EUInformation.html">EUInformation</a></li>
-                                <li><a href="../classes/EventField.html">EventField</a></li>
+                                <li><a href="../classes/EventFieldList.html">EventFieldList</a></li>
                                 <li><a href="../classes/EventFilter.html">EventFilter</a></li>
                                 <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
                                 <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
@@ -152,6 +153,7 @@
                                 <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
                                 <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
                                 <li><a href="../classes/MessageSecurityMode.html">MessageSecurityMode</a></li>
+                                <li><a href="../classes/ModelChangeStructure.html">ModelChangeStructure</a></li>
                                 <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
@@ -165,6 +167,7 @@
                                 <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
                                 <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
                                 <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+                                <li><a href="../classes/MyStructure.html">MyStructure</a></li>
                                 <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
                                 <li><a href="../classes/NodeId.html">NodeId</a></li>
                                 <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
@@ -203,6 +206,7 @@
                                 <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
                                 <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
                                 <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+                                <li><a href="../classes/RedundantServer.html">RedundantServer</a></li>
                                 <li><a href="../classes/Reference.html">Reference</a></li>
                                 <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
                                 <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
@@ -217,9 +221,11 @@
                                 <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
                                 <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
                                 <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+                                <li><a href="../classes/SamplingIntervalDiagnostics.html">SamplingIntervalDiagnostics</a></li>
                                 <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
                                 <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
                                 <li><a href="../classes/SecurityTokenRequestType.html">SecurityTokenRequestType</a></li>
+                                <li><a href="../classes/SemanticChangeStructure.html">SemanticChangeStructure</a></li>
                                 <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
                                 <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
                                 <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
@@ -232,6 +238,7 @@
                                 <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
                                 <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
                                 <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+                                <li><a href="../classes/SessionSecurityDiagnostics.html">SessionSecurityDiagnostics</a></li>
                                 <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
                                 <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
                                 <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
@@ -338,7 +345,7 @@
 
 
         <div class="foundat">
-            Defined in: <a href="../files/lib_misc_crypto_utils.js.html#l2"><code>lib&#x2F;misc&#x2F;crypto_utils.js:2</code></a>
+            Defined in: <a href="../files/lib_misc_crypto_utils.js.html#l2"><code>lib\misc\crypto_utils.js:2</code></a>
         </div>
 
             Module: <a href="../modules/opcua.miscellaneous.html">opcua.miscellaneous</a>
@@ -468,7 +475,7 @@ combine an array of certificates into a single blob</code></h3>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_misc_crypto_explore_certificate.js.html#l950"><code>lib&#x2F;misc&#x2F;crypto_explore_certificate.js:950</code></a>
+        <a href="../files/lib_misc_crypto_explore_certificate.js.html#l950"><code>lib\misc\crypto_explore_certificate.js:950</code></a>
         </p>
 
 
@@ -530,7 +537,7 @@ combine an array of certificates into a single blob</code></h3>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_misc_crypto_utils.js.html#l439"><code>lib&#x2F;misc&#x2F;crypto_utils.js:439</code></a>
+        <a href="../files/lib_misc_crypto_utils.js.html#l438"><code>lib\misc\crypto_utils.js:438</code></a>
         </p>
 
 
@@ -594,7 +601,7 @@ combine an array of certificates into a single blob</code></h3>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_misc_crypto_utils.js.html#l505"><code>lib&#x2F;misc&#x2F;crypto_utils.js:505</code></a>
+        <a href="../files/lib_misc_crypto_utils.js.html#l504"><code>lib\misc\crypto_utils.js:504</code></a>
         </p>
 
 
@@ -682,7 +689,7 @@ combine an array of certificates into a single blob</code></h3>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_misc_crypto_utils.js.html#l467"><code>lib&#x2F;misc&#x2F;crypto_utils.js:467</code></a>
+        <a href="../files/lib_misc_crypto_utils.js.html#l466"><code>lib\misc\crypto_utils.js:466</code></a>
         </p>
 
 
@@ -772,7 +779,7 @@ combine an array of certificates into a single blob</code></h3>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_misc_crypto_utils.js.html#l107"><code>lib&#x2F;misc&#x2F;crypto_utils.js:107</code></a>
+        <a href="../files/lib_misc_crypto_utils.js.html#l107"><code>lib\misc\crypto_utils.js:107</code></a>
         </p>
 
 
@@ -881,7 +888,7 @@ combine an array of certificates into a single blob</code></h3>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_misc_crypto_utils.js.html#l683"><code>lib&#x2F;misc&#x2F;crypto_utils.js:683</code></a>
+        <a href="../files/lib_misc_crypto_utils.js.html#l682"><code>lib\misc\crypto_utils.js:682</code></a>
         </p>
 
 
@@ -950,7 +957,7 @@ combine an array of certificates into a single blob</code></h3>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_misc_crypto_utils.js.html#l39"><code>lib&#x2F;misc&#x2F;crypto_utils.js:39</code></a>
+        <a href="../files/lib_misc_crypto_utils.js.html#l39"><code>lib\misc\crypto_utils.js:39</code></a>
         </p>
 
 
@@ -1008,7 +1015,7 @@ combine an array of certificates into a single blob</code></h3>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_misc_crypto_utils.js.html#l715"><code>lib&#x2F;misc&#x2F;crypto_utils.js:715</code></a>
+        <a href="../files/lib_misc_crypto_utils.js.html#l714"><code>lib\misc\crypto_utils.js:714</code></a>
         </p>
 
 
@@ -1080,7 +1087,7 @@ combine an array of certificates into a single blob</code></h3>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_misc_crypto_utils.js.html#l726"><code>lib&#x2F;misc&#x2F;crypto_utils.js:726</code></a>
+        <a href="../files/lib_misc_crypto_utils.js.html#l725"><code>lib\misc\crypto_utils.js:725</code></a>
         </p>
 
 
@@ -1144,7 +1151,7 @@ A very expensive way to determine the rsa key length ( i.e 2048bits or 1024bits)
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_misc_crypto_utils.js.html#l419"><code>lib&#x2F;misc&#x2F;crypto_utils.js:419</code></a>
+        <a href="../files/lib_misc_crypto_utils.js.html#l418"><code>lib\misc\crypto_utils.js:418</code></a>
         </p>
 
 
@@ -1211,7 +1218,7 @@ split a multi chain certificates</code></h3>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_misc_crypto_explore_certificate.js.html#l971"><code>lib&#x2F;misc&#x2F;crypto_explore_certificate.js:971</code></a>
+        <a href="../files/lib_misc_crypto_explore_certificate.js.html#l971"><code>lib\misc\crypto_explore_certificate.js:971</code></a>
         </p>
 
 
@@ -1276,7 +1283,7 @@ split a multi chain certificates</code></h3>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_misc_crypto_utils.js.html#l80"><code>lib&#x2F;misc&#x2F;crypto_utils.js:80</code></a>
+        <a href="../files/lib_misc_crypto_utils.js.html#l80"><code>lib\misc\crypto_utils.js:80</code></a>
         </p>
 
 
@@ -1351,7 +1358,7 @@ split a multi chain certificates</code></h3>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_misc_crypto_utils.js.html#l168"><code>lib&#x2F;misc&#x2F;crypto_utils.js:168</code></a>
+        <a href="../files/lib_misc_crypto_utils.js.html#l168"><code>lib\misc\crypto_utils.js:168</code></a>
         </p>
 
 
@@ -1457,7 +1464,7 @@ split a multi chain certificates</code></h3>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_misc_crypto_utils.js.html#l700"><code>lib&#x2F;misc&#x2F;crypto_utils.js:700</code></a>
+        <a href="../files/lib_misc_crypto_utils.js.html#l699"><code>lib\misc\crypto_utils.js:699</code></a>
         </p>
 
 
@@ -1535,7 +1542,7 @@ split a multi chain certificates</code></h3>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_misc_crypto_utils.js.html#l134"><code>lib&#x2F;misc&#x2F;crypto_utils.js:134</code></a>
+        <a href="../files/lib_misc_crypto_utils.js.html#l134"><code>lib\misc\crypto_utils.js:134</code></a>
         </p>
 
 

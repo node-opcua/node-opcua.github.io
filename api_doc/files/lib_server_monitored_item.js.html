@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>lib/server/monitored_item.js - The NodeOPCUA API</title>
+    <title>lib\server\monitored_item.js - The NodeOPCUA API</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.46</em>
+            <em>API Docs for: 0.0.52</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -56,6 +56,7 @@
                                 <li><a href="../classes/Argument.html">Argument</a></li>
                                 <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
                                 <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+                                <li><a href="../classes/AttributeNameById.html">AttributeNameById</a></li>
                                 <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
                                 <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
                                 <li><a href="../classes/BaseNode.html">BaseNode</a></li>
@@ -122,7 +123,7 @@
                                 <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
                                 <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
                                 <li><a href="../classes/EUInformation.html">EUInformation</a></li>
-                                <li><a href="../classes/EventField.html">EventField</a></li>
+                                <li><a href="../classes/EventFieldList.html">EventFieldList</a></li>
                                 <li><a href="../classes/EventFilter.html">EventFilter</a></li>
                                 <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
                                 <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
@@ -152,6 +153,7 @@
                                 <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
                                 <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
                                 <li><a href="../classes/MessageSecurityMode.html">MessageSecurityMode</a></li>
+                                <li><a href="../classes/ModelChangeStructure.html">ModelChangeStructure</a></li>
                                 <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
                                 <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
@@ -165,6 +167,7 @@
                                 <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
                                 <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
                                 <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+                                <li><a href="../classes/MyStructure.html">MyStructure</a></li>
                                 <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
                                 <li><a href="../classes/NodeId.html">NodeId</a></li>
                                 <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
@@ -203,6 +206,7 @@
                                 <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
                                 <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
                                 <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+                                <li><a href="../classes/RedundantServer.html">RedundantServer</a></li>
                                 <li><a href="../classes/Reference.html">Reference</a></li>
                                 <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
                                 <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
@@ -217,9 +221,11 @@
                                 <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
                                 <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
                                 <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+                                <li><a href="../classes/SamplingIntervalDiagnostics.html">SamplingIntervalDiagnostics</a></li>
                                 <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
                                 <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
                                 <li><a href="../classes/SecurityTokenRequestType.html">SecurityTokenRequestType</a></li>
+                                <li><a href="../classes/SemanticChangeStructure.html">SemanticChangeStructure</a></li>
                                 <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
                                 <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
                                 <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
@@ -232,6 +238,7 @@
                                 <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
                                 <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
                                 <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+                                <li><a href="../classes/SessionSecurityDiagnostics.html">SessionSecurityDiagnostics</a></li>
                                 <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
                                 <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
                                 <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
@@ -333,7 +340,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-<h1 class="file-heading">File: lib/server/monitored_item.js</h1>
+<h1 class="file-heading">File: lib\server\monitored_item.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
@@ -461,11 +468,7 @@ function MonitoredItem(options) {
 }
 util.inherits(MonitoredItem, EventEmitter);
 
-
-var ObjectRegisty = require(&quot;lib/misc/objectRegistry&quot;).ObjectRegisty;
-var g_running_MonitoredItem = new ObjectRegisty();
-MonitoredItem.getRunningMonitoredItemCount = g_running_MonitoredItem.count.bind(g_running_MonitoredItem);
-
+MonitoredItem.registry = new (require(&quot;lib/misc/objectRegistry&quot;).ObjectRegistry)();
 
 MonitoredItem.minimumSamplingInterval = minimumSamplingInterval;
 MonitoredItem.defaultSamplingInterval = defaultSamplingInterval;
@@ -486,18 +489,24 @@ MonitoredItem.prototype._stop_sampling = function () {
 
     var self = this;
 
-    if (self._attribute_changed_callback) {
+    MonitoredItem.registry.unregister(self);
 
-        g_running_MonitoredItem.unregister(self);
+    if (self._on_opcua_event_received_callback) {
+        assert(_.isFunction(self._on_opcua_event_received_callback));
+        self.node.removeListener(&quot;event&quot;,self._on_opcua_event_received_callback);
+        self._on_opcua_event_received_callback = null;
+    }
+
+    if (self._attribute_changed_callback) {
+        assert(_.isFunction(self._attribute_changed_callback));
 
         var event_name = BaseNode.makeAttributeEventName(self.itemToMonitor.attributeId);
         self.node.removeListener(event_name,self._attribute_changed_callback);
         self._attribute_changed_callback = null;
 
-    } else if (self._value_changed_callback) {
+    }
 
-        g_running_MonitoredItem.unregister(self);
-
+    if (self._value_changed_callback) {
         // samplingInterval was 0 for a exception-based data Item
         // we setup a event listener that we need to unwind here
         assert(_.isFunction(self._value_changed_callback));
@@ -506,15 +515,16 @@ MonitoredItem.prototype._stop_sampling = function () {
         self.node.removeListener(&quot;value_changed&quot;,self._value_changed_callback);
         self._value_changed_callback = null;
 
-    } else if (self._samplingId) {
-
-        g_running_MonitoredItem.unregister(self);
-        clearInterval(self._samplingId);
-        self._samplingId = 0;
     }
+    if (self._samplingId) {
+        self._clear_timer();
+    }
+
     assert(!self._samplingId);
     assert(!self._value_changed_callback);
     assert(!self._attribute_changed_callback);
+    assert(!self._on_opcua_event_received_callback);
+
 };
 
 MonitoredItem.prototype._on_value_changed = function(dataValue,indexRange) {
@@ -529,6 +539,25 @@ MonitoredItem.prototype._on_value_changed = function(dataValue,indexRange) {
     }
 };
 
+
+var checkSelectClauses = require(&quot;lib/tools/tools_event_filter&quot;).checkSelectClauses;
+var extractEventFields = require(&quot;lib/tools/tools_event_filter&quot;).extractEventFields;
+
+MonitoredItem.prototype._on_opcua_event = function (eventData) {
+
+    var self = this;
+    assert(eventData.hasOwnProperty(&quot;$eventType&quot;));
+    var eventType = eventData.$eventType;
+
+    console.log(&quot; RECEIVED INTERNAL EVENT THAT WE ARE MONITORING&quot;);
+    assert(self.filter &amp;&amp; self.filter instanceof subscription_service.EventFilter);
+    var eventFields = extractEventFields(eventType,self.filter.selectClauses,eventData);
+
+    eventFields.forEach(function(e) { console.log(e.toString()); });
+
+    self._enqueue_event(eventFields);
+};
+
 MonitoredItem.prototype._start_sampling = function (recordInitialValue) {
 
     var self = this;
@@ -538,9 +567,17 @@ MonitoredItem.prototype._start_sampling = function (recordInitialValue) {
 
     self._stop_sampling();
 
-    g_running_MonitoredItem.register(self);
+    MonitoredItem.registry.register(self);
 
 
+    if (self.itemToMonitor.attributeId === AttributeIds.EventNotifier) {
+
+        // we are monitoring OPCUA Event
+        self._on_opcua_event_received_callback = self._on_opcua_event.bind(self);
+        self.node.on(&quot;event&quot;,self._on_opcua_event_received_callback);
+
+        return;
+    }
     if (self.itemToMonitor.attributeId !== AttributeIds.Value) {
 
         // sampling interval only applies to Value Attributes.
@@ -575,13 +612,7 @@ MonitoredItem.prototype._start_sampling = function (recordInitialValue) {
         }
     } else {
 
-        assert(self.samplingInterval &gt;= minimumSamplingInterval);
-
-        // settle periodic sampling
-        self._samplingId = setInterval(function () {
-            self._on_sampling_timer();
-        }, self.samplingInterval);
-
+        self._set_timer();
         if (recordInitialValue) {
             // initiate first read (this requires self._samplingId to be set)
             self._on_sampling_timer();
@@ -667,6 +698,14 @@ MonitoredItem.prototype._on_sampling_timer = function () {
     assert(self.monitoringMode === MonitoringMode.Sampling || self.monitoringMode == MonitoringMode.Reporting);
 
     if (self._samplingId) {
+
+        if (self._is_sampling) {
+            // previous sampling call is not yet completed..
+            // there is nothing we can do about it except waiting until next tick.
+            // note : see also issue #156 on github
+            return ;
+
+        }
         //xx console.log(&quot;xxxx ON SAMPLING&quot;);
         assert(!self._is_sampling, &quot;sampling func shall not be re-entrant !! fix it&quot;);
 
@@ -864,58 +903,102 @@ MonitoredItem.prototype.recordValue = function (dataValue, indexRange) {
     self.oldDataValue = dataValue;
 };
 
-MonitoredItem.prototype._enqueue_value = function(dataValue)
-{
-    var self = this;
 
-    self.oldDataValue = dataValue;
+
+
+MonitoredItem.prototype._setOverflowBit = function (notification) {
+
+    if (notification.hasOwnProperty(&quot;value&quot;)) {
+        assert(notification.value.statusCode === StatusCodes.Good);
+        notification.value.statusCode = StatusCodes.GoodWithOverflowBit;
+    }
+};
+
+MonitoredItem.prototype._enqueue_notification = function(notification) {
+
+    //xx console.log(&quot; Enqueuing n&quot;,notification.toString());
+
+    var self = this;
 
     if (self.queueSize === 1) {
         // ensure queuesize
         if (!self.queue || self.queue.length !== 1) {
             self.queue = [null];
         }
-        self.queue[0] = dataValue;
+        self.queue[0] = notification;
         assert(self.queue.length === 1);
 
     } else {
         if (self.discardOldest) {
 
             // push new value to queue
-            self.queue.push(dataValue);
+            self.queue.push(notification);
 
             if (self.queue.length &gt; self.queueSize) {
+
                 self.overflow = true;
-                //xx console.log(&quot;xxxxx &quot;,dataValue.statusCode.toString());
+
                 self.queue.shift(); // remove front element
 
                 // set overflow bit
-                assert( self.queue[0].statusCode === StatusCodes.Good);
-                self.queue[0].statusCode = StatusCodes.GoodWithOverflowBit;
+                self._setOverflowBit(self.queue[0]);
             }
 
         } else {
             if (self.queue.length &lt; self.queueSize) {
-                self.queue.push(dataValue);
+
+                self.queue.push(notification);
             } else {
+
                 self.overflow = true;
-                dataValue.statusCode = StatusCodes.GoodWithOverflowBit;
-                //xx console.log(&quot;xxxxx &quot;,dataValue.statusCode.toString());
-                self.queue[self.queue.length - 1] = dataValue;
+
+                self._setOverflowBit(notification);
+
+                self.queue[self.queue.length - 1] = notification;
             }
         }
     }
 };
 
+
+MonitoredItem.prototype._makeDataChangeNotification = function (dataValue) {
+    var self = this;
+    var attributeId = self.itemToMonitor.attributeId;
+    dataValue = apply_timestamps(dataValue, self.timestampsToReturn, attributeId);
+    return new subscription_service.MonitoredItemNotification({clientHandle: self.clientHandle, value: dataValue });
+};
+
+MonitoredItem.prototype._enqueue_value = function(dataValue) {
+    var self = this;
+    self.oldDataValue = dataValue;
+    var notification = self._makeDataChangeNotification(dataValue);
+    self._enqueue_notification(notification);
+};
+
+MonitoredItem.prototype._makeEventFieldList = function (eventFields) {
+    var self = this;
+    assert(_.isArray(eventFields));
+    return new subscription_service.EventFieldList({clientHandle: self.clientHandle, eventFields: eventFields});
+};
+
+MonitoredItem.prototype._enqueue_event = function(eventFields) {
+    var self = this;
+    var notification = self._makeEventFieldList(eventFields);
+    self._enqueue_notification(notification);
+};
+
+
+
 MonitoredItem.prototype._empty_queue = function()
 {
     var self = this;
-
     // empty queue
     self.queue = [];
     self.overflow = false;
 
 };
+
+
 
 /**
  * @method  extractMonitoredItemNotifications
@@ -928,32 +1011,34 @@ MonitoredItem.prototype.extractMonitoredItemNotifications = function () {
     if (self.monitoringMode !== MonitoringMode.Reporting) {
         return [];
     }
-
-    var attributeId = self.itemToMonitor.attributeId;
-
-    // MonitoredItemNotification
-    var notifications = self.queue.map(function (dataValue) {
-
-        dataValue = apply_timestamps(dataValue, self.timestampsToReturn, attributeId);
-        return {clientHandle: self.clientHandle, value: dataValue};
-    });
-
+    var notifications = self.queue;
     self._empty_queue();
-
     return notifications;
 };
 
-MonitoredItem.prototype._change_timer_timeout = function () {
+MonitoredItem.prototype._clear_timer = function() {
+
     var self = this;
-    if (!self._samplingId) { return; }
+    if (self._samplingId) {
+        clearInterval(self._samplingId);
+        self._samplingId = 0;
+    }
+};
 
-    clearInterval(self._samplingId);
+MonitoredItem.prototype._set_timer = function () {
 
+    var self = this;
+    assert(self.samplingInterval &gt;= minimumSamplingInterval);
+    assert(!self._samplingId);
+
+    // settle periodic sampling
     self._samplingId = setInterval(function () {
         self._on_sampling_timer();
     }, self.samplingInterval);
 
 };
+
+
 
 
 MonitoredItem.prototype._adjust_queue_to_match_new_queue_size = function (old_queueSize) {
@@ -978,8 +1063,10 @@ MonitoredItem.prototype._adjust_queue_to_match_new_queue_size = function (old_qu
         self.overflow = false;
         // unset OverFlowBit
         if (self.queue.length === 1) {
-            if (self.queue[0].statusCode === StatusCodes.GoodWithOverflowBit) {
-                self.queue[0].statusCode = StatusCodes.Good;
+            if (self.queue[0].value) {
+                if (self.queue[0].value.statusCode === StatusCodes.GoodWithOverflowBit) {
+                    self.queue[0].value.statusCode = StatusCodes.Good;
+                }
             }
         }
     }
@@ -989,9 +1076,10 @@ MonitoredItem.prototype._adjust_queue_to_match_new_queue_size = function (old_qu
 MonitoredItem.prototype._adjust_sampling = function(old_samplingInterval) {
 
     var self = this;
-
     if (old_samplingInterval !== self.samplingInterval) {
-        self._change_timer_timeout();
+        self._start_sampling();
+        //xx self._clear_timer(true);
+        //xx self._set_timer();
     }
 };
 
@@ -1005,6 +1093,10 @@ MonitoredItem.prototype.modify = function (timestampsToReturn, options) {
     var old_samplingInterval  = self.samplingInterval;
 
     self.timestampsToReturn = timestampsToReturn || self.timestampsToReturn;
+
+    if (old_samplingInterval !== 0 &amp;&amp; options.samplingInterval === 0 ) {
+        options.samplingInterval = minimumSamplingInterval; // fastest possible
+    }
 
     self._set_parameters(options);
 
