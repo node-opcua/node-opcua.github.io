@@ -390,4 +390,5 @@ It is now time to start the server for testing.
 node weather.js
 {% endhighlight %}
 
-Putting everything together, the ```weather.js`` script looks like:
+Putting everything together, the ```weather.js``` script looks like <a href="https://raw.githubusercontent.com/node-opcua/node-opcua/master/documentation/weather.js">this</a>
+
