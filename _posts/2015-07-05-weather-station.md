@@ -8,6 +8,7 @@ categories: tutorial
 
 # Creating a OPC/UA server for a virtual weather station.
 
+update on 26/06/2016 for node-opcua 0.0.55.
 
 ## Purpose
 
@@ -327,10 +328,10 @@ The server address space will be made of a ```Cities``` folder containing one fo
 {% highlight javascript %}
 
 // declare some folders
-server.engine.addFolder("Objects",{ browseName: "Cities"});
+var cityFolder = server.engine.addFolder("ObjectsFolder",{ browseName: "Cities"});
 function create_CityNode(city_name) {
     // declare the city node
-    server.engine.addFolder("Cities",{ browseName: city_name });
+    var cityNode = server.engine.addFolder(cityFolder,{ browseName: city_name });
     _"construct city weather variables"
 }
 cities.forEach(function(city) {
@@ -363,19 +364,19 @@ Each city node exposes 3 read-only variables that can be instantiated this way:
 
 {% highlight javascript %}
 server.engine.addVariable({
-    componentOf: city_name,
+    componentOf: cityNode,
     browseName: "Temperature",
     dataType: "Double",
     value: {  get: function () { return extract_value(city_name,"temperature"); } }
 });
 server.engine.addVariable({
-    componentOf: city_name,
+    componentOf: cityNode,
     browseName: "Humidity",
     dataType: "Double",
     value: {  get: function () { return extract_value(city_name,"humidity"); } }
 });
 server.engine.addVariable({
-    componentOf: city_name,
+    componentOf: cityNode,
     browseName: "Pressure",
     dataType: "Double",
     value: {  get: function () { return extract_value(city_name,"pressure"); } }
@@ -387,7 +388,9 @@ server.engine.addVariable({
 It is now time to start the server for testing.
 
 {% highlight bash %}
+
 node weather.js
+
 {% endhighlight %}
 
 Putting everything together, the ```weather.js``` script looks like <a href="https://raw.githubusercontent.com/node-opcua/node-opcua/master/documentation/weather.js">this</a>
