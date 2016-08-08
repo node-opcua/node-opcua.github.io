@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.52</em>
+            <em>API Docs for: 0.0.57</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -101,7 +101,6 @@
                                 <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
                                 <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
                                 <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
-                                <li><a href="../classes/cryptoutils.html">cryptoutils</a></li>
                                 <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
                                 <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
                                 <li><a href="../classes/DataValue.html">DataValue</a></li>
@@ -306,7 +305,11 @@
                                 <li><a href="../modules/services.subscription.html">services.subscription</a></li>
                                 <li><a href="../modules/services.write.html">services.write</a></li>
                                 <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
-                                <li><a href="../modules/xml2json.html">xml2json</a></li>
+                                <li><a href="../modules/xml2json
+                
+                node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+                
+                node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
                             </ul>
                         </div>
                     </div>
@@ -344,7 +347,7 @@
 
 <div class="file">
     <pre class="code prettyprint linenums">
-&quot;use strict&quot;;
+ &quot;use strict&quot;;
 /**
  * @module opcua.transport
  */
@@ -385,7 +388,7 @@ var ServerTCP_transport = function () {
 util.inherits(ServerTCP_transport, TCP_transport);
 
 ServerTCP_transport.prototype.end = &quot;DEPRECATED&quot;;
-
+ 
 ServerTCP_transport.prototype._abortWithError = function (statusCode, extraErrorDescription, callback) {
 
     assert(statusCode instanceof StatusCode);
@@ -401,7 +404,7 @@ ServerTCP_transport.prototype._abortWithError = function (statusCode, extraError
 
         debugLog(&quot; Server aborting because &quot;.red + statusCode.name.cyan);
         debugLog(&quot; extraErrorDescription   &quot;.red + extraErrorDescription.cyan);
-        var errorResponse = new TCPErrorMessage({name: statusCode.value, reason: statusCode.description});
+        var errorResponse = new TCPErrorMessage({statusCode: statusCode, reason: statusCode.description});
         var messageChunk = packTcpMessage(&quot;ERR&quot;, errorResponse);
 
         self.write(messageChunk);
@@ -419,6 +422,9 @@ ServerTCP_transport.prototype._abortWithError = function (statusCode, extraError
 
 function clamp_value(value, min_val, max_val) {
     assert(min_val &lt; max_val);
+    if (value === 0) {
+        return max_val;
+    }
     if (value &lt; min_val) {
         return min_val;
     }
@@ -433,17 +439,17 @@ ServerTCP_transport.prototype._send_ACK_response = function (helloMessage) {
 
     var self = this;
 
-    self.receiveBufferSize = clamp_value(helloMessage.receiveBufferSize, 8192, 200 * 1024);
-    self.sendBufferSize = clamp_value(helloMessage.sendBufferSize, 8192, 200 * 1024);
-    self.maxMessageSize = clamp_value(helloMessage.maxMessageSize, 100000, 16 * 1024 * 1024);
-    self.maxChunkCount = clamp_value(helloMessage.maxChunkCount, 0, 65535);
+    self.receiveBufferSize = clamp_value(helloMessage.receiveBufferSize, 8196, 512 * 1024);
+    self.sendBufferSize    = clamp_value(helloMessage.sendBufferSize,    8196, 512 * 1024);
+    self.maxMessageSize    = clamp_value(helloMessage.maxMessageSize,  100000, 16 * 1024 * 1024);
+    self.maxChunkCount     = clamp_value(helloMessage.maxChunkCount,        0, 65535);
 
     var acknowledgeMessage = new AcknowledgeMessage({
-        protocolVersion: self.protocolVersion,
+        protocolVersion:   self.protocolVersion,
         receiveBufferSize: self.receiveBufferSize,
-        sendBufferSize: self.sendBufferSize,
-        maxMessageSize: self.maxMessageSize,
-        maxChunkCount: self.maxChunkCount
+        sendBufferSize:    self.sendBufferSize,
+        maxMessageSize:    self.maxMessageSize,
+        maxChunkCount:     self.maxChunkCount
     });
 
     //xx acknowledgeMessage.receiveBufferSize = 8192;
@@ -508,10 +514,15 @@ ServerTCP_transport.prototype._on_HEL_message = function (data, callback) {
         var helloMessage = decodeMessage(stream, HelloMessage);
         assert(_.isFinite(self.protocolVersion));
 
-        if (helloMessage.protocolVersion &lt; 0 || helloMessage.protocolVersion &gt; self.protocolVersion) {
+        // OPCUA Spec 1.03 part 6 - page 41
+        // The Server shall always accept versions greater than what it supports.
+        if (helloMessage.protocolVersion != self.protocolVersion) {
+            console.log(&quot;warning ! client sent helloMessage.protocolVersion = 0x&quot;+helloMessage.protocolVersion.toString(16),&quot; whereas server protocolVersion is 0x&quot;+self.protocolVersion.toString(16));
+        }
+        if (helloMessage.protocolVersion === 0xDEADBEEF || helloMessage.protocolVersion &lt; self.protocolVersion) {
+            // Note: 0xDEADBEEF is our special version number to simulate BadProtocolVersionUnsupported in tests
             // invalid protocol version requested by client
             self._abortWithError(StatusCodes.BadProtocolVersionUnsupported, &quot;Protocol Version Error&quot; + self.protocolVersion, callback);
-
         } else {
 
             // the helloMessage shall only be received once.

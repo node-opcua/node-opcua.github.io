@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.52</em>
+            <em>API Docs for: 0.0.57</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -101,7 +101,6 @@
                                 <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
                                 <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
                                 <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
-                                <li><a href="../classes/cryptoutils.html">cryptoutils</a></li>
                                 <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
                                 <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
                                 <li><a href="../classes/DataValue.html">DataValue</a></li>
@@ -306,7 +305,11 @@
                                 <li><a href="../modules/services.subscription.html">services.subscription</a></li>
                                 <li><a href="../modules/services.write.html">services.write</a></li>
                                 <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
-                                <li><a href="../modules/xml2json.html">xml2json</a></li>
+                                <li><a href="../modules/xml2json
+                
+                node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+                
+                node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
                             </ul>
                         </div>
                     </div>
@@ -348,7 +351,7 @@
         </div>
 
         <div class="foundat">
-            Defined in: <a href="../files/lib_transport_client_tcp_transport.js.html#l60"><code>lib\transport\client_tcp_transport.js:60</code></a>
+            Defined in: <a href="../files/lib_transport_client_tcp_transport.js.html#l62"><code>lib\transport\client_tcp_transport.js:62</code></a>
         </div>
 
             Module: <a href="../modules/opcua.transport.html">opcua.transport</a>
@@ -380,7 +383,7 @@ It negociates the communication parameters with the other end.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_transport_client_tcp_transport.js.html#l60"><code>lib\transport\client_tcp_transport.js:60</code></a>
+        <a href="../files/lib_transport_client_tcp_transport.js.html#l62"><code>lib\transport\client_tcp_transport.js:62</code></a>
         </p>
 
 
@@ -602,7 +605,7 @@ Rules:
   &#x60;&#x60;&#x60;callback(null,messageChunk);&#x60;&#x60;&#x60;
 * if a messageChunk is not received within &#x60;&#x60;&#x60;TCP_transport.timeout&#x60;&#x60;&#x60; or if the underlying socket reports an error,
    the callback function will be called with an Error.">TCP_transport</a>:
-        <a href="../files/lib_transport_tcp_transport.js.html#l285"><code>lib\transport\tcp_transport.js:285</code></a>
+        <a href="../files/lib_transport_tcp_transport.js.html#l283"><code>lib\transport\tcp_transport.js:283</code></a>
         </p>
 
 
@@ -712,7 +715,7 @@ Rules:
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
                 <li class="arg">
-                        <code>eventTypeNode</code>
+                        <code>parentNode</code>
                 </li>
                 <li class="arg">
                         <code>selectClause</code>
@@ -750,7 +753,7 @@ Rules:
 
             <ul class="params-list">
                 <li class="param">
-                        <code class="param-name">eventTypeNode</code>
+                        <code class="param-name">parentNode</code>
                         <span class="type">Object</span>
 
 
@@ -886,7 +889,7 @@ Rules:
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_transport_client_tcp_transport.js.html#l116"><code>lib\transport\client_tcp_transport.js:116</code></a>
+        <a href="../files/lib_transport_client_tcp_transport.js.html#l118"><code>lib\transport\client_tcp_transport.js:118</code></a>
         </p>
 
 
@@ -1017,7 +1020,7 @@ constructEventFilter([&quot;SourceName&quot; ,&quot;EnabledState.EffectiveDispla
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/TCP_transport.html#method_createChunk">TCP_transport</a>:
-        <a href="../files/lib_transport_tcp_transport.js.html#l83"><code>lib\transport\tcp_transport.js:83</code></a>
+        <a href="../files/lib_transport_tcp_transport.js.html#l86"><code>lib\transport\tcp_transport.js:86</code></a>
         </p>
 
 
@@ -1103,7 +1106,7 @@ Note:
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/TCP_transport.html#method_disconnect">TCP_transport</a>:
-        <a href="../files/lib_transport_tcp_transport.js.html#l313"><code>lib\transport\tcp_transport.js:313</code></a>
+        <a href="../files/lib_transport_tcp_transport.js.html#l311"><code>lib\transport\tcp_transport.js:311</code></a>
         </p>
 
 
@@ -1156,7 +1159,7 @@ The <code>&#x60;</code>"close"<code>&#x60;</code> event will be emitted to the o
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/TCP_transport.html#method_write">TCP_transport</a>:
-        <a href="../files/lib_transport_tcp_transport.js.html#l121"><code>lib\transport\tcp_transport.js:121</code></a>
+        <a href="../files/lib_transport_tcp_transport.js.html#l125"><code>lib\transport\tcp_transport.js:125</code></a>
         </p>
 
 
@@ -1207,7 +1210,7 @@ Notes:
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/TCP_transport.html#property_[timeout=30000]">TCP_transport</a>:
-        <a href="../files/lib_transport_tcp_transport.js.html#l42"><code>lib\transport\tcp_transport.js:42</code></a>
+        <a href="../files/lib_transport_tcp_transport.js.html#l45"><code>lib\transport\tcp_transport.js:45</code></a>
         </p>
 
 
@@ -1231,7 +1234,7 @@ Notes:
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/TCP_transport.html#property_chunkSize">TCP_transport</a>:
-        <a href="../files/lib_transport_tcp_transport.js.html#l72"><code>lib\transport\tcp_transport.js:72</code></a>
+        <a href="../files/lib_transport_tcp_transport.js.html#l75"><code>lib\transport\tcp_transport.js:75</code></a>
         </p>
 
 
@@ -1255,7 +1258,7 @@ Notes:
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/TCP_transport.html#property_headerSize the size of the header in bytes">TCP_transport</a>:
-        <a href="../files/lib_transport_tcp_transport.js.html#l51"><code>lib\transport\tcp_transport.js:51</code></a>
+        <a href="../files/lib_transport_tcp_transport.js.html#l54"><code>lib\transport\tcp_transport.js:54</code></a>
         </p>
 
 
@@ -1280,7 +1283,7 @@ Notes:
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/TCP_transport.html#property_protocolVersion indicates the version number of the OPCUA protocol used">TCP_transport</a>:
-        <a href="../files/lib_transport_tcp_transport.js.html#l58"><code>lib\transport\tcp_transport.js:58</code></a>
+        <a href="../files/lib_transport_tcp_transport.js.html#l61"><code>lib\transport\tcp_transport.js:61</code></a>
         </p>
 
 
@@ -1311,7 +1314,7 @@ Notes:
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/TCP_transport.html#event_close">TCP_transport</a>:
-                            <a href="../files/lib_transport_tcp_transport.js.html#l203"><code>lib\transport\tcp_transport.js:203</code></a>
+                            <a href="../files/lib_transport_tcp_transport.js.html#l204"><code>lib\transport\tcp_transport.js:204</code></a>
                             </p>
                     
                     
@@ -1351,7 +1354,7 @@ Notes:
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/lib_transport_client_tcp_transport.js.html#l194"><code>lib\transport\client_tcp_transport.js:194</code></a>
+                            <a href="../files/lib_transport_client_tcp_transport.js.html#l206"><code>lib\transport\client_tcp_transport.js:206</code></a>
                             </p>
                     
                     
@@ -1377,7 +1380,7 @@ Notes:
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/lib_transport_client_tcp_transport.js.html#l172"><code>lib\transport\client_tcp_transport.js:172</code></a>
+                            <a href="../files/lib_transport_client_tcp_transport.js.html#l184"><code>lib\transport\client_tcp_transport.js:184</code></a>
                             </p>
                     
                     
@@ -1401,7 +1404,7 @@ Notes:
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/TCP_transport.html#event_message">TCP_transport</a>:
-                            <a href="../files/lib_transport_tcp_transport.js.html#l168"><code>lib\transport\tcp_transport.js:168</code></a>
+                            <a href="../files/lib_transport_tcp_transport.js.html#l172"><code>lib\transport\tcp_transport.js:172</code></a>
                             </p>
                     
                     

@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.52</em>
+            <em>API Docs for: 0.0.57</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -101,7 +101,6 @@
                                 <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
                                 <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
                                 <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
-                                <li><a href="../classes/cryptoutils.html">cryptoutils</a></li>
                                 <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
                                 <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
                                 <li><a href="../classes/DataValue.html">DataValue</a></li>
@@ -306,7 +305,11 @@
                                 <li><a href="../modules/services.subscription.html">services.subscription</a></li>
                                 <li><a href="../modules/services.write.html">services.write</a></li>
                                 <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
-                                <li><a href="../modules/xml2json.html">xml2json</a></li>
+                                <li><a href="../modules/xml2json
+                
+                node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+                
+                node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
                             </ul>
                         </div>
                     </div>
@@ -381,14 +384,24 @@ var crypto_utils = require(&quot;lib/misc/crypto_utils&quot;);
  * A sever end point is listening to one port
  *
  * @param options {Object}
- * @param options.port                                {Number} the tcp port
- * @param options.certificate                         {Buffer} the DER certificate
- * @param options.privateKey                          {String} PEM string of the private key
- * @param [options.defaultSecureTokenLifetime=600000] {Number} the default secure token lifetime
- * @param [options.timeout=30000]                     {Number} the  timeout for the TCP HEL/ACK transaction (in ms)
- * @param [options.maxConnections = 20 ]{Number}       {Number} the maximum number of connection allowed on the TCP server socket
+ * @param options.port                                  {Number} the tcp port
+ * @param options.certificate                           {Buffer} the DER certificate
+ * @param options.privateKey                            {String} PEM string of the private key
+ * @param [options.defaultSecureTokenLifetime=600000]   {Number} the default secure token lifetime
+ * @param [options.timeout=30000]                       {Number} the  timeout for the TCP HEL/ACK transaction (in ms)
+ * @param [options.maxConnections = 20 ]                {Number} the maximum number of connection allowed on the TCP server socket
+ * @param options.serverInfo                            {ApplicationDescription}
+ * @param [options.serverInfo.applicationUri]           {String}
+ * @param [options.serverInfo.productUri]               {String}
+ * @param [options.serverInfo.applicationName]          {LocalizedText}
+ * @param [options.serverInfo.gatewayServerUri]         {String|null}
+ * @param [options.serverInfo.discoveryProfileUri]      {String|null}
+ * @param [options.serverInfo.discoveryUrls]            {String[]}
  * @param options.objectFactory
  * @constructor
+ *
+ * note:
+ *   see OPCUA Release 1.03 part 4 page 108 7.1 ApplicationDescription
  */
 function OPCUAServerEndPoint(options) {
 
@@ -401,7 +414,7 @@ function OPCUAServerEndPoint(options) {
     assert(_.isNumber(self.port));
 
     self.certificate = options.certificate;
-    self.privateKey = options.privateKey;
+    self.privateKey  = options.privateKey;
 
     self._channels = {};
 
@@ -434,11 +447,14 @@ util.inherits(OPCUAServerEndPoint, EventEmitter);
 
 OPCUAServerEndPoint.prototype._setup_server = function() {
     var self = this;
+
     assert(self._server === null);
     self._server = net.createServer(self._on_client_connection.bind(self));
 
-    console.log(&quot; Server with max connections &quot;, self.maxConnections);
-    self._server.maxConnections = self.maxConnections;
+    self._unused_sockets = [];
+
+    //xx console.log(&quot; Server with max connections &quot;, self.maxConnections);
+    self._server.maxConnections = self.maxConnections + 1 ; // plus one extra
 
     self._listen_callback = null;
     self._server.on(&quot;connection&quot;, function (socket) {
@@ -446,10 +462,11 @@ OPCUAServerEndPoint.prototype._setup_server = function() {
         if (doDebug) {
             self._server.getConnections(function(err,count){
                 debugLog(&quot;server connected  with : &quot; + socket.remoteAddress + &quot;:&quot; + socket.remotePort);
-                console.log(&quot; CONCURRENT CONNECTION = &quot;,count);
+                debugLog(&quot;CONCURRENT CONNECTION = &quot;.cyan,count);
             });
-            console.log(&quot; MAX CONNECTIONS =&quot; ,self._server.maxConnections);
+            debugLog(&quot;MAX CONNECTIONS = &quot;.cyan ,self._server.maxConnections);
         }
+
 
     }).on(&quot;close&quot;, function () {
         debugLog(&quot;server closed : all connections have ended&quot;);
@@ -459,7 +476,39 @@ OPCUAServerEndPoint.prototype._setup_server = function() {
     });
 };
 
+/**
+ * @async
+ * @param self
+ * @param establish_connection
+ * @private
+ */
+function _prevent_DOS_Attack(self,establish_connection) {
 
+    var nbConnections = Object.keys(self._channels).length;
+
+    if (nbConnections &gt;= self.maxConnections) {
+        console.log(&quot; PREVENTING DOS ATTACK =&gt; Closing unused channels&quot;.bgRed.white);
+        var unused_channels = _.filter(self._channels,function(channel) {
+            return !channel.isOpened &amp;&amp; !channel.hasSession;
+        });
+        if (unused_channels.length === 0) {
+            // all channels are in used , we cannot get any
+            console.log(&quot;  - all channel are used !!!!&quot;);
+            setImmediate(establish_connection);
+            return;
+        }
+        console.log(&quot;   - Unused channels that can be clobbered&quot;, _.map(unused_channels,function(channel){return channel.securityToken.secureChannelId; }).join(&quot; &quot;));
+        var channel = unused_channels[0];
+        channel.close(function() {
+            console.log(&quot;   _ Unused channel has been closed &quot;,channel.securityToken.secureChannelId);
+            self._unregisterChannel(channel);
+
+            establish_connection();
+        })
+    } else {
+        setImmediate(establish_connection);
+    }
+}
 
 
 OPCUAServerEndPoint.prototype._on_client_connection = function (socket) {
@@ -474,33 +523,51 @@ OPCUAServerEndPoint.prototype._on_client_connection = function (socket) {
         return;
     }
 
-    debugLog(&quot;OPCUAServerEndPoint._on_client_connection successful =&gt; New Channel&quot;);
+    // Each SecureChannel exists until it is explicitly closed or until the last token has expired and the overlap
+    // period has elapsed. A Server application should limit the number of SecureChannels. 
+    // To protect against misbehaving Clients and denial of service attacks, the Server shall close the oldest 
+    // SecureChannel that has no Session assigned before reaching the maximum number of supported SecureChannels.         
+    _prevent_DOS_Attack(self,establish_connection);
 
-    var channel = new ServerSecureChannelLayer({
-        parent: self,
-        timeout: self.timeout,
-        defaultSecureTokenLifetime: self.defaultSecureTokenLifetime,
-        objectFactory: self.objectFactory
-    });
+    function establish_connection() {
 
-    channel.init(socket, function (err) {
-        if (err) {
+        var nbConnections = Object.keys(self._channels).length;
+        debugLog(&quot; nbConnections &quot;,nbConnections,&quot; self._server.maxConnections&quot;, self._server.maxConnections,self.maxConnections);
+        if (nbConnections &gt;= self.maxConnections) {
+            console.log(&quot;OPCUAServerEndPoint#_on_client_connection The maximum number of connection has been reached - Connection is refused&quot;.bgWhite.cyan);
             socket.end();
-        } else {
-            self._registerChannel(channel);
-            debugLog(&quot;server receiving a client connection&quot;);
+            return;
         }
-    });
 
-    channel.on(&quot;message&quot;, function (message) {
-        // forward
-        self.emit(&quot;message&quot;, message, channel, self);
-    });
+        debugLog(&quot;OPCUAServerEndPoint._on_client_connection successful =&gt; New Channel&quot;);
 
-    channel.on(&quot;abort&quot;, function () {
-        // the channel has aborted
-        self._unregisterChannel(channel);
-    });
+        var channel = new ServerSecureChannelLayer({
+            parent: self,
+            timeout: self.timeout,
+            defaultSecureTokenLifetime: self.defaultSecureTokenLifetime,
+            objectFactory: self.objectFactory
+        });
+
+        channel.init(socket, function (err) {
+            if (err) {
+                socket.end();
+            } else {
+                self._registerChannel(channel);
+                debugLog(&quot;server receiving a client connection&quot;);
+            }
+        });
+
+
+        channel.on(&quot;message&quot;, function (message) {
+            // forward
+            self.emit(&quot;message&quot;, message, channel, self);
+        });
+
+        channel.on(&quot;abort&quot;, function () {
+            // the channel has aborted
+            self._unregisterChannel(channel);
+        });
+    }
 
 };
 
@@ -768,8 +835,19 @@ OPCUAServerEndPoint.prototype.endpointDescriptions = function () {
 OPCUAServerEndPoint.prototype._registerChannel = function (channel) {
     var self = this;
     if (self._started) {
+
+        debugLog(&quot;_registerChannel = &quot;.red,&quot;channel.securityToken.secureChannelId = &quot;,channel.securityToken.secureChannelId);
+        
         assert(self._channels[channel.securityToken.secureChannelId] === undefined);
         self._channels[channel.securityToken.secureChannelId] = channel;
+
+        channel._rememberClientAddressAndPort();
+        /**
+         * @emit newChannel
+         * @param channel
+         */
+        self.emit(&quot;newChannel&quot;,channel);
+
     } else {
         debugLog(&quot;OPCUAServerEndPoint#_registerChannel called when end point is shutdown !&quot;);
         debugLog(&quot;  -&gt; channel will be forcefully terminated&quot;);
@@ -784,9 +862,16 @@ OPCUAServerEndPoint.prototype._registerChannel = function (channel) {
  */
 OPCUAServerEndPoint.prototype._unregisterChannel = function (channel) {
     var self = this;
+
+    /**
+     * @emit closeChannel
+     * @param channel
+     */
+    self.emit(&quot;closeChannel&quot;,channel);
+
     // keep trace of statistics data from old channel for our own accumulated stats.
-    self.bytesWrittenInOldChannels += channel.bytesWritten;
-    self.bytesReadInOldChannels += channel.bytesRead;
+    self.bytesWrittenInOldChannels    += channel.bytesWritten;
+    self.bytesReadInOldChannels       += channel.bytesRead;
     self.transactionsCountOldChannels += channel.transactionsCount;
     delete self._channels[channel.securityToken.secureChannelId];
 };
@@ -807,12 +892,13 @@ OPCUAServerEndPoint.prototype.listen = function (callback) {
 
     var self = this;
     assert(_.isFunction(callback));
-    assert(!self._started);
+    assert(!self._started,&quot;OPCUAServerEndPoint is already listening&quot;);
 
     self._listen_callback = callback;
 
     self._server.on(&quot;error&quot;, function (err) {
-        console.log(&quot; error&quot;.red.bold + &quot; port = &quot; + self.port, err);
+        debugLog(&quot; error&quot;.red.bold + &quot; port = &quot; + self.port, err);
+        self._started = false;
         self._end_listen(err);
     });
 
@@ -829,9 +915,10 @@ OPCUAServerEndPoint.prototype.suspendConnection = function (callback) {
     var self = this;
     assert(self._started);
     self._server.close(function () {
-        assert(self._started);
+//xx        assert(self._started);
         self._started = false;
     });
+    self._started = false;
     callback();
 };
 

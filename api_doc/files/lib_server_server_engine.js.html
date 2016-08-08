@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.52</em>
+            <em>API Docs for: 0.0.57</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -101,7 +101,6 @@
                                 <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
                                 <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
                                 <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
-                                <li><a href="../classes/cryptoutils.html">cryptoutils</a></li>
                                 <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
                                 <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
                                 <li><a href="../classes/DataValue.html">DataValue</a></li>
@@ -306,7 +305,11 @@
                                 <li><a href="../modules/services.subscription.html">services.subscription</a></li>
                                 <li><a href="../modules/services.write.html">services.write</a></li>
                                 <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
-                                <li><a href="../modules/xml2json.html">xml2json</a></li>
+                                <li><a href="../modules/xml2json
+                
+                node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+                
+                node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
                             </ul>
                         </div>
                     </div>
@@ -374,6 +377,11 @@ var BaseNode = require(&quot;lib/address_space/base_node&quot;).BaseNode;
 var UAObject = require(&quot;lib/address_space/ua_object&quot;).UAObject;
 var UAVariable = require(&quot;lib/address_space/ua_variable&quot;).UAVariable;
 
+var historizing_service = require(&quot;lib/services/historizing_service&quot;);
+var HistoryReadRequest = historizing_service.HistoryReadRequest;
+var HistoryReadDetails = historizing_service.HistoryReadDetails;
+var HistoryReadResult = historizing_service.HistoryReadResult;
+
 var DataValue = require(&quot;lib/datamodel/datavalue&quot;).DataValue;
 var Variant = require(&quot;lib/datamodel/variant&quot;).Variant;
 var DataType = require(&quot;lib/datamodel/variant&quot;).DataType;
@@ -395,6 +403,8 @@ var AddressSpace = address_space.AddressSpace;
 
 var generate_address_space = require(&quot;lib/address_space/load_nodeset2&quot;).generate_address_space;
 
+var ServerSession = require(&quot;lib/server/server_session&quot;).ServerSession;
+
 var VariableIds = require(&quot;lib/opcua_node_ids&quot;).VariableIds;
 var MethodIds = require(&quot;lib/opcua_node_ids&quot;).MethodIds;
 var ObjectIds = require(&quot;lib/opcua_node_ids&quot;).ObjectIds;
@@ -404,12 +414,16 @@ var ReferenceType = require(&quot;lib/address_space/referenceType&quot;).Referen
 
 var EventEmitter = require(&quot;events&quot;).EventEmitter;
 
+//xx require(&quot;lib/address_space/convert_nodeset_to_types&quot;).makeServerStatus();
 var ServerState = require(&quot;schemas/39394884f696ff0bf66bacc9a8032cc074e0158e/ServerState_enum&quot;).ServerState;
 var ServerStatus = require(&quot;_generated_/_auto_generated_ServerStatus&quot;).ServerStatus;
 
 var ServerDiagnosticsSummary = require(&quot;_generated_/_auto_generated_ServerDiagnosticsSummary&quot;).ServerDiagnosticsSummary;
 
 var constructFilename = require(&quot;lib/misc/utils&quot;).constructFilename;
+
+var endpoints_service = require(&quot;lib/services/get_endpoints_service&quot;);
+var ApplicationDescription = endpoints_service.ApplicationDescription;
 
 var standard_nodeset_file = constructFilename(&quot;nodesets/Opc.Ua.NodeSet2.xml&quot;);
 exports.standard_nodeset_file = standard_nodeset_file;
@@ -433,10 +447,19 @@ var ServerCapabilities = require(&quot;./server_capabilities&quot;).ServerCapabi
 
 var eoan = require(&quot;lib/address_space/extension_object_array_node&quot;);
 
+var ServerSidePublishEngine = require(&quot;lib/server/server_publish_engine&quot;).ServerSidePublishEngine;
+
 /**
  * @class ServerEngine
  * @extends EventEmitter
  * @uses ServerSidePublishEngine
+ * @params options
+ * @param options.buildInfo
+ * @param [options.isAuditing = false ] {Boolean}
+ * @param [options.serverCapabilities]
+ * @param [options.serverCapabilities.serverProfileArray]
+ * @param [options.serverCapabilities.localeIdArray]
+ * @param options.applicationUri {String} the application URI.
  * @constructor
  */
 function ServerEngine(options) {
@@ -448,6 +471,8 @@ function ServerEngine(options) {
 
     this._sessions = {};
     this._closedSessions = {};
+
+    this.isAuditing = _.isBoolean(options.isAuditing) ? options.isAuditing : false;
 
     // ---------------------------------------------------- ServerStatus
     this.serverStatus = new ServerStatus({
@@ -540,7 +565,7 @@ function disposeAddressSpace() {
         this.addressSpace.dispose();
         delete this.addressSpace;
     }
-    this._shutdownTask = null;
+    this._shutdownTask = [];
 }
 /**
  * @method shutdown
@@ -561,7 +586,7 @@ ServerEngine.prototype.shutdown = function () {
     //xx console.log(&quot;xxxxxxxxx ServerEngine.shutdown must terminate &quot;+ tokens.length,&quot; sessions&quot;);
 
     tokens.forEach(function (token) {
-        self.closeSession(token, true);
+        self.closeSession(token, true, &quot;Terminated&quot;);
     });
 
     // all sessions must have been terminated
@@ -765,7 +790,7 @@ ServerEngine.prototype.initialize = function (options, callback) {
             assert(!nodeId.isEmpty());
             var obj = self.addressSpace.findNode(nodeId);
             if (obj) {
-                __bindVariable(self,nodeId, opts);
+                __bindVariable(self, nodeId, opts);
             }
             return obj;
         }
@@ -867,7 +892,7 @@ ServerEngine.prototype.initialize = function (options, callback) {
 
         bindStandardScalar(VariableIds.Server_Auditing,
             DataType.Boolean, function () {
-                return false;
+                return self.isAuditing;
             });
 
 
@@ -1112,9 +1137,10 @@ ServerEngine.prototype.__findObject = function (nodeId) {
  * @param browseDescription
  * @param browseDescription.browseDirection {BrowseDirection} :
  * @param browseDescription.referenceTypeId {String|NodeId}
+ * @param [session] {ServerSession}
  * @return {BrowseResult}
  */
-ServerEngine.prototype.browseSingleNode = function (nodeId, browseDescription) {
+ServerEngine.prototype.browseSingleNode = function (nodeId, browseDescription, session) {
 
     // create default browseDescription
     browseDescription = browseDescription || {};
@@ -1166,7 +1192,7 @@ ServerEngine.prototype.browseSingleNode = function (nodeId, browseDescription) {
         //xx console.log(&quot;xxxxxx browsing &quot;,nodeId.toString() , &quot; not found&quot; );
     } else {
         browseResult.statusCode = StatusCodes.Good;
-        browseResult.references = obj.browseNode(browseDescription);
+        browseResult.references = obj.browseNode(browseDescription, session);
     }
     return new BrowseResult(browseResult);
 };
@@ -1175,9 +1201,10 @@ ServerEngine.prototype.browseSingleNode = function (nodeId, browseDescription) {
  *
  * @method browse
  * @param nodesToBrowse {BrowseDescription[]}
+ * @param [session] {ServerSession}
  * @return {BrowseResult[]}
  */
-ServerEngine.prototype.browse = function (nodesToBrowse) {
+ServerEngine.prototype.browse = function (nodesToBrowse, session) {
     var self = this;
     assert(self.addressSpace instanceof AddressSpace); // initialize not called
     assert(_.isArray(nodesToBrowse));
@@ -1188,7 +1215,7 @@ ServerEngine.prototype.browse = function (nodesToBrowse) {
 
         var nodeId = resolveNodeId(browseDescription.nodeId);
 
-        var r = self.browseSingleNode(nodeId, browseDescription);
+        var r = self.browseSingleNode(nodeId, browseDescription, session);
         results.push(r);
     });
     return results;
@@ -1369,6 +1396,106 @@ ServerEngine.prototype.write = function (nodesToWrite, callback) {
 
 };
 
+/**
+ *
+ * @method historyReadSingleNode
+ * @param nodeId
+ * @param attributeId {AttributeId}
+ * @param historyReadDetails {HistoryReadDetails}
+ * @param [timestampsToReturn=TimestampsToReturn.Neither]
+ * @param callback {Function}
+ * @param callback.err
+ * @param callback.results {HistoryReadResult}
+ */
+ServerEngine.prototype.historyReadSingleNode = function (nodeId, attributeId, historyReadDetails, timestampsToReturn, callback) {
+
+    this._historyReadSingleNode({
+        nodeId: nodeId,
+        attributeId: attributeId
+    }, historyReadDetails, timestampsToReturn, callback);
+};
+
+ServerEngine.prototype._historyReadSingleNode = function (nodeToRead, historyReadDetails, timestampsToReturn, callback) {
+
+    var self = this;
+    var nodeId = nodeToRead.nodeId;
+    var indexRange = nodeToRead.indexRange;
+    var dataEncoding = nodeToRead.dataEncoding;
+    var continuationPoint = nodeToRead.continuationPoint;
+    assert(self.addressSpace instanceof AddressSpace); // initialize not called
+
+    if (timestampsToReturn === TimestampsToReturn.Invalid) {
+        return new DataValue({statusCode: StatusCodes.BadTimestampsToReturnInvalid});
+    }
+
+    timestampsToReturn = (_.isObject(timestampsToReturn)) ? timestampsToReturn : TimestampsToReturn.Neither;
+
+    var obj = self.__findObject(nodeId);
+
+    if (!obj) {
+        // may be return BadNodeIdUnknown in dataValue instead ?
+        // Object Not Found
+        callback(null, new HistoryReadResult({statusCode: StatusCodes.BadNodeIdUnknown}));
+    } else {
+
+        // check access
+        //    BadUserAccessDenied
+        //    BadNotReadable
+        //    invalid attributes : BadNodeAttributesInvalid
+        //    invalid range      : BadIndexRangeInvalid
+        obj.historyRead(historyReadDetails, indexRange, dataEncoding, continuationPoint, function(err, result){
+            assert(result.statusCode instanceof StatusCode);
+            assert(result.isValid());
+            //result = apply_timestamps(result, timestampsToReturn, attributeId);
+            callback(err, result);
+        });
+    }
+};
+
+/**
+ *
+ *  @method historyRead
+ *  @param historyReadRequest {HistoryReadRequest}
+ *  @param historyReadRequest.requestHeader  {RequestHeader}
+ *  @param historyReadRequest.historyReadDetails  {HistoryReadDetails}
+ *  @param historyReadRequest.timestampsToReturn  {TimestampsToReturn}
+ *  @param historyReadRequest.releaseContinuationPoints  {Boolean}
+ *  @param historyReadRequest.nodesToRead {HistoryReadValueId[]}
+ *  @param callback {Function}
+ *  @param callback.err
+ *  @param callback.results {HistoryReadResult[]}
+ */
+ServerEngine.prototype.historyRead = function (historyReadRequest, callback) {
+
+    assert(historyReadRequest instanceof HistoryReadRequest);
+    assert(_.isFunction(callback));
+
+    var self = this;
+    var timestampsToReturn = historyReadRequest.timestampsToReturn;
+    var historyReadDetails = historyReadRequest.historyReadDetails;
+
+    var nodesToRead = historyReadRequest.nodesToRead;
+
+    assert(historyReadDetails instanceof HistoryReadDetails);
+    assert(self.addressSpace instanceof AddressSpace); // initialize not called
+    assert(_.isArray(nodesToRead));
+
+    var historyData=[];
+    async.eachSeries(nodesToRead, function(readValueId, cbNode){
+        self._historyReadSingleNode(readValueId, historyReadDetails, timestampsToReturn, function(err, result){
+
+            if (err &amp;&amp; !result) {
+                result=new HistoryReadResult({statusCode: StatusCodes.BadInternalError});
+            }
+            historyData.push(result);
+            async.setImmediate(cbNode); //it&#x27;s not guaranteed that the historical read process is really asynchronous
+        });
+    }, function(err){
+        assert(historyData.length === nodesToRead.length);
+        callback(err, historyData);
+    });
+};
+
 function __bindVariable(self,nodeId,options) {
     options = options || {};
     // must have a get and a set property
@@ -1415,15 +1542,31 @@ ServerEngine.prototype.__internal_bindMethod = function (nodeId, func) {
     }
 };
 
-var ServerSession = require(&quot;lib/server/server_session&quot;).ServerSession;
+ServerEngine.prototype.getOldestUnactivatedSession = function() {
 
-
+    var self = this;
+    var tmp = _.filter(self._sessions, function(session){
+        return session.status === &quot;new&quot;;
+    });
+    if (tmp.length === 0) {
+        return null;
+    }
+    var session = tmp[0];
+    for (var i=1;i&lt;session.length;i++) {
+        var c = tmp[i];
+        if (session.creationDate.getTime() &lt; c.creationDate.getTime()) {
+            session = c;
+        }
+    }
+    return session;
+};
 /**
  * create a new server session object.
  * @class ServerEngine
  * @method createSession
  * @param  [options] {Object}
  * @param  [options.sessionTimeout = 1000] {Number} sessionTimeout
+ * @param  [options.clientDescription] {ApplicationDescription}
  * @return {ServerSession}
  */
 ServerEngine.prototype.createSession = function (options) {
@@ -1433,6 +1576,8 @@ ServerEngine.prototype.createSession = function (options) {
     var self = this;
 
     self.serverDiagnosticsSummary.cumulatedSessionCount += 1;
+
+    self.clientDescription = options.clientDescription || new ApplicationDescription({});
 
     var sessionTimeout = options.sessionTimeout || 1000;
 
@@ -1462,13 +1607,27 @@ ServerEngine.prototype.createSession = function (options) {
 
     });
 
+    // OPC Unified Architecture, Part 4 23 Release 1.03
+    // Sessions are terminated by the Server automatically if the Client fails to issue a Service request on the Session
+    // within the timeout period negotiated by the Server in the CreateSession Service response. This protects the
+    // Server against Client failures and against situations where a failed underlying connection cannot be
+    // re-established. Clients shall be prepared to submit requests in a timely manner to prevent the Session from
+    // closing automatically. Clients may explicitly terminate sessions using the CloseSession Service.
     session.on(&quot;timeout&quot;, function () {
         // the session hasn&#x27;t been active for a while , probably because the client has disconnected abruptly
         // it is now time to close the session completely
         self.serverDiagnosticsSummary.sessionTimeoutCount += 1;
         session.sessionName = session.sessionName || &quot;&quot;;
-        console.log(&quot;closing SESSION &quot;.cyan, session.sessionName.yellow, &quot; because of timeout = &quot;.cyan, session.sessionTimeout, &quot; has expired without a keep alive&quot;.cyan);
-        self.closeSession(session.authenticationToken, true);
+
+        console.log(&quot;Server: closing SESSION &quot;.cyan, session.status, session.sessionName.yellow, &quot; because of timeout = &quot;.cyan, session.sessionTimeout, &quot; has expired without a keep alive&quot;.cyan);
+        var channel = session.channel;
+        if (channel) {
+            console.log(&quot;channel = &quot;.bgCyan,channel.remoteAddress,&quot; port = &quot;,channel.remotePort);
+        }
+
+        // If a Server terminates a Session for any other reason, Subscriptions  associated with the Session,
+        // are not deleted. =&gt; deleteSubscription= false
+        self.closeSession(session.authenticationToken, /*deleteSubscription=*/false,/* reason =*/&quot;Timeout&quot;);
     });
 
     return session;
@@ -1477,7 +1636,8 @@ ServerEngine.prototype.createSession = function (options) {
 /**
  * @method closeSession
  * @param authenticationToken
- * @param {Boolean} deleteSubscriptions : true if sessions&#x27;s subscription shall be deleted
+ * @param deleteSubscriptions {Boolean} : true if sessions&#x27;s subscription shall be deleted
+ * @param {String} [reason = &quot;CloseSession&quot;] the reason for closing the session (shall be &quot;Timeout&quot;, &quot;Terminated&quot; or &quot;CloseSession&quot;)
  *
  *
  * what the specs say:
@@ -1489,21 +1649,125 @@ ServerEngine.prototype.createSession = function (options) {
  * in the case of a Session termination. In these cases, the Subscription can be reassigned to another Client before
  * its lifetime expires.
  */
-ServerEngine.prototype.closeSession = function (authenticationToken, deleteSubscriptions) {
+ServerEngine.prototype.closeSession = function (authenticationToken, deleteSubscriptions,reason) {
 
     var self = this;
+
+    reason  = reason || &quot;CloseSession&quot;;
+    assert(_.isString(reason));
+    assert(reason === &quot;Timeout&quot; || reason===&quot;Terminated&quot; || reason === &quot;CloseSession&quot; || reason === &quot;Forcing&quot;);
+
     debugLog(&quot;ServerEngine.closeSession &quot;, authenticationToken.toString(), deleteSubscriptions);
+
     var key = authenticationToken.toString();
     var session = self.getSession(key);
     assert(session);
 
-    session.close(deleteSubscriptions);
+    if (!deleteSubscriptions) {
+
+        if (!self._orphanPublishEngine) {
+            self._orphanPublishEngine = new ServerSidePublishEngine({maxPublishRequestInQueue:0});
+        }
+        ServerSidePublishEngine.transferSubscriptions(session.publishEngine,self._orphanPublishEngine);
+    }
+
+    session.close(deleteSubscriptions,reason);
 
     assert(session.status === &quot;closed&quot;);
+
+    //TODO make sure _closedSessions gets cleaned at some point
     self._closedSessions[key] = session;
 
     delete self._sessions[key];
 
+};
+
+ServerEngine.prototype.findSubscription = function(subscriptionId) {
+
+    var self = this;
+
+    console.log(&quot;findSubscription  &quot;, subscriptionId);
+    var subscriptions = [];
+    _.map(self._sessions, function (session) {
+        if (subscriptions.length) return;
+        var subscription = session.publishEngine.getSubscriptionById(subscriptionId);
+        if (subscription) {
+            console.log(&quot;foundSubscription  &quot;, subscriptionId, &quot; in session&quot;, session.sessionName);
+            subscriptions.push(subscription)
+        }
+    });
+    if (subscriptions.length) {
+        assert(subscriptions.length === 1);
+        return subscriptions[0];
+    }
+    return self.findOrphanSubscription(subscriptionId);
+};
+
+ServerEngine.prototype.findOrphanSubscription = function(subscriptionId) {
+
+    var self = this;
+
+    if (!self._orphanPublishEngine) {
+        return null;
+    }
+    return self._orphanPublishEngine.getSubscriptionById(subscriptionId);
+};
+
+ServerEngine.prototype.deleteOrphanSubscription = function(subscription) {
+    var self = this;
+    assert(self.findSubscription(subscription.id));
+
+    var c =self._orphanPublishEngine.subscriptionCount;
+    subscription.terminate();
+    assert(self._orphanPublishEngine.subscriptionCount === c-1);
+    return StatusCodes.Good;
+};
+
+var TransferResult = require(&quot;_generated_/_auto_generated_TransferResult&quot;).TransferResult;
+/**
+ *
+ * @param session           {ServerSession}
+ * @param subscriptionId    {IntegerId}
+ * @param sendInitialValues {Boolean}
+ * @returns                 {TransferResult}
+ */
+ServerEngine.prototype.transferSubscription = function (session,subscriptionId,sendInitialValues) {
+
+    var self = this;
+    assert(session instanceof ServerSession);
+    assert(_.isNumber(subscriptionId));
+    assert(_.isBoolean(sendInitialValues));
+
+    if (subscriptionId &lt;=0 ) {
+        return new TransferResult({ statusCode: StatusCodes.BadSubscriptionIdInvalid });
+    }
+
+    var subscription = self.findSubscription(subscriptionId);
+    if (!subscription) {
+        return new TransferResult({ statusCode: StatusCodes.BadSubscriptionIdInvalid });
+    }
+    // // now check that new session has sufficient right
+    // if (session.authenticationToken.toString() != subscription.authenticationToken.toString()) {
+    //     console.log(&quot;ServerEngine#transferSubscription =&gt; BadUserAccessDenied&quot;);
+    //     return new TransferResult({ statusCode: StatusCode.BadUserAccessDenied });
+    // }
+    if (session.publishEngine === subscription.publishEngine) {
+        // subscription is already in this session !!
+        return new TransferResult({ statusCode: StatusCode.BadNothingToDo });
+    }
+
+    var nbSubscriptionBefore = session.publishEngine.subscriptionCount;
+
+    ServerSidePublishEngine.transferSubscription(subscription,session.publishEngine,sendInitialValues);
+
+    assert(subscription.publishEngine === session.publishEngine);
+    assert(session.publishEngine.subscriptionCount === nbSubscriptionBefore+1);
+
+    return new TransferResult({
+        statusCode:  StatusCodes.Good,
+        availableSequenceNumbers: subscription.getAvailableSequenceNumbers()
+    }); 
+    
 };
 
 /**

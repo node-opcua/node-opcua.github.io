@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.52</em>
+            <em>API Docs for: 0.0.57</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -101,7 +101,6 @@
                                 <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
                                 <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
                                 <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
-                                <li><a href="../classes/cryptoutils.html">cryptoutils</a></li>
                                 <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
                                 <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
                                 <li><a href="../classes/DataValue.html">DataValue</a></li>
@@ -306,7 +305,11 @@
                                 <li><a href="../modules/services.subscription.html">services.subscription</a></li>
                                 <li><a href="../modules/services.write.html">services.write</a></li>
                                 <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
-                                <li><a href="../modules/xml2json.html">xml2json</a></li>
+                                <li><a href="../modules/xml2json
+                
+                node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+                
+                node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
                             </ul>
                         </div>
                     </div>
@@ -365,9 +368,13 @@ var NodeIdType = exports.NodeIdType = require(&quot;lib/datamodel/nodeid&quot;).
 
 var makeNodeId = exports.makeNodeId = require(&quot;lib/datamodel/nodeid&quot;).makeNodeId;
 exports.makeExpandedNodeId = require(&quot;lib/datamodel/expanded_nodeid&quot;).makeExpandedNodeId;
+var ExpandedNodeId = require(&quot;lib/datamodel/expanded_nodeid&quot;).ExpandedNodeId;
 
 var set_flag = require(&quot;lib/misc/utils&quot;).set_flag;
 var check_flag = require(&quot;lib/misc/utils&quot;).check_flag;
+
+var buffer_utils = require(&quot;lib/misc/buffer_utils&quot;);
+var createFastUninitializedBuffer = buffer_utils.createFastUninitializedBuffer;
 
 /**
  * return a random integer value in the range of  min inclusive and  max exclusive
@@ -665,7 +672,7 @@ exports.isValidGuid = isValidGuid;
 exports.randomGuid = function () {
     var BinaryStream = require(&quot;lib/misc/binaryStream&quot;).BinaryStream;
 
-    var b = new BinaryStream(new Buffer(20));
+    var b = new BinaryStream(20);
     for (var i = 0; i &lt; 20; i++) {
         b.writeUInt8(getRandomInt(0, 255));
     }
@@ -942,7 +949,8 @@ exports.decodeExpandedNodeId = function (stream) {
     if (check_flag(encoding_byte, EnumNodeIdEncoding.ServerIndexFlag)) {
         expandedNodeId.serverIndex = ec.decodeUInt32(stream);
     }
-    return expandedNodeId;
+    var e = expandedNodeId;
+    return new ExpandedNodeId( e.identifierType, e.value,e.namespace, e.namespaceUri, e.serverIndex);
 };
 exports.encodeLocaleId = ec.encodeString;
 exports.decodeLocaleId = ec.decodeString;
@@ -959,7 +967,7 @@ exports.isValidByteString = function (value) {
 };
 exports.randomByteString = function (value, len) {
     len = len || getRandomInt(1, 200);
-    var b = new Buffer(len);
+    var b = createFastUninitializedBuffer(len);
     for (var i = 0; i &lt; len; i++) {
         b.writeUInt8(getRandomInt(0, 255), i);
     }

@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.52</em>
+            <em>API Docs for: 0.0.57</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -101,7 +101,6 @@
                                 <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
                                 <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
                                 <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
-                                <li><a href="../classes/cryptoutils.html">cryptoutils</a></li>
                                 <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
                                 <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
                                 <li><a href="../classes/DataValue.html">DataValue</a></li>
@@ -306,7 +305,11 @@
                                 <li><a href="../modules/services.subscription.html">services.subscription</a></li>
                                 <li><a href="../modules/services.write.html">services.write</a></li>
                                 <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
-                                <li><a href="../modules/xml2json.html">xml2json</a></li>
+                                <li><a href="../modules/xml2json
+                
+                node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+                
+                node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
                             </ul>
                         </div>
                     </div>
@@ -367,6 +370,10 @@ var WatchDog = require(&quot;lib/misc/watchdog&quot;).WatchDog;
 
 var theWatchDog = new WatchDog();
 
+var utils= require(&quot;lib/misc/utils&quot;);
+var debugLog = utils.make_debugLog(__filename);
+var doDebug = utils.checkDebugFlag(__filename);
+
 /**
  *
  * A Server session object.
@@ -399,43 +406,55 @@ var theWatchDog = new WatchDog();
  */
 function ServerSession(parent, sessionId, sessionTimeout) {
 
-    this.parent = parent; // SessionEngine
+    var self = this;
+    self.parent = parent; // SessionEngine
 
-    EventEmitter.apply(this, arguments);
+    EventEmitter.apply(self, arguments);
 
     assert(_.isFinite(sessionId));
     assert(sessionId !== 0, &quot; sessionId is null/empty. this is not allowed&quot;);
 
     assert(_.isFinite(sessionTimeout));
     assert(sessionTimeout &gt;= 0, &quot; sessionTimeout&quot;);
-    this.sessionTimeout = sessionTimeout;
+    self.sessionTimeout = sessionTimeout;
 
-    this.authenticationToken = new NodeId(NodeIdType.BYTESTRING, crypto.randomBytes(16));
+    var authenticationTokenBuf = crypto.randomBytes(16);
+    self.authenticationToken = new NodeId(NodeIdType.BYTESTRING, authenticationTokenBuf);
 
-    this.nodeId = new NodeId(NodeIdType.GUID, ec.randomGuid(), 1);
+    self.nodeId = new NodeId(NodeIdType.GUID, ec.randomGuid(), 1);
 
-    assert(this.authenticationToken instanceof NodeId);
-    assert(this.nodeId instanceof NodeId);
+    assert(self.authenticationToken instanceof NodeId);
+    assert(self.nodeId instanceof NodeId);
 
-    this._subscription_counter = 0;
+    self._cumulatedSubscriptionCount = 0;
 
-    this.publishEngine = new ServerSidePublishEngine();
+    self.publishEngine = new ServerSidePublishEngine({
+        maxPublishRequestInQueue: ServerSession.maxPublishRequestInQueue
+    });
 
-    this.publishEngine.setMaxListeners(100);
+    self.publishEngine.setMaxListeners(100);
 
-    theWatchDog.addSubscriber(this, this.sessionTimeout);
+    theWatchDog.addSubscriber(self, self.sessionTimeout);
 
-    this.__status = &quot;new&quot;;
+    self.__status = &quot;new&quot;;
 
     /**
      * the continuation point manager for this session
      * @property continuationPointManager
      * @type {ContinuationPointManager}
      */
-    this.continuationPointManager = new ContinuationPointManager();
+    self.continuationPointManager = new ContinuationPointManager();
+
+    /**
+     * @property creationDate
+     * @type {Date}
+     */
+    self.creationDate = new Date();
 
 }
 util.inherits(ServerSession, EventEmitter);
+
+ServerSession.maxPublishRequestInQueue = 100;
 
 var eoan = require(&quot;lib/address_space/extension_object_array_node&quot;);
 var makeNodeId = require(&quot;lib/datamodel/nodeid&quot;).makeNodeId;
@@ -517,10 +536,51 @@ ServerSession.prototype._createSessionObjectInAddressSpace = function() {
         // the extension object
         self._sessionDiagnostics = self.addressSpace.constructExtensionObject(sessionDiagnosticsDataType,{});
 
+        self._sessionDiagnostics.clientConnectionTime = (new Date());
+        self._sessionDiagnostics.clientLastContactTime = (new Date());
+
+        if (self.parent.clientDescription) {
+            self._sessionDiagnostics.clientDescription = self.parent.clientDescription;
+        }
+
+        Object.defineProperty(self._sessionDiagnostics,&quot;currentMonitoredItemsCount&quot;,{
+            get: function() {
+                return self.currentMonitoredItemsCount;
+            }
+        });
+        Object.defineProperty(self._sessionDiagnostics,&quot;currentSubscriptionsCount&quot;,{
+            get: function() {
+                return self.currentSubscriptionCount;
+            }
+        });
+        Object.defineProperty(self._sessionDiagnostics,&quot;currentPublishRequestsInQueue&quot;,{
+            get: function() {
+                return self.publishEngine ? self.publishEngine.pendingPublishRequestCount : 0;
+            }
+        });
+        /*
+        Object.defineProperty(self._sessionDiagnostics,&quot;sessionId&quot;,{
+            get: function() {
+                return self.nodeId;
+            }
+        });
+        */
+        Object.defineProperty(self._sessionDiagnostics,&quot;sessionName&quot;,{
+            get: function() {
+                assert(_.isString(self.sessionName));
+                return self.sessionName.toString();
+            }
+        });
+
+
         self.sessionDiagnostics = sessionDiagnosticsVariableType.instantiate({
             browseName: &quot;SessionDiagnostics&quot;,
             componentOf: self.sessionObject,
-            value: new Variant({ dataType: DataType.ExtensionObject, value:  self._sessionDiagnostics })
+            value: {
+                get: function() {
+                    return new Variant({ dataType: DataType.ExtensionObject, value:  self._sessionDiagnostics });
+                }
+            }
         });
 
     }
@@ -562,6 +622,18 @@ ServerSession.prototype._removeSessionObjectFromAddressSpace = function() {
 
 var Subscription = require(&quot;lib/server/subscription&quot;).Subscription;
 
+
+// note OPCUA 1.03 part 4 page 76
+// The Server-assigned identifier for the Subscription (see 7.14 for IntegerId definition). This identifier shall
+// be unique for the entire Server, not just for the Session, in order to allow the Subscription to be transferred
+// to another Session using the TransferSubscriptions service.
+// After Server start-up the generation of subscriptionIds should start from a random IntegerId or continue from
+// the point before the restart.
+var next_subscriptionId = Math.ceil(Math.random()*1000000);
+function _get_next_subscriptionId() {
+    debugLog(&quot; next_subscriptionId = &quot;,next_subscriptionId);
+    return next_subscriptionId++;
+}
 /**
  * create a new subscription
  * @method createSubscription
@@ -585,6 +657,8 @@ ServerSession.prototype.createSubscription = function (request) {
 
     var self = this;
 
+    self._cumulatedSubscriptionCount += 1;
+
     var subscription = new Subscription({
         publishingInterval: request.requestedPublishingInterval,
         lifeTimeCount: request.requestedLifetimeCount,
@@ -592,14 +666,12 @@ ServerSession.prototype.createSubscription = function (request) {
         maxNotificationsPerPublish: request.maxNotificationsPerPublish,
         publishingEnabled: request.publishingEnabled,
         priority: request.priority,
-
+        id: _get_next_subscriptionId(),
         // -------------------
         publishEngine: self.publishEngine
 
     });
 
-    self._subscription_counter += 1;
-    subscription.id = self._subscription_counter;
 
     self.publishEngine.add_subscription(subscription);
 
@@ -631,13 +703,24 @@ ServerSession.prototype.__defineGetter__(&quot;currentSubscriptionCount&quot;, f
     var self = this;
     return self.publishEngine ? self.publishEngine.subscriptionCount : 0;
 });
+
 /**
  * number of subscriptions ever created since this object is live
  * @property cumulatedSubscriptionCount
  * @type {Number}
  */
 ServerSession.prototype.__defineGetter__(&quot;cumulatedSubscriptionCount&quot;, function () {
-    return this._subscription_counter;
+    return this._cumulatedSubscriptionCount;
+});
+
+/**
+ * number of monitored items
+ * @property currentMonitoredItemsCount
+ * @type {Number}
+ */
+ServerSession.prototype.__defineGetter__(&quot;currentMonitoredItemsCount&quot;, function () {
+    var self = this;
+    return self.publishEngine ? self.publishEngine.currentMonitoredItemsCount : 0 ;
 });
 
 
@@ -675,13 +758,15 @@ ServerSession.prototype.deleteSubscription = function (subscriptionId) {
     subscription.terminate();
 
     if (this.currentSubscriptionCount === 0) {
-        // xx console.log(&quot; should cancel publish request here !&quot;.red);
-        this.publishEngine.cancelPendingPublishRequest();
+
+        var local_publishEngine = this.publishEngine;
+        local_publishEngine.cancelPendingPublishRequest();
     }
     return StatusCodes.Good;
 };
 
 ServerSession.prototype._deleteSubscriptions = function () {
+
     var self = this;
     assert(self.publishEngine);
 
@@ -707,12 +792,18 @@ ServerSession.prototype._deleteSubscriptions = function () {
  *
  * @method close
  * @param {Boolean} deleteSubscriptions : should we delete subscription ?
+ * @param {String} [reason = &quot;CloseSession&quot;] the reason for closing the session (shall be &quot;Timeout&quot;, &quot;Terminated&quot; or &quot;CloseSession&quot;)
+ *
  */
-ServerSession.prototype.close = function (deleteSubscriptions) {
+ServerSession.prototype.close = function (deleteSubscriptions,reason) {
 
     //xx console.log(&quot;xxxxxxxxxxxxxxxxxxxxxxxxxxx =&gt; ServerSession.close() &quot;);
     var self = this;
 
+    if (self.publishEngine) {
+        self.publishEngine.onSessionClose();
+    }
+    
     theWatchDog.removeSubscriber(self);
     // ---------------  delete associated subscriptions ---------------------
 
@@ -728,21 +819,30 @@ ServerSession.prototype.close = function (deleteSubscriptions) {
     // ---------------- shut down publish engine
     if (self.publishEngine) {
 
+
         // remove subscription
         self.publishEngine.shutdown();
 
         assert(self.publishEngine.subscriptionCount === 0);
         self.publishEngine = null;
     }
+
     // Post-Conditions
     assert(self.currentSubscriptionCount === 0);
 
     self.status = &quot;closed&quot;;
-    self.emit(&quot;session_closed&quot;, self, deleteSubscriptions);
+    /**
+     * @event session_closed
+     * @param deleteSubscriptions {Boolean}
+     * @param reason {String}
+     */
+    self.emit(&quot;session_closed&quot;, self, deleteSubscriptions,reason);
+
     self._removeSessionObjectFromAddressSpace();
 
     assert(!self.sessionDiagnostics,&quot;ServerSession#_removeSessionObjectFromAddressSpace must be called&quot;);
     assert(!self.sessionObject,     &quot;ServerSession#_removeSessionObjectFromAddressSpace must be called&quot;);
+
 
 };
 
@@ -757,20 +857,6 @@ ServerSession.prototype.watchdogReset = function () {
     self.emit(&quot;timeout&quot;);
 };
 
-/**
- * @method changeToChannel
- * @private
- * @param channel
- */
-ServerSession.prototype.changeToChannel = function (channel) {
-    var self = this;
-    if (self.publishEngine) {
-        self.publishEngine.cancelPendingPublishRequestBeforeChannelChange();
-    }
-    self.channel.session_nonce = &quot;CANCELED&quot;;
-    self.channel = channel;
-    self.secureChannelId = channel.secureChannelId;
-};
 
 
 exports.ServerSession = ServerSession;

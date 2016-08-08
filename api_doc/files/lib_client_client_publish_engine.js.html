@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.52</em>
+            <em>API Docs for: 0.0.57</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -101,7 +101,6 @@
                                 <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
                                 <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
                                 <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
-                                <li><a href="../classes/cryptoutils.html">cryptoutils</a></li>
                                 <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
                                 <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
                                 <li><a href="../classes/DataValue.html">DataValue</a></li>
@@ -306,7 +305,11 @@
                                 <li><a href="../modules/services.subscription.html">services.subscription</a></li>
                                 <li><a href="../modules/services.write.html">services.write</a></li>
                                 <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
-                                <li><a href="../modules/xml2json.html">xml2json</a></li>
+                                <li><a href="../modules/xml2json
+                
+                node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+                
+                node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
                             </ul>
                         </div>
                     </div>
@@ -364,7 +367,6 @@ var StatusCodes = require(&quot;lib/datamodel/opcua_status_code&quot;).StatusCod
  * @class ClientSidePublishEngine
  *
  * @param session {ClientSession} - the client session
- * @param options {object} - the client session
  * @constructor
  *
  * The ClientSidePublishEngine encapsulates the mechanism to
@@ -388,6 +390,9 @@ function ClientSidePublishEngine(session) {
     // number of pending Publish request sent to the server and awaited for being processed by the server
     this.nbPendingPublishRequests = 0;
 
+    // the maximum number of publish requests we think that the server can queue.
+    // we will adjust this value .
+    this.nbMaxPublishRequestsAcceptedByServer = 1000;
 }
 
 
@@ -416,6 +421,9 @@ ClientSidePublishEngine.prototype.cleanup_acknowledgment_for_subscription = func
 ClientSidePublishEngine.prototype.send_publish_request = function () {
     var self = this;
 
+    if (self.nbPendingPublishRequests &gt;= self.nbMaxPublishRequestsAcceptedByServer) {
+        return;
+    }
     assert(self.subscriptionCount &gt;0);
 
     setImmediate(function () {
@@ -476,6 +484,9 @@ ClientSidePublishEngine.prototype._send_publish_request = function () {
         requestHeader: {timeoutHint: calculatedTimeout}, // see note
         subscriptionAcknowledgements: subscriptionAcknowledgements
     });
+
+    var active = true;
+
     self.session.publish(publish_request, function (err, response) {
 
         self.nbPendingPublishRequests -= 1;
@@ -490,6 +501,36 @@ ClientSidePublishEngine.prototype._send_publish_request = function () {
                 // This could happen if the client has missed or not received the StatusChange Notification
                 debugLog(&quot; WARNING :   SERVER TELLS THAT IT HAS NO SUBSCRIPTION , BUT CLIENT DISAGREE&quot;.bgWhite.red);
                 debugLog(&quot;self.activeSubscriptionCount =&quot;,self.activeSubscriptionCount);
+                active = false;
+            }
+
+            if (err.message.match(/BadSessionClosed|BadSessionIdInvalid/)) {
+                //
+                // server has closed the session ....
+                // may be the session timeout is shorted than the subscription life time
+                // and the client does not send intermediate keepAlive request to keep the connection working.
+                //
+                debugLog(&quot; WARNING : SERVER TELLS THAT THE SESSION HAS CLOSED ...&quot;.bgWhite.red);
+                debugLog(&quot;   the ClientSidePublishEngine shall now be disabled, as server will reject any further request&quot;);
+                // close all active subscription....
+                active = false;
+            }
+            if (err.message.match(/BadTooManyPublishRequests/)) {
+
+                // preventing queue overflow
+                // -------------------------
+                //   if the client send too many publish requests that the server can queue, the server returns
+                //   a Service result of BadTooManyPublishRequests.
+                //
+                //   let adjust the nbMaxPublishRequestsAcceptedByServer value so we never overflow the server
+                //   with extraneous publish requests in the future.
+                //
+                self.nbMaxPublishRequestsAcceptedByServer = Math.min(self.nbPendingPublishRequests,self.nbMaxPublishRequestsAcceptedByServer);
+                active = false;
+
+                debugLog(&quot; WARNING : SERVER TELLS THAT TOO MANY PUBLISH REQUEST HAS BEEN SEND ...&quot;.bgWhite.red);
+                debugLog(&quot; On our side nbPendingPublishRequests = &quot;,self.nbPendingPublishRequests);
+                debugLog(&quot; =&gt; nbMaxPublishRequestsAcceptedByServer =&quot;,self.nbMaxPublishRequestsAcceptedByServer);
             }
         } else {
             if (doDebug) {
@@ -499,10 +540,9 @@ ClientSidePublishEngine.prototype._send_publish_request = function () {
         }
 
         // feed the server with a new publish Request to the server
-        if (self.activeSubscriptionCount&gt;0) {
+        if (active  &amp;&amp; self.activeSubscriptionCount&gt;0 ) {
             self.send_publish_request();
         }
-
     });
 };
 

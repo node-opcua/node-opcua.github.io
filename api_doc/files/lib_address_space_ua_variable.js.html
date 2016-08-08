@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.52</em>
+            <em>API Docs for: 0.0.57</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -101,7 +101,6 @@
                                 <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
                                 <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
                                 <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
-                                <li><a href="../classes/cryptoutils.html">cryptoutils</a></li>
                                 <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
                                 <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
                                 <li><a href="../classes/DataValue.html">DataValue</a></li>
@@ -306,7 +305,11 @@
                                 <li><a href="../modules/services.subscription.html">services.subscription</a></li>
                                 <li><a href="../modules/services.write.html">services.write</a></li>
                                 <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
-                                <li><a href="../modules/xml2json.html">xml2json</a></li>
+                                <li><a href="../modules/xml2json
+                
+                node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+                
+                node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
                             </ul>
                         </div>
                     </div>
@@ -365,6 +368,7 @@ var NumericRange = require(&quot;lib/datamodel/numeric_range&quot;).NumericRange
 
 var StatusCodes = require(&quot;lib/datamodel/opcua_status_code&quot;).StatusCodes;
 var read_service = require(&quot;lib/services/read_service&quot;);
+var historizing_service = require(&quot;lib/services/historizing_service&quot;);
 var AttributeIds = read_service.AttributeIds;
 
 var assert = require(&quot;better-assert&quot;);
@@ -378,8 +382,11 @@ var makeAccessLevel = require(&quot;lib/datamodel/access_level&quot;).makeAccess
 var write_service = require(&quot;lib/services/write_service&quot;);
 var WriteValue = write_service.WriteValue;
 
-var doDebug = false;
-var debugLog = function(){ if(doDebug) { console.log.apply(console,arguments); }};
+var HistoryReadResult = historizing_service.HistoryReadResult;
+
+var utils =  require(&quot;lib/misc/utils&quot;);
+var debugLog = utils.make_debugLog(__filename);
+var doDebug = utils.checkDebugFlag(__filename);
 
 function isGoodish(statusCode) {
     return statusCode.value &lt; 0x10000000;
@@ -409,7 +416,12 @@ function is_Variant(v) {
 }
 
 function is_StatusCode(v) {
-    return v &amp;&amp; v.constructor &amp;&amp; v.constructor.name === &quot;StatusCode&quot;;
+    return v &amp;&amp; v.constructor &amp;&amp;
+        (
+            v.constructor.name === &quot;ConstantStatusCode&quot; ||
+            v.constructor.name === &quot;StatusCode&quot; ||
+            v.constructor.name === &quot;ModifiableStatusCode&quot;
+        ) ;
 }
 
 function is_Variant_or_StatusCode(v) {
@@ -474,6 +486,8 @@ function validateDataType(__address_space, dataTypeNodeId, variantDataType, node
 
     var dest_isSuperTypeOf_variant = variantUADataType.isSupertypeOf(builtInUADataType);
 
+
+    /* istanbul ignore next */
     function debugValidateDataType() {
         if (dest_isSuperTypeOf_variant) {
             /* istanbul ignore next*/
@@ -497,14 +511,8 @@ function validateDataType(__address_space, dataTypeNodeId, variantDataType, node
 
 }
 
-function isSameVariant(va,vb) {
-    assert( va instanceof Variant);
-    assert( vb instanceof Variant);
-    if (va.dataType !== vb.dataType) { return false; }
-    if (va.arrayType !== vb.arrayType) { return false; }
+var sameVariant = require(&quot;lib/datamodel/variant_tools&quot;).sameVariant;
 
-    return (_.isEqual(va.value,vb.value));
-}
 /**
  * A OPCUA Variable Node
  *
@@ -641,6 +649,9 @@ function UAVariable(options) {
     }
 
     this.setMaxListeners(5000);
+
+    self.semantic_version = 0;
+
 }
 util.inherits(UAVariable, BaseNode);
 UAVariable.prototype.nodeClass = NodeClass.Variable;
@@ -719,6 +730,59 @@ UAVariable.prototype.readValue = function (indexRange, dataEncoding) {
     return dataValue;
 };
 
+
+UAVariable.prototype._getEnumValues = function() {
+
+    var self = this;
+    // DataType must be one of Enumeration
+    var dataTypeNode = self.__address_space.findDataType(self.dataType);
+
+    var enumerationNode = self.__address_space.findDataType(&quot;Enumeration&quot;);
+    assert(dataTypeNode.isSupertypeOf(enumerationNode));
+
+    return dataTypeNode._getDefinition();
+};
+
+
+
+UAVariable.prototype.readEnumValue = function() {
+
+    var self = this;
+    var indexes = self._getEnumValues();
+    var value = self.readValue().value.value;
+    return { value: value, name: indexes.valueIndex[value].name };
+};
+
+/***
+ * @method writeEnumValue
+ * @param value {String|Number}
+ */
+UAVariable.prototype.writeEnumValue = function(value) {
+
+    var self = this;
+    var indexes = self._getEnumValues();
+
+    if (_.isString(value)) {
+
+        if (!indexes.nameIndex.hasOwnProperty(value)) {
+            throw new Error(&quot;UAVariable#writeEnumValue: cannot find value &quot;+ value);
+        }
+        var valueIndex  = indexes.nameIndex[value].value;
+        value =valueIndex;
+    }
+    if(_.isFinite(value)) {
+
+        if (!indexes.valueIndex[value]) {
+            throw new Error(&quot;UAVariable#writeEnumValue : value out of range&quot;,value);
+        }
+        self.setValueFromSource({ dataType: DataType.Int32, value: value});
+    } else {
+        throw new Error(&quot;UAVariable#writeEnumValue:  value type mismatch&quot;);
+    }
+};
+
+
+
 UAVariable.prototype._readDataType = function () {
     assert(this.dataType instanceof NodeId);
     var options = {
@@ -763,11 +827,12 @@ UAVariable.prototype._readUserAccessLevel = function () {
 };
 
 UAVariable.prototype._readMinimumSamplingInterval = function () {
+    // expect a Duration =&gt; Double
     var options = {};
     if (this.minimumSamplingInterval === undefined) {
         options.statusCode = StatusCodes.BadAttributeIdInvalid;
     } else {
-        options.value = {dataType: DataType.Int32, value: this.minimumSamplingInterval};
+        options.value = {dataType: DataType.Double, value: this.minimumSamplingInterval};
         options.statusCode = StatusCodes.Good;
     }
     return new DataValue(options);
@@ -832,6 +897,28 @@ UAVariable.prototype.readAttribute = function (attributeId, indexRange, dataEnco
             return BaseNode.prototype.readAttribute.call(this, attributeId);
     }
 
+};
+
+/**
+ * @method historyRead
+ * @param historyReadDetails {HistoryReadDetails}
+ * @param indexRange {NumericRange || null}
+ * @param dataEncoding {String}
+ * @param continuationPoint {ByteString}
+ * @param callback {Function}
+ * @param callback.err
+ * @param callback.result {HistoryReadResult}
+ */
+UAVariable.prototype.historyRead = function (historyReadDetails, indexRange, dataEncoding, continuationPoint, callback) {
+
+    if (typeof this[&quot;_historyRead&quot;] != &quot;function&quot;) {
+        return callback(null, new HistoryReadResult({statusCode: StatusCodes.BadNotReadable}));
+    }
+
+    if (continuationPoint) {
+        console.warn(&quot; Continuation point not supported in HistoryRead&quot;);
+    }
+    this._historyRead(historyReadDetails, indexRange, dataEncoding, continuationPoint, callback);
 };
 
 
@@ -957,7 +1044,7 @@ function _apply_default_timestamps(dataValue)
     }
     if (!dataValue.serverTimestamp) {
         dataValue.serverTimestamp = new Date();
-        dataValue.serverPicosecons = 0;
+        dataValue.serverPicoseconds = 0;
     }
 }
 
@@ -974,8 +1061,6 @@ function _apply_default_timestamps(dataValue)
 UAVariable.prototype.writeValue = function (dataValue, indexRange, callback) {
 
     var self = this;
-
-    _apply_default_timestamps(dataValue);
 
     // adjust arguments if optional indexRange Parameter is not given
     if (!_.isFunction(callback) &amp;&amp; _.isFunction(indexRange)) {
@@ -1008,6 +1093,7 @@ UAVariable.prototype.writeValue = function (dataValue, indexRange, callback) {
     }
 
     if(!self._timestamped_set_func) {
+        console.log(&quot; warning &quot;+self.nodeId.toString() +&quot; has no _timestamped_set_func&quot;);
         return callback(null,StatusCodes.BadNotWritable);
     }
 
@@ -1018,7 +1104,7 @@ UAVariable.prototype.writeValue = function (dataValue, indexRange, callback) {
 
             correctedDataValue = correctedDataValue || dataValue;
             assert(correctedDataValue instanceof DataValue);
-            assert(correctedDataValue.serverTimestamp);
+            //xx assert(correctedDataValue.serverTimestamp);
 
             if (indexRange &amp;&amp; !indexRange.isEmpty()) {
 
@@ -1026,9 +1112,9 @@ UAVariable.prototype.writeValue = function (dataValue, indexRange, callback) {
                     return callback(null, StatusCodes.BadIndexRangeInvalid);
                 }
 
-                var newArr = dataValue.value.value;
+                var newArr = correctedDataValue.value.value;
                 // check that source data is an array
-                if (dataValue.value.arrayType !== VariantArrayType.Array) {
+                if (correctedDataValue.value.arrayType !== VariantArrayType.Array) {
                     return callback(null, StatusCodes.BadTypeMismatch);
                 }
 
@@ -1040,7 +1126,10 @@ UAVariable.prototype.writeValue = function (dataValue, indexRange, callback) {
                 if (result.statusCode !== StatusCodes.Good) {
                     return callback(null, result.statusCode);
                 }
-                dataValue.value.value = result.array;
+                correctedDataValue.value.value = result.array;
+
+                // scrap original array so we detect range
+                self._dataValue.value.value = null;
             }
             self._internal_set_dataValue(correctedDataValue, indexRange);
             //xx self._dataValue = correctedDataValue;
@@ -1070,7 +1159,8 @@ UAVariable.prototype.writeAttribute = function (writeValue, callback) {
     // Spec 1.0.2 Part 4 page 58
     // If the SourceTimestamp or the ServerTimestamp is specified, the Server shall
     // use these values.
-    _apply_default_timestamps(writeValue.value);
+
+    //xx _apply_default_timestamps(writeValue.value);
 
     switch (writeValue.attributeId) {
             case AttributeIds.Value:
@@ -1211,8 +1301,7 @@ function _Variable_bind_with_simple_get(options) {
             return new DataValue({statusCode: value});
 
         } else {
-
-            if (!self._dataValue || !isSameVariant(self._dataValue.value,value) || self._dataValue.statusCode !== StatusCodes.Good) {
+            if (!self._dataValue || self._dataValue.statusCode !== StatusCodes.Good|| !sameVariant(self._dataValue.value,value) ) {
                 self.setValueFromSource(value,StatusCodes.Good);
             } else {
                 //XXXY console.log(&quot;YYYYYYYYYYYYYYYYYYYYYYYYYY&quot;.red,self.browseName.toString());
@@ -1253,7 +1342,7 @@ function _Variable_bind_with_timestamped_set(options) {
     assert(!options.set, &quot;should not specify set when timestamped_set_func exists &quot;);
     self._timestamped_set_func = function (dataValue, indexRange, callback) {
         //xx assert(!indexRange,&quot;indexRange Not Implemented&quot;);
-        return options.timestamped_set(dataValue, callback);
+        return options.timestamped_set.call(self, dataValue, callback);
     };
 }
 
@@ -1311,7 +1400,21 @@ UAVariable.prototype._internal_set_dataValue = function (dataValue, indexRange) 
     self._dataValue = dataValue;
     self._dataValue.statusCode = self._dataValue.statusCode || StatusCodes.Good;
 
+    // repair missing timestamps
+    if (!dataValue.serverTimestamp) {
+        self._dataValue.serverTimestamp = old_dataValue.serverTimestamp;
+        self._dataValue.serverPicoseconds = old_dataValue.serverPicoseconds;
+    }
+    if (!dataValue.sourceTimestamp) {
+        self._dataValue.sourceTimestamp = old_dataValue.sourceTimestamp;
+        self._dataValue.sourcePicoseconds = old_dataValue.sourcePicoseconds;
+    }
+
+    // if (dataValue.value.arrayType ===VariantArrayType.Array) {
+    //     console.log(&quot;xxxx UAVariable emit value_changed ??&quot;.bgRed, old_dataValue.value.toString(),dataValue.value.toString());
+    // }
     if (!sameDataValue(old_dataValue, dataValue)) {
+        //xx console.log(&quot;UAVariable emit value_changed&quot;);
         self.emit(&quot;value_changed&quot;, self._dataValue, indexRange);
     }
 };
@@ -1410,7 +1513,7 @@ UAVariable.prototype._internal_set_dataValue = function (dataValue, indexRange) 
  *
  * The &#x60;&#x60;&#x60;callback&#x60;&#x60;&#x60; function follow the standard callback function signature:
  * * the first argument shall be **null** or **Error**, depending of the outcome of the fetch operation,
- * * the second argument shall be a DataValuewith the new UAVariable Value,  a StatusCode, and time stamps.
+ * * the second argument shall be a DataValue with the new UAVariable Value,  a StatusCode, and time stamps.
  *
  *
  * Optionally, it is possible to pass a sourceTimestamp and a sourcePicoseconds value as a third and fourth arguments
@@ -1464,6 +1567,7 @@ UAVariable.prototype.bindVariable = function (options, overwrite) {
     assert(!_.isFunction(self._timestamped_get_func),&quot;UAVariable already bounded&quot;);
     bind_getter(self,options);
     bind_setter(self,options);
+    self._historyRead = options.historyRead;
     assert(_.isFunction(self._timestamped_set_func));
     assert(self._timestamped_set_func.length === 3);
 };
@@ -1509,9 +1613,11 @@ UAVariable.prototype.readValueAsync = function (callback) {
         // now call all pending callbacks
         var callbacks = self.__waiting_callbacks;
         self.__waiting_callbacks = [];
-        callbacks.forEach(function (callback) {
+        var i=0,n=callbacks.length,callback;
+        for (;i&lt;n;i++) {
+            callback = callbacks[i];
             callback.call(self, err, dataValue);
-        });
+        }
     }
 
     try {
@@ -1724,6 +1830,16 @@ UAVariable.prototype.__defineGetter__(&quot;dataTypeObj&quot;,function() {
     var d = addressSpace.findNode(self.dataType);
     return d;
 });
+
+
+UAVariable.prototype.handle_semantic_changed = function () {
+
+    var variable = this;
+    variable.semantic_version = variable.semantic_version +1;
+    variable.emit(&quot;semantic_changed&quot;);
+
+};
+
 
 exports.UAVariable = UAVariable;
 

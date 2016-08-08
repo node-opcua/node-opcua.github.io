@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.52</em>
+            <em>API Docs for: 0.0.57</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -101,7 +101,6 @@
                                 <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
                                 <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
                                 <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
-                                <li><a href="../classes/cryptoutils.html">cryptoutils</a></li>
                                 <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
                                 <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
                                 <li><a href="../classes/DataValue.html">DataValue</a></li>
@@ -306,7 +305,11 @@
                                 <li><a href="../modules/services.subscription.html">services.subscription</a></li>
                                 <li><a href="../modules/services.write.html">services.write</a></li>
                                 <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
-                                <li><a href="../modules/xml2json.html">xml2json</a></li>
+                                <li><a href="../modules/xml2json
+                
+                node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+                
+                node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
                             </ul>
                         </div>
                     </div>
@@ -361,6 +364,9 @@ var util = require(&quot;util&quot;);
 var writeTCPMessageHeader = require(&quot;lib/nodeopcua&quot;).writeTCPMessageHeader;
 var readRawMessageHeader =  require(&quot;lib/misc/message_builder_base&quot;).readRawMessageHeader;
 var PacketAssembler = require(&quot;lib/transport/packet_assembler&quot;).PacketAssembler;
+
+var buffer_utils = require(&quot;lib/misc/buffer_utils&quot;);
+var createFastUninitializedBuffer = buffer_utils.createFastUninitializedBuffer;
 
 var utils = require(&quot;lib/misc/utils&quot;);
 var debugLog = utils.make_debugLog(__filename);
@@ -446,7 +452,7 @@ TCP_transport.prototype.createChunk = function (msg_type, chunk_type, length) {
     assert(this._pending_buffer === undefined, &quot;createChunk has already been called ( use write first)&quot;);
 
     var total_length = length + this.headerSize;
-    var buffer = new Buffer(total_length);
+    var buffer = createFastUninitializedBuffer(total_length);
     writeTCPMessageHeader(&quot;MSG&quot;, chunk_type, total_length, buffer);
 
     this._pending_buffer = buffer;
@@ -459,6 +465,7 @@ TCP_transport.prototype._write_chunk = function (message_chunk) {
 
     if (this._socket) {
         this.bytesWritten += message_chunk.length;
+        // we need to clone the buffer here to make sure there 
         var b = new Buffer(message_chunk);
         this._socket.write(b);
     }
@@ -535,13 +542,10 @@ function _start_timeout_timer() {
     var self = this;
     assert(!self._timerId, &quot;timer already started&quot;);
     self._timerId = setTimeout(function () {
-
         _fulfill_pending_promises.call(self, new Error(&quot;Timeout in waiting for data on socket ( timeout was = &quot; + self.timeout + &quot; ms )&quot;));
-
     }, self.timeout);
 
 }
-
 
 TCP_transport.prototype.on_socket_ended = function(err) {
 
@@ -566,7 +570,6 @@ function _on_socket_ended_message(err) {
     debugLog(&#x27;Transport Connection ended&#x27;.red + &quot; &quot; + self.name);
     assert(!self.__disconnecting__);
     err = err || new Error(&quot;_socket has been disconnected by third party&quot;);
-
 
     self.on_socket_ended(err);
 
@@ -612,17 +615,15 @@ TCP_transport.prototype._install_socket = function (socket) {
 
     }).on(&#x27;close&#x27;, function (had_error) {
 
-        //xx console.log(&quot;xxxx SOCKET close : had error&quot;.red, had_error.toString().cyan);
+        debugLog(&quot; SOCKET CLOSE : &quot;.red, &quot;had_error =&quot;.yellow,had_error.toString().cyan,self.name);
 
     }).on(&#x27;end&#x27;, function (err) {
-
+        debugLog(&quot; SOCKET END : &quot;.red, err ? err.message.yellow: &quot;null&quot;,self._socket.name, self.name);
         _on_socket_ended_message.call(self, err);
 
     }).on(&#x27;error&#x27;, function (err) {
-        debugLog(&quot; SOCKET ERROR &quot;.red, err.message.yellow,
-            self._socket.name, self.name, self._socket.bufferSize, self._socket.remoteAddress, self._socket.localPort);
+        debugLog(&quot; SOCKET ERROR : &quot;.red, err.message.yellow,self._socket.name, self.name);
         // node The &#x27;close&#x27; event will be called directly following this event.
-        debugLog(&quot;SOCKET Error : &quot; + err);
     });
 
 };

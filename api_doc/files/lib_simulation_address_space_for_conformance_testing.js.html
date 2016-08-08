@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.52</em>
+            <em>API Docs for: 0.0.57</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -101,7 +101,6 @@
                                 <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
                                 <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
                                 <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
-                                <li><a href="../classes/cryptoutils.html">cryptoutils</a></li>
                                 <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
                                 <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
                                 <li><a href="../classes/DataValue.html">DataValue</a></li>
@@ -306,7 +305,11 @@
                                 <li><a href="../modules/services.subscription.html">services.subscription</a></li>
                                 <li><a href="../modules/services.write.html">services.write</a></li>
                                 <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
-                                <li><a href="../modules/xml2json.html">xml2json</a></li>
+                                <li><a href="../modules/xml2json
+                
+                node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+                
+                node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
                             </ul>
                         </div>
                     </div>
@@ -344,7 +347,7 @@
 
 <div class="file">
     <pre class="code prettyprint linenums">
-    &quot;use strict&quot;;
+&quot;use strict&quot;;
 /**
  * @module opcua.server.simulation
  * @type {async|exports}
@@ -354,6 +357,8 @@
 require(&quot;requirish&quot;)._(module);
 var _ = require(&quot;underscore&quot;);
 var assert = require(&quot;better-assert&quot;);
+var path = require(&quot;path&quot;);
+var fs = require(&quot;fs&quot;);
 
 
 var coerceNodeId = require(&quot;lib/datamodel/nodeid&quot;).coerceNodeId;
@@ -376,6 +381,7 @@ var namespaceIndex = 411;
 var ec = require(&quot;lib/misc/encode_decode&quot;);
 var QualifiedName = require(&quot;lib/datamodel/qualified_name&quot;).QualifiedName;
 var LocalizedText = require(&quot;lib/datamodel/localized_text&quot;).LocalizedText;
+
 
 function defaultValidator(/*value*/) {
     return true;
@@ -496,13 +502,13 @@ function _add_variable(addressSpace, parent, varName, dataTypeName, current_valu
     };
 
     var variable = addressSpace.addVariable({
-        componentOf:   parent,
-        browseName:    name,
-        description:   {locale: &quot;en&quot;, text: name},
-        nodeId:        nodeId,
-        dataType:      varName,
-        valueRank:     isArray ? 1 : -1,
-        value:         variant
+        componentOf: parent,
+        browseName: name,
+        description: {locale: &quot;en&quot;, text: name},
+        nodeId: nodeId,
+        dataType: varName,
+        valueRank: isArray ? 1 : -1,
+        value: variant
     });
     variable._backdoor_placeholder = placeholder;
     assert(addressSpace.findNode(nodeId));
@@ -638,18 +644,19 @@ var typeAndDefaultValue = [
     {type: &quot;Time&quot;, realType: &quot;String&quot;, defaultValue: &quot;00:00:00&quot;},
     {type: &quot;UInt64&quot;, defaultValue: [0, 0]},
     {type: &quot;Int64&quot;, defaultValue: [0, 0]},
-//    {  type: &quot;Variant&quot;,       defaultValue:  function() { return new Variant(); }},
+    //xx {type: &quot;Variant&quot;,   realType:   &quot;Variant&quot;, defaultValue:  {} },
     {type: &quot;XmlElement&quot;, defaultValue: &quot;&lt;string1&gt;OPCUA&lt;/string1&gt;&quot;},
     {type: &quot;ImageBMP&quot;, realType: &quot;ByteString&quot;},
     {type: &quot;ImageGIF&quot;, realType: &quot;ByteString&quot;},
     {type: &quot;ImageJPG&quot;, realType: &quot;ByteString&quot;},
-    {type: &quot;ImagePNG&quot;, realType: &quot;ByteString&quot;}
+    {type: &quot;ImagePNG&quot;, realType: &quot;ByteString&quot;},
+    // {type: &quot;Enumeration&quot;, realType: &quot;UInt32&quot; , defaultValue:0}
 ];
 
 
 function add_simulation_variables(server_engine, scalarFolder) {
 
-    assert(server_engine.addressSpace  instanceof AddressSpace);
+    assert(server_engine.addressSpace instanceof AddressSpace);
     var addressSpace = server_engine.addressSpace;
 
     var values_to_change = [];
@@ -802,6 +809,42 @@ function add_scalar_static_variables(addressSpace, scalarFolder) {
         add_variable(addressSpace, scalarStatic, dataType, realType, defaultValue, &quot;&quot;);
     });
 
+    function setImage__(imageType, filename) {
+        var fullpath = path.join(__dirname, &quot;data&quot;, filename);
+        var imageNode = addressSpace.findNode(&quot;ns=411;s=Scalar_Static_Image&quot; + imageType);
+
+
+
+        var options = {
+            refreshFunc: function (callback) {
+                fs.readFile(fullpath, function (err, data) {
+                    if (err) {
+                        return callback(null, new DataValue({
+                            statusCode: StatusCodes.BadInternalError,
+                            value: {dataType: &quot;ByteString&quot;, value: null}
+                        }));
+
+                    }
+                    assert(data instanceof Buffer);
+                    callback(null, new DataValue({value: {dataType: &quot;ByteString&quot;, value: data}}));
+                });
+            }
+        };
+        imageNode.bindVariable(options, /*overwrite=*/true);
+
+    }
+    function setImage(imageType, filename) {
+        var fullpath = path.join(__dirname, &quot;data&quot;, filename);
+        var imageNode = addressSpace.findNode(&quot;ns=411;s=Scalar_Static_Image&quot; + imageType);
+        fs.readFile(fullpath, function (err, data) {
+            imageNode.setValueFromSource(new Variant({dataType: DataType.ByteString, value: data}));
+        });
+    }
+    setImage(&quot;BMP&quot;, &quot;image.bmp&quot;);
+    setImage(&quot;PNG&quot;, &quot;tux.png&quot;);
+    setImage(&quot;GIF&quot;, &quot;gif-anime.gif&quot;);
+    setImage(&quot;JPG&quot;, &quot;tiger.jpg&quot;);
+
 
     // add statics Array Variables
     var scalarStaticArray = addressSpace.addObject({
@@ -840,14 +883,14 @@ function add_access_right_variables(addressSpace, parentFolder) {
 
     name = &quot;AccessLevel_CurrentRead&quot;;
     addressSpace.addVariable({
-        componentOf:  accessLevel_All_Folder,
-        browseName:   name,
-        description:  {locale: &quot;en&quot;, text: name},
-        nodeId:       makeNodeId(name, namespaceIndex),
-        dataType:     &quot;Int32&quot;,
-        valueRank:    -1,
+        componentOf: accessLevel_All_Folder,
+        browseName: name,
+        description: {locale: &quot;en&quot;, text: name},
+        nodeId: makeNodeId(name, namespaceIndex),
+        dataType: &quot;Int32&quot;,
+        valueRank: -1,
 
-        accessLevel:     &quot;CurrentRead&quot;,
+        accessLevel: &quot;CurrentRead&quot;,
         userAccessLevel: &quot;CurrentRead&quot;,
 
         value: new Variant({
@@ -859,14 +902,13 @@ function add_access_right_variables(addressSpace, parentFolder) {
 
     name = &quot;AccessLevel_CurrentWrite&quot;;
     addressSpace.addVariable({
-        componentOf:  accessLevel_All_Folder,
-        browseName:    name,
-        description:   {locale: &quot;en&quot;, text: name},
-        nodeId:        makeNodeId(name, namespaceIndex),
-        dataType:      &quot;Int32&quot;,
-        valueRank:      -1,
-
-        accessLevel:     &quot;CurrentWrite&quot;,
+        componentOf: accessLevel_All_Folder,
+        browseName: name,
+        description: {locale: &quot;en&quot;, text: name},
+        nodeId: makeNodeId(name, namespaceIndex),
+        dataType: &quot;Int32&quot;,
+        valueRank: -1,
+        accessLevel: &quot;CurrentWrite&quot;,
         userAccessLevel: &quot;CurrentWrite&quot;,
         value: {}
 
@@ -874,7 +916,7 @@ function add_access_right_variables(addressSpace, parentFolder) {
 
     name = &quot;AccessLevel_CurrentRead_NotUser&quot;;
     addressSpace.addVariable({
-        componentOf:  accessLevel_All_Folder,
+        componentOf: accessLevel_All_Folder,
         browseName: name,
         description: {locale: &quot;en&quot;, text: name},
         nodeId: makeNodeId(name, namespaceIndex),
@@ -894,7 +936,7 @@ function add_access_right_variables(addressSpace, parentFolder) {
 
     name = &quot;AccessLevel_CurrentWrite_NotUser&quot;;
     addressSpace.addVariable({
-        componentOf:  accessLevel_All_Folder,
+        componentOf: accessLevel_All_Folder,
         browseName: name,
         description: {locale: &quot;en&quot;, text: name},
         nodeId: makeNodeId(name, namespaceIndex),
@@ -914,7 +956,7 @@ function add_access_right_variables(addressSpace, parentFolder) {
 
     name = &quot;AccessLevel_CurrentRead_NotCurrentWrite&quot;;
     addressSpace.addVariable({
-        componentOf:  accessLevel_All_Folder,
+        componentOf: accessLevel_All_Folder,
         browseName: name,
         description: {locale: &quot;en&quot;, text: name},
         nodeId: makeNodeId(name, namespaceIndex),
@@ -926,16 +968,16 @@ function add_access_right_variables(addressSpace, parentFolder) {
         userAccessLevel: &quot;CurrentRead&quot;,
 
         value: new Variant({
-                    dataType: DataType.Int32,
-                    arrayType: VariantArrayType.Scalar,
-                    value: 36
-                })
+            dataType: DataType.Int32,
+            arrayType: VariantArrayType.Scalar,
+            value: 36
+        })
     });
 
 
     name = &quot;AccessLevel_CurrentWrite_NotCurrentRead&quot;;
     addressSpace.addVariable({
-        componentOf:  accessLevel_All_Folder,
+        componentOf: accessLevel_All_Folder,
         browseName: name,
         description: {locale: &quot;en&quot;, text: name},
         nodeId: makeNodeId(name, namespaceIndex),
@@ -953,13 +995,31 @@ function add_access_right_variables(addressSpace, parentFolder) {
         })
     });
 
+    name = &quot;AccessLevel_DeniedAll&quot;;
+    addressSpace.addVariable({
+        componentOf: accessLevel_All_Folder,
+        browseName: name,
+        description: {locale: &quot;en&quot;, text: name},
+        nodeId: makeNodeId(name, namespaceIndex),
+        dataType: &quot;Int32&quot;,
+        valueRank: -1,
+
+        accessLevel: &quot;&quot;,
+        userAccessLevel: &quot;&quot;,
+
+        value: new Variant({
+            dataType: DataType.Int32,
+            arrayType: VariantArrayType.Scalar,
+            value: 36
+        })
+    });
 
 
 }
 function add_path_10deep(addressSpace, simulation_folder) {
 
     var parent = simulation_folder;
-    for (var i = 1; i &lt; 10; i++) {
+    for (var i = 1; i &lt; 15; i++) {
         var name = &quot;Path_&quot; + i.toString() + &quot;Deep&quot;;
 
         var child = addressSpace.addObject({
@@ -1018,10 +1078,10 @@ function add_analog_data_items(addressSpace, parentFolder) {
 
         addressSpace.addDataItem({
             componentOf: localParentFolder,
-            nodeId:      nodeId,
-            browseName:  name,
-            definition:  &quot;(tempA -25) + tempB&quot;,
-            dataType:    dataType,
+            nodeId: nodeId,
+            browseName: name,
+            definition: &quot;(tempA -25) + tempB&quot;,
+            dataType: dataType,
             value: new Variant({
                 arrayType: VariantArrayType.Scalar,
                 dataType: DataType[dataType],
@@ -1030,7 +1090,7 @@ function add_analog_data_items(addressSpace, parentFolder) {
         });
     }
 
-    function _addAnalogDataItem(localParentFolder, dataType) {
+    function _addAnalogDataItem(localParentFolder, dataType, initialValue) {
 
         // istanbul ignore next
         if (!(DataType[dataType])) {
@@ -1043,28 +1103,59 @@ function add_analog_data_items(addressSpace, parentFolder) {
         // add a UAAnalogItem
         addressSpace.addAnalogDataItem({
 
-            componentOf:           localParentFolder,
+            componentOf: localParentFolder,
 
-            nodeId:                nodeId,
-            browseName:            name,
-            definition:            &quot;(tempA -25) + tempB&quot;,
-            valuePrecision:        0.5,
+            nodeId: nodeId,
+            browseName: name,
+            definition: &quot;(tempA -25) + tempB&quot;,
+            valuePrecision: 0.5,
             engineeringUnitsRange: {low: 1, high: 50},
-            instrumentRange:       {low: 1, high: 50},
-            engineeringUnits:      standardUnits.degree_celsius,
-            dataType:              dataType,
+            instrumentRange: {low: 1, high: 50},
+            engineeringUnits: standardUnits.degree_celsius,
+            dataType: dataType,
             value: new Variant({
                 arrayType: VariantArrayType.Scalar,
                 dataType: DataType[dataType],
-                value: 25
+                value: initialValue
             })
         });
+    }
+
+    function _addArrayAnalogDataItem(localParentFolder, dataType, initialValue) {
+        // istanbul ignore next
+        if (!(DataType[dataType])) {
+            throw new Error(&quot; Invalid dataType &quot; + dataType);
+        }
+        var name = dataType + &quot;ArrayAnalogDataItem&quot;;
+        var nodeId = makeNodeId(name, namespaceIndex);
+        // UAAnalogItem
+        // add a UAAnalogItem
+        addressSpace.addAnalogDataItem({
+
+            componentOf: localParentFolder,
+
+            nodeId: nodeId,
+            browseName: name,
+            definition: &quot;(tempA -25) + tempB&quot;,
+            valuePrecision: 0.5,
+            engineeringUnitsRange: {low: 1, high: 50},
+            instrumentRange: {low: 1, high: 50},
+            engineeringUnits: standardUnits.degree_celsius,
+            dataType: dataType,
+            value: new Variant({
+                arrayType: VariantArrayType.Array,
+                dataType: DataType[dataType],
+                value: [initialValue, initialValue]
+            })
+        });
+
     }
 
     // add statics Array Variables
     var analogItemFolder = addressSpace.addObject({
         organizedBy: parentFolder,
         browseName: &quot;Simulation_AnalogDataItem&quot;,
+        typeDefinition: &quot;FolderType&quot;,
         nodeId: makeNodeId(&quot;Simulation_AnalogDataItem&quot;, namespaceIndex)
     });
 
@@ -1089,12 +1180,9 @@ function add_analog_data_items(addressSpace, parentFolder) {
         })
     });
 
-    [&quot;Double&quot;, &quot;Float&quot;, &quot;Int16&quot;, &quot;UInt16&quot;, &quot;Int32&quot;, &quot;UInt32&quot;, &quot;Int64&quot;, &quot;UInt64&quot;, &quot;Byte&quot;, &quot;SByte&quot;]
-        .forEach(function (dataType) {
-            _addAnalogDataItem(analogItemFolder, dataType);
-        });
 
-    [   {dataType: &quot;Double&quot;, value: 3.14},
+    var data = [
+        {dataType: &quot;Double&quot;, value: 3.14},
         {dataType: &quot;Float&quot;, value: 3.14},
         {dataType: &quot;Int16&quot;, value: -10},
         {dataType: &quot;UInt16&quot;, value: 10},
@@ -1106,13 +1194,311 @@ function add_analog_data_items(addressSpace, parentFolder) {
         {dataType: &quot;SByte&quot;, value: -123},
         {dataType: &quot;String&quot;, value: &quot;some string&quot;},
         {dataType: &quot;DateTime&quot;, value: new Date()}
-    ]
-        .forEach(function (e) {
-            _addDataItem(analogItemFolder, e.dataType, e.value);
-        });
+    ];
+
+    data.forEach(function (e) {
+        _addAnalogDataItem(analogItemFolder, e.dataType, e.value);
+    });
+    data.forEach(function (e) {
+        _addDataItem(analogItemFolder, e.dataType, e.value);
+    });
+    data.forEach(function (e) {
+        _addArrayAnalogDataItem(analogItemFolder, e.dataType, e.value);
+    });
 
 
 }
+
+function getDADiscreteTypeFolder(addressSpace,parentFolder) {
+    var name = &quot;Simulation_DA_DiscreteType&quot;;
+    var nodeId =  makeNodeId(&quot;Simulation_DA_DiscreteType&quot;, namespaceIndex);
+
+    if (addressSpace.findNode(nodeId)){
+        return addressSpace.findNode(nodeId);
+    }
+    var node =addressSpace.addObject({
+        organizedBy: parentFolder,
+        typeDefinition: &quot;FolderType&quot;,
+        browseName: name,
+        nodeId: nodeId
+    });
+    return node;
+}
+function add_two_state_discrete_variables(addressSpace,parentFolder) {
+
+    var DADiscreteTypeFolder = getDADiscreteTypeFolder(addressSpace,parentFolder);
+
+    var twoStateDiscrete001 = addressSpace.addTwoStateDiscrete({
+        organizedBy: DADiscreteTypeFolder,
+        nodeId:  makeNodeId(&quot;TwoStateDiscrete001&quot;,namespaceIndex),
+        browseName: &quot;TwoStateDiscrete001&quot;,
+        trueState: &quot;Enabled&quot;,
+        falseState:&quot;Disabled&quot;
+    });
+
+
+    var twoStateDiscrete002 = addressSpace.addTwoStateDiscrete({
+        organizedBy: DADiscreteTypeFolder,
+        nodeId:  makeNodeId(&quot;TwoStateDiscrete002&quot;,namespaceIndex),
+        browseName: &quot;TwoStateDiscrete002&quot;,
+        trueState: &quot;On&quot;,
+        falseState:&quot;Off&quot;,
+        optionals:[&quot;TransitionTime&quot;,&quot;EffectiveDisplayName&quot;]
+    });
+
+    var twoStateDiscrete003 = addressSpace.addTwoStateDiscrete({
+        browseName: &quot;twoStateDiscrete003&quot;,
+        nodeId:  makeNodeId(&quot;TwoStateDiscrete003&quot;,namespaceIndex),
+        optionals:[&quot;TransitionTime&quot;],
+        isTrueSubStateOf: twoStateDiscrete002
+    });
+
+    var twoStateDiscrete004 = addressSpace.addTwoStateDiscrete({
+        organizedBy: DADiscreteTypeFolder,
+        nodeId:  makeNodeId(&quot;TwoStateDiscrete004&quot;,namespaceIndex),
+        browseName: &quot;TwoStateDiscrete004&quot;,
+        trueState: &quot;InProgress&quot;,
+        falseState:&quot;Stopped&quot;
+    });
+
+    var twoStateDiscrete005 = addressSpace.addTwoStateDiscrete({
+        organizedBy: DADiscreteTypeFolder,
+        nodeId:  makeNodeId(&quot;TwoStateDiscrete005&quot;,namespaceIndex),
+        browseName: &quot;TwoStateDiscrete005&quot;,
+        trueState: &quot;InProgress&quot;,
+        falseState:&quot;Stopped&quot;
+    });
+
+    twoStateDiscrete001.setValueFromSource( {dataType: &quot;Boolean&quot;, value: false});
+    twoStateDiscrete002.setValueFromSource( {dataType: &quot;Boolean&quot;, value: false});
+    twoStateDiscrete003.setValueFromSource( {dataType: &quot;Boolean&quot;, value: false});
+    twoStateDiscrete004.setValueFromSource( {dataType: &quot;Boolean&quot;, value: false});
+    twoStateDiscrete005.setValueFromSource( {dataType: &quot;Boolean&quot;, value: false});
+
+}
+
+function add_multi_state_discrete_variable(addressSpace,parentFolder) {
+
+    var DADiscreteTypeFolder = getDADiscreteTypeFolder(addressSpace,parentFolder);
+
+    //MultiStateDiscrete001
+    var multiStateDiscrete001 =addressSpace.addMultiStateDiscrete({
+        organizedBy: DADiscreteTypeFolder,
+        nodeId:  makeNodeId(&quot;MultiStateDiscrete001&quot;,namespaceIndex),
+        browseName: &quot;MultiStateDiscrete001&quot;,
+        enumStrings: [ &quot;Red&quot;,&quot;Orange&quot;,&quot;Green&quot;],
+        value: 1 // Orange
+    });
+    var makeAccessLevel = require(&quot;lib/datamodel/access_level&quot;).makeAccessLevel;
+
+
+
+    //MultiStateDiscrete002
+    addressSpace.addMultiStateDiscrete({
+        organizedBy: DADiscreteTypeFolder,
+        nodeId:  makeNodeId(&quot;MultiStateDiscrete002&quot;,namespaceIndex),
+        browseName: &quot;MultiStateDiscrete002&quot;,
+        enumStrings: [ &quot;Red&quot;,&quot;Orange&quot;,&quot;Green&quot;],
+        value: 1 // Orange
+    });
+
+    //MultiStateDiscrete002
+    addressSpace.addMultiStateDiscrete({
+        organizedBy: DADiscreteTypeFolder,
+        nodeId:  makeNodeId(&quot;MultiStateDiscrete003&quot;,namespaceIndex),
+        browseName: &quot;MultiStateDiscrete003&quot;,
+        enumStrings: [ &quot;Red&quot;,&quot;Orange&quot;,&quot;Green&quot;],
+        value: 1 // Orange
+    });
+
+    //MultiStateDiscrete002
+    addressSpace.addMultiStateDiscrete({
+        organizedBy: DADiscreteTypeFolder,
+        nodeId:  makeNodeId(&quot;MultiStateDiscrete004&quot;,namespaceIndex),
+        browseName: &quot;MultiStateDiscrete004&quot;,
+        enumStrings: [ &quot;Red&quot;,&quot;Orange&quot;,&quot;Green&quot;],
+        value: 1 // Orange
+    });
+
+    //MultiStateDiscrete002
+    addressSpace.addMultiStateDiscrete({
+        organizedBy: DADiscreteTypeFolder,
+        nodeId:  makeNodeId(&quot;MultiStateDiscrete005&quot;,namespaceIndex),
+        browseName: &quot;MultiStateDiscrete005&quot;,
+        enumStrings: [ &quot;Red&quot;,&quot;Orange&quot;,&quot;Green&quot;],
+        value: 1 // Orange
+    });
+
+}
+
+
+function add_multi_state_value_discrete_variables(addressSpace, parentFolder) {
+
+    var multistateValueDiscreteTypeFolder = addressSpace.addObject({
+        organizedBy: parentFolder,
+        typeDefinition: &quot;FolderType&quot;,
+        browseName: &quot;Simulation_DA_MultiStateValueDiscreteType&quot;,
+        nodeId: makeNodeId(&quot;Simulation_DA_MultiStateValueDiscreteType&quot;, namespaceIndex)
+    });
+
+    function _add_multi_state_variable(parentFolder, dataType) {
+
+        var name = dataType + &quot;MultiStateValueDiscrete&quot;;
+        var nodeId = makeNodeId(name, namespaceIndex);
+
+        var prop = addressSpace.addMultiStateValueDiscrete({
+            organizedBy: parentFolder,
+            browseName: name,
+            nodeId: nodeId,
+            dataType: dataType,
+            enumValues: {&quot;Red&quot;: 0xFF0000, &quot;Orange&quot;: 0xFF9933, &quot;Green&quot;: 0x00FF00, &quot;Blue&quot;: 0x0000FF},
+            value: 0xFF0000 // Red
+        });
+
+    }
+
+    var data = [
+        {dataType: &quot;Int16&quot;, value: -10},
+        {dataType: &quot;UInt16&quot;, value: 10},
+        {dataType: &quot;Int32&quot;, value: -100},
+        {dataType: &quot;UInt32&quot;, value: 100},
+        {dataType: &quot;Int64&quot;, value: [0, 0]},
+        {dataType: &quot;UInt64&quot;, value: [0, 0]},
+        {dataType: &quot;Byte&quot;, value: 120},
+        {dataType: &quot;SByte&quot;, value: -123}
+    ];
+    data.forEach(function (e) {
+        _add_multi_state_variable(multistateValueDiscreteTypeFolder, e.dataType);
+    });
+
+}
+
+function add_ObjectWithMethod(addressSpace, parentFolder) {
+
+    var namespaceIndex = 411;
+
+    var myObject = addressSpace.addObject({
+        nodeId: &quot;ns=411;s=ObjectWithMethods&quot;,
+        organizedBy: parentFolder,
+        browseName: &quot;ObjectWithMethods&quot;
+    });
+
+    var methodNoArgs = addressSpace.addMethod(myObject, {
+        ///xx modellingRule: &quot;Mandatory&quot;,
+        browseName: &quot;MethodNoArgs&quot;,
+        nodeId: makeNodeId(&quot;MethodNoArgs&quot;, namespaceIndex),
+        //xx inputArguments: [],
+        //xx outputArguments: []
+    });
+    assert(makeNodeId(&quot;MethodNoArgs&quot;, namespaceIndex).toString() === &quot;ns=411;s=MethodNoArgs&quot;);
+    assert(methodNoArgs.nodeId.toString() === &quot;ns=411;s=MethodNoArgs&quot;);
+
+    methodNoArgs.bindMethod(function (inputArguments, context, callback) {
+        // console.log(require(&quot;util&quot;).inspect(context).toString());
+        var callMethodResult = {
+            statusCode: StatusCodes.Good,
+            outputArguments: []
+        };
+        callback(null, callMethodResult);
+    });
+
+
+    var methodIO = addressSpace.addMethod(myObject, {
+
+        ///xx modellingRule: &quot;Mandatory&quot;,
+
+        browseName: &quot;MethodIO&quot;,
+        nodeId: makeNodeId(&quot;MethodIO&quot;, namespaceIndex),
+
+        inputArguments: [
+            {
+                name: &quot;ShutterLag&quot;,
+                description: {text: &quot;specifies the number of seconds to wait before the picture is taken &quot;},
+                dataType: DataType.UInt32
+            }
+        ],
+
+        outputArguments: [
+            {
+                name: &quot;Result&quot;,
+                description: {text: &quot;the result&quot;},
+                dataType: &quot;Int32&quot;
+            }
+        ]
+    });
+    methodIO.bindMethod(function (inputArguments, context, callback) {
+        // console.log(require(&quot;util&quot;).inspect(context).toString());
+        var callMethodResult = {
+            statusCode: StatusCodes.Good,
+            outputArguments: [
+                {
+                    dataType: DataType.Int32,
+                    value: 42
+                }
+            ]
+        };
+        callback(null, callMethodResult);
+    });
+
+    var methodI = addressSpace.addMethod(myObject, {
+
+        ///xx modellingRule: &quot;Mandatory&quot;,
+
+        browseName: &quot;MethodI&quot;,
+        nodeId: makeNodeId(&quot;MethodI&quot;, namespaceIndex),
+
+        inputArguments: [
+            {
+                name: &quot;ShutterLag&quot;,
+                description: {text: &quot;specifies the number of seconds to wait before the picture is taken &quot;},
+                dataType: DataType.UInt32
+            }
+        ],
+        //xx outputArguments: []
+
+    });
+    methodI.bindMethod(function (inputArguments, context, callback) {
+        // console.log(require(&quot;util&quot;).inspect(context).toString());
+        var callMethodResult = {
+            statusCode: StatusCodes.Good,
+            outputArguments: []
+        };
+        callback(null, callMethodResult);
+    });
+
+    var methodO = addressSpace.addMethod(myObject, {
+
+        ///xx modellingRule: &quot;Mandatory&quot;,
+
+        browseName: &quot;MethodO&quot;,
+        nodeId: makeNodeId(&quot;MethodO&quot;, namespaceIndex),
+
+        //xx inputArguments: [],
+        outputArguments: [
+            {
+                name: &quot;Result&quot;,
+                description: {text: &quot;the result&quot;},
+                dataType: &quot;Int32&quot;
+            }
+        ]
+
+    });
+    methodO.bindMethod(function (inputArguments, context, callback) {
+        // console.log(require(&quot;util&quot;).inspect(context).toString());
+        var callMethodResult = {
+            statusCode: StatusCodes.Good,
+            outputArguments: [
+                {
+                    dataType: DataType.Int32,
+                    value: 42
+                }
+            ]
+        };
+        callback(null, callMethodResult);
+    });
+
+}
+
 
 function add_eventGeneratorObject(addressSpace, parentFolder) {
 
@@ -1145,7 +1531,7 @@ function add_eventGeneratorObject(addressSpace, parentFolder) {
         ],
         outputArguments: []
     });
-    
+
     method.bindMethod(function (inputArguments, context, callback) {
 
         //xx console.log(&quot;In Event Generator Method&quot;);
@@ -1178,6 +1564,87 @@ function add_eventGeneratorObject(addressSpace, parentFolder) {
 
 }
 exports.add_eventGeneratorObject = add_eventGeneratorObject;
+
+function add_enumeration_variable(addressSpace, parentFolder) {
+
+    var myEnumType = addressSpace.addEnumerationType({
+        browseName: &quot;SimulationEnumerationType&quot;,
+        enumeration: [
+            {value: 1, displayName: &quot;RUNNING&quot;},
+            {value: 2, displayName: &quot;BLOCKED&quot;},
+            {value: 3, displayName: &quot;IDLE&quot;},
+            {value: 4, displayName: &quot;UNDER MAINTENANCE&quot;}
+        ]
+    });
+
+    // now instantiate a variable that have this type.
+    var e = addressSpace.addVariable({
+        organizedBy: parentFolder,
+        propertyOf: addressSpace.rootFolder.objects.server.venderServerInfos,
+        dataType: myEnumType,
+        browseName: &quot;RunningState&quot;,
+        value: {
+            get: function () {
+                return new Variant({dataType: DataType.Int32, value: 1})
+            }
+        }
+    });
+
+}
+
+function add_trigger_nodes(addressSpace, parentFolder) {
+
+    // ns=411;s=TriggerNode01 ns=411;s=TriggerNode02
+    // add 2 nodes that generate an event when ever they are written to.
+
+    function _add_trigger_node(browseName, nodeId) {
+        var triggerNode = addressSpace.addVariable({
+            browseName: browseName,
+            nodeId: nodeId,
+            organizedBy: parentFolder,
+            dataType: &quot;Double&quot;,
+            typeDefinition: makeNodeId(68)
+        });
+
+        var value = 100.0;
+        var getFunc = function () {
+            return new Variant({
+                dataType: DataType.Double,
+                value: value
+            });
+        };
+        var setFunc = function (variant) {
+
+            value = variant.value;
+
+            var server = addressSpace.rootFolder.objects.server;
+
+            console.log(&quot;server.raiseEvent&quot;);
+
+            server.raiseEvent(&quot;MyEventType&quot;, {
+                message: {
+                    dataType: DataType.LocalizedText,
+                    value: {text: &quot;Hello World&quot;}
+                },
+                severity: {
+                    dataType: DataType.UInt32,
+                    value: 32
+                }
+
+            });
+        };
+
+        var options = {
+            get: getFunc,
+            set: setFunc
+        };
+        triggerNode.bindVariable(options);
+    }
+
+    var triggerNode01 = _add_trigger_node(&quot;TriggerNode01&quot;, &quot;ns=411;s=TriggerNode01&quot;);
+
+    var triggerNode02 = _add_trigger_node(&quot;TriggerNode02&quot;, &quot;ns=411;s=TriggerNode02&quot;);
+}
 
 function add_sampleView(addressSpace) {
 
@@ -1217,11 +1684,24 @@ build_address_space_for_conformance_testing = function (server_engine, options) 
 
     add_analog_data_items(addressSpace, simulationFolder);
 
-    add_path_10deep(addressSpace,simulationFolder);
+    add_path_10deep(addressSpace, simulationFolder);
 
-    add_eventGeneratorObject(addressSpace,simulationFolder);
+    add_ObjectWithMethod(addressSpace, simulationFolder);
+
+    add_eventGeneratorObject(addressSpace, simulationFolder);
 
     add_sampleView(addressSpace);
+
+    add_enumeration_variable(addressSpace, simulationFolder);
+
+    add_multi_state_value_discrete_variables(addressSpace, simulationFolder);
+
+    add_two_state_discrete_variables(addressSpace,simulationFolder);
+
+    add_multi_state_discrete_variable(addressSpace,simulationFolder);
+
+
+    add_trigger_nodes(addressSpace, simulationFolder);
 
 };
 exports.build_address_space_for_conformance_testing = build_address_space_for_conformance_testing;

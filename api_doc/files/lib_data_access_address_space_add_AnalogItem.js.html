@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.52</em>
+            <em>API Docs for: 0.0.57</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -101,7 +101,6 @@
                                 <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
                                 <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
                                 <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
-                                <li><a href="../classes/cryptoutils.html">cryptoutils</a></li>
                                 <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
                                 <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
                                 <li><a href="../classes/DataValue.html">DataValue</a></li>
@@ -306,7 +305,11 @@
                                 <li><a href="../modules/services.subscription.html">services.subscription</a></li>
                                 <li><a href="../modules/services.write.html">services.write</a></li>
                                 <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
-                                <li><a href="../modules/xml2json.html">xml2json</a></li>
+                                <li><a href="../modules/xml2json
+                
+                node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+                
+                node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
                             </ul>
                         </div>
                     </div>
@@ -362,6 +365,7 @@ var _ = require(&quot;underscore&quot;);
 
 
 exports.install = function (AddressSpace) {
+
 
     /**
      * @method addDataItem
@@ -438,6 +442,7 @@ exports.install = function (AddressSpace) {
      * @param [options.accessLevel {AccessLevelFlag} = &quot;CurrentRead | CurrentWrite&quot;]
      * @param [options.userAccessLevel {AccessLevelFlag} = &quot;CurrentRead | CurrentWrite&quot;]
      * @param options.value
+     * @param [options.modellingRule]
      * @return {UAVariable}
      */
     AddressSpace.prototype.addAnalogDataItem = function (options) {
@@ -456,9 +461,10 @@ exports.install = function (AddressSpace) {
 
         clone_options = _.extend(clone_options, {
             typeDefinition: analogItemType.nodeId,
-            dataType:       dataType,
+            dataType:       dataType
         });
         var variable = addressSpace.addVariable(clone_options);
+
 
         //var variable = addressSpace.addVariable({
         //    componentOf:     options.componentOf,
@@ -483,12 +489,12 @@ exports.install = function (AddressSpace) {
         // use as automatically scaling a bar graph display
         // Sensor or instrument failure or deactivation can result in a return ed item value which is actually
         // outside  of  this range. Client software must be prepared to deal with this   possibility. Similarly a client
-        // may attempt to write a value that is outside  of  this range back to the server. The exact behavio ur
-        // (accept, reject, cl amp, etc.) in this case is server - dependent. However ,   in general servers  shall  be
+        // may attempt to write a value that is outside  of  this range back to the server. The exact behaviour
+        // (accept, reject, clamp, etc.) in this case is server - dependent. However ,   in general servers  shall  be
         // prepared to handle this.
         //     Example:    EURange ::= {-200.0,1400.0}
 
-        addressSpace.addVariable({
+        var euRange = addressSpace.addVariable({
             propertyOf: variable,
             typeDefinition: &quot;PropertyType&quot;,
             browseName: &quot;EURange&quot;,
@@ -500,20 +506,27 @@ exports.install = function (AddressSpace) {
             modellingRule: options.modellingRule
         });
 
+
+        var handler = variable.handle_semantic_changed.bind(variable);
+        euRange.on(&quot;value_changed&quot;,handler);
+
         if (options.hasOwnProperty(&quot;instrumentRange&quot;)) {
 
-            addressSpace.addVariable({
+            var instrumentRange =addressSpace.addVariable({
                 propertyOf: variable,
                 typeDefinition: &quot;PropertyType&quot;,
                 browseName: &quot;InstrumentRange&quot;,
                 dataType: &quot;Range&quot;,
                 minimumSamplingInterval: 0,
-                accessLevel: &quot;CurrentRead&quot;,
+                accessLevel: &quot;CurrentRead | CurrentWrite&quot;,
                 value: new Variant({
                     dataType: DataType.ExtensionObject, value: new Range(options.instrumentRange)
                 }),
                 modellingRule: options.modellingRule ? &quot;Mandatory&quot; : undefined
             });
+
+            instrumentRange.on(&quot;value_changed&quot;,handler);
+
         }
 
         if (options.hasOwnProperty(&quot;engineeringUnits&quot;)) {
@@ -524,7 +537,7 @@ exports.install = function (AddressSpace) {
             // EngineeringUnits  specifies the units for the   DataItem‟s value (e.g., DEGC, hertz, seconds).   The
             // EUInformation   type is specified in   5.6.3.
 
-            addressSpace.addVariable({
+            var eu = addressSpace.addVariable({
                 propertyOf: variable,
                 typeDefinition: &quot;PropertyType&quot;,
                 browseName: &quot;EngineeringUnits&quot;,
@@ -536,6 +549,9 @@ exports.install = function (AddressSpace) {
                 }),
                 modellingRule: options.modellingRule ? &quot;Mandatory&quot; : undefined
             });
+
+            eu.on(&quot;value_changed&quot;,handler);
+
         }
 
         variable.install_extra_properties();

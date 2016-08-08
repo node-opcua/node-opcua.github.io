@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.52</em>
+            <em>API Docs for: 0.0.57</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -101,7 +101,6 @@
                                 <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
                                 <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
                                 <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
-                                <li><a href="../classes/cryptoutils.html">cryptoutils</a></li>
                                 <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
                                 <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
                                 <li><a href="../classes/DataValue.html">DataValue</a></li>
@@ -306,7 +305,11 @@
                                 <li><a href="../modules/services.subscription.html">services.subscription</a></li>
                                 <li><a href="../modules/services.write.html">services.write</a></li>
                                 <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
-                                <li><a href="../modules/xml2json.html">xml2json</a></li>
+                                <li><a href="../modules/xml2json
+                
+                node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+                
+                node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
                             </ul>
                         </div>
                     </div>
@@ -357,6 +360,9 @@ var BinaryStream = require(&quot;lib/misc/binaryStream&quot;).BinaryStream;
 var readMessageHeader = require(&quot;lib/misc/message_header&quot;).readMessageHeader;
 var assert = require(&quot;better-assert&quot;);
 var get_clock_tick = require(&quot;lib/misc/utils&quot;).get_clock_tick;
+
+var buffer_utils = require(&quot;lib/misc/buffer_utils&quot;);
+var createFastUninitializedBuffer = buffer_utils.createFastUninitializedBuffer;
 
 
 function readRawMessageHeader(data) {
@@ -479,7 +485,7 @@ MessageBuilderBase.prototype._append = function (message_chunk) {
     // note : Buffer.slice create a shared memory !
     //        use Buffer.clone
     var shared_buf = message_chunk.slice(offsetBodyStart, offsetBodyEnd);
-    var cloned_buf = new Buffer(shared_buf.length);
+    var cloned_buf = createFastUninitializedBuffer(shared_buf.length);
     shared_buf.copy(cloned_buf, 0, 0);
     this.blocks.push(cloned_buf);
 

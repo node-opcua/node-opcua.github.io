@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.52</em>
+            <em>API Docs for: 0.0.57</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -101,7 +101,6 @@
                                 <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
                                 <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
                                 <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
-                                <li><a href="../classes/cryptoutils.html">cryptoutils</a></li>
                                 <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
                                 <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
                                 <li><a href="../classes/DataValue.html">DataValue</a></li>
@@ -306,7 +305,11 @@
                                 <li><a href="../modules/services.subscription.html">services.subscription</a></li>
                                 <li><a href="../modules/services.write.html">services.write</a></li>
                                 <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
-                                <li><a href="../modules/xml2json.html">xml2json</a></li>
+                                <li><a href="../modules/xml2json
+                
+                node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+                
+                node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
                             </ul>
                         </div>
                     </div>
@@ -348,7 +351,7 @@
         </div>
 
         <div class="foundat">
-            Defined in: <a href="../files/lib_client_client_subscription.js.html#l31"><code>lib\client\client_subscription.js:31</code></a>
+            Defined in: <a href="../files/lib_client_client_subscription.js.html#l33"><code>lib\client\client_subscription.js:33</code></a>
         </div>
 
             Module: <a href="../modules/opcua.client.html">opcua.client</a>
@@ -387,7 +390,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_client_subscription.js.html#l31"><code>lib\client\client_subscription.js:31</code></a>
+        <a href="../files/lib_client_client_subscription.js.html#l33"><code>lib\client\client_subscription.js:33</code></a>
         </p>
 
 
@@ -512,6 +515,18 @@
 
                             </li>
                             <li class="index-item method">
+                                <a href="#method_ping_server
+
+when a session is opened on a server, the client shall send request on a regular basis otherwise the server
+session object might time out.
+start_ping make sure that ping_server is called on a regular basis to prevent session to timeout.">ping_server
+
+when a session is opened on a server, the client shall send request on a regular basis otherwise the server
+session object might time out.
+start_ping make sure that ping_server is called on a regular basis to prevent session to timeout.</a>
+
+                            </li>
+                            <li class="index-item method">
                                 <a href="#method_recreateSubscriptionAndMonitoredItem">recreateSubscriptionAndMonitoredItem</a>
 
                             </li>
@@ -542,6 +557,14 @@
                     <h3>Events</h3>
 
                     <ul class="index-list events extends">
+                            <li class="index-item event">
+                                <a href="#event_failure
+raised when the server is not responding or is responding with en error to
+the keep alive read Variable value transaction">failure
+raised when the server is not responding or is responding with en error to
+the keep alive read Variable value transaction</a>
+
+                            </li>
                             <li class="index-item event">
                                 <a href="#event_internal_error">internal_error</a>
 
@@ -611,7 +634,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_client_subscription.js.html#l386"><code>lib\client\client_subscription.js:386</code></a>
+        <a href="../files/lib_client_client_subscription.js.html#l402"><code>lib\client\client_subscription.js:402</code></a>
         </p>
 
 
@@ -867,7 +890,7 @@ TimestampToReturn.Neither
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_client_subscription.js.html#l361"><code>lib\client\client_subscription.js:361</code></a>
+        <a href="../files/lib_client_client_subscription.js.html#l377"><code>lib\client\client_subscription.js:377</code></a>
         </p>
 
 
@@ -878,6 +901,66 @@ TimestampToReturn.Neither
         
     </div>
 
+
+
+
+</div>
+<div id="method_ping_server
+
+when a session is opened on a server, the client shall send request on a regular basis otherwise the server
+session object might time out.
+start_ping make sure that ping_server is called on a regular basis to prevent session to timeout." class="method item">
+    <h3 class="name"><code>ping_server
+
+when a session is opened on a server, the client shall send request on a regular basis otherwise the server
+session object might time out.
+start_ping make sure that ping_server is called on a regular basis to prevent session to timeout.</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>callback</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_client_client_session_keepalive_manager.js.html#l18"><code>lib\client\client_session_keepalive_manager.js:18</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">callback</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
 
 
 
@@ -897,7 +980,7 @@ TimestampToReturn.Neither
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_client_subscription.js.html#l599"><code>lib\client\client_subscription.js:599</code></a>
+        <a href="../files/lib_client_client_subscription.js.html#l615"><code>lib\client\client_subscription.js:615</code></a>
         </p>
 
 
@@ -928,7 +1011,7 @@ TimestampToReturn.Neither
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_client_subscription.js.html#l320"><code>lib\client\client_subscription.js:320</code></a>
+        <a href="../files/lib_client_client_subscription.js.html#l333"><code>lib\client\client_subscription.js:333</code></a>
         </p>
 
 
@@ -959,7 +1042,7 @@ TimestampToReturn.Neither
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_client_subscription.js.html#l93"><code>lib\client\client_subscription.js:93</code></a>
+        <a href="../files/lib_client_client_subscription.js.html#l95"><code>lib\client\client_subscription.js:95</code></a>
         </p>
 
 
@@ -985,7 +1068,7 @@ TimestampToReturn.Neither
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_client_subscription.js.html#l295"><code>lib\client\client_subscription.js:295</code></a>
+        <a href="../files/lib_client_client_subscription.js.html#l307"><code>lib\client\client_subscription.js:307</code></a>
         </p>
 
 
@@ -1005,6 +1088,34 @@ TimestampToReturn.Neither
             <div id="events" class="api-class-tabpanel">
                 <h2 class="off-left">Events</h2>
 
+                    <div id="event_failure
+                    raised when the server is not responding or is responding with en error to
+                    the keep alive read Variable value transaction" class="events item">
+                        <h3 class="name"><code>failure
+                    raised when the server is not responding or is responding with en error to
+                    the keep alive read Variable value transaction</code></h3>
+                        <span class="type"></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/lib_client_client_session_keepalive_manager.js.html#l50"><code>lib\client\client_session_keepalive_manager.js:50</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                    
+                    
+                    </div>
                     <div id="event_internal_error" class="events item">
                         <h3 class="name"><code>internal_error</code></h3>
                         <span class="type"></span>
@@ -1016,7 +1127,7 @@ TimestampToReturn.Neither
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/lib_client_client_subscription.js.html#l345"><code>lib\client\client_subscription.js:345</code></a>
+                            <a href="../files/lib_client_client_subscription.js.html#l361"><code>lib\client\client_subscription.js:361</code></a>
                             </p>
                     
                     
@@ -1058,7 +1169,7 @@ TimestampToReturn.Neither
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/lib_client_client_subscription.js.html#l377"><code>lib\client\client_subscription.js:377</code></a>
+                            <a href="../files/lib_client_client_subscription.js.html#l393"><code>lib\client\client_subscription.js:393</code></a>
                             </p>
                     
                     
@@ -1100,7 +1211,7 @@ TimestampToReturn.Neither
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/lib_client_client_subscription.js.html#l256"><code>lib\client\client_subscription.js:256</code></a>
+                            <a href="../files/lib_client_client_subscription.js.html#l268"><code>lib\client\client_subscription.js:268</code></a>
                             </p>
                     
                     
@@ -1125,7 +1236,7 @@ TimestampToReturn.Neither
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/lib_client_client_subscription.js.html#l264"><code>lib\client\client_subscription.js:264</code></a>
+                            <a href="../files/lib_client_client_subscription.js.html#l276"><code>lib\client\client_subscription.js:276</code></a>
                             </p>
                     
                     
@@ -1151,7 +1262,7 @@ TimestampToReturn.Neither
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/lib_client_client_subscription.js.html#l107"><code>lib\client\client_subscription.js:107</code></a>
+                            <a href="../files/lib_client_client_subscription.js.html#l109"><code>lib\client\client_subscription.js:109</code></a>
                             </p>
                     
                     
@@ -1176,7 +1287,7 @@ TimestampToReturn.Neither
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/lib_client_client_subscription.js.html#l222"><code>lib\client\client_subscription.js:222</code></a>
+                            <a href="../files/lib_client_client_subscription.js.html#l232"><code>lib\client\client_subscription.js:232</code></a>
                             </p>
                     
                     
@@ -1201,7 +1312,7 @@ TimestampToReturn.Neither
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/lib_client_client_subscription.js.html#l310"><code>lib\client\client_subscription.js:310</code></a>
+                            <a href="../files/lib_client_client_subscription.js.html#l322"><code>lib\client\client_subscription.js:322</code></a>
                             </p>
                     
                     

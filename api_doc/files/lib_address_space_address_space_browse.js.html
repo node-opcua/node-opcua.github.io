@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.52</em>
+            <em>API Docs for: 0.0.57</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -101,7 +101,6 @@
                                 <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
                                 <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
                                 <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
-                                <li><a href="../classes/cryptoutils.html">cryptoutils</a></li>
                                 <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
                                 <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
                                 <li><a href="../classes/DataValue.html">DataValue</a></li>
@@ -306,7 +305,11 @@
                                 <li><a href="../modules/services.subscription.html">services.subscription</a></li>
                                 <li><a href="../modules/services.write.html">services.write</a></li>
                                 <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
-                                <li><a href="../modules/xml2json.html">xml2json</a></li>
+                                <li><a href="../modules/xml2json
+                
+                node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+                
+                node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
                             </ul>
                         </div>
                     </div>
@@ -386,6 +389,9 @@ exports.install = function (AddressSpace) {
      *   |BadTooManyMatches             |                                                            |
      *   |BadQueryTooComplex            |                                                            |
      *   |BadNoMatch                    |                                                            |
+     *
+     *
+     *
      */
     AddressSpace.prototype.browsePath = function (browsePath) {
 
@@ -398,14 +404,35 @@ exports.install = function (AddressSpace) {
             return new BrowsePathResult({statusCode: StatusCodes.BadNodeIdUnknown});
         }
 
-        if (browsePath.relativePath.elements.length === 0) {
+        if (!browsePath.relativePath.elements || browsePath.relativePath.elements.length === 0) {
             return new BrowsePathResult({statusCode: StatusCodes.BadNothingToDo});
         }
 
-        // The last element in the relativePath shall always have a targetName specified.
-        var l = browsePath.relativePath.elements.length;
-        var last_el = browsePath.relativePath.elements[l - 1];
+        var elements_length = browsePath.relativePath.elements.length;
+        //-------------------------------------------------------------------------------------------------------
+        // verify standard RelativePath construction
+        //   from OPCUA 1.03 - PArt 3 - 7.6 RelativePath:
+        //   TargetName  The BrowseName of the target node.
+        //               The final element may have an empty targetName. In this situation all targets of the
+        //               references identified by the referenceTypeId are the targets of the RelativePath.
+        //               The targetName shall be specified for all other elements.
+        //               The current path cannot be followed any further if no targets with the specified
+        //               BrowseName exist.
+        //   Let&#x27;s detect null targetName which are not in last position and return Bad_BrowseNameInvalid if not
+        //
+        var empty_targetName_not_in_lastPos = browsePath.relativePath.elements.reduce(function(prev,e,index) {
+            var is_last = ( (index + 1) === elements_length);
+            var isBad = ( !is_last &amp;&amp; ( !e.targetName || e.targetName.isEmpty()));
+            return prev + ( ( !is_last &amp;&amp; ( !e.targetName || e.targetName.isEmpty())) ? 1 :0 );
+        },0);
+        if (empty_targetName_not_in_lastPos) {
+            return new BrowsePathResult({statusCode: StatusCodes.BadBrowseNameInvalid});
+        }
 
+        // from OPCUA 1.03 - PArt 3 - 5.8.4 TranslateBrowsePathToNodeIds
+        // TranslateBrowsePathToNodeIds further restrict RelativePath targetName rules:
+        // The last element in the relativePath shall always have a targetName specified.
+        var last_el = browsePath.relativePath.elements[elements_length - 1];
         if (!last_el.targetName || !last_el.targetName.name || last_el.targetName.name.length === 0) {
             return new BrowsePathResult({statusCode: StatusCodes.BadBrowseNameInvalid});
         }
@@ -417,8 +444,9 @@ exports.install = function (AddressSpace) {
             var element = elements[index];
             assert(element instanceof translate_service.RelativePathElement);
 
+            var is_last = ( (index + 1) === elements.length);
 
-            var nodeIds = curNodeObject.browseNodeByTargetName(element);
+            var nodeIds = curNodeObject.browseNodeByTargetName(element,is_last);
 
             var targets = nodeIds.map(function (nodeId) {
                 return {
@@ -426,8 +454,6 @@ exports.install = function (AddressSpace) {
                     remainingPathIndex: elements.length - index
                 };
             });
-
-            var is_last = ( (index + 1) === elements.length);
 
             if (!is_last) {
                 // explorer

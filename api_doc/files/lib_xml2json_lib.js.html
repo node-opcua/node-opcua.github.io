@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.52</em>
+            <em>API Docs for: 0.0.57</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -101,7 +101,6 @@
                                 <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
                                 <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
                                 <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
-                                <li><a href="../classes/cryptoutils.html">cryptoutils</a></li>
                                 <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
                                 <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
                                 <li><a href="../classes/DataValue.html">DataValue</a></li>
@@ -306,7 +305,11 @@
                                 <li><a href="../modules/services.subscription.html">services.subscription</a></li>
                                 <li><a href="../modules/services.write.html">services.write</a></li>
                                 <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
-                                <li><a href="../modules/xml2json.html">xml2json</a></li>
+                                <li><a href="../modules/xml2json
+                
+                node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+                
+                node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
                             </ul>
                         </div>
                     </div>
@@ -348,6 +351,8 @@
 &quot;use strict&quot;;
 /**
  * @module xml2json
+
+ * node -&gt; see if https://github.com/isaacs/sax-js could be used instead
  */
 
 var xml;
@@ -470,6 +475,7 @@ ReaderState.prototype._on_startElement = function (name, attrs) {
 ReaderState.prototype._on_endElement = function (name) {
     assert(this.attrs);
 
+    this.chunks = this.chunks || [];
     //xx if (this._endElement) { this._endElement(name); }
     if (this.parent &amp;&amp; this.parent._endElement) {
         this.parent._endElement(name);
@@ -609,12 +615,37 @@ Xml2Json.prototype.parseString = function (xml_text, callback) {
  * @param callback {Callback}
  */
 Xml2Json.prototype.parse = function (xmlFile, callback) {
-    var parser = this._prepareParser(callback);
-    var Bomstrip = require(&quot;bomstrip&quot;);
-    fs.createReadStream(xmlFile, {autoClose: true, encoding: &quot;utf8&quot;})
-        .pipe(new Bomstrip())
-        .pipe(parser);
-};
+
+    var  self = this;
+    var readWholeFile = true;
+    if (readWholeFile) {
+
+        // slightly faster but reaquire more memory ..
+        fs.readFile(xmlFile,function(err, data){
+            if (!err) {
+                if (data[0] == 0xEF &amp;&amp; data[1] == 0xBB &amp;&amp; data[2] == 0xBF) {
+                    data = data.slice(3);
+                }
+                data = data.toString();
+                var parser = self._prepareParser(callback);
+                //xx console.log(data.substr(0,1000).yellow);
+                //xx console.log(data.substr(data.length -1000,1000).cyan);
+                parser.write(data);
+                parser.end();
+            } else {
+                callback(err);
+
+            }
+        });
+    } else {
+        var Bomstrip = require(&quot;bomstrip&quot;);
+        var parser = self._prepareParser(callback);
+        fs.createReadStream(xmlFile, {autoClose: true, encoding: &quot;utf8&quot;})
+            .pipe(new Bomstrip())
+            .pipe(parser);
+
+        }
+    };
 
 
 exports.Xml2Json = Xml2Json;

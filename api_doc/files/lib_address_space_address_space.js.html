@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.52</em>
+            <em>API Docs for: 0.0.57</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -101,7 +101,6 @@
                                 <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
                                 <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
                                 <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
-                                <li><a href="../classes/cryptoutils.html">cryptoutils</a></li>
                                 <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
                                 <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
                                 <li><a href="../classes/DataValue.html">DataValue</a></li>
@@ -306,7 +305,11 @@
                                 <li><a href="../modules/services.subscription.html">services.subscription</a></li>
                                 <li><a href="../modules/services.write.html">services.write</a></li>
                                 <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
-                                <li><a href="../modules/xml2json.html">xml2json</a></li>
+                                <li><a href="../modules/xml2json
+                
+                node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+                
+                node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
                             </ul>
                         </div>
                     </div>
@@ -437,8 +440,7 @@ AddressSpace.prototype.registerNamespace = function (namespaceUri) {
 };
 
 AddressSpace.prototype.getNamespaceIndex = function (namespaceUri) {
-    var index = this._namespaceArray.indexOf(namespaceUri);
-    return index;
+    return  this._namespaceArray.indexOf(namespaceUri);
 };
 
 AddressSpace.prototype.getNamespaceArray = function () {
@@ -1062,6 +1064,10 @@ var VariableTypeIds = require(&quot;lib/opcua_node_ids&quot;).VariableTypeIds;
 
 AddressSpace.prototype._coerce_Type = function (dataType, typeMap, typeMapName, finderMethod) {
 
+    assert(dataType,&quot;expecting a dataType&quot;);
+    if ( dataType instanceof BaseNode) {
+        dataType = dataType.nodeId;
+    }
     assert(_.isObject(typeMap));
     var self = this;
     var nodeId;
@@ -1208,7 +1214,6 @@ AddressSpace.prototype._addVariable = function (options) {
  *
  * @method addVariable
  * @param options
- * @param options
  * @param options.browseName {String} the variable name
  * @param options.dataType   {String} the variable datatype ( &quot;Double&quot;, &quot;UInt8&quot; etc...)
  * @param [options.typeDefinition=&quot;BaseDataVariableType&quot;]
@@ -1219,9 +1224,9 @@ AddressSpace.prototype.addVariable = function (options) {
 
     var self = this;
     assert(arguments.length === 1 ,
-        &quot;Invalid arguments AddressSpace#addVariable now takes only one argument. Please update you code&quot;);
+        &quot;Invalid arguments AddressSpace#addVariable now takes only one argument. Please update your code&quot;);
 
-    if (options.hasOwnProperty(&quot;propertyOf&quot;)) {
+    if (options.hasOwnProperty(&quot;propertyOf&quot;) &amp;&amp; options.propertyOf) {
         assert(!options.typeDefinition || options.typeDefinition === &quot;PropertyType&quot;);
         options.typeDefinition = options.typeDefinition || &quot;PropertyType&quot;;
 
@@ -1273,6 +1278,43 @@ AddressSpace.prototype._construct_nodeId = function(options) {
     return nodeId;
 };
 
+AddressSpace.prototype._coerceType = function (baseType,topMostBaseType,nodeClass) {
+
+    var self = this;
+    assert(typeof topMostBaseType === &quot;string&quot;);
+    var topMostBaseTypeNode = self.findNode(topMostBaseType);
+
+    // istanbul ignore next
+    if (!topMostBaseTypeNode) {
+        throw new Error(&quot;Cannot find topMostBaseTypeNode &quot; + topMostBaseType.toString());
+    }
+    assert(topMostBaseTypeNode instanceof BaseNode);
+    assert(topMostBaseTypeNode.nodeClass === nodeClass);
+
+    if (!baseType) {
+        return topMostBaseTypeNode;
+    }
+
+    assert(typeof baseType === &quot;string&quot; || baseType instanceof BaseNode);
+    var baseTypeNode;
+    if ( baseType instanceof BaseNode) {
+        baseTypeNode = baseType;
+    } else {
+        baseTypeNode = self.findNode(baseType);
+    }
+
+    /* istanbul ignore next*/
+    if (!baseTypeNode) {
+        throw new Error(&quot;Cannot find ObjectType or VariableType for &quot; + baseType.toString());
+    }
+
+    assert(baseTypeNode);
+    assert(baseTypeNode.isSupertypeOf(topMostBaseTypeNode));
+    //xx console.log(&quot;baseTypeNode = &quot;,baseTypeNode.toString());
+    return baseTypeNode;
+};
+
+
 AddressSpace.prototype._addObjectOrVariableType = function (options,topMostBaseType,nodeClass) {
 
     var self = this;
@@ -1280,63 +1322,44 @@ AddressSpace.prototype._addObjectOrVariableType = function (options,topMostBaseT
     assert(typeof topMostBaseType === &quot;string&quot;);
     assert(nodeClass === NodeClass.ObjectType || nodeClass === NodeClass.VariableType);
 
-
-    function _coerceObjectOrVariableType(baseType) {
-
-        assert(typeof topMostBaseType === &quot;string&quot;);
-        var topMostBaseTypeNode = self.findNode(topMostBaseType);
-
-        // istanbul ignore next
-        if (!topMostBaseTypeNode) {
-            throw new Error(&quot;Cannot find topMostBaseTypeNode &quot; + topMostBaseType.toString());
-        }
-        assert(topMostBaseTypeNode instanceof BaseNode);
-        assert(topMostBaseTypeNode.nodeClass === nodeClass);
-
-        if (!baseType) {
-            return topMostBaseTypeNode.nodeId;
-        }
-
-        assert(typeof baseType === &quot;string&quot; || baseType instanceof BaseNode);
-        var baseTypeNode;
-        if ( baseType instanceof BaseNode) {
-            baseTypeNode = baseType;
-        } else {
-            baseTypeNode = self.findNode(baseType);
-        }
-
-        /* istanbul ignore next*/
-        if (!baseTypeNode) {
-            throw new Error(&quot;Cannot find ObjectType or VariableType for &quot; + baseType.toString());
-        }
-
-        assert(baseTypeNode);
-        assert(baseTypeNode.isSupertypeOf(topMostBaseTypeNode));
-        //xx console.log(&quot;baseTypeNode = &quot;,baseTypeNode.toString());
-        return baseTypeNode.nodeId;
-    }
-
     assert(!options.nodeClass);
     assert(options.browseName);
     assert(typeof options.browseName === &quot;string&quot;);
-    assert(!options.subTypeOf,&quot;misspell error : it should be &#x27;subtypeOf&#x27; instead&quot;);
-    if (options.hasOwnProperty(&quot;hasTypeDefinition&quot;)) {
-        throw new Error(&quot;hasTypeDefinition option is invalid. Do you mean typeDefinition instead ?&quot;);
-    }
-    assert(!options.typeDefinition, &quot; do you mean subtypeOf ?&quot;);
 
-    var subtypeOfNodeId = _coerceObjectOrVariableType(options.subtypeOf);
-    assert(subtypeOfNodeId);
+
+    var references = [];
+
+    function process_subtypeOf_options(self,options,references) {
+
+        // check common misspelling mistake
+        assert(!options.subTypeOf,&quot;misspell error : it should be &#x27;subtypeOf&#x27; instead&quot;);
+        if (options.hasOwnProperty(&quot;hasTypeDefinition&quot;)) {
+            throw new Error(&quot;hasTypeDefinition option is invalid. Do you mean typeDefinition instead ?&quot;);
+        }
+        assert(!options.typeDefinition, &quot; do you mean subtypeOf ?&quot;);
+
+        var subtypeOfNodeId = self._coerceType(options.subtypeOf,topMostBaseType,nodeClass);
+
+        assert(subtypeOfNodeId);
+        references.push({ referenceType: &quot;HasSubtype&quot;, isForward: false,  nodeId: subtypeOfNodeId });
+    }
+    process_subtypeOf_options(self,options,references);
+
 
     var objectType = this._createNode({
-        browseName: options.browseName,
-        nodeClass:   nodeClass,
-        isAbstract: !!options.isAbstract,
+        browseName:    options.browseName,
+        nodeClass:     nodeClass,
+        isAbstract:    !!options.isAbstract,
         eventNotifier: +options.eventNotifier,
-        references: [ { referenceType: &quot;HasSubtype&quot;, isForward: false,  nodeId: subtypeOfNodeId }]
+        references:    references
     });
+
     objectType.propagate_back_references();
+
     objectType.install_extra_properties();
+
+    objectType.installPostInstallFunc(options.postInstantiateFunc);
+    
     return objectType;
 
 };
@@ -1351,6 +1374,7 @@ AddressSpace.prototype._addObjectOrVariableType = function (options,topMostBaseT
  * @param [options.nodeId] {String|NodeId} an optional nodeId for this objectType, if not provided a new nodeId will be created
  * @param [options.isAbstract = false] {Boolean}
  * @param [options.eventNotifier = 0] {Integer}
+ * @param [options.postInstantiateFunc = null] {Function}
  *
  */
 AddressSpace.prototype.addObjectType = function (options) {
@@ -1492,12 +1516,12 @@ function _handle_event_hierarchy_parent(addressSpace, references, options) {
     options.eventSourceOf = _coerce_parent(addressSpace, options.eventSourceOf, addressSpace._coerceNode);
     options.notifierOf    = _coerce_parent(addressSpace, options.notifierOf,    addressSpace._coerceNode);
     if (options.eventSourceOf) {
-        assert(!options.notifierOf);
-        references.push({referenceType: &quot;HasNotifier&quot;, isForward: false, nodeId: options.eventSourceOf.nodeId});
+        assert(!options.notifierOf , &quot;notifierOf shall not be provided with eventSourceOf &quot;);
+        references.push({referenceType: &quot;HasEventSource&quot;, isForward: false, nodeId: options.eventSourceOf.nodeId});
 
     } else if (options.notifierOf) {
-        assert(!options.eventSourceOf);
-        references.push({referenceType: &quot;HasEventSource&quot;, isForward: false, nodeId: options.notifierOf.nodeId});
+        assert(!options.eventSourceOf , &quot;eventSourceOf shall not be provided with notifierOf &quot;);
+        references.push({referenceType: &quot;HasNotifier&quot;, isForward: false, nodeId: options.notifierOf.nodeId});
     }
 }
 
@@ -1510,6 +1534,7 @@ function _handle_hierarchy_parent(addressSpace, references, options) {
     if (options.componentOf) {
         assert(!options.propertyOf);
         assert(!options.organizedBy);
+        assert(addressSpace.rootFolder.objects,&quot;addressSpace must have a rootFolder.objects folder&quot;);
         assert(options.componentOf.nodeId !== addressSpace.rootFolder.objects.nodeId,&quot;Only Organizes References are used to relate Objects to the &#x27;Objects&#x27; standard Object.&quot;);
         references.push({referenceType: &quot;HasComponent&quot;, isForward: false, nodeId: options.componentOf.nodeId});
     }
@@ -1828,6 +1853,35 @@ AddressSpace.prototype.dispose = function() {
     AddressSpace.registry.unregister(this);
 };
 
+/**
+ * @param options
+ * @param options.isAbstract
+ * @param options.browseName
+ * @param options.inverseName
+ */
+AddressSpace.prototype.addReferenceType = function(options) {
+    
+    var addressSpace = this;
+    options.nodeClass  = NodeClass.ReferenceType;
+    options.references = options.references || [];
+
+
+    if (options.subtypeOf) {
+        assert(options.subtypeOf);
+        var subtypeOfNodeId = addressSpace._coerceType(options.subtypeOf,&quot;References&quot;,NodeClass.ReferenceType);
+        assert(subtypeOfNodeId);
+
+        console.log(subtypeOfNodeId.toString().cyan);
+        options.references.push({referenceType: &quot;HasSubtype&quot;, isForward: false,  nodeId: subtypeOfNodeId});
+    }
+    var node =  addressSpace._createNode(options);
+
+    node.propagate_back_references();
+
+    return node;
+
+};
+
 exports.AddressSpace = AddressSpace;
 
 require(&quot;./address_space_add_event_type&quot;).install(AddressSpace);
@@ -1835,13 +1889,15 @@ require(&quot;./address_space_add_method&quot;).install(AddressSpace);
 require(&quot;./address_space_browse&quot;).install(AddressSpace);
 require(&quot;./address_space_construct_extension_object&quot;).install(AddressSpace);
 require(&quot;./address_space_add_two_state_variable&quot;).install(AddressSpace);
+require(&quot;./address_space_state_machine&quot;).install(AddressSpace);
 
 // DI
 require(&quot;lib/data_access/address_space_add_AnalogItem&quot;).install(AddressSpace);
-require(&quot;lib/data_access/address_space_add_MultiStateDiscreteType&quot;).install(AddressSpace);
-require(&quot;lib/data_access/address_space_add_TwoStateDiscreteType&quot;).install(AddressSpace);
-require(&quot;lib/data_access/address_space_add_MultiStateValueDiscreteType&quot;).install(AddressSpace);
+require(&quot;lib/data_access/address_space_add_MultiStateDiscrete&quot;).install(AddressSpace);
+require(&quot;lib/data_access/address_space_add_TwoStateDiscrete&quot;).install(AddressSpace);
+require(&quot;lib/data_access/address_space_add_MultiStateValueDiscrete&quot;).install(AddressSpace);
 require(&quot;lib/data_access/address_space_add_YArrayItem&quot;).install(AddressSpace);
+require(&quot;lib/address_space/address_space_add_enumeration_type&quot;).install(AddressSpace);
 
     </pre>
 </div>

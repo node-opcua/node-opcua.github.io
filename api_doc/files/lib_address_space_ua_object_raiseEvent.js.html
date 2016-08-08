@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.52</em>
+            <em>API Docs for: 0.0.57</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -101,7 +101,6 @@
                                 <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
                                 <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
                                 <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
-                                <li><a href="../classes/cryptoutils.html">cryptoutils</a></li>
                                 <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
                                 <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
                                 <li><a href="../classes/DataValue.html">DataValue</a></li>
@@ -306,7 +305,11 @@
                                 <li><a href="../modules/services.subscription.html">services.subscription</a></li>
                                 <li><a href="../modules/services.write.html">services.write</a></li>
                                 <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
-                                <li><a href="../modules/xml2json.html">xml2json</a></li>
+                                <li><a href="../modules/xml2json
+                
+                node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+                
+                node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
                             </ul>
                         </div>
                     </div>
@@ -358,66 +361,66 @@ exports.install = function (UAObject) {
      */
     UAObject.prototype.raiseEvent = function (eventType, data) {
 
-        assert(eventType);
+    assert(eventType);
 
-        var self = this;
-        var addressSpace = self.__address_space;
+    var self = this;
+    var addressSpace = self.__address_space;
 
-        // coerce EventType
-        var eventTypeNode = addressSpace.findEventType(eventType);
+    // coerce EventType
+    var eventTypeNode = addressSpace.findEventType(eventType);
 
-        // istanbul ignore next
-        if (!eventTypeNode) {
-            throw new Error(&quot;Cannot find event type :&quot; + eventType.toString());
+    // istanbul ignore next
+    if (!eventTypeNode) {
+        throw new Error(&quot;Cannot find event type :&quot; + eventType.toString());
+    }
+    //xx assert(eventType.isAbstract);
+    //xx eventType.instantiate({browseName: &quot;###&quot;},data);
+
+    var baseEventType = addressSpace.findEventType(&quot;BaseEventType&quot;);
+    assert(eventTypeNode.isSupertypeOf(baseEventType));
+
+    data.$eventType = eventTypeNode;
+
+    data.sourceNode = data.sourceNode || { dataType: DataType.NodeId, value: self.nodeId };
+
+    var eventData = addressSpace.constructEventData(eventTypeNode,data);
+
+    var queue = [];
+    // walk up the hasNotify / hasEventSource chain
+    var m = {};
+
+    // all events are notified to the server object
+    // emit on server object
+    var server = addressSpace.findNode(&quot;Server&quot;);
+
+    if (server) {
+        server.emit(&quot;event&quot;,eventData);
+        m[server.nodeId.toString()] = server;
+    } else {
+        console.warn(&quot;Warning. &quot;.yellow + &quot;UAObject#raiseEvent&quot;.cyan + &quot; cannot find Server object on addressSpace&quot;.red);
+    }
+
+    addinqueue(self);
+
+    function addinqueue(obj) {
+        var key = obj.nodeId.toString();
+        if (!m[key]) {
+            m[key] = obj;
+            queue.push(obj);
         }
-        //xx assert(eventType.isAbstract);
-        //xx eventType.instantiate({browseName: &quot;###&quot;},data);
+    }
+    while (queue.length) {
+        var obj = queue.pop();
+        // emit on object itself
+        obj.emit(&quot;event&quot;, eventData);
 
-        var baseEventType = addressSpace.findEventType(&quot;BaseEventType&quot;);
-        assert(eventTypeNode.isSupertypeOf(baseEventType));
+        var elements1 = obj.findReferencesAsObject(&quot;HasNotifier&quot;, false);
+        elements1.forEach(addinqueue);
 
-        data.$eventType = eventTypeNode;
-
-        data.sourceNode = data.sourceNode || { dataType: DataType.NodeId, value: self.nodeId };
-
-        var eventData = addressSpace.constructEventData(eventTypeNode,data);
-
-        var queue = [];
-        // walk up the hasNotify / hasEventSource chain
-        var m = {};
-
-        // all events are notified to the server object
-        // emit on server object
-        var server = addressSpace.findNode(&quot;Server&quot;);
-
-        if (server) {
-            server.emit(&quot;event&quot;,eventData);
-            m[server.nodeId.toString()] = server;
-        } else {
-            console.warn(&quot;Warning. &quot;.yellow + &quot;UAObject#raiseEvent&quot;.cyan + &quot; cannot find Server object on addressSpace&quot;.red);
-        }
-
-        addinqueue(self);
-
-        function addinqueue(obj) {
-            var key = obj.nodeId.toString();
-            if (!m[key]) {
-                m[key] = obj;
-                queue.push(obj);
-            }
-        }
-        while (queue.length) {
-            var obj = queue.pop();
-            // emit on object itself
-            obj.emit(&quot;event&quot;, eventData);
-
-            var elements1 = obj.findReferencesAsObject(&quot;HasNotifier&quot;, false);
-            elements1.forEach(addinqueue);
-
-            var elements2 = obj.findReferencesAsObject(&quot;HasEventSource&quot;, false);
-            elements2.forEach(addinqueue);
-        }
-    };
+        var elements2 = obj.findReferencesAsObject(&quot;HasEventSource&quot;, false);
+        elements2.forEach(addinqueue);
+    }
+};
 };
 
     </pre>

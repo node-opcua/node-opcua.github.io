@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.52</em>
+            <em>API Docs for: 0.0.57</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -101,7 +101,6 @@
                                 <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
                                 <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
                                 <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
-                                <li><a href="../classes/cryptoutils.html">cryptoutils</a></li>
                                 <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
                                 <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
                                 <li><a href="../classes/DataValue.html">DataValue</a></li>
@@ -306,7 +305,11 @@
                                 <li><a href="../modules/services.subscription.html">services.subscription</a></li>
                                 <li><a href="../modules/services.write.html">services.write</a></li>
                                 <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
-                                <li><a href="../modules/xml2json.html">xml2json</a></li>
+                                <li><a href="../modules/xml2json
+                
+                node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+                
+                node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
                             </ul>
                         </div>
                     </div>
@@ -352,96 +355,184 @@
 require(&quot;requirish&quot;)._(module);
 var assert = require(&quot;better-assert&quot;);
 var _ = require(&quot;underscore&quot;);
-var NodeClass = require(&quot;lib/datamodel/nodeclass&quot;).NodeClass;
-//var DataValue = require(&quot;lib/datamodel/datavalue&quot;).DataValue;
-var Variant = require(&quot;lib/datamodel/variant&quot;).Variant;
-var DataType = require(&quot;lib/datamodel/variant&quot;).DataType;
-var VariantArrayType = require(&quot;lib/datamodel/variant&quot;).VariantArrayType;
-var LocalizedText = require(&quot;lib/datamodel/localized_text&quot;).LocalizedText;
-var NodeId = require(&quot;lib/datamodel/nodeid&quot;).NodeId;
-var AddressSpace = require(&quot;lib/address_space/address_space&quot;).AddressSpace;
 
-/**
- *
- * @method addEnumeration
- * @param options
- * @param options.browseName  {String}
- * @param options.enumeration {Enum}
- * @param options.enumeration[].name {String}
- * @param options.enumeration[].value {Integer}
- * @param options.enumeration[].description {String}
- */
-AddressSpace.prototype.addEnumerationType = function (options) {
 
-    var self = this;
 
-    assert(_.isString(options.browseName));
-    assert(_.isArray(options.enumeration));
+exports.install = function (AddressSpace) {
 
-    // construct the definition object
-    var definition = options.enumeration.map(function (enumItem) {
-        return {
-            name: enumItem.name,
-            value: enumItem.value,
-            description: enumItem.description
+    var NodeClass = require(&quot;lib/datamodel/nodeclass&quot;).NodeClass;
+    //var DataValue = require(&quot;lib/datamodel/datavalue&quot;).DataValue;
+    var Variant = require(&quot;lib/datamodel/variant&quot;).Variant;
+    var DataType = require(&quot;lib/datamodel/variant&quot;).DataType;
+    var VariantArrayType = require(&quot;lib/datamodel/variant&quot;).VariantArrayType;
+    var LocalizedText = require(&quot;lib/datamodel/localized_text&quot;).LocalizedText;
+    var NodeId = require(&quot;lib/datamodel/nodeid&quot;).NodeId;
+    var UADataType = require(&quot;lib/address_space/ua_data_type&quot;).UADataType;
+
+    var EnumValueType = require(&quot;_generated_/_auto_generated_EnumValueType&quot;).EnumValueType;
+    var coerceLocalizedText = require(&quot;lib/datamodel/localized_text&quot;).coerceLocalizedText;
+    /**
+     *
+     * @method addEnumerationType
+     * @param options
+     * @param options.browseName  {String}
+     * @param options.enumeration {Array}
+     * @param options.enumeration[].displayName {String|LocalizedText}
+     * @param options.enumeration[].value       {Number}
+     * @param options.enumeration[].description {String|LocalizedText|null}
+     */
+    AddressSpace.prototype.addEnumerationType = function (options) {
+
+        // Release 1.03 OPC Unified Architecture, Part 3 - page 34
+        // Enumeration DataTypes are DataTypes that represent discrete sets of named values.
+        // Enumerations are always encoded as Int32 on the wire as defined in Part 6. Enumeration
+        // DataTypes inherit directly or indirectly from the DataType Enumeration defined in 8.14.
+        // Enumerations have no encodings exposed in the AddressSpace. To expose the humanreadable
+        // representation of an enumerated value the DataType Node may have the EnumString
+        // Property that contains an array of LocalizedText. The Integer representation of the enumeration
+        // value points to a position within that array. EnumValues Property can be used instead of the
+        // EnumStrings to support integer representation of enumerations that are not zero-based or have
+        // gaps. It contains an array of a Structured DataType containing the integer representation as
+        // well as the human-readable representation. An example of an enumeration DataType containing
+        // a sparse list of Integers is NodeClass which is defined in 8.30.
+
+        // OPC Unified Architecture, Part 3  Release 1.03 page 35
+        // Table 11 – DataType NodeClass
+        // EnumStrings O LocalizedText[] The EnumStrings Property only applies for Enumeration DataTypes.
+        //                               It shall not be applied for other DataTypes. If the EnumValues
+        //                               Property is provided, the EnumStrings Property shall not be provided.
+        //                               Each entry of the array of LocalizedText in this Property represents
+        //                               the human-readable representation of an enumerated value. The
+        //                               Integer representation of the enumeration value points to a position of the array.
+        // EnumValues O EnumValueType[]  The EnumValues Property only applies for Enumeration DataTypes.
+        //                               It shall not be applied for other DataTypes. If the EnumStrings
+        //                               Property is provided, the EnumValues Property shall not be provided.
+        //                               Using the EnumValues Property it is possible to represent.
+        //                               Enumerations with integers that are not zero-based or have gaps
+        //                               (e.g. 1, 2, 4, 8, 16).
+        //                               Each entry of the array of EnumValueType in this Property
+        //                               represents one enumeration value with its integer notation, humanreadable
+        //                                representation and help information.
+        // The Property EnumStrings contains human-readable representations of enumeration values and is
+        // only applied to Enumeration DataTypes. Instead of the EnumStrings Property an Enumeration
+        // DataType can also use the EnumValues Property to represent Enumerations with integer values that are not
+        // zero-based or containing gaps. There are no additional Properties defined for DataTypes in this standard.
+        // Additional parts of this series of standards may define additional Properties for DataTypes.
+
+        //8.40 EnumValueType
+        // This Structured DataType is used to represent a human-readable representation of an
+        // Enumeration. Its elements are described inTable 27. When this type is used in an array representing
+        // human-readable representations of an enumeration, each Value shall be unique in that array.
+        // Table 27 – EnumValueType Definition
+        // Name               Type            Description
+        // EnumValueType structure
+        // Value              Int64           The Integer representation of an Enumeration.
+        // DisplayName        LocalizedText   A human-readable representation of the Value of the Enumeration.
+        // Description        LocalizedText   A localized description of the enumeration value. This field can contain an
+        //                                    empty string if no description is available.
+        // Note that the EnumValueType has been defined with a Int64 Value to meet a variety of usages.
+        // When it is used to define the string representation of an Enumeration DataType, the value range
+        // is limited to Int32, because the Enumeration DataType is a subtype of Int32. Part 8 specifies
+        // other usages where the actual value might be between 8 and 64 Bit.
+        var self = this;
+
+        assert(_.isString(options.browseName));
+        assert(_.isArray(options.enumeration));
+
+        var definition;
+        var enumerationType = self.findDataType(&quot;Enumeration&quot;);
+        assert(enumerationType.nodeId instanceof NodeId);
+        assert(enumerationType instanceof UADataType)
+        var references = [
+            {referenceType: &quot;HasSubtype&quot;, isForward: false, nodeId: enumerationType.nodeId}
+        ];
+        var opts = {
+            browseName: options.browseName,
+            references: references,
+            nodeClass: NodeClass.DataType,
+            isAbstract: false,
+            displayName: options.displayName || null,
+            description: options.description || null,
+            definition: definition
         };
-    });
+
+        var enumType = self._createNode(opts);
+
+        enumType.propagate_back_references();
+
+        if (_.isString(options.enumeration[0])) {
+
+            // enumeration is a array of string
+            definition = options.enumeration.map(function (str, index) {
+                return coerceLocalizedText(str);
+            });
+
+            var value = new Variant({
+                dataType: DataType.LocalizedText,
+                arrayType: VariantArrayType.Array,
+                value: definition
+            });
 
 
-    var enumerationType = self.findDataType(&quot;Enumeration&quot;);
-    assert(enumerationType.nodeId instanceof NodeId);
-    var references = [
-        {referenceType: &quot;HasSubtype&quot;, forward: false, nodeId: enumerationType.nodeId}
-    ];
-    var opts = {
-        browseName:  options.browseName,
-        references:  references,
-        nodeClass:   NodeClass.DataType,
-        isAbstract:  false,
-        displayName: options.displayName || null,
-        description: options.description || null,
-        definition:  definition
+            var enumStrings = self.addVariable({
+                propertyOf: enumType,
+                browseName: &quot;EnumStrings&quot;,
+                modellingRule: &quot;Mandatory&quot;,
+                description: &quot;&quot;,
+                dataType: &quot;LocalizedText&quot;,
+                valueRank: 1,
+                value: value
+            });
+            assert(enumStrings.browseName.toString() === &quot;EnumStrings&quot;);
+
+        } else {
+
+            // construct the definition object
+            definition = options.enumeration.map(function (enumItem) {
+                return  new EnumValueType({
+                    displayName: coerceLocalizedText(enumItem.displayName),
+                    value:  [ 0, enumItem.value ],
+                    description: coerceLocalizedText(enumItem.description)
+                });
+            });
+
+            var value = new Variant({
+                dataType: DataType.ExtensionObject,
+                arrayType: VariantArrayType.Array,
+                value: definition
+            });
+
+            var enumValues = self.addVariable({
+                propertyOf: enumType,
+                browseName: &quot;EnumValues&quot;,
+                modellingRule: &quot;Mandatory&quot;,
+                description: null,
+                dataType: &quot;EnumValueType&quot;,
+                valueRank: 1,
+                value: value
+            });
+            assert(enumValues.browseName.toString() === &quot;EnumValues&quot;);
+        }
+        // now create the string value property
+        // &lt;UAVariable NodeId=&quot;i=7612&quot; BrowseName=&quot;EnumStrings&quot; ParentNodeId=&quot;i=852&quot; DataType=&quot;LocalizedText&quot; ValueRank=&quot;1&quot;&gt;
+        // &lt;DisplayName&gt;EnumStrings&lt;/DisplayName&gt;
+        // &lt;References&gt;
+        //   &lt;Reference ReferenceType=&quot;HasTypeDefinition&quot;&gt;i=68&lt;/Reference&gt;
+        //   &lt;Reference ReferenceType=&quot;HasModellingRule&quot;&gt;i=78&lt;/Reference&gt;
+        //    &lt;Reference ReferenceType=&quot;HasProperty&quot; IsForward=&quot;false&quot;&gt;i=852&lt;/Reference&gt;
+        // &lt;/References&gt;
+        // &lt;Value&gt;
+        //    &lt;ListOfLocalizedText xmlns=&quot;http://opcfoundation.org/UA/2008/02/Types.xsd&quot;&gt;
+        //      &lt;LocalizedText&gt;&lt;Locale&gt;&lt;/Locale&gt;&lt;Text&gt;Running&lt;/Text&gt;&lt;/LocalizedText&gt;
+        //      &lt;LocalizedText&gt;&lt;Locale&gt;&lt;/Locale&gt;&lt;Text&gt;Failed&lt;/Text&gt;
+        //    &lt;/ListOfLocalizedText&gt;
+        // &lt;/Value&gt;
+        //&lt;/UAVariable&gt;
+
+        return enumType;
     };
-
-    var enumType = self._createNode(opts);
-
-    // now create the string value property
-    // &lt;UAVariable NodeId=&quot;i=7612&quot; BrowseName=&quot;EnumStrings&quot; ParentNodeId=&quot;i=852&quot; DataType=&quot;LocalizedText&quot; ValueRank=&quot;1&quot;&gt;
-    // &lt;DisplayName&gt;EnumStrings&lt;/DisplayName&gt;
-    // &lt;References&gt;
-    //   &lt;Reference ReferenceType=&quot;HasTypeDefinition&quot;&gt;i=68&lt;/Reference&gt;
-    //   &lt;Reference ReferenceType=&quot;HasModellingRule&quot;&gt;i=78&lt;/Reference&gt;
-    //    &lt;Reference ReferenceType=&quot;HasProperty&quot; IsForward=&quot;false&quot;&gt;i=852&lt;/Reference&gt;
-    // &lt;/References&gt;
-    // &lt;Value&gt;
-    //    &lt;ListOfLocalizedText xmlns=&quot;http://opcfoundation.org/UA/2008/02/Types.xsd&quot;&gt;
-    //      &lt;LocalizedText&gt;&lt;Locale&gt;&lt;/Locale&gt;&lt;Text&gt;Running&lt;/Text&gt;&lt;/LocalizedText&gt;
-    //      &lt;LocalizedText&gt;&lt;Locale&gt;&lt;/Locale&gt;&lt;Text&gt;Failed&lt;/Text&gt;
-    //    &lt;/ListOfLocalizedText&gt;
-    // &lt;/Value&gt;
-    //&lt;/UAVariable&gt;
-
-    var value = new Variant({
-        dataType: DataType.LocalizedText,
-        arrayType: VariantArrayType.Array,
-        value: definition.map(function (defItem) {
-            return new LocalizedText({text: defItem.name});
-        })
-    });
-
-
-    var enumStrings = self.addVariable({
-        propertyOf:     enumType,
-        browseName:    &quot;EnumStrings&quot;,
-        modellingRule: &quot;Mandatory&quot;,
-        description:   &quot;&quot;,
-        dataType:      &quot;LocalizedText&quot;,
-        valueRank:     1,
-        value:         value
-    });
-
-    return enumType;
 };
+
 
     </pre>
 </div>

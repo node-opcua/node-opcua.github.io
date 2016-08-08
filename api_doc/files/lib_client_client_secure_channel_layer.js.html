@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.52</em>
+            <em>API Docs for: 0.0.57</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -101,7 +101,6 @@
                                 <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
                                 <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
                                 <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
-                                <li><a href="../classes/cryptoutils.html">cryptoutils</a></li>
                                 <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
                                 <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
                                 <li><a href="../classes/DataValue.html">DataValue</a></li>
@@ -306,7 +305,11 @@
                                 <li><a href="../modules/services.subscription.html">services.subscription</a></li>
                                 <li><a href="../modules/services.write.html">services.write</a></li>
                                 <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
-                                <li><a href="../modules/xml2json.html">xml2json</a></li>
+                                <li><a href="../modules/xml2json
+                
+                node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+                
+                node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
                             </ul>
                         </div>
                     </div>
@@ -381,6 +384,8 @@ var ClientTCP_transport = require(&quot;lib/transport/client_tcp_transport&quot;
 var AsymmetricAlgorithmSecurityHeader = require(&quot;lib/services/secure_channel_service&quot;).AsymmetricAlgorithmSecurityHeader;
 var crypto_utils = require(&quot;lib/misc/crypto_utils&quot;);
 
+var backoff = require(&#x27;backoff&#x27;);
+
 var utils =  require(&quot;lib/misc/utils&quot;);
 var debugLog = utils.make_debugLog(__filename);
 var doDebug = utils.checkDebugFlag(__filename);
@@ -405,6 +410,7 @@ function process_request_callback(request_data, err, response) {
     }
     if (response &amp;&amp; response instanceof ServiceFault) {
 
+        response.responseHeader.stringTable = response.responseHeader.stringTable || [];
         response.responseHeader.stringTable = [response.responseHeader.stringTable.join(&quot;\n&quot;)];
         err = new Error(&quot; ServiceFault returned by server &quot; + response.toString());
         err.response = response;
@@ -430,7 +436,12 @@ function _on_message_received(response, msgType, requestId) {
     }
 
     var request_data = self._request_data[requestId];
-    assert(request_data, &quot; invalid requestId&quot;);
+    if (!request_data) {
+        console.log(&quot;xxxxx  &lt;&lt;&lt;&lt;&lt;&lt; _on_message_received &quot;.cyan.bold, requestId, response._schema.name);
+        throw new Error(&quot; =&gt;  invalid requestId =&quot;+ requestId);
+    }
+
+    debugLog(&quot; Deleting self._request_data&quot;,requestId);
     delete self._request_data[requestId];
 
     /* istanbul ignore next */
@@ -447,8 +458,8 @@ function _on_message_received(response, msgType, requestId) {
 
     /* istanbul ignore next */
     if (doDebug) {
-        console.log(&quot; RESPONSE &quot;.red);
-        console.log(response.toString());
+        debugLog(&quot; RESPONSE &quot;.red);
+        debugLog(response.toString());
     }
     // record tick2 : after response message has been received, before message processing
     request_data._tick2 = self.messageBuilder._tick1;
@@ -565,7 +576,7 @@ var ClientSecureChannelLayer = function (options) {
 
     options.connectionStrategy = options.connectionStrategy || {};
     self.connectionStrategy = {};
-    self.connectionStrategy.maxRetry     = options.connectionStrategy.maxRetry     || 10    ;
+    self.connectionStrategy.maxRetry     = utils.isNullOrUndefined(options.connectionStrategy.maxRetry)   ? 10 : options.connectionStrategy.maxRetry;
     self.connectionStrategy.initialDelay = options.connectionStrategy.initialDelay || 10    ;
     self.connectionStrategy.maxDelay     = options.connectionStrategy.maxDelay     || 10000 ;
 
@@ -666,15 +677,15 @@ ClientSecureChannelLayer.prototype.isTransactionInProgress = function () {
 };
 
 function _cancel_pending_transactions(err) {
-
     /* jshint validthis: true */
     var self = this;
+
+    debugLog(&quot;_cancel_pending_transactions  &quot;.bgRed.bgCyan,Object.keys(self._request_data),self._transport.name);
 
     assert(err === null || _.isObject(err), &quot;expecting valid error&quot;);
     Object.keys(self._request_data).forEach(function (key) {
         var request_data = self._request_data[key];
-        //xx console.log(&quot;xxxx Cancelling pending transaction &quot;,
-        // request_data.key,request_data.msgType,request_data.request._schema.name);
+        debugLog(&quot;xxxx Cancelling pending transaction &quot;, request_data.key,request_data.msgType,request_data.request._schema.name);
         process_request_callback(request_data, err, null);
     });
 
@@ -905,6 +916,7 @@ function _on_connection(transport, callback, err) {
         });
 
         self._transport.on(&quot;error&quot;,function(){
+            debugLog(&quot; ERROR&quot;);
         });
 
 
@@ -990,19 +1002,15 @@ ClientSecureChannelLayer.prototype.create = function (endpoint_url, callback) {
     // --------------------------------------------------------------------------
     var _establish_connection = function (transport,endpoint_url,callback) {
 
-        var backoff = require(&#x27;backoff&#x27;);
 
         var last_err= null;
 
         function _connect(_i_callback) {
 
-            if (self.__call._cancelBackoff) {
-                setImmediate(function() {
-                    self.__call.abort();
-                    _i_callback(null,new Error(&quot;Connection abandonned&quot;));
-                });
+            if (self.__call &amp;&amp; self.__call._cancelBackoff) {
                 return;
             }
+
             transport.connect(endpoint_url, function (err) {
 
                 // force Backoff to fail if err is not ECONNRESET or ECONNREFUSE
@@ -1015,19 +1023,22 @@ ClientSecureChannelLayer.prototype.create = function (endpoint_url, callback) {
                 //   - server shielding itself from a DOS attack
                 if (err) {
 
+                    var should_abort = false;
+
+                    if (err.message.match(/ECONNRESET/)) {
+                        should_abort = true;
+                    }
+                    if (err.message.match(/BadProtocolVersionUnsupported/)) {
+                        should_abort = true;
+                    }
                     last_err = err;
 
-                    if (true) {
+                    if (self.__call) {
                         // connection cannot be establish ? if not, abort the backoff process
-                        if (err.message.match(/ECONNRESET/)) {
+                        if (should_abort) {
                             debugLog(&quot; Aborting backoff process prematuraly - err = &quot;, err.message);
                             self.__call.abort();
-                            //xx call emit fail ( this line should be removed when new version of backoff will be posted)
-                            //xx self.__call.backoff_.emit(&quot;fail&quot;,err);
-                            //xx self.__call.failAfter(1);
-
                         } else {
-                        console.log(&quot; backoff - keep trying - err = &quot;, err.message);
                             debugLog(&quot; backoff - keep trying - err = &quot;, err.message);
                         }
                     }
@@ -1035,25 +1046,42 @@ ClientSecureChannelLayer.prototype.create = function (endpoint_url, callback) {
                 _i_callback(err);
             });
         }
-        self.__call = backoff.call(_connect, function(err) {
 
-            transport.numberOfRetry =self.__call.getNumRetries();
-            //console.log(&#x27;xxx Num retries: &#x27; + transport.numberOfRetry );
-            if (err) {
-                //xx console.log(&#x27;xxx Error: &#x27; + err.message,last_err.message);
-                callback(last_err);
-            } else {
-                callback();
+        // No backoff required -&gt; call the _connect function directly
+        if (self.connectionStrategy.maxRetry &lt;=0 ) {
+            self.__call = 0;
+            return _connect(callback);
+        }
+
+
+        function _backoff_completion(err) {
+
+            if (self.__call) {
+                // console log =
+                transport.numberOfRetry = transport.numberOfRetry || 0;
+                transport.numberOfRetry += self.__call.getNumRetries();
+                self.__call.removeAllListeners();
+                self.__call = null;
+
+                //console.log(&#x27;xxx Num retries: &#x27; + transport.numberOfRetry );
+                if (err) {
+                    //xx console.log(&#x27;xxx Error: &#x27; + err.message,last_err.message);
+                    callback(last_err);
+                } else {
+                    callback();
+                }
             }
-            self.__call.removeAllListeners();
-            self.__call = null;
-        });
-        self.__call._cancelBackoff = false;
-        self.__call.failAfter(self.connectionStrategy.maxRetry);
+        }
+
+        self.__call = backoff.call(_connect,_backoff_completion);
+
+        //xx self.__call._cancelBackoff = self.connectionStrategy.maxRetry &lt;=0 ? true : false;
+        self.__call.failAfter(Math.max(self.connectionStrategy.maxRetry,1));
+
 
         self.__call.on(&#x27;backoff&#x27;, function(number, delay) {
 
-            debugLog(&quot; Backoff #&quot;.bgWhite.cyan,number,&quot;delay = &quot;,delay);
+            debugLog(&quot; Backoff #&quot;.bgWhite.cyan,number,&quot;delay = &quot;,delay,self.__call.maxNumberOfRetry_);
             // Do something when backoff starts, e.g. show to the
             // user the delay before next reconnection attempt.
             /**
@@ -1061,6 +1089,7 @@ ClientSecureChannelLayer.prototype.create = function (endpoint_url, callback) {
              */
             self.emit(&quot;backoff&quot;,number,delay);
         });
+
         self.__call.on(&#x27;abort&#x27;, function(err) {
             debugLog(&quot; abort #&quot;.bgWhite.cyan,&quot; after &quot;,self.__call.getNumRetries(), &quot; retries&quot;);
             // Do something when backoff starts, e.g. show to the
@@ -1069,26 +1098,48 @@ ClientSecureChannelLayer.prototype.create = function (endpoint_url, callback) {
              * @event backoff
              */
             self.emit(&quot;abort&quot;);
+
+            setImmediate(function() {
+                _backoff_completion(null,new Error(&quot;Connection abandoned&quot;));
+            });
+
         });
 
         self.__call.setStrategy(new backoff.ExponentialStrategy(self.connectionStrategy));
         self.__call.start();
+
     };
 
     _establish_connection(transport,endpoint_url, _on_connection.bind(this, transport, callback));
 
 };
 
-ClientSecureChannelLayer.prototype.abortConnection = function(callback)
-{
+/**
+ * true if the secure channel is trying to establish the connection with the server. In this case, the client
+ * may be in the middle of the b ackoff connection process.
+ *
+ * @property isConnecting
+ * @type {Boolean}
+ *
+ */
+ClientSecureChannelLayer.prototype.__defineGetter__(&quot;isConnecting&quot;,function() {
+    return (!!this.__call);
+});
+
+
+ClientSecureChannelLayer.prototype.abortConnection = function(callback) {
     assert(_.isFunction(callback));
     var self = this;
     if (self.__call) {
         self.__call.once(&quot;abort&quot;,function() {
-            callback();
+            setTimeout(callback,20);
         });
-
+        //xx console.log(&quot;_cancelBackoff !!!&quot;);
         self.__call._cancelBackoff = true;
+        self.__call.abort();
+
+    } else {
+        callback();
     }
 };
 
@@ -1209,6 +1260,7 @@ var defaultTransactionTimeout = 60 * 1000; // 1 minute
  *
  */
 ClientSecureChannelLayer.prototype._performMessageTransaction = function (msgType, requestMessage, callback) {
+
     /* jshint validthis: true */
 
     assert(_.isFunction(callback));
@@ -1242,7 +1294,7 @@ ClientSecureChannelLayer.prototype._performMessageTransaction = function (msgTyp
     }
 
     timerId = setTimeout(function () {
-        console.log(&quot; Timeout .... waiting for response for &quot;, requestMessage.requestHeader.toString());
+        console.log(&quot; Timeout .... waiting for response for &quot;, requestMessage.constructor.name,requestMessage.requestHeader.toString());
         modified_callback(new Error(&quot;Transaction has timed out&quot;));
 
         self._timedout_request_count += 1;
@@ -1263,6 +1315,14 @@ ClientSecureChannelLayer.prototype._performMessageTransaction = function (msgTyp
     self._internal_perform_transaction(transaction_data);
 };
 
+/**
+ *
+ * @param transaction_data
+ * @param transaction_data.msgType
+ * @param transaction_data.request
+ * @param transaction_data.callback {Function}
+ * @private
+ */
 ClientSecureChannelLayer.prototype._internal_perform_transaction = function (transaction_data) {
 
     var self = this;
@@ -1290,7 +1350,6 @@ ClientSecureChannelLayer.prototype._internal_perform_transaction = function (tra
     if (do_trace_message) {
         console.log(&quot;xxxxx   &gt;&gt;&gt;&gt;&gt;&gt;                     &quot;.cyan, requestId, requestMessage._schema.name);
     }
-
     self._request_data[requestId] = {
         request: requestMessage,
         msgType: msgType,
@@ -1456,8 +1515,13 @@ ClientSecureChannelLayer.prototype._sendSecureOpcUARequest = function (msgType, 
     var options = {
         requestId: requestId,
         secureChannelId: self.securityToken ? self.securityToken.secureChannelId : 0,
-        tokenId: self.securityToken ? self.securityToken.tokenId : 0
+        tokenId: self.securityToken ? self.securityToken.tokenId : 0,
     };
+
+    // use chunk size that has been negociated by the transport layer
+    if (self._transport.parameters &amp;&amp; self._transport.parameters.sendBufferSize) {
+            options.chunkSize = self._transport.parameters.sendBufferSize;
+    }
 
     requestMessage.requestHeader.requestHandle = options.requestId;
     //xx requestMessage.requestHeader.returnDiagnostics = 0x3FF;
@@ -1498,7 +1562,6 @@ ClientSecureChannelLayer.prototype._sendSecureOpcUARequest = function (msgType, 
 ClientSecureChannelLayer.prototype.close = function (callback) {
 
 
-    //xx console.log(&quot;xxxxxxxxxxxxxxxxxxxx in ClientSecureChannelLayer.prototype.close &quot;.yellow);
     // what the specs says:
     // --------------------
     //   The client closes the connection by sending a CloseSecureChannelRequest and closing the
@@ -1509,7 +1572,6 @@ ClientSecureChannelLayer.prototype.close = function (callback) {
     var self = this;
     assert(_.isFunction(callback), &quot;expecting a callback function, but got &quot; + callback);
 
-
     // there is no need for the security token expiration event to trigger anymore
     _cancel_security_token_watchdog.call(self);
 
@@ -1519,10 +1581,17 @@ ClientSecureChannelLayer.prototype.close = function (callback) {
 
     self.__in_normal_close_operation = true;
 
+    if (self._transport.__disconnecting__) {
+        return callback(new Error(&quot;Transport disconnected&quot;));
+    }
+
     self._performMessageTransaction(&quot;CLO&quot;, request, function () {
         // empty message queue
         self._request_queue = [];
+
+        ///xx self._transport.disconnect(function() {
         callback();
+        //xxx });
     });
 };
 

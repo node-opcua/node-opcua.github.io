@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.52</em>
+            <em>API Docs for: 0.0.57</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -101,7 +101,6 @@
                                 <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
                                 <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
                                 <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
-                                <li><a href="../classes/cryptoutils.html">cryptoutils</a></li>
                                 <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
                                 <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
                                 <li><a href="../classes/DataValue.html">DataValue</a></li>
@@ -306,7 +305,11 @@
                                 <li><a href="../modules/services.subscription.html">services.subscription</a></li>
                                 <li><a href="../modules/services.write.html">services.write</a></li>
                                 <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
-                                <li><a href="../modules/xml2json.html">xml2json</a></li>
+                                <li><a href="../modules/xml2json
+                
+                node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+                
+                node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
                             </ul>
                         </div>
                     </div>
@@ -363,9 +366,13 @@ var StatusCodes = require(&quot;lib/datamodel/opcua_status_code&quot;).StatusCod
 var read_service = require(&quot;lib/services/read_service&quot;);
 var AttributeIds = read_service.AttributeIds;
 
+
+var utils =  require(&quot;lib/misc/utils&quot;);
+var debugLog = utils.make_debugLog(__filename);
+var doDebug = utils.checkDebugFlag(__filename);
+
 var assert = require(&quot;better-assert&quot;);
 var util = require(&quot;util&quot;);
-var utils = require(&quot;lib/misc/utils&quot;);
 var _ = require(&quot;underscore&quot;);
 
 var BaseNode = require(&quot;lib/address_space/base_node&quot;).BaseNode;
@@ -417,7 +424,7 @@ UAVariableType.prototype.readAttribute = function (attributeId) {
                 options.value = this.value;
                 options.statusCode = StatusCodes.Good;
             } else {
-                console.log(&quot; warning Value not implemented&quot;);
+                debugLog(&quot; warning Value not implemented&quot;);
                 options.value = {dataType: DataType.UInt32, value: 0};
                 options.statusCode = StatusCodes.BadAttributeIdInvalid;
             }
@@ -494,14 +501,24 @@ function OnlyMandatoryChildrenOrRequestedOptionals(instance,optionals,node) {
 }
 
 
+/*
+ * @function _get_parent_as_VariableOrObjectType
+ * @param originalObject
+ * @return {null|UABaseNode}
+ * @private
+ */
 function _get_parent_as_VariableOrObjectType(originalObject) {
 
     var addressSpace = originalObject.__address_space;
 
     var parent = originalObject.findReferencesEx(&quot;HasChild&quot;,BrowseDirection.Inverse);
-    if (!(parent.length ===0 || parent.length === 1)) {
-        console.log(originalObject.toString());
+
+    // istanbul ignore next
+    if (parent.length &gt; 1) {
+        console.warn(&quot; object &quot;, originalObject.browseName.toString(), &quot; has more than one parent !&quot;);
+        console.warn(originalObject.toString());
     }
+
     assert(parent.length ===0 || parent.length === 1);
     if (parent.length === 0){ return null; }
     parent = addressSpace.findNode(parent[0].nodeId);
@@ -566,13 +583,11 @@ CloneHelper.prototype.registerClonedObject = function(objInType,clonedObj) {
 //  =&gt; Mandatory                 =&gt; Installed
 //  =&gt; Optional                  =&gt; Not Installed , unless it appear in optionals array
 //  =&gt; OptionalPlaceHolder       =&gt; Not Installed
-//  =&gt; null (no modelling ruleà) =&gt;  Not Installed
+//  =&gt; null (no modelling rule ) =&gt; Not Installed
 //
 function _initialize_properties_and_components(instance,topMostType,typeNode,optionals, extraInfo) {
 
     optionals = optionals || [];
-
-    var addressSpace = topMostType.__address_space;
 
     if (topMostType.nodeId === typeNode.nodeId) {
         return; // nothing to do
@@ -631,6 +646,8 @@ function assertUnusedChildBrowseName(addressSpace,options) {
         return;
     }
     assert(_.isObject(parent));
+
+    // istanbul ignore next
     // verify that no components already exists in parent
     if( parent &amp;&amp; hasChildWithBrowseName(parent,options.browseName)){
         throw new Error(&quot;object &quot; + parent.browseName.name.toString() +
@@ -647,15 +664,14 @@ var BrowseDirection = browse_service.BrowseDirection;
 var sameNodeId = require(&quot;lib/datamodel/nodeid&quot;).sameNodeId;
 var Reference = require(&quot;lib/address_space/reference&quot;).Reference;
 
+//xx var hasTypeDefintionNodeId = makeNodeId(40);
+//xx var hasModellingRuleNodeId = makeNodeId(37);
 function _remove_unwanted_ref(references) {
     // filter out HasTypeDefinition (i=40) , HasModellingRule (i=37);
-    var hasTypeDefintionNodeId = makeNodeId(40);
-    var hasModellingRuleNodeId = makeNodeId(37);
     references = _.filter(references,function(reference) {
         assert(reference instanceof Reference);
         return reference.referenceType !== &quot;HasTypeDefinition&quot;  &amp;&amp;
                reference.referenceType !== &quot;HasModellingRule&quot; ;
-        //xx return !sameNodeId(reference.referenceTypeId,hasTypeDefintionNodeId) &amp;&amp; !sameNodeId(reference.referenceTypeId,hasModellingRuleNodeId) ;
     });
     return references;
 }
@@ -667,17 +683,20 @@ function findNoHierarchicalReferences(originalObject) {
     var addressSpace = originalObject.__address_space;
 
     var referenceId = addressSpace.findReferenceType(&quot;NonHierarchicalReferences&quot;);
+    if (!referenceId) { return []; }
     assert(referenceId);
 
     // we need to explore
     var references = originalObject.findReferencesEx(&quot;NonHierarchicalReferences&quot;,BrowseDirection.Inverse);
-
+        
+    //xx references = [].concat(references,originalObject.findReferencesEx(&quot;NonHierarchicalReferences&quot;,BrowseDirection.Forward));
+    references = [].concat(references,originalObject.findReferencesEx(&quot;HasEventSource&quot;,BrowseDirection.Inverse));
 
     var parent = _get_parent_as_VariableOrObjectType(originalObject);
 
-    if (parent) {
+    if (parent &amp;&amp; parent.subtypeOfObj) {
 
-        // parent is a ObjectType or VariableType
+        // parent is a ObjectType or VariableType and is not a root type
         assert(parent.nodeClass === NodeClass.VariableType || parent.nodeClass === NodeClass.ObjectType);
 
         // let investigate the same child base child
@@ -685,26 +704,18 @@ function findNoHierarchicalReferences(originalObject) {
 
         if (child) {
             var baseRef = findNoHierarchicalReferences(child);
-            ///xx console.log(&quot;  ... &quot;,originalObject.browseName.toString(), parent.browseName.toString(), references.length, baseRef.length);
+            //xx console.log(&quot;  ... &quot;,originalObject.browseName.toString(), parent.browseName.toString(), references.length, baseRef.length);
             references = [].concat(references,baseRef);
-
         }
     }
     // perform some cleanup
     references =  _remove_unwanted_ref(references);
-    //
-    //function dump(ref) {
-    //    console.log(&quot;   &quot;,
-    //        addressSpace.findNode(ref.referenceTypeId).browseName.toString(),
-    //        addressSpace.findNode(ref.nodeId).browseName.toString(),ref.nodeId.toString() )
-    //}
-    //references.forEach(dump);
 
     return references;
 
 }
 
-function reconstructNonHierachicalReferences(extraInfo) {
+function reconstructNonHierarchicalReferences(extraInfo) {
 
     function findImplementedObject(ref) {
         var info  = extraInfo.mapOrgToClone[ref.nodeId.toString()];
@@ -714,33 +725,44 @@ function reconstructNonHierachicalReferences(extraInfo) {
         return null;
     }
 
-    // navigate through original objects to find those that are being organized by some FunctionalGroup
+    // navigate through original objects to find those that are being references by node that
+    // have been cloned .
+    // this could be node organized by some FunctionalGroup
+    //
     _.forEach(extraInfo.mapOrgToClone,function(value,key) {
+
 
         var originalObject     = value.original;
         var clonedObject       = value.cloned;
-        var addressSpace       = originalObject.__address_space;
 
-        // find no Hierarchical References on original object
+        // find NoHierarchical References on original object
         var originalNonHierarchical = findNoHierarchicalReferences(originalObject);
-
-        //xx originalNonHierarchical =  _remove_unwanted_ref(originalNonHierarchical);
 
         if(originalNonHierarchical.length === 0 ){
             return;
         }
 
+        // istanbul ignore next
+        if (doDebug) {
+            debugLog( &quot; investigation &quot;, value.original.browseName.toString() , value.cloned.nodeClass.toString(),value.original.nodeClass.toString(),value.original.nodeId.toString(),value.cloned.nodeId.toString());
+        }
+
         originalNonHierarchical.forEach(function(ref) {
 
             var info =findImplementedObject(ref);
+
+            // if the object pointed by this reference is also cloned ...
             if (info) {
 
                 var originalDest = info.original;
                 var cloneDest    = info.cloned;
 
-                //xx console.log(&quot;   adding reference &quot;.cyan ,addressSpace.findNode(ref.referenceTypeId).browseName.toString() , &quot; from &quot;,
-                //xxx    clonedObject.nodeId.toString(),clonedObject.browseName.toString(),
-                //xx    &quot; to &quot;, cloneDest.nodeId.toString(),cloneDest.browseName.toString() );
+                // istanbul ignore next
+                if (doDebug) {
+                    debugLog(&quot;   adding reference &quot;.cyan ,ref.referenceType , &quot; from cloned &quot;,
+                                clonedObject.nodeId.toString(),clonedObject.browseName.toString(),
+                                &quot; to cloned &quot;, cloneDest.nodeId.toString(),cloneDest.browseName.toString() );
+                }
 
                 // restore reference
                 clonedObject.addReference({
@@ -782,8 +804,6 @@ function reconstructFunctionalGroupType(extraInfo)
         var organizedByArray = originalObject.findReferencesEx(&quot;Organizes&quot;,BrowseDirection.Inverse);
 
 
-        var addressSpace = originalObject.__address_space;
-
         //function dumpRef(r) {
         //    var referenceTd = addressSpace.findNode(r.referenceTypeId);
         //    var obj = addressSpace.findNode(r.nodeId);
@@ -821,11 +841,13 @@ function initialize_properties_and_components(instance,topMostType,nodeType,opti
 
     var extraInfo = new CloneHelper();
 
+    extraInfo.registerClonedObject(nodeType,instance);
+
     _initialize_properties_and_components(instance,topMostType,nodeType,optionals,extraInfo);
 
     reconstructFunctionalGroupType(extraInfo);
 
-    reconstructNonHierachicalReferences(extraInfo);
+    reconstructNonHierarchicalReferences(extraInfo);
 
 }
 
@@ -838,6 +860,8 @@ function initialize_properties_and_components(instance,topMostType,nodeType,opti
  * @param [options.description]
  * @param [options.organizedBy]   {String|NodeId|BaseNode} the parent Folder holding this object
  * @param [options.componentOf]   {String|NodeId|BaseNode} the parent Object holding this object
+ * @param [options.notifierOf] {NodeId|UANode}
+ * @param [options.eventSourceOf] {NodeId|UANode}
  * @param [options.optionals]     {Array&lt;String&gt;} array of browseName of optional component/property to instantiate.
  * @param [options.modellingRule] {String}
  * @param [options.minimumSamplingInterval =0] {Number}
@@ -863,6 +887,7 @@ UAVariableType.prototype.instantiate = function (options) {
 
     assert(options, &quot;missing option object&quot;);
     assert(_.isString(options.browseName), &quot;expecting a browse name&quot;);
+    assert(!options.hasOwnProperty(&quot;propertyOf&quot;),&quot;Use addressSpace#addVariable({ propertyOf: xxx}); to add a property&quot;);
 
     assertUnusedChildBrowseName(addressSpace,options);
 
@@ -872,9 +897,11 @@ UAVariableType.prototype.instantiate = function (options) {
     var dataType =  options.dataType ? options.dataType  : self.dataType; // may be required (i.e YArrayItemType )
     dataType = self.resolveNodeId(dataType);    // DataType (NodeId)
     assert(dataType instanceof NodeId);
+
+    // istanbul ignore next
     if (!dataType || dataType.isEmpty()) {
-        console.log(&quot; options.dataType&quot; , options.dataType ? options.dataType.toString() : &quot;&lt;null&gt;&quot;);
-        console.log(&quot; self.dataType&quot; , self.dataType ? self.dataType.toString() : &quot;&lt;null&gt;&quot;);
+        console.warn(&quot; options.dataType&quot; , options.dataType ? options.dataType.toString() : &quot;&lt;null&gt;&quot;);
+        console.warn(&quot; self.dataType&quot; , self.dataType ? self.dataType.toString() : &quot;&lt;null&gt;&quot;);
         throw new Error(&quot; A valid dataType must be specified&quot;);
     }
 
@@ -883,6 +910,8 @@ UAVariableType.prototype.instantiate = function (options) {
         description:    options.description || self.description,
         componentOf:    options.componentOf,
         organizedBy:    options.organizedBy,
+        notifierOf:     options.notifierOf,
+        eventSourceOf:  options.eventSourceOf,
         typeDefinition: self.nodeId,
         nodeId:         options.nodeId,
         dataType:       dataType,
@@ -902,16 +931,13 @@ UAVariableType.prototype.instantiate = function (options) {
     instance.bindExtensionObject();
 
 
-    if (instance.componentOf) {
-        instance.componentOf.install_extra_properties();
-    }
-    if (instance.organizedBy) {
-        instance.organizedBy.install_extra_properties();
-    }
-
     assert(instance.typeDefinition.toString()=== self.nodeId.toString());
 
     instance.install_extra_properties();
+    
+    if (self._postInstantiateFunc) {
+        self._postInstantiateFunc(instance,self);
+    }
 
     return instance;
 };

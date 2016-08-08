@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.52</em>
+            <em>API Docs for: 0.0.57</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -101,7 +101,6 @@
                                 <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
                                 <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
                                 <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
-                                <li><a href="../classes/cryptoutils.html">cryptoutils</a></li>
                                 <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
                                 <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
                                 <li><a href="../classes/DataValue.html">DataValue</a></li>
@@ -306,7 +305,11 @@
                                 <li><a href="../modules/services.subscription.html">services.subscription</a></li>
                                 <li><a href="../modules/services.write.html">services.write</a></li>
                                 <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
-                                <li><a href="../modules/xml2json.html">xml2json</a></li>
+                                <li><a href="../modules/xml2json
+                
+                node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+                
+                node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
                             </ul>
                         </div>
                     </div>
@@ -349,6 +352,8 @@
  * @module opcua.client
  */
 require(&quot;requirish&quot;)._(module);
+var util = require(&quot;util&quot;);
+var EventEmitter = require(&quot;events&quot;).EventEmitter;
 
 var _ = require(&quot;underscore&quot;);
 var assert = require(&quot;better-assert&quot;);
@@ -370,7 +375,9 @@ var write_service = require(&quot;lib/services/write_service&quot;);
 var call_service = require(&quot;lib/services/call_service&quot;);
 var DataType = require(&quot;lib/datamodel/variant&quot;).DataType;
 
-var doDebug = false;
+var utils = require(&quot;lib/misc/utils&quot;);
+var debugLog = utils.make_debugLog(__filename);
+var doDebug = utils.checkDebugFlag(__filename);
 
 /**
  * @class ClientSession
@@ -378,9 +385,11 @@ var doDebug = false;
  * @constructor
  */
 var ClientSession = function (client) {
+    this._closeEventHasBeenEmmitted = false;
     this._client = client;
     this._publishEngine = null;
 };
+util.inherits(ClientSession, EventEmitter);
 
 /**
  * @method getPublishEngine
@@ -434,7 +443,10 @@ function coerceBrowseDescription(data) {
  *    var browseDescription = {
  *       nodeId: &quot;ObjectsFolder&quot;,
  *       referenceTypeId: &quot;Organizes&quot;,
- *       browseDirection: BrowseDirection.Inverse
+ *       browseDirection: BrowseDirection.Inverse,
+ *       includeSubtypes: true,
+ *       nodeClassMask: 0,
+ *       resultMask: 63
  *    }
  *    session.browse(browseDescription,function(err,results,diagnostics) {} );
  *    &#x60;&#x60;&#x60;
@@ -450,11 +462,16 @@ function coerceBrowseDescription(data) {
  * form4:
  *
  *   &#x60;&#x60;&#x60; javascript
- *    var browseDescription = {
- *       nodeId: &quot;ObjectsFolder&quot;,
- *       referenceTypeId: &quot;Organizes&quot;,
- *       browseDirection: BrowseDirection.Inverse
- *    }
+ *    var browseDescription = [
+ *      {
+ *          nodeId: &quot;ObjectsFolder&quot;,
+ *          referenceTypeId: &quot;Organizes&quot;,
+ *          browseDirection: BrowseDirection.Inverse,
+ *          includeSubtypes: true,
+ *          nodeClassMask: 0,
+ *          resultMask: 63
+ *      }
+ *    ]
  *    session.browse(browseDescription,function(err,results,diagnostics) {} );
  *    &#x60;&#x60;&#x60;
  *
@@ -663,7 +680,7 @@ ClientSession.prototype.readHistoryValue = function (nodes, start, end, callback
             nodeId: resolveNodeId(node),
             indexRange: null,
             dataEncoding: {namespaceIndex: 0, name: null},
-            continuationPoint: null,
+            continuationPoint: null
         });
     });
 
@@ -781,7 +798,7 @@ ClientSession.prototype.writeSingleNode = function (nodeId, value, callback) {
  * @example:
  *
  *    &#x60;&#x60;&#x60; javascript
- *    session.readAllAttributes(&quot;ns=2;s=Furnace_1.Temperature&quot;,function(err,dataValues,diagnostics) {} );
+ *    session.readAllAttributes(&quot;ns=2;s=Furnace_1.Temperature&quot;,function(err,nodesToRead,dataValues,diagnostics) {} );
  *    &#x60;&#x60;&#x60;
  *
  * @async
@@ -790,7 +807,7 @@ ClientSession.prototype.writeSingleNode = function (nodeId, value, callback) {
  * @param callback.err          {Error|null} - the error or null if the transaction was OK
  * @param callback.nodesToRead  {ReadValueId[]}
  * @param callback.results      {DataValue[]}
- * @param callback.diagnosticInfos {DiagnosticInfo[]}
+ * @param callback.diagnostic  {DiagnosticInfo[]}
  *
  */
 ClientSession.prototype.readAllAttributes = function (nodes, callback) {
@@ -887,6 +904,17 @@ ClientSession.prototype.read = function (nodesToRead, maxAge, callback) {
     });
 };
 
+ClientSession.prototype.emitCloseEvent = function(statusCode) {
+
+
+    var self = this;
+    if (!self._closeEventHasBeenEmmitted) {
+        self._closeEventHasBeenEmmitted = true;
+        self.emit(&quot;session_closed&quot;,statusCode);
+    }
+};
+
+
 ClientSession.prototype._defaultRequest = function (SomeRequest, SomeResponse, options, callback) {
 
     var self = this;
@@ -904,6 +932,26 @@ ClientSession.prototype._defaultRequest = function (SomeRequest, SomeResponse, o
 
         /* istanbul ignore next */
         if (err) {
+            // let intercept interesting error message
+            if (err.message.match(/BadSessionClosed/)) {
+                // the session has been closed by Server
+                // probably due to timeout issue
+                // let&#x27;s print some statistics
+                var now = new Date();
+                debugLog( &quot; server send BadSessionClosed !&quot;.bgWhite.red);
+                debugLog( &quot; timeout.................. &quot;,self.timeout);
+                debugLog( &quot; lastRequestSentTime...... &quot;,new Date(self.lastRequestSentTime).toISOString(), now - self.lastRequestSentTime);
+                debugLog( &quot; lastResponseReceivedTime. &quot;,new Date(self.lastResponseReceivedTime).toISOString(), now - self.lastResponseReceivedTime);
+
+                self._terminatePublishEngine();
+                /**
+                 * @event session_closed
+                 * send when the session has been closed by the server ( proabably due to inactivity and timeout)
+                 */
+                self.emitCloseEvent(StatusCodes.BadSessionClosed);
+
+
+            }
             return callback(err, response);
         }
         assert(response instanceof SomeResponse);
@@ -968,6 +1016,24 @@ ClientSession.prototype.deleteSubscriptions = function (options, callback) {
         subscription_service.DeleteSubscriptionsResponse,
         options, callback);
 };
+
+
+/**
+ * @method transferSubscriptions
+ *
+ * @async
+ * @param options {TransferSubscriptionsRequest}
+ * @param callback {Function}
+ * @param callback.err {Error|null}   - the Error if the async method has failed
+ * @param callback.response {TransferSubscriptionsResponse} - the response
+ */
+ClientSession.prototype.transferSubscriptions = function(options,callback) {
+    this._defaultRequest(
+        subscription_service.TransferSubscriptionsRequest,
+        subscription_service.TransferSubscriptionsResponse,
+        options, callback);
+};
+
 /**
  *
  * @method createMonitoredItems
@@ -1155,7 +1221,11 @@ ClientSession.prototype.performMessageTransaction = function (request, callback)
 
     request.requestHeader.authenticationToken = this.authenticationToken;
 
+    self.lastRequestSentTime = Date.now();
+
     self._client.performMessageTransaction(request, function (err, response) {
+
+        self.lastResponseReceivedTime = Date.now();
 
         /* istanbul ignore next */
         if (err) {
@@ -1171,27 +1241,37 @@ ClientSession.prototype.performMessageTransaction = function (request, callback)
     });
 };
 
-/**
- *
- * @method close
- * @async
- * @param callback {Function}
- */
-ClientSession.prototype.close = function (callback) {
-
-    assert(_.isFunction(callback));
-    assert(this._client);
-
+ClientSession.prototype._terminatePublishEngine = function () {
     if (this._publishEngine) {
         this._publishEngine.terminate();
         this._publishEngine = null;
     }
-
-    this._client.closeSession(this, callback);
-
 };
 
 /**
+ *
+ * @method close
+ * @async
+ * @param [deleteSubscription=true] {Boolean}
+ * @param callback {Function}
+ */
+ClientSession.prototype.close = function (deleteSubscription,callback) {
+
+    if (arguments.length === 1) {
+        callback = deleteSubscription;
+        deleteSubscription = true;
+    }
+    assert(_.isFunction(callback));
+    assert(_.isBoolean(deleteSubscription));
+    assert(this._client);
+
+    this._terminatePublishEngine();
+    this._client.closeSession(this,deleteSubscription,callback);
+
+};
+/**
+ *
+ * @method call
  *
  * @param methodsToCall {CallMethodRequest[]} the call method request array
  * @param callback {Function}
@@ -1430,6 +1510,61 @@ ClientSession.prototype.queryFirst = function(queryFirstRequest,callback) {
     });
 };
 
+var ClientSessionKeepAliveManager = require(&quot;./client_session_keepalive_manager&quot;).ClientSessionKeepAliveManager;
+
+ClientSession.prototype.startKeepAliveManager = function() {
+    var self = this;
+    assert(!self._keepAliveManager,&quot;keepAliveManger already started&quot;);
+    self._keepAliveManager = new ClientSessionKeepAliveManager(this);
+
+
+    self._keepAliveManager.on(&quot;failure&quot;,function() {
+        self.stopKeepAliveManager();
+        /**
+         * raised when a keep-alive request has failed on the session, may be the session has timeout
+         * unexpectidaly on the server side, may be the connection is broken.
+         * @event keepalive_failure
+         */
+        self.emit(&quot;keepalive_failure&quot;);
+    });
+    self._keepAliveManager.on(&quot;keepalive&quot;,function(state) {
+        /**
+         * @event keepalive
+         */
+        self.emit(&quot;keepalive&quot;,state);
+    });
+    self._keepAliveManager.start();
+};
+
+ClientSession.prototype.stopKeepAliveManager = function() {
+    var self = this;
+    if (self._keepAliveManager) {
+        self._keepAliveManager.stop();
+        self._keepAliveManager = null;
+    }
+};
+
+ClientSession.prototype.dispose = function() {
+    assert(this._closeEventHasBeenEmmitted);
+    this._terminatePublishEngine();
+    this.stopKeepAliveManager();
+    this.removeAllListeners();
+};
+
+ClientSession.prototype.toString = function() {
+
+    var now = Date.now();
+    var session = this;
+    console.log( &quot; name..................... &quot;,session.name);
+    console.log( &quot; sessionId................ &quot;,session.sessionId);
+    console.log( &quot; authenticationToken...... &quot;,session.authenticationToken);
+    console.log( &quot; timeout.................. &quot;,session.timeout);
+    console.log( &quot; serverNonce.............. &quot;,session.serverNonce.toString(&quot;hex&quot;));
+    console.log( &quot; serverCertificate........ &quot;,session.serverCertificate.toString(&quot;base64&quot;));
+    console.log( &quot; serverSignature.......... &quot;,session.serverSignature);
+    console.log( &quot; lastRequestSentTime...... &quot;,new Date(session.lastRequestSentTime).toISOString(), now - session.lastRequestSentTime);
+    console.log( &quot; lastResponseReceivedTime. &quot;,new Date(session.lastResponseReceivedTime).toISOString(), now - session.lastResponseReceivedTime);
+};
 
 exports.ClientSession = ClientSession;
 

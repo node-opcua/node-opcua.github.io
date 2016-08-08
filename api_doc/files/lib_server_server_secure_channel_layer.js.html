@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.52</em>
+            <em>API Docs for: 0.0.57</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -101,7 +101,6 @@
                                 <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
                                 <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
                                 <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
-                                <li><a href="../classes/cryptoutils.html">cryptoutils</a></li>
                                 <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
                                 <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
                                 <li><a href="../classes/DataValue.html">DataValue</a></li>
@@ -306,7 +305,11 @@
                                 <li><a href="../modules/services.subscription.html">services.subscription</a></li>
                                 <li><a href="../modules/services.write.html">services.write</a></li>
                                 <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
-                                <li><a href="../modules/xml2json.html">xml2json</a></li>
+                                <li><a href="../modules/xml2json
+                
+                node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+                
+                node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
                             </ul>
                         </div>
                     </div>
@@ -484,6 +487,7 @@ function ServerSecureChannelLayer(options) {
 
     self._transactionsCount = 0;
 
+    self.sessionTokens = {};
 }
 
 util.inherits(ServerSecureChannelLayer, EventEmitter);
@@ -687,6 +691,21 @@ ServerSecureChannelLayer.prototype.init = function (socket, callback) {
     });
 };
 
+ServerSecureChannelLayer.prototype._rememberClientAddressAndPort = function() {
+    if (this.transport._socket) {
+        this._remoteAddress = this.transport._socket.remoteAddress;
+        this._remotePort = this.transport._socket.remotePort;
+    }
+};
+
+ServerSecureChannelLayer.prototype.__defineGetter__(&quot;remoteAddress&quot;,function() {
+    return  this._remoteAddress;
+});
+
+ServerSecureChannelLayer.prototype.__defineGetter__(&quot;remotePort&quot;,function() {
+    return  this._remotePort;
+});
+
 
 function _cancel_wait_for_open_secure_channel_request_timeout() {
 
@@ -722,6 +741,11 @@ function _install_wait_for_open_secure_channel_request_timeout(callback, timeout
 
 function _on_initial_open_secure_channel_request(callback, request, msgType, requestId, secureChannelId) {
 
+    /* istanbul ignore next */
+    if (do_trace_message) {
+        dump_request(request,requestId,secureChannelId);
+    }
+
     assert(_.isFunction(callback));
     /* jshint validthis: true */
     var self = this;
@@ -731,9 +755,9 @@ function _on_initial_open_secure_channel_request(callback, request, msgType, req
     // check that the request is a OpenSecureChannelRequest
     /* istanbul ignore next */
     if (doDebug) {
-        console.log(self.messageBuilder.sequenceHeader);
-        console.log(self.messageBuilder.securityHeader);
-        analyze_object_binary_encoding(request);
+        debugLog(self.messageBuilder.sequenceHeader.toString());
+        debugLog(self.messageBuilder.securityHeader.toString());
+        //xx analyze_object_binary_encoding(request);
     }
 
     _cancel_wait_for_open_secure_channel_request_timeout.call(self);
@@ -858,6 +882,16 @@ ServerSecureChannelLayer.prototype.send_response = function (msgType, response, 
 
     var self = this;
 
+    // istanbul ignore next
+    if (doDebug) {
+        // verify that response for a given requestId is only sent once.
+        if (!self.__verifId) {
+            self.__verifId = {};
+        }
+        assert(!self.__verifId[requestId],&quot; response for requestId has already been sent !! - Internal Error&quot;);
+        self.__verifId[requestId] = requestId;
+    }
+
     self.msgType = msgType;
 
     // record tick : send response received.
@@ -887,9 +921,11 @@ ServerSecureChannelLayer.prototype.send_response = function (msgType, response, 
         analyze_object_binary_encoding(response);
     }
 
+    //xx console.log(&quot; sending request &quot;.bgWhite.red,requestId,message.request.constructor.name);
+
     /* istanbul ignore next */
     if (do_trace_message) {
-        console.log(&quot;xxxx   &gt;&gt;&gt;&gt; ---------------------------------------- &quot;.cyan.bold, response._schema.name.green.bold);
+        console.log(&quot;xxxx   &gt;&gt;&gt;&gt; ---------------------------------------- &quot;.cyan.bold, response._schema.name.green.bold,requestId);
         console.log(response.toString());
         console.log(&quot;xxxx   &gt;&gt;&gt;&gt; ----------------------------------------|\n&quot;.cyan.bold);
     }
@@ -1039,6 +1075,9 @@ function _handle_OpenSecureChannelRequest(message, callback) {
 
     _prepare_security_token.call(self, request);
 
+
+    var serviceResult = StatusCodes.Good;
+
     var cryptoFactory = self.messageBuilder.cryptoFactory;
     if (cryptoFactory) {
 
@@ -1047,11 +1086,24 @@ function _handle_OpenSecureChannelRequest(message, callback) {
         //    This parameter shall have a length equal to key size used for the symmetric
         //    encryption algorithm that is identified by the securityPolicyUri.
         self.serverNonce = crypto.randomBytes(cryptoFactory.symmetricKeyLength);
-        assert(self.clientNonce.length === self.serverNonce.length);
 
+        if (self.clientNonce.length !== self.serverNonce.length) {
+
+            console.log(&quot;warning client Nonce length doesn&#x27;t match server nonce length&quot;.red,self.clientNonce.length ,&quot; !=&quot;,self.serverNonce.length);
+            // what can we do
+            // - just ignore it ?
+            // - or adapt serverNonce length to clientNonce Length ?
+            //xx self.serverNonce = crypto.randomBytes(self.clientNonce.length);
+            // - or adapt clientNonce length to serverNonce Length ?
+            //xx self.clientNonce = self.clientNonce.slice(0,self.serverNonce.length);
+            //
+            // - or abort connection ? &lt;&lt; LET BE SAFE AND CHOOSE THIS ONE !
+            serviceResult = StatusCodes.BadSecurityModeRejected; // ToDo check code
+
+        }
         // expose derivedKey to use for symmetric sign&amp;encrypt
         // to help us decrypting and verifying messages received from client
-        this.derivedKeys = cryptoFactory.compute_derived_keys(this.serverNonce, this.clientNonce);
+        self.derivedKeys = cryptoFactory.compute_derived_keys(this.serverNonce, this.clientNonce);
     }
 
     var derivedClientKeys = this.derivedKeys ? this.derivedKeys.derivedClientKeys : null;
@@ -1074,7 +1126,9 @@ function _handle_OpenSecureChannelRequest(message, callback) {
     });
 
     var response = new OpenSecureChannelResponse({
-        responseHeader: {serviceResult: StatusCodes.Good},
+        responseHeader: {
+            serviceResult: serviceResult
+        },
         serverProtocolVersion: self.protocolVersion,
         securityToken: self.securityToken,
         serverNonce: self.serverNonce
@@ -1119,6 +1173,7 @@ function _handle_OpenSecureChannelRequest(message, callback) {
     });
 
 }
+
 
 
 ServerSecureChannelLayer.prototype._abort = function () {
@@ -1198,15 +1253,19 @@ ServerSecureChannelLayer.prototype.has_endpoint_for_security_mode_and_policy = f
     return (endpoint_desc !== null);
 };
 
+// istanbul ignore next
+function dump_request(request,requestId,secureChannelId) {
+    console.log(&quot;xxxx   &lt;&lt;&lt;&lt; ---------------------------------------- &quot;.cyan, request._schema.name.yellow, &quot;requestId&quot;, requestId, &quot;secureChannelId=&quot;, secureChannelId);
+    console.log(request.toString());
+    console.log(&quot;xxxx   &lt;&lt;&lt;&lt; ---------------------------------------- \n&quot;.cyan);
+}
 
 var _on_common_message = function (request, msgType, requestId, secureChannelId) {
     var self = this;
 
     /* istanbul ignore next */
     if (do_trace_message) {
-        console.log(&quot;xxxx   &lt;&lt;&lt;&lt; ---------------------------------------- &quot;.cyan, request._schema.name.yellow, &quot;requestId&quot;, requestId, &quot;secureChannelId=&quot;, secureChannelId);
-        console.log(request.toString());
-        console.log(&quot;xxxx   &lt;&lt;&lt;&lt; ---------------------------------------- \n&quot;.cyan);
+        dump_request(request,requestId,secureChannelId);
     }
 
     requestId = self.messageBuilder.sequenceHeader.requestId;
@@ -1450,6 +1509,28 @@ ServerSecureChannelLayer.prototype.__defineGetter__(&quot;transactionsCount&quot
     var self = this;
     return self._transactionsCount;
 });
+
+/**
+ * true when the secure channel has been opened successfully
+ * @property isOpened
+ * @type {Boolean}
+ *
+ */
+ServerSecureChannelLayer.prototype.__defineGetter__(&quot;isOpened&quot;,function() {
+    var self = this;
+    return self.clientCertificate;
+});
+
+/**
+ * true when the secure channel is assigned to a active session
+ * @property hasSession
+ * @type {Boolean}
+ */
+ServerSecureChannelLayer.prototype.__defineGetter__(&quot;hasSession&quot;,function() {
+    var self = this;
+    return Object.keys(self.sessionTokens).length&gt;0;
+});
+
 exports.ServerSecureChannelLayer = ServerSecureChannelLayer;
 
     </pre>

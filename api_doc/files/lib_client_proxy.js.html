@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.52</em>
+            <em>API Docs for: 0.0.57</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -101,7 +101,6 @@
                                 <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
                                 <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
                                 <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
-                                <li><a href="../classes/cryptoutils.html">cryptoutils</a></li>
                                 <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
                                 <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
                                 <li><a href="../classes/DataValue.html">DataValue</a></li>
@@ -306,7 +305,11 @@
                                 <li><a href="../modules/services.subscription.html">services.subscription</a></li>
                                 <li><a href="../modules/services.write.html">services.write</a></li>
                                 <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
-                                <li><a href="../modules/xml2json.html">xml2json</a></li>
+                                <li><a href="../modules/xml2json
+                
+                node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+                
+                node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
                             </ul>
                         </div>
                     </div>
@@ -375,6 +378,7 @@ var NodeClass = require(&quot;lib/datamodel/nodeclass&quot;).NodeClass;
 var Variant = require(&quot;lib/datamodel/variant&quot;).Variant;
 var AccessLevelFlag = require(&quot;lib/datamodel/access_level&quot;).AccessLevelFlag;
 
+var NodeId = require(&quot;lib/datamodel/nodeid&quot;).NodeId;
 
 var coerceNodeId = require(&quot;lib/datamodel/nodeid&quot;).coerceNodeId;
 
@@ -735,6 +739,7 @@ function readUAStructure(proxyManager, obj, callback) {
 
         obj[name] = function functionCaller(inputArgs, callback) {
 
+            assert(_.isFunction(callback));
             // convert input arguments into Variants
             var inputArgsDef = obj[name].inputArguments;
 
@@ -766,6 +771,7 @@ function readUAStructure(proxyManager, obj, callback) {
                 methodId: reference.nodeId,
                 inputArguments: inputArguments
             });
+            console.log(&quot; calling &quot;,methodToCall.toString());
 
             var methodsToCall = [methodToCall];
 
@@ -799,6 +805,7 @@ function readUAStructure(proxyManager, obj, callback) {
 
             });
         };
+
 
         function extractDataType(arg, callback) {
 
@@ -837,7 +844,18 @@ function readUAStructure(proxyManager, obj, callback) {
             }
         });
 
-        obj.$methods[name] = obj[name];
+        var methodObj = {
+            nodeId: reference.nodeId,
+            executableFlag: false,
+            browseName: name,
+            func:obj[name]
+        };
+        obj.$methods[name] = methodObj;
+
+        proxyManager._monitor_execution_flag(methodObj,function(){
+
+        });
+
     }
 
     function add_component(obj,reference,callback) {
@@ -1062,9 +1080,7 @@ function getObject(proxyManager, nodeId, options, callback) {
                     //xx console.log(&quot;xxx nodeClass = &quot;,clientObject.nodeClass.toString());
 
                     if (clientObject.nodeClass === NodeClass.Variable) {
-
                         return read_accessLevels(clientObject,callback);
-
                     }
                 }
                 callback(err);
@@ -1079,6 +1095,8 @@ function getObject(proxyManager, nodeId, options, callback) {
             }
             callback();
         },
+
+
         function (callback) {
 
             readUAStructure(proxyManager, clientObject, callback);
@@ -1130,6 +1148,7 @@ UAProxyManager.prototype.start = function(callback)
         callback();
     });
     self.subscription.on(&quot;error&quot;,function(err) {
+        //xx console.log(&quot;XXXXXXXXXXXXXXX =&gt; Error&quot;,err);
         //xx callback(err);
     });
     self.subscription.on(&quot;terminated&quot;,function() {
@@ -1152,32 +1171,37 @@ UAProxyManager.prototype.getObject = function(nodeId,callback,options) {
 
     var self = this;
 
-    options = options || {};
-    options.depth = options.depth|| 1;
+    setImmediate(function() {
+        options = options || {};
+        options.depth = options.depth|| 1;
 
-    var key = nodeId.toString();
+        var key = nodeId.toString();
 
-    if (self._map.hasOwnProperty(key)) {
-        return callback(null,self._map[key]);
-    }
-
-    getObject(self,nodeId,options,function(err,obj) {
-
-        if(!err) {
-            self._map[key] = obj;
+        if (self._map.hasOwnProperty(key)) {
+            return callback(null,self._map[key]);
         }
-        callback(err,obj);
+
+        getObject(self,nodeId,options,function(err,obj) {
+
+            if(!err) {
+                self._map[key] = obj;
+            }
+            callback(err,obj);
+        });
     });
 };
+
+
 UAProxyManager.prototype._monitor_value = function(proxyObject,callback) {
 
-
+    assert(_.isFunction(callback));
     //xx if (proxyObject.nodeId.toString() !== &quot;ns=0;i=2257&quot;) { return;}
 
     var self = this;
 
     if (!self.subscription) {
-        return callback(new Error(&quot;No subscription&quot;));
+        // some server do not provide subscription support, do not treat this as an error.
+        return callback(null); // new Error(&quot;No subscription&quot;));
     }
 
     var itemToMonitor = { // ReadValueId
@@ -1205,6 +1229,43 @@ UAProxyManager.prototype._monitor_value = function(proxyObject,callback) {
 
 };
 
+UAProxyManager.prototype._monitor_execution_flag = function(proxyObject,callback) {
+
+    // note : proxyObject must wrap a method
+    assert(_.isFunction(callback));
+    assert(proxyObject.nodeId instanceof NodeId);
+    //xx if (proxyObject.nodeId.toString() !== &quot;ns=0;i=2257&quot;) { return;}
+
+    var self = this;
+
+    if (!self.subscription) {
+        // some server do not provide subscription support, do not treat this as an error.
+        return callback(null); // new Error(&quot;No subscription&quot;));
+    }
+
+    var itemToMonitor = { // ReadValueId
+        nodeId:      proxyObject.nodeId,
+        attributeId: AttributeIds.Executable
+    };
+
+    var monitoringParameters= { // MonitoringParameters
+        samplingInterval: 0, /* event-based */
+        discardOldest: true,
+        queueSize: 10
+    };
+    var requestedParameters = read_service.TimestampsToReturn.None;
+
+    var monitoredItem = self.subscription.monitor(itemToMonitor,monitoringParameters,requestedParameters,callback);
+
+    Object.defineProperty(proxyObject, &quot;__monitoredItem_execution_flag&quot;, {value: monitoredItem, enumerable: false});
+
+    proxyObject.__monitoredItem_execution_flag.on(&quot;changed&quot;,function(dataValue) {
+        proxyObject.executableFlag = dataValue.value.value;
+        console.log(&quot; execution flag = &quot;, proxyObject.executableFlag , proxyObject.browseName , proxyObject.nodeId.toString());
+        //xx proxyObject.emit(&quot;execution_flag_changed&quot;,proxyObject.executableFlag);
+    });
+
+};
 
 exports.UAProxyManager = UAProxyManager;
 

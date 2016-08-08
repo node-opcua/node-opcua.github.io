@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.52</em>
+            <em>API Docs for: 0.0.57</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -101,7 +101,6 @@
                                 <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
                                 <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
                                 <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
-                                <li><a href="../classes/cryptoutils.html">cryptoutils</a></li>
                                 <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
                                 <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
                                 <li><a href="../classes/DataValue.html">DataValue</a></li>
@@ -306,7 +305,11 @@
                                 <li><a href="../modules/services.subscription.html">services.subscription</a></li>
                                 <li><a href="../modules/services.write.html">services.write</a></li>
                                 <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
-                                <li><a href="../modules/xml2json.html">xml2json</a></li>
+                                <li><a href="../modules/xml2json
+                
+                node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+                
+                node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
                             </ul>
                         </div>
                     </div>
@@ -514,12 +517,20 @@
                     <h3>Methods</h3>
 
                     <ul class="index-list methods">
-                            <li class="index-item method private">
-                                <a href="#method__attempt_to_publish_notification *">_attempt_to_publish_notification *</a>
+                            <li class="index-item method">
+                                <a href="#method__addNotificationMessage">_addNotificationMessage</a>
 
                             </li>
                             <li class="index-item method private">
                                 <a href="#method__createMonitoredItemStep2">_createMonitoredItemStep2</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method__popNotificationToSend">_popNotificationToSend</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#method__publish_pending_notifications *">_publish_pending_notifications *</a>
 
                             </li>
                             <li class="index-item method private">
@@ -532,10 +543,6 @@
                             </li>
                             <li class="index-item method">
                                 <a href="#method_acknowledgeNotification">acknowledgeNotification</a>
-
-                            </li>
-                            <li class="index-item method">
-                                <a href="#method_addNotificationMessage">addNotificationMessage</a>
 
                             </li>
                             <li class="index-item method private">
@@ -575,10 +582,6 @@
 
                             </li>
                             <li class="index-item method">
-                                <a href="#method_popNotificationToSend">popNotificationToSend</a>
-
-                            </li>
-                            <li class="index-item method">
                                 <a href="#method_removeMonitoredItem">removeMonitoredItem</a>
 
                             </li>
@@ -611,6 +614,10 @@ Calling this method will also remove any monitored items.</a>
                     <ul class="index-list properties">
                             <li class="index-item property">
                                 <a href="#property_disabledMonitoredItemCount">disabledMonitoredItemCount</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_hasMonitoredItemNotifications true if monitored Item have uncollected Notifications">hasMonitoredItemNotifications true if monitored Item have uncollected Notifications</a>
 
                             </li>
                             <li class="index-item property">
@@ -686,13 +693,7 @@ Calling this method will also remove any monitored items.</a>
 
                             </li>
                             <li class="index-item event">
-                                <a href="#event_perform_update
-
-this event is sent when the subscription requires a data update. it is up to the subscription owner to
-perform the necessary operations to update the monitored values.">perform_update
-
-this event is sent when the subscription requires a data update. it is up to the subscription owner to
-perform the necessary operations to update the monitored values.</a>
+                                <a href="#event_removeMonitoredItem">removeMonitoredItem</a>
 
                             </li>
                     </ul>
@@ -702,14 +703,19 @@ perform the necessary operations to update the monitored values.</a>
             <div id="methods" class="api-class-tabpanel">
                 <h2 class="off-left">Methods</h2>
 
-<div id="method__attempt_to_publish_notification *" class="method item private">
-    <h3 class="name"><code>_attempt_to_publish_notification *</code></h3>
+<div id="method__addNotificationMessage" class="method item">
+    <h3 class="name"><code>_addNotificationMessage</code></h3>
 
-        <span class="paren">()</span>
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>notificationData</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
 
 
 
-        <span class="flag private">private</span>
 
 
 
@@ -718,7 +724,7 @@ perform the necessary operations to update the monitored values.</a>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_subscription.js.html#l371"><code>lib\server\subscription.js:371</code></a>
+        <a href="../files/lib_server_subscription.js.html#l773"><code>lib\server\subscription.js:773</code></a>
         </p>
 
 
@@ -726,26 +732,28 @@ perform the necessary operations to update the monitored values.</a>
     </div>
 
     <div class="description">
-        <p>_attempt_to_publish_notification send a &quot;notification&quot; event:</p>
-
+        
     </div>
 
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">notificationData</code>
+                        <span class="type">Array<DataChangeNotification | <a href="../classes/EventNotificationList.html" class="crosslink">EventNotificationList</a> | StatusChangeNotification></span>
 
 
+                    <div class="param-description">
+                         
+                    </div>
 
-        <div class="example">
-            <h4>Example:</h4>
-
-            <div class="example-content">
-                <p>subscription.on(&quot;notification&quot;,function() {
-if (can_publish) {
-var notification = subscription.popNotificationToSend();
-send_notification(notification);
-}
-});</p>
-
-            </div>
+                </li>
+            </ul>
         </div>
+
+
+
 </div>
 <div id="method__createMonitoredItemStep2" class="method item private">
     <h3 class="name"><code>_createMonitoredItemStep2</code></h3>
@@ -778,7 +786,7 @@ send_notification(notification);
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_subscription.js.html#l1187"><code>lib\server\subscription.js:1187</code></a>
+        <a href="../files/lib_server_subscription.js.html#l1186"><code>lib\server\subscription.js:1186</code></a>
         </p>
 
 
@@ -839,6 +847,81 @@ send_notification(notification);
 
 
 </div>
+<div id="method__popNotificationToSend" class="method item">
+    <h3 class="name"><code>_popNotificationToSend</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/NotificationMessage.html" class="crosslink">NotificationMessage</a></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_server_subscription.js.html#l827"><code>lib\server\subscription.js:827</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Extract the next Notification that is ready to be sent to the client.</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type"><a href="../classes/NotificationMessage.html" class="crosslink">NotificationMessage</a></span>:
+                    <p>the Notification to send._pending_notifications</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method__publish_pending_notifications *" class="method item private">
+    <h3 class="name"><code>_publish_pending_notifications *</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+        <span class="flag private">private</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_server_subscription.js.html#l380"><code>lib\server\subscription.js:380</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>_publish_pending_notifications send a &quot;notification&quot; event:</p>
+
+    </div>
+
+
+
+
+</div>
 <div id="method__sendKeepAliveResponse" class="method item private">
     <h3 class="name"><code>_sendKeepAliveResponse</code></h3>
 
@@ -855,7 +938,7 @@ send_notification(notification);
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_subscription.js.html#l562"><code>lib\server\subscription.js:562</code></a>
+        <a href="../files/lib_server_subscription.js.html#l591"><code>lib\server\subscription.js:591</code></a>
         </p>
 
 
@@ -886,7 +969,7 @@ send_notification(notification);
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_subscription.js.html#l506"><code>lib\server\subscription.js:506</code></a>
+        <a href="../files/lib_server_subscription.js.html#l512"><code>lib\server\subscription.js:512</code></a>
         </p>
 
 
@@ -925,7 +1008,7 @@ send_notification(notification);
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_subscription.js.html#l861"><code>lib\server\subscription.js:861</code></a>
+        <a href="../files/lib_server_subscription.js.html#l908"><code>lib\server\subscription.js:908</code></a>
         </p>
 
 
@@ -963,58 +1046,6 @@ send_notification(notification);
 
 
 </div>
-<div id="method_addNotificationMessage" class="method item">
-    <h3 class="name"><code>addNotificationMessage</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>notificationData</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-
-
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/lib_server_subscription.js.html#l728"><code>lib\server\subscription.js:728</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">notificationData</code>
-                        <span class="type">Array<DataChangeNotification | <a href="../classes/EventNotificationList.html" class="crosslink">EventNotificationList</a> | StatusChangeNotification></span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-
-
-</div>
 <div id="method_adjustSamplingInterval" class="method item private">
     <h3 class="name"><code>adjustSamplingInterval</code></h3>
 
@@ -1043,7 +1074,7 @@ send_notification(notification);
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_subscription.js.html#l954"><code>lib\server\subscription.js:954</code></a>
+        <a href="../files/lib_server_subscription.js.html#l1001"><code>lib\server\subscription.js:1001</code></a>
         </p>
 
 
@@ -1112,7 +1143,7 @@ send_notification(notification);
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_subscription.js.html#l807"><code>lib\server\subscription.js:807</code></a>
+        <a href="../files/lib_server_subscription.js.html#l854"><code>lib\server\subscription.js:854</code></a>
         </p>
 
 
@@ -1147,7 +1178,7 @@ and destroy them.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_subscription.js.html#l846"><code>lib\server\subscription.js:846</code></a>
+        <a href="../files/lib_server_subscription.js.html#l893"><code>lib\server\subscription.js:893</code></a>
         </p>
 
 
@@ -1195,7 +1226,7 @@ acknowledged yet.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_subscription.js.html#l1252"><code>lib\server\subscription.js:1252</code></a>
+        <a href="../files/lib_server_subscription.js.html#l1253"><code>lib\server\subscription.js:1253</code></a>
         </p>
 
 
@@ -1256,7 +1287,7 @@ acknowledged yet.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_subscription.js.html#l1264"><code>lib\server\subscription.js:1264</code></a>
+        <a href="../files/lib_server_subscription.js.html#l1265"><code>lib\server\subscription.js:1265</code></a>
         </p>
 
 
@@ -1311,7 +1342,7 @@ a network interruption and the client does not know if the creation succeeded in
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_subscription.js.html#l596"><code>lib\server\subscription.js:596</code></a>
+        <a href="../files/lib_server_subscription.js.html#l636"><code>lib\server\subscription.js:636</code></a>
         </p>
 
 
@@ -1342,7 +1373,7 @@ a network interruption and the client does not know if the creation succeeded in
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_subscription.js.html#l626"><code>lib\server\subscription.js:626</code></a>
+        <a href="../files/lib_server_subscription.js.html#l671"><code>lib\server\subscription.js:671</code></a>
         </p>
 
 
@@ -1378,7 +1409,7 @@ a network interruption and the client does not know if the creation succeeded in
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_subscription.js.html#l268"><code>lib\server\subscription.js:268</code></a>
+        <a href="../files/lib_server_subscription.js.html#l272"><code>lib\server\subscription.js:272</code></a>
         </p>
 
 
@@ -1483,7 +1514,7 @@ a network interruption and the client does not know if the creation succeeded in
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_subscription.js.html#l793"><code>lib\server\subscription.js:793</code></a>
+        <a href="../files/lib_server_subscription.js.html#l840"><code>lib\server\subscription.js:840</code></a>
         </p>
 
 
@@ -1522,49 +1553,6 @@ a network interruption and the client does not know if the creation succeeded in
 
 
 </div>
-<div id="method_popNotificationToSend" class="method item">
-    <h3 class="name"><code>popNotificationToSend</code></h3>
-
-        <span class="paren">()</span>
-
-        <span class="returns-inline">
-            <span class="type"><a href="../classes/NotificationMessage.html" class="crosslink">NotificationMessage</a></span>
-        </span>
-
-
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/lib_server_subscription.js.html#l779"><code>lib\server\subscription.js:779</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>Extract the next Notification that is ready to be sent to the client.</p>
-
-    </div>
-
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type"><a href="../classes/NotificationMessage.html" class="crosslink">NotificationMessage</a></span>:
-                    <p>the Notification to send._pending_notifications</p>
-
-            </div>
-        </div>
-
-
-</div>
 <div id="method_removeMonitoredItem" class="method item">
     <h3 class="name"><code>removeMonitoredItem</code></h3>
 
@@ -1586,7 +1574,7 @@ a network interruption and the client does not know if the creation succeeded in
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_subscription.js.html#l1299"><code>lib\server\subscription.js:1299</code></a>
+        <a href="../files/lib_server_subscription.js.html#l1319"><code>lib\server\subscription.js:1319</code></a>
         </p>
 
 
@@ -1635,7 +1623,7 @@ a network interruption and the client does not know if the creation succeeded in
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_subscription.js.html#l585"><code>lib\server\subscription.js:585</code></a>
+        <a href="../files/lib_server_subscription.js.html#l620"><code>lib\server\subscription.js:620</code></a>
         </p>
 
 
@@ -1665,7 +1653,7 @@ a network interruption and the client does not know if the creation succeeded in
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_subscription.js.html#l658"><code>lib\server\subscription.js:658</code></a>
+        <a href="../files/lib_server_subscription.js.html#l707"><code>lib\server\subscription.js:707</code></a>
         </p>
 
 
@@ -1699,7 +1687,7 @@ can reset its life time counter.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_subscription.js.html#l616"><code>lib\server\subscription.js:616</code></a>
+        <a href="../files/lib_server_subscription.js.html#l661"><code>lib\server\subscription.js:661</code></a>
         </p>
 
 
@@ -1735,7 +1723,7 @@ Calling this method will also remove any monitored items.</code></h3>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_subscription.js.html#l673"><code>lib\server\subscription.js:673</code></a>
+        <a href="../files/lib_server_subscription.js.html#l722"><code>lib\server\subscription.js:722</code></a>
         </p>
 
 
@@ -1767,7 +1755,7 @@ Calling this method will also remove any monitored items.</code></h3>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_subscription.js.html#l922"><code>lib\server\subscription.js:922</code></a>
+        <a href="../files/lib_server_subscription.js.html#l969"><code>lib\server\subscription.js:969</code></a>
         </p>
 
 
@@ -1776,6 +1764,30 @@ Calling this method will also remove any monitored items.</code></h3>
     <div class="description">
         <p>number of disabled monitored items.</p>
 
+    </div>
+
+
+
+</div>
+<div id="property_hasMonitoredItemNotifications true if monitored Item have uncollected Notifications" class="property item">
+    <h3 class="name"><code>hasMonitoredItemNotifications true if monitored Item have uncollected Notifications</code></h3>
+    <span class="type">Boolean</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_server_subscription.js.html#l1357"><code>lib\server\subscription.js:1357</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
     </div>
 
 
@@ -1792,7 +1804,7 @@ Calling this method will also remove any monitored items.</code></h3>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_subscription.js.html#l893"><code>lib\server\subscription.js:893</code></a>
+        <a href="../files/lib_server_subscription.js.html#l940"><code>lib\server\subscription.js:940</code></a>
         </p>
 
 
@@ -1818,7 +1830,7 @@ Calling this method will also remove any monitored items.</code></h3>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_subscription.js.html#l605"><code>lib\server\subscription.js:605</code></a>
+        <a href="../files/lib_server_subscription.js.html#l650"><code>lib\server\subscription.js:650</code></a>
         </p>
 
 
@@ -1873,7 +1885,7 @@ OPCUA Spec: The life-time count shall be a minimum of three times the keep keep-
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_subscription.js.html#l635"><code>lib\server\subscription.js:635</code></a>
+        <a href="../files/lib_server_subscription.js.html#l680"><code>lib\server\subscription.js:680</code></a>
         </p>
 
 
@@ -1956,7 +1968,7 @@ DataChangeNotification and events in the EventNotificationList.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_subscription.js.html#l913"><code>lib\server\subscription.js:913</code></a>
+        <a href="../files/lib_server_subscription.js.html#l960"><code>lib\server\subscription.js:960</code></a>
         </p>
 
 
@@ -2006,7 +2018,7 @@ DataChangeNotification and events in the EventNotificationList.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_subscription.js.html#l884"><code>lib\server\subscription.js:884</code></a>
+        <a href="../files/lib_server_subscription.js.html#l931"><code>lib\server\subscription.js:931</code></a>
         </p>
 
 
@@ -2056,7 +2068,7 @@ DataChangeNotification and events in the EventNotificationList.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_subscription.js.html#l904"><code>lib\server\subscription.js:904</code></a>
+        <a href="../files/lib_server_subscription.js.html#l951"><code>lib\server\subscription.js:951</code></a>
         </p>
 
 
@@ -2081,7 +2093,7 @@ DataChangeNotification and events in the EventNotificationList.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_subscription.js.html#l647"><code>lib\server\subscription.js:647</code></a>
+        <a href="../files/lib_server_subscription.js.html#l692"><code>lib\server\subscription.js:692</code></a>
         </p>
 
 
@@ -2106,7 +2118,7 @@ DataChangeNotification and events in the EventNotificationList.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_server_subscription.js.html#l935"><code>lib\server\subscription.js:935</code></a>
+        <a href="../files/lib_server_subscription.js.html#l982"><code>lib\server\subscription.js:982</code></a>
         </p>
 
 
@@ -2137,7 +2149,7 @@ DataChangeNotification and events in the EventNotificationList.</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/lib_server_subscription.js.html#l713"><code>lib\server\subscription.js:713</code></a>
+                            <a href="../files/lib_server_subscription.js.html#l758"><code>lib\server\subscription.js:758</code></a>
                             </p>
                     
                     
@@ -2162,7 +2174,7 @@ DataChangeNotification and events in the EventNotificationList.</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/lib_server_subscription.js.html#l539"><code>lib\server\subscription.js:539</code></a>
+                            <a href="../files/lib_server_subscription.js.html#l540"><code>lib\server\subscription.js:540</code></a>
                             </p>
                     
                     
@@ -2187,7 +2199,7 @@ DataChangeNotification and events in the EventNotificationList.</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/lib_server_subscription.js.html#l572"><code>lib\server\subscription.js:572</code></a>
+                            <a href="../files/lib_server_subscription.js.html#l606"><code>lib\server\subscription.js:606</code></a>
                             </p>
                     
                     
@@ -2201,14 +2213,8 @@ DataChangeNotification and events in the EventNotificationList.</p>
                     
                     
                     </div>
-                    <div id="event_perform_update
-                    
-                    this event is sent when the subscription requires a data update. it is up to the subscription owner to
-                    perform the necessary operations to update the monitored values." class="events item">
-                        <h3 class="name"><code>perform_update
-                    
-                    this event is sent when the subscription requires a data update. it is up to the subscription owner to
-                    perform the necessary operations to update the monitored values.</code></h3>
+                    <div id="event_removeMonitoredItem" class="events item">
+                        <h3 class="name"><code>removeMonitoredItem</code></h3>
                         <span class="type"></span>
                     
                     
@@ -2218,17 +2224,33 @@ DataChangeNotification and events in the EventNotificationList.</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/lib_server_subscription.js.html#l519"><code>lib\server\subscription.js:519</code></a>
+                            <a href="../files/lib_server_subscription.js.html#l1338"><code>lib\server\subscription.js:1338</code></a>
                             </p>
                     
                     
                         </div>
                     
                         <div class="description">
-                            <p>request a notification update from the subscription owner.</p>
+                            <p>notify that a monitored item has been removed from the subscription</p>
                     
                         </div>
                     
+                            <div class="params">
+                                <h4>Event Payload:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">monitoredItem</code>
+                                            <span class="type"><a href="../classes/MonitoredItem.html" class="crosslink">MonitoredItem</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
                     
                     
                     </div>

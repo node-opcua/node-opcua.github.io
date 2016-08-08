@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.52</em>
+            <em>API Docs for: 0.0.57</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -101,7 +101,6 @@
                                 <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
                                 <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
                                 <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
-                                <li><a href="../classes/cryptoutils.html">cryptoutils</a></li>
                                 <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
                                 <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
                                 <li><a href="../classes/DataValue.html">DataValue</a></li>
@@ -306,7 +305,11 @@
                                 <li><a href="../modules/services.subscription.html">services.subscription</a></li>
                                 <li><a href="../modules/services.write.html">services.write</a></li>
                                 <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
-                                <li><a href="../modules/xml2json.html">xml2json</a></li>
+                                <li><a href="../modules/xml2json
+                
+                node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+                
+                node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
                             </ul>
                         </div>
                     </div>
@@ -378,6 +381,8 @@ var readMessageHeader = require(&quot;lib/misc/message_header&quot;).readMessage
 var TCPErrorMessage = require(&quot;lib/datamodel/structures&quot;).TCPErrorMessage;
 var AcknowledgeMessage = require(&quot;_generated_/_auto_generated_AcknowledgeMessage&quot;).AcknowledgeMessage;
 var decodeMessage = require(&quot;lib/nodeopcua&quot;).decodeMessage;
+
+var StatusCodes = require(&quot;lib/datamodel/opcua_status_code&quot;).StatusCodes;
 
 function createClientSocket(endpoint_url) {
     // create a socket based on Url
@@ -514,7 +519,17 @@ ClientTCP_transport.prototype.connect = function (endpoint_url, callback, option
 
     function _on_socket_error_after_connection(err) {
         console.log(&quot; ClientTCP_transport Socket Error&quot;,err.message);
-        if (err.message.match(/ECONNRESET/)) {
+
+        // EPIPE : EPIPE (Broken pipe): A write on a pipe, socket, or FIFO for which there is no process to read the
+        // data. Commonly encountered at the net and http layers, indicative that the remote side of the stream being
+        // written to has been closed.
+
+        // ECONNRESET (Connection reset by peer): A connection was forcibly closed by a peer. This normally results
+        // from a loss of the connection on the remote socket due to a timeout or reboot. Commonly encountered via the
+        // http and net modu
+
+
+        if (err.message.match(/ECONNRESET|EPIPE/)) {
             /**
              * @event connection_break
              *
@@ -572,8 +587,10 @@ ClientTCP_transport.prototype._handle_ACK_response = function (message_chunk, ca
         responseClass = TCPErrorMessage;
         _stream.rewind();
         response = decodeMessage(_stream, responseClass);
-
-        callback(new Error(&quot;ACK: ERR received Code 0x&quot; + response.name.toString(16) + &quot; : &quot; + response.reason));
+        
+        var err =new Error(&quot;ACK: ERR received &quot; + response.statusCode.toString() + &quot; : &quot; + response.reason);
+        err.statusCode =  response.statusCode;
+        callback(err);
 
     } else {
         responseClass = AcknowledgeMessage;
@@ -596,10 +613,10 @@ ClientTCP_transport.prototype._send_HELLO_request = function () {
     // the server will receive it as message from the client
     var request = new HelloMessage({
         protocolVersion: self.protocolVersion,
-        receiveBufferSize: 8192,
-        sendBufferSize: 8192,
-        maxMessageSize: 0, // 0 - no limits
-        maxChunkCount: 0, // 0 - no limits
+        receiveBufferSize:    1024 * 64 * 10,
+        sendBufferSize:       1024 * 64 * 10,// 8196 min,
+        maxMessageSize:       0, // 0 - no limits
+        maxChunkCount:        0, // 0 - no limits
         endpointUrl: self.endpoint_url
     });
 

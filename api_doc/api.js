@@ -240,7 +240,6 @@ YUI.add("yuidoc-meta", function(Y) {
         "WriteValue",
         "X509IdentityToken",
         "Xml2Json",
-        "cryptoutils",
         "opcua"
     ],
     "modules": [
@@ -263,7 +262,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "services.session",
         "services.subscription",
         "services.write",
-        "xml2json"
+        "xml2json\n\nnode -> see if https:__github.com_isaacs_sax-js could be used instead"
     ],
     "allModules": [
         {
@@ -344,8 +343,8 @@ YUI.add("yuidoc-meta", function(Y) {
             "name": "StatusCodes"
         },
         {
-            "displayName": "xml2json",
-            "name": "xml2json"
+            "displayName": "xml2json\n\nnode -> see if https://github.com/isaacs/sax-js could be used instead",
+            "name": "xml2json\n\nnode -> see if https:__github.com_isaacs_sax-js could be used instead"
         }
     ],
     "elements": []

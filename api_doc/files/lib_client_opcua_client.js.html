@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.52</em>
+            <em>API Docs for: 0.0.57</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -101,7 +101,6 @@
                                 <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
                                 <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
                                 <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
-                                <li><a href="../classes/cryptoutils.html">cryptoutils</a></li>
                                 <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
                                 <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
                                 <li><a href="../classes/DataValue.html">DataValue</a></li>
@@ -306,7 +305,11 @@
                                 <li><a href="../modules/services.subscription.html">services.subscription</a></li>
                                 <li><a href="../modules/services.write.html">services.write</a></li>
                                 <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
-                                <li><a href="../modules/xml2json.html">xml2json</a></li>
+                                <li><a href="../modules/xml2json
+                
+                node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+                
+                node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
                             </ul>
                         </div>
                     </div>
@@ -402,9 +405,13 @@ function validateServerNonce(serverNonce) {
  * @param options
  * @param [options.securityMode=MessageSecurityMode.None] {MessageSecurityMode} the default security mode.
  * @param [options.securityPolicy =SecurityPolicy.NONE] {SecurityPolicy} the security mode.
- * @param [options.requestedSessionTimeout= 10000]            {Number} the requested session time out in CreateSession
+ * @param [options.requestedSessionTimeout= 60000]            {Number} the requested session time out in CreateSession
  * @param [options.applicationName=&quot;NodeOPCUA-Client&quot;]        {string} the client application name
  * @param [options.endpoint_must_exist=true] {Boolean} set to false if the client should accept server endpoint mismatch
+ * @param [options.keepSessionAlive=false]{Boolean}
+ * @param [options.certificateFile=&quot;certificates/client_selfsigned_cert_1024.pem&quot;] {String} client certificate pem file.
+ * @param [options.privateKeyFile=&quot;certificates/client_key_1024.pem&quot;] {String} client private key pem file.
+ * @param [options.clientName=&quot;&quot;] {String} a client name string that will be used to generate session names.
  * @constructor
  */
 function OPCUAClient(options) {
@@ -418,9 +425,11 @@ function OPCUAClient(options) {
     // By default, the client is strict.
     this.endpoint_must_exist = ( options.endpoint_must_exist === null) ? true : options.endpoint_must_exist;
 
-    this.requestedSessionTimeout = options.requestedSessionTimeout || 20000;
+    this.requestedSessionTimeout = options.requestedSessionTimeout || 60000; // 1 minute
 
     this.applicationName = options.applicationName || &quot;NodeOPCUA-Client&quot;;
+
+    this.clientName = options.clientName || &quot;Session&quot;;
 
 }
 util.inherits(OPCUAClient, OPCUAClientBase);
@@ -431,7 +440,7 @@ OPCUAClient.prototype._nextSessionName = function () {
         this.___sessionName_counter = 0;
     }
     this.___sessionName_counter += 1;
-    return &quot;Session&quot; + this.___sessionName_counter;
+    return this.clientName + this.___sessionName_counter;
 };
 
 var makeApplicationUrn = require(&quot;lib/misc/applicationurn&quot;).makeApplicationUrn;
@@ -859,7 +868,9 @@ OPCUAClient.prototype.reactivateSession = function (session, callback) {
  * @async
  * @method createSession
  *
- * @param [options {Object} ] optional
+ * @param [userIdentityInfo {Object} ] optional
+ * @param [userIdentityInfo.userName {String} ] 
+ * @param [userIdentityInfo.password {String} ] 
  *
  * @param callback {Function}
  * @param callback.err     {Error|null}   - the Error if the async method has failed
@@ -921,20 +932,22 @@ OPCUAClient.prototype.changeSessionIdentity = function(session,userIdentityInfo,
 
 };
 
-OPCUAClient.prototype._closeSession = function (session, callback) {
+OPCUAClient.prototype._closeSession = function (session, deleteSubscriptions,callback) {
 
+    var self = this;
     assert(_.isFunction(callback));
+    assert(_.isBoolean(deleteSubscriptions));
 
     // istanbul ignore next
-    if (!this._secureChannel) {
+    if (!self._secureChannel) {
         return callback(new Error(&quot;no channel&quot;));
     }
-    assert(this._secureChannel);
+    assert(self._secureChannel);
 
     var request = new CloseSessionRequest({
-        deleteSubscriptions: true
+        deleteSubscriptions: deleteSubscriptions
     });
-
+    
     session.performMessageTransaction(request, function (err, response) {
 
         if (err) {
@@ -957,16 +970,22 @@ OPCUAClient.prototype._closeSession = function (session, callback) {
  * @param callback {Function} - the callback
  * @param callback.err {Error|null}   - the Error if the async method has failed
  */
-OPCUAClient.prototype.closeSession = function (session, callback) {
+OPCUAClient.prototype.closeSession = function (session, deleteSubscriptions, callback) {
 
     var self = this;
+    assert(_.isBoolean(deleteSubscriptions));
     assert(_.isFunction(callback));
     assert(session);
     assert(session._client === self, &quot;session must be attached to self&quot;);
 
     //todo : send close session on secure channel
-    self._closeSession(session, function (err) {
+    self._closeSession(session, deleteSubscriptions, function (err) {
+
+        session.emitCloseEvent();
+
         self._removeSession(session);
+        assert(!_.contains(self._sessions,session));
+
         callback(err);
     });
 };
@@ -1107,6 +1126,12 @@ OPCUAClient.prototype._on_connection_reestablished = function(callback) {
 
 };
 
+OPCUAClient.prototype.toString = function() {
+    OPCUAClientBase.prototype.toString.call(this);
+    console.log(&quot;  requestedSessionTimeout....... &quot;,this.requestedSessionTimeout);
+    console.log(&quot;  endpoint_url................... &quot;,this.endpoint_url);
+    console.log(&quot;  serverUri...................... &quot;,this.serverUri);
+};
 
 exports.OPCUAClient = OPCUAClient;
 exports.ClientSession = ClientSession;

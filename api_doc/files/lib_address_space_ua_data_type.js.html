@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.52</em>
+            <em>API Docs for: 0.0.57</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -101,7 +101,6 @@
                                 <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
                                 <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
                                 <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
-                                <li><a href="../classes/cryptoutils.html">cryptoutils</a></li>
                                 <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
                                 <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
                                 <li><a href="../classes/DataValue.html">DataValue</a></li>
@@ -306,7 +305,11 @@
                                 <li><a href="../modules/services.subscription.html">services.subscription</a></li>
                                 <li><a href="../modules/services.write.html">services.write</a></li>
                                 <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
-                                <li><a href="../modules/xml2json.html">xml2json</a></li>
+                                <li><a href="../modules/xml2json
+                
+                node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+                
+                node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
                             </ul>
                         </div>
                     </div>
@@ -362,7 +365,7 @@ var NumericRange = require(&quot;lib/datamodel/numeric_range&quot;).NumericRange
 
 var assert = require(&quot;better-assert&quot;);
 var util = require(&quot;util&quot;);
-
+var _ = require(&quot;underscore&quot;);
 /**
  * @class UADataType
  * @extends  BaseNode
@@ -374,7 +377,6 @@ var util = require(&quot;util&quot;);
  */
 function UADataType(options) {
 
-//xx    console.log(&quot; CONSTRUCTING A DATATYPE&quot;,options);
 
     BaseNode.apply(this, arguments);
 
@@ -488,11 +490,10 @@ UADataType.prototype.__defineGetter__(&quot;binaryEncoding&quot;, function () {
  * @type {String}
  */
 UADataType.prototype.__defineGetter__(&quot;binaryEncodingDefinition&quot;, function () {
-    var indexRange = new NumericRange(&quot;0:16777215&quot;);
+    var indexRange = new NumericRange();
     var descriptionNode = this.binaryEncoding.findReferencesAsObject(&quot;HasDescription&quot;)[0];
     var structureVar    = descriptionNode.findReferencesAsObject(&quot;HasComponent&quot;,false)[0];
-    var descr = structureVar.readValue(indexRange).value.value.toString();
-    return descr;
+    return structureVar.readValue(indexRange).value.value.toString();
 });
 
 /**
@@ -513,12 +514,46 @@ UADataType.prototype.__defineGetter__(&quot;xmlEncoding&quot;, function () {
  */
 UADataType.prototype.__defineGetter__(&quot;xmlEncodingDefinition&quot;, function () {
 
-    var indexRange = new NumericRange(&quot;0:16777215&quot;);
+    var indexRange = new NumericRange();
     var descriptionNode = this.xmlEncoding.findReferencesAsObject(&quot;HasDescription&quot;)[0];
     var structureVar    = descriptionNode.findReferencesAsObject(&quot;HasComponent&quot;,false)[0];
-    var descr = structureVar.readValue(indexRange).value.value.toString();
-    return descr;
+    return structureVar.readValue(indexRange).value.value.toString();
 });
+
+
+UADataType.prototype._getDefinition = function () {
+
+    var self = this;
+    var definition = [];
+    if (self.enumStrings) {
+        var enumStrings = self.enumStrings.readValue().value.value;
+        assert(_.isArray(enumStrings));
+        definition = enumStrings.map(function(e,index){
+            return {
+                value: index,
+                name: e.text
+            };
+        });
+    } else if (self.enumValues) {
+        assert(self.enumValues,&quot;must have a enumValues property&quot;);
+        var enumValues = self.enumValues.readValue().value.value;
+        assert(_.isArray(enumValues));
+        definition = _.map(enumValues,function(e) {
+            return { name: e.displayName.text, value: e.value[1]};
+        });
+    }
+
+    // construct nameIndex and valueIndex
+    var indexes = {
+        nameIndex: {},
+        valueIndex: {}
+    };
+    definition.forEach(function(e){
+        indexes.nameIndex[e.name]   =e;
+        indexes.valueIndex[e.value] =e;
+    });
+    return indexes;
+};
 
 
 exports.UADataType = UADataType;

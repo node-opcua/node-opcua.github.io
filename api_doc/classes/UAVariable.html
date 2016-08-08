@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.52</em>
+            <em>API Docs for: 0.0.57</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -101,7 +101,6 @@
                                 <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
                                 <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
                                 <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
-                                <li><a href="../classes/cryptoutils.html">cryptoutils</a></li>
                                 <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
                                 <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
                                 <li><a href="../classes/DataValue.html">DataValue</a></li>
@@ -306,7 +305,11 @@
                                 <li><a href="../modules/services.subscription.html">services.subscription</a></li>
                                 <li><a href="../modules/services.write.html">services.write</a></li>
                                 <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
-                                <li><a href="../modules/xml2json.html">xml2json</a></li>
+                                <li><a href="../modules/xml2json
+                
+                node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+                
+                node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
                             </ul>
                         </div>
                     </div>
@@ -348,7 +351,7 @@
         </div>
 
         <div class="foundat">
-            Defined in: <a href="../files/lib_address_space_ua_variable.js.html#l162"><code>lib\address_space\ua_variable.js:162</code></a>
+            Defined in: <a href="../files/lib_address_space_ua_variable.js.html#l167"><code>lib\address_space\ua_variable.js:167</code></a>
         </div>
 
             Module: <a href="../modules/opcua.address_space.html">opcua.address_space</a>
@@ -384,7 +387,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_ua_variable.js.html#l162"><code>lib\address_space\ua_variable.js:162</code></a>
+        <a href="../files/lib_address_space_ua_variable.js.html#l167"><code>lib\address_space\ua_variable.js:167</code></a>
         </p>
 
 
@@ -595,11 +598,19 @@ indicates if the history of the Variable is available via the OPC UA server.</p>
 
                             </li>
                             <li class="index-item method inherited">
+                                <a href="#method_getAggregates">getAggregates</a>
+
+                            </li>
+                            <li class="index-item method inherited">
                                 <a href="#method_getComponentByName">getComponentByName</a>
 
                             </li>
                             <li class="index-item method inherited">
                                 <a href="#method_getComponents">getComponents</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_getEventSources">getEventSources</a>
 
                             </li>
                             <li class="index-item method inherited">
@@ -620,7 +631,15 @@ indicates if the history of the Variable is available via the OPC UA server.</p>
 
                             </li>
                             <li class="index-item method inherited">
+                                <a href="#method_getMethodByName">getMethodByName</a>
+
+                            </li>
+                            <li class="index-item method inherited">
                                 <a href="#method_getMethods">getMethods</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_getNotifiers">getNotifiers</a>
 
                             </li>
                             <li class="index-item method inherited">
@@ -633,6 +652,10 @@ indicates if the history of the Variable is available via the OPC UA server.</p>
                             </li>
                             <li class="index-item method inherited">
                                 <a href="#method_getTrueSubStates">getTrueSubStates</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_historyRead">historyRead</a>
 
                             </li>
                             <li class="index-item method inherited">
@@ -669,6 +692,10 @@ indicates if the history of the Variable is available via the OPC UA server.</p>
                             </li>
                             <li class="index-item method inherited">
                                 <a href="#method_writeAttribute">writeAttribute</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_writeEnumValue">writeEnumValue</a>
 
                             </li>
                             <li class="index-item method">
@@ -792,6 +819,9 @@ indicates if the history of the Variable is available via the OPC UA server.</p>
                 <li class="arg">
                         <code>options</code>
                 </li>
+                <li class="arg">
+                        <code>extraInfo</code>
+                </li>
             </ul><span class="paren">)</span>
         </div>
 
@@ -809,7 +839,7 @@ indicates if the history of the Variable is available via the OPC UA server.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseNode.html#method__clone">BaseNode</a>:
-        <a href="../files/lib_address_space_base_node.js.html#l1517"><code>lib\address_space\base_node.js:1517</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l1680"><code>lib\address_space\base_node.js:1680</code></a>
         </p>
 
 
@@ -836,6 +866,16 @@ indicates if the history of the Variable is available via the OPC UA server.</p>
                 </li>
                 <li class="param">
                         <code class="param-name">options</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">extraInfo</code>
                         <span class="type">Object</span>
 
 
@@ -888,7 +928,7 @@ indicates if the history of the Variable is available via the OPC UA server.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseNode.html#method__clone_children_references">BaseNode</a>:
-        <a href="../files/lib_address_space_base_node.js.html#l1492"><code>lib\address_space\base_node.js:1492</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l1661"><code>lib\address_space\base_node.js:1661</code></a>
         </p>
 
 
@@ -1245,7 +1285,7 @@ add a variable as a property of the parent node</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseNode.html#method_addReference">BaseNode</a>:
-        <a href="../files/lib_address_space_base_node.js.html#l789"><code>lib\address_space\base_node.js:789</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l885"><code>lib\address_space\base_node.js:885</code></a>
         </p>
 
 
@@ -1344,7 +1384,7 @@ add a variable as a property of the parent node</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_ua_variable.js.html#l973"><code>lib\address_space\ua_variable.js:973</code></a>
+        <a href="../files/lib_address_space_ua_variable.js.html#l1073"><code>lib\address_space\ua_variable.js:1073</code></a>
         </p>
 
 
@@ -1548,7 +1588,7 @@ call the <code>callback</code> function when the data is ready.</p>
 <p>The <code>callback</code> function follow the standard callback function signature:</p>
 <ul>
 <li>the first argument shall be <strong>null</strong> or <strong>Error</strong>, depending of the outcome of the fetch operation,</li>
-<li>the second argument shall be a DataValuewith the new UAVariable Value,  a StatusCode, and time stamps.</li>
+<li>the second argument shall be a DataValue with the new UAVariable Value,  a StatusCode, and time stamps.</li>
 </ul>
 <p>Optionally, it is possible to pass a sourceTimestamp and a sourcePicoseconds value as a third and fourth arguments
 of the callback. When sourceTimestamp and sourcePicoseconds are missing, the system will set their default value
@@ -1585,6 +1625,9 @@ engine.bindVariable(nodeId,options):
                 <li class="arg">
                         <code>browseDescription</code>
                 </li>
+                <li class="arg">
+                        <code>session</code>
+                </li>
             </ul><span class="paren">)</span>
         </div>
 
@@ -1601,7 +1644,7 @@ engine.bindVariable(nodeId,options):
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseNode.html#method_browseNode">BaseNode</a>:
-        <a href="../files/lib_address_space_base_node.js.html#l1330"><code>lib\address_space\base_node.js:1330</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l1440"><code>lib\address_space\base_node.js:1440</code></a>
         </p>
 
 
@@ -1665,6 +1708,16 @@ engine.bindVariable(nodeId,options):
                             </li>
                         </ul>
                 </li>
+                <li class="param">
+                        <code class="param-name">session</code>
+                        <span class="type"><a href="../classes/ServerSession.html" class="crosslink">ServerSession</a></span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
             </ul>
         </div>
 
@@ -1702,7 +1755,7 @@ engine.bindVariable(nodeId,options):
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseNode.html#method_browseNodeByTargetName">BaseNode</a>:
-        <a href="../files/lib_address_space_base_node.js.html#l977"><code>lib\address_space\base_node.js:977</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l1072"><code>lib\address_space\base_node.js:1072</code></a>
         </p>
 
 
@@ -1811,7 +1864,7 @@ engine.bindVariable(nodeId,options):
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseNode.html#method_dispose">BaseNode</a>:
-        <a href="../files/lib_address_space_base_node.js.html#l1696"><code>lib\address_space\base_node.js:1696</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l1869"><code>lib\address_space\base_node.js:1869</code></a>
         </p>
 
 
@@ -1858,7 +1911,7 @@ back pointer to the address space and clear caches.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseNode.html#method_findReference">BaseNode</a>:
-        <a href="../files/lib_address_space_base_node.js.html#l310"><code>lib\address_space\base_node.js:310</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l342"><code>lib\address_space\base_node.js:342</code></a>
         </p>
 
 
@@ -1946,7 +1999,7 @@ back pointer to the address space and clear caches.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseNode.html#method_findReferences">BaseNode</a>:
-        <a href="../files/lib_address_space_base_node.js.html#l271"><code>lib\address_space\base_node.js:271</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l296"><code>lib\address_space\base_node.js:296</code></a>
         </p>
 
 
@@ -2014,7 +2067,7 @@ back pointer to the address space and clear caches.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseNode.html#method_full_name">BaseNode</a>:
-        <a href="../files/lib_address_space_base_node.js.html#l956"><code>lib\address_space\base_node.js:956</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l1051"><code>lib\address_space\base_node.js:1051</code></a>
         </p>
 
 
@@ -2032,6 +2085,48 @@ back pointer to the address space and clear caches.</p>
             <div class="returns-description">
                         <span class="type">String</span>:
                     <p>the full path name of the node</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getAggregates" class="method item inherited">
+    <h3 class="name"><code>getAggregates</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/BaseNode.html" class="crosslink">BaseNode[]</a></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/BaseNode.html#method_getAggregates">BaseNode</a>:
+        <a href="../files/lib_address_space_base_node.js.html#l479"><code>lib\address_space\base_node.js:479</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type"><a href="../classes/BaseNode.html" class="crosslink">BaseNode[]</a></span>:
+                    <p>return an array with the Aggregates of this object.</p>
 
             </div>
         </div>
@@ -2062,7 +2157,7 @@ back pointer to the address space and clear caches.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseNode.html#method_getComponentByName">BaseNode</a>:
-        <a href="../files/lib_address_space_base_node.js.html#l456"><code>lib\address_space\base_node.js:456</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l535"><code>lib\address_space\base_node.js:535</code></a>
         </p>
 
 
@@ -2119,7 +2214,7 @@ back pointer to the address space and clear caches.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseNode.html#method_getComponents">BaseNode</a>:
-        <a href="../files/lib_address_space_base_node.js.html#l435"><code>lib\address_space\base_node.js:435</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l490"><code>lib\address_space\base_node.js:490</code></a>
         </p>
 
 
@@ -2137,6 +2232,48 @@ back pointer to the address space and clear caches.</p>
             <div class="returns-description">
                         <span class="type"><a href="../classes/BaseNode.html" class="crosslink">BaseNode[]</a></span>:
                     <p>return an array with the components of this object.</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getEventSources" class="method item inherited">
+    <h3 class="name"><code>getEventSources</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/BaseNode.html" class="crosslink">BaseNode[]</a></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/BaseNode.html#method_getEventSources">BaseNode</a>:
+        <a href="../files/lib_address_space_base_node.js.html#l524"><code>lib\address_space\base_node.js:524</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type"><a href="../classes/BaseNode.html" class="crosslink">BaseNode[]</a></span>:
+                    <p>return a array with the event source of this object.</p>
 
             </div>
         </div>
@@ -2161,7 +2298,7 @@ back pointer to the address space and clear caches.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseNode.html#method_getFalseSubStates">BaseNode</a>:
-        <a href="../files/lib_address_space_base_node.js.html#l1768"><code>lib\address_space\base_node.js:1768</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l1941"><code>lib\address_space\base_node.js:1941</code></a>
         </p>
 
 
@@ -2269,7 +2406,7 @@ back pointer to the address space and clear caches.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseNode.html#method_getFolderElements">BaseNode</a>:
-        <a href="../files/lib_address_space_base_node.js.html#l497"><code>lib\address_space\base_node.js:497</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l576"><code>lib\address_space\base_node.js:576</code></a>
         </p>
 
 
@@ -2316,7 +2453,7 @@ back pointer to the address space and clear caches.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseNode.html#method_getMethodById">BaseNode</a>:
-        <a href="../files/lib_address_space_base_node.js.html#l536"><code>lib\address_space\base_node.js:536</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l615"><code>lib\address_space\base_node.js:615</code></a>
         </p>
 
 
@@ -2333,6 +2470,68 @@ back pointer to the address space and clear caches.</p>
             <ul class="params-list">
                 <li class="param">
                         <code class="param-name">nodeId</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">UAMethod | Null</span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getMethodByName" class="method item inherited">
+    <h3 class="name"><code>getMethodByName</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>browseName</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">UAMethod | Null</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/BaseNode.html#method_getMethodByName">BaseNode</a>:
+        <a href="../files/lib_address_space_base_node.js.html#l629"><code>lib\address_space\base_node.js:629</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">browseName</code>
                         <span class="type">Object</span>
 
 
@@ -2372,7 +2571,7 @@ back pointer to the address space and clear caches.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseNode.html#method_getMethods">BaseNode</a>:
-        <a href="../files/lib_address_space_base_node.js.html#l507"><code>lib\address_space\base_node.js:507</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l586"><code>lib\address_space\base_node.js:586</code></a>
         </p>
 
 
@@ -2398,6 +2597,48 @@ back pointer to the address space and clear caches.</p>
 
 
 </div>
+<div id="method_getNotifiers" class="method item inherited">
+    <h3 class="name"><code>getNotifiers</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/BaseNode.html" class="crosslink">BaseNode[]</a></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/BaseNode.html#method_getNotifiers">BaseNode</a>:
+        <a href="../files/lib_address_space_base_node.js.html#l513"><code>lib\address_space\base_node.js:513</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type"><a href="../classes/BaseNode.html" class="crosslink">BaseNode[]</a></span>:
+                    <p>return a array with the notifiers of this object.</p>
+
+            </div>
+        </div>
+
+
+</div>
 <div id="method_getProperties" class="method item inherited">
     <h3 class="name"><code>getProperties</code></h3>
 
@@ -2416,7 +2657,7 @@ back pointer to the address space and clear caches.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseNode.html#method_getProperties">BaseNode</a>:
-        <a href="../files/lib_address_space_base_node.js.html#l445"><code>lib\address_space\base_node.js:445</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l502"><code>lib\address_space\base_node.js:502</code></a>
         </p>
 
 
@@ -2464,7 +2705,7 @@ back pointer to the address space and clear caches.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseNode.html#method_getPropertyByName">BaseNode</a>:
-        <a href="../files/lib_address_space_base_node.js.html#l471"><code>lib\address_space\base_node.js:471</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l550"><code>lib\address_space\base_node.js:550</code></a>
         </p>
 
 
@@ -2521,7 +2762,7 @@ back pointer to the address space and clear caches.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseNode.html#method_getTrueSubStates">BaseNode</a>:
-        <a href="../files/lib_address_space_base_node.js.html#l1776"><code>lib\address_space\base_node.js:1776</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l1949"><code>lib\address_space\base_node.js:1949</code></a>
         </p>
 
 
@@ -2542,6 +2783,130 @@ back pointer to the address space and clear caches.</p>
 
             </div>
         </div>
+
+
+</div>
+<div id="method_historyRead" class="method item">
+    <h3 class="name"><code>historyRead</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>historyReadDetails</code>
+                </li>
+                <li class="arg">
+                        <code>indexRange</code>
+                </li>
+                <li class="arg">
+                        <code>dataEncoding</code>
+                </li>
+                <li class="arg">
+                        <code>continuationPoint</code>
+                </li>
+                <li class="arg">
+                        <code>callback</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_address_space_ua_variable.js.html#l553"><code>lib\address_space\ua_variable.js:553</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">historyReadDetails</code>
+                        <span class="type"><a href="../classes/HistoryReadDetails.html" class="crosslink">HistoryReadDetails</a></span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">indexRange</code>
+                        <span class="type">NumericRange |  | null</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">dataEncoding</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">continuationPoint</code>
+                        <span class="type">ByteString</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">callback</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name">err</code>
+                                    <span class="type"></span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">result</code>
+                                    <span class="type"><a href="../classes/HistoryReadResult.html" class="crosslink">HistoryReadResult</a></span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                        </ul>
+                </li>
+            </ul>
+        </div>
+
 
 
 </div>
@@ -2572,7 +2937,7 @@ back pointer to the address space and clear caches.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseNode.html#method_normalize_referenceTypeId">BaseNode</a>:
-        <a href="../files/lib_address_space_base_node.js.html#l1168"><code>lib\address_space\base_node.js:1168</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l1269"><code>lib\address_space\base_node.js:1269</code></a>
         </p>
 
 
@@ -2624,13 +2989,7 @@ back pointer to the address space and clear caches.</p>
 <div id="method_propagate_back_references" class="method item inherited">
     <h3 class="name"><code>propagate_back_references</code></h3>
 
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>addressSpace</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
+        <span class="paren">()</span>
 
 
 
@@ -2642,7 +3001,7 @@ back pointer to the address space and clear caches.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseNode.html#method_propagate_back_references">BaseNode</a>:
-        <a href="../files/lib_address_space_base_node.js.html#l710"><code>lib\address_space\base_node.js:710</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l801"><code>lib\address_space\base_node.js:801</code></a>
         </p>
 
 
@@ -2655,22 +3014,6 @@ by inserting backward references to the counter part node</p>
 
     </div>
 
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">addressSpace</code>
-                        <span class="type"><a href="../classes/AddressSpace.html" class="crosslink">AddressSpace</a></span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-            </ul>
-        </div>
 
 
 
@@ -2708,7 +3051,7 @@ by inserting backward references to the counter part node</p>
                 BaseNode
             </a>
             but overwritten in
-        <a href="../files/lib_address_space_ua_variable.js.html#l438"><code>lib\address_space\ua_variable.js:438</code></a>
+        <a href="../files/lib_address_space_ua_variable.js.html#l500"><code>lib\address_space\ua_variable.js:500</code></a>
         </p>
 
 
@@ -2794,7 +3137,7 @@ by inserting backward references to the counter part node</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_ua_variable.js.html#l313"><code>lib\address_space\ua_variable.js:313</code></a>
+        <a href="../files/lib_address_space_ua_variable.js.html#l321"><code>lib\address_space\ua_variable.js:321</code></a>
         </p>
 
 
@@ -2887,7 +3230,7 @@ BadUserAccessDenied         User does not have permission to perform the request
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_ua_variable.js.html#l1126"><code>lib\address_space\ua_variable.js:1126</code></a>
+        <a href="../files/lib_address_space_ua_variable.js.html#l1227"><code>lib\address_space\ua_variable.js:1227</code></a>
         </p>
 
 
@@ -2963,7 +3306,7 @@ BadUserAccessDenied         User does not have permission to perform the request
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseNode.html#method_resolveNodeId">BaseNode</a>:
-        <a href="../files/lib_address_space_base_node.js.html#l613"><code>lib\address_space\base_node.js:613</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l705"><code>lib\address_space\base_node.js:705</code></a>
         </p>
 
 
@@ -3025,7 +3368,7 @@ BadUserAccessDenied         User does not have permission to perform the request
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_ua_variable.js.html#l524"><code>lib\address_space\ua_variable.js:524</code></a>
+        <a href="../files/lib_address_space_ua_variable.js.html#l608"><code>lib\address_space\ua_variable.js:608</code></a>
         </p>
 
 
@@ -3085,7 +3428,7 @@ the method broadcasts an &quot;value_changed&quot; event</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseNode.html#method_unpropagate_back_references">BaseNode</a>:
-        <a href="../files/lib_address_space_base_node.js.html#l823"><code>lib\address_space\base_node.js:823</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l918"><code>lib\address_space\base_node.js:918</code></a>
         </p>
 
 
@@ -3129,7 +3472,7 @@ the method broadcasts an &quot;value_changed&quot; event</p>
                 BaseNode
             </a>
             but overwritten in
-        <a href="../files/lib_address_space_ua_variable.js.html#l705"><code>lib\address_space\ua_variable.js:705</code></a>
+        <a href="../files/lib_address_space_ua_variable.js.html#l791"><code>lib\address_space\ua_variable.js:791</code></a>
         </p>
 
 
@@ -3231,6 +3574,58 @@ the method broadcasts an &quot;value_changed&quot; event</p>
 
 
 </div>
+<div id="method_writeEnumValue" class="method item">
+    <h3 class="name"><code>writeEnumValue</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>value</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_address_space_ua_variable.js.html#l407"><code>lib\address_space\ua_variable.js:407</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">value</code>
+                        <span class="type">String | Number</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
 <div id="method_writeValue" class="method item">
     <h3 class="name"><code>writeValue</code></h3>
 
@@ -3259,7 +3654,7 @@ the method broadcasts an &quot;value_changed&quot; event</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_ua_variable.js.html#l618"><code>lib\address_space\ua_variable.js:618</code></a>
+        <a href="../files/lib_address_space_ua_variable.js.html#l702"><code>lib\address_space\ua_variable.js:702</code></a>
         </p>
 
 
@@ -3347,7 +3742,7 @@ the method broadcasts an &quot;value_changed&quot; event</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_ua_variable.js.html#l252"><code>lib\address_space\ua_variable.js:252</code></a>
+        <a href="../files/lib_address_space_ua_variable.js.html#l257"><code>lib\address_space\ua_variable.js:257</code></a>
         </p>
 
 
@@ -3381,7 +3776,7 @@ Int32 myArray[346];
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_ua_variable.js.html#l234"><code>lib\address_space\ua_variable.js:234</code></a>
+        <a href="../files/lib_address_space_ua_variable.js.html#l239"><code>lib\address_space\ua_variable.js:239</code></a>
         </p>
 
 
@@ -3406,7 +3801,7 @@ Int32 myArray[346];
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_ua_variable.js.html#l209"><code>lib\address_space\ua_variable.js:209</code></a>
+        <a href="../files/lib_address_space_ua_variable.js.html#l214"><code>lib\address_space\ua_variable.js:214</code></a>
         </p>
 
 
@@ -3430,7 +3825,7 @@ Int32 myArray[346];
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseNode.html#property_description">BaseNode</a>:
-        <a href="../files/lib_address_space_base_node.js.html#l176"><code>lib\address_space\base_node.js:176</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l186"><code>lib\address_space\base_node.js:186</code></a>
         </p>
 
 
@@ -3445,7 +3840,7 @@ Int32 myArray[346];
 </div>
 <div id="property_displayName" class="property item inherited">
     <h3 class="name"><code>displayName</code></h3>
-    <span class="type">LocalizedText<></span>
+    <span class="type"><a href="../classes/LocalizedText.html" class="crosslink">LocalizedText[]</a></span>
 
 
 
@@ -3454,7 +3849,7 @@ Int32 myArray[346];
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseNode.html#property_displayName">BaseNode</a>:
-        <a href="../files/lib_address_space_base_node.js.html#l147"><code>lib\address_space\base_node.js:147</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l157"><code>lib\address_space\base_node.js:157</code></a>
         </p>
 
 
@@ -3478,7 +3873,7 @@ Int32 myArray[346];
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseNode.html#property_hasMethods">BaseNode</a>:
-        <a href="../files/lib_address_space_base_node.js.html#l527"><code>lib\address_space\base_node.js:527</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l606"><code>lib\address_space\base_node.js:606</code></a>
         </p>
 
 
@@ -3507,7 +3902,7 @@ Default value is FALSE.</span>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_ua_variable.js.html#l279"><code>lib\address_space\ua_variable.js:279</code></a>
+        <a href="../files/lib_address_space_ua_variable.js.html#l284"><code>lib\address_space\ua_variable.js:284</code></a>
         </p>
 
 
@@ -3533,7 +3928,7 @@ history of the Variable.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseNode.html#property_isFalseSubStateOf">BaseNode</a>:
-        <a href="../files/lib_address_space_base_node.js.html#l1752"><code>lib\address_space\base_node.js:1752</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l1925"><code>lib\address_space\base_node.js:1925</code></a>
         </p>
 
 
@@ -3557,7 +3952,7 @@ history of the Variable.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseNode.html#property_isTrueSubStateOf">BaseNode</a>:
-        <a href="../files/lib_address_space_base_node.js.html#l1738"><code>lib\address_space\base_node.js:1738</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l1911"><code>lib\address_space\base_node.js:1911</code></a>
         </p>
 
 
@@ -3585,7 +3980,7 @@ A MinimumSamplingInterval of -1 means indeterminate.</span>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_ua_variable.js.html#l265"><code>lib\address_space\ua_variable.js:265</code></a>
+        <a href="../files/lib_address_space_ua_variable.js.html#l270"><code>lib\address_space\ua_variable.js:270</code></a>
         </p>
 
 
@@ -3611,7 +4006,7 @@ be kept.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseNode.html#property_modellingRule">BaseNode</a>:
-        <a href="../files/lib_address_space_base_node.js.html#l1724"><code>lib\address_space\base_node.js:1724</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l1897"><code>lib\address_space\base_node.js:1897</code></a>
         </p>
 
 
@@ -3635,7 +4030,7 @@ be kept.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseNode.html#property_namespaceIndex">BaseNode</a>:
-        <a href="../files/lib_address_space_base_node.js.html#l582"><code>lib\address_space\base_node.js:582</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l674"><code>lib\address_space\base_node.js:674</code></a>
         </p>
 
 
@@ -3659,7 +4054,7 @@ be kept.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseNode.html#property_namespaceUri">BaseNode</a>:
-        <a href="../files/lib_address_space_base_node.js.html#l590"><code>lib\address_space\base_node.js:590</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l682"><code>lib\address_space\base_node.js:682</code></a>
         </p>
 
 
@@ -3683,7 +4078,7 @@ be kept.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseNode.html#property_parent">BaseNode</a>:
-        <a href="../files/lib_address_space_base_node.js.html#l601"><code>lib\address_space\base_node.js:601</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l693"><code>lib\address_space\base_node.js:693</code></a>
         </p>
 
 
@@ -3708,7 +4103,7 @@ be kept.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseNode.html#property_subtypeOf">BaseNode</a>:
-        <a href="../files/lib_address_space_base_node.js.html#l550"><code>lib\address_space\base_node.js:550</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l642"><code>lib\address_space\base_node.js:642</code></a>
         </p>
 
 
@@ -3733,7 +4128,7 @@ be kept.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseNode.html#property_typeDefinition">BaseNode</a>:
-        <a href="../files/lib_address_space_base_node.js.html#l408"><code>lib\address_space\base_node.js:408</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l451"><code>lib\address_space\base_node.js:451</code></a>
         </p>
 
 
@@ -3758,7 +4153,7 @@ be kept.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseNode.html#property_typeDefinitionObj">BaseNode</a>:
-        <a href="../files/lib_address_space_base_node.js.html#l422"><code>lib\address_space\base_node.js:422</code></a>
+        <a href="../files/lib_address_space_base_node.js.html#l465"><code>lib\address_space\base_node.js:465</code></a>
         </p>
 
 
@@ -3783,7 +4178,7 @@ be kept.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_ua_variable.js.html#l258"><code>lib\address_space\ua_variable.js:258</code></a>
+        <a href="../files/lib_address_space_ua_variable.js.html#l263"><code>lib\address_space\ua_variable.js:263</code></a>
         </p>
 
 
@@ -3818,7 +4213,7 @@ It may have the following values:
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_address_space_ua_variable.js.html#l216"><code>lib\address_space\ua_variable.js:216</code></a>
+        <a href="../files/lib_address_space_ua_variable.js.html#l221"><code>lib\address_space\ua_variable.js:221</code></a>
         </p>
 
 
@@ -3848,7 +4243,7 @@ It may have the following values:
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/BaseNode.html#event_Description_changed">BaseNode</a>:
-                            <a href="../files/lib_address_space_base_node.js.html#l194"><code>lib\address_space\base_node.js:194</code></a>
+                            <a href="../files/lib_address_space_base_node.js.html#l204"><code>lib\address_space\base_node.js:204</code></a>
                             </p>
                     
                     
@@ -3889,7 +4284,7 @@ It may have the following values:
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/BaseNode.html#event_DisplayName_changed">BaseNode</a>:
-                            <a href="../files/lib_address_space_base_node.js.html#l163"><code>lib\address_space\base_node.js:163</code></a>
+                            <a href="../files/lib_address_space_base_node.js.html#l173"><code>lib\address_space\base_node.js:173</code></a>
                             </p>
                     
                     

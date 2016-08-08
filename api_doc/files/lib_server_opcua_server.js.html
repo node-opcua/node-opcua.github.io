@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.52</em>
+            <em>API Docs for: 0.0.57</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -101,7 +101,6 @@
                                 <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
                                 <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
                                 <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
-                                <li><a href="../classes/cryptoutils.html">cryptoutils</a></li>
                                 <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
                                 <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
                                 <li><a href="../classes/DataValue.html">DataValue</a></li>
@@ -306,7 +305,11 @@
                                 <li><a href="../modules/services.subscription.html">services.subscription</a></li>
                                 <li><a href="../modules/services.write.html">services.write</a></li>
                                 <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
-                                <li><a href="../modules/xml2json.html">xml2json</a></li>
+                                <li><a href="../modules/xml2json
+                
+                node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+                
+                node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
                             </ul>
                         </div>
                     </div>
@@ -374,6 +377,7 @@ var LocalizedText = require(&quot;lib/datamodel/localized_text&quot;).LocalizedT
 var browse_service = require(&quot;lib/services/browse_service&quot;);
 var read_service = require(&quot;lib/services/read_service&quot;);
 var write_service = require(&quot;lib/services/write_service&quot;);
+var historizing_service = require(&quot;lib/services/historizing_service&quot;);
 var subscription_service = require(&quot;lib/services/subscription_service&quot;);
 var register_server_service = require(&quot;lib/services/register_server_service&quot;);
 var translate_service = require(&quot;lib/services/translate_browse_paths_to_node_ids_service&quot;);
@@ -410,6 +414,9 @@ var CreateSubscriptionResponse = subscription_service.CreateSubscriptionResponse
 var DeleteSubscriptionsRequest = subscription_service.DeleteSubscriptionsRequest;
 var DeleteSubscriptionsResponse = subscription_service.DeleteSubscriptionsResponse;
 
+var TransferSubscriptionsRequest = subscription_service.TransferSubscriptionsRequest;
+var TransferSubscriptionsResponse = subscription_service.TransferSubscriptionsResponse;
+
 var CreateMonitoredItemsRequest = subscription_service.CreateMonitoredItemsRequest;
 var CreateMonitoredItemsResponse = subscription_service.CreateMonitoredItemsResponse;
 
@@ -431,6 +438,9 @@ var WriteRequest = write_service.WriteRequest;
 var WriteResponse = write_service.WriteResponse;
 
 var ReadValueId = read_service.ReadValueId;
+
+var HistoryReadRequest = historizing_service.HistoryReadRequest;
+var HistoryReadResponse = historizing_service.HistoryReadResponse;
 
 var BrowseRequest = browse_service.BrowseRequest;
 var BrowseResponse = browse_service.BrowseResponse;
@@ -526,10 +536,13 @@ var default_build_info = {
  * @param [options.securityPolicies= [SecurityPolicy.None,SecurityPolicy.Basic128Rsa15,SecurityPolicy.Basic256]]
  * @param [options.securityModes= [MessageSecurityMode.NONE,MessageSecurityMode.SIGN,MessageSecurityMode.SIGNANDENCRYPT]]
  * @param [options.allowAnonymous = true] tells if the server default endpoints should allow anonymous connection.
- * @param [options.userManager = null ] a object that implement a method isValidUser(userName,password) to check if the
+ * @param [options.userManager = null ] a object that implements user authentication methods
+ * @param [options.userManager.isValidUser ] synchronous function to check the credentials - can be overruled by isValidUserAsync
+ * @param [options.userManager.isValidUserAsync ] asynchronous function to check if the credentials - overrules isValidUser
  * @param [options.resourcePath=null] {String} resource Path is a string added at the end of the url such as &quot;/UA/Server&quot;
  * @param [options.alternateHostname=null] {String} alternate hostname to use
  *  UserNameIdentityToken is valid.
+ * @param [options.isAuditing = false] {Boolean} true if server shall raise AuditingEvent
  * @constructor
  */
 function OPCUAServer(options) {
@@ -558,7 +571,8 @@ function OPCUAServer(options) {
     self.engine = new ServerEngine({
         buildInfo: buildInfo,
         serverCapabilities: options.serverCapabilities,
-        applicationUri: self.serverInfo.applicationUri
+        applicationUri: self.serverInfo.applicationUri,
+        isAuditing: options.isAuditing
     });
 
     self.nonce = self.makeServerNonce();
@@ -616,12 +630,11 @@ function OPCUAServer(options) {
     self.serverInfo.applicationType = ApplicationType.SERVER;
 
 
-    self.userManager = options.userManager || {
-            isValidUser: function (/*userName,password*/) {
-                return false;
-            }
-        };
-    assert(_.isFunction(self.userManager.isValidUser));
+    self.userManager = options.userManager || {};
+    if (!_.isFunction(self.userManager.isValidUser))
+      self.userManager.isValidUser=function (/*userName,password*/) {
+        return false;
+      }
 
 }
 util.inherits(OPCUAServer, OPCUABaseServer);
@@ -667,21 +680,20 @@ OPCUAServer.prototype.__defineGetter__(&quot;transactionsCount&quot;, function (
 /**
  * The server build info
  * @property buildInfo
- * @type {BuildInfo}
+ * @type BuildInfo
  */
 OPCUAServer.prototype.__defineGetter__(&quot;buildInfo&quot;, function () {
     return this.engine.buildInfo;
 });
 
 /**
+ *
  * the number of connected channel on all existing end points
  * @property currentChannelCount
- * @type  {Number}
- *
- * TODO : move to base
+ * @type  Number
  */
 OPCUAServer.prototype.__defineGetter__(&quot;currentChannelCount&quot;, function () {
-
+    // TODO : move to base
     var self = this;
     return self.endpoints.reduce(function (currentValue, endPoint) {
         return currentValue + endPoint.currentChannelCount;
@@ -813,6 +825,9 @@ OPCUAServer.prototype.start = function (done) {
 
 };
 
+
+OPCUAServer.fallbackSessionName = &quot;Client didn&#x27;t provide a meaningful sessionName ...&quot;;
+
 /**
  * shutdown all server endpoints
  * @method shutdown
@@ -845,6 +860,7 @@ OPCUAServer.prototype.shutdown = function (timeout, done) {
     self.engine.setServerState(ServerState.Shutdown);
 
     setTimeout(function () {
+
         self.engine.shutdown();
 
         debugLog(&quot;OPCUAServer#shutdown: started&quot;);
@@ -884,27 +900,66 @@ OPCUAServer.prototype.verifyClientSignature = function (session, channel, client
 };
 
 
-var minSessionTimeout = 10; // 10 milliseconds
+var minSessionTimeout     = 10; // 10 milliseconds
 var defaultSessionTimeout = 1000; // 1 second
-var maxSessionTimeout = 1000 * 60 * 5; // 5 minutes
+var maxSessionTimeout     = 1000 * 60 * 5; // 5 minutes
 
 function _adjust_session_timeout(sessionTimeout) {
     var revisedSessionTimeout = sessionTimeout || defaultSessionTimeout;
     revisedSessionTimeout = Math.min(revisedSessionTimeout, maxSessionTimeout);
     revisedSessionTimeout = Math.max(revisedSessionTimeout, minSessionTimeout);
-    //xx console.log(&quot;xxxxx requested time out = &quot;,request.requestedSessionTimeout,&quot; revised= &quot;,revisedSessionTimeout);
     return revisedSessionTimeout;
 }
 
 function channel_has_session(channel,session) {
-    return session.channel === channel;
-    //xx return (channel.session_nonce === session.nonce);
+    if(session.channel === channel) {
+        assert(channel.sessionTokens.hasOwnProperty(session.authenticationToken.toString(&quot;hex&quot;)));
+        return true;
+    }
+    return false;
+}
+
+function channel_unregisterSession(channel,session) {
+    assert(session.nonce &amp;&amp; session.nonce instanceof Buffer);
+    var key = session.authenticationToken.toString(&quot;hex&quot;);
+    assert(channel.sessionTokens.hasOwnProperty(key));
+    assert(session.channel);
+    delete channel.sessionTokens[key];
+    session.channel  = null;
+    session.secureChannelId = null;
 }
 
 function channel_registerSession(channel,session) {
     assert(session.nonce &amp;&amp; session.nonce instanceof Buffer);
-    session.channel = channel;
-    //xx channel.session_nonce = session.nonce;
+    session.channel      = channel;
+    session.secureChannelId = channel.secureChannelId;
+    var key = session.authenticationToken.toString(&quot;hex&quot;);
+    assert(!channel.sessionTokens.hasOwnProperty(key),&quot;channel has already a session&quot;);
+    channel.sessionTokens[key] = session;
+}
+
+function moveSessionToChannel(session,channel) {
+    
+    if (session.publishEngine) {
+        session.publishEngine.cancelPendingPublishRequestBeforeChannelChange();
+    }
+
+    // unregister all session
+    channel_unregisterSession(session.channel,session);
+
+    //
+    channel_registerSession(channel,session);
+
+    assert(session.channel.secureChannelId === channel.secureChannelId);
+
+}
+
+function _attempt_to_close_some_old_unactivated_session(server) {
+
+    var session = server.engine.getOldestUnactivatedSession();
+    if (session) {
+        server.engine.closeSession(session.authenticationToken, false,&quot;Forcing&quot;);
+    }
 }
 
 // session services
@@ -923,10 +978,31 @@ OPCUAServer.prototype._on_CreateSessionRequest = function (message, channel) {
         // and close !
     }
 
+    // From OPCUA V1.03 Part 4 5.6.2 CreateSession
+    // A Server application should limit the number of Sessions. To protect against misbehaving Clients and denial
+    // of service attacks, the Server shall close the oldest Session that is not activated before reaching the
+    // maximum number of supported Sessions
+    if (server.currentSessionCount &gt;= server.maxAllowedSessionNumber) {
+        _attempt_to_close_some_old_unactivated_session(server);
+    }
 
     // check if session count hasn&#x27;t reach the maximum allowed sessions
     if (server.currentSessionCount &gt;= server.maxAllowedSessionNumber) {
         return rejectConnection(StatusCodes.BadTooManySessions);
+    }
+
+    // Release 1.03 OPC Unified Architecture, Part 4 page 24 - CreateSession Parameters
+    // client should prove a sessionName
+    // Session name is a Human readable string that identifies the Session. The Server makes this name and the sessionId
+    // visible in its AddressSpace for diagnostic purposes. The Client should provide a name that is unique for the
+    // instance of the Client.
+    // If this parameter is not specified the Server shall assign a value.
+
+    if (utils.isNullOrUndefined(request.sessionName)) {
+        // see also #198
+        // let&#x27;s the server assign a sessionName for this lazy client.
+        debugLog(&quot;assigning OPCUAServer.fallbackSessionName because client&#x27;s sessionName is null &quot;,OPCUAServer.fallbackSessionName);
+        request.sessionName = OPCUAServer.fallbackSessionName;
     }
 
     // Duration Requested maximum number of milliseconds that a Session should remain open without activity.
@@ -967,10 +1043,12 @@ OPCUAServer.prototype._on_CreateSessionRequest = function (message, channel) {
         return rejectConnection(StatusCodes.BadCertificateUriInvalid);
     }
 
-
     // see Release 1.02  27  OPC Unified Architecture, Part 4
+    var session = server.createSession({
+        sessionTimeout: revisedSessionTimeout,
+        clientDescription: request.clientDescription
+    });
 
-    var session = server.createSession({sessionTimeout: revisedSessionTimeout});
     assert(session);
     assert(session.sessionTimeout === revisedSessionTimeout);
 
@@ -1052,8 +1130,39 @@ OPCUAServer.prototype._on_CreateSessionRequest = function (message, channel) {
 
     server.emit(&quot;create_session&quot;, session);
 
-    session.on(&quot;session_closed&quot;, function (session, deleteSubscriptions) {
+    session.on(&quot;session_closed&quot;, function (session, deleteSubscriptions,reason) {
+
+
+        assert(_.isString(reason));
+        if(server.isAuditing) {
+
+            assert(reason === &quot;Timeout&quot; || reason===&quot;Terminated&quot; || reason === &quot;CloseSession&quot; || reason === &quot;Forcing&quot;);
+            var sourceName = &quot;Session/&quot; + reason;
+
+            server.raiseEvent(&quot;AuditSessionEventType&quot;, {
+                /* part 5 -  6.4.3 AuditEventType */
+                actionTimeStamp:    {dataType: &quot;DateTime&quot;, value: new Date()},
+                status:             {dataType: &quot;Boolean&quot;, value: true},
+
+                serverId:           {dataType: &quot;String&quot;, value: &quot;&quot;},
+
+                // ClientAuditEntryId contains the human-readable AuditEntryId defined in Part 3.
+                clientAuditEntryId: {dataType: &quot;String&quot;, value: &quot;&quot;},
+
+                // The ClientUserId identifies the user of the client requesting an action. The ClientUserId can be
+                // obtained from the UserIdentityToken passed in the ActivateSession call.
+                clientUserId:       {dataType: &quot;String&quot;, value: &quot;&quot; },
+
+                sourceName:         {dataType: &quot;String&quot;, value: sourceName},
+
+                /* part 5 - 6.4.7 AuditSessionEventType */
+                sessionId:          {dataType: &quot;NodeId&quot;, value: session.nodeId}
+
+            });
+        }
+
         server.emit(&quot;session_closed&quot;, session, deleteSubscriptions);
+
     });
 
     if (server.isAuditing) {
@@ -1146,7 +1255,19 @@ OPCUAServer.prototype.isValidUserNameIdentityToken = function (channel, session,
     return true;
 };
 
-OPCUAServer.prototype.userNameIdentityTokenAuthenticateUser = function (channel, session, userTokenPolicy, userIdentityToken) {
+/**
+ *
+ * @param channel
+ * @param session
+ * @param userTokenPolicy
+ * @param userIdentityToken
+ * @param done {Function}
+ * @param done.err {Error}
+ * @param done.isAuthorized {Boolean}
+ * @returns {*}
+ */
+OPCUAServer.prototype.userNameIdentityTokenAuthenticateUser = function (channel, session, userTokenPolicy, userIdentityToken, done) {
+    
     var self = this;
     assert(userIdentityToken instanceof UserNameIdentityToken);
     assert(self.isValidUserNameIdentityToken(channel, session, userTokenPolicy, userIdentityToken));
@@ -1160,7 +1281,7 @@ OPCUAServer.prototype.userNameIdentityTokenAuthenticateUser = function (channel,
 
     var cryptoFactory = securityPolicy_m.getCryptoFactory(securityPolicy);
     if (!cryptoFactory) {
-        throw new Error(&quot; Unsupported security Policy&quot;);
+        return done(new Error(&quot; Unsupported security Policy&quot;));
     }
     var userName = userIdentityToken.userName;
     var password = userIdentityToken.password;
@@ -1168,8 +1289,14 @@ OPCUAServer.prototype.userNameIdentityTokenAuthenticateUser = function (channel,
     var buff = cryptoFactory.asymmetricDecrypt(password, serverPrivateKey);
     var length = buff.readUInt32LE(0) - serverNonce.length;
     password = buff.slice(4, 4 + length).toString(&quot;utf-8&quot;);
-    return self.userManager.isValidUser(userName, password);
-
+    
+    if (_.isFunction(self.userManager.isValidUserAsync))
+        self.userManager.isValidUserAsync.call(session, userName, password, done);
+    else {
+        var authorized=self.userManager.isValidUser.call(session, userName, password);
+        async.setImmediate(function() { done(null, authorized) });
+    }
+    
 };
 
 
@@ -1202,10 +1329,13 @@ OPCUAServer.prototype.isValidUserIdentityToken = function (channel, session, use
     }
     return true;
 };
-OPCUAServer.prototype.isUserAuthorized = function (channel, session, userIdentityToken) {
+
+
+OPCUAServer.prototype.isUserAuthorized = function (channel, session, userIdentityToken, done) {
 
     var self = this;
     assert(userIdentityToken);
+    assert(_.isFunction(done));
 
     var endpoint_desc = channel.endpoint;
     assert(endpoint_desc instanceof EndpointDescription);
@@ -1214,9 +1344,9 @@ OPCUAServer.prototype.isUserAuthorized = function (channel, session, userIdentit
     assert(userTokenPolicy);
     // find if a userToken exists
     if (userIdentityToken instanceof UserNameIdentityToken) {
-        return self.userNameIdentityTokenAuthenticateUser(channel, session, userTokenPolicy, userIdentityToken);
+        return self.userNameIdentityTokenAuthenticateUser(channel, session, userTokenPolicy, userIdentityToken, done);
     }
-    return true;
+    async.setImmediate(done.bind(null, null,true));
 
 };
 
@@ -1310,7 +1440,7 @@ OPCUAServer.prototype._on_ActivateSessionRequest = function (message, channel) {
         if (!channel_has_session(channel,session)) {
             // it looks like session activation is being using a channel that is not the
             // one that have been used to create the session
-            console.log(&quot; channel.session_nonce === &quot; + session.nonce.toString(&quot;hex&quot;));
+            console.log(&quot; channel.sessionTokens === &quot; + Object.keys(channel.sessionTokens).join(&quot; &quot;));
             return rejectConnection(StatusCodes.BadSessionNotActivated);
         }
     }
@@ -1343,8 +1473,7 @@ OPCUAServer.prototype._on_ActivateSessionRequest = function (message, channel) {
             }
         }
 
-        session.changeToChannel(channel);
-        assert(session.channel.secureChannelId === channel.secureChannelId);
+        moveSessionToChannel(session,channel);
 
 
     } else if (session.status === &quot;screwed&quot;) {
@@ -1367,78 +1496,84 @@ OPCUAServer.prototype._on_ActivateSessionRequest = function (message, channel) {
     session.userIdentityToken = request.userIdentityToken;
 
     // check if user access is granted
-    if (!server.isUserAuthorized(channel, session, request.userIdentityToken)) {
-        return rejectConnection(StatusCodes.BadUserAccessDenied);
-    }
+    server.isUserAuthorized(channel, session, request.userIdentityToken, function(err,authorized){
 
-    // extract : OPC UA part 4 - 5.6.3
-    // Once used, a serverNonce cannot be used again. For that reason, the Server returns a new
-    // serverNonce each time the ActivateSession Service is called.
-    session.nonce = server.makeServerNonce();
+        if (err) {
+            return rejectConnection(StatusCodes.BadInternalError);
+        }
 
-    session.status = &quot;active&quot;;
+        if (!authorized) {
+            return rejectConnection(StatusCodes.BadUserAccessDenied);
+        } else {
+            // extract : OPC UA part 4 - 5.6.3
+            // Once used, a serverNonce cannot be used again. For that reason, the Server returns a new
+            // serverNonce each time the ActivateSession Service is called.
+            session.nonce = server.makeServerNonce();
 
-    response = new ActivateSessionResponse({serverNonce: session.nonce});
-    channel.send_response(&quot;MSG&quot;, response, message);
+            session.status = &quot;active&quot;;
 
-    function userIdentityTokenPasswordRemoved(userIdentityToken) {
-        var a = userIdentityToken;
-        // to do remove password
-        return a;
-    }
+            response = new ActivateSessionResponse({serverNonce: session.nonce});
+            channel.send_response(&quot;MSG&quot;, response, message);
 
-    // send OPCUA Event Notification
-    // see part 5 : 6.4.3 AuditEventType
-    //              6.4.7 AuditSessionEventType
-    //              6.4.10 AuditActivateSessionEventType
-    var VariantArrayType = require(&quot;lib/datamodel/variant&quot;).VariantArrayType;
-    assert(session.nodeId); // sessionId
-    //xx assert(session.channel.clientCertificate instanceof Buffer);
-    assert(session.sessionTimeout &gt; 0);
+            var userIdentityTokenPasswordRemoved=function(userIdentityToken) {
+                var a = userIdentityToken;
+                // to do remove password
+                return a;
+            };
 
-    if (server.isAuditing) {
-        server.raiseEvent(&quot;AuditActivateSessionEventType&quot;, {
+            // send OPCUA Event Notification
+            // see part 5 : 6.4.3 AuditEventType
+            //              6.4.7 AuditSessionEventType
+            //              6.4.10 AuditActivateSessionEventType
+            var VariantArrayType = require(&quot;lib/datamodel/variant&quot;).VariantArrayType;
+            assert(session.nodeId); // sessionId
+            //xx assert(session.channel.clientCertificate instanceof Buffer);
+            assert(session.sessionTimeout &gt; 0);
 
-            /* part 5 -  6.4.3 AuditEventType */
-            actionTimeStamp:    {dataType: &quot;DateTime&quot;, value: new Date()},
-            status:             {dataType: &quot;Boolean&quot;, value: true},
+            if (server.isAuditing) {
+                server.raiseEvent(&quot;AuditActivateSessionEventType&quot;, {
 
-            serverId:           {dataType: &quot;String&quot;, value: &quot;&quot;},
+                    /* part 5 -  6.4.3 AuditEventType */
+                    actionTimeStamp:    {dataType: &quot;DateTime&quot;, value: new Date()},
+                    status:             {dataType: &quot;Boolean&quot;, value: true},
 
-            // ClientAuditEntryId contains the human-readable AuditEntryId defined in Part 3.
-            clientAuditEntryId: {dataType: &quot;String&quot;, value: &quot;&quot;},
+                    serverId:           {dataType: &quot;String&quot;, value: &quot;&quot;},
 
-            // The ClientUserId identifies the user of the client requesting an action. The ClientUserId can be
-            // obtained from the UserIdentityToken passed in the ActivateSession call.
-            clientUserId:       {dataType: &quot;String&quot;, value: &quot;cc&quot;},
+                    // ClientAuditEntryId contains the human-readable AuditEntryId defined in Part 3.
+                    clientAuditEntryId: {dataType: &quot;String&quot;, value: &quot;&quot;},
 
-            sourceName:         {dataType: &quot;String&quot;, value: &quot;Session/ActivateSession&quot;},
+                    // The ClientUserId identifies the user of the client requesting an action. The ClientUserId can be
+                    // obtained from the UserIdentityToken passed in the ActivateSession call.
+                    clientUserId:       {dataType: &quot;String&quot;, value: &quot;cc&quot;},
 
-            /* part 5 - 6.4.7 AuditSessionEventType */
-            sessionId:          {dataType: &quot;NodeId&quot;, value: session.nodeId},
+                    sourceName:         {dataType: &quot;String&quot;, value: &quot;Session/ActivateSession&quot;},
 
-            /* part 5 - 6.4.10 AuditActivateSessionEventType */
-            clientSoftwareCertificates: {
-                dataType: &quot;ExtensionObject&quot; /* SignedSoftwareCertificate */,
-                arrayType: VariantArrayType.Array,
-                value: []
-            },
-            // UserIdentityToken reflects the userIdentityToken parameter of the ActivateSession Service call.
-            // For Username/Password tokens the password should NOT be included.
-            userIdentityToken: {
-                dataType: &quot;ExtensionObject&quot; /*  UserIdentityToken */,
-                value: userIdentityTokenPasswordRemoved(session.userIdentityToken)
-            },
+                    /* part 5 - 6.4.7 AuditSessionEventType */
+                    sessionId:          {dataType: &quot;NodeId&quot;, value: session.nodeId},
 
-            // SecureChannelId shall uniquely identify the SecureChannel. The application shall use the same identifier
-            // in all AuditEvents related to the Session Service Set (AuditCreateSessionEventType,
-            // AuditActivateSessionEventType and their subtypes) and the SecureChannel Service Set
-            // (AuditChannelEventType and its subtypes).
-            secureChannelId: {dataType: &quot;String&quot;, value: session.channel.secureChannelId.toString()}
+                    /* part 5 - 6.4.10 AuditActivateSessionEventType */
+                    clientSoftwareCertificates: {
+                        dataType: &quot;ExtensionObject&quot; /* SignedSoftwareCertificate */,
+                        arrayType: VariantArrayType.Array,
+                        value: []
+                    },
+                    // UserIdentityToken reflects the userIdentityToken parameter of the ActivateSession Service call.
+                    // For Username/Password tokens the password should NOT be included.
+                    userIdentityToken: {
+                        dataType: &quot;ExtensionObject&quot; /*  UserIdentityToken */,
+                        value: userIdentityTokenPasswordRemoved(session.userIdentityToken)
+                    },
 
-        });
-    }
+                    // SecureChannelId shall uniquely identify the SecureChannel. The application shall use the same identifier
+                    // in all AuditEvents related to the Session Service Set (AuditCreateSessionEventType,
+                    // AuditActivateSessionEventType and their subtypes) and the SecureChannel Service Set
+                    // (AuditChannelEventType and its subtypes).
+                    secureChannelId: {dataType: &quot;String&quot;, value: session.channel.secureChannelId.toString()}
 
+                });
+            }
+        }
+      });
 
 };
 
@@ -1459,7 +1594,7 @@ OPCUAServer.prototype.raiseEvent = function (eventType, options) {
     var server = self.engine.addressSpace.findNode(&quot;Server&quot;);
 
     if (!server) {
-        // throw new Error(&quot;OPCUAServer#raiseEvent : cannot find Server object&quot;);
+        //xx throw new Error(&quot;OPCUAServer#raiseEvent : cannot find Server object&quot;);
         return;
     }
     var eventTypeNode = self.engine.addressSpace.findEventType(eventType);
@@ -1531,6 +1666,79 @@ OPCUAServer.prototype._apply_on_SessionObject = function (ResponseClass, message
 };
 
 /**
+ *
+ * @private
+ */
+OPCUAServer.prototype._apply_on_Subscription = function (ResponseClass,message,channel,action_to_perform) {
+
+    assert(_.isFunction(action_to_perform));
+    var request = message.request;
+    assert(request.hasOwnProperty(&quot;subscriptionId&quot;));
+
+    function sendError(statusCode, diagnostic) {
+        return g_sendError(channel, message, ResponseClass, statusCode, diagnostic);
+    }
+
+    this._apply_on_SessionObject(ResponseClass, message, channel, function (session) {
+        var subscription = session.getSubscription(request.subscriptionId);
+        if (!subscription) {
+            return sendError(StatusCodes.BadSubscriptionIdInvalid);
+        }
+        subscription.resetLifeTimeAndKeepAliveCounters();
+        action_to_perform(session,subscription,message,channel);
+    });
+};
+
+/**
+ *
+ * @private
+ */
+OPCUAServer.prototype._apply_on_SubscriptionIds = function (ResponseClass,message,channel,action_to_perform) {
+
+    assert(_.isFunction(action_to_perform));
+    var request = message.request;
+    assert(request.hasOwnProperty(&quot;subscriptionIds&quot;));
+
+    function sendError(statusCode, diagnostic) {
+        return g_sendError(channel, message, ResponseClass, statusCode, diagnostic);
+    }
+
+    this._apply_on_SessionObject(ResponseClass, message, channel, function (session) {
+
+        var subscriptionIds = request.subscriptionIds;
+
+        if (!request.subscriptionIds || request.subscriptionIds.length === 0) {
+            return sendError(StatusCodes.BadNothingToDo);
+        }
+
+        var results = subscriptionIds.map(function(subscriptionId) {
+            return action_to_perform(session,subscriptionId)
+        });
+        
+        var response = new ResponseClass({
+            results: results
+        });
+        channel.send_response(&quot;MSG&quot;, response, message);
+
+    });
+};
+
+OPCUAServer.prototype._apply_on_Subscriptions = function (ResponseClass,message,channel,action_to_perform) {
+
+    this._apply_on_SubscriptionIds(ResponseClass,message,channel,function(session,subscriptionId) {
+        if (subscriptionId&lt;=0) {
+            return StatusCodes.BadSubscriptionIdInvalid;
+        }
+        var subscription = session.getSubscription(subscriptionId);
+        if (!subscription) {
+            return StatusCodes.BadSubscriptionIdInvalid;
+        }
+        return action_to_perform(session,subscription);
+    });
+};
+
+
+/**
  * @method _on_CloseSessionRequest
  * @param message
  * @param channel
@@ -1560,15 +1768,14 @@ OPCUAServer.prototype._on_CloseSessionRequest = function (message, channel) {
         return sendError(StatusCodes.BadSessionIdInvalid);
     }
 
-    if (session.status === &quot;new&quot;) {
-        // session has been created but not activated !
-        // nevertheless, we should be able to close this session
-        //xxx return sendError(StatusCodes.BadSessionNotActivated);
+    // session has been created but not activated !
+    var wasNotActivated= (session.status === &quot;new&quot;);
+
+    server.engine.closeSession(request.requestHeader.authenticationToken, request.deleteSubscriptions, &quot;CloseSession&quot;);
+
+    if (wasNotActivated) {
+        return sendError(StatusCodes.BadSessionNotActivated);
     }
-
-    var deleteSubscriptions = request.deleteSubscriptions || false;
-    server.engine.closeSession(request.requestHeader.authenticationToken, deleteSubscriptions);
-
     response = new CloseSessionResponse({});
     channel.send_response(&quot;MSG&quot;, response, message);
 };
@@ -1595,8 +1802,8 @@ OPCUAServer.prototype._on_BrowseRequest = function (message, channel) {
     var server = this;
     var diagnostic = {};
 
-    function sendError(statusCode, diagnotisc) {
-        return g_sendError(channel, message, BrowseResponse, statusCode, diagnotisc);
+    function sendError(statusCode, diagnostic) {
+        return g_sendError(channel, message, BrowseResponse, statusCode, diagnostic);
     }
 
     this._apply_on_SessionObject(BrowseResponse, message, channel, function (session) {
@@ -1628,7 +1835,7 @@ OPCUAServer.prototype._on_BrowseRequest = function (message, channel) {
 
         var results = [];
         assert(request.nodesToBrowse[0]._schema.name === &quot;BrowseDescription&quot;);
-        results = server.engine.browse(request.nodesToBrowse);
+        results = server.engine.browse(request.nodesToBrowse, session);
         assert(results[0]._schema.name === &quot;BrowseResult&quot;);
 
         // handle continuation point and requestedMaxReferencesPerNode
@@ -1653,8 +1860,8 @@ OPCUAServer.prototype._on_BrowseNextRequest = function (message, channel) {
     var request = message.request;
     assert(request instanceof BrowseNextRequest);
     //xx var server = this;
-    function sendError(statusCode, diagnotisc) {
-        return g_sendError(channel, message, BrowseNextResponse, statusCode, diagnotisc);
+    function sendError(statusCode, diagnostic) {
+        return g_sendError(channel, message, BrowseNextResponse, statusCode, diagnostic);
     }
 
     this._apply_on_SessionObject(BrowseNextResponse, message, channel, function (session) {
@@ -1702,8 +1909,8 @@ OPCUAServer.prototype._on_ReadRequest = function (message, channel) {
     var server = this;
     var request = message.request;
     assert(request instanceof ReadRequest);
-    function sendError(statusCode, diagnotisc) {
-        return g_sendError(channel, message, ReadResponse, statusCode, diagnotisc);
+    function sendError(statusCode, diagnostic) {
+        return g_sendError(channel, message, ReadResponse, statusCode, diagnostic);
     }
 
     this._apply_on_SessionObject(ReadResponse, message, channel, function (session) {
@@ -1757,6 +1964,66 @@ OPCUAServer.prototype._on_ReadRequest = function (message, channel) {
     });
 
 };
+
+// read services
+OPCUAServer.prototype._on_HistoryReadRequest = function (message, channel) {
+
+    var server = this;
+    var request = message.request;
+
+    assert(request instanceof HistoryReadRequest);
+    function sendError(statusCode, diagnostic) {
+        return g_sendError(channel, message, ReadResponse, statusCode, diagnostic);
+    }
+
+    this._apply_on_SessionObject(HistoryReadResponse, message, channel, function (session) {
+
+        var response;
+
+        var timestampsToReturn = request.timestampsToReturn;
+
+        if (timestampsToReturn === TimestampsToReturn.Invalid) {
+            return sendError(StatusCodes.BadTimestampsToReturnInvalid);
+        }
+
+        if (request.maxAge &lt; 0) {
+            return sendError(StatusCodes.BadMaxAgeInvalid);
+        }
+
+        request.nodesToRead = request.nodesToRead || [];
+
+        if (!request.nodesToRead || request.nodesToRead.length &lt;= 0) {
+            return sendError(StatusCodes.BadNothingToDo);
+        }
+
+        assert(request.nodesToRead[0]._schema.name === &quot;HistoryReadValueId&quot;);
+        assert(request.timestampsToReturn);
+
+        // limit size of nodesToRead array to maxNodesPerRead
+        limitInputArray(request.nodesToRead, server.engine.serverCapabilities.operationLimits.maxNodesPerRead);
+
+        // ask for a refresh of asynchronous variables
+        server.engine.refreshValues(request.nodesToRead, function (err) {
+
+            assert(!err, &quot; error not handled here , fix me&quot;); //TODO
+
+            server.engine.historyRead(request, function(err, results){
+                assert(results[0]._schema.name === &quot;HistoryReadResult&quot;);
+                assert(results.length === request.nodesToRead.length);
+
+                response = new HistoryReadResponse({
+                    results: results,
+                    diagnosticInfos: null
+                });
+
+                assert(response.diagnosticInfos.length === 0);
+                channel.send_response(&quot;MSG&quot;, response, message);
+            });
+        });
+
+    });
+
+};
 /*
  // write services
  // OPCUA Specification 1.02 Part 3 : 5.10.4 Write
@@ -1777,8 +2044,8 @@ OPCUAServer.prototype._on_WriteRequest = function (message, channel) {
     var request = message.request;
     assert(request instanceof WriteRequest);
     assert(!request.nodesToWrite || _.isArray(request.nodesToWrite));
-    function sendError(statusCode, diagnotisc) {
-        return g_sendError(channel, message, WriteResponse, statusCode, diagnotisc);
+    function sendError(statusCode, diagnostic) {
+        return g_sendError(channel, message, WriteResponse, statusCode, diagnostic);
     }
 
     var response;
@@ -1868,7 +2135,7 @@ function build_scanning_node_function(addressSpace, monitoredItem, itemToMonitor
         };
     }
 
-    monitoredItem.node = node;
+    monitoredItem.setNode(node);
 
     if (itemToMonitor.attributeId === AttributeIds.Value) {
 
@@ -1923,8 +2190,8 @@ OPCUAServer.prototype._on_CreateSubscriptionRequest = function (message, channel
 
     var request = message.request;
     assert(request instanceof CreateSubscriptionRequest);
-    function sendError(statusCode, diagnotisc) {
-        return g_sendError(channel, message, CreateSubscriptionResponse, statusCode, diagnotisc);
+    function sendError(statusCode, diagnostic) {
+        return g_sendError(channel, message, CreateSubscriptionResponse, statusCode, diagnostic);
     }
 
     this._apply_on_SessionObject(CreateSubscriptionResponse, message, channel, function (session) {
@@ -1951,30 +2218,46 @@ OPCUAServer.prototype._on_CreateSubscriptionRequest = function (message, channel
 
 OPCUAServer.prototype._on_DeleteSubscriptionsRequest = function (message, channel) {
 
+    var server = this;
     var request = message.request;
     assert(request instanceof DeleteSubscriptionsRequest);
+    this._apply_on_SubscriptionIds(DeleteSubscriptionsResponse, message, channel, function (session,subscriptionId) {
 
-    function sendError(statusCode, diagnotisc) {
-        return g_sendError(channel, message, DeleteSubscriptionsResponse, statusCode, diagnotisc);
-    }
-
-    this._apply_on_SessionObject(DeleteSubscriptionsResponse, message, channel, function (session) {
-
-        var response;
-
-        if (!request.subscriptionIds || request.subscriptionIds.length === 0) {
-            return sendError(StatusCodes.BadNothingToDo);
+        var subscription = server.engine.findOrphanSubscription(subscriptionId);
+        if (subscription) {
+            return server.engine.deleteOrphanSubscription(subscription);
         }
 
-        var results = request.subscriptionIds.map(function (subscriptionId) {
-            return session.deleteSubscription(subscriptionId);
-        });
-        response = new DeleteSubscriptionsResponse({
-            results: results
-        });
-        channel.send_response(&quot;MSG&quot;, response, message);
+        return session.deleteSubscription(subscriptionId);
     });
 };
+
+OPCUAServer.prototype._on_TransferSubscriptionsRequest = function (message, channel) {
+
+    //
+    // sendInitialValue Boolean
+    //    A Boolean parameter with the following values:
+    //    TRUE      the first Publish response(s) after the TransferSubscriptions call shall
+    //              contain the current values of all Monitored Items in the Subscription where
+    //              the Monitoring Mode is set to Reporting.
+    //    FALSE     the first Publish response after the TransferSubscriptions call shall contain only the value
+    //              changes since the last Publish response was sent.
+    //    This parameter only applies to MonitoredItems used for monitoring Attribute changes.
+    //
+    function sendError(statusCode) {
+        return g_sendError(channel, message, TransferSubscriptionsResponse, statusCode);
+    }
+
+    var server = this;
+    var engine = server.engine;
+
+    var request = message.request;
+    assert(request instanceof TransferSubscriptionsRequest);
+    this._apply_on_SubscriptionIds(TransferSubscriptionsResponse, message, channel, function (session,subscriptionId) {
+        return engine.transferSubscription(session,subscriptionId,request.sendInitialValues);
+    });
+};
+
 
 
 OPCUAServer.prototype.prepare = function (message, channel) {
@@ -2017,23 +2300,13 @@ OPCUAServer.prototype._on_CreateMonitoredItemsRequest = function (message, chann
 
     var request = message.request;
     assert(request instanceof CreateMonitoredItemsRequest);
-    function sendError(statusCode, diagnotisc) {
-        return g_sendError(channel, message, CreateMonitoredItemsResponse, statusCode, diagnotisc);
+    function sendError(statusCode, diagnostic) {
+        return g_sendError(channel, message, CreateMonitoredItemsResponse, statusCode, diagnostic);
     }
 
-    this._apply_on_SessionObject(CreateMonitoredItemsResponse, message, channel, function (session) {
-
-        var response;
-
-        var subscription = session.getSubscription(request.subscriptionId);
-        if (!subscription) {
-            return sendError(StatusCodes.BadSubscriptionIdInvalid);
-        }
-
-        subscription.resetLifeTimeAndKeepAliveCounters();
+    this._apply_on_Subscription(CreateMonitoredItemsResponse, message, channel, function (session,subscription) {
 
         var timestampsToReturn = request.timestampsToReturn;
-
         if (timestampsToReturn === TimestampsToReturn.Invalid) {
             return sendError(StatusCodes.BadTimestampsToReturnInvalid);
         }
@@ -2042,10 +2315,12 @@ OPCUAServer.prototype._on_CreateMonitoredItemsRequest = function (message, chann
             return sendError(StatusCodes.BadNothingToDo);
         }
 
+
+
         var results = request.itemsToCreate.map(
             subscription.createMonitoredItem.bind(subscription, addressSpace, timestampsToReturn));
 
-        response = new CreateMonitoredItemsResponse({
+        var response = new CreateMonitoredItemsResponse({
             responseHeader: {serviceResult: StatusCodes.Good},
             results: results
             //,diagnosticInfos: []
@@ -2063,28 +2338,15 @@ OPCUAServer.prototype._on_ModifySubscriptionRequest = function (message, channel
 
     var request = message.request;
     assert(request instanceof ModifySubscriptionRequest);
-    function sendError(statusCode, diagnotisc) {
-        return g_sendError(channel, message, ModifySubscriptionResponse, statusCode, diagnotisc);
-    }
 
-    this._apply_on_SessionObject(ModifySubscriptionResponse, message, channel, function (session) {
-
-        var subscription = session.getSubscription(request.subscriptionId);
-        var response;
-
-        if (!subscription) {
-            return sendError(StatusCodes.BadSubscriptionIdInvalid);
-        }
-        subscription.subscriptionDiagnostics.modifyCount += 1;
-
-        subscription.resetLifeTimeAndKeepAliveCounters();
+    this._apply_on_Subscription(ModifySubscriptionResponse, message, channel, function (session,subscription) {
 
         subscription.modify(request);
 
-        response = new ModifySubscriptionResponse({
+        var response = new ModifySubscriptionResponse({
             revisedPublishingInterval: subscription.publishingInterval,
-            revisedLifetimeCount: subscription.lifeTimeCount,
-            revisedMaxKeepAliveCount: subscription.maxKeepAliveCount
+            revisedLifetimeCount:      subscription.lifeTimeCount,
+            revisedMaxKeepAliveCount:  subscription.maxKeepAliveCount
         });
         channel.send_response(&quot;MSG&quot;, response, message);
     });
@@ -2099,20 +2361,13 @@ OPCUAServer.prototype._on_ModifyMonitoredItemsRequest = function (message, chann
         return g_sendError(channel, message, ModifyMonitoredItemsResponse, statusCode);
     }
 
-    this._apply_on_SessionObject(ModifyMonitoredItemsResponse, message, channel, function (session) {
-
-        var subscription = session.getSubscription(request.subscriptionId);
-        var response;
-
-        if (!subscription) {
-            return sendError(StatusCodes.BadSubscriptionIdInvalid);
-        }
-        subscription.resetLifeTimeAndKeepAliveCounters();
+    this._apply_on_Subscription(ModifyMonitoredItemsResponse, message, channel, function (session,subscription) {
 
         var timestampsToReturn = request.timestampsToReturn;
         if (timestampsToReturn === TimestampsToReturn.Invalid) {
             return sendError(StatusCodes.BadTimestampsToReturnInvalid);
         }
+
         if (!request.itemsToModify || request.itemsToModify.length === 0) {
             return sendError(StatusCodes.BadNothingToDo);
         }
@@ -2136,12 +2391,12 @@ OPCUAServer.prototype._on_ModifyMonitoredItemsRequest = function (message, chann
         }
 
         var results = itemsToModify.map(modifyMonitoredItem);
-        response = new ModifyMonitoredItemsResponse({
+
+        var response = new ModifyMonitoredItemsResponse({
             results: results
         });
 
         channel.send_response(&quot;MSG&quot;, response, message);
-
 
     });
 
@@ -2166,35 +2421,11 @@ OPCUAServer.prototype._on_SetPublishingModeRequest = function (message, channel)
 
     var request = message.request;
     assert(request instanceof SetPublishingModeRequest);
-    function sendError(statusCode, diagnotisc) {
-        return g_sendError(channel, message, SetPublishingModeResponse, statusCode, diagnotisc);
-    }
-
-    this._apply_on_SessionObject(SetPublishingModeResponse, message, channel, function (session) {
-
-        var response;
-        var publishingEnabled = request.publishingEnabled;
-        var subscriptionIds = request.subscriptionIds;
-
-        var results = subscriptionIds.map(function (subscriptionId) {
-
-            var subscription = session.getSubscription(subscriptionId);
-            if (!subscription) {
-                return StatusCodes.BadSubscriptionIdInvalid;
-            }
-            subscription.resetLifeTimeAndKeepAliveCounters();
-
-            return subscription.setPublishingMode(publishingEnabled);
-        });
-
-        response = new SetPublishingModeResponse({
-            results: results,
-            diagnosticInfos: null
-        });
-        channel.send_response(&quot;MSG&quot;, response, message);
+    var publishingEnabled = request.publishingEnabled;
+    this._apply_on_Subscriptions(SetPublishingModeResponse, message, channel, function (session,subscription) {
+        return subscription.setPublishingMode(publishingEnabled);
     });
 };
-
 
 OPCUAServer.prototype._on_DeleteMonitoredItemsRequest = function (message, channel) {
 
@@ -2204,21 +2435,7 @@ OPCUAServer.prototype._on_DeleteMonitoredItemsRequest = function (message, chann
         return g_sendError(channel, message, DeleteMonitoredItemsResponse, statusCode);
     }
 
-    this._apply_on_SessionObject(DeleteMonitoredItemsResponse, message, channel, function (session) {
-
-        var response;
-
-        var subscriptionId = request.subscriptionId;
-        assert(subscriptionId !== null);
-
-        var subscription = session.getSubscription(subscriptionId);
-        if (!subscription) {
-            debugLog(&quot;Cannot find subscription &quot;, subscriptionId);
-            return sendError(StatusCodes.BadSubscriptionIdInvalid);
-        }
-
-
-        subscription.resetLifeTimeAndKeepAliveCounters();
+    this._apply_on_Subscription(DeleteMonitoredItemsResponse, message, channel, function (session,subscription) {
 
         if (!request.monitoredItemIds || request.monitoredItemIds.length === 0) {
             return sendError(StatusCodes.BadNothingToDo);
@@ -2228,7 +2445,7 @@ OPCUAServer.prototype._on_DeleteMonitoredItemsRequest = function (message, chann
             return subscription.removeMonitoredItem(monitoredItemId);
         });
 
-        response = new DeleteMonitoredItemsResponse({
+        var response = new DeleteMonitoredItemsResponse({
             results: results,
             diagnosticInfos: null
         });
@@ -2246,29 +2463,18 @@ OPCUAServer.prototype._on_RepublishRequest = function (message, channel) {
         return g_sendError(channel, message, RepublishResponse, statusCode);
     }
 
-    this._apply_on_SessionObject(RepublishResponse, message, channel, function (session) {
-
-        var response;
-
-        var subscription = session.getSubscription(request.subscriptionId);
-
-        if (!subscription) {
-            return sendError(StatusCodes.BadSubscriptionIdInvalid);
-        }
+    this._apply_on_Subscription(RepublishResponse, message, channel, function (session,subscription) {
 
         // update diagnostic counter
         subscription.subscriptionDiagnostics.republishRequestCount += 1;
 
-        subscription.resetLifeTimeAndKeepAliveCounters();
-
         var retransmitSequenceNumber = request.retransmitSequenceNumber;
-
         var msgSequence = subscription.getMessageForSequenceNumber(retransmitSequenceNumber);
 
         if (!msgSequence) {
             return sendError(StatusCodes.BadMessageNotAvailable);
         }
-        response = new RepublishResponse({
+        var response = new RepublishResponse({
             responseHeader: {
                 serviceResult: StatusCodes.Good
             },
@@ -2294,15 +2500,8 @@ OPCUAServer.prototype._on_SetMonitoringModeRequest = function (message, channel)
         return g_sendError(channel, message, SetMonitoringModeResponse, statusCode);
     }
 
-    this._apply_on_SessionObject(RepublishResponse, message, channel, function (session) {
-        var response;
 
-        var subscription = session.getSubscription(request.subscriptionId);
-
-        if (!subscription) {
-            return sendError(StatusCodes.BadSubscriptionIdInvalid);
-        }
-        subscription.resetLifeTimeAndKeepAliveCounters();
+    this._apply_on_Subscription(RepublishResponse, message, channel, function (session,subscription) {
 
         if (!request.monitoredItemIds  || request.monitoredItemIds.length === 0) {
             return sendError(StatusCodes.BadNothingToDo);
@@ -2324,7 +2523,7 @@ OPCUAServer.prototype._on_SetMonitoringModeRequest = function (message, channel)
             return StatusCodes.Good;
         });
 
-        response = new SetMonitoringModeResponse({
+        var response = new SetMonitoringModeResponse({
             results: results
         });
         channel.send_response(&quot;MSG&quot;, response, message);
@@ -2510,7 +2709,7 @@ OPCUAServer.prototype._on_RegisterNodesRequest = function (message, channel) {
         }
 
         response = new RegisterNodesResponse({
-            registeredNodeIds: request.nodesToRegister,
+            registeredNodeIds: request.nodesToRegister
         });
         channel.send_response(&quot;MSG&quot;, response, message);
     });
@@ -2572,7 +2771,6 @@ OPCUAServer.prototype._on_QueryNext = function (message, channel) {
 };
 
 
-var historizing_service = require(&quot;lib/services/historizing_service&quot;);
 OPCUAServer.prototype._on_HistoryUpdate = function (message, channel) {
     return g_sendError(channel, message, historizing_service.HistorizingUpdateResponse, StatusCodes.BadNotImplemented);
 };
@@ -2582,7 +2780,8 @@ OPCUAServer.prototype._on_HistoryUpdate = function (message, channel) {
  * @method registerServer
  * @async
  * @param discovery_server_endpointUrl
- * @param callback
+ * @param isOnLine
+ * @param outer_callback
  */
 OPCUAServer.prototype._registerServer = function (discovery_server_endpointUrl, isOnLine, outer_callback) {
 
@@ -2725,7 +2924,7 @@ OPCUAServer.prototype.unregisterServer = function (discovery_server_endpointUrl,
 };
 
 OPCUAServer.prototype.__defineGetter__(&quot;isAuditing&quot;,function(){
-    return false;
+    return this.engine.isAuditing;
 });
 
 exports.OPCUAServerEndPoint = OPCUAServerEndPoint;

@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.52</em>
+            <em>API Docs for: 0.0.57</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -101,7 +101,6 @@
                                 <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
                                 <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
                                 <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
-                                <li><a href="../classes/cryptoutils.html">cryptoutils</a></li>
                                 <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
                                 <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
                                 <li><a href="../classes/DataValue.html">DataValue</a></li>
@@ -306,7 +305,11 @@
                                 <li><a href="../modules/services.subscription.html">services.subscription</a></li>
                                 <li><a href="../modules/services.write.html">services.write</a></li>
                                 <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
-                                <li><a href="../modules/xml2json.html">xml2json</a></li>
+                                <li><a href="../modules/xml2json
+                
+                node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+                
+                node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
                             </ul>
                         </div>
                     </div>
@@ -536,15 +539,15 @@ AnalogDataItem DataItems that represent continuously-variable physical quantitie
 
                             </li>
                             <li class="index-item method">
-                                <a href="#method_addMultiStateDiscreteType">addMultiStateDiscreteType</a>
+                                <a href="#method_addMultiStateDiscrete">addMultiStateDiscrete</a>
 
                             </li>
                             <li class="index-item method">
-                                <a href="#method_addMultiStateValueDiscreteType">addMultiStateValueDiscreteType</a>
+                                <a href="#method_addMultiStateValueDiscrete">addMultiStateValueDiscrete</a>
 
                             </li>
                             <li class="index-item method">
-                                <a href="#method_addTwoStateDiscreteType">addTwoStateDiscreteType</a>
+                                <a href="#method_addTwoStateDiscrete">addTwoStateDiscrete</a>
 
                             </li>
                             <li class="index-item method">
@@ -648,10 +651,7 @@ AnalogDataItem DataItems that represent continuously-variable physical quantitie
                         <code>variable</code>
                 </li>
                 <li class="arg">
-                        <code>options.definition</code>
-                </li>
-                <li class="arg">
-                        <code>options.valuePrecision</code>
+                        <code>options</code>
                 </li>
             </ul><span class="paren">)</span>
         </div>
@@ -694,26 +694,46 @@ AnalogDataItem DataItems that represent continuously-variable physical quantitie
 
                 </li>
                 <li class="param">
-                        <code class="param-name">options.definition</code>
+                        <code class="param-name">options</code>
                         <span class="type">Object</span>
 
 
                     <div class="param-description">
-                        <p>[Optional]</p>
-
+                         
                     </div>
 
-                </li>
-                <li class="param">
-                        <code class="param-name">options.valuePrecision</code>
-                        <span class="type">Object</span>
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name">definition</code>
+                                    <span class="type"></span>
 
+                                <div class="param-description">
+                                    <p>[Optional]</p>
 
-                    <div class="param-description">
-                        <p>[Optional]</p>
+                                </div>
 
-                    </div>
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">valuePrecision</code>
+                                    <span class="type"></span>
 
+                                <div class="param-description">
+                                    <p>[Optional]</p>
+
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">modellingRule</code>
+                                    <span class="type"></span>
+
+                                <div class="param-description">
+                                    <p>[Optional]</p>
+
+                                </div>
+
+                            </li>
+                        </ul>
                 </li>
             </ul>
         </div>
@@ -754,7 +774,7 @@ AnalogDataItem DataItems that represent continuously-variable physical quantitie
                     <p>Provided by the <a href="../modules/opcua.client.html">opcua.client</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/lib_data_access_address_space_add_AnalogItem.js.html#l51"><code>lib\data_access\address_space_add_AnalogItem.js:51</code></a>
+        <a href="../files/lib_data_access_address_space_add_AnalogItem.js.html#l52"><code>lib\data_access\address_space_add_AnalogItem.js:52</code></a>
         </p>
 
 
@@ -900,6 +920,16 @@ AnalogDataItem DataItems that represent continuously-variable physical quantitie
                                 </div>
 
                             </li>
+                            <li class="param">
+                                    <code class="param-name optional">[modellingRule]</code>
+                                    <span class="type"></span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
                         </ul>
                 </li>
             </ul>
@@ -961,7 +991,7 @@ minimumSamplingInterval: 10,
                     <p>Provided by the <a href="../modules/opcua.client.html">opcua.client</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/lib_data_access_address_space_add_AnalogItem.js.html#l20"><code>lib\data_access\address_space_add_AnalogItem.js:20</code></a>
+        <a href="../files/lib_data_access_address_space_add_AnalogItem.js.html#l21"><code>lib\data_access\address_space_add_AnalogItem.js:21</code></a>
         </p>
 
 
@@ -1057,8 +1087,8 @@ minimumSamplingInterval: 10,
 
 
 </div>
-<div id="method_addMultiStateDiscreteType" class="method item">
-    <h3 class="name"><code>addMultiStateDiscreteType</code></h3>
+<div id="method_addMultiStateDiscrete" class="method item">
+    <h3 class="name"><code>addMultiStateDiscrete</code></h3>
 
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
@@ -1082,7 +1112,7 @@ minimumSamplingInterval: 10,
                     <p>Provided by the <a href="../modules/opcua.client.html">opcua.client</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/lib_data_access_address_space_add_MultiStateDiscreteType.js.html#l15"><code>lib\data_access\address_space_add_MultiStateDiscreteType.js:15</code></a>
+        <a href="../files/lib_data_access_address_space_add_MultiStateDiscrete.js.html#l15"><code>lib\data_access\address_space_add_MultiStateDiscrete.js:15</code></a>
         </p>
 
 
@@ -1161,8 +1191,8 @@ minimumSamplingInterval: 10,
 
 
 </div>
-<div id="method_addMultiStateValueDiscreteType" class="method item">
-    <h3 class="name"><code>addMultiStateValueDiscreteType</code></h3>
+<div id="method_addMultiStateValueDiscrete" class="method item">
+    <h3 class="name"><code>addMultiStateValueDiscrete</code></h3>
 
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
@@ -1189,7 +1219,7 @@ minimumSamplingInterval: 10,
                     <p>Provided by the <a href="../modules/opcua.client.html">opcua.client</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/lib_data_access_address_space_add_MultiStateValueDiscreteType.js.html#l43"><code>lib\data_access\address_space_add_MultiStateValueDiscreteType.js:43</code></a>
+        <a href="../files/lib_data_access_address_space_add_MultiStateValueDiscrete.js.html#l43"><code>lib\data_access\address_space_add_MultiStateValueDiscrete.js:43</code></a>
         </p>
 
 
@@ -1272,7 +1302,7 @@ minimumSamplingInterval: 10,
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code> addressSpace.addMultiStateValueDiscreteType({
+                <pre class="code prettyprint"><code> addressSpace.addMultiStateValueDiscrete({
       componentOf:parentObj,
       browseName: &quot;myVar&quot;,
       enumValues: {
@@ -1281,7 +1311,7 @@ minimumSamplingInterval: 10,
           &quot;Blue&quot;:   0x0000FF
       }
   });
-  addMultiStateValueDiscreteType(parentObj,{
+  addMultiStateValueDiscrete(parentObj,{
       browseName: &quot;myVar&quot;,
       enumValues: [
           {
@@ -1305,8 +1335,8 @@ minimumSamplingInterval: 10,
             </div>
         </div>
 </div>
-<div id="method_addTwoStateDiscreteType" class="method item">
-    <h3 class="name"><code>addTwoStateDiscreteType</code></h3>
+<div id="method_addTwoStateDiscrete" class="method item">
+    <h3 class="name"><code>addTwoStateDiscrete</code></h3>
 
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
@@ -1339,7 +1369,7 @@ minimumSamplingInterval: 10,
                     <p>Provided by the <a href="../modules/opcua.client.html">opcua.client</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/lib_data_access_address_space_add_TwoStateDiscreteType.js.html#l13"><code>lib\data_access\address_space_add_TwoStateDiscreteType.js:13</code></a>
+        <a href="../files/lib_data_access_address_space_add_TwoStateDiscrete.js.html#l13"><code>lib\data_access\address_space_add_TwoStateDiscrete.js:13</code></a>
         </p>
 
 
@@ -1720,7 +1750,7 @@ minimumSamplingInterval: 10,
                     <p>Provided by the <a href="../modules/opcua.client.html">opcua.client</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/lib_client_proxy.js.html#l46"><code>lib\client\proxy.js:46</code></a>
+        <a href="../files/lib_client_proxy.js.html#l47"><code>lib\client\proxy.js:47</code></a>
         </p>
 
 
@@ -1827,7 +1857,7 @@ minimumSamplingInterval: 10,
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/NodeId.html#method_isEmpty">NodeId</a>:
-        <a href="../files/lib_datamodel_nodeid.js.html#l155"><code>lib\datamodel\nodeid.js:155</code></a>
+        <a href="../files/lib_datamodel_nodeid.js.html#l157"><code>lib\datamodel\nodeid.js:157</code></a>
         </p>
 
 
@@ -1877,7 +1907,7 @@ minimumSamplingInterval: 10,
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_datamodel_expanded_nodeid.js.html#l96"><code>lib\datamodel\expanded_nodeid.js:96</code></a>
+        <a href="../files/lib_datamodel_expanded_nodeid.js.html#l91"><code>lib\datamodel\expanded_nodeid.js:91</code></a>
         </p>
 
 
@@ -1949,7 +1979,7 @@ minimumSamplingInterval: 10,
                     <p>Provided by the <a href="../modules/opcua.client.html">opcua.client</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/lib_client_proxy.js.html#l192"><code>lib\client\proxy.js:192</code></a>
+        <a href="../files/lib_client_proxy.js.html#l193"><code>lib\client\proxy.js:193</code></a>
         </p>
 
 
@@ -2113,7 +2143,7 @@ minimumSamplingInterval: 10,
                     <p>Provided by the <a href="../modules/opcua.client.html">opcua.client</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/lib_client_proxy.js.html#l222"><code>lib\client\proxy.js:222</code></a>
+        <a href="../files/lib_client_proxy.js.html#l223"><code>lib\client\proxy.js:223</code></a>
         </p>
 
 
@@ -2183,7 +2213,7 @@ minimumSamplingInterval: 10,
                     <p>Provided by the <a href="../modules/opcua.client.html">opcua.client</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/lib_client_proxy.js.html#l141"><code>lib\client\proxy.js:141</code></a>
+        <a href="../files/lib_client_proxy.js.html#l142"><code>lib\client\proxy.js:142</code></a>
         </p>
 
 
@@ -2209,7 +2239,7 @@ minimumSamplingInterval: 10,
                     <p>Provided by the <a href="../modules/opcua.client.html">opcua.client</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/lib_client_proxy.js.html#l155"><code>lib\client\proxy.js:155</code></a>
+        <a href="../files/lib_client_proxy.js.html#l156"><code>lib\client\proxy.js:156</code></a>
         </p>
 
 
@@ -2235,7 +2265,7 @@ minimumSamplingInterval: 10,
                     <p>Provided by the <a href="../modules/opcua.client.html">opcua.client</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/lib_client_proxy.js.html#l162"><code>lib\client\proxy.js:162</code></a>
+        <a href="../files/lib_client_proxy.js.html#l163"><code>lib\client\proxy.js:163</code></a>
         </p>
 
 
@@ -2261,7 +2291,7 @@ minimumSamplingInterval: 10,
                     <p>Provided by the <a href="../modules/opcua.client.html">opcua.client</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/lib_client_proxy.js.html#l148"><code>lib\client\proxy.js:148</code></a>
+        <a href="../files/lib_client_proxy.js.html#l149"><code>lib\client\proxy.js:149</code></a>
         </p>
 
 
@@ -2287,7 +2317,7 @@ minimumSamplingInterval: 10,
                     <p>Provided by the <a href="../modules/opcua.client.html">opcua.client</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/lib_client_proxy.js.html#l175"><code>lib\client\proxy.js:175</code></a>
+        <a href="../files/lib_client_proxy.js.html#l176"><code>lib\client\proxy.js:176</code></a>
         </p>
 
 
@@ -2313,7 +2343,7 @@ minimumSamplingInterval: 10,
                     <p>Provided by the <a href="../modules/opcua.client.html">opcua.client</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/lib_client_proxy.js.html#l169"><code>lib\client\proxy.js:169</code></a>
+        <a href="../files/lib_client_proxy.js.html#l170"><code>lib\client\proxy.js:170</code></a>
         </p>
 
 
@@ -2387,7 +2417,7 @@ minimumSamplingInterval: 10,
                     <p>Provided by the <a href="../modules/opcua.client.html">opcua.client</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/lib_client_proxy.js.html#l181"><code>lib\client\proxy.js:181</code></a>
+        <a href="../files/lib_client_proxy.js.html#l182"><code>lib\client\proxy.js:182</code></a>
         </p>
 
 
@@ -2413,7 +2443,7 @@ minimumSamplingInterval: 10,
                     <p>Provided by the <a href="../modules/opcua.client.html">opcua.client</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/lib_client_proxy.js.html#l128"><code>lib\client\proxy.js:128</code></a>
+        <a href="../files/lib_client_proxy.js.html#l129"><code>lib\client\proxy.js:129</code></a>
         </p>
 
 

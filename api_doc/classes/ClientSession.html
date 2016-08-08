@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.52</em>
+            <em>API Docs for: 0.0.57</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -101,7 +101,6 @@
                                 <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
                                 <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
                                 <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
-                                <li><a href="../classes/cryptoutils.html">cryptoutils</a></li>
                                 <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
                                 <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
                                 <li><a href="../classes/DataValue.html">DataValue</a></li>
@@ -306,7 +305,11 @@
                                 <li><a href="../modules/services.subscription.html">services.subscription</a></li>
                                 <li><a href="../modules/services.write.html">services.write</a></li>
                                 <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
-                                <li><a href="../modules/xml2json.html">xml2json</a></li>
+                                <li><a href="../modules/xml2json
+                
+                node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+                
+                node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
                             </ul>
                         </div>
                     </div>
@@ -345,7 +348,7 @@
 
 
         <div class="foundat">
-            Defined in: <a href="../files/lib_client_client_session.js.html#l29"><code>lib\client\client_session.js:29</code></a>
+            Defined in: <a href="../files/lib_client_client_session.js.html#l33"><code>lib\client\client_session.js:33</code></a>
         </div>
 
             Module: <a href="../modules/opcua.client.html">opcua.client</a>
@@ -380,7 +383,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_client_session.js.html#l29"><code>lib\client\client_session.js:29</code></a>
+        <a href="../files/lib_client_client_session.js.html#l33"><code>lib\client\client_session.js:33</code></a>
         </p>
 
 
@@ -419,6 +422,7 @@
 
             <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
             <li class="api-class-tab properties"><a href="#properties">Properties</a></li>
+            <li class="api-class-tab events"><a href="#events">Events</a></li>
     </ul>
 
     <div>
@@ -431,6 +435,10 @@
                     <ul class="index-list methods">
                             <li class="index-item method">
                                 <a href="#method_browse">browse</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_call">call</a>
 
                             </li>
                             <li class="index-item method">
@@ -506,6 +514,10 @@
 
                             </li>
                             <li class="index-item method">
+                                <a href="#method_transferSubscriptions">transferSubscriptions</a>
+
+                            </li>
+                            <li class="index-item method">
                                 <a href="#method_translateBrowsePath">translateBrowsePath</a>
 
                             </li>
@@ -532,6 +544,26 @@
                 </div>
 
 
+                <div class="index-section events">
+                    <h3>Events</h3>
+
+                    <ul class="index-list events">
+                            <li class="index-item event">
+                                <a href="#event_keepalive">keepalive</a>
+
+                            </li>
+                            <li class="index-item event">
+                                <a href="#event_keepalive_failure">keepalive_failure</a>
+
+                            </li>
+                            <li class="index-item event">
+                                <a href="#event_session_closed
+send when the session has been closed by the server ( proabably due to inactivity and timeout)">session_closed
+send when the session has been closed by the server ( proabably due to inactivity and timeout)</a>
+
+                            </li>
+                    </ul>
+                </div>
         </div>
 
             <div id="methods" class="api-class-tabpanel">
@@ -562,7 +594,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_client_session.js.html#l71"><code>lib\client\client_session.js:71</code></a>
+        <a href="../files/lib_client_client_session.js.html#l77"><code>lib\client\client_session.js:77</code></a>
         </p>
 
 
@@ -636,7 +668,10 @@
 <pre class="code prettyprint"><code class="language-javascript">var browseDescription = {
    nodeId: &quot;ObjectsFolder&quot;,
    referenceTypeId: &quot;Organizes&quot;,
-   browseDirection: BrowseDirection.Inverse
+   browseDirection: BrowseDirection.Inverse,
+   includeSubtypes: true,
+   nodeClassMask: 0,
+   resultMask: 63
 }
 session.browse(browseDescription,function(err,results,diagnostics) {} );
 </code></pre>
@@ -646,13 +681,129 @@ session.browse(browseDescription,function(err,results,diagnostics) {} );
 });
 </code></pre>
 <p>form4:</p>
-<pre class="code prettyprint"><code class="language-javascript"> var browseDescription = {
-    nodeId: &quot;ObjectsFolder&quot;,
-    referenceTypeId: &quot;Organizes&quot;,
-    browseDirection: BrowseDirection.Inverse
- }
+<pre class="code prettyprint"><code class="language-javascript"> var browseDescription = [
+   {
+       nodeId: &quot;ObjectsFolder&quot;,
+       referenceTypeId: &quot;Organizes&quot;,
+       browseDirection: BrowseDirection.Inverse,
+       includeSubtypes: true,
+       nodeClassMask: 0,
+       resultMask: 63
+   }
+ ]
  session.browse(browseDescription,function(err,results,diagnostics) {} );
 </code></pre>
+
+            </div>
+        </div>
+</div>
+<div id="method_call" class="method item">
+    <h3 class="name"><code>call</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>methodsToCall</code>
+                </li>
+                <li class="arg">
+                        <code>callback</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_client_client_session.js.html#l923"><code>lib\client\client_session.js:923</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">methodsToCall</code>
+                        <span class="type"><a href="../classes/CallMethodRequest.html" class="crosslink">CallMethodRequest[]</a></span>
+
+
+                    <div class="param-description">
+                        <p>the call method request array</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">callback</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name">err</code>
+                                    <span class="type">Error | Null</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">response</code>
+                                    <span class="type"><a href="../classes/CallMethodResult.html" class="crosslink">CallMethodResult[]</a></span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                        </ul>
+                </li>
+            </ul>
+        </div>
+
+
+
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <p>:
+var methodsToCall = [ {
+objectId: &quot;ns=2;i=12&quot;,
+methodId: &quot;ns=2;i=13&quot;,
+inputArguments: [
+new Variant({...}),
+new Variant({...}),
+]
+}];
+session.call(methodsToCall,function(err,response) {
+if (!err) {
+var rep = response[0];
+console.log(&quot; statusCode = &quot;,rep.statusCode);
+console.log(&quot; inputArgumentResults[0] = &quot;,rep.inputArgumentResults[0].toString());
+console.log(&quot; inputArgumentResults[1] = &quot;,rep.inputArgumentResults[1].toString());
+console.log(&quot; outputArgument[0]       = &quot;,rep.outputArgument[0].toString()); // array of variant
+}
+});</p>
 
             </div>
         </div>
@@ -662,6 +813,9 @@ session.browse(browseDescription,function(err,results,diagnostics) {} );
 
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code class="optional">[deleteSubscription=true]</code>
+                </li>
                 <li class="arg">
                         <code>callback</code>
                 </li>
@@ -679,7 +833,7 @@ session.browse(browseDescription,function(err,results,diagnostics) {} );
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_client_session.js.html#l828"><code>lib\client\client_session.js:828</code></a>
+        <a href="../files/lib_client_client_session.js.html#l902"><code>lib\client\client_session.js:902</code></a>
         </p>
 
 
@@ -694,6 +848,17 @@ session.browse(browseDescription,function(err,results,diagnostics) {} );
             <h4>Parameters:</h4>
 
             <ul class="params-list">
+                <li class="param">
+                        <code class="param-name optional">[deleteSubscription=true]</code>
+                        <span class="type">Boolean</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
                 <li class="param">
                         <code class="param-name">callback</code>
                         <span class="type">Function</span>
@@ -735,7 +900,7 @@ session.browse(browseDescription,function(err,results,diagnostics) {} );
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_client_session.js.html#l625"><code>lib\client\client_session.js:625</code></a>
+        <a href="../files/lib_client_client_session.js.html#l688"><code>lib\client\client_session.js:688</code></a>
         </p>
 
 
@@ -827,7 +992,7 @@ session.browse(browseDescription,function(err,results,diagnostics) {} );
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_client_session.js.html#l569"><code>lib\client\client_session.js:569</code></a>
+        <a href="../files/lib_client_client_session.js.html#l614"><code>lib\client\client_session.js:614</code></a>
         </p>
 
 
@@ -985,7 +1150,7 @@ session.browse(browseDescription,function(err,results,diagnostics) {} );
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_client_session.js.html#l714"><code>lib\client\client_session.js:714</code></a>
+        <a href="../files/lib_client_client_session.js.html#l777"><code>lib\client\client_session.js:777</code></a>
         </p>
 
 
@@ -1065,7 +1230,7 @@ session.browse(browseDescription,function(err,results,diagnostics) {} );
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_client_session.js.html#l607"><code>lib\client\client_session.js:607</code></a>
+        <a href="../files/lib_client_client_session.js.html#l652"><code>lib\client\client_session.js:652</code></a>
         </p>
 
 
@@ -1165,7 +1330,7 @@ session.browse(browseDescription,function(err,results,diagnostics) {} );
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_client_session.js.html#l960"><code>lib\client\client_session.js:960</code></a>
+        <a href="../files/lib_client_client_session.js.html#l1037"><code>lib\client\client_session.js:1037</code></a>
         </p>
 
 
@@ -1260,7 +1425,7 @@ session.browse(browseDescription,function(err,results,diagnostics) {} );
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_client_session.js.html#l904"><code>lib\client\client_session.js:904</code></a>
+        <a href="../files/lib_client_client_session.js.html#l981"><code>lib\client\client_session.js:981</code></a>
         </p>
 
 
@@ -1351,7 +1516,7 @@ session.browse(browseDescription,function(err,results,diagnostics) {} );
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_client_session.js.html#l39"><code>lib\client\client_session.js:39</code></a>
+        <a href="../files/lib_client_client_session.js.html#l45"><code>lib\client\client_session.js:45</code></a>
         </p>
 
 
@@ -1398,7 +1563,7 @@ session.browse(browseDescription,function(err,results,diagnostics) {} );
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_client_session.js.html#l641"><code>lib\client\client_session.js:641</code></a>
+        <a href="../files/lib_client_client_session.js.html#l704"><code>lib\client\client_session.js:704</code></a>
         </p>
 
 
@@ -1490,7 +1655,7 @@ session.browse(browseDescription,function(err,results,diagnostics) {} );
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_client_session.js.html#l657"><code>lib\client\client_session.js:657</code></a>
+        <a href="../files/lib_client_client_session.js.html#l720"><code>lib\client\client_session.js:720</code></a>
         </p>
 
 
@@ -1582,7 +1747,7 @@ session.browse(browseDescription,function(err,results,diagnostics) {} );
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_client_session.js.html#l680"><code>lib\client\client_session.js:680</code></a>
+        <a href="../files/lib_client_client_session.js.html#l743"><code>lib\client\client_session.js:743</code></a>
         </p>
 
 
@@ -1673,7 +1838,7 @@ session.browse(browseDescription,function(err,results,diagnostics) {} );
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_client_session.js.html#l1063"><code>lib\client\client_session.js:1063</code></a>
+        <a href="../files/lib_client_client_session.js.html#l1140"><code>lib\client\client_session.js:1140</code></a>
         </p>
 
 
@@ -1762,7 +1927,7 @@ session.browse(browseDescription,function(err,results,diagnostics) {} );
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_client_session.js.html#l479"><code>lib\client\client_session.js:479</code></a>
+        <a href="../files/lib_client_client_session.js.html#l493"><code>lib\client\client_session.js:493</code></a>
         </p>
 
 
@@ -1925,7 +2090,7 @@ session.read(nodesToRead,function(err,nodesToRead,results,diagnosticInfos) {
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_client_session.js.html#l432"><code>lib\client\client_session.js:432</code></a>
+        <a href="../files/lib_client_client_session.js.html#l446"><code>lib\client\client_session.js:446</code></a>
         </p>
 
 
@@ -1997,7 +2162,7 @@ session.read(nodesToRead,function(err,nodesToRead,results,diagnosticInfos) {
 
                             </li>
                             <li class="param">
-                                    <code class="param-name">diagnosticInfos</code>
+                                    <code class="param-name">diagnostic</code>
                                     <span class="type"><a href="../classes/DiagnosticInfo.html" class="crosslink">DiagnosticInfo[]</a></span>
 
                                 <div class="param-description">
@@ -2017,7 +2182,7 @@ session.read(nodesToRead,function(err,nodesToRead,results,diagnosticInfos) {
 
             <div class="example-content">
                 <p>:</p>
-<pre class="code prettyprint"><code class="language-javascript">session.readAllAttributes(&quot;ns=2;s=Furnace_1.Temperature&quot;,function(err,dataValues,diagnostics) {} );
+<pre class="code prettyprint"><code class="language-javascript">session.readAllAttributes(&quot;ns=2;s=Furnace_1.Temperature&quot;,function(err,nodesToRead,dataValues,diagnostics) {} );
 </code></pre>
 
             </div>
@@ -2054,7 +2219,7 @@ session.read(nodesToRead,function(err,nodesToRead,results,diagnosticInfos) {
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_client_session.js.html#l290"><code>lib\client\client_session.js:290</code></a>
+        <a href="../files/lib_client_client_session.js.html#l304"><code>lib\client\client_session.js:304</code></a>
         </p>
 
 
@@ -2197,7 +2362,7 @@ session.read(nodesToRead,function(err,nodesToRead,results,diagnosticInfos) {
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_client_session.js.html#l192"><code>lib\client\client_session.js:192</code></a>
+        <a href="../files/lib_client_client_session.js.html#l206"><code>lib\client\client_session.js:206</code></a>
         </p>
 
 
@@ -2333,7 +2498,7 @@ console.log(dataValues[1].toString());
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_client_session.js.html#l697"><code>lib\client\client_session.js:697</code></a>
+        <a href="../files/lib_client_client_session.js.html#l760"><code>lib\client\client_session.js:760</code></a>
         </p>
 
 
@@ -2428,7 +2593,7 @@ console.log(dataValues[1].toString());
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_client_session.js.html#l729"><code>lib\client\client_session.js:729</code></a>
+        <a href="../files/lib_client_client_session.js.html#l792"><code>lib\client\client_session.js:792</code></a>
         </p>
 
 
@@ -2493,6 +2658,98 @@ console.log(dataValues[1].toString());
 
 
 </div>
+<div id="method_transferSubscriptions" class="method item">
+    <h3 class="name"><code>transferSubscriptions</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>options</code>
+                </li>
+                <li class="arg">
+                        <code>callback</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+        <span class="flag async">async</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_client_client_session.js.html#l672"><code>lib\client\client_session.js:672</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">options</code>
+                        <span class="type"><a href="../classes/TransferSubscriptionsRequest.html" class="crosslink">TransferSubscriptionsRequest</a></span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">callback</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name">err</code>
+                                    <span class="type">Error | Null</span>
+
+                                <div class="param-description">
+                                    <ul>
+<li>the Error if the async method has failed</li>
+</ul>
+
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">response</code>
+                                    <span class="type"><a href="../classes/TransferSubscriptionsResponse.html" class="crosslink">TransferSubscriptionsResponse</a></span>
+
+                                <div class="param-description">
+                                    <ul>
+<li>the response</li>
+</ul>
+
+                                </div>
+
+                            </li>
+                        </ul>
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
 <div id="method_translateBrowsePath" class="method item">
     <h3 class="name"><code>translateBrowsePath</code></h3>
 
@@ -2518,7 +2775,7 @@ console.log(dataValues[1].toString());
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_client_session.js.html#l765"><code>lib\client\client_session.js:765</code></a>
+        <a href="../files/lib_client_client_session.js.html#l828"><code>lib\client\client_session.js:828</code></a>
         </p>
 
 
@@ -2604,7 +2861,7 @@ console.log(dataValues[1].toString());
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_client_session.js.html#l358"><code>lib\client\client_session.js:358</code></a>
+        <a href="../files/lib_client_client_session.js.html#l372"><code>lib\client\client_session.js:372</code></a>
         </p>
 
 
@@ -2715,7 +2972,7 @@ console.log(dataValues[1].toString());
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_client_session.js.html#l394"><code>lib\client\client_session.js:394</code></a>
+        <a href="../files/lib_client_client_session.js.html#l408"><code>lib\client\client_session.js:408</code></a>
         </p>
 
 
@@ -2822,7 +3079,7 @@ console.log(dataValues[1].toString());
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_client_client_session.js.html#l1052"><code>lib\client\client_session.js:1052</code></a>
+        <a href="../files/lib_client_client_session.js.html#l1129"><code>lib\client\client_session.js:1129</code></a>
         </p>
 
 
@@ -2839,6 +3096,86 @@ console.log(dataValues[1].toString());
             </div>
 
 
+            <div id="events" class="api-class-tabpanel">
+                <h2 class="off-left">Events</h2>
+
+                    <div id="event_keepalive" class="events item">
+                        <h3 class="name"><code>keepalive</code></h3>
+                        <span class="type"></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/lib_client_client_session.js.html#l1182"><code>lib\client\client_session.js:1182</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="event_keepalive_failure" class="events item">
+                        <h3 class="name"><code>keepalive_failure</code></h3>
+                        <span class="type"></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/lib_client_client_session.js.html#l1174"><code>lib\client\client_session.js:1174</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>raised when a keep-alive request has failed on the session, may be the session has timeout
+                    unexpectidaly on the server side, may be the connection is broken.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="event_session_closed
+                    send when the session has been closed by the server ( proabably due to inactivity and timeout)" class="events item">
+                        <h3 class="name"><code>session_closed
+                    send when the session has been closed by the server ( proabably due to inactivity and timeout)</code></h3>
+                        <span class="type"></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/lib_client_client_session.js.html#l598"><code>lib\client\client_session.js:598</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                    
+                    
+                    </div>
+            </div>
     </div>
 </div>
                     </div>

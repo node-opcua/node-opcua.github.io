@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.52</em>
+            <em>API Docs for: 0.0.57</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -101,7 +101,6 @@
                                 <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
                                 <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
                                 <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
-                                <li><a href="../classes/cryptoutils.html">cryptoutils</a></li>
                                 <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
                                 <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
                                 <li><a href="../classes/DataValue.html">DataValue</a></li>
@@ -306,7 +305,11 @@
                                 <li><a href="../modules/services.subscription.html">services.subscription</a></li>
                                 <li><a href="../modules/services.write.html">services.write</a></li>
                                 <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
-                                <li><a href="../modules/xml2json.html">xml2json</a></li>
+                                <li><a href="../modules/xml2json
+                
+                node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+                
+                node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
                             </ul>
                         </div>
                     </div>
@@ -355,6 +358,9 @@ var assert = require(&quot;better-assert&quot;);
 var _ = require(&quot;underscore&quot;);
 var fs = require(&quot;fs&quot;);
 var util = require(&quot;util&quot;);
+
+var buffer_utils = require(&quot;lib/misc/buffer_utils&quot;);
+var createFastUninitializedBuffer = buffer_utils.createFastUninitializedBuffer;
 
 /**
  * set a flag
@@ -439,12 +445,15 @@ function compare_buffers(buf1, buf2, max_length) {
 
 }
 
-
+function w(str,width) {
+    return (str + (new Array(width)).join(&quot; &quot;)).substr(0,width);
+}
 var debug_flags = {};
 function setDebugFlag(script_fullpath, flag) {
     var filename = path.basename(script_fullpath, &quot;.js&quot;);
     if (process.env.DEBUG) {
-        console.log(&quot; Setting debug for &quot;,filename, &quot; to &quot;, flag.toString()[flag ? &quot;cyan&quot; : &quot;red&quot;]);
+        var decorated_filename = w(filename,30).yellow;
+        console.log(&quot; Setting debug for &quot;,decorated_filename, &quot; to &quot;, flag.toString()[flag ? &quot;cyan&quot; : &quot;red&quot;]);
     }
     debug_flags[filename] = flag;
 }
@@ -453,7 +462,6 @@ function checkDebugFlag(script_fullpath) {
 
     var filename = path.basename(script_fullpath, &quot;.js&quot;);
     var doDebug = debug_flags[filename] ? true : false;
-
     if (process.env.DEBUG &amp;&amp; !debug_flags.hasOwnProperty(filename) ) {
         doDebug = process.env.DEBUG.indexOf(filename) &gt;= 0 || process.env.DEBUG.indexOf(&quot;ALL&quot;) &gt;= 0;
         setDebugFlag(filename,doDebug);
@@ -597,7 +605,7 @@ function redirectToFile(tmpfile, action_func, callback) {
  */
 function makeBuffer(listOfBytes) {
     var l = listOfBytes.split(&quot; &quot;);
-    var b = new Buffer(l.length);
+    var b = createFastUninitializedBuffer(l.length);
     var i = 0;
     l.forEach(function (value) {
         b.writeUInt8(parseInt(value, 16), i);
@@ -667,7 +675,7 @@ function get_clock_tick() {
 }
 
 function clone_buffer(buffer) {
-    var clone = new Buffer(buffer.length);
+    var clone = createFastUninitializedBuffer(buffer.length);
     buffer.copy(clone, 0, 0);
     return clone;
 }
@@ -780,6 +788,7 @@ function isNullOrUndefined(value)  {
 exports.isNullOrUndefined = isNullOrUndefined;
 
 
+// istanbul ignore next
 exports._DEPRECATED_SOON_REMOVED = function _DEPRECATED_SOON_REMOVED(name,func,extra_info) {
     extra_info = extra_info || &quot;&quot;;
     return function () {
@@ -792,6 +801,7 @@ exports._DEPRECATED_SOON_REMOVED = function _DEPRECATED_SOON_REMOVED(name,func,e
     };
 };
 
+// istanbul ignore next
 exports._DEPRECATED_RENAMED = function _DEPRECATED_RENAMED(oldName, newName) {
     return function () {
         console.log(&quot; WARNING : method &quot;.yellow + oldName.cyan + &quot; is deprecated and has been renamed as &quot;.yellow + newName.cyan);
