@@ -13,20 +13,23 @@ YUI.add("yuidoc-meta", function(Y) {
         "AddReferencesResponse",
         "AddressSpace",
         "AggregateConfiguration",
+        "AggregateFilter",
         "AnonymousIdentityToken",
         "ApplicationDescription",
-        "ApplicationType",
+        "ApplicationInstanceCertificate",
         "Argument",
         "AsymmetricAlgorithmSecurityHeader",
         "AttributeIds",
         "AttributeNameById",
         "AttributeOperand",
         "AxisInformation",
+        "BaseEventType",
         "BaseNode",
         "BaseUAObject",
         "BinaryStream",
         "BinaryStreamSizeCalculator",
         "BrowseDescription",
+        "BrowseDirection",
         "BrowseNextRequest",
         "BrowseNextResponse",
         "BrowsePath",
@@ -45,6 +48,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "ChannelSecurityToken",
         "ChunkManager",
         "ClientMonitoredItem",
+        "ClientMonitoredItemGroup",
         "ClientSecureChannelLayer",
         "ClientSession",
         "ClientSidePublishEngine",
@@ -54,6 +58,9 @@ YUI.add("yuidoc-meta", function(Y) {
         "CloseSecureChannelResponse",
         "CloseSessionRequest",
         "CloseSessionResponse",
+        "Company",
+        "ConditionInfo",
+        "ConditionSnapshot",
         "ContentFilter",
         "ContentFilterElement",
         "ContentFilterElementResult",
@@ -78,13 +85,15 @@ YUI.add("yuidoc-meta", function(Y) {
         "DeleteSubscriptionsRequest",
         "DeleteSubscriptionsResponse",
         "DiagnosticInfo",
+        "DummyObject",
         "EUInformation",
         "ElementOperand",
-        "EncodeDecode",
+        "Employee",
         "EndpointDescription",
         "Enum",
         "EnumValueType",
         "ErrorMessage",
+        "EventData",
         "EventFieldList",
         "EventFilter",
         "EventFilterResult",
@@ -92,9 +101,11 @@ YUI.add("yuidoc-meta", function(Y) {
         "ExpandedNodeId",
         "Factory",
         "FilterOperand",
-        "FilterOperator",
         "FindServersRequest",
         "FindServersResponse",
+        "FooBar",
+        "FooBarDerived",
+        "FooWithRecursion",
         "GetEndpointsRequest",
         "GetEndpointsResponse",
         "HelloMessage",
@@ -105,6 +116,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "HistoryReadResponse",
         "HistoryReadResult",
         "HistoryReadValueId",
+        "HistoryServerCapabilities",
         "HistoryUpdateRequest",
         "HistoryUpdateResponse",
         "HistoryUpdateResult",
@@ -114,7 +126,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "MessageBuilder",
         "MessageBuilderBase",
         "MessageChunker",
-        "MessageSecurityMode",
+        "MetaShapeForUnitTest",
         "ModelChangeStructure",
         "ModificationInfo",
         "ModifyMonitoredItemsRequest",
@@ -129,7 +141,6 @@ YUI.add("yuidoc-meta", function(Y) {
         "MonitoredItemNotification",
         "MonitoringFilter",
         "MonitoringParameters",
-        "MyStructure",
         "NodeCrawler",
         "NodeId",
         "NodeIdType",
@@ -141,10 +152,16 @@ YUI.add("yuidoc-meta", function(Y) {
         "OPCUASecureObject",
         "OPCUAServer",
         "OPCUAServerEndPoint\n\nA sever end point is listening to one port",
+        "ObjWithAccessLevel",
+        "ObjWithIntegerId",
         "OpenSecureChannelRequest",
         "OpenSecureChannelResponse",
+        "OperationLimits",
         "PacketAssembler",
         "ParsingResult",
+        "Person",
+        "Person2",
+        "Potato",
         "PublishRequest",
         "PublishResponse",
         "QualifiedName",
@@ -178,18 +195,20 @@ YUI.add("yuidoc-meta", function(Y) {
         "RepublishResponse",
         "RequestHeader",
         "ResponseHeader",
+        "Role",
         "SamplingIntervalDiagnostics",
         "SecureMessageChunkManager",
         "SecurityPolicy",
-        "SecurityTokenRequestType",
         "SemanticChangeStructure",
         "SequenceHeader",
         "SequenceNumberGenerator",
+        "ServerCapabilities",
         "ServerDiagnosticsSummary",
         "ServerEngine",
         "ServerSecureChannelLayer",
         "ServerSession",
         "ServerSidePublishEngine",
+        "ServerSideUnimplementedRequest",
         "ServerStatus",
         "ServerTCP_transport",
         "ServiceCounter",
@@ -202,6 +221,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "SetPublishingModeResponse",
         "SetTriggeringRequest",
         "SetTriggeringResponse",
+        "Shape",
         "SignatureData",
         "SignedSoftwareCertificate",
         "SimpleAttributeOperand",
@@ -214,6 +234,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "SymmetricAlgorithmSecurityHeader",
         "TCPErrorMessage",
         "TCP_transport",
+        "TimeZone",
         "TimestampsToReturn",
         "ToolBrowsePath",
         "TransferResult",
@@ -222,14 +243,29 @@ YUI.add("yuidoc-meta", function(Y) {
         "TranslateBrowsePathsToNodeIdsRequest",
         "TranslateBrowsePathsToNodeIdsResponse",
         "TypeSchema",
+        "UAAcknowledgeableConditionBase",
+        "UAAlarmConditionBase",
+        "UACertificateExpirationAlarm",
+        "UAConditionBase",
         "UADataType",
+        "UADiscreteAlarm",
+        "UAExclusiveDeviationAlarm",
+        "UAExclusiveLevelAlarm",
+        "UAExclusiveLimitAlarm",
+        "UAExclusiveRateOfChangeAlarm",
+        "UALimitAlarm",
+        "UANonExclusiveDeviationAlarm",
+        "UANonExclusiveLimitAlarm",
         "UAObject",
         "UAObjectType",
+        "UAOffNormalAlarm",
+        "UASystemOffNormalAlarm",
+        "UATripAlarm",
+        "UATwoStateVariable",
         "UAVariable",
         "UAVariableType",
         "UnregisterNodesRequest",
         "UnregisterNodesResponse",
-        "UserIdentityTokenType",
         "UserNameIdentityToken",
         "UserTokenPolicy",
         "Variant",
@@ -245,22 +281,34 @@ YUI.add("yuidoc-meta", function(Y) {
     "modules": [
         "StatusCodes",
         "opcua.address_space",
+        "opcua.address_space.AlarmsAndConditions",
         "opcua.address_space.types",
         "opcua.client",
+        "opcua.data-value",
         "opcua.datamodel",
-        "opcua.helpers",
         "opcua.miscellaneous",
         "opcua.server",
         "opcua.server.simulation",
+        "opcua.status-code",
         "opcua.transport",
+        "opcua.utils",
+        "opcua.variant",
+        "service.filter.tools",
         "services.browse",
-        "services.get_endpoints",
-        "services.historizing",
-        "services.method",
+        "services.call",
+        "services.discovery",
+        "services.endpoints",
+        "services.filter",
+        "services.history",
+        "services.node_management",
+        "services.query",
         "services.read",
-        "services.register",
+        "services.register-server",
+        "services.register_node",
+        "services.secure-channel",
         "services.session",
         "services.subscription",
+        "services.translate-browse-path",
         "services.write",
         "xml2json\n\nnode -> see if https:__github.com_isaacs_sax-js could be used instead"
     ],
@@ -268,6 +316,10 @@ YUI.add("yuidoc-meta", function(Y) {
         {
             "displayName": "opcua.address_space",
             "name": "opcua.address_space"
+        },
+        {
+            "displayName": "opcua.address_space.AlarmsAndConditions",
+            "name": "opcua.address_space.AlarmsAndConditions"
         },
         {
             "displayName": "opcua.address_space.types",
@@ -278,12 +330,12 @@ YUI.add("yuidoc-meta", function(Y) {
             "name": "opcua.client"
         },
         {
-            "displayName": "opcua.datamodel",
-            "name": "opcua.datamodel"
+            "displayName": "opcua.data-value",
+            "name": "opcua.data-value"
         },
         {
-            "displayName": "opcua.helpers",
-            "name": "opcua.helpers"
+            "displayName": "opcua.datamodel",
+            "name": "opcua.datamodel"
         },
         {
             "displayName": "opcua.miscellaneous",
@@ -298,33 +350,73 @@ YUI.add("yuidoc-meta", function(Y) {
             "name": "opcua.server.simulation"
         },
         {
+            "displayName": "opcua.status-code",
+            "name": "opcua.status-code"
+        },
+        {
             "displayName": "opcua.transport",
             "name": "opcua.transport"
+        },
+        {
+            "displayName": "opcua.utils",
+            "name": "opcua.utils"
+        },
+        {
+            "displayName": "opcua.variant",
+            "name": "opcua.variant"
+        },
+        {
+            "displayName": "service.filter.tools",
+            "name": "service.filter.tools"
         },
         {
             "displayName": "services.browse",
             "name": "services.browse"
         },
         {
-            "displayName": "services.get_endpoints",
-            "name": "services.get_endpoints"
-        },
-        {
-            "displayName": "services.historizing",
-            "name": "services.historizing"
-        },
-        {
-            "displayName": "services.method",
-            "name": "services.method",
+            "displayName": "services.call",
+            "name": "services.call",
             "description": "This Service is used to call (invoke) a list of Methods. Each method call is invoked within the context\n of an existing Session. If the Session is terminated, the results of the method’s execution cannot be\n returned to the Client and are discarded. This is independent of the task actually performed at the\n Server.\n This Service provides for passing input and output arguments to/from a method. These arguments\n are defined by Properties of the method."
+        },
+        {
+            "displayName": "services.discovery",
+            "name": "services.discovery"
+        },
+        {
+            "displayName": "services.endpoints",
+            "name": "services.endpoints"
+        },
+        {
+            "displayName": "services.filter",
+            "name": "services.filter"
+        },
+        {
+            "displayName": "services.history",
+            "name": "services.history"
+        },
+        {
+            "displayName": "services.node_management",
+            "name": "services.node_management"
+        },
+        {
+            "displayName": "services.query",
+            "name": "services.query"
         },
         {
             "displayName": "services.read",
             "name": "services.read"
         },
         {
-            "displayName": "services.register",
-            "name": "services.register"
+            "displayName": "services.register-server",
+            "name": "services.register-server"
+        },
+        {
+            "displayName": "services.register_node",
+            "name": "services.register_node"
+        },
+        {
+            "displayName": "services.secure-channel",
+            "name": "services.secure-channel"
         },
         {
             "displayName": "services.session",
@@ -333,6 +425,10 @@ YUI.add("yuidoc-meta", function(Y) {
         {
             "displayName": "services.subscription",
             "name": "services.subscription"
+        },
+        {
+            "displayName": "services.translate-browse-path",
+            "name": "services.translate-browse-path"
         },
         {
             "displayName": "services.write",

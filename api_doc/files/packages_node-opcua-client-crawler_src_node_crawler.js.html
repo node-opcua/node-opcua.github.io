@@ -1,0 +1,1482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>packages\node-opcua-client-crawler\src\node_crawler.js - The NodeOPCUA API</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.1.0-pre</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/AcknowledgeMessage.html">AcknowledgeMessage</a></li>
+                                <li><a href="../classes/ActivateSessionRequest.html">ActivateSessionRequest</a></li>
+                                <li><a href="../classes/ActivateSessionResponse.html">ActivateSessionResponse</a></li>
+                                <li><a href="../classes/AddNodesItem.html">AddNodesItem</a></li>
+                                <li><a href="../classes/AddNodesRequest.html">AddNodesRequest</a></li>
+                                <li><a href="../classes/AddNodesResponse.html">AddNodesResponse</a></li>
+                                <li><a href="../classes/AddNodesResult.html">AddNodesResult</a></li>
+                                <li><a href="../classes/AddReferencesItem.html">AddReferencesItem</a></li>
+                                <li><a href="../classes/AddReferencesRequest.html">AddReferencesRequest</a></li>
+                                <li><a href="../classes/AddReferencesResponse.html">AddReferencesResponse</a></li>
+                                <li><a href="../classes/AddressSpace.html">AddressSpace</a></li>
+                                <li><a href="../classes/AggregateConfiguration.html">AggregateConfiguration</a></li>
+                                <li><a href="../classes/AggregateFilter.html">AggregateFilter</a></li>
+                                <li><a href="../classes/AnonymousIdentityToken.html">AnonymousIdentityToken</a></li>
+                                <li><a href="../classes/ApplicationDescription.html">ApplicationDescription</a></li>
+                                <li><a href="../classes/ApplicationInstanceCertificate.html">ApplicationInstanceCertificate</a></li>
+                                <li><a href="../classes/Argument.html">Argument</a></li>
+                                <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
+                                <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+                                <li><a href="../classes/AttributeNameById.html">AttributeNameById</a></li>
+                                <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
+                                <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
+                                <li><a href="../classes/BaseEventType.html">BaseEventType</a></li>
+                                <li><a href="../classes/BaseNode.html">BaseNode</a></li>
+                                <li><a href="../classes/BaseUAObject.html">BaseUAObject</a></li>
+                                <li><a href="../classes/BinaryStream.html">BinaryStream</a></li>
+                                <li><a href="../classes/BinaryStreamSizeCalculator.html">BinaryStreamSizeCalculator</a></li>
+                                <li><a href="../classes/BrowseDescription.html">BrowseDescription</a></li>
+                                <li><a href="../classes/BrowseDirection.html">BrowseDirection</a></li>
+                                <li><a href="../classes/BrowseNextRequest.html">BrowseNextRequest</a></li>
+                                <li><a href="../classes/BrowseNextResponse.html">BrowseNextResponse</a></li>
+                                <li><a href="../classes/BrowsePath.html">BrowsePath</a></li>
+                                <li><a href="../classes/BrowsePathResult.html">BrowsePathResult</a></li>
+                                <li><a href="../classes/BrowsePathTarget.html">BrowsePathTarget</a></li>
+                                <li><a href="../classes/BrowseRequest.html">BrowseRequest</a></li>
+                                <li><a href="../classes/BrowseResponse.html">BrowseResponse</a></li>
+                                <li><a href="../classes/BrowseResult.html">BrowseResult</a></li>
+                                <li><a href="../classes/BuildInfo.html">BuildInfo</a></li>
+                                <li><a href="../classes/CallMethodRequest.html">CallMethodRequest</a></li>
+                                <li><a href="../classes/CallMethodResult.html">CallMethodResult</a></li>
+                                <li><a href="../classes/CallRequest.html">CallRequest</a></li>
+                                <li><a href="../classes/CallResponse.html">CallResponse</a></li>
+                                <li><a href="../classes/CancelRequest.html">CancelRequest</a></li>
+                                <li><a href="../classes/CancelResponse.html">CancelResponse</a></li>
+                                <li><a href="../classes/ChannelSecurityToken.html">ChannelSecurityToken</a></li>
+                                <li><a href="../classes/ChunkManager.html">ChunkManager</a></li>
+                                <li><a href="../classes/ClientMonitoredItem.html">ClientMonitoredItem</a></li>
+                                <li><a href="../classes/ClientMonitoredItemGroup.html">ClientMonitoredItemGroup</a></li>
+                                <li><a href="../classes/ClientSecureChannelLayer.html">ClientSecureChannelLayer</a></li>
+                                <li><a href="../classes/ClientSession.html">ClientSession</a></li>
+                                <li><a href="../classes/ClientSidePublishEngine.html">ClientSidePublishEngine</a></li>
+                                <li><a href="../classes/ClientSubscription.html">ClientSubscription</a></li>
+                                <li><a href="../classes/ClientTCP_transport.html">ClientTCP_transport</a></li>
+                                <li><a href="../classes/CloseSecureChannelRequest.html">CloseSecureChannelRequest</a></li>
+                                <li><a href="../classes/CloseSecureChannelResponse.html">CloseSecureChannelResponse</a></li>
+                                <li><a href="../classes/CloseSessionRequest.html">CloseSessionRequest</a></li>
+                                <li><a href="../classes/CloseSessionResponse.html">CloseSessionResponse</a></li>
+                                <li><a href="../classes/Company.html">Company</a></li>
+                                <li><a href="../classes/ConditionInfo.html">ConditionInfo</a></li>
+                                <li><a href="../classes/ConditionSnapshot.html">ConditionSnapshot</a></li>
+                                <li><a href="../classes/ContentFilter.html">ContentFilter</a></li>
+                                <li><a href="../classes/ContentFilterElement.html">ContentFilterElement</a></li>
+                                <li><a href="../classes/ContentFilterElementResult.html">ContentFilterElementResult</a></li>
+                                <li><a href="../classes/ContentFilterResult.html">ContentFilterResult</a></li>
+                                <li><a href="../classes/CreateMonitoredItemsRequest.html">CreateMonitoredItemsRequest</a></li>
+                                <li><a href="../classes/CreateMonitoredItemsResponse.html">CreateMonitoredItemsResponse</a></li>
+                                <li><a href="../classes/CreateSessionRequest.html">CreateSessionRequest</a></li>
+                                <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
+                                <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
+                                <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
+                                <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
+                                <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
+                                <li><a href="../classes/DataValue.html">DataValue</a></li>
+                                <li><a href="../classes/DeleteMonitoredItemsRequest.html">DeleteMonitoredItemsRequest</a></li>
+                                <li><a href="../classes/DeleteMonitoredItemsResponse.html">DeleteMonitoredItemsResponse</a></li>
+                                <li><a href="../classes/DeleteNodesItem.html">DeleteNodesItem</a></li>
+                                <li><a href="../classes/DeleteNodesRequest.html">DeleteNodesRequest</a></li>
+                                <li><a href="../classes/DeleteNodesResponse.html">DeleteNodesResponse</a></li>
+                                <li><a href="../classes/DeleteReferencesItem.html">DeleteReferencesItem</a></li>
+                                <li><a href="../classes/DeleteReferencesRequest.html">DeleteReferencesRequest</a></li>
+                                <li><a href="../classes/DeleteReferencesResponse.html">DeleteReferencesResponse</a></li>
+                                <li><a href="../classes/DeleteSubscriptionsRequest.html">DeleteSubscriptionsRequest</a></li>
+                                <li><a href="../classes/DeleteSubscriptionsResponse.html">DeleteSubscriptionsResponse</a></li>
+                                <li><a href="../classes/DiagnosticInfo.html">DiagnosticInfo</a></li>
+                                <li><a href="../classes/DummyObject.html">DummyObject</a></li>
+                                <li><a href="../classes/ElementOperand.html">ElementOperand</a></li>
+                                <li><a href="../classes/Employee.html">Employee</a></li>
+                                <li><a href="../classes/EndpointDescription.html">EndpointDescription</a></li>
+                                <li><a href="../classes/Enum.html">Enum</a></li>
+                                <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
+                                <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
+                                <li><a href="../classes/EUInformation.html">EUInformation</a></li>
+                                <li><a href="../classes/EventData.html">EventData</a></li>
+                                <li><a href="../classes/EventFieldList.html">EventFieldList</a></li>
+                                <li><a href="../classes/EventFilter.html">EventFilter</a></li>
+                                <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
+                                <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
+                                <li><a href="../classes/ExpandedNodeId.html">ExpandedNodeId</a></li>
+                                <li><a href="../classes/Factory.html">Factory</a></li>
+                                <li><a href="../classes/FilterOperand.html">FilterOperand</a></li>
+                                <li><a href="../classes/FindServersRequest.html">FindServersRequest</a></li>
+                                <li><a href="../classes/FindServersResponse.html">FindServersResponse</a></li>
+                                <li><a href="../classes/FooBar.html">FooBar</a></li>
+                                <li><a href="../classes/FooBarDerived.html">FooBarDerived</a></li>
+                                <li><a href="../classes/FooWithRecursion.html">FooWithRecursion</a></li>
+                                <li><a href="../classes/GetEndpointsRequest.html">GetEndpointsRequest</a></li>
+                                <li><a href="../classes/GetEndpointsResponse.html">GetEndpointsResponse</a></li>
+                                <li><a href="../classes/HelloMessage.html">HelloMessage</a></li>
+                                <li><a href="../classes/HistoryData.html">HistoryData</a></li>
+                                <li><a href="../classes/HistoryModifiedData.html">HistoryModifiedData</a></li>
+                                <li><a href="../classes/HistoryReadDetails.html">HistoryReadDetails</a></li>
+                                <li><a href="../classes/HistoryReadRequest.html">HistoryReadRequest</a></li>
+                                <li><a href="../classes/HistoryReadResponse.html">HistoryReadResponse</a></li>
+                                <li><a href="../classes/HistoryReadResult.html">HistoryReadResult</a></li>
+                                <li><a href="../classes/HistoryReadValueId.html">HistoryReadValueId</a></li>
+                                <li><a href="../classes/HistoryServerCapabilities.html">HistoryServerCapabilities</a></li>
+                                <li><a href="../classes/HistoryUpdateRequest.html">HistoryUpdateRequest</a></li>
+                                <li><a href="../classes/HistoryUpdateResponse.html">HistoryUpdateResponse</a></li>
+                                <li><a href="../classes/HistoryUpdateResult.html">HistoryUpdateResult</a></li>
+                                <li><a href="../classes/IssuedIdentityToken.html">IssuedIdentityToken</a></li>
+                                <li><a href="../classes/LiteralOperand.html">LiteralOperand</a></li>
+                                <li><a href="../classes/LocalizedText.html">LocalizedText</a></li>
+                                <li><a href="../classes/MessageBuilder.html">MessageBuilder</a></li>
+                                <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
+                                <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
+                                <li><a href="../classes/MetaShapeForUnitTest.html">MetaShapeForUnitTest</a></li>
+                                <li><a href="../classes/ModelChangeStructure.html">ModelChangeStructure</a></li>
+                                <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
+                                <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
+                                <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
+                                <li><a href="../classes/ModifySubscriptionRequest.html">ModifySubscriptionRequest</a></li>
+                                <li><a href="../classes/ModifySubscriptionResponse.html">ModifySubscriptionResponse</a></li>
+                                <li><a href="../classes/MonitoredItem.html">MonitoredItem</a></li>
+                                <li><a href="../classes/MonitoredItemCreateRequest.html">MonitoredItemCreateRequest</a></li>
+                                <li><a href="../classes/MonitoredItemCreateResult.html">MonitoredItemCreateResult</a></li>
+                                <li><a href="../classes/MonitoredItemModifyRequest.html">MonitoredItemModifyRequest</a></li>
+                                <li><a href="../classes/MonitoredItemModifyResult.html">MonitoredItemModifyResult</a></li>
+                                <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
+                                <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
+                                <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+                                <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
+                                <li><a href="../classes/NodeId.html">NodeId</a></li>
+                                <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
+                                <li><a href="../classes/NodeTypeDescription.html">NodeTypeDescription</a></li>
+                                <li><a href="../classes/NotificationMessage.html">NotificationMessage</a></li>
+                                <li><a href="../classes/ObjWithAccessLevel.html">ObjWithAccessLevel</a></li>
+                                <li><a href="../classes/ObjWithIntegerId.html">ObjWithIntegerId</a></li>
+                                <li><a href="../classes/opcua.html">opcua</a></li>
+                                <li><a href="../classes/OPCUABaseServer.html">OPCUABaseServer</a></li>
+                                <li><a href="../classes/OPCUAClient.html">OPCUAClient</a></li>
+                                <li><a href="../classes/OPCUAClientBase.html">OPCUAClientBase</a></li>
+                                <li><a href="../classes/OPCUASecureObject.html">OPCUASecureObject</a></li>
+                                <li><a href="../classes/OPCUAServer.html">OPCUAServer</a></li>
+                                <li><a href="../classes/OPCUAServerEndPoint
+                
+                A sever end point is listening to one port.html">OPCUAServerEndPoint
+                
+                A sever end point is listening to one port</a></li>
+                                <li><a href="../classes/OpenSecureChannelRequest.html">OpenSecureChannelRequest</a></li>
+                                <li><a href="../classes/OpenSecureChannelResponse.html">OpenSecureChannelResponse</a></li>
+                                <li><a href="../classes/OperationLimits.html">OperationLimits</a></li>
+                                <li><a href="../classes/PacketAssembler.html">PacketAssembler</a></li>
+                                <li><a href="../classes/ParsingResult.html">ParsingResult</a></li>
+                                <li><a href="../classes/Person.html">Person</a></li>
+                                <li><a href="../classes/Person2.html">Person2</a></li>
+                                <li><a href="../classes/Potato.html">Potato</a></li>
+                                <li><a href="../classes/PublishRequest.html">PublishRequest</a></li>
+                                <li><a href="../classes/PublishResponse.html">PublishResponse</a></li>
+                                <li><a href="../classes/QualifiedName.html">QualifiedName</a></li>
+                                <li><a href="../classes/QueryDataDescription.html">QueryDataDescription</a></li>
+                                <li><a href="../classes/QueryDataSet.html">QueryDataSet</a></li>
+                                <li><a href="../classes/QueryFirstRequest.html">QueryFirstRequest</a></li>
+                                <li><a href="../classes/QueryFirstResponse.html">QueryFirstResponse</a></li>
+                                <li><a href="../classes/QueryNextRequest.html">QueryNextRequest</a></li>
+                                <li><a href="../classes/QueryNextResponse.html">QueryNextResponse</a></li>
+                                <li><a href="../classes/Range.html">Range</a></li>
+                                <li><a href="../classes/ReadAtTimeDetails.html">ReadAtTimeDetails</a></li>
+                                <li><a href="../classes/ReaderState.html">ReaderState</a></li>
+                                <li><a href="../classes/ReadEventDetails.html">ReadEventDetails</a></li>
+                                <li><a href="../classes/ReadProcessedDetails.html">ReadProcessedDetails</a></li>
+                                <li><a href="../classes/ReadRawModifiedDetails.html">ReadRawModifiedDetails</a></li>
+                                <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
+                                <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
+                                <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+                                <li><a href="../classes/RedundantServer.html">RedundantServer</a></li>
+                                <li><a href="../classes/Reference.html">Reference</a></li>
+                                <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
+                                <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
+                                <li><a href="../classes/RegisteredServer.html">RegisteredServer</a></li>
+                                <li><a href="../classes/RegisterNodesRequest.html">RegisterNodesRequest</a></li>
+                                <li><a href="../classes/RegisterNodesResponse.html">RegisterNodesResponse</a></li>
+                                <li><a href="../classes/RegisterServerRequest.html">RegisterServerRequest</a></li>
+                                <li><a href="../classes/RegisterServerResponse.html">RegisterServerResponse</a></li>
+                                <li><a href="../classes/RelativePath.html">RelativePath</a></li>
+                                <li><a href="../classes/RelativePathElement.html">RelativePathElement</a></li>
+                                <li><a href="../classes/RepublishRequest.html">RepublishRequest</a></li>
+                                <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
+                                <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
+                                <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+                                <li><a href="../classes/Role.html">Role</a></li>
+                                <li><a href="../classes/SamplingIntervalDiagnostics.html">SamplingIntervalDiagnostics</a></li>
+                                <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
+                                <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
+                                <li><a href="../classes/SemanticChangeStructure.html">SemanticChangeStructure</a></li>
+                                <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
+                                <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
+                                <li><a href="../classes/ServerCapabilities.html">ServerCapabilities</a></li>
+                                <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
+                                <li><a href="../classes/ServerEngine.html">ServerEngine</a></li>
+                                <li><a href="../classes/ServerSecureChannelLayer.html">ServerSecureChannelLayer</a></li>
+                                <li><a href="../classes/ServerSession.html">ServerSession</a></li>
+                                <li><a href="../classes/ServerSidePublishEngine.html">ServerSidePublishEngine</a></li>
+                                <li><a href="../classes/ServerSideUnimplementedRequest.html">ServerSideUnimplementedRequest</a></li>
+                                <li><a href="../classes/ServerStatus.html">ServerStatus</a></li>
+                                <li><a href="../classes/ServerTCP_transport.html">ServerTCP_transport</a></li>
+                                <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
+                                <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
+                                <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+                                <li><a href="../classes/SessionSecurityDiagnostics.html">SessionSecurityDiagnostics</a></li>
+                                <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
+                                <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
+                                <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
+                                <li><a href="../classes/SetPublishingModeResponse.html">SetPublishingModeResponse</a></li>
+                                <li><a href="../classes/SetTriggeringRequest.html">SetTriggeringRequest</a></li>
+                                <li><a href="../classes/SetTriggeringResponse.html">SetTriggeringResponse</a></li>
+                                <li><a href="../classes/Shape.html">Shape</a></li>
+                                <li><a href="../classes/SignatureData.html">SignatureData</a></li>
+                                <li><a href="../classes/SignedSoftwareCertificate.html">SignedSoftwareCertificate</a></li>
+                                <li><a href="../classes/SimpleAttributeOperand.html">SimpleAttributeOperand</a></li>
+                                <li><a href="../classes/Simulator.html">Simulator</a></li>
+                                <li><a href="../classes/StatusChangeNotification.html">StatusChangeNotification</a></li>
+                                <li><a href="../classes/StatusCode.html">StatusCode</a></li>
+                                <li><a href="../classes/Subscription.html">Subscription</a></li>
+                                <li><a href="../classes/SubscriptionAcknowledgement.html">SubscriptionAcknowledgement</a></li>
+                                <li><a href="../classes/SubscriptionDiagnostics.html">SubscriptionDiagnostics</a></li>
+                                <li><a href="../classes/SymmetricAlgorithmSecurityHeader.html">SymmetricAlgorithmSecurityHeader</a></li>
+                                <li><a href="../classes/TCP_transport.html">TCP_transport</a></li>
+                                <li><a href="../classes/TCPErrorMessage.html">TCPErrorMessage</a></li>
+                                <li><a href="../classes/TimestampsToReturn.html">TimestampsToReturn</a></li>
+                                <li><a href="../classes/TimeZone.html">TimeZone</a></li>
+                                <li><a href="../classes/ToolBrowsePath.html">ToolBrowsePath</a></li>
+                                <li><a href="../classes/TransferResult.html">TransferResult</a></li>
+                                <li><a href="../classes/TransferSubscriptionsRequest.html">TransferSubscriptionsRequest</a></li>
+                                <li><a href="../classes/TransferSubscriptionsResponse.html">TransferSubscriptionsResponse</a></li>
+                                <li><a href="../classes/TranslateBrowsePathsToNodeIdsRequest.html">TranslateBrowsePathsToNodeIdsRequest</a></li>
+                                <li><a href="../classes/TranslateBrowsePathsToNodeIdsResponse.html">TranslateBrowsePathsToNodeIdsResponse</a></li>
+                                <li><a href="../classes/TypeSchema.html">TypeSchema</a></li>
+                                <li><a href="../classes/UAAcknowledgeableConditionBase.html">UAAcknowledgeableConditionBase</a></li>
+                                <li><a href="../classes/UAAlarmConditionBase.html">UAAlarmConditionBase</a></li>
+                                <li><a href="../classes/UACertificateExpirationAlarm.html">UACertificateExpirationAlarm</a></li>
+                                <li><a href="../classes/UAConditionBase.html">UAConditionBase</a></li>
+                                <li><a href="../classes/UADataType.html">UADataType</a></li>
+                                <li><a href="../classes/UADiscreteAlarm.html">UADiscreteAlarm</a></li>
+                                <li><a href="../classes/UAExclusiveDeviationAlarm.html">UAExclusiveDeviationAlarm</a></li>
+                                <li><a href="../classes/UAExclusiveLevelAlarm.html">UAExclusiveLevelAlarm</a></li>
+                                <li><a href="../classes/UAExclusiveLimitAlarm.html">UAExclusiveLimitAlarm</a></li>
+                                <li><a href="../classes/UAExclusiveRateOfChangeAlarm.html">UAExclusiveRateOfChangeAlarm</a></li>
+                                <li><a href="../classes/UALimitAlarm.html">UALimitAlarm</a></li>
+                                <li><a href="../classes/UANonExclusiveDeviationAlarm.html">UANonExclusiveDeviationAlarm</a></li>
+                                <li><a href="../classes/UANonExclusiveLimitAlarm.html">UANonExclusiveLimitAlarm</a></li>
+                                <li><a href="../classes/UAObject.html">UAObject</a></li>
+                                <li><a href="../classes/UAObjectType.html">UAObjectType</a></li>
+                                <li><a href="../classes/UAOffNormalAlarm.html">UAOffNormalAlarm</a></li>
+                                <li><a href="../classes/UASystemOffNormalAlarm.html">UASystemOffNormalAlarm</a></li>
+                                <li><a href="../classes/UATripAlarm.html">UATripAlarm</a></li>
+                                <li><a href="../classes/UATwoStateVariable.html">UATwoStateVariable</a></li>
+                                <li><a href="../classes/UAVariable.html">UAVariable</a></li>
+                                <li><a href="../classes/UAVariableType.html">UAVariableType</a></li>
+                                <li><a href="../classes/UnregisterNodesRequest.html">UnregisterNodesRequest</a></li>
+                                <li><a href="../classes/UnregisterNodesResponse.html">UnregisterNodesResponse</a></li>
+                                <li><a href="../classes/UserNameIdentityToken.html">UserNameIdentityToken</a></li>
+                                <li><a href="../classes/UserTokenPolicy.html">UserTokenPolicy</a></li>
+                                <li><a href="../classes/Variant.html">Variant</a></li>
+                                <li><a href="../classes/View.html">View</a></li>
+                                <li><a href="../classes/ViewDescription.html">ViewDescription</a></li>
+                                <li><a href="../classes/WriteRequest.html">WriteRequest</a></li>
+                                <li><a href="../classes/WriteResponse.html">WriteResponse</a></li>
+                                <li><a href="../classes/WriteValue.html">WriteValue</a></li>
+                                <li><a href="../classes/X509IdentityToken.html">X509IdentityToken</a></li>
+                                <li><a href="../classes/Xml2Json.html">Xml2Json</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/opcua.address_space.html">opcua.address_space</a></li>
+                                <li><a href="../modules/opcua.address_space.AlarmsAndConditions.html">opcua.address_space.AlarmsAndConditions</a></li>
+                                <li><a href="../modules/opcua.address_space.types.html">opcua.address_space.types</a></li>
+                                <li><a href="../modules/opcua.client.html">opcua.client</a></li>
+                                <li><a href="../modules/opcua.data-value.html">opcua.data-value</a></li>
+                                <li><a href="../modules/opcua.datamodel.html">opcua.datamodel</a></li>
+                                <li><a href="../modules/opcua.miscellaneous.html">opcua.miscellaneous</a></li>
+                                <li><a href="../modules/opcua.server.html">opcua.server</a></li>
+                                <li><a href="../modules/opcua.server.simulation.html">opcua.server.simulation</a></li>
+                                <li><a href="../modules/opcua.status-code.html">opcua.status-code</a></li>
+                                <li><a href="../modules/opcua.transport.html">opcua.transport</a></li>
+                                <li><a href="../modules/opcua.utils.html">opcua.utils</a></li>
+                                <li><a href="../modules/opcua.variant.html">opcua.variant</a></li>
+                                <li><a href="../modules/service.filter.tools.html">service.filter.tools</a></li>
+                                <li><a href="../modules/services.browse.html">services.browse</a></li>
+                                <li><a href="../modules/services.call.html">services.call</a></li>
+                                <li><a href="../modules/services.discovery.html">services.discovery</a></li>
+                                <li><a href="../modules/services.endpoints.html">services.endpoints</a></li>
+                                <li><a href="../modules/services.filter.html">services.filter</a></li>
+                                <li><a href="../modules/services.history.html">services.history</a></li>
+                                <li><a href="../modules/services.node_management.html">services.node_management</a></li>
+                                <li><a href="../modules/services.query.html">services.query</a></li>
+                                <li><a href="../modules/services.read.html">services.read</a></li>
+                                <li><a href="../modules/services.register-server.html">services.register-server</a></li>
+                                <li><a href="../modules/services.register_node.html">services.register_node</a></li>
+                                <li><a href="../modules/services.secure-channel.html">services.secure-channel</a></li>
+                                <li><a href="../modules/services.session.html">services.session</a></li>
+                                <li><a href="../modules/services.subscription.html">services.subscription</a></li>
+                                <li><a href="../modules/services.translate-browse-path.html">services.translate-browse-path</a></li>
+                                <li><a href="../modules/services.write.html">services.write</a></li>
+                                <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
+                                <li><a href="../modules/xml2json
+                
+                node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+                
+                node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: packages\node-opcua-client-crawler\src\node_crawler.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+&quot;use strict&quot;;
+var async = require(&quot;async&quot;);
+var _ = require(&quot;underscore&quot;);
+var util = require(&quot;util&quot;);
+var EventEmitter = require(&quot;events&quot;).EventEmitter;
+var assert = require(&quot;node-opcua-assert&quot;);
+
+
+var AttributeIds        = require(&quot;node-opcua-data-model&quot;).AttributeIds;
+var BrowseDirection     = require(&quot;node-opcua-data-model&quot;).BrowseDirection;
+var QualifiedName       = require(&quot;node-opcua-data-model&quot;).QualifiedName;
+var LocalizedText       = require(&quot;node-opcua-data-model&quot;).LocalizedText;
+var NodeClass           = require(&quot;node-opcua-data-model&quot;).NodeClass;
+
+var BrowseDescription   = require(&quot;node-opcua-service-browse&quot;).BrowseDescription;
+
+var resolveNodeId       = require(&quot;node-opcua-nodeid&quot;).resolveNodeId;
+var NodeId              = require(&quot;node-opcua-nodeid&quot;).NodeId;
+var sameNodeId          = require(&quot;node-opcua-nodeid&quot;).sameNodeId;
+var makeNodeId          = require(&quot;node-opcua-nodeid&quot;).makeNodeId;
+var StatusCodes         = require(&quot;node-opcua-status-code&quot;).StatusCodes;
+
+var browse_service     = require(&quot;node-opcua-service-browse&quot;);
+
+var lowerFirstLetter    = require(&quot;node-opcua-utils&quot;).lowerFirstLetter;
+
+var VariableIds = require(&quot;node-opcua-constants&quot;).VariableIds;
+
+var debugLog = require(&quot;node-opcua-debug&quot;).make_debugLog(__filename);
+
+//
+// some server do not expose the ReferenceType Node in their address space
+// ReferenceType are defined by the OPCUA standard and can be prepopulated in the crawler.
+// Pre-populating the ReferenceType node in the crawler will also reduce the network traffic.
+//
+var ReferenceTypeIds = require(&quot;node-opcua-constants&quot;).ReferenceTypeIds;
+
+/*=
+ *
+ * @param arr
+ * @param maxNode
+ * @private
+ * @return {*}
+ */
+function _fetch_elements(arr, maxNode) {
+    assert(_.isArray(arr));
+    assert(arr.length &gt; 0);
+    var high_limit = ( maxNode &lt;= 0) ? arr.length : maxNode;
+    var tmp = arr.splice(0, high_limit);
+    assert(tmp.length &gt; 0);
+    return tmp;
+}
+
+/**
+ * @class NodeCrawler
+ * @param session
+ * @constructor
+ */
+function NodeCrawler(session) {
+
+    var self = this;
+
+    self.session = session;
+
+    self.browseNameMap = {};
+    self._nodesToReadEx = [];
+    self._objectCache = {};
+    self._objectToBrowse = [];
+    self._objMap = {};
+
+    this._initialize_referenceTypeId();
+
+    self.q = async.queue(function (task, callback) {
+
+        // use process next tick to relax the stack frame
+        setImmediate(function () {
+            task.func.call(self, task, function () {
+                self.resolve_deferred_browseNode();
+                self.resolve_deferred_readNode();
+                callback();
+            });
+        });
+
+    }, 1);
+
+    // MaxNodesPerRead from Server.ServerCapabilities.OperationLimits
+    // VariableIds.ServerType_ServerCapabilities_OperationLimits_MaxNodesPerRead
+    self.maxNodesPerRead = 0;
+
+    //  MaxNodesPerBrowse from Server.ServerCapabilities.OperationLimits
+    //  VariableIds.Server_ServerCapabilities_OperationLimits_MaxNodesPerBrowse
+    self.maxNodesPerBrowse = 0; // 0 = no limits
+
+    // statistics
+    self.startTime = new Date();
+    self.readCounter = 0;
+    self.browseCounter = 0;
+    self.transactionCounter = 0;
+}
+
+util.inherits(NodeCrawler, EventEmitter);
+
+NodeCrawler.prototype._initialize_referenceTypeId = function () {
+
+    var self = this;
+
+    function append_prepopulated_reference(browseName) {
+
+        var nodeId = makeNodeId(ReferenceTypeIds[browseName], 0);
+        assert(nodeId);
+        var cacheNode = self._createCacheNode(nodeId);
+        cacheNode.browseName = new QualifiedName({name: browseName});
+    }
+
+    //  References
+    //  +-&gt;(hasSubtype) NoHierarchicalReferences
+    //                  +-&gt;(hasSubtype) HasTypeDefinition
+    //  +-&gt;(hasSubtype) HierarchicalReferences
+    //                  +-&gt;(hasSubtype) HasChild/ChildOf
+    //                                  +-&gt;(hasSubtype) Aggregates/AggregatedBy
+    //                                                  +-&gt; HasProperty/PropertyOf
+    //                                                  +-&gt; HasComponent/ComponentOf
+    //                                                  +-&gt; HasHistoricalConfiguration/HistoricalConfigurationOf
+    //                                 +-&gt;(hasSubtype) HasSubtype/HasSupertype
+    //                  +-&gt;(hasSubtype) Organizes/OrganizedBy
+    //                  +-&gt;(hasSubtype) HasEventSource/EventSourceOf
+    append_prepopulated_reference(&quot;HasTypeDefinition&quot;);
+    append_prepopulated_reference(&quot;HasChild&quot;);
+    append_prepopulated_reference(&quot;HasProperty&quot;);
+    append_prepopulated_reference(&quot;HasComponent&quot;);
+    append_prepopulated_reference(&quot;HasHistoricalConfiguration&quot;);
+    append_prepopulated_reference(&quot;HasSubtype&quot;);
+    append_prepopulated_reference(&quot;Organizes&quot;);
+    append_prepopulated_reference(&quot;HasEventSource&quot;);
+
+};
+
+NodeCrawler.prototype._readOperationalLimits = function (callback) {
+
+    var self = this;
+    var n1 = makeNodeId(VariableIds.Server_ServerCapabilities_OperationLimits_MaxNodesPerRead);
+    var n2 = makeNodeId(VariableIds.Server_ServerCapabilities_OperationLimits_MaxNodesPerBrowse);
+    var nodesToRead = [
+        {nodeId: n1, attributeId: AttributeIds.Value},
+        {nodeId: n2, attributeId: AttributeIds.Value}
+    ];
+    self.transactionCounter++;
+    self.session.read(nodesToRead, function (err, nodeIds, results) {
+        if (!err) {
+            if (results[0].statusCode === StatusCodes.Good) {
+                self.maxNodesPerRead = results[0].value.value;
+            }
+            // ensure we have a sensible maxNodesPerRead value in case the server doesn&#x27;t specify one
+            self.maxNodesPerRead = self.maxNodesPerRead || 500;
+
+            if (results[1].statusCode === StatusCodes.Good) {
+                self.maxNodesPerBrowse = results[1].value.value;
+            }
+            // ensure we have a sensible maxNodesPerBrowse value in case the server doesn&#x27;t specify one
+            self.maxNodesPerBrowse = self.maxNodesPerBrowse || 500;
+
+        }
+        callback(err);
+    });
+};
+
+function make_node_attribute_key(nodeId, attributeId) {
+    var key = nodeId.toString() + &quot;_&quot; + attributeId.toString();
+    return key;
+}
+
+NodeCrawler.prototype.set_cache_NodeAttribute = function (nodeId, attributeId, value) {
+    var self = this;
+    var key = make_node_attribute_key(nodeId, attributeId);
+    self.browseNameMap[key] = value;
+};
+
+NodeCrawler.prototype.has_cache_NodeAttribute = function (nodeId, attributeId) {
+    var self = this;
+    var key = make_node_attribute_key(nodeId, attributeId);
+    return self.browseNameMap.hasOwnProperty(key);
+};
+
+NodeCrawler.prototype.get_cache_NodeAttribute = function (nodeId, attributeId) {
+    var self = this;
+    var key = make_node_attribute_key(nodeId, attributeId);
+    return self.browseNameMap[key];
+};
+
+/**
+ * request a read operation for a Node+Attribute in the future, provides a callback
+ *
+ * @method _defer_readNode
+ * @param nodeId {NodeId}
+ * @param attributeId {AttributeId}
+ * @param {function} callback
+ * @param {Error|null} callback.err
+ * @param {string} callback.dataValue
+ * @private
+ */
+
+
+
+NodeCrawler.prototype._defer_readNode = function (nodeId, attributeId, callback) {
+    var self = this;
+
+    nodeId = resolveNodeId(nodeId);
+    assert(nodeId instanceof NodeId);
+
+    var key = make_node_attribute_key(nodeId, attributeId);
+
+    if (self.has_cache_NodeAttribute(nodeId, attributeId)) {
+        callback(null, self.get_cache_NodeAttribute(nodeId, attributeId));
+    } else {
+        self.browseNameMap[key] = &quot;?&quot;;
+        self._nodesToReadEx.push({
+            nodeToRead: {
+                nodeId: nodeId,
+                attributeId: attributeId
+            },
+            action: function (dataValue) {
+                self.set_cache_NodeAttribute(nodeId, attributeId, dataValue);
+                callback(null, dataValue);
+            }
+        });
+    }
+};
+
+/**
+ * perform pending read Node operation
+ * @method _resolve_deferred_readNode
+ * @param callback {Function}
+ * @private
+ */
+NodeCrawler.prototype._resolve_deferred_readNode = function (callback) {
+
+    var self = this;
+    if (self._nodesToReadEx.length === 0) {
+        // nothing to read
+        callback();
+        return;
+    }
+
+    var _nodesToReadEx = _fetch_elements(self._nodesToReadEx, self.maxNodesPerRead);
+
+    var nodesToRead = _nodesToReadEx.map(function (e) {
+        return e.nodeToRead;
+    });
+
+    self.readCounter += nodesToRead.length;
+    self.transactionCounter++;
+
+    self.session.read(nodesToRead, function (err, nodesToRead, results /*, diagnostics*/) {
+
+        if (!err) {
+
+            _.zip(_nodesToReadEx, results).forEach(function (pair) {
+                var _nodeToReadEx = pair[0];
+
+                var dataValue = pair[1];
+                assert(dataValue.hasOwnProperty(&quot;statusCode&quot;));
+                if (dataValue.statusCode === StatusCodes.Good) {
+                    if (dataValue.value === null) {
+                        _nodeToReadEx.action(null);
+                    }
+                    else {
+                        _nodeToReadEx.action(dataValue.value.value);
+                    }
+                } else {
+                    _nodeToReadEx.action({name: dataValue.statusCode.key});
+                }
+
+            });
+        }
+        callback(err);
+    });
+};
+
+NodeCrawler.prototype._resolve_deferred = function (comment, collection, method) {
+    var self = this;
+
+    if (collection.length &gt; 0) {
+        self._push_task(&quot;adding operation &quot; + comment, {
+            params: {},
+            func: function (task, callback) {
+                method.call(self, callback);
+            }
+        });
+    }
+};
+
+NodeCrawler.prototype.resolve_deferred_readNode = function () {
+    this._resolve_deferred(&quot;read_node&quot;, this._nodesToReadEx, this._resolve_deferred_readNode);
+};
+
+NodeCrawler.prototype.resolve_deferred_browseNode = function () {
+    this._resolve_deferred(&quot;browse_node&quot;, this._objectToBrowse, this._resolve_deferred_browseNode);
+};
+
+const pendingBrowseName = new QualifiedName({name: &quot;pending&quot;});
+function CacheNode(nodeId) {
+    /**
+     * @property nodeId
+     * @type NodeId
+     */
+    this.nodeId = nodeId;
+    /**
+     * @property browseName
+     * @type     QualifiedName
+     */
+    this.browseName = pendingBrowseName;
+    /**
+     * property references
+     * @type ReferenceDescription[]
+     */
+    this.references = [];
+}
+
+function w(s, l) {
+    return (s + &quot;                                                                &quot;).substr(0, l);
+}
+CacheNode.prototype.toString = function () {
+    var str = w(this.nodeId.toString(), 20);
+    str += &quot; &quot; + w(this.browseName.toString(), 30);
+    str += &quot; typeDef : &quot; + w((this.typeDefinition ? this.typeDefinition.toString() : &quot;&quot;), 30);
+    str += &quot; nodeClass : &quot; + w((this.nodeClass ? this.nodeClass.toString() : &quot;&quot;), 12);
+    return str;
+};
+
+NodeCrawler.prototype._getCacheNode = function (nodeId) {
+    var self = this;
+    var key = resolveNodeId(nodeId).toString();
+    var cacheNode = self._objectCache[key];
+    return cacheNode;
+};
+
+NodeCrawler.prototype._createCacheNode = function (nodeId) {
+    var self = this;
+    var key = resolveNodeId(nodeId).toString();
+    var cacheNode = self._objectCache[key];
+    if (cacheNode) {
+        throw new Error(&quot;NodeCrawler#_createCacheNode : cache node should not exist already : &quot; + nodeId.toString());
+    }
+    cacheNode = new CacheNode(nodeId);
+    assert(!self._objectCache.hasOwnProperty(key));
+    self._objectCache[key] = cacheNode;
+    return cacheNode;
+};
+
+/**
+ * perform a deferred browse
+ * instead of calling session.browse directly, this function add the request to a list
+ * so that request can be grouped and send in one single browse command to the server.
+ *
+ * @method _defer_browse_node
+ * @private
+ * @param cacheNode                {CacheNode}
+ * @param referenceTypeId       {string|ReferenceType}
+ * @param actionOnBrowse        {Function}
+ * @param actionOnBrowse.err    {Error|null}
+ * @param actionOnBrowse.object {CacheNode}
+ *
+ */
+NodeCrawler.prototype._defer_browse_node = function (cacheNode, referenceTypeId, actionOnBrowse) {
+    var self = this;
+    self._objectToBrowse.push({
+        cacheNode: cacheNode,
+        nodeId: cacheNode.nodeId,
+        referenceTypeId: referenceTypeId,
+        action: function (object) {
+            assert(object === cacheNode);
+            assert(_.isArray(object.references));
+            assert(cacheNode.browseName.name !== &quot;pending&quot;);
+            actionOnBrowse(null, cacheNode);
+        }
+    });
+};
+
+var referencesId = resolveNodeId(&quot;References&quot;);
+var hierarchicalReferencesId = resolveNodeId(&quot;HierarchicalReferences&quot;);
+var hasTypeDefinitionId = resolveNodeId(&quot;HasTypeDefinition&quot;);
+
+
+function dedup_reference(references) {
+    var results = [];
+    var dedup = {};
+    for (var i = 0; i &lt; references.length; i++) {
+
+        const reference = references[i];
+
+        const key = reference.referenceTypeId.toString() + reference.nodeId.toString();
+        if (dedup[key]) {
+            console.log(&quot; Warning =&gt; Duplicated reference found  !!!! please contact the server vendor&quot;);
+            console.log(reference.toString());
+            continue;
+        }
+        dedup[key] = reference;
+        results.push(reference);
+    }
+    return results;
+}
+/**
+ *
+ * @param _objectToBrowse
+ * @param browseResult {BrowseResult}
+ * @private
+ */
+NodeCrawler.prototype._process_single_browseResult = function (_objectToBrowse, browseResult) {
+
+    var self = this;
+
+    assert(browseResult.continuationPoint === null, &quot;NodeCrawler doesn&#x27;t support continuation point yet&quot;);
+
+    var cacheNode = _objectToBrowse.cacheNode;
+
+    // note : some OPCUA may expose duplicated reference, they need to be filtered out
+    // dedup reference
+
+    cacheNode.references = dedup_reference(browseResult.references);
+
+    const tmp = browseResult.references.filter(function (x) {
+        return sameNodeId(x.referenceTypeId, hasTypeDefinitionId);
+    });
+    if (tmp.length) {
+        cacheNode.typeDefinition = tmp[0].nodeId;
+    }
+
+    async.parallel([
+
+          function (callback) {
+              if (cacheNode.browseName !== pendingBrowseName) {
+                  return callback();
+              }
+              self._defer_readNode(cacheNode.nodeId, AttributeIds.BrowseName, function (err, browseName) {
+                  cacheNode.browseName = browseName;
+                  callback();
+              });
+          },
+          function (callback) {
+              if (cacheNode.displayName) {
+                  return callback();
+              }
+              self._defer_readNode(cacheNode.nodeId, AttributeIds.DisplayName, function (err, value) {
+                  if (err) {
+                      return callback(err);
+                  }
+                  if (!(value instanceof LocalizedText)) {
+                      console.log(cacheNode.toString())
+                  }
+                  assert(value instanceof LocalizedText);
+                  cacheNode.displayName = value;
+                  setImmediate(callback);
+              });
+          },
+          function (callback) {
+              // only if nodeClass is Variable
+              if (cacheNode.nodeClass !== NodeClass.Variable) {
+                  return callback();
+              }
+              // read dataType and DataType if node is a variable
+              self._defer_readNode(cacheNode.nodeId, AttributeIds.DataType, function (err, dataType) {
+
+                  if (!(dataType instanceof NodeId)) {
+                      return callback();
+                  }
+                  cacheNode.dataType = dataType;
+                  callback();
+              });
+          },
+          function (callback) {
+              if (cacheNode.nodeClass !== NodeClass.Variable) {
+                  return callback();
+              }
+              self._defer_readNode(cacheNode.nodeId, AttributeIds.Value, function (err, value) {
+                  cacheNode.dataValue = value;
+                  callback();
+              });
+          },
+          function (callback) {
+              if (cacheNode.nodeClass !== NodeClass.Variable) {
+                  return callback();
+              }
+              self._defer_readNode(cacheNode.nodeId, AttributeIds.MinimumSamplingInterval, function (err, value) {
+                  cacheNode.minimumSamplingInterval = value;
+                  callback();
+              });
+          },
+          function (callback) {
+              if (cacheNode.nodeClass !== NodeClass.Variable) {
+                  return callback();
+              }
+              self._defer_readNode(cacheNode.nodeId, AttributeIds.AccessLevel, function (err, value) {
+                  cacheNode.accessLevel = value;
+                  callback();
+              });
+          },
+          function (callback) {
+              if (cacheNode.nodeClass !== NodeClass.Variable) {
+                  return callback();
+              }
+              self._defer_readNode(cacheNode.nodeId, AttributeIds.UserAccessLevel, function (err, value) {
+                  cacheNode.userAccessLevel = value;
+                  callback();
+              });
+          }
+      ], function (err) {
+          if (err) {
+              console.log(&quot;ERRROR&quot;.red, err);
+          }
+          _objectToBrowse.action(cacheNode);
+      }
+    );
+};
+
+NodeCrawler.prototype._process_browse_response = function (task, callback) {
+    /* jshint validthis: true */
+    var self = this;
+    var objectsToBrowse = task.param.objectsToBrowse;
+    var browseResults = task.param.browseResults;
+    _.zip(objectsToBrowse, browseResults).forEach(function (pair) {
+        var objectToBrowse = pair[0];
+        var browseResult = pair[1];
+        assert(browseResult instanceof browse_service.BrowseResult);
+        self._process_single_browseResult(objectToBrowse, browseResult);
+    });
+    setImmediate(callback);
+};
+
+var makeResultMask = require(&quot;node-opcua-data-model&quot;).makeResultMask;
+
+//                         &quot;ReferenceType | IsForward | BrowseName | NodeClass | DisplayName | TypeDefinition&quot;
+var resultMask = makeResultMask(&quot;ReferenceType | IsForward | BrowseName | DisplayName | NodeClass | TypeDefinition&quot;);
+
+NodeCrawler.prototype._resolve_deferred_browseNode = function (callback) {
+
+    var self = this;
+
+    if (self._objectToBrowse.length === 0) {
+        callback();
+        return;
+    }
+
+    var objectsToBrowse = _fetch_elements(self._objectToBrowse, self.maxNodesPerBrowse);
+
+    var nodesToBrowse = objectsToBrowse.map(function (e) {
+        assert(e.hasOwnProperty(&quot;referenceTypeId&quot;));
+        return new BrowseDescription({
+            browseDirection: BrowseDirection.Forward,
+            referenceTypeId: e.referenceTypeId,
+            includeSubtypes: true,
+            nodeId: e.nodeId,
+            resultMask: resultMask
+        });
+    });
+
+    self.browseCounter += nodesToBrowse.length;
+    self.transactionCounter++;
+
+    self.session.browse(nodesToBrowse, function (err, browseResults /*, diagnostics*/) {
+
+        if (!err) {
+            assert(browseResults.length === nodesToBrowse.length);
+            self._unshift_task(&quot;process browseResults&quot;, {
+                param: {
+                    objectsToBrowse: objectsToBrowse,
+                    browseResults: browseResults
+                },
+                func: NodeCrawler.prototype._process_browse_response
+            });
+
+        } else {
+            console.log(&quot;ERROR = &quot;, err);
+        }
+        callback(err);
+
+    });
+};
+
+/**
+ * add a task on top of the queue (high priority)
+ * @param name {string}
+ * @param task
+ * @private
+ */
+NodeCrawler.prototype._unshift_task = function (name, task) {
+    var self = this;
+    assert(_.isFunction(task.func));
+    task.comment = &quot;S:&quot; + name;
+    assert(task.func.length === 2);
+    self.q.unshift(task);
+};
+
+/**
+ * add a task at the bottom of the queue (low priority)
+ * @param name {string}
+ * @param task
+ * @private
+ */
+NodeCrawler.prototype._push_task = function (name, task) {
+    var self = this;
+    assert(_.isFunction(task.func));
+    task.comment = &quot;P:&quot; + name;
+    assert(task.func.length === 2);
+    self.q.push(task);
+};
+
+
+NodeCrawler.follow = function (crawler, cacheNode, userData) {
+    for (var i = 0; i &lt; cacheNode.references.length; i++) {
+        var reference = cacheNode.references[i];
+        crawler.followReference(cacheNode, reference, userData);
+    }
+};
+/***
+ *
+ * @param cacheNode
+ * @param userData
+ * @param [userData.onBrowsed=null] {Function}
+ * @private
+ */
+NodeCrawler.prototype._emit_on_crawled = function (cacheNode, userData) {
+    var self = this;
+    self.emit(&quot;browsed&quot;, cacheNode, userData);
+};
+
+
+NodeCrawler.prototype._crawl_task = function (task, callback) {
+
+    var self = this;
+
+    var cacheNode = task.params.cacheNode;
+    var nodeId = task.params.cacheNode.nodeId;
+
+    nodeId = resolveNodeId(nodeId);
+    var key = nodeId.toString();
+
+    if (self._visited_node.hasOwnProperty(key)) {
+        console.log(&quot;skipping already visited&quot;, key);
+        callback();
+        return;// already visited
+    }
+    // mark as visited to avoid infinite recursion
+    self._visited_node[key] = true;
+
+    function browse_node_action(err, cacheNode) {
+        if (!err) {
+            for (var i = 0; i &lt; cacheNode.references.length; i++) {
+
+                var reference = cacheNode.references[i];
+                // those ones come for free
+                if (!self.has_cache_NodeAttribute(reference.nodeId, AttributeIds.BrowseName)) {
+                    self.set_cache_NodeAttribute(reference.nodeId, AttributeIds.BrowseName, reference.browseName);
+                }
+                if (!self.has_cache_NodeAttribute(reference.nodeId, AttributeIds.DisplayName)) {
+                    self.set_cache_NodeAttribute(reference.nodeId, AttributeIds.DisplayName, reference.displayName);
+                }
+                if (!self.has_cache_NodeAttribute(reference.nodeId, AttributeIds.NodeClass)) {
+                    self.set_cache_NodeAttribute(reference.nodeId, AttributeIds.NodeClass, reference.nodeClass);
+                }
+            }
+            self._emit_on_crawled(cacheNode, task.params.userData);
+            var userData = task.params.userData;
+            if (userData.onBrowse) {
+                userData.onBrowse(self, cacheNode, userData);
+            }
+
+        }
+    }
+
+    self._defer_browse_node(cacheNode, referencesId, browse_node_action);
+    callback();
+};
+
+NodeCrawler.prototype._add_crawl_task = function (cacheNode, userData) {
+    /* jshint validthis: true */
+    var self = this;
+    assert(cacheNode instanceof CacheNode);
+    assert(userData);
+    assert(_.isObject(self));
+    assert(_.isObject(self._crawled));
+
+    var key = cacheNode.nodeId.toString();
+    if (self._crawled.hasOwnProperty(key)) {
+        return;
+    }
+    self._crawled[key] = 1;
+
+    self._push_task(&quot;_crawl task&quot;, {
+        params: {
+            cacheNode: cacheNode,
+            userData: userData
+        },
+        func: NodeCrawler.prototype._crawl_task
+    });
+};
+
+NodeCrawler.prototype._inner_crawl = function (nodeId, userData, end_callback) {
+
+    var self = this;
+    assert(_.isObject(userData));
+    assert(_.isFunction(end_callback));
+    assert(!self._visited_node);
+    assert(!self._crawled);
+    self._visited_node = {};
+    self._crawled = {};
+
+    var _has_ended = false;
+    self.q.drain = function () {
+
+        if (!_has_ended) {
+
+            _has_ended = true;
+
+            self._visited_node = null;
+            self._crawled = null;
+
+            self.emit(&quot;end&quot;);
+            end_callback();
+        }
+    };
+
+
+    var cacheNode = self._getCacheNode(nodeId);
+    if (!cacheNode) {
+        cacheNode = self._createCacheNode(nodeId);
+    }
+
+    assert(cacheNode.nodeId.toString() === nodeId.toString());
+
+    // ----------------------- Read missing essential information about node
+    // such as nodeClass, typeDefinition browseName, displayName
+    // this sequence is only necessary on the top node being crawled,
+    // as browseName,displayName,nodeClass will be provided by ReferenceDescription later on for child nodes
+    //
+    async.parallel([
+        function (callback) {
+            self._defer_readNode(cacheNode.nodeId, AttributeIds.BrowseName, function (err, value) {
+                if (err) {
+                    return callback(err);
+                }
+                assert(value instanceof QualifiedName);
+                cacheNode.browseName = value;
+                setImmediate(callback);
+            });
+        },
+        function (callback) {
+            self._defer_readNode(cacheNode.nodeId, AttributeIds.NodeClass, function (err, value) {
+                if (err) {
+                    return callback(err);
+                }
+                cacheNode.nodeClass = NodeClass.get(value);
+                setImmediate(callback);
+            });
+        },
+        function (callback) {
+            self._defer_readNode(cacheNode.nodeId, AttributeIds.DisplayName, function (err, value) {
+                if (err) {
+                    return callback(err);
+                }
+                assert(value instanceof LocalizedText);
+                cacheNode.displayName = value;
+                setImmediate(callback);
+            });
+        },
+        function (callback) {
+            self._resolve_deferred_readNode(callback);
+        }
+    ], function (err) {
+        self._add_crawl_task(cacheNode, userData);
+    });
+
+
+};
+
+/**
+ * @method crawl
+ * @param nodeId {NodeId}
+ * @param userData {Object}
+ * @param userData.onBrowse           {Function}
+ * @param userData.onBrowse.crawler   {NodeCrawler}
+ * @param userData.onBrowse.cacheNode {CacheNode}
+ * @param end_callback {Function}
+ */
+NodeCrawler.prototype.crawl = function (nodeId, userData, end_callback) {
+    assert(_.isFunction(end_callback));
+    var self = this;
+    self._readOperationalLimits(function (err) {
+
+        if (err) {
+            return end_callback(err);
+        }
+        self._inner_crawl(nodeId, userData, end_callback);
+    });
+};
+
+
+function _setExtraReference(task, callback) {
+    const params = task.params;
+    params.userData.setExtraReference(params.parentNode, params.reference, params.childCacheNode, params.userData);
+    callback();
+}
+
+NodeCrawler.prototype.followReference = function (parentNode, reference, userData) {
+
+    assert(reference instanceof browse_service.ReferenceDescription);
+
+    var crawler = this;
+
+    var childCacheNodeRef = crawler._getCacheNode(reference.referenceTypeId);
+    if (!childCacheNodeRef) {
+        childCacheNodeRef = crawler._createCacheNode(reference.referenceTypeId);
+        crawler._add_crawl_task(childCacheNodeRef, userData);
+    }
+
+    var childCacheNode = crawler._getCacheNode(reference.nodeId);
+    if (!childCacheNode) {
+        childCacheNode = crawler._createCacheNode(reference.nodeId);
+        childCacheNode.browseName = reference.browseName;
+        childCacheNode.displayName = reference.DisplayName;
+        childCacheNode.typeDefinition = reference.typeDefinition;
+        childCacheNode.nodeClass = reference.nodeClass;
+
+        //xx console.log(&quot;HERE !&quot;,childCacheNode.toString());
+        crawler._add_crawl_task(childCacheNode, userData);
+    } else {
+
+        if (userData.setExtraReference) {
+
+            crawler._push_task(&quot;setExtraRef&quot;, {
+                params: {
+                    parentNode: parentNode,
+                    reference: reference,
+                    childCacheNode: childCacheNode,
+                    userData: userData
+                },
+                func: _setExtraReference
+            });
+        }
+    }
+};
+
+NodeCrawler.prototype.dispose = function () {
+    var self = this;
+    self.session = null;
+    self.browseNameMap = null;
+    self._nodesToReadEx = null;
+    self._objectCache = null;
+    self._objectToBrowse = null;
+    self._objMap = null;
+    self.q = null;
+};
+
+//---------------------------------------------------------------------------------------
+
+NodeCrawler.prototype.read = function (nodeId, callback) {
+
+    var self = this;
+
+    try {
+        nodeId = resolveNodeId(nodeId);
+    } catch (err) {
+        callback(err);
+    }
+
+    function remove_cycle(object, callback) {
+
+
+        var visitedNodeIds = {};
+
+        function hasBeenVisited(e) {
+            var key = e.nodeId.toString();
+            return visitedNodeIds[key];
+        }
+
+        function setVisited(e) {
+            var key = e.nodeId.toString();
+            return visitedNodeIds[key] = e;
+        }
+
+        function mark_array(arr) {
+            if (!arr) {
+                return;
+            }
+            assert(_.isArray(arr));
+            for (var index = 0; index &lt; arr.length; index++) {
+                var e = arr[index];
+                if (hasBeenVisited(e)) {
+                    return;
+                } else {
+                    setVisited(e);
+                    explorerObject(e);
+                }
+            }
+        }
+
+        function explorerObject(obj) {
+            mark_array(obj.organizes);
+            mark_array(obj.hasComponent);
+            mark_array(obj.hasNotifier);
+            mark_array(obj.hasProperty);
+        }
+
+
+        explorerObject(object);
+        callback(null, object);
+    }
+
+    function simplify_object(objMap, object, final_callback) {
+
+        assert(_.isFunction(final_callback));
+
+        var queue = async.queue(function (task, callback) {
+
+            setImmediate(function () {
+                assert(_.isFunction(task.func));
+                task.func(task.data, callback);
+            });
+        }, 1);
+
+        var key = object.nodeId.toString();
+
+        function add_for_reconstruction(object, extra_func) {
+            assert(_.isFunction(extra_func));
+            assert(typeof object.nodeId.toString() === &quot;string&quot;);
+            queue.push({
+                data: object,
+                func: function (data, callback) {
+
+                    _reconstruct_manageable_object(data, function (err, obj) {
+                        extra_func(err, obj);
+                        callback(err);
+                    });
+                }
+            });
+        }
+
+        function _reconstruct_manageable_object(object, callback) {
+
+            assert(_.isFunction(callback));
+            assert(object);
+            assert(object.nodeId);
+
+            var key = object.nodeId.toString();
+
+            if (objMap.hasOwnProperty(key)) {
+                return callback(null, objMap[key]);
+            }
+            /* reconstruct a more manageable object
+             * var obj = {
+             *    browseName: &quot;Objects&quot;,
+             *    organises : [
+             *       {
+             *            browseName: &quot;Server&quot;,
+             *            hasComponent: [
+             *            ]
+             *            hasProperty: [
+             *            ]
+             *       }
+             *    ]
+             * }
+             */
+            var obj = {
+                browseName: object.browseName.name,
+                nodeId: object.nodeId.toString()
+            };
+
+            // Append nodeClass
+            if (object.nodeClass) {
+                obj.nodeClass = object.nodeClass.toString();
+            }
+            if (object.dataType) {
+                obj.dataType = object.dataType.toString();
+                obj.dataTypeName = object.dataTypeName;
+                //xx  console.log(&quot;dataTypeObj&quot;,object.dataTypeObj.browseName);
+            }
+            if (object.dataValue) {
+                if (object.dataValue instanceof Array || object.dataValue.length &gt; 10) {
+                    // too much verbosity here
+                } else {
+                    obj.dataValue = object.dataValue.toString();
+                }
+            }
+            objMap[key] = obj;
+
+            var referenceMap = obj;
+
+            object.references = object.references || [];
+
+
+            object.references.map(function (ref) {
+
+                assert(ref);
+                var ref_index = ref.referenceTypeId.toString();
+
+                var referenceType = self._objectCache[ref_index];
+
+                if (!referenceType) {
+                    console.log((&quot;Unknown reference type &quot; + ref_index).red.bold);
+                    console.log(util.inspect(object, {colorize: true, depth: 10}));
+                }
+                var reference = self._objectCache[ref.nodeId.toString()];
+                if (!reference) {
+                    console.log(ref.nodeId.toString(), &quot;bn=&quot;, ref.browseName.toString(), &quot;class =&quot;, ref.nodeClass.toString(), ref.typeDefinition.toString());
+                    console.log(&quot;#_reconstruct_manageable_object: Cannot find reference&quot;, ref.nodeId.toString(), &quot;in cache&quot;);
+                }
+                // Extract nodeClass so it can be appended
+                reference.nodeClass = ref.$nodeClass;
+
+                var refName = lowerFirstLetter(referenceType.browseName.name);
+
+                if (refName === &quot;hasTypeDefinition&quot;) {
+                    obj.typeDefinition = reference.browseName.name;
+                } else {
+                    if (!referenceMap[refName]) {
+                        referenceMap[refName] = [];
+                    }
+                    add_for_reconstruction(reference, function (err, mobject) {
+                        if (!err) {
+                            referenceMap[refName].push(mobject);
+                        }
+                    });
+                }
+            });
+            callback(null, obj);
+
+        }
+
+        add_for_reconstruction(object, function () {
+        });
+
+        queue.drain = function () {
+            var object = self._objMap[key];
+            remove_cycle(object, callback);
+        };
+    }
+
+    var key = nodeId.toString();
+
+    // check if object has already been crawled
+    if (self._objMap.hasOwnProperty(key)) {
+        var object = self._objMap[key];
+        return callback(null, object);
+    }
+
+    var userData = {
+        onBrowse: NodeCrawler.follow
+    };
+
+
+    self.crawl(nodeId, userData, function () {
+
+        if (self._objectCache.hasOwnProperty(key)) {
+
+            var cacheNode = self._objectCache[key];
+            assert(cacheNode.browseName.name !== &quot;pending&quot;);
+
+            simplify_object(self._objMap, cacheNode, callback);
+
+        } else {
+            callback(new Error(&quot;Cannot find nodeid&quot; + key));
+        }
+    });
+};
+
+
+exports.NodeCrawler = NodeCrawler;
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

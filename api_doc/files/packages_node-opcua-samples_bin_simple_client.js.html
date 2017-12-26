@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>packages\node-opcua-samples\bin\simple_client.js - The NodeOPCUA API</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.1.0-pre</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/AcknowledgeMessage.html">AcknowledgeMessage</a></li>
+                                <li><a href="../classes/ActivateSessionRequest.html">ActivateSessionRequest</a></li>
+                                <li><a href="../classes/ActivateSessionResponse.html">ActivateSessionResponse</a></li>
+                                <li><a href="../classes/AddNodesItem.html">AddNodesItem</a></li>
+                                <li><a href="../classes/AddNodesRequest.html">AddNodesRequest</a></li>
+                                <li><a href="../classes/AddNodesResponse.html">AddNodesResponse</a></li>
+                                <li><a href="../classes/AddNodesResult.html">AddNodesResult</a></li>
+                                <li><a href="../classes/AddReferencesItem.html">AddReferencesItem</a></li>
+                                <li><a href="../classes/AddReferencesRequest.html">AddReferencesRequest</a></li>
+                                <li><a href="../classes/AddReferencesResponse.html">AddReferencesResponse</a></li>
+                                <li><a href="../classes/AddressSpace.html">AddressSpace</a></li>
+                                <li><a href="../classes/AggregateConfiguration.html">AggregateConfiguration</a></li>
+                                <li><a href="../classes/AggregateFilter.html">AggregateFilter</a></li>
+                                <li><a href="../classes/AnonymousIdentityToken.html">AnonymousIdentityToken</a></li>
+                                <li><a href="../classes/ApplicationDescription.html">ApplicationDescription</a></li>
+                                <li><a href="../classes/ApplicationInstanceCertificate.html">ApplicationInstanceCertificate</a></li>
+                                <li><a href="../classes/Argument.html">Argument</a></li>
+                                <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
+                                <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+                                <li><a href="../classes/AttributeNameById.html">AttributeNameById</a></li>
+                                <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
+                                <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
+                                <li><a href="../classes/BaseEventType.html">BaseEventType</a></li>
+                                <li><a href="../classes/BaseNode.html">BaseNode</a></li>
+                                <li><a href="../classes/BaseUAObject.html">BaseUAObject</a></li>
+                                <li><a href="../classes/BinaryStream.html">BinaryStream</a></li>
+                                <li><a href="../classes/BinaryStreamSizeCalculator.html">BinaryStreamSizeCalculator</a></li>
+                                <li><a href="../classes/BrowseDescription.html">BrowseDescription</a></li>
+                                <li><a href="../classes/BrowseDirection.html">BrowseDirection</a></li>
+                                <li><a href="../classes/BrowseNextRequest.html">BrowseNextRequest</a></li>
+                                <li><a href="../classes/BrowseNextResponse.html">BrowseNextResponse</a></li>
+                                <li><a href="../classes/BrowsePath.html">BrowsePath</a></li>
+                                <li><a href="../classes/BrowsePathResult.html">BrowsePathResult</a></li>
+                                <li><a href="../classes/BrowsePathTarget.html">BrowsePathTarget</a></li>
+                                <li><a href="../classes/BrowseRequest.html">BrowseRequest</a></li>
+                                <li><a href="../classes/BrowseResponse.html">BrowseResponse</a></li>
+                                <li><a href="../classes/BrowseResult.html">BrowseResult</a></li>
+                                <li><a href="../classes/BuildInfo.html">BuildInfo</a></li>
+                                <li><a href="../classes/CallMethodRequest.html">CallMethodRequest</a></li>
+                                <li><a href="../classes/CallMethodResult.html">CallMethodResult</a></li>
+                                <li><a href="../classes/CallRequest.html">CallRequest</a></li>
+                                <li><a href="../classes/CallResponse.html">CallResponse</a></li>
+                                <li><a href="../classes/CancelRequest.html">CancelRequest</a></li>
+                                <li><a href="../classes/CancelResponse.html">CancelResponse</a></li>
+                                <li><a href="../classes/ChannelSecurityToken.html">ChannelSecurityToken</a></li>
+                                <li><a href="../classes/ChunkManager.html">ChunkManager</a></li>
+                                <li><a href="../classes/ClientMonitoredItem.html">ClientMonitoredItem</a></li>
+                                <li><a href="../classes/ClientMonitoredItemGroup.html">ClientMonitoredItemGroup</a></li>
+                                <li><a href="../classes/ClientSecureChannelLayer.html">ClientSecureChannelLayer</a></li>
+                                <li><a href="../classes/ClientSession.html">ClientSession</a></li>
+                                <li><a href="../classes/ClientSidePublishEngine.html">ClientSidePublishEngine</a></li>
+                                <li><a href="../classes/ClientSubscription.html">ClientSubscription</a></li>
+                                <li><a href="../classes/ClientTCP_transport.html">ClientTCP_transport</a></li>
+                                <li><a href="../classes/CloseSecureChannelRequest.html">CloseSecureChannelRequest</a></li>
+                                <li><a href="../classes/CloseSecureChannelResponse.html">CloseSecureChannelResponse</a></li>
+                                <li><a href="../classes/CloseSessionRequest.html">CloseSessionRequest</a></li>
+                                <li><a href="../classes/CloseSessionResponse.html">CloseSessionResponse</a></li>
+                                <li><a href="../classes/Company.html">Company</a></li>
+                                <li><a href="../classes/ConditionInfo.html">ConditionInfo</a></li>
+                                <li><a href="../classes/ConditionSnapshot.html">ConditionSnapshot</a></li>
+                                <li><a href="../classes/ContentFilter.html">ContentFilter</a></li>
+                                <li><a href="../classes/ContentFilterElement.html">ContentFilterElement</a></li>
+                                <li><a href="../classes/ContentFilterElementResult.html">ContentFilterElementResult</a></li>
+                                <li><a href="../classes/ContentFilterResult.html">ContentFilterResult</a></li>
+                                <li><a href="../classes/CreateMonitoredItemsRequest.html">CreateMonitoredItemsRequest</a></li>
+                                <li><a href="../classes/CreateMonitoredItemsResponse.html">CreateMonitoredItemsResponse</a></li>
+                                <li><a href="../classes/CreateSessionRequest.html">CreateSessionRequest</a></li>
+                                <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
+                                <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
+                                <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
+                                <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
+                                <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
+                                <li><a href="../classes/DataValue.html">DataValue</a></li>
+                                <li><a href="../classes/DeleteMonitoredItemsRequest.html">DeleteMonitoredItemsRequest</a></li>
+                                <li><a href="../classes/DeleteMonitoredItemsResponse.html">DeleteMonitoredItemsResponse</a></li>
+                                <li><a href="../classes/DeleteNodesItem.html">DeleteNodesItem</a></li>
+                                <li><a href="../classes/DeleteNodesRequest.html">DeleteNodesRequest</a></li>
+                                <li><a href="../classes/DeleteNodesResponse.html">DeleteNodesResponse</a></li>
+                                <li><a href="../classes/DeleteReferencesItem.html">DeleteReferencesItem</a></li>
+                                <li><a href="../classes/DeleteReferencesRequest.html">DeleteReferencesRequest</a></li>
+                                <li><a href="../classes/DeleteReferencesResponse.html">DeleteReferencesResponse</a></li>
+                                <li><a href="../classes/DeleteSubscriptionsRequest.html">DeleteSubscriptionsRequest</a></li>
+                                <li><a href="../classes/DeleteSubscriptionsResponse.html">DeleteSubscriptionsResponse</a></li>
+                                <li><a href="../classes/DiagnosticInfo.html">DiagnosticInfo</a></li>
+                                <li><a href="../classes/DummyObject.html">DummyObject</a></li>
+                                <li><a href="../classes/ElementOperand.html">ElementOperand</a></li>
+                                <li><a href="../classes/Employee.html">Employee</a></li>
+                                <li><a href="../classes/EndpointDescription.html">EndpointDescription</a></li>
+                                <li><a href="../classes/Enum.html">Enum</a></li>
+                                <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
+                                <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
+                                <li><a href="../classes/EUInformation.html">EUInformation</a></li>
+                                <li><a href="../classes/EventData.html">EventData</a></li>
+                                <li><a href="../classes/EventFieldList.html">EventFieldList</a></li>
+                                <li><a href="../classes/EventFilter.html">EventFilter</a></li>
+                                <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
+                                <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
+                                <li><a href="../classes/ExpandedNodeId.html">ExpandedNodeId</a></li>
+                                <li><a href="../classes/Factory.html">Factory</a></li>
+                                <li><a href="../classes/FilterOperand.html">FilterOperand</a></li>
+                                <li><a href="../classes/FindServersRequest.html">FindServersRequest</a></li>
+                                <li><a href="../classes/FindServersResponse.html">FindServersResponse</a></li>
+                                <li><a href="../classes/FooBar.html">FooBar</a></li>
+                                <li><a href="../classes/FooBarDerived.html">FooBarDerived</a></li>
+                                <li><a href="../classes/FooWithRecursion.html">FooWithRecursion</a></li>
+                                <li><a href="../classes/GetEndpointsRequest.html">GetEndpointsRequest</a></li>
+                                <li><a href="../classes/GetEndpointsResponse.html">GetEndpointsResponse</a></li>
+                                <li><a href="../classes/HelloMessage.html">HelloMessage</a></li>
+                                <li><a href="../classes/HistoryData.html">HistoryData</a></li>
+                                <li><a href="../classes/HistoryModifiedData.html">HistoryModifiedData</a></li>
+                                <li><a href="../classes/HistoryReadDetails.html">HistoryReadDetails</a></li>
+                                <li><a href="../classes/HistoryReadRequest.html">HistoryReadRequest</a></li>
+                                <li><a href="../classes/HistoryReadResponse.html">HistoryReadResponse</a></li>
+                                <li><a href="../classes/HistoryReadResult.html">HistoryReadResult</a></li>
+                                <li><a href="../classes/HistoryReadValueId.html">HistoryReadValueId</a></li>
+                                <li><a href="../classes/HistoryServerCapabilities.html">HistoryServerCapabilities</a></li>
+                                <li><a href="../classes/HistoryUpdateRequest.html">HistoryUpdateRequest</a></li>
+                                <li><a href="../classes/HistoryUpdateResponse.html">HistoryUpdateResponse</a></li>
+                                <li><a href="../classes/HistoryUpdateResult.html">HistoryUpdateResult</a></li>
+                                <li><a href="../classes/IssuedIdentityToken.html">IssuedIdentityToken</a></li>
+                                <li><a href="../classes/LiteralOperand.html">LiteralOperand</a></li>
+                                <li><a href="../classes/LocalizedText.html">LocalizedText</a></li>
+                                <li><a href="../classes/MessageBuilder.html">MessageBuilder</a></li>
+                                <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
+                                <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
+                                <li><a href="../classes/MetaShapeForUnitTest.html">MetaShapeForUnitTest</a></li>
+                                <li><a href="../classes/ModelChangeStructure.html">ModelChangeStructure</a></li>
+                                <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
+                                <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
+                                <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
+                                <li><a href="../classes/ModifySubscriptionRequest.html">ModifySubscriptionRequest</a></li>
+                                <li><a href="../classes/ModifySubscriptionResponse.html">ModifySubscriptionResponse</a></li>
+                                <li><a href="../classes/MonitoredItem.html">MonitoredItem</a></li>
+                                <li><a href="../classes/MonitoredItemCreateRequest.html">MonitoredItemCreateRequest</a></li>
+                                <li><a href="../classes/MonitoredItemCreateResult.html">MonitoredItemCreateResult</a></li>
+                                <li><a href="../classes/MonitoredItemModifyRequest.html">MonitoredItemModifyRequest</a></li>
+                                <li><a href="../classes/MonitoredItemModifyResult.html">MonitoredItemModifyResult</a></li>
+                                <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
+                                <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
+                                <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+                                <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
+                                <li><a href="../classes/NodeId.html">NodeId</a></li>
+                                <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
+                                <li><a href="../classes/NodeTypeDescription.html">NodeTypeDescription</a></li>
+                                <li><a href="../classes/NotificationMessage.html">NotificationMessage</a></li>
+                                <li><a href="../classes/ObjWithAccessLevel.html">ObjWithAccessLevel</a></li>
+                                <li><a href="../classes/ObjWithIntegerId.html">ObjWithIntegerId</a></li>
+                                <li><a href="../classes/opcua.html">opcua</a></li>
+                                <li><a href="../classes/OPCUABaseServer.html">OPCUABaseServer</a></li>
+                                <li><a href="../classes/OPCUAClient.html">OPCUAClient</a></li>
+                                <li><a href="../classes/OPCUAClientBase.html">OPCUAClientBase</a></li>
+                                <li><a href="../classes/OPCUASecureObject.html">OPCUASecureObject</a></li>
+                                <li><a href="../classes/OPCUAServer.html">OPCUAServer</a></li>
+                                <li><a href="../classes/OPCUAServerEndPoint
+                
+                A sever end point is listening to one port.html">OPCUAServerEndPoint
+                
+                A sever end point is listening to one port</a></li>
+                                <li><a href="../classes/OpenSecureChannelRequest.html">OpenSecureChannelRequest</a></li>
+                                <li><a href="../classes/OpenSecureChannelResponse.html">OpenSecureChannelResponse</a></li>
+                                <li><a href="../classes/OperationLimits.html">OperationLimits</a></li>
+                                <li><a href="../classes/PacketAssembler.html">PacketAssembler</a></li>
+                                <li><a href="../classes/ParsingResult.html">ParsingResult</a></li>
+                                <li><a href="../classes/Person.html">Person</a></li>
+                                <li><a href="../classes/Person2.html">Person2</a></li>
+                                <li><a href="../classes/Potato.html">Potato</a></li>
+                                <li><a href="../classes/PublishRequest.html">PublishRequest</a></li>
+                                <li><a href="../classes/PublishResponse.html">PublishResponse</a></li>
+                                <li><a href="../classes/QualifiedName.html">QualifiedName</a></li>
+                                <li><a href="../classes/QueryDataDescription.html">QueryDataDescription</a></li>
+                                <li><a href="../classes/QueryDataSet.html">QueryDataSet</a></li>
+                                <li><a href="../classes/QueryFirstRequest.html">QueryFirstRequest</a></li>
+                                <li><a href="../classes/QueryFirstResponse.html">QueryFirstResponse</a></li>
+                                <li><a href="../classes/QueryNextRequest.html">QueryNextRequest</a></li>
+                                <li><a href="../classes/QueryNextResponse.html">QueryNextResponse</a></li>
+                                <li><a href="../classes/Range.html">Range</a></li>
+                                <li><a href="../classes/ReadAtTimeDetails.html">ReadAtTimeDetails</a></li>
+                                <li><a href="../classes/ReaderState.html">ReaderState</a></li>
+                                <li><a href="../classes/ReadEventDetails.html">ReadEventDetails</a></li>
+                                <li><a href="../classes/ReadProcessedDetails.html">ReadProcessedDetails</a></li>
+                                <li><a href="../classes/ReadRawModifiedDetails.html">ReadRawModifiedDetails</a></li>
+                                <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
+                                <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
+                                <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+                                <li><a href="../classes/RedundantServer.html">RedundantServer</a></li>
+                                <li><a href="../classes/Reference.html">Reference</a></li>
+                                <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
+                                <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
+                                <li><a href="../classes/RegisteredServer.html">RegisteredServer</a></li>
+                                <li><a href="../classes/RegisterNodesRequest.html">RegisterNodesRequest</a></li>
+                                <li><a href="../classes/RegisterNodesResponse.html">RegisterNodesResponse</a></li>
+                                <li><a href="../classes/RegisterServerRequest.html">RegisterServerRequest</a></li>
+                                <li><a href="../classes/RegisterServerResponse.html">RegisterServerResponse</a></li>
+                                <li><a href="../classes/RelativePath.html">RelativePath</a></li>
+                                <li><a href="../classes/RelativePathElement.html">RelativePathElement</a></li>
+                                <li><a href="../classes/RepublishRequest.html">RepublishRequest</a></li>
+                                <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
+                                <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
+                                <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+                                <li><a href="../classes/Role.html">Role</a></li>
+                                <li><a href="../classes/SamplingIntervalDiagnostics.html">SamplingIntervalDiagnostics</a></li>
+                                <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
+                                <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
+                                <li><a href="../classes/SemanticChangeStructure.html">SemanticChangeStructure</a></li>
+                                <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
+                                <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
+                                <li><a href="../classes/ServerCapabilities.html">ServerCapabilities</a></li>
+                                <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
+                                <li><a href="../classes/ServerEngine.html">ServerEngine</a></li>
+                                <li><a href="../classes/ServerSecureChannelLayer.html">ServerSecureChannelLayer</a></li>
+                                <li><a href="../classes/ServerSession.html">ServerSession</a></li>
+                                <li><a href="../classes/ServerSidePublishEngine.html">ServerSidePublishEngine</a></li>
+                                <li><a href="../classes/ServerSideUnimplementedRequest.html">ServerSideUnimplementedRequest</a></li>
+                                <li><a href="../classes/ServerStatus.html">ServerStatus</a></li>
+                                <li><a href="../classes/ServerTCP_transport.html">ServerTCP_transport</a></li>
+                                <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
+                                <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
+                                <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+                                <li><a href="../classes/SessionSecurityDiagnostics.html">SessionSecurityDiagnostics</a></li>
+                                <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
+                                <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
+                                <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
+                                <li><a href="../classes/SetPublishingModeResponse.html">SetPublishingModeResponse</a></li>
+                                <li><a href="../classes/SetTriggeringRequest.html">SetTriggeringRequest</a></li>
+                                <li><a href="../classes/SetTriggeringResponse.html">SetTriggeringResponse</a></li>
+                                <li><a href="../classes/Shape.html">Shape</a></li>
+                                <li><a href="../classes/SignatureData.html">SignatureData</a></li>
+                                <li><a href="../classes/SignedSoftwareCertificate.html">SignedSoftwareCertificate</a></li>
+                                <li><a href="../classes/SimpleAttributeOperand.html">SimpleAttributeOperand</a></li>
+                                <li><a href="../classes/Simulator.html">Simulator</a></li>
+                                <li><a href="../classes/StatusChangeNotification.html">StatusChangeNotification</a></li>
+                                <li><a href="../classes/StatusCode.html">StatusCode</a></li>
+                                <li><a href="../classes/Subscription.html">Subscription</a></li>
+                                <li><a href="../classes/SubscriptionAcknowledgement.html">SubscriptionAcknowledgement</a></li>
+                                <li><a href="../classes/SubscriptionDiagnostics.html">SubscriptionDiagnostics</a></li>
+                                <li><a href="../classes/SymmetricAlgorithmSecurityHeader.html">SymmetricAlgorithmSecurityHeader</a></li>
+                                <li><a href="../classes/TCP_transport.html">TCP_transport</a></li>
+                                <li><a href="../classes/TCPErrorMessage.html">TCPErrorMessage</a></li>
+                                <li><a href="../classes/TimestampsToReturn.html">TimestampsToReturn</a></li>
+                                <li><a href="../classes/TimeZone.html">TimeZone</a></li>
+                                <li><a href="../classes/ToolBrowsePath.html">ToolBrowsePath</a></li>
+                                <li><a href="../classes/TransferResult.html">TransferResult</a></li>
+                                <li><a href="../classes/TransferSubscriptionsRequest.html">TransferSubscriptionsRequest</a></li>
+                                <li><a href="../classes/TransferSubscriptionsResponse.html">TransferSubscriptionsResponse</a></li>
+                                <li><a href="../classes/TranslateBrowsePathsToNodeIdsRequest.html">TranslateBrowsePathsToNodeIdsRequest</a></li>
+                                <li><a href="../classes/TranslateBrowsePathsToNodeIdsResponse.html">TranslateBrowsePathsToNodeIdsResponse</a></li>
+                                <li><a href="../classes/TypeSchema.html">TypeSchema</a></li>
+                                <li><a href="../classes/UAAcknowledgeableConditionBase.html">UAAcknowledgeableConditionBase</a></li>
+                                <li><a href="../classes/UAAlarmConditionBase.html">UAAlarmConditionBase</a></li>
+                                <li><a href="../classes/UACertificateExpirationAlarm.html">UACertificateExpirationAlarm</a></li>
+                                <li><a href="../classes/UAConditionBase.html">UAConditionBase</a></li>
+                                <li><a href="../classes/UADataType.html">UADataType</a></li>
+                                <li><a href="../classes/UADiscreteAlarm.html">UADiscreteAlarm</a></li>
+                                <li><a href="../classes/UAExclusiveDeviationAlarm.html">UAExclusiveDeviationAlarm</a></li>
+                                <li><a href="../classes/UAExclusiveLevelAlarm.html">UAExclusiveLevelAlarm</a></li>
+                                <li><a href="../classes/UAExclusiveLimitAlarm.html">UAExclusiveLimitAlarm</a></li>
+                                <li><a href="../classes/UAExclusiveRateOfChangeAlarm.html">UAExclusiveRateOfChangeAlarm</a></li>
+                                <li><a href="../classes/UALimitAlarm.html">UALimitAlarm</a></li>
+                                <li><a href="../classes/UANonExclusiveDeviationAlarm.html">UANonExclusiveDeviationAlarm</a></li>
+                                <li><a href="../classes/UANonExclusiveLimitAlarm.html">UANonExclusiveLimitAlarm</a></li>
+                                <li><a href="../classes/UAObject.html">UAObject</a></li>
+                                <li><a href="../classes/UAObjectType.html">UAObjectType</a></li>
+                                <li><a href="../classes/UAOffNormalAlarm.html">UAOffNormalAlarm</a></li>
+                                <li><a href="../classes/UASystemOffNormalAlarm.html">UASystemOffNormalAlarm</a></li>
+                                <li><a href="../classes/UATripAlarm.html">UATripAlarm</a></li>
+                                <li><a href="../classes/UATwoStateVariable.html">UATwoStateVariable</a></li>
+                                <li><a href="../classes/UAVariable.html">UAVariable</a></li>
+                                <li><a href="../classes/UAVariableType.html">UAVariableType</a></li>
+                                <li><a href="../classes/UnregisterNodesRequest.html">UnregisterNodesRequest</a></li>
+                                <li><a href="../classes/UnregisterNodesResponse.html">UnregisterNodesResponse</a></li>
+                                <li><a href="../classes/UserNameIdentityToken.html">UserNameIdentityToken</a></li>
+                                <li><a href="../classes/UserTokenPolicy.html">UserTokenPolicy</a></li>
+                                <li><a href="../classes/Variant.html">Variant</a></li>
+                                <li><a href="../classes/View.html">View</a></li>
+                                <li><a href="../classes/ViewDescription.html">ViewDescription</a></li>
+                                <li><a href="../classes/WriteRequest.html">WriteRequest</a></li>
+                                <li><a href="../classes/WriteResponse.html">WriteResponse</a></li>
+                                <li><a href="../classes/WriteValue.html">WriteValue</a></li>
+                                <li><a href="../classes/X509IdentityToken.html">X509IdentityToken</a></li>
+                                <li><a href="../classes/Xml2Json.html">Xml2Json</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/opcua.address_space.html">opcua.address_space</a></li>
+                                <li><a href="../modules/opcua.address_space.AlarmsAndConditions.html">opcua.address_space.AlarmsAndConditions</a></li>
+                                <li><a href="../modules/opcua.address_space.types.html">opcua.address_space.types</a></li>
+                                <li><a href="../modules/opcua.client.html">opcua.client</a></li>
+                                <li><a href="../modules/opcua.data-value.html">opcua.data-value</a></li>
+                                <li><a href="../modules/opcua.datamodel.html">opcua.datamodel</a></li>
+                                <li><a href="../modules/opcua.miscellaneous.html">opcua.miscellaneous</a></li>
+                                <li><a href="../modules/opcua.server.html">opcua.server</a></li>
+                                <li><a href="../modules/opcua.server.simulation.html">opcua.server.simulation</a></li>
+                                <li><a href="../modules/opcua.status-code.html">opcua.status-code</a></li>
+                                <li><a href="../modules/opcua.transport.html">opcua.transport</a></li>
+                                <li><a href="../modules/opcua.utils.html">opcua.utils</a></li>
+                                <li><a href="../modules/opcua.variant.html">opcua.variant</a></li>
+                                <li><a href="../modules/service.filter.tools.html">service.filter.tools</a></li>
+                                <li><a href="../modules/services.browse.html">services.browse</a></li>
+                                <li><a href="../modules/services.call.html">services.call</a></li>
+                                <li><a href="../modules/services.discovery.html">services.discovery</a></li>
+                                <li><a href="../modules/services.endpoints.html">services.endpoints</a></li>
+                                <li><a href="../modules/services.filter.html">services.filter</a></li>
+                                <li><a href="../modules/services.history.html">services.history</a></li>
+                                <li><a href="../modules/services.node_management.html">services.node_management</a></li>
+                                <li><a href="../modules/services.query.html">services.query</a></li>
+                                <li><a href="../modules/services.read.html">services.read</a></li>
+                                <li><a href="../modules/services.register-server.html">services.register-server</a></li>
+                                <li><a href="../modules/services.register_node.html">services.register_node</a></li>
+                                <li><a href="../modules/services.secure-channel.html">services.secure-channel</a></li>
+                                <li><a href="../modules/services.session.html">services.session</a></li>
+                                <li><a href="../modules/services.subscription.html">services.subscription</a></li>
+                                <li><a href="../modules/services.translate-browse-path.html">services.translate-browse-path</a></li>
+                                <li><a href="../modules/services.write.html">services.write</a></li>
+                                <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
+                                <li><a href="../modules/xml2json
+                
+                node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+                
+                node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: packages\node-opcua-samples\bin\simple_client.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+#!/usr/bin/env node
+&quot;use strict&quot;;
+
+var fs = require(&quot;fs&quot;);
+var treeify = require(&quot;treeify&quot;);
+var _ = require(&quot;underscore&quot;);
+var colors = require(&quot;colors&quot;);
+var Table = require(&quot;easy-table&quot;);
+var async = require(&quot;async&quot;);
+var assert = require(&quot;node-opcua-assert&quot;);
+var opcua = require(&quot;node-opcua&quot;);
+var VariableIds = opcua.VariableIds;
+var BrowseDirection = opcua.BrowseDirection;
+
+
+//node bin/simple_client.js --endpoint  opc.tcp://localhost:53530/OPCUA/SimulationServer --node &quot;ns=5;s=Sinusoid1&quot;
+var yargs = require(&quot;yargs/yargs&quot;);
+
+var argv = yargs(process.argv)
+    .wrap(132)
+    //.usage(&quot;Usage: $0 -d --endpoint &lt;endpointUrl&gt; [--securityMode (NONE|SIGNANDENCRYPT|SIGN)] [--securityPolicy (None|Basic256|Basic128Rsa15)] --node &lt;node_id_to_monitor&gt; --crawl&quot;)
+
+    .demand(&quot;endpoint&quot;)
+    .string(&quot;endpoint&quot;)
+    .describe(&quot;endpoint&quot;, &quot;the end point to connect to &quot;)
+
+    .string(&quot;securityMode&quot;)
+    .describe(&quot;securityMode&quot;, &quot;the security mode&quot;)
+
+    .string(&quot;securityPolicy&quot;)
+    .describe(&quot;securityPolicy&quot;, &quot;the policy mode&quot;)
+
+    .string(&quot;userName&quot;)
+    .describe(&quot;userName&quot;, &quot;specify the user name of a UserNameIdentityToken &quot;)
+
+    .string(&quot;password&quot;)
+    .describe(&quot;password&quot;, &quot;specify the password of a UserNameIdentityToken&quot;)
+
+    .string(&quot;node&quot;)
+    .describe(&quot;node&quot;,&quot;the nodeId of the value to monitor&quot;)
+
+    .string(&quot;timeout&quot;)
+    .describe(&quot;timeout&quot;,&quot; the timeout of the session in second =&gt;  (-1 for infinity)&quot;)
+
+    .string(&quot;debug&quot;)
+    .describe(&quot;debug&quot;,&quot; display more verbose information&quot;)
+
+    .string(&quot;history&quot;)
+    .describe(&quot;history&quot;,&quot;make an historical read&quot;)
+
+    .alias(&quot;e&quot;, &quot;endpoint&quot;)
+    .alias(&quot;s&quot;, &quot;securityMode&quot;)
+    .alias(&quot;P&quot;, &quot;securityPolicy&quot;)
+    .alias(&quot;u&quot;, &quot;userName&quot;)
+    .alias(&quot;p&quot;, &quot;password&quot;)
+    .alias(&quot;n&quot;, &quot;node&quot;)
+    .alias(&quot;t&quot;, &quot;timeout&quot;)
+
+    .alias(&quot;d&quot;, &quot;debug&quot;)
+    .alias(&quot;h&quot;, &quot;history&quot;)
+    .example(&quot;simple_client  --endpoint opc.tcp://localhost:49230 -P=Basic256 -s=SIGN&quot;)
+    .example(&quot;simple_client  -e opc.tcp://localhost:49230 -P=Basic256 -s=SIGN -u JoeDoe -p P@338@rd &quot;)
+    .example(&quot;simple_client  --endpoint opc.tcp://localhost:49230  -n=\&quot;ns=0;i=2258\&quot;&quot;)
+
+    .argv;
+
+
+var securityMode = opcua.MessageSecurityMode.get(argv.securityMode || &quot;NONE&quot;);
+if (!securityMode) {
+    throw new Error(&quot;Invalid Security mode , should be &quot; + opcua.MessageSecurityMode.enums.join(&quot; &quot;));
+}
+
+var securityPolicy = opcua.SecurityPolicy.get(argv.securityPolicy || &quot;None&quot;);
+if (!securityPolicy) {
+    throw new Error(&quot;Invalid securityPolicy , should be &quot; + opcua.SecurityPolicy.enums.join(&quot; &quot;));
+}
+
+//xx argv.securityMode   = argv.securityMode || &quot;SIGNANDENCRYPT&quot;;
+//xx argv.securityPolicy = argv.securityPolicy || &quot;Basic128Rsa15&quot;;
+var timeout = parseInt(argv.timeout) * 1000 || 20000;
+
+var monitored_node = argv.node || &quot;ns=1;s=PumpSpeed&quot;; //&quot;ns=1;s=Temperature&quot;;
+
+console.log(&quot;securityMode        = &quot;.cyan, securityMode.toString());
+console.log(&quot;securityPolicy      = &quot;.cyan, securityPolicy.toString());
+console.log(&quot;timeout             = &quot;.cyan, timeout ? timeout : &quot; Infinity &quot; );
+console.log(&quot; monitoring node id = &quot;, monitored_node);
+var client = null;
+
+var endpointUrl = argv.endpoint;
+
+
+if (!endpointUrl) {
+    require(&quot;yargs&quot;).showHelp();
+    process.exit(0);
+}
+var the_session = null;
+var the_subscription = null;
+
+var AttributeIds = opcua.AttributeIds;
+var DataType = opcua.DataType;
+
+var NodeCrawler = opcua.NodeCrawler;
+var doCrawling = !!argv.crawl;
+var doHistory = !!argv.history;
+
+var serverCertificate = null;
+
+var path = require(&quot;path&quot;);
+var crypto_utils = opcua.crypto_utils;
+
+
+function getBrowseName(session,nodeId,callback) {
+    session.read([{ nodeId: nodeId, attributeId: AttributeIds.BrowseName}],function(err,org,readValue) {
+        if (!err) {
+            if (readValue[0].statusCode === opcua.StatusCodes.Good) {
+                assert(readValue[0].statusCode === opcua.StatusCodes.Good);
+                var browseName = readValue[0].value.value.name;
+                return callback(null,browseName);
+            }
+        }
+        callback(err,&quot;&lt;??&gt;&quot;);
+    });
+}
+
+function w(str,l) {
+    return (str + &quot;                                      &quot;).substr(0,l);
+}
+
+
+
+function __dumpEvent(session,fields,eventFields,_callback) {
+
+    assert(_.isFunction(_callback));
+
+    console.log(&quot;-----------------------&quot;);
+
+    async.forEachOf(eventFields,function(variant,index,callback) {
+
+        assert(_.isFunction(callback));
+        if (variant.dataType === DataType.Null) {
+            return callback();
+        }
+        if (variant.dataType === DataType.NodeId)  {
+
+            getBrowseName(session,variant.value,function(err,name){
+
+                if (!err) {
+                    console.log(w(name,20),w(fields[index],15).yellow,
+                        w(variant.dataType.key,10).toString().cyan,name.cyan.bold,&quot;(&quot;,w(variant.value,20),&quot;)&quot;);
+                }
+                callback();
+            });
+
+        } else {
+            setImmediate(function() {
+                console.log(w(&quot;&quot;,20),w(fields[index],15).yellow,
+                    w(variant.dataType.key,10).toString().cyan,variant.value);
+                callback();
+            });
+        }
+    },_callback);
+}
+
+var q = new async.queue(function(task,callback){
+    __dumpEvent(task.session,task.fields,task.eventFields,callback);
+});
+
+function dumpEvent(session,fields,eventFields,_callback) {
+
+    q.push({
+        session: session, fields:fields, eventFields: eventFields, _callback: _callback
+    });
+
+}
+
+function enumerateAllConditionTypes(the_session,callback) {
+
+    var tree = {};
+
+    var conditionEventTypes = {};
+
+    function findAllNodeOfType(tree,typeNodeId,browseName,callback) {
+
+        var browseDesc1 = {
+            nodeId: typeNodeId,
+            referenceTypeId: opcua.resolveNodeId(&quot;HasSubtype&quot;),
+            browseDirection: BrowseDirection.Forward,
+            includeSubtypes: true,
+            resultMask: 63
+
+        };
+        var browseDesc2 = {
+            nodeId: typeNodeId,
+            referenceTypeId: opcua.resolveNodeId(&quot;HasTypeDefinition&quot;),
+            browseDirection: BrowseDirection.Inverse,
+            includeSubtypes: true,
+            resultMask: 63
+
+        };
+        var browseDesc3 = {
+            nodeId: typeNodeId,
+            referenceTypeId: opcua.resolveNodeId(&quot;HasTypeDefinition&quot;),
+            browseDirection: BrowseDirection.Forward,
+            includeSubtypes: true,
+            resultMask: 63
+
+        };
+
+        var nodesToBrowse = [
+            browseDesc1,
+            browseDesc2,
+            browseDesc3
+        ];
+        the_session.browse(nodesToBrowse,function(err,browseResults) {
+
+            //xx console.log(&quot; exploring&quot;.yellow ,browseName.cyan, typeNodeId.toString());
+            tree[browseName] = {};
+            if (!err) {
+                browseResults[0].references = browseResults[0].references || [];
+                async.forEach(browseResults[0].references,function(el,_inner_callback) {
+                    conditionEventTypes[el.nodeId.toString()] = el.browseName.toString();
+                    findAllNodeOfType(tree[browseName],el.nodeId,el.browseName.toString(),_inner_callback);
+                }, callback);
+            } else {
+                callback(err);
+            }
+        });
+    }
+
+    var  typeNodeId = opcua.resolveNodeId(&quot;ConditionType&quot;);
+    findAllNodeOfType(tree,typeNodeId,&quot;ConditionType&quot;,function(err){
+        if (!err) {
+            return callback(null,conditionEventTypes,tree);
+        }
+        callback(err);
+    });
+}
+
+
+function enumerateAllAlarmAndConditionInstances(the_session,callback) {
+
+    var conditions = {};
+
+    var found = [];
+
+    function isConditionEventType(nodeId) {
+        return conditions.hasOwnProperty(nodeId.toString());
+        //x return derivedType.indexOf(nodeId.toString()) &gt;=0;
+    }
+
+    function exploreForObjectOfType(session,nodeId,callback) {
+
+
+        var q = async.queue(function worker(element,callback){
+
+            //xx console.log(&quot; exploring elements,&quot;,element.nodeId.toString());
+            var browseDesc1 = {
+                nodeId: element.nodeId,
+                referenceTypeId: opcua.resolveNodeId(&quot;HierarchicalReferences&quot;),
+                browseDirection: BrowseDirection.Forward,
+                includeSubtypes: true,
+                nodeClassMask: 0x1, // Objects
+                resultMask: 63
+            };
+
+            var nodesToBrowse = [browseDesc1];
+            session.browse(nodesToBrowse,function(err,browseResults) {
+                if (err) {
+                    console.log(&quot;err =&quot;,err);
+                }
+                if (!err) {
+                    browseResults[0].references.forEach(function(ref) {
+                        if (isConditionEventType(ref.typeDefinition)) {
+                            //
+                            var alarm ={
+                                parent:       element.nodeId,
+                                browseName: ref.browseName,
+                                alarmNodeId : ref.nodeId,
+                                typeDefinition: ref.typeDefinition,
+                                typeDefinitionName: conditions[ref.typeDefinition.toString()]
+                            };
+                            found.push(alarm);
+
+                        } else {
+                            q.push({nodeId: ref.nodeId});
+                        }
+                    });
+                }
+                callback(err);
+            });
+
+        });
+        q.push({
+            nodeId: nodeId
+        });
+        q.drain = function( ) {
+            callback();
+        };
+
+    }
+    enumerateAllConditionTypes(the_session,function(err,map){
+        conditions = map;
+        exploreForObjectOfType(the_session,opcua.resolveNodeId(&quot;RootFolder&quot;),function(err) {
+            if (!err) {
+                return callback(null,found);
+            }
+            return callback(err);
+        });
+    });
+
+}
+
+
+var makeNodeId = opcua.makeNodeId;
+var ObjectTypeIds = opcua.ObjectTypeIds;
+
+/**
+ * getAllEventType recursively
+ * @param callback
+ */
+function getAllEventTypes(session,callback)
+{
+    var baseNodeId = makeNodeId(ObjectTypeIds.BaseEventType);
+
+    var q = new async.queue(function(task,callback) {
+
+        _getAllEventTypes(task.nodeId, task.tree, function (err, result) {
+            if(err){return callback(err);}
+            callback(null,result);
+        });
+
+    });
+    function _getAllEventTypes(baseNodeId,tree,callback) {
+
+        //xx console.log(&quot; exploring elements,&quot;,element.nodeId.toString());
+        var browseDesc1 = {
+            nodeId: baseNodeId,
+            referenceTypeId: opcua.resolveNodeId(&quot;HasSubtype&quot;),
+            browseDirection: BrowseDirection.Forward,
+            includeSubtypes: true,
+            nodeClassMask: opcua.NodeClassMask.ObjectType, // Objects
+            resultMask: 63
+        };
+
+        var nodesToBrowse = [browseDesc1];
+        session.browse(nodesToBrowse,function(err,results){
+            if (err) {
+                console.log(&quot; ERROR = &quot;, err);
+            } else {
+                // to do continuation points
+                results[0].references.forEach(function (reference) {
+                    var subtree = {nodeId: reference.nodeId.toString()};
+                    tree[reference.browseName.toString()] = subtree;
+                    q.push({nodeId: reference.nodeId, tree: subtree});
+                });
+
+            }
+
+            callback();
+        });
+    }
+    var result ={};
+
+    q.push({nodeId: baseNodeId,tree: result});
+
+    q.drain = function( ) {
+        callback(null,result);
+    };
+
+}
+var callConditionRefresh = opcua.callConditionRefresh;
+
+function monitorAlarm(subscription,alarmNodeId, callback) {
+
+    assert(_.isFunction(callback));
+
+    callConditionRefresh(subscription, function(err) {
+        callback();
+    });
+}
+
+async.series([
+    function (callback) {
+
+        var options = {
+            keepSessionAlive: true,
+            connectionStrategy: {
+                maxRetry: 10,
+                initialDelay: 2000,
+                maxDelay: 10*1000
+            }
+        };
+
+        client = new opcua.OPCUAClient(options);
+
+        console.log(&quot; connecting to &quot;, endpointUrl.cyan.bold);
+        console.log(&quot;    strategy&quot;, client.connectionStrategy);
+
+        client.connect(endpointUrl, callback);
+
+        client.on(&quot;backoff&quot;, function (number, delay) {
+            console.log(&quot;backoff  attempt #&quot;.bgWhite.yellow,number, &quot; retrying in &quot;,delay/1000.0,&quot; seconds&quot;);
+        });
+
+    },
+
+    function (callback) {
+
+
+        client.getEndpointsRequest(function (err, endpoints) {
+
+            if (argv.debug) {
+                fs.writeFile(&quot;tmp/endpoints.log&quot;, JSON.stringify(endpoints, null, &quot; &quot;));
+                console.log(treeify.asTree(endpoints, true));
+            }
+
+            var table = new Table();
+            if (!err) {
+                endpoints.forEach(function (endpoint, i) {
+                    table.cell(&quot;endpoint&quot;, endpoint.endpointUrl + &quot;&quot;);
+                    table.cell(&quot;Application URI&quot;, endpoint.server.applicationUri);
+                    table.cell(&quot;Product URI&quot;, endpoint.server.productUri);
+                    table.cell(&quot;Application Name&quot;, endpoint.server.applicationName.text);
+                    table.cell(&quot;Security Mode&quot;, endpoint.securityMode.toString());
+                    table.cell(&quot;securityPolicyUri&quot;, endpoint.securityPolicyUri);
+                    table.cell(&quot;Type&quot;, endpoint.server.applicationType.key);
+                    table.cell(&quot;certificate&quot;, &quot;...&quot; /*endpoint.serverCertificate*/);
+                    table.cell(&quot;discoveryUrls&quot;,endpoint.server.discoveryUrls.join(&quot; - &quot;));
+
+                    serverCertificate = endpoint.serverCertificate;
+
+                    var certificate_filename = path.join(__dirname, &quot;../certificates/PKI/server_certificate&quot; + i + &quot;.pem&quot;);
+                    fs.writeFile(certificate_filename, crypto_utils.toPem(serverCertificate, &quot;CERTIFICATE&quot;));
+
+                    table.newRow();
+                });
+                console.log(table.toString());
+
+                endpoints.forEach(function (endpoint, i) {
+                    console.log(&quot;Identify Token for : Security Mode=&quot;, endpoint.securityMode.toString(),&quot; Policy=&quot;, endpoint.securityPolicyUri);
+                    var table2 = new Table();
+                    endpoint.userIdentityTokens.forEach(function (token) {
+                        table2.cell(&quot;policyId&quot;, token.policyId);
+                        table2.cell(&quot;tokenType&quot;, token.tokenType.toString());
+                        table2.cell(&quot;issuedTokenType&quot;, token.issuedTokenType);
+                        table2.cell(&quot;issuerEndpointUrl&quot;, token.issuerEndpointUrl);
+                        table2.cell(&quot;securityPolicyUri&quot;, token.securityPolicyUri);
+                        table2.newRow();
+                    });
+                    console.log(table2.toString());
+                });
+
+            }
+
+            callback(err);
+        });
+    },
+    //------------------------------------------
+    function (callback) {
+        client.disconnect(callback);
+    },
+
+    // reconnect using the correct end point URL now
+    function (callback) {
+
+        var hexDump = opcua.hexDump;
+        console.log(&quot;Server Certificate :&quot;.cyan);
+        console.log(hexDump(serverCertificate).yellow);
+
+        var options = {
+            securityMode: securityMode,
+            securityPolicy: securityPolicy,
+            serverCertificate: serverCertificate,
+
+            defaultSecureTokenLifetime: 40000,
+
+            connectionStrategy: {
+                maxRetry: 10,
+                initialDelay: 2000,
+                maxDelay: 10*1000
+            }
+        };
+        console.log(&quot;Options = &quot;, options.securityMode.toString(), options.securityPolicy.toString());
+
+        client = new opcua.OPCUAClient(options);
+
+        console.log(&quot; reconnecting to &quot;, endpointUrl.cyan.bold);
+        client.connect(endpointUrl, callback);
+    },
+
+    //------------------------------------------
+    function (callback) {
+
+        var userIdentity = null; // anonymous
+        if (argv.userName &amp;&amp; argv.password) {
+
+            userIdentity = {
+                userName: argv.userName,
+                password: argv.password
+            };
+
+        }
+        client.createSession(userIdentity, function (err, session) {
+            if (!err) {
+                the_session = session;
+                console.log(&quot; session created&quot;.yellow);
+                console.log(&quot; sessionId : &quot;, session.sessionId.toString());
+            }
+            callback(err);
+        });
+    },
+    function set_event_handlers(callback) {
+        client.on(&quot;connection_reestablished&quot;,function() {
+            console.log(&quot; !!!!!!!!!!!!!!!!!!!!!!!!  CONNECTION RE-ESTABLISHED !!!!!!!!!!!!!!!!!!!&quot;.bgWhite.red);
+        });
+        client.on(&quot;backoff&quot;, function (number, delay) {
+            console.log(&quot;backoff  attempt #&quot;.bgWhite.yellow,number, &quot; retrying in &quot;,delay/1000.0,&quot; seconds&quot;);
+        });
+        client.on(&quot;start_reconnection&quot;, function () {
+            console.log(&quot; !!!!!!!!!!!!!!!!!!!!!!!!  Starting Reconnection !!!!!!!!!!!!!!!!!!!&quot;.bgWhite.red);
+        });
+
+
+        callback();
+    },
+    // ----------------------------------------
+    // display namespace array
+    function (callback) {
+
+        var server_NamespaceArray_Id = opcua.makeNodeId(VariableIds.Server_NamespaceArray); // ns=0;i=2006
+
+        the_session.readVariableValue(server_NamespaceArray_Id, function (err, dataValue, diagnosticsInfo) {
+
+            console.log(&quot; --- NAMESPACE ARRAY ---&quot;);
+            if (!err) {
+                var namespaceArray = dataValue.value.value;
+                for (var i = 0; i &lt; namespaceArray.length; i++) {
+                    console.log(&quot; Namespace &quot;, i, &quot;  : &quot;, namespaceArray[i]);
+                }
+            }
+            console.log(&quot; -----------------------&quot;);
+            callback(err);
+        });
+    },
+
+    function (callback) {
+
+        getAllEventTypes(the_session,function(err,result){
+
+            console.log(&quot;--------------------------------------------------------------- All Event Types &quot;.cyan);
+            console.log(treeify.asTree(result, true));
+
+            callback();
+        });
+    },
+
+    //------------------------------------------
+    function (callback) {
+
+        var t1,t2;
+        function print_stat() {
+            t2 = Date.now();
+            var util = require(&quot;util&quot;);
+            var str = util.format(&quot;R= %d W= %d T=%d t= %d&quot;, client.bytesRead, client.bytesWritten, client.transactionsPerformed, (t2 - t1));
+            console.log(str.yellow.bold);
+        }
+
+        if (doCrawling) {
+            assert(_.isObject(the_session));
+            var crawler = new NodeCrawler(the_session);
+
+            var t = Date.now();
+            client.on(&quot;send_request&quot;, function () {
+                t1 = Date.now();
+            });
+
+
+            //client.on(&quot;receive_response&quot;, print_stat);
+
+            t = Date.now();
+            //xx crawler.on(&quot;browsed&quot;, function (element) {
+            //xx     console.log(&quot;-&gt;&quot;,(new Date()).getTime()-t,element.browseName.name,element.nodeId.toString());
+            //xx });
+
+            var nodeId = &quot;ObjectsFolder&quot;;
+            console.log(&quot;now crawling object folder ...please wait...&quot;);
+            crawler.read(nodeId, function (err, obj) {
+                console.log(&quot; Time         = &quot;, (new Date()).getTime() - t);
+                console.log(&quot; read        = &quot;, crawler.readCounter);
+                console.log(&quot; browse      = &quot;, crawler.browseCounter);
+                console.log(&quot; transaction = &quot;, crawler.transactionCounter);
+                if (!err) {
+
+                    if (false) {
+                        // todo : treeify.asTree performance is *very* slow on large object, replace with better implementation
+                        //xx console.log(treeify.asTree(obj, true));
+                        treeify.asLines(obj, true, true, function (line) {
+                            console.log(line);
+                        });
+                    } else {
+                        process.exit(1);
+                    }
+                }
+                client.removeListener(&quot;receive_response&quot;, print_stat);
+                callback(err);
+            });
+
+        } else {
+            callback();
+        }
+
+
+    },
+
+    // -----------------------------------------------------------------------------------------------------------------
+    // enumerate all Condition Types exposed by the server
+    // -----------------------------------------------------------------------------------------------------------------
+    function (callback) {
+
+        enumerateAllConditionTypes(the_session,function(err,conditionTypes,conditionTree){
+            console.log(treeify.asTree(conditionTree));
+            callback();
+        });
+    },
+
+    // -----------------------------------------------------------------------------------------------------------------
+    // enumerate all objects that have an Alarm &amp; Condition instances
+    // -----------------------------------------------------------------------------------------------------------------
+    function (callback) {
+
+        enumerateAllAlarmAndConditionInstances(the_session,function(err,alarms) {
+
+            if(!err) {
+
+                console.log(&quot; -------------------------------------------------------------------- Alarms &amp; Conditions ------------------------&quot;);
+                alarms.forEach(function(alarm) {
+                    console.log(
+                        &quot;parent = &quot;,
+                        w(alarm.parent.toString(),30).cyan,
+                        w(alarm.typeDefinitionName,30).green.bold,
+                        &quot;alarmName = &quot;,
+                        w(alarm.browseName.toString(),30).cyan,
+                        w(alarm.alarmNodeId.toString(),40).yellow
+                    );
+                });
+                console.log(&quot; -----------------------------------------------------------------------------------------------------------------&quot;);
+
+            }
+            callback();
+        });
+
+
+    },
+    // ------------------ check if server supports Query Services
+    function (callback){
+
+        var queryFirstRequest = {};
+
+        the_session.queryFirst(queryFirstRequest,function(err,queryFirstResult) {
+            if (err) {
+                console.log(&quot;QueryFirst is not supported by Server&quot;);
+            }
+            callback();
+        });
+
+    },
+
+
+    // create Read
+    function (callback) {
+
+        if (!doHistory) {
+            return callback();
+        }
+        var now = Date.now();
+        var start = now-1000; // read 1 seconds of history
+        var end   = now;
+        the_session.readHistoryValue(monitored_node,start,end,function(err,historicalReadResult) {
+
+            if(!err)  {
+                console.log(&quot; historicalReadResult =&quot;,historicalReadResult.toString());
+            } else {
+                console.log(&quot; ERROR&quot;,err.toString());
+            }
+            callback();
+
+        });
+    },
+
+    // -----------------------------------------
+    // create subscription
+    function (callback) {
+
+        var parameters = {
+            requestedPublishingInterval: 100,
+            requestedLifetimeCount: 1000,
+            requestedMaxKeepAliveCount: 12,
+            maxNotificationsPerPublish: 10,
+            publishingEnabled: true,
+            priority: 10
+        };
+
+        the_subscription = new opcua.ClientSubscription(the_session, parameters);
+
+        function getTick() {
+            return Date.now();
+        }
+
+        var t = getTick();
+
+        the_subscription.on(&quot;started&quot;, function () {
+
+            console.log(&quot;started subscription :&quot;, the_subscription.subscriptionId);
+
+            console.log(&quot; revised parameters &quot;);
+            console.log(&quot;  revised maxKeepAliveCount  &quot;, the_subscription.maxKeepAliveCount, &quot; ( requested &quot;, parameters.requestedMaxKeepAliveCount + &quot;)&quot;);
+            console.log(&quot;  revised lifetimeCount      &quot;, the_subscription.lifetimeCount, &quot; ( requested &quot;, parameters.requestedLifetimeCount + &quot;)&quot;);
+            console.log(&quot;  revised publishingInterval &quot;, the_subscription.publishingInterval, &quot; ( requested &quot;, parameters.requestedPublishingInterval + &quot;)&quot;);
+            console.log(&quot;  suggested timeout hint     &quot;, the_subscription.publish_engine.timeoutHint);
+
+            callback();
+
+        }).on(&quot;internal_error&quot;, function (err) {
+            console.log(&quot; received internal error&quot;, err.message);
+
+        }).on(&quot;keepalive&quot;, function () {
+
+            var t1 = getTick();
+            var span = t1 - t;
+            t = t1;
+            console.log(&quot;keepalive &quot;, span / 1000, &quot;sec&quot;, &quot; pending request on server = &quot;, the_subscription.publish_engine.nbPendingPublishRequests);
+
+        }).on(&quot;terminated&quot;, function (err) {
+
+        });
+    },
+
+    function get_monitored_item(callback) {
+
+        the_session.getMonitoredItems(the_subscription.subscriptionId, function (err, results) {
+            if (!err) {
+                console.log(&quot;MonitoredItems clientHandles&quot;, results.clientHandles);
+                console.log(&quot;MonitoredItems serverHandles&quot;, results.serverHandles);
+            } else {
+                console.log(&quot; getMonitoredItems ERROR &quot;.red, err.message.cyan);
+            }
+            callback();
+        });
+
+
+    },
+
+    function monitor_a_variable_node_value(callback) {
+        console.log(&quot;Monitoring monitor_a_variable_node_value&quot;);
+
+        // ---------------------------------------------------------------
+        //  monitor a variable node value
+        // ---------------------------------------------------------------
+        var monitoredItem = the_subscription.monitor(
+            {
+                nodeId: monitored_node,
+                attributeId: AttributeIds.Value
+            },
+            {
+                samplingInterval: 250,
+                //xx filter:  { parameterTypeId: &quot;ns=0;i=0&quot;,  encodingMask: 0 },
+                queueSize: 10000,
+                discardOldest: true
+            }
+        );
+        monitoredItem.on(&quot;initialized&quot;, function () {
+            console.log(&quot;monitoredItem initialized&quot;);
+            callback();
+        });
+        monitoredItem.on(&quot;changed&quot;, function (dataValue) {
+            console.log(monitoredItem.itemToMonitor.nodeId.toString(), &quot; value has changed to &quot; + dataValue.value.toString());
+        });
+        monitoredItem.on(&quot;err&quot;, function (err_message) {
+            console.log(monitoredItem.itemToMonitor.nodeId.toString(), &quot; ERROR&quot;.red, err_message);
+            callback();
+        });
+
+    },
+
+    function monitor_the_object_events(callback) {
+        console.log(&quot;Monitoring monitor_the_object_events&quot;);
+
+        // ---------------------------------------------------------------
+        //  monitor the object events
+        // ---------------------------------------------------------------
+
+        var baseEventTypeId = &quot;i=2041&quot;; // BaseEventType;
+        var serverObjectId = &quot;i=2253&quot;;
+
+        var fields = [
+            &quot;EventId&quot;,
+            &quot;EventType&quot;,
+            &quot;SourceNode&quot;,
+            &quot;SourceName&quot;,
+            &quot;Time&quot;,
+            &quot;ReceiveTime&quot;,
+            &quot;Message&quot;,
+            &quot;Severity&quot;,
+
+            // ConditionType
+            &quot;ConditionClassId&quot;,
+            &quot;ConditionClassName&quot;,
+            &quot;ConditionName&quot;,
+            &quot;BranchId&quot;,
+            &quot;Retain&quot;,
+            &quot;EnabledState&quot;,
+            &quot;Quality&quot;,
+            &quot;LastSeverity&quot;,
+            &quot;Comment&quot;,
+            &quot;ClientUserId&quot;,
+
+            // AcknowledgeConditionType
+            &quot;AckedState&quot;,
+            &quot;ConfirmedState&quot;,
+
+            // AlarmConditionType
+            &quot;ActiveState&quot;,
+            &quot;InputNode&quot;,
+            &quot;SuppressedState&quot;,
+
+            &quot;HighLimit&quot;,
+            &quot;LowLimit&quot;,
+            &quot;HighHighLimit&quot;,
+            &quot;LowLowLimit&quot;,
+
+            &quot;Value&quot;
+        ];
+
+
+        var eventFilter = opcua.constructEventFilter(fields,[opcua.resolveNodeId(&quot;ConditionType&quot;)]);
+
+        var event_monitoringItem = the_subscription.monitor(
+            {
+                nodeId:      serverObjectId,
+                attributeId: AttributeIds.EventNotifier
+            },
+            {
+                queueSize: 100000,
+                filter: eventFilter,
+                discardOldest: true
+            }
+        );
+
+        event_monitoringItem.on(&quot;initialized&quot;, function () {
+            console.log(&quot;event_monitoringItem initialized&quot;);
+            callback();
+        });
+
+        event_monitoringItem.on(&quot;changed&quot;, function (eventFields) {
+            dumpEvent(the_session,fields,eventFields,function() {});
+        });
+        event_monitoringItem.on(&quot;err&quot;, function (err_message) {
+            console.log(&quot;event_monitoringItem &quot;, baseEventTypeId, &quot; ERROR&quot;.red, err_message);
+        });
+
+    },
+
+    function (callback) {
+        console.log(&quot;Monitoring alarms&quot;);
+        var alarmNodeId = &quot;ns=2;s=1:Colours/EastTank?Green&quot;;
+        monitorAlarm(the_subscription,alarmNodeId,function() {
+            callback();
+        });
+    },
+
+
+    function (callback) {
+        console.log(&quot;Starting timer &quot;,timeout);
+        var timerId;
+        if (timeout &gt; 0) {
+            timerId = setTimeout(function () {
+                if (!the_subscription) {
+                    return callback();
+                }
+                the_subscription.once(&quot;terminated&quot;,function() {
+                    callback();
+                });
+                the_subscription.terminate();
+            }, timeout);
+
+            // simulate a connection break at t =timeout/2
+            setTimeout(function () {
+
+                console.log(&quot;  -------------------------------------------------------------------- &quot;.red.bgWhite);
+                console.log(&quot;  --                               SIMULATE CONNECTION BREAK        -- &quot;.red.bgWhite);
+                console.log(&quot;  -------------------------------------------------------------------- &quot;.red.bgWhite);
+                var socket = client._secureChannel._transport._socket;
+                socket.end();
+                socket.emit(&quot;error&quot;, new Error(&quot;ECONNRESET&quot;));
+            }, timeout/2.0);
+
+        }else {
+            callback();
+        }
+    },
+
+
+    function (callback) {
+        console.log(&quot; closing session&quot;);
+        the_session.close(function (err) {
+            console.log(&quot; session closed&quot;,err);
+            callback();
+        });
+    },
+
+    function (callback) {
+        console.log(&quot; Calling disconnect&quot;);
+        client.disconnect(callback);
+    }
+], function (err) {
+
+    console.log(&quot; disconnected&quot;.cyan);
+
+    if (err) {
+        console.log(&quot; client : process terminated with an error&quot;.red.bold);
+        console.log(&quot; error&quot;, err);
+        console.log(&quot; stack trace&quot;, err.stack);
+    } else {
+        console.log(&quot;success !!   &quot;);
+    }
+    // force disconnection
+    if (client) {
+        client.disconnect(function () {
+            var exit = require(&quot;exit&quot;);
+            console.log(&quot;Exiting&quot;);
+            exit();
+        });
+    }
+});
+
+process.on(&quot;error&quot;,function(err){
+
+    console.log(&quot; UNTRAPPED ERROR&quot;,err.message);
+});
+var user_interruption_count = 0;
+process.on(&quot;SIGINT&quot;, function () {
+
+    console.log(&quot; user interuption ...&quot;);
+
+    user_interruption_count += 1;
+    if (user_interruption_count &gt;= 3) {
+        process.exit(1);
+    }
+    if (the_subscription) {
+
+        console.log(&quot; Received client interruption from user &quot;.red.bold);
+        console.log(&quot; shutting down ...&quot;.red.bold);
+
+        the_subscription.terminate();
+        the_subscription = null;
+    }
+});
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

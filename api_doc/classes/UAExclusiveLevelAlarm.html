@@ -1,0 +1,3226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>UAExclusiveLevelAlarm - The NodeOPCUA API</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.1.0-pre</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/AcknowledgeMessage.html">AcknowledgeMessage</a></li>
+                                <li><a href="../classes/ActivateSessionRequest.html">ActivateSessionRequest</a></li>
+                                <li><a href="../classes/ActivateSessionResponse.html">ActivateSessionResponse</a></li>
+                                <li><a href="../classes/AddNodesItem.html">AddNodesItem</a></li>
+                                <li><a href="../classes/AddNodesRequest.html">AddNodesRequest</a></li>
+                                <li><a href="../classes/AddNodesResponse.html">AddNodesResponse</a></li>
+                                <li><a href="../classes/AddNodesResult.html">AddNodesResult</a></li>
+                                <li><a href="../classes/AddReferencesItem.html">AddReferencesItem</a></li>
+                                <li><a href="../classes/AddReferencesRequest.html">AddReferencesRequest</a></li>
+                                <li><a href="../classes/AddReferencesResponse.html">AddReferencesResponse</a></li>
+                                <li><a href="../classes/AddressSpace.html">AddressSpace</a></li>
+                                <li><a href="../classes/AggregateConfiguration.html">AggregateConfiguration</a></li>
+                                <li><a href="../classes/AggregateFilter.html">AggregateFilter</a></li>
+                                <li><a href="../classes/AnonymousIdentityToken.html">AnonymousIdentityToken</a></li>
+                                <li><a href="../classes/ApplicationDescription.html">ApplicationDescription</a></li>
+                                <li><a href="../classes/ApplicationInstanceCertificate.html">ApplicationInstanceCertificate</a></li>
+                                <li><a href="../classes/Argument.html">Argument</a></li>
+                                <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
+                                <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+                                <li><a href="../classes/AttributeNameById.html">AttributeNameById</a></li>
+                                <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
+                                <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
+                                <li><a href="../classes/BaseEventType.html">BaseEventType</a></li>
+                                <li><a href="../classes/BaseNode.html">BaseNode</a></li>
+                                <li><a href="../classes/BaseUAObject.html">BaseUAObject</a></li>
+                                <li><a href="../classes/BinaryStream.html">BinaryStream</a></li>
+                                <li><a href="../classes/BinaryStreamSizeCalculator.html">BinaryStreamSizeCalculator</a></li>
+                                <li><a href="../classes/BrowseDescription.html">BrowseDescription</a></li>
+                                <li><a href="../classes/BrowseDirection.html">BrowseDirection</a></li>
+                                <li><a href="../classes/BrowseNextRequest.html">BrowseNextRequest</a></li>
+                                <li><a href="../classes/BrowseNextResponse.html">BrowseNextResponse</a></li>
+                                <li><a href="../classes/BrowsePath.html">BrowsePath</a></li>
+                                <li><a href="../classes/BrowsePathResult.html">BrowsePathResult</a></li>
+                                <li><a href="../classes/BrowsePathTarget.html">BrowsePathTarget</a></li>
+                                <li><a href="../classes/BrowseRequest.html">BrowseRequest</a></li>
+                                <li><a href="../classes/BrowseResponse.html">BrowseResponse</a></li>
+                                <li><a href="../classes/BrowseResult.html">BrowseResult</a></li>
+                                <li><a href="../classes/BuildInfo.html">BuildInfo</a></li>
+                                <li><a href="../classes/CallMethodRequest.html">CallMethodRequest</a></li>
+                                <li><a href="../classes/CallMethodResult.html">CallMethodResult</a></li>
+                                <li><a href="../classes/CallRequest.html">CallRequest</a></li>
+                                <li><a href="../classes/CallResponse.html">CallResponse</a></li>
+                                <li><a href="../classes/CancelRequest.html">CancelRequest</a></li>
+                                <li><a href="../classes/CancelResponse.html">CancelResponse</a></li>
+                                <li><a href="../classes/ChannelSecurityToken.html">ChannelSecurityToken</a></li>
+                                <li><a href="../classes/ChunkManager.html">ChunkManager</a></li>
+                                <li><a href="../classes/ClientMonitoredItem.html">ClientMonitoredItem</a></li>
+                                <li><a href="../classes/ClientMonitoredItemGroup.html">ClientMonitoredItemGroup</a></li>
+                                <li><a href="../classes/ClientSecureChannelLayer.html">ClientSecureChannelLayer</a></li>
+                                <li><a href="../classes/ClientSession.html">ClientSession</a></li>
+                                <li><a href="../classes/ClientSidePublishEngine.html">ClientSidePublishEngine</a></li>
+                                <li><a href="../classes/ClientSubscription.html">ClientSubscription</a></li>
+                                <li><a href="../classes/ClientTCP_transport.html">ClientTCP_transport</a></li>
+                                <li><a href="../classes/CloseSecureChannelRequest.html">CloseSecureChannelRequest</a></li>
+                                <li><a href="../classes/CloseSecureChannelResponse.html">CloseSecureChannelResponse</a></li>
+                                <li><a href="../classes/CloseSessionRequest.html">CloseSessionRequest</a></li>
+                                <li><a href="../classes/CloseSessionResponse.html">CloseSessionResponse</a></li>
+                                <li><a href="../classes/Company.html">Company</a></li>
+                                <li><a href="../classes/ConditionInfo.html">ConditionInfo</a></li>
+                                <li><a href="../classes/ConditionSnapshot.html">ConditionSnapshot</a></li>
+                                <li><a href="../classes/ContentFilter.html">ContentFilter</a></li>
+                                <li><a href="../classes/ContentFilterElement.html">ContentFilterElement</a></li>
+                                <li><a href="../classes/ContentFilterElementResult.html">ContentFilterElementResult</a></li>
+                                <li><a href="../classes/ContentFilterResult.html">ContentFilterResult</a></li>
+                                <li><a href="../classes/CreateMonitoredItemsRequest.html">CreateMonitoredItemsRequest</a></li>
+                                <li><a href="../classes/CreateMonitoredItemsResponse.html">CreateMonitoredItemsResponse</a></li>
+                                <li><a href="../classes/CreateSessionRequest.html">CreateSessionRequest</a></li>
+                                <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
+                                <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
+                                <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
+                                <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
+                                <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
+                                <li><a href="../classes/DataValue.html">DataValue</a></li>
+                                <li><a href="../classes/DeleteMonitoredItemsRequest.html">DeleteMonitoredItemsRequest</a></li>
+                                <li><a href="../classes/DeleteMonitoredItemsResponse.html">DeleteMonitoredItemsResponse</a></li>
+                                <li><a href="../classes/DeleteNodesItem.html">DeleteNodesItem</a></li>
+                                <li><a href="../classes/DeleteNodesRequest.html">DeleteNodesRequest</a></li>
+                                <li><a href="../classes/DeleteNodesResponse.html">DeleteNodesResponse</a></li>
+                                <li><a href="../classes/DeleteReferencesItem.html">DeleteReferencesItem</a></li>
+                                <li><a href="../classes/DeleteReferencesRequest.html">DeleteReferencesRequest</a></li>
+                                <li><a href="../classes/DeleteReferencesResponse.html">DeleteReferencesResponse</a></li>
+                                <li><a href="../classes/DeleteSubscriptionsRequest.html">DeleteSubscriptionsRequest</a></li>
+                                <li><a href="../classes/DeleteSubscriptionsResponse.html">DeleteSubscriptionsResponse</a></li>
+                                <li><a href="../classes/DiagnosticInfo.html">DiagnosticInfo</a></li>
+                                <li><a href="../classes/DummyObject.html">DummyObject</a></li>
+                                <li><a href="../classes/ElementOperand.html">ElementOperand</a></li>
+                                <li><a href="../classes/Employee.html">Employee</a></li>
+                                <li><a href="../classes/EndpointDescription.html">EndpointDescription</a></li>
+                                <li><a href="../classes/Enum.html">Enum</a></li>
+                                <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
+                                <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
+                                <li><a href="../classes/EUInformation.html">EUInformation</a></li>
+                                <li><a href="../classes/EventData.html">EventData</a></li>
+                                <li><a href="../classes/EventFieldList.html">EventFieldList</a></li>
+                                <li><a href="../classes/EventFilter.html">EventFilter</a></li>
+                                <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
+                                <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
+                                <li><a href="../classes/ExpandedNodeId.html">ExpandedNodeId</a></li>
+                                <li><a href="../classes/Factory.html">Factory</a></li>
+                                <li><a href="../classes/FilterOperand.html">FilterOperand</a></li>
+                                <li><a href="../classes/FindServersRequest.html">FindServersRequest</a></li>
+                                <li><a href="../classes/FindServersResponse.html">FindServersResponse</a></li>
+                                <li><a href="../classes/FooBar.html">FooBar</a></li>
+                                <li><a href="../classes/FooBarDerived.html">FooBarDerived</a></li>
+                                <li><a href="../classes/FooWithRecursion.html">FooWithRecursion</a></li>
+                                <li><a href="../classes/GetEndpointsRequest.html">GetEndpointsRequest</a></li>
+                                <li><a href="../classes/GetEndpointsResponse.html">GetEndpointsResponse</a></li>
+                                <li><a href="../classes/HelloMessage.html">HelloMessage</a></li>
+                                <li><a href="../classes/HistoryData.html">HistoryData</a></li>
+                                <li><a href="../classes/HistoryModifiedData.html">HistoryModifiedData</a></li>
+                                <li><a href="../classes/HistoryReadDetails.html">HistoryReadDetails</a></li>
+                                <li><a href="../classes/HistoryReadRequest.html">HistoryReadRequest</a></li>
+                                <li><a href="../classes/HistoryReadResponse.html">HistoryReadResponse</a></li>
+                                <li><a href="../classes/HistoryReadResult.html">HistoryReadResult</a></li>
+                                <li><a href="../classes/HistoryReadValueId.html">HistoryReadValueId</a></li>
+                                <li><a href="../classes/HistoryServerCapabilities.html">HistoryServerCapabilities</a></li>
+                                <li><a href="../classes/HistoryUpdateRequest.html">HistoryUpdateRequest</a></li>
+                                <li><a href="../classes/HistoryUpdateResponse.html">HistoryUpdateResponse</a></li>
+                                <li><a href="../classes/HistoryUpdateResult.html">HistoryUpdateResult</a></li>
+                                <li><a href="../classes/IssuedIdentityToken.html">IssuedIdentityToken</a></li>
+                                <li><a href="../classes/LiteralOperand.html">LiteralOperand</a></li>
+                                <li><a href="../classes/LocalizedText.html">LocalizedText</a></li>
+                                <li><a href="../classes/MessageBuilder.html">MessageBuilder</a></li>
+                                <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
+                                <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
+                                <li><a href="../classes/MetaShapeForUnitTest.html">MetaShapeForUnitTest</a></li>
+                                <li><a href="../classes/ModelChangeStructure.html">ModelChangeStructure</a></li>
+                                <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
+                                <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
+                                <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
+                                <li><a href="../classes/ModifySubscriptionRequest.html">ModifySubscriptionRequest</a></li>
+                                <li><a href="../classes/ModifySubscriptionResponse.html">ModifySubscriptionResponse</a></li>
+                                <li><a href="../classes/MonitoredItem.html">MonitoredItem</a></li>
+                                <li><a href="../classes/MonitoredItemCreateRequest.html">MonitoredItemCreateRequest</a></li>
+                                <li><a href="../classes/MonitoredItemCreateResult.html">MonitoredItemCreateResult</a></li>
+                                <li><a href="../classes/MonitoredItemModifyRequest.html">MonitoredItemModifyRequest</a></li>
+                                <li><a href="../classes/MonitoredItemModifyResult.html">MonitoredItemModifyResult</a></li>
+                                <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
+                                <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
+                                <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+                                <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
+                                <li><a href="../classes/NodeId.html">NodeId</a></li>
+                                <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
+                                <li><a href="../classes/NodeTypeDescription.html">NodeTypeDescription</a></li>
+                                <li><a href="../classes/NotificationMessage.html">NotificationMessage</a></li>
+                                <li><a href="../classes/ObjWithAccessLevel.html">ObjWithAccessLevel</a></li>
+                                <li><a href="../classes/ObjWithIntegerId.html">ObjWithIntegerId</a></li>
+                                <li><a href="../classes/opcua.html">opcua</a></li>
+                                <li><a href="../classes/OPCUABaseServer.html">OPCUABaseServer</a></li>
+                                <li><a href="../classes/OPCUAClient.html">OPCUAClient</a></li>
+                                <li><a href="../classes/OPCUAClientBase.html">OPCUAClientBase</a></li>
+                                <li><a href="../classes/OPCUASecureObject.html">OPCUASecureObject</a></li>
+                                <li><a href="../classes/OPCUAServer.html">OPCUAServer</a></li>
+                                <li><a href="../classes/OPCUAServerEndPoint
+                
+                A sever end point is listening to one port.html">OPCUAServerEndPoint
+                
+                A sever end point is listening to one port</a></li>
+                                <li><a href="../classes/OpenSecureChannelRequest.html">OpenSecureChannelRequest</a></li>
+                                <li><a href="../classes/OpenSecureChannelResponse.html">OpenSecureChannelResponse</a></li>
+                                <li><a href="../classes/OperationLimits.html">OperationLimits</a></li>
+                                <li><a href="../classes/PacketAssembler.html">PacketAssembler</a></li>
+                                <li><a href="../classes/ParsingResult.html">ParsingResult</a></li>
+                                <li><a href="../classes/Person.html">Person</a></li>
+                                <li><a href="../classes/Person2.html">Person2</a></li>
+                                <li><a href="../classes/Potato.html">Potato</a></li>
+                                <li><a href="../classes/PublishRequest.html">PublishRequest</a></li>
+                                <li><a href="../classes/PublishResponse.html">PublishResponse</a></li>
+                                <li><a href="../classes/QualifiedName.html">QualifiedName</a></li>
+                                <li><a href="../classes/QueryDataDescription.html">QueryDataDescription</a></li>
+                                <li><a href="../classes/QueryDataSet.html">QueryDataSet</a></li>
+                                <li><a href="../classes/QueryFirstRequest.html">QueryFirstRequest</a></li>
+                                <li><a href="../classes/QueryFirstResponse.html">QueryFirstResponse</a></li>
+                                <li><a href="../classes/QueryNextRequest.html">QueryNextRequest</a></li>
+                                <li><a href="../classes/QueryNextResponse.html">QueryNextResponse</a></li>
+                                <li><a href="../classes/Range.html">Range</a></li>
+                                <li><a href="../classes/ReadAtTimeDetails.html">ReadAtTimeDetails</a></li>
+                                <li><a href="../classes/ReaderState.html">ReaderState</a></li>
+                                <li><a href="../classes/ReadEventDetails.html">ReadEventDetails</a></li>
+                                <li><a href="../classes/ReadProcessedDetails.html">ReadProcessedDetails</a></li>
+                                <li><a href="../classes/ReadRawModifiedDetails.html">ReadRawModifiedDetails</a></li>
+                                <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
+                                <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
+                                <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+                                <li><a href="../classes/RedundantServer.html">RedundantServer</a></li>
+                                <li><a href="../classes/Reference.html">Reference</a></li>
+                                <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
+                                <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
+                                <li><a href="../classes/RegisteredServer.html">RegisteredServer</a></li>
+                                <li><a href="../classes/RegisterNodesRequest.html">RegisterNodesRequest</a></li>
+                                <li><a href="../classes/RegisterNodesResponse.html">RegisterNodesResponse</a></li>
+                                <li><a href="../classes/RegisterServerRequest.html">RegisterServerRequest</a></li>
+                                <li><a href="../classes/RegisterServerResponse.html">RegisterServerResponse</a></li>
+                                <li><a href="../classes/RelativePath.html">RelativePath</a></li>
+                                <li><a href="../classes/RelativePathElement.html">RelativePathElement</a></li>
+                                <li><a href="../classes/RepublishRequest.html">RepublishRequest</a></li>
+                                <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
+                                <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
+                                <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+                                <li><a href="../classes/Role.html">Role</a></li>
+                                <li><a href="../classes/SamplingIntervalDiagnostics.html">SamplingIntervalDiagnostics</a></li>
+                                <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
+                                <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
+                                <li><a href="../classes/SemanticChangeStructure.html">SemanticChangeStructure</a></li>
+                                <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
+                                <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
+                                <li><a href="../classes/ServerCapabilities.html">ServerCapabilities</a></li>
+                                <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
+                                <li><a href="../classes/ServerEngine.html">ServerEngine</a></li>
+                                <li><a href="../classes/ServerSecureChannelLayer.html">ServerSecureChannelLayer</a></li>
+                                <li><a href="../classes/ServerSession.html">ServerSession</a></li>
+                                <li><a href="../classes/ServerSidePublishEngine.html">ServerSidePublishEngine</a></li>
+                                <li><a href="../classes/ServerSideUnimplementedRequest.html">ServerSideUnimplementedRequest</a></li>
+                                <li><a href="../classes/ServerStatus.html">ServerStatus</a></li>
+                                <li><a href="../classes/ServerTCP_transport.html">ServerTCP_transport</a></li>
+                                <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
+                                <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
+                                <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+                                <li><a href="../classes/SessionSecurityDiagnostics.html">SessionSecurityDiagnostics</a></li>
+                                <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
+                                <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
+                                <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
+                                <li><a href="../classes/SetPublishingModeResponse.html">SetPublishingModeResponse</a></li>
+                                <li><a href="../classes/SetTriggeringRequest.html">SetTriggeringRequest</a></li>
+                                <li><a href="../classes/SetTriggeringResponse.html">SetTriggeringResponse</a></li>
+                                <li><a href="../classes/Shape.html">Shape</a></li>
+                                <li><a href="../classes/SignatureData.html">SignatureData</a></li>
+                                <li><a href="../classes/SignedSoftwareCertificate.html">SignedSoftwareCertificate</a></li>
+                                <li><a href="../classes/SimpleAttributeOperand.html">SimpleAttributeOperand</a></li>
+                                <li><a href="../classes/Simulator.html">Simulator</a></li>
+                                <li><a href="../classes/StatusChangeNotification.html">StatusChangeNotification</a></li>
+                                <li><a href="../classes/StatusCode.html">StatusCode</a></li>
+                                <li><a href="../classes/Subscription.html">Subscription</a></li>
+                                <li><a href="../classes/SubscriptionAcknowledgement.html">SubscriptionAcknowledgement</a></li>
+                                <li><a href="../classes/SubscriptionDiagnostics.html">SubscriptionDiagnostics</a></li>
+                                <li><a href="../classes/SymmetricAlgorithmSecurityHeader.html">SymmetricAlgorithmSecurityHeader</a></li>
+                                <li><a href="../classes/TCP_transport.html">TCP_transport</a></li>
+                                <li><a href="../classes/TCPErrorMessage.html">TCPErrorMessage</a></li>
+                                <li><a href="../classes/TimestampsToReturn.html">TimestampsToReturn</a></li>
+                                <li><a href="../classes/TimeZone.html">TimeZone</a></li>
+                                <li><a href="../classes/ToolBrowsePath.html">ToolBrowsePath</a></li>
+                                <li><a href="../classes/TransferResult.html">TransferResult</a></li>
+                                <li><a href="../classes/TransferSubscriptionsRequest.html">TransferSubscriptionsRequest</a></li>
+                                <li><a href="../classes/TransferSubscriptionsResponse.html">TransferSubscriptionsResponse</a></li>
+                                <li><a href="../classes/TranslateBrowsePathsToNodeIdsRequest.html">TranslateBrowsePathsToNodeIdsRequest</a></li>
+                                <li><a href="../classes/TranslateBrowsePathsToNodeIdsResponse.html">TranslateBrowsePathsToNodeIdsResponse</a></li>
+                                <li><a href="../classes/TypeSchema.html">TypeSchema</a></li>
+                                <li><a href="../classes/UAAcknowledgeableConditionBase.html">UAAcknowledgeableConditionBase</a></li>
+                                <li><a href="../classes/UAAlarmConditionBase.html">UAAlarmConditionBase</a></li>
+                                <li><a href="../classes/UACertificateExpirationAlarm.html">UACertificateExpirationAlarm</a></li>
+                                <li><a href="../classes/UAConditionBase.html">UAConditionBase</a></li>
+                                <li><a href="../classes/UADataType.html">UADataType</a></li>
+                                <li><a href="../classes/UADiscreteAlarm.html">UADiscreteAlarm</a></li>
+                                <li><a href="../classes/UAExclusiveDeviationAlarm.html">UAExclusiveDeviationAlarm</a></li>
+                                <li><a href="../classes/UAExclusiveLevelAlarm.html">UAExclusiveLevelAlarm</a></li>
+                                <li><a href="../classes/UAExclusiveLimitAlarm.html">UAExclusiveLimitAlarm</a></li>
+                                <li><a href="../classes/UAExclusiveRateOfChangeAlarm.html">UAExclusiveRateOfChangeAlarm</a></li>
+                                <li><a href="../classes/UALimitAlarm.html">UALimitAlarm</a></li>
+                                <li><a href="../classes/UANonExclusiveDeviationAlarm.html">UANonExclusiveDeviationAlarm</a></li>
+                                <li><a href="../classes/UANonExclusiveLimitAlarm.html">UANonExclusiveLimitAlarm</a></li>
+                                <li><a href="../classes/UAObject.html">UAObject</a></li>
+                                <li><a href="../classes/UAObjectType.html">UAObjectType</a></li>
+                                <li><a href="../classes/UAOffNormalAlarm.html">UAOffNormalAlarm</a></li>
+                                <li><a href="../classes/UASystemOffNormalAlarm.html">UASystemOffNormalAlarm</a></li>
+                                <li><a href="../classes/UATripAlarm.html">UATripAlarm</a></li>
+                                <li><a href="../classes/UATwoStateVariable.html">UATwoStateVariable</a></li>
+                                <li><a href="../classes/UAVariable.html">UAVariable</a></li>
+                                <li><a href="../classes/UAVariableType.html">UAVariableType</a></li>
+                                <li><a href="../classes/UnregisterNodesRequest.html">UnregisterNodesRequest</a></li>
+                                <li><a href="../classes/UnregisterNodesResponse.html">UnregisterNodesResponse</a></li>
+                                <li><a href="../classes/UserNameIdentityToken.html">UserNameIdentityToken</a></li>
+                                <li><a href="../classes/UserTokenPolicy.html">UserTokenPolicy</a></li>
+                                <li><a href="../classes/Variant.html">Variant</a></li>
+                                <li><a href="../classes/View.html">View</a></li>
+                                <li><a href="../classes/ViewDescription.html">ViewDescription</a></li>
+                                <li><a href="../classes/WriteRequest.html">WriteRequest</a></li>
+                                <li><a href="../classes/WriteResponse.html">WriteResponse</a></li>
+                                <li><a href="../classes/WriteValue.html">WriteValue</a></li>
+                                <li><a href="../classes/X509IdentityToken.html">X509IdentityToken</a></li>
+                                <li><a href="../classes/Xml2Json.html">Xml2Json</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/opcua.address_space.html">opcua.address_space</a></li>
+                                <li><a href="../modules/opcua.address_space.AlarmsAndConditions.html">opcua.address_space.AlarmsAndConditions</a></li>
+                                <li><a href="../modules/opcua.address_space.types.html">opcua.address_space.types</a></li>
+                                <li><a href="../modules/opcua.client.html">opcua.client</a></li>
+                                <li><a href="../modules/opcua.data-value.html">opcua.data-value</a></li>
+                                <li><a href="../modules/opcua.datamodel.html">opcua.datamodel</a></li>
+                                <li><a href="../modules/opcua.miscellaneous.html">opcua.miscellaneous</a></li>
+                                <li><a href="../modules/opcua.server.html">opcua.server</a></li>
+                                <li><a href="../modules/opcua.server.simulation.html">opcua.server.simulation</a></li>
+                                <li><a href="../modules/opcua.status-code.html">opcua.status-code</a></li>
+                                <li><a href="../modules/opcua.transport.html">opcua.transport</a></li>
+                                <li><a href="../modules/opcua.utils.html">opcua.utils</a></li>
+                                <li><a href="../modules/opcua.variant.html">opcua.variant</a></li>
+                                <li><a href="../modules/service.filter.tools.html">service.filter.tools</a></li>
+                                <li><a href="../modules/services.browse.html">services.browse</a></li>
+                                <li><a href="../modules/services.call.html">services.call</a></li>
+                                <li><a href="../modules/services.discovery.html">services.discovery</a></li>
+                                <li><a href="../modules/services.endpoints.html">services.endpoints</a></li>
+                                <li><a href="../modules/services.filter.html">services.filter</a></li>
+                                <li><a href="../modules/services.history.html">services.history</a></li>
+                                <li><a href="../modules/services.node_management.html">services.node_management</a></li>
+                                <li><a href="../modules/services.query.html">services.query</a></li>
+                                <li><a href="../modules/services.read.html">services.read</a></li>
+                                <li><a href="../modules/services.register-server.html">services.register-server</a></li>
+                                <li><a href="../modules/services.register_node.html">services.register_node</a></li>
+                                <li><a href="../modules/services.secure-channel.html">services.secure-channel</a></li>
+                                <li><a href="../modules/services.session.html">services.session</a></li>
+                                <li><a href="../modules/services.subscription.html">services.subscription</a></li>
+                                <li><a href="../modules/services.translate-browse-path.html">services.translate-browse-path</a></li>
+                                <li><a href="../modules/services.write.html">services.write</a></li>
+                                <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
+                                <li><a href="../modules/xml2json
+                
+                node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+                
+                node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1>UAExclusiveLevelAlarm Class</h1>
+<div class="box meta">
+
+        <div class="extends">
+            Extends <a href="../classes/UAExclusiveLimitAlarm.html" class="crosslink">UAExclusiveLimitAlarm</a>
+        </div>
+
+        <div class="foundat">
+            Defined in: <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_exclusive_level_alarm.js.html#l11"><code>packages\node-opcua-address-space\src\alarms_and_conditions\exclusive_level_alarm.js:11</code></a>
+        </div>
+
+            Module: <a href="../modules/opcua.address_space.AlarmsAndConditions.html">opcua.address_space.AlarmsAndConditions</a>
+
+</div>
+
+
+<div class="box intro">
+    
+</div>
+
+    <div class="constructor">
+        <h2>Constructor</h2>
+<div id="method_UAExclusiveLevelAlarm" class="method item">
+    <h3 class="name"><code>UAExclusiveLevelAlarm</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_exclusive_level_alarm.js.html#l11"><code>packages\node-opcua-address-space\src\alarms_and_conditions\exclusive_level_alarm.js:11</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+
+</div>
+    </div>
+
+<div id="classdocs" class="tabview">
+    <ul class="api-class-tabs">
+        <li class="api-class-tab index"><a href="#index">Index</a></li>
+
+            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
+            <li class="api-class-tab properties"><a href="#properties">Properties</a></li>
+            <li class="api-class-tab events"><a href="#events">Events</a></li>
+    </ul>
+
+    <div>
+        <div id="index" class="api-class-tabpanel index">
+            <h2 class="off-left">Item Index</h2>
+
+                <div class="index-section methods">
+                    <h3>Methods</h3>
+
+                    <ul class="index-list methods extends">
+                            <li class="index-item method inherited">
+                                <a href="#method_(static)instantiate">(static)instantiate</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_(static)UAAcknowledgeableConditionBase.instantiate">(static)UAAcknowledgeableConditionBase.instantiate</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_(static)UAAlarmConditionBase.instantiate">(static)UAAlarmConditionBase.instantiate</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_(static)UALimitAlarm.instantiate">(static)UALimitAlarm.instantiate</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method__calculateConditionInfo">_calculateConditionInfo</a>
+
+                            </li>
+                            <li class="index-item method private inherited">
+                                <a href="#method__confirm_branch">_confirm_branch</a>
+
+                            </li>
+                            <li class="index-item method private inherited">
+                                <a href="#method__setEnabledState">_setEnabledState</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_acknowledgeAndAutoConfirmBranch">acknowledgeAndAutoConfirmBranch</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_activateAlarm">activateAlarm</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_autoConfirmBranch">autoConfirmBranch</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_conditionOfNode">conditionOfNode</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_createBranch">createBranch</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_deleteBranch">deleteBranch</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_desactivateAlarm">desactivateAlarm</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_getBranchCount">getBranchCount</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_getEnabledState">getEnabledState</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_getEnabledStateAsString">getEnabledStateAsString</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_getHighHighLimit">getHighHighLimit</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_getHighLimit">getHighLimit</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_getInputNodeNode">getInputNodeNode</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_getInputNodeValue">getInputNodeValue</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_getLowLimit">getLowLimit</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_getLowLowLimit">getLowLowLimit</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_getMaxTimeShelved">getMaxTimeShelved</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_getSuppressedOrShelved">getSuppressedOrShelved</a>
+
+                            </li>
+                            <li class="index-item method private inherited">
+                                <a href="#method_initialize">initialize</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_isSuppressedOrShelved">isSuppressedOrShelved</a>
+
+                            </li>
+                            <li class="index-item method private inherited">
+                                <a href="#method_post_initialize">post_initialize</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_raiseConditionEvent
+Raise a Instance Event
+(see also UAObject#raiseEvent to raise a transient event)">raiseConditionEvent
+Raise a Instance Event
+(see also UAObject#raiseEvent to raise a transient event)</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_setHighHighLimit">setHighHighLimit</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_setHighLimit">setHighLimit</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_setLocalTime">setLocalTime</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_setLowLimit">setLowLimit</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_setLowLowLimit">setLowLowLimit</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_setMaxTimeShelved">setMaxTimeShelved</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_setReceiveTime">setReceiveTime</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_setTime">setTime</a>
+
+                            </li>
+                    </ul>
+                </div>
+
+                <div class="index-section properties">
+                    <h3>Properties</h3>
+
+                    <ul class="index-list properties extends">
+                            <li class="index-item property inherited">
+                                <a href="#property_ackedState">ackedState</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#property_acknowledge">acknowledge</a>
+
+                            </li>
+                            <li class="index-item property inherited inherited">
+                                <a href="#property_activeState">activeState</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#property_confirm">confirm</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#property_confirmedState">confirmedState</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#property_inputNode">inputNode</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#property_limitState">limitState</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#property_maxTimeShelved">maxTimeShelved</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#property_shelvingState">shelvingState</a>
+
+                            </li>
+                            <li class="index-item property inherited inherited">
+                                <a href="#property_suppressedState">suppressedState</a>
+
+                            </li>
+                    </ul>
+                </div>
+
+
+                <div class="index-section events">
+                    <h3>Events</h3>
+
+                    <ul class="index-list events extends">
+                            <li class="index-item event inherited">
+                                <a href="#event_acknowledged">acknowledged</a>
+
+                            </li>
+                            <li class="index-item event inherited">
+                                <a href="#event_confirmed">confirmed</a>
+
+                            </li>
+                    </ul>
+                </div>
+        </div>
+
+            <div id="methods" class="api-class-tabpanel">
+                <h2 class="off-left">Methods</h2>
+
+<div id="method_(static)instantiate" class="method item inherited">
+    <h3 class="name"><code>(static)instantiate</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>type</code>
+                </li>
+                <li class="arg">
+                        <code>options</code>
+                </li>
+                <li class="arg">
+                        <code>data</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/UAExclusiveLimitAlarm.html" class="crosslink">UAExclusiveLimitAlarm</a></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UAExclusiveLimitAlarm.html#method_(static)instantiate">UAExclusiveLimitAlarm</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_exclusive_limit_alarm.js.html#l91"><code>packages\node-opcua-address-space\src\alarms_and_conditions\exclusive_limit_alarm.js:91</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">type</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">options</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">data</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type"><a href="../classes/UAExclusiveLimitAlarm.html" class="crosslink">UAExclusiveLimitAlarm</a></span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_(static)UAAcknowledgeableConditionBase.instantiate" class="method item inherited">
+    <h3 class="name"><code>(static)UAAcknowledgeableConditionBase.instantiate</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>addressSpace</code>
+                </li>
+                <li class="arg">
+                        <code>conditionTypeId</code>
+                </li>
+                <li class="arg">
+                        <code>options</code>
+                </li>
+                <li class="arg">
+                        <code>data</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/UAAcknowledgeableConditionBase.html" class="crosslink">UAAcknowledgeableConditionBase</a></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UAAcknowledgeableConditionBase.html#method_(static)UAAcknowledgeableConditionBase.instantiate">UAAcknowledgeableConditionBase</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_acknowledgeable_condition.js.html#l318"><code>packages\node-opcua-address-space\src\alarms_and_conditions\acknowledgeable_condition.js:318</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">addressSpace</code>
+                        <span class="type"><a href="../classes/AddressSpace.html" class="crosslink">AddressSpace</a></span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">conditionTypeId</code>
+                        <span class="type">String | <a href="../classes/NodeId.html" class="crosslink">NodeId</a></span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">options</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">data</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type"><a href="../classes/UAAcknowledgeableConditionBase.html" class="crosslink">UAAcknowledgeableConditionBase</a></span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_(static)UAAlarmConditionBase.instantiate" class="method item inherited">
+    <h3 class="name"><code>(static)UAAlarmConditionBase.instantiate</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>alarmConditionTypeId</code>
+                </li>
+                <li class="arg">
+                        <code>options</code>
+                </li>
+                <li class="arg">
+                        <code>data</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UAAlarmConditionBase.html#method_(static)UAAlarmConditionBase.instantiate">UAAlarmConditionBase</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_alarm_condition.js.html#l662"><code>packages\node-opcua-address-space\src\alarms_and_conditions\alarm_condition.js:662</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">alarmConditionTypeId</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">options</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name">inputNode</code>
+                                    <span class="type"></span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">optionals</code>
+                                    <span class="type"></span>
+
+                                <div class="param-description">
+                                    <p>could be &quot;SuppressedState&quot; , &quot;ShelvingState&quot;</p>
+
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name optional">[maxTimeShelved]</code>
+                                    <span class="type">Number | Null</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    <p>max TimeShelved duration (in ms)</p>
+
+                                </div>
+
+                            </li>
+                        </ul>
+                </li>
+                <li class="param">
+                        <code class="param-name">data</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_(static)UALimitAlarm.instantiate" class="method item inherited">
+    <h3 class="name"><code>(static)UALimitAlarm.instantiate</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>addressSpace</code>
+                </li>
+                <li class="arg">
+                        <code>limitAlarmTypeId</code>
+                </li>
+                <li class="arg">
+                        <code>options</code>
+                </li>
+                <li class="arg">
+                        <code>data</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/UALimitAlarm.html" class="crosslink">UALimitAlarm</a></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UALimitAlarm.html#method_(static)UALimitAlarm.instantiate">UALimitAlarm</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_limit_alarm.js.html#l149"><code>packages\node-opcua-address-space\src\alarms_and_conditions\limit_alarm.js:149</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">addressSpace</code>
+                        <span class="type"><a href="../classes/AddressSpace.html" class="crosslink">AddressSpace</a></span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">limitAlarmTypeId</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">options</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name">inputNode</code>
+                                    <span class="type"></span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">optionals</code>
+                                    <span class="type"></span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">highHighLimit</code>
+                                    <span class="type">Double</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">highLimit</code>
+                                    <span class="type">Double</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">lowLimit</code>
+                                    <span class="type">Double</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">lowLowLimit</code>
+                                    <span class="type">Double</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                        </ul>
+                </li>
+                <li class="param">
+                        <code class="param-name">data</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type"><a href="../classes/UALimitAlarm.html" class="crosslink">UALimitAlarm</a></span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method__calculateConditionInfo" class="method item inherited">
+    <h3 class="name"><code>_calculateConditionInfo</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>stateData</code>
+                </li>
+                <li class="arg">
+                        <code>isActive</code>
+                </li>
+                <li class="arg">
+                        <code>value</code>
+                </li>
+                <li class="arg">
+                        <code>oldCondition</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/ConditionInfo.html" class="crosslink">ConditionInfo</a></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UAAlarmConditionBase.html#method__calculateConditionInfo">UAAlarmConditionBase</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_alarm_condition.js.html#l556"><code>packages\node-opcua-address-space\src\alarms_and_conditions\alarm_condition.js:556</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">stateData</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>the new calculated state of the alarm</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">isActive</code>
+                        <span class="type">Boolean</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">value</code>
+                        <span class="type">Number</span>
+
+
+                    <div class="param-description">
+                        <p>the new value of the limit alarm</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">oldCondition</code>
+                        <span class="type"><a href="../classes/ConditionInfo.html" class="crosslink">ConditionInfo</a></span>
+
+
+                    <div class="param-description">
+                        <p>given for information purpose</p>
+
+                    </div>
+
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name">severity</code>
+                                    <span class="type"></span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">quality</code>
+                                    <span class="type"></span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">message</code>
+                                    <span class="type"></span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">retain</code>
+                                    <span class="type"></span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                        </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type"><a href="../classes/ConditionInfo.html" class="crosslink">ConditionInfo</a></span>:
+                    <p>the new condition info</p>
+<p>this method need to be overridden by the instantiate to allow custom message and severity
+to be set based on specific context of the alarm.</p>
+
+            </div>
+        </div>
+
+
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <p>var myAlarm = addressSpace.instantiateExclusiveLimitAlarm({...});
+myAlarm._calculateConditionInfo = function(stateName,value,oldCondition) {
+var percent = Math.ceil(value * 100);
+return new ConditionInfo({
+message: &quot;Tank is almost &quot; + percent + &quot;% full&quot;,
+severity: 100,
+quality: StatusCodes.Good
+});
+};</p>
+
+            </div>
+        </div>
+</div>
+<div id="method__confirm_branch" class="method item private inherited">
+    <h3 class="name"><code>_confirm_branch</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>eventId</code>
+                </li>
+                <li class="arg">
+                        <code>comment</code>
+                </li>
+                <li class="arg">
+                        <code>branch</code>
+                </li>
+                <li class="arg">
+                        <code>message</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+        <span class="flag private">private</span>
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UAAcknowledgeableConditionBase.html#method__confirm_branch">UAAcknowledgeableConditionBase</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_acknowledgeable_condition.js.html#l223"><code>packages\node-opcua-address-space\src\alarms_and_conditions\acknowledgeable_condition.js:223</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">eventId</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">comment</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">branch</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">message</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method__setEnabledState" class="method item private inherited">
+    <h3 class="name"><code>_setEnabledState</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>requestedEnabledState</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/StatusCode.html" class="crosslink">StatusCode</a></span>
+        </span>
+
+
+        <span class="flag private">private</span>
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UAConditionBase.html#method__setEnabledState">UAConditionBase</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_condition.js.html#l926"><code>packages\node-opcua-address-space\src\alarms_and_conditions\condition.js:926</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">requestedEnabledState</code>
+                        <span class="type">Boolean</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type"><a href="../classes/StatusCode.html" class="crosslink">StatusCode</a></span>:
+                    <p>StatusCodes.Good if successful or BadConditionAlreadyEnabled/BadConditionAlreadyDisabled</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_acknowledgeAndAutoConfirmBranch" class="method item inherited">
+    <h3 class="name"><code>acknowledgeAndAutoConfirmBranch</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>branch</code>
+                </li>
+                <li class="arg">
+                        <code>comment</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UAAcknowledgeableConditionBase.html#method_acknowledgeAndAutoConfirmBranch">UAAcknowledgeableConditionBase</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_acknowledgeable_condition.js.html#l278"><code>packages\node-opcua-address-space\src\alarms_and_conditions\acknowledgeable_condition.js:278</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">branch</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">comment</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_activateAlarm" class="method item inherited">
+    <h3 class="name"><code>activateAlarm</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UAAlarmConditionBase.html#method_activateAlarm">UAAlarmConditionBase</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_alarm_condition.js.html#l131"><code>packages\node-opcua-address-space\src\alarms_and_conditions\alarm_condition.js:131</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+
+</div>
+<div id="method_autoConfirmBranch" class="method item inherited">
+    <h3 class="name"><code>autoConfirmBranch</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>branch</code>
+                </li>
+                <li class="arg">
+                        <code>comment</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UAAcknowledgeableConditionBase.html#method_autoConfirmBranch">UAAcknowledgeableConditionBase</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_acknowledgeable_condition.js.html#l260"><code>packages\node-opcua-address-space\src\alarms_and_conditions\acknowledgeable_condition.js:260</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">branch</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">comment</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_conditionOfNode" class="method item inherited">
+    <h3 class="name"><code>conditionOfNode</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/UAObject.html" class="crosslink">UAObject</a></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UAConditionBase.html#method_conditionOfNode">UAConditionBase</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_condition.js.html#l1063"><code>packages\node-opcua-address-space\src\alarms_and_conditions\condition.js:1063</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type"><a href="../classes/UAObject.html" class="crosslink">UAObject</a></span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_createBranch" class="method item inherited">
+    <h3 class="name"><code>createBranch</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/ConditionSnapshot.html" class="crosslink">ConditionSnapshot</a></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UAConditionBase.html#method_createBranch">UAConditionBase</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_condition.js.html#l837"><code>packages\node-opcua-address-space\src\alarms_and_conditions\condition.js:837</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type"><a href="../classes/ConditionSnapshot.html" class="crosslink">ConditionSnapshot</a></span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_deleteBranch" class="method item inherited">
+    <h3 class="name"><code>deleteBranch</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>branch</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UAConditionBase.html#method_deleteBranch">UAConditionBase</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_condition.js.html#l848"><code>packages\node-opcua-address-space\src\alarms_and_conditions\condition.js:848</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">branch</code>
+                        <span class="type"><a href="../classes/ConditionSnapshot.html" class="crosslink">ConditionSnapshot</a></span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_desactivateAlarm" class="method item inherited">
+    <h3 class="name"><code>desactivateAlarm</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UAAlarmConditionBase.html#method_desactivateAlarm">UAAlarmConditionBase</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_alarm_condition.js.html#l143"><code>packages\node-opcua-address-space\src\alarms_and_conditions\alarm_condition.js:143</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+
+</div>
+<div id="method_getBranchCount" class="method item inherited">
+    <h3 class="name"><code>getBranchCount</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Number</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UAConditionBase.html#method_getBranchCount">UAConditionBase</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_condition.js.html#l813"><code>packages\node-opcua-address-space\src\alarms_and_conditions\condition.js:813</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Number</span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getEnabledState" class="method item inherited">
+    <h3 class="name"><code>getEnabledState</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UAConditionBase.html#method_getEnabledState">UAConditionBase</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_condition.js.html#l904"><code>packages\node-opcua-address-space\src\alarms_and_conditions\condition.js:904</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Boolean</span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getEnabledStateAsString" class="method item inherited">
+    <h3 class="name"><code>getEnabledStateAsString</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">String</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UAConditionBase.html#method_getEnabledStateAsString">UAConditionBase</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_condition.js.html#l912"><code>packages\node-opcua-address-space\src\alarms_and_conditions\condition.js:912</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">String</span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getHighHighLimit" class="method item inherited">
+    <h3 class="name"><code>getHighHighLimit</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Number</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UALimitAlarm.html#method_getHighHighLimit">UALimitAlarm</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_limit_alarm.js.html#l35"><code>packages\node-opcua-address-space\src\alarms_and_conditions\limit_alarm.js:35</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Number</span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getHighLimit" class="method item inherited">
+    <h3 class="name"><code>getHighLimit</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Number</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UALimitAlarm.html#method_getHighLimit">UALimitAlarm</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_limit_alarm.js.html#l43"><code>packages\node-opcua-address-space\src\alarms_and_conditions\limit_alarm.js:43</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Number</span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getInputNodeNode" class="method item inherited">
+    <h3 class="name"><code>getInputNodeNode</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/BaseNode.html" class="crosslink">BaseNode</a></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UAAlarmConditionBase.html#method_getInputNodeNode">UAAlarmConditionBase</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_alarm_condition.js.html#l438"><code>packages\node-opcua-address-space\src\alarms_and_conditions\alarm_condition.js:438</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type"><a href="../classes/BaseNode.html" class="crosslink">BaseNode</a></span>:
+                    <p>return the node in the address space pointed by the inputNode value</p>
+<p>Note: please note the difference between alarm.inputNode</p>
+<ul>
+<li>alarm.inputNode is a UAVariable property of the alarm object holding the nodeid of the input node in its value.</li>
+<li>getInputNodeNode() is the UAVariable that contains the value that affects the state of the alarm and
+whose node id is stored in alarm.inputNode</li>
+</ul>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getInputNodeValue" class="method item inherited">
+    <h3 class="name"><code>getInputNodeValue</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type"></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UAAlarmConditionBase.html#method_getInputNodeValue">UAAlarmConditionBase</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_alarm_condition.js.html#l453"><code>packages\node-opcua-address-space\src\alarms_and_conditions\alarm_condition.js:453</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type"></span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getLowLimit" class="method item inherited">
+    <h3 class="name"><code>getLowLimit</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Float</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UALimitAlarm.html#method_getLowLimit">UALimitAlarm</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_limit_alarm.js.html#l51"><code>packages\node-opcua-address-space\src\alarms_and_conditions\limit_alarm.js:51</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Float</span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getLowLowLimit" class="method item inherited">
+    <h3 class="name"><code>getLowLowLimit</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Float</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UALimitAlarm.html#method_getLowLowLimit">UALimitAlarm</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_limit_alarm.js.html#l59"><code>packages\node-opcua-address-space\src\alarms_and_conditions\limit_alarm.js:59</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Float</span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getMaxTimeShelved" class="method item inherited">
+    <h3 class="name"><code>getMaxTimeShelved</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Duration</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UAAlarmConditionBase.html#method_getMaxTimeShelved">UAAlarmConditionBase</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_alarm_condition.js.html#l199"><code>packages\node-opcua-address-space\src\alarms_and_conditions\alarm_condition.js:199</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Duration</span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getSuppressedOrShelved" class="method item inherited">
+    <h3 class="name"><code>getSuppressedOrShelved</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UAAlarmConditionBase.html#method_getSuppressedOrShelved">UAAlarmConditionBase</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_alarm_condition.js.html#l177"><code>packages\node-opcua-address-space\src\alarms_and_conditions\alarm_condition.js:177</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Boolean</span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_initialize" class="method item private inherited">
+    <h3 class="name"><code>initialize</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+        <span class="flag private">private</span>
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UAConditionBase.html#method_initialize">UAConditionBase</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_condition.js.html#l781"><code>packages\node-opcua-address-space\src\alarms_and_conditions\condition.js:781</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+
+</div>
+<div id="method_isSuppressedOrShelved" class="method item inherited">
+    <h3 class="name"><code>isSuppressedOrShelved</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UAAlarmConditionBase.html#method_isSuppressedOrShelved">UAAlarmConditionBase</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_alarm_condition.js.html#l154"><code>packages\node-opcua-address-space\src\alarms_and_conditions\alarm_condition.js:154</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Boolean</span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_post_initialize" class="method item private inherited">
+    <h3 class="name"><code>post_initialize</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+        <span class="flag private">private</span>
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UAConditionBase.html#method_post_initialize">UAConditionBase</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_condition.js.html#l790"><code>packages\node-opcua-address-space\src\alarms_and_conditions\condition.js:790</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+
+</div>
+<div id="method_raiseConditionEvent
+Raise a Instance Event
+(see also UAObject#raiseEvent to raise a transient event)" class="method item inherited">
+    <h3 class="name"><code>raiseConditionEvent
+Raise a Instance Event
+(see also UAObject#raiseEvent to raise a transient event)</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>branch</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UAConditionBase.html#method_raiseConditionEvent
+Raise a Instance Event
+(see also UAObject#raiseEvent to raise a transient event)">UAConditionBase</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_condition.js.html#l1079"><code>packages\node-opcua-address-space\src\alarms_and_conditions\condition.js:1079</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">branch</code>
+                        <span class="type"><a href="../classes/ConditionSnapshot.html" class="crosslink">ConditionSnapshot</a></span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_setHighHighLimit" class="method item inherited">
+    <h3 class="name"><code>setHighHighLimit</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>value</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UALimitAlarm.html#method_setHighHighLimit">UALimitAlarm</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_limit_alarm.js.html#l67"><code>packages\node-opcua-address-space\src\alarms_and_conditions\limit_alarm.js:67</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">value</code>
+                        <span class="type">Float</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_setHighLimit" class="method item inherited">
+    <h3 class="name"><code>setHighLimit</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>value</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UALimitAlarm.html#method_setHighLimit">UALimitAlarm</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_limit_alarm.js.html#l77"><code>packages\node-opcua-address-space\src\alarms_and_conditions\limit_alarm.js:77</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">value</code>
+                        <span class="type">Float</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_setLocalTime" class="method item inherited">
+    <h3 class="name"><code>setLocalTime</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>time</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UAConditionBase.html#method_setLocalTime">UAConditionBase</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_condition.js.html#l1023"><code>packages\node-opcua-address-space\src\alarms_and_conditions\condition.js:1023</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">time</code>
+                        <span class="type">Date</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_setLowLimit" class="method item inherited">
+    <h3 class="name"><code>setLowLimit</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>value</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UALimitAlarm.html#method_setLowLimit">UALimitAlarm</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_limit_alarm.js.html#l86"><code>packages\node-opcua-address-space\src\alarms_and_conditions\limit_alarm.js:86</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">value</code>
+                        <span class="type">Float</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_setLowLowLimit" class="method item inherited">
+    <h3 class="name"><code>setLowLowLimit</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>value</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UALimitAlarm.html#method_setLowLowLimit">UALimitAlarm</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_limit_alarm.js.html#l96"><code>packages\node-opcua-address-space\src\alarms_and_conditions\limit_alarm.js:96</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">value</code>
+                        <span class="type">Float</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_setMaxTimeShelved" class="method item inherited">
+    <h3 class="name"><code>setMaxTimeShelved</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>duration</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UAAlarmConditionBase.html#method_setMaxTimeShelved">UAAlarmConditionBase</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_alarm_condition.js.html#l186"><code>packages\node-opcua-address-space\src\alarms_and_conditions\alarm_condition.js:186</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">duration</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>( Duration in Milliseconds)</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_setReceiveTime" class="method item inherited">
+    <h3 class="name"><code>setReceiveTime</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>time</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UAConditionBase.html#method_setReceiveTime">UAConditionBase</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_condition.js.html#l1014"><code>packages\node-opcua-address-space\src\alarms_and_conditions\condition.js:1014</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">time</code>
+                        <span class="type">Date</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_setTime" class="method item inherited">
+    <h3 class="name"><code>setTime</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>time</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UAConditionBase.html#method_setTime">UAConditionBase</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_condition.js.html#l1032"><code>packages\node-opcua-address-space\src\alarms_and_conditions\condition.js:1032</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">time</code>
+                        <span class="type">Date</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+            </div>
+
+            <div id="properties" class="api-class-tabpanel">
+                <h2 class="off-left">Properties</h2>
+
+<div id="property_ackedState" class="property item inherited">
+    <h3 class="name"><code>ackedState</code></h3>
+    <span class="type">TwoStateVariable</span>
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UAAcknowledgeableConditionBase.html#property_ackedState">UAAcknowledgeableConditionBase</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_acknowledgeable_condition.js.html#l335"><code>packages\node-opcua-address-space\src\alarms_and_conditions\acknowledgeable_condition.js:335</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_acknowledge" class="property item inherited">
+    <h3 class="name"><code>acknowledge</code></h3>
+    <span class="type">UAMethod</span>
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UAAcknowledgeableConditionBase.html#property_acknowledge">UAAcknowledgeableConditionBase</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_acknowledgeable_condition.js.html#l344"><code>packages\node-opcua-address-space\src\alarms_and_conditions\acknowledgeable_condition.js:344</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_activeState" class="property item inherited">
+    <h3 class="name"><code>activeState</code></h3>
+    <span class="type"><a href="../classes/UATwoStateVariable.html" class="crosslink">UATwoStateVariable</a></span>
+
+
+
+
+
+    <div class="meta">
+            <p>Inherited from
+            <a href="../classes/UAAlarmConditionBase.html#property_activeState">
+                UAAlarmConditionBase
+            </a>
+            but overwritten in
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_limit_alarm.js.html#l27"><code>packages\node-opcua-address-space\src\alarms_and_conditions\limit_alarm.js:27</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_confirm" class="property item inherited">
+    <h3 class="name"><code>confirm</code></h3>
+    <span class="type">UAMethod</span>
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UAAcknowledgeableConditionBase.html#property_confirm">UAAcknowledgeableConditionBase</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_acknowledgeable_condition.js.html#l363"><code>packages\node-opcua-address-space\src\alarms_and_conditions\acknowledgeable_condition.js:363</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_confirmedState" class="property item inherited">
+    <h3 class="name"><code>confirmedState</code></h3>
+    <span class="type">TwoStateVariable</span>
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UAAcknowledgeableConditionBase.html#property_confirmedState">UAAcknowledgeableConditionBase</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_acknowledgeable_condition.js.html#l351"><code>packages\node-opcua-address-space\src\alarms_and_conditions\acknowledgeable_condition.js:351</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_inputNode" class="property item inherited">
+    <h3 class="name"><code>inputNode</code></h3>
+    <span class="type">UAVariable
+ dataType is DataType.NodeId</span>
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UAAlarmConditionBase.html#property_inputNode">UAAlarmConditionBase</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_alarm_condition.js.html#l483"><code>packages\node-opcua-address-space\src\alarms_and_conditions\alarm_condition.js:483</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The InputNode Property provides the NodeId of the Variable the Value of which is used as
+primary input in the calculation of the Alarm state. If this Variable is not in the AddressSpace,
+a Null NodeId shall be provided. In some systems, an Alarm may be calculated based on
+multiple Variables Values; it is up to the system to determine which Variable’s NodeId is used.</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_limitState" class="property item inherited">
+    <h3 class="name"><code>limitState</code></h3>
+    <span class="type">UAStateMachine</span>
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UAExclusiveLimitAlarm.html#property_limitState">UAExclusiveLimitAlarm</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_exclusive_limit_alarm.js.html#l26"><code>packages\node-opcua-address-space\src\alarms_and_conditions\exclusive_limit_alarm.js:26</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_maxTimeShelved" class="property item inherited">
+    <h3 class="name"><code>maxTimeShelved</code></h3>
+    <span class="type"><a href="../classes/UAVariable.html" class="crosslink">UAVariable</a></span>
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UAAlarmConditionBase.html#property_maxTimeShelved">UAAlarmConditionBase</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_alarm_condition.js.html#l778"><code>packages\node-opcua-address-space\src\alarms_and_conditions\alarm_condition.js:778</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The optional Property MaxTimeShelved is used to set the maximum time that an Alarm Condition may be shelved.
+The value is expressed as duration. Systems can use this Property to prevent permanent Shelving of an Alarm.
+If this Property is present it will be an upper limit on the duration passed into a TimedShelve Method call.
+If a value that exceeds the value of this property is passed to the TimedShelve Method,
+than a Bad_ShelvingTimeOutOfRange error code is returned on the call. If this Property is present it will
+also be enforced for the OneShotShelved state, in that an Alarm Condition will transition to the Unshelved
+state from the OneShotShelved state if the duration specified in this Property expires following a
+OneShotShelve operation without a change of any of the other items associated with the Condition.</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_shelvingState" class="property item inherited">
+    <h3 class="name"><code>shelvingState</code></h3>
+    <span class="type">UAShelvingStateMachine</span>
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/UAAlarmConditionBase.html#property_shelvingState">UAAlarmConditionBase</a>:
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_alarm_condition.js.html#l742"><code>packages\node-opcua-address-space\src\alarms_and_conditions\alarm_condition.js:742</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>ShelvingState suggests whether an Alarm shall (temporarily) be prevented from being
+displayed to the user. It is quite often used to block nuisance Alarms.</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_suppressedState" class="property item inherited">
+    <h3 class="name"><code>suppressedState</code></h3>
+    <span class="type"><a href="../classes/UATwoStateVariable.html" class="crosslink">UATwoStateVariable</a></span>
+
+
+
+
+
+    <div class="meta">
+            <p>Inherited from
+            <a href="../classes/UAAlarmConditionBase.html#property_suppressedState">
+                UAAlarmConditionBase
+            </a>
+            but overwritten in
+        <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_alarm_condition.js.html#l723"><code>packages\node-opcua-address-space\src\alarms_and_conditions\alarm_condition.js:723</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>SuppressState is used internally by a Server to automatically suppress Alarms due to system
+specific reasons. For example a system may be configured to suppress Alarms that are
+associated with machinery that is shutdown, such as a low level Alarm for a tank that is
+currently not in use.</p>
+
+    </div>
+
+
+
+</div>
+            </div>
+
+
+            <div id="events" class="api-class-tabpanel">
+                <h2 class="off-left">Events</h2>
+
+                    <div id="event_acknowledged" class="events item inherited">
+                        <h3 class="name"><code>acknowledged</code></h3>
+                        <span class="type"></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/UAAcknowledgeableConditionBase.html#event_acknowledged">UAAcknowledgeableConditionBase</a>:
+                            <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_acknowledgeable_condition.js.html#l197"><code>packages\node-opcua-address-space\src\alarms_and_conditions\acknowledgeable_condition.js:197</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Event Payload:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">eventId</code>
+                                            <span class="type">Buffer | Null</span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">comment</code>
+                                            <span class="type"><a href="../classes/LocalizedText.html" class="crosslink">LocalizedText</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">branch</code>
+                                            <span class="type"><a href="../classes/ConditionSnapshot.html" class="crosslink">ConditionSnapshot</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>raised when the alarm branch has been acknowledged</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
+                    <div id="event_confirmed" class="events item inherited">
+                        <h3 class="name"><code>confirmed</code></h3>
+                        <span class="type"></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/UAAcknowledgeableConditionBase.html#event_confirmed">UAAcknowledgeableConditionBase</a>:
+                            <a href="../files/packages_node-opcua-address-space_src_alarms_and_conditions_acknowledgeable_condition.js.html#l249"><code>packages\node-opcua-address-space\src\alarms_and_conditions\acknowledgeable_condition.js:249</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Event Payload:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">eventId</code>
+                                            <span class="type">Object</span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">comment</code>
+                                            <span class="type">Object</span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">eventId
+                    raised</code>
+                                            <span class="type">Object</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>when the alarm branch has been confirmed</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
+            </div>
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

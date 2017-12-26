@@ -1,0 +1,1756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>packages\node-opcua-server\test\test_subscription.js - The NodeOPCUA API</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.1.0-pre</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/AcknowledgeMessage.html">AcknowledgeMessage</a></li>
+                                <li><a href="../classes/ActivateSessionRequest.html">ActivateSessionRequest</a></li>
+                                <li><a href="../classes/ActivateSessionResponse.html">ActivateSessionResponse</a></li>
+                                <li><a href="../classes/AddNodesItem.html">AddNodesItem</a></li>
+                                <li><a href="../classes/AddNodesRequest.html">AddNodesRequest</a></li>
+                                <li><a href="../classes/AddNodesResponse.html">AddNodesResponse</a></li>
+                                <li><a href="../classes/AddNodesResult.html">AddNodesResult</a></li>
+                                <li><a href="../classes/AddReferencesItem.html">AddReferencesItem</a></li>
+                                <li><a href="../classes/AddReferencesRequest.html">AddReferencesRequest</a></li>
+                                <li><a href="../classes/AddReferencesResponse.html">AddReferencesResponse</a></li>
+                                <li><a href="../classes/AddressSpace.html">AddressSpace</a></li>
+                                <li><a href="../classes/AggregateConfiguration.html">AggregateConfiguration</a></li>
+                                <li><a href="../classes/AggregateFilter.html">AggregateFilter</a></li>
+                                <li><a href="../classes/AnonymousIdentityToken.html">AnonymousIdentityToken</a></li>
+                                <li><a href="../classes/ApplicationDescription.html">ApplicationDescription</a></li>
+                                <li><a href="../classes/ApplicationInstanceCertificate.html">ApplicationInstanceCertificate</a></li>
+                                <li><a href="../classes/Argument.html">Argument</a></li>
+                                <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
+                                <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+                                <li><a href="../classes/AttributeNameById.html">AttributeNameById</a></li>
+                                <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
+                                <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
+                                <li><a href="../classes/BaseEventType.html">BaseEventType</a></li>
+                                <li><a href="../classes/BaseNode.html">BaseNode</a></li>
+                                <li><a href="../classes/BaseUAObject.html">BaseUAObject</a></li>
+                                <li><a href="../classes/BinaryStream.html">BinaryStream</a></li>
+                                <li><a href="../classes/BinaryStreamSizeCalculator.html">BinaryStreamSizeCalculator</a></li>
+                                <li><a href="../classes/BrowseDescription.html">BrowseDescription</a></li>
+                                <li><a href="../classes/BrowseDirection.html">BrowseDirection</a></li>
+                                <li><a href="../classes/BrowseNextRequest.html">BrowseNextRequest</a></li>
+                                <li><a href="../classes/BrowseNextResponse.html">BrowseNextResponse</a></li>
+                                <li><a href="../classes/BrowsePath.html">BrowsePath</a></li>
+                                <li><a href="../classes/BrowsePathResult.html">BrowsePathResult</a></li>
+                                <li><a href="../classes/BrowsePathTarget.html">BrowsePathTarget</a></li>
+                                <li><a href="../classes/BrowseRequest.html">BrowseRequest</a></li>
+                                <li><a href="../classes/BrowseResponse.html">BrowseResponse</a></li>
+                                <li><a href="../classes/BrowseResult.html">BrowseResult</a></li>
+                                <li><a href="../classes/BuildInfo.html">BuildInfo</a></li>
+                                <li><a href="../classes/CallMethodRequest.html">CallMethodRequest</a></li>
+                                <li><a href="../classes/CallMethodResult.html">CallMethodResult</a></li>
+                                <li><a href="../classes/CallRequest.html">CallRequest</a></li>
+                                <li><a href="../classes/CallResponse.html">CallResponse</a></li>
+                                <li><a href="../classes/CancelRequest.html">CancelRequest</a></li>
+                                <li><a href="../classes/CancelResponse.html">CancelResponse</a></li>
+                                <li><a href="../classes/ChannelSecurityToken.html">ChannelSecurityToken</a></li>
+                                <li><a href="../classes/ChunkManager.html">ChunkManager</a></li>
+                                <li><a href="../classes/ClientMonitoredItem.html">ClientMonitoredItem</a></li>
+                                <li><a href="../classes/ClientMonitoredItemGroup.html">ClientMonitoredItemGroup</a></li>
+                                <li><a href="../classes/ClientSecureChannelLayer.html">ClientSecureChannelLayer</a></li>
+                                <li><a href="../classes/ClientSession.html">ClientSession</a></li>
+                                <li><a href="../classes/ClientSidePublishEngine.html">ClientSidePublishEngine</a></li>
+                                <li><a href="../classes/ClientSubscription.html">ClientSubscription</a></li>
+                                <li><a href="../classes/ClientTCP_transport.html">ClientTCP_transport</a></li>
+                                <li><a href="../classes/CloseSecureChannelRequest.html">CloseSecureChannelRequest</a></li>
+                                <li><a href="../classes/CloseSecureChannelResponse.html">CloseSecureChannelResponse</a></li>
+                                <li><a href="../classes/CloseSessionRequest.html">CloseSessionRequest</a></li>
+                                <li><a href="../classes/CloseSessionResponse.html">CloseSessionResponse</a></li>
+                                <li><a href="../classes/Company.html">Company</a></li>
+                                <li><a href="../classes/ConditionInfo.html">ConditionInfo</a></li>
+                                <li><a href="../classes/ConditionSnapshot.html">ConditionSnapshot</a></li>
+                                <li><a href="../classes/ContentFilter.html">ContentFilter</a></li>
+                                <li><a href="../classes/ContentFilterElement.html">ContentFilterElement</a></li>
+                                <li><a href="../classes/ContentFilterElementResult.html">ContentFilterElementResult</a></li>
+                                <li><a href="../classes/ContentFilterResult.html">ContentFilterResult</a></li>
+                                <li><a href="../classes/CreateMonitoredItemsRequest.html">CreateMonitoredItemsRequest</a></li>
+                                <li><a href="../classes/CreateMonitoredItemsResponse.html">CreateMonitoredItemsResponse</a></li>
+                                <li><a href="../classes/CreateSessionRequest.html">CreateSessionRequest</a></li>
+                                <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
+                                <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
+                                <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
+                                <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
+                                <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
+                                <li><a href="../classes/DataValue.html">DataValue</a></li>
+                                <li><a href="../classes/DeleteMonitoredItemsRequest.html">DeleteMonitoredItemsRequest</a></li>
+                                <li><a href="../classes/DeleteMonitoredItemsResponse.html">DeleteMonitoredItemsResponse</a></li>
+                                <li><a href="../classes/DeleteNodesItem.html">DeleteNodesItem</a></li>
+                                <li><a href="../classes/DeleteNodesRequest.html">DeleteNodesRequest</a></li>
+                                <li><a href="../classes/DeleteNodesResponse.html">DeleteNodesResponse</a></li>
+                                <li><a href="../classes/DeleteReferencesItem.html">DeleteReferencesItem</a></li>
+                                <li><a href="../classes/DeleteReferencesRequest.html">DeleteReferencesRequest</a></li>
+                                <li><a href="../classes/DeleteReferencesResponse.html">DeleteReferencesResponse</a></li>
+                                <li><a href="../classes/DeleteSubscriptionsRequest.html">DeleteSubscriptionsRequest</a></li>
+                                <li><a href="../classes/DeleteSubscriptionsResponse.html">DeleteSubscriptionsResponse</a></li>
+                                <li><a href="../classes/DiagnosticInfo.html">DiagnosticInfo</a></li>
+                                <li><a href="../classes/DummyObject.html">DummyObject</a></li>
+                                <li><a href="../classes/ElementOperand.html">ElementOperand</a></li>
+                                <li><a href="../classes/Employee.html">Employee</a></li>
+                                <li><a href="../classes/EndpointDescription.html">EndpointDescription</a></li>
+                                <li><a href="../classes/Enum.html">Enum</a></li>
+                                <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
+                                <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
+                                <li><a href="../classes/EUInformation.html">EUInformation</a></li>
+                                <li><a href="../classes/EventData.html">EventData</a></li>
+                                <li><a href="../classes/EventFieldList.html">EventFieldList</a></li>
+                                <li><a href="../classes/EventFilter.html">EventFilter</a></li>
+                                <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
+                                <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
+                                <li><a href="../classes/ExpandedNodeId.html">ExpandedNodeId</a></li>
+                                <li><a href="../classes/Factory.html">Factory</a></li>
+                                <li><a href="../classes/FilterOperand.html">FilterOperand</a></li>
+                                <li><a href="../classes/FindServersRequest.html">FindServersRequest</a></li>
+                                <li><a href="../classes/FindServersResponse.html">FindServersResponse</a></li>
+                                <li><a href="../classes/FooBar.html">FooBar</a></li>
+                                <li><a href="../classes/FooBarDerived.html">FooBarDerived</a></li>
+                                <li><a href="../classes/FooWithRecursion.html">FooWithRecursion</a></li>
+                                <li><a href="../classes/GetEndpointsRequest.html">GetEndpointsRequest</a></li>
+                                <li><a href="../classes/GetEndpointsResponse.html">GetEndpointsResponse</a></li>
+                                <li><a href="../classes/HelloMessage.html">HelloMessage</a></li>
+                                <li><a href="../classes/HistoryData.html">HistoryData</a></li>
+                                <li><a href="../classes/HistoryModifiedData.html">HistoryModifiedData</a></li>
+                                <li><a href="../classes/HistoryReadDetails.html">HistoryReadDetails</a></li>
+                                <li><a href="../classes/HistoryReadRequest.html">HistoryReadRequest</a></li>
+                                <li><a href="../classes/HistoryReadResponse.html">HistoryReadResponse</a></li>
+                                <li><a href="../classes/HistoryReadResult.html">HistoryReadResult</a></li>
+                                <li><a href="../classes/HistoryReadValueId.html">HistoryReadValueId</a></li>
+                                <li><a href="../classes/HistoryServerCapabilities.html">HistoryServerCapabilities</a></li>
+                                <li><a href="../classes/HistoryUpdateRequest.html">HistoryUpdateRequest</a></li>
+                                <li><a href="../classes/HistoryUpdateResponse.html">HistoryUpdateResponse</a></li>
+                                <li><a href="../classes/HistoryUpdateResult.html">HistoryUpdateResult</a></li>
+                                <li><a href="../classes/IssuedIdentityToken.html">IssuedIdentityToken</a></li>
+                                <li><a href="../classes/LiteralOperand.html">LiteralOperand</a></li>
+                                <li><a href="../classes/LocalizedText.html">LocalizedText</a></li>
+                                <li><a href="../classes/MessageBuilder.html">MessageBuilder</a></li>
+                                <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
+                                <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
+                                <li><a href="../classes/MetaShapeForUnitTest.html">MetaShapeForUnitTest</a></li>
+                                <li><a href="../classes/ModelChangeStructure.html">ModelChangeStructure</a></li>
+                                <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
+                                <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
+                                <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
+                                <li><a href="../classes/ModifySubscriptionRequest.html">ModifySubscriptionRequest</a></li>
+                                <li><a href="../classes/ModifySubscriptionResponse.html">ModifySubscriptionResponse</a></li>
+                                <li><a href="../classes/MonitoredItem.html">MonitoredItem</a></li>
+                                <li><a href="../classes/MonitoredItemCreateRequest.html">MonitoredItemCreateRequest</a></li>
+                                <li><a href="../classes/MonitoredItemCreateResult.html">MonitoredItemCreateResult</a></li>
+                                <li><a href="../classes/MonitoredItemModifyRequest.html">MonitoredItemModifyRequest</a></li>
+                                <li><a href="../classes/MonitoredItemModifyResult.html">MonitoredItemModifyResult</a></li>
+                                <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
+                                <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
+                                <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+                                <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
+                                <li><a href="../classes/NodeId.html">NodeId</a></li>
+                                <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
+                                <li><a href="../classes/NodeTypeDescription.html">NodeTypeDescription</a></li>
+                                <li><a href="../classes/NotificationMessage.html">NotificationMessage</a></li>
+                                <li><a href="../classes/ObjWithAccessLevel.html">ObjWithAccessLevel</a></li>
+                                <li><a href="../classes/ObjWithIntegerId.html">ObjWithIntegerId</a></li>
+                                <li><a href="../classes/opcua.html">opcua</a></li>
+                                <li><a href="../classes/OPCUABaseServer.html">OPCUABaseServer</a></li>
+                                <li><a href="../classes/OPCUAClient.html">OPCUAClient</a></li>
+                                <li><a href="../classes/OPCUAClientBase.html">OPCUAClientBase</a></li>
+                                <li><a href="../classes/OPCUASecureObject.html">OPCUASecureObject</a></li>
+                                <li><a href="../classes/OPCUAServer.html">OPCUAServer</a></li>
+                                <li><a href="../classes/OPCUAServerEndPoint
+                
+                A sever end point is listening to one port.html">OPCUAServerEndPoint
+                
+                A sever end point is listening to one port</a></li>
+                                <li><a href="../classes/OpenSecureChannelRequest.html">OpenSecureChannelRequest</a></li>
+                                <li><a href="../classes/OpenSecureChannelResponse.html">OpenSecureChannelResponse</a></li>
+                                <li><a href="../classes/OperationLimits.html">OperationLimits</a></li>
+                                <li><a href="../classes/PacketAssembler.html">PacketAssembler</a></li>
+                                <li><a href="../classes/ParsingResult.html">ParsingResult</a></li>
+                                <li><a href="../classes/Person.html">Person</a></li>
+                                <li><a href="../classes/Person2.html">Person2</a></li>
+                                <li><a href="../classes/Potato.html">Potato</a></li>
+                                <li><a href="../classes/PublishRequest.html">PublishRequest</a></li>
+                                <li><a href="../classes/PublishResponse.html">PublishResponse</a></li>
+                                <li><a href="../classes/QualifiedName.html">QualifiedName</a></li>
+                                <li><a href="../classes/QueryDataDescription.html">QueryDataDescription</a></li>
+                                <li><a href="../classes/QueryDataSet.html">QueryDataSet</a></li>
+                                <li><a href="../classes/QueryFirstRequest.html">QueryFirstRequest</a></li>
+                                <li><a href="../classes/QueryFirstResponse.html">QueryFirstResponse</a></li>
+                                <li><a href="../classes/QueryNextRequest.html">QueryNextRequest</a></li>
+                                <li><a href="../classes/QueryNextResponse.html">QueryNextResponse</a></li>
+                                <li><a href="../classes/Range.html">Range</a></li>
+                                <li><a href="../classes/ReadAtTimeDetails.html">ReadAtTimeDetails</a></li>
+                                <li><a href="../classes/ReaderState.html">ReaderState</a></li>
+                                <li><a href="../classes/ReadEventDetails.html">ReadEventDetails</a></li>
+                                <li><a href="../classes/ReadProcessedDetails.html">ReadProcessedDetails</a></li>
+                                <li><a href="../classes/ReadRawModifiedDetails.html">ReadRawModifiedDetails</a></li>
+                                <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
+                                <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
+                                <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+                                <li><a href="../classes/RedundantServer.html">RedundantServer</a></li>
+                                <li><a href="../classes/Reference.html">Reference</a></li>
+                                <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
+                                <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
+                                <li><a href="../classes/RegisteredServer.html">RegisteredServer</a></li>
+                                <li><a href="../classes/RegisterNodesRequest.html">RegisterNodesRequest</a></li>
+                                <li><a href="../classes/RegisterNodesResponse.html">RegisterNodesResponse</a></li>
+                                <li><a href="../classes/RegisterServerRequest.html">RegisterServerRequest</a></li>
+                                <li><a href="../classes/RegisterServerResponse.html">RegisterServerResponse</a></li>
+                                <li><a href="../classes/RelativePath.html">RelativePath</a></li>
+                                <li><a href="../classes/RelativePathElement.html">RelativePathElement</a></li>
+                                <li><a href="../classes/RepublishRequest.html">RepublishRequest</a></li>
+                                <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
+                                <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
+                                <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+                                <li><a href="../classes/Role.html">Role</a></li>
+                                <li><a href="../classes/SamplingIntervalDiagnostics.html">SamplingIntervalDiagnostics</a></li>
+                                <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
+                                <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
+                                <li><a href="../classes/SemanticChangeStructure.html">SemanticChangeStructure</a></li>
+                                <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
+                                <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
+                                <li><a href="../classes/ServerCapabilities.html">ServerCapabilities</a></li>
+                                <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
+                                <li><a href="../classes/ServerEngine.html">ServerEngine</a></li>
+                                <li><a href="../classes/ServerSecureChannelLayer.html">ServerSecureChannelLayer</a></li>
+                                <li><a href="../classes/ServerSession.html">ServerSession</a></li>
+                                <li><a href="../classes/ServerSidePublishEngine.html">ServerSidePublishEngine</a></li>
+                                <li><a href="../classes/ServerSideUnimplementedRequest.html">ServerSideUnimplementedRequest</a></li>
+                                <li><a href="../classes/ServerStatus.html">ServerStatus</a></li>
+                                <li><a href="../classes/ServerTCP_transport.html">ServerTCP_transport</a></li>
+                                <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
+                                <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
+                                <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+                                <li><a href="../classes/SessionSecurityDiagnostics.html">SessionSecurityDiagnostics</a></li>
+                                <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
+                                <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
+                                <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
+                                <li><a href="../classes/SetPublishingModeResponse.html">SetPublishingModeResponse</a></li>
+                                <li><a href="../classes/SetTriggeringRequest.html">SetTriggeringRequest</a></li>
+                                <li><a href="../classes/SetTriggeringResponse.html">SetTriggeringResponse</a></li>
+                                <li><a href="../classes/Shape.html">Shape</a></li>
+                                <li><a href="../classes/SignatureData.html">SignatureData</a></li>
+                                <li><a href="../classes/SignedSoftwareCertificate.html">SignedSoftwareCertificate</a></li>
+                                <li><a href="../classes/SimpleAttributeOperand.html">SimpleAttributeOperand</a></li>
+                                <li><a href="../classes/Simulator.html">Simulator</a></li>
+                                <li><a href="../classes/StatusChangeNotification.html">StatusChangeNotification</a></li>
+                                <li><a href="../classes/StatusCode.html">StatusCode</a></li>
+                                <li><a href="../classes/Subscription.html">Subscription</a></li>
+                                <li><a href="../classes/SubscriptionAcknowledgement.html">SubscriptionAcknowledgement</a></li>
+                                <li><a href="../classes/SubscriptionDiagnostics.html">SubscriptionDiagnostics</a></li>
+                                <li><a href="../classes/SymmetricAlgorithmSecurityHeader.html">SymmetricAlgorithmSecurityHeader</a></li>
+                                <li><a href="../classes/TCP_transport.html">TCP_transport</a></li>
+                                <li><a href="../classes/TCPErrorMessage.html">TCPErrorMessage</a></li>
+                                <li><a href="../classes/TimestampsToReturn.html">TimestampsToReturn</a></li>
+                                <li><a href="../classes/TimeZone.html">TimeZone</a></li>
+                                <li><a href="../classes/ToolBrowsePath.html">ToolBrowsePath</a></li>
+                                <li><a href="../classes/TransferResult.html">TransferResult</a></li>
+                                <li><a href="../classes/TransferSubscriptionsRequest.html">TransferSubscriptionsRequest</a></li>
+                                <li><a href="../classes/TransferSubscriptionsResponse.html">TransferSubscriptionsResponse</a></li>
+                                <li><a href="../classes/TranslateBrowsePathsToNodeIdsRequest.html">TranslateBrowsePathsToNodeIdsRequest</a></li>
+                                <li><a href="../classes/TranslateBrowsePathsToNodeIdsResponse.html">TranslateBrowsePathsToNodeIdsResponse</a></li>
+                                <li><a href="../classes/TypeSchema.html">TypeSchema</a></li>
+                                <li><a href="../classes/UAAcknowledgeableConditionBase.html">UAAcknowledgeableConditionBase</a></li>
+                                <li><a href="../classes/UAAlarmConditionBase.html">UAAlarmConditionBase</a></li>
+                                <li><a href="../classes/UACertificateExpirationAlarm.html">UACertificateExpirationAlarm</a></li>
+                                <li><a href="../classes/UAConditionBase.html">UAConditionBase</a></li>
+                                <li><a href="../classes/UADataType.html">UADataType</a></li>
+                                <li><a href="../classes/UADiscreteAlarm.html">UADiscreteAlarm</a></li>
+                                <li><a href="../classes/UAExclusiveDeviationAlarm.html">UAExclusiveDeviationAlarm</a></li>
+                                <li><a href="../classes/UAExclusiveLevelAlarm.html">UAExclusiveLevelAlarm</a></li>
+                                <li><a href="../classes/UAExclusiveLimitAlarm.html">UAExclusiveLimitAlarm</a></li>
+                                <li><a href="../classes/UAExclusiveRateOfChangeAlarm.html">UAExclusiveRateOfChangeAlarm</a></li>
+                                <li><a href="../classes/UALimitAlarm.html">UALimitAlarm</a></li>
+                                <li><a href="../classes/UANonExclusiveDeviationAlarm.html">UANonExclusiveDeviationAlarm</a></li>
+                                <li><a href="../classes/UANonExclusiveLimitAlarm.html">UANonExclusiveLimitAlarm</a></li>
+                                <li><a href="../classes/UAObject.html">UAObject</a></li>
+                                <li><a href="../classes/UAObjectType.html">UAObjectType</a></li>
+                                <li><a href="../classes/UAOffNormalAlarm.html">UAOffNormalAlarm</a></li>
+                                <li><a href="../classes/UASystemOffNormalAlarm.html">UASystemOffNormalAlarm</a></li>
+                                <li><a href="../classes/UATripAlarm.html">UATripAlarm</a></li>
+                                <li><a href="../classes/UATwoStateVariable.html">UATwoStateVariable</a></li>
+                                <li><a href="../classes/UAVariable.html">UAVariable</a></li>
+                                <li><a href="../classes/UAVariableType.html">UAVariableType</a></li>
+                                <li><a href="../classes/UnregisterNodesRequest.html">UnregisterNodesRequest</a></li>
+                                <li><a href="../classes/UnregisterNodesResponse.html">UnregisterNodesResponse</a></li>
+                                <li><a href="../classes/UserNameIdentityToken.html">UserNameIdentityToken</a></li>
+                                <li><a href="../classes/UserTokenPolicy.html">UserTokenPolicy</a></li>
+                                <li><a href="../classes/Variant.html">Variant</a></li>
+                                <li><a href="../classes/View.html">View</a></li>
+                                <li><a href="../classes/ViewDescription.html">ViewDescription</a></li>
+                                <li><a href="../classes/WriteRequest.html">WriteRequest</a></li>
+                                <li><a href="../classes/WriteResponse.html">WriteResponse</a></li>
+                                <li><a href="../classes/WriteValue.html">WriteValue</a></li>
+                                <li><a href="../classes/X509IdentityToken.html">X509IdentityToken</a></li>
+                                <li><a href="../classes/Xml2Json.html">Xml2Json</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/opcua.address_space.html">opcua.address_space</a></li>
+                                <li><a href="../modules/opcua.address_space.AlarmsAndConditions.html">opcua.address_space.AlarmsAndConditions</a></li>
+                                <li><a href="../modules/opcua.address_space.types.html">opcua.address_space.types</a></li>
+                                <li><a href="../modules/opcua.client.html">opcua.client</a></li>
+                                <li><a href="../modules/opcua.data-value.html">opcua.data-value</a></li>
+                                <li><a href="../modules/opcua.datamodel.html">opcua.datamodel</a></li>
+                                <li><a href="../modules/opcua.miscellaneous.html">opcua.miscellaneous</a></li>
+                                <li><a href="../modules/opcua.server.html">opcua.server</a></li>
+                                <li><a href="../modules/opcua.server.simulation.html">opcua.server.simulation</a></li>
+                                <li><a href="../modules/opcua.status-code.html">opcua.status-code</a></li>
+                                <li><a href="../modules/opcua.transport.html">opcua.transport</a></li>
+                                <li><a href="../modules/opcua.utils.html">opcua.utils</a></li>
+                                <li><a href="../modules/opcua.variant.html">opcua.variant</a></li>
+                                <li><a href="../modules/service.filter.tools.html">service.filter.tools</a></li>
+                                <li><a href="../modules/services.browse.html">services.browse</a></li>
+                                <li><a href="../modules/services.call.html">services.call</a></li>
+                                <li><a href="../modules/services.discovery.html">services.discovery</a></li>
+                                <li><a href="../modules/services.endpoints.html">services.endpoints</a></li>
+                                <li><a href="../modules/services.filter.html">services.filter</a></li>
+                                <li><a href="../modules/services.history.html">services.history</a></li>
+                                <li><a href="../modules/services.node_management.html">services.node_management</a></li>
+                                <li><a href="../modules/services.query.html">services.query</a></li>
+                                <li><a href="../modules/services.read.html">services.read</a></li>
+                                <li><a href="../modules/services.register-server.html">services.register-server</a></li>
+                                <li><a href="../modules/services.register_node.html">services.register_node</a></li>
+                                <li><a href="../modules/services.secure-channel.html">services.secure-channel</a></li>
+                                <li><a href="../modules/services.session.html">services.session</a></li>
+                                <li><a href="../modules/services.subscription.html">services.subscription</a></li>
+                                <li><a href="../modules/services.translate-browse-path.html">services.translate-browse-path</a></li>
+                                <li><a href="../modules/services.write.html">services.write</a></li>
+                                <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
+                                <li><a href="../modules/xml2json
+                
+                node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+                
+                node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: packages\node-opcua-server\test\test_subscription.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/* global: require,describe,it,before,beforeEach,after,afterEach */
+&quot;use strict&quot;;
+
+var should = require(&quot;should&quot;);
+var sinon = require(&quot;sinon&quot;);
+
+var subscription_service = require(&quot;node-opcua-service-subscription&quot;);
+var SubscriptionState = require(&quot;../src/subscription&quot;).SubscriptionState;
+
+
+var StatusCodes = require(&quot;node-opcua-status-code&quot;).StatusCodes;
+var Subscription = require(&quot;../src/subscription&quot;).Subscription;
+var MonitoredItem = require(&quot;../src/monitored_item&quot;).MonitoredItem;
+var AttributeIds = require(&quot;node-opcua-data-model&quot;).AttributeIds;
+
+var SessionContext = require(&quot;node-opcua-address-space&quot;).SessionContext;
+var fake_publish_engine = {};
+
+
+var fakeNotificationData =[new subscription_service.DataChangeNotification()];
+
+var TimestampsToReturn = require(&quot;node-opcua-service-read&quot;).TimestampsToReturn;
+
+var server_engine = require(&quot;../src/server_engine&quot;);
+
+function reconstruct_fake_publish_engine() {
+    fake_publish_engine = {
+        pendingPublishRequestCount: 0,
+        send_notification_message: function () {
+        },
+        send_keep_alive_response: function () {
+            if (this.pendingPublishRequestCount &lt;= 0) {
+                return false;
+            }
+            this.pendingPublishRequestCount -= 1;
+            return true;
+        }, on_close_subscription: function(subscription) {}
+
+    };
+}
+
+var DataValue =  require(&quot;node-opcua-data-value&quot;).DataValue;
+var DataType = require(&quot;node-opcua-variant&quot;).DataType;
+var MonitoredItemCreateRequest = subscription_service.MonitoredItemCreateRequest;
+
+
+var add_mock_monitored_item = require(&quot;./helper&quot;).add_mock_monitored_item;
+
+var describeWithLeakDetector = require(&quot;node-opcua-leak-detector&quot;).describeWithLeakDetector;
+describeWithLeakDetector(&quot;Subscriptions&quot;, function () {
+
+    beforeEach(function () {
+        this.clock = sinon.useFakeTimers();
+        reconstruct_fake_publish_engine();
+    });
+
+    afterEach(function () {
+        this.clock.restore();
+    });
+
+    it(&quot;T1 - a subscription will make sure that lifeTimeCount is at least 3 times maxKeepAliveCount&quot;, function () {
+
+        {
+            var subscription1 = new Subscription({
+                publishingInterval: 1000,
+                maxKeepAliveCount:    20,
+                lifeTimeCount:        60, // at least 3 times maxKeepAliveCount
+                //
+                publishEngine: fake_publish_engine
+            });
+            subscription1.maxKeepAliveCount.should.eql(20);
+            subscription1.lifeTimeCount.should.eql(60,&quot;lifeTimeCount shall be unchanged because it is at least 3 times maxKeepAliveCount&quot;);
+
+            subscription1.terminate();
+
+        }
+        {
+            var subscription2 = new Subscription({
+                publishingInterval: 1000,
+                maxKeepAliveCount:    20,
+                lifeTimeCount:         1, // IS NOT at least 3 times maxKeepAliveCount
+                //
+                publishEngine: fake_publish_engine
+            });
+            subscription2.maxKeepAliveCount.should.eql(20);
+            subscription2.lifeTimeCount.should.eql(60,&quot;lifeTimeCount must be adjusted to be at least 3 times maxKeepAliveCount&quot;);
+            subscription2.terminate();
+        }
+
+    });
+
+    it(&quot;T2 - when a Subscription is created, the first Message is sent at the end of the first publishing cycle to inform the Client that the Subscription is operational. - Case 1 : PublishRequest in Queue &amp;  no notification available&quot;,function() {
+
+        var subscription = new Subscription({
+            publishingInterval: 1000,
+            maxKeepAliveCount:    20,
+            lifeTimeCount:        60, // at least 3 times maxKeepAliveCount
+            //
+            publishEngine: fake_publish_engine
+        });
+
+        // pretend we have received 10 PublishRequest from client
+        fake_publish_engine.pendingPublishRequestCount = 10;
+
+        subscription.maxKeepAliveCount.should.eql(20);
+
+        var notification_event_spy = sinon.spy();
+        var keepalive_event_spy = sinon.spy();
+
+        subscription.on(&quot;notification&quot;, notification_event_spy);
+        subscription.on(&quot;keepalive&quot;, keepalive_event_spy);
+
+        subscription.state.should.eql(SubscriptionState.CREATING);
+
+        this.clock.tick(subscription.publishingInterval);
+        notification_event_spy.callCount.should.be.equal(0);
+        keepalive_event_spy.callCount.should.equal(1,&quot; the initial max Keep alive &quot;);
+
+        subscription.state.should.eql(SubscriptionState.KEEPALIVE);
+        subscription._keep_alive_counter.should.eql(0);
+
+        this.clock.tick(subscription.publishingInterval);
+
+        notification_event_spy.callCount.should.be.equal(0);
+        keepalive_event_spy.callCount.should.equal(1,&quot; the initial max Keep alive &quot;);
+        subscription.state.should.eql(SubscriptionState.KEEPALIVE);
+        subscription._keep_alive_counter.should.eql(1);
+
+        this.clock.tick(subscription.publishingInterval);
+        subscription._keep_alive_counter.should.eql(2);
+
+        this.clock.tick(subscription.publishingInterval * 22);
+
+        notification_event_spy.callCount.should.be.equal(0);
+        keepalive_event_spy.callCount.should.equal(2);
+        subscription.state.should.eql(SubscriptionState.KEEPALIVE);
+
+        this.clock.tick(subscription.publishingInterval * 22 );
+        notification_event_spy.callCount.should.be.equal(0);
+        keepalive_event_spy.callCount.should.equal(3);
+        subscription.state.should.eql(SubscriptionState.KEEPALIVE);
+
+        subscription.terminate();
+
+    });
+
+    it(&quot;T3 - when a Subscription is created, the first Message is sent at the end of the first publishing cycle to inform the Client that the Subscription is operational. - Case 2 : NoPublishRequest in Queue &amp;  no notification available&quot;,function() {
+
+        var subscription = new Subscription({
+            id: 1000,
+            publishingInterval: 1000,
+            maxKeepAliveCount:    20,
+            lifeTimeCount:        60, // at least 3 times maxKeepAliveCount
+            publishEngine: fake_publish_engine
+        });
+        subscription.maxKeepAliveCount.should.eql(20);
+
+        // pretend we have NO PublishRequest from client
+        fake_publish_engine.pendingPublishRequestCount = 0;
+
+        var notification_event_spy = sinon.spy();
+        var keepalive_event_spy = sinon.spy();
+        subscription.on(&quot;notification&quot;, notification_event_spy);
+        subscription.on(&quot;keepalive&quot;, keepalive_event_spy);
+
+
+        subscription.state.should.eql(SubscriptionState.CREATING);
+
+        this.clock.tick(subscription.publishingInterval);
+        notification_event_spy.callCount.should.be.equal(0);
+        keepalive_event_spy.callCount.should.equal(0);
+        subscription.state.should.eql(SubscriptionState.LATE);
+
+
+        this.clock.tick(subscription.publishingInterval);
+
+        notification_event_spy.callCount.should.be.equal(0);
+        keepalive_event_spy.callCount.should.equal(0);
+        subscription.state.should.eql(SubscriptionState.LATE);
+
+
+        // pretend we now have many PublishRequest
+        fake_publish_engine.pendingPublishRequestCount = 10;
+
+        this.clock.tick(10);
+        subscription.process_subscription();
+
+        subscription.state.should.eql(SubscriptionState.KEEPALIVE);
+
+        notification_event_spy.callCount.should.be.equal(0);
+        keepalive_event_spy.callCount.should.equal(1);
+
+        console.log(&quot;_life_time_counter = &quot;,subscription._life_time_counter);
+
+        this.clock.tick(subscription.publishingInterval * subscription.maxKeepAliveCount );
+        this.clock.tick(subscription.publishingInterval);
+        this.clock.tick(subscription.publishingInterval);
+        this.clock.tick(subscription.publishingInterval);
+        this.clock.tick(subscription.publishingInterval);
+
+
+        notification_event_spy.callCount.should.be.equal(0);
+        keepalive_event_spy.callCount.should.equal(2);
+        subscription.state.should.eql(SubscriptionState.KEEPALIVE);
+
+
+        subscription.terminate();
+
+    });
+
+    it(&quot;T4 - a subscription that have a new notification ready at the end of the  publishingInterval shall send notifications and no keepalive&quot;, function () {
+
+        var subscription = new Subscription({
+            id: 1000,
+            publishingInterval: 1000,
+            maxKeepAliveCount:    20,
+            lifeTimeCount:        60, // at least 3 times maxKeepAliveCount
+            //
+            publishEngine: fake_publish_engine
+        });
+        // pretend we have received 10 PublishRequest from client
+        fake_publish_engine.pendingPublishRequestCount = 10;
+        subscription.maxKeepAliveCount.should.eql(20);
+
+        var notification_event_spy = sinon.spy();
+        var keepalive_event_spy = sinon.spy();
+        subscription.on(&quot;notification&quot;, notification_event_spy);
+        subscription.on(&quot;keepalive&quot;, keepalive_event_spy);
+
+        var monitoredItem  = add_mock_monitored_item(subscription);
+
+        monitoredItem.simulateMonitoredItemAddingNotification();
+        this.clock.tick(subscription.publishingInterval);
+
+        monitoredItem.simulateMonitoredItemAddingNotification();
+        this.clock.tick(subscription.publishingInterval);
+
+        monitoredItem.simulateMonitoredItemAddingNotification();
+        this.clock.tick(subscription.publishingInterval);
+
+        monitoredItem.simulateMonitoredItemAddingNotification();
+        this.clock.tick(subscription.publishingInterval * (subscription.maxKeepAliveCount -1) );
+
+
+        notification_event_spy.callCount.should.be.greaterThan(2);
+        keepalive_event_spy.callCount.should.equal(0);
+        subscription.state.should.eql(SubscriptionState.NORMAL);
+
+        this.clock.tick(subscription.publishingInterval * (subscription.maxKeepAliveCount +1) );
+        keepalive_event_spy.callCount.should.equal(1);
+        subscription.state.should.eql(SubscriptionState.KEEPALIVE);
+
+        subscription.terminate();
+
+    });
+
+    it(&quot;T5 - a subscription that have only some notification ready before max_keepalive_count expired shall send notifications and no keepalive&quot;, function () {
+
+        fake_publish_engine.pendingPublishRequestCount.should.eql(0);
+
+        // pretend we have received 10 PublishRequest from client
+        fake_publish_engine.pendingPublishRequestCount = 10;
+
+        var subscription = new Subscription({
+            publishingInterval: 1000,   // 1 second interval
+            lifeTimeCount: 100000, // very long lifeTimeCount not to be bother by client not pinging us
+            maxKeepAliveCount: 20,
+            //
+            publishEngine: fake_publish_engine
+        });
+
+        subscription.state.should.eql(SubscriptionState.CREATING);
+
+        var monitoredItem  = add_mock_monitored_item(subscription);
+
+        /* pretend that we do not have a notification ready */
+        //xx monitoredItem.simulateMonitoredItemAddingNotification();
+
+
+        var notification_event_spy = sinon.spy();
+        var keepalive_event_spy = sinon.spy();
+        var expire_event_spy = sinon.spy();
+
+        subscription.on(&quot;notification&quot;, notification_event_spy);
+        subscription.on(&quot;keepalive&quot;, keepalive_event_spy);
+        subscription.on(&quot;expired&quot;, expire_event_spy);
+
+        // no notification ready, during 7 x publishinInterval
+        this.clock.tick(subscription.publishingInterval);
+        this.clock.tick(subscription.publishingInterval);
+        this.clock.tick(subscription.publishingInterval);
+        this.clock.tick(subscription.publishingInterval);
+        this.clock.tick(subscription.publishingInterval);
+        this.clock.tick(subscription.publishingInterval);
+
+        notification_event_spy.callCount.should.equal(0);
+        keepalive_event_spy.callCount.should.equal(1);
+        expire_event_spy.callCount.should.equal(0);
+        subscription.state.should.eql(SubscriptionState.KEEPALIVE);
+
+        // a notification finally arrived !
+        monitoredItem.simulateMonitoredItemAddingNotification();
+
+        this.clock.tick(subscription.publishingInterval);
+        this.clock.tick(subscription.publishingInterval);
+        this.clock.tick(subscription.publishingInterval);
+        this.clock.tick(subscription.publishingInterval);
+        this.clock.tick(subscription.publishingInterval);
+
+        notification_event_spy.callCount.should.equal(1);
+        keepalive_event_spy.callCount.should.equal(1);
+        expire_event_spy.callCount.should.equal(0);
+        subscription.state.should.eql(SubscriptionState.NORMAL);
+
+        // a other notification finally arrived !
+        monitoredItem.simulateMonitoredItemAddingNotification();
+
+        this.clock.tick(subscription.publishingInterval);
+        this.clock.tick(subscription.publishingInterval);
+        this.clock.tick(subscription.publishingInterval);
+        this.clock.tick(subscription.publishingInterval);
+        this.clock.tick(subscription.publishingInterval);
+        notification_event_spy.callCount.should.equal(2);
+        keepalive_event_spy.callCount.should.equal(1);
+        expire_event_spy.callCount.should.equal(0);
+        subscription.state.should.eql(SubscriptionState.NORMAL);
+
+        subscription.terminate();
+
+    });
+
+    describe(&quot;T6 - a subscription shall send its first notification as soon as the publish request is available&quot;, function () {
+
+        var addressSpace;
+        var someVariableNode;
+        var engine;
+
+        function add_mock_monitored_item2(subscription,someVariableNode) {
+            var monitoredItemCreateRequest = new MonitoredItemCreateRequest({
+                itemToMonitor: {nodeId: someVariableNode},
+                monitoringMode: subscription_service.MonitoringMode.Reporting,
+                requestedParameters: {
+                    clientHandle:     123,
+                    queueSize:         10,
+                    samplingInterval: 200
+                }
+            });
+            var monitoredItemCreateResult = subscription.createMonitoredItem(addressSpace, TimestampsToReturn.Both, monitoredItemCreateRequest);
+            var monitoredItem = subscription.getMonitoredItem(monitoredItemCreateResult.monitoredItemId);
+
+            return monitoredItem;
+        }
+
+
+
+        before(function (done) {
+            engine = new server_engine.ServerEngine();
+            engine.initialize({nodeset_filename: server_engine.mini_nodeset_filename}, function () {
+                addressSpace = engine.addressSpace;
+                var node = addressSpace.addVariable({
+                    componentOf: &quot;RootFolder&quot;,
+                    browseName: &quot;SomeVariable&quot;,
+                    dataType: &quot;UInt32&quot;,
+                    value: {dataType: DataType.UInt32, value: 0}
+                });
+                someVariableNode = node.nodeId;
+                done();
+            });
+        });
+        after(function () {
+            engine.shutdown();
+            engine = null;
+        });
+
+        var ServerSidePublishEngine = require(&quot;../src/server_publish_engine&quot;).ServerSidePublishEngine;
+        var publish_engine;
+
+        function simulate_client_adding_publish_request(publishEngine, callback) {
+            var publishRequest = new subscription_service.PublishRequest({});
+            publishEngine._on_PublishRequest(publishRequest, callback);
+        }
+
+        var subscription;
+        var notification_event_spy, keepalive_event_spy, expire_event_spy;
+
+        beforeEach(function () {
+
+            publish_engine = new ServerSidePublishEngine();
+            subscription = new Subscription({
+                id:                 1000,
+                publishingInterval: 100,
+                maxKeepAliveCount:   10,
+                lifeTimeCount:       30,
+                publishingEnabled: true,
+                publishEngine: publish_engine
+            });
+            publish_engine.add_subscription(subscription);
+
+            notification_event_spy = sinon.spy();
+            keepalive_event_spy = sinon.spy();
+            expire_event_spy = sinon.spy();
+            subscription.on(&quot;notification&quot;, notification_event_spy);
+            subscription.on(&quot;keepalive&quot;, keepalive_event_spy);
+            subscription.on(&quot;expired&quot;, expire_event_spy);
+
+            subscription.on(&quot;monitoredItem&quot;, function (monitoredItem) {
+                monitoredItem.samplingFunc = function(){};
+            });
+
+
+        });
+
+        afterEach(function (done) {
+            subscription.on(&quot;terminated&quot;, function () {
+                done();
+            });
+            subscription.terminate();
+            subscription = null;
+        });
+
+        it(&quot; - case 1 - publish Request arrives before first publishInterval is over &quot;, function (done) {
+            // in this case the subscription received a first publish request before the first tick is processed
+
+            simulate_client_adding_publish_request(subscription.publishEngine);
+            subscription.state.should.eql(SubscriptionState.CREATING);
+
+            this.clock.tick(subscription.publishingInterval);
+            subscription.state.should.eql(SubscriptionState.KEEPALIVE);
+            keepalive_event_spy.callCount.should.eql(1);
+
+            this.clock.tick(subscription.publishingInterval * subscription.maxKeepAliveCount / 2);
+            keepalive_event_spy.callCount.should.eql(1);
+            subscription.state.should.eql(SubscriptionState.KEEPALIVE);
+
+            this.clock.tick(subscription.publishingInterval);
+            keepalive_event_spy.callCount.should.eql(1);
+
+            this.clock.tick(subscription.publishingInterval * subscription.maxKeepAliveCount / 2);
+            subscription.state.should.eql(SubscriptionState.LATE);
+
+            done();
+
+        });
+
+        it(&quot; - case 2 - publish Request arrives late (after first publishInterval is over)&quot;, function (done) {
+
+            // now simulate some data change
+            this.clock.tick(subscription.publishingInterval * subscription.maxKeepAliveCount / 2);
+            subscription.state.should.eql(SubscriptionState.LATE);
+            keepalive_event_spy.callCount.should.eql(0);
+
+            simulate_client_adding_publish_request(subscription.publishEngine);
+
+            keepalive_event_spy.callCount.should.eql(1);
+            subscription.state.should.eql(SubscriptionState.KEEPALIVE);
+
+            this.clock.tick(subscription.publishingInterval);
+            keepalive_event_spy.callCount.should.eql(1);
+
+            done();
+
+        });
+
+        it(&quot; - case 3 - publish Request arrives late (after first publishInterval is over)&quot;, function (done) {
+
+
+            var monitoredItem = add_mock_monitored_item2(subscription,someVariableNode);
+            
+            this.clock.tick(subscription.publishingInterval);
+            keepalive_event_spy.callCount.should.eql(0);
+            subscription.state.should.eql(SubscriptionState.LATE);
+
+            // now simulate some data change
+            monitoredItem.recordValue(new DataValue({value: {dataType: DataType.UInt32, value: 1000}}));
+
+            notification_event_spy.callCount.should.eql(0);
+            simulate_client_adding_publish_request(subscription.publishEngine);
+
+            subscription.state.should.eql(SubscriptionState.NORMAL); // Back to Normal
+            notification_event_spy.callCount.should.eql(1);
+
+            this.clock.tick(subscription.publishingInterval);
+            notification_event_spy.callCount.should.eql(1);
+            subscription.state.should.eql(SubscriptionState.NORMAL); // Back to Normal
+            keepalive_event_spy.callCount.should.eql(0);
+
+            this.clock.tick(subscription.publishingInterval);
+            keepalive_event_spy.callCount.should.eql(0);
+
+            done();
+
+        });
+
+        it(&quot; - case 4 - publish Request arrives late (after first publishInterval is over)&quot;, function (done) {
+
+            var monitoredItem = add_mock_monitored_item2(subscription,someVariableNode);
+
+            this.clock.tick(subscription.publishingInterval);
+            keepalive_event_spy.callCount.should.eql(0);
+            subscription.state.should.eql(SubscriptionState.LATE);
+            
+            // now simulate some data change
+            monitoredItem.recordValue(new DataValue({value: {dataType: DataType.UInt32, value: 1000}}));
+
+            notification_event_spy.callCount.should.eql(0);
+            simulate_client_adding_publish_request(subscription.publishEngine);
+
+            subscription.state.should.eql(SubscriptionState.NORMAL);
+            notification_event_spy.callCount.should.eql(1);
+
+            this.clock.tick(subscription.publishingInterval);
+            notification_event_spy.callCount.should.eql(1);
+            subscription.state.should.eql(SubscriptionState.NORMAL);
+            keepalive_event_spy.callCount.should.eql(0);
+
+            this.clock.tick(subscription.publishingInterval);
+            keepalive_event_spy.callCount.should.eql(0);
+
+            done();
+        });
+
+        it(&quot; - case 4 (with monitoredItem - 3x value writes) - publish Request arrives late (after first publishInterval is over)&quot;, function (done) {
+
+            var monitoredItem = add_mock_monitored_item2(subscription,someVariableNode);
+
+            this.clock.tick(subscription.publishingInterval);
+            keepalive_event_spy.callCount.should.eql(0);
+            subscription.state.should.eql(SubscriptionState.LATE);
+
+            // now simulate some data change
+            monitoredItem.recordValue(new DataValue({value: {dataType: DataType.UInt32, value: 1000}}));
+            notification_event_spy.callCount.should.eql(0);
+
+            simulate_client_adding_publish_request(subscription.publishEngine);
+            notification_event_spy.callCount.should.eql(1);
+            subscription.state.should.eql(SubscriptionState.NORMAL);
+
+            this.clock.tick(subscription.publishingInterval);
+            subscription.state.should.eql(SubscriptionState.NORMAL);
+
+            monitoredItem.recordValue(new DataValue({value: {dataType: DataType.UInt32, value: 1001}}));
+            subscription.state.should.eql(SubscriptionState.NORMAL);
+
+            this.clock.tick(subscription.publishingInterval);
+            subscription.state.should.eql(SubscriptionState.LATE);
+
+
+            simulate_client_adding_publish_request(subscription.publishEngine);
+            this.clock.tick(subscription.publishingInterval);
+
+            notification_event_spy.callCount.should.eql(2);
+            subscription.hasPendingNotifications.should.eql(false);
+            subscription.hasMonitoredItemNotifications.should.eql(false);
+
+            subscription.state.should.eql(SubscriptionState.NORMAL);
+
+            this.clock.tick(subscription.publishingInterval);
+            subscription.state.should.eql(SubscriptionState.NORMAL);
+
+            monitoredItem.recordValue(new DataValue({value: {dataType: DataType.UInt32, value: 1002}}));
+
+            subscription.state.should.eql(SubscriptionState.NORMAL);
+
+            this.clock.tick(subscription.publishingInterval);
+            simulate_client_adding_publish_request(subscription.publishEngine);
+
+            this.clock.tick(subscription.publishingInterval);
+            notification_event_spy.callCount.should.eql(3);
+
+            subscription.state.should.eql(SubscriptionState.NORMAL);
+            keepalive_event_spy.callCount.should.eql(0);
+
+            this.clock.tick(subscription.publishingInterval);
+            keepalive_event_spy.callCount.should.eql(0);
+            done();
+        });
+
+    });
+
+    it(&quot;T7 - a subscription that hasn&#x27;t been pinged by client within the lifetime interval shall terminate&quot;, function () {
+    
+        var subscription = new Subscription({
+            publishingInterval: 1000,
+            maxKeepAliveCount: 20,
+            //
+            publishEngine: fake_publish_engine
+        });
+
+        var expire_event_spy = sinon.spy();
+        subscription.on(&quot;expired&quot;, expire_event_spy);
+        var terminate_spy = sinon.spy(subscription, &quot;terminate&quot;);
+
+        this.clock.tick(subscription.publishingInterval * (subscription.lifeTimeCount - 2));
+
+        terminate_spy.callCount.should.equal(0);
+        expire_event_spy.callCount.should.equal(0);
+
+        this.clock.tick(subscription.publishingInterval * 2);
+
+        terminate_spy.callCount.should.equal(1);
+        expire_event_spy.callCount.should.equal(1);
+
+        subscription.terminate();
+
+    });
+
+    it(&quot;T8 - a subscription that has been pinged by client before the lifetime expiration shall not terminate&quot;, function () {
+
+        var subscription = new Subscription({
+            publishingInterval: 1000,
+            maxKeepAliveCount: 20,
+            //
+            publishEngine: fake_publish_engine
+        });
+
+        var expire_event_spy = sinon.spy();
+        subscription.on(&quot;expired&quot;, expire_event_spy);
+        var terminate_spy = sinon.spy(subscription, &quot;terminate&quot;);
+
+        this.clock.tick(subscription.publishingInterval * (subscription.lifeTimeCount - 2));
+
+        terminate_spy.callCount.should.equal(0);
+        expire_event_spy.callCount.should.equal(0);
+
+        subscription.resetLifeTimeAndKeepAliveCounters();
+
+        this.clock.tick(subscription.publishingInterval * 4);
+
+        terminate_spy.callCount.should.equal(0);
+        expire_event_spy.callCount.should.equal(0);
+
+        this.clock.tick(subscription.publishingInterval * (subscription.lifeTimeCount + 2));
+        terminate_spy.callCount.should.equal(1);
+        expire_event_spy.callCount.should.equal(1);
+
+        subscription.terminate();
+
+    });
+
+    it(&quot;T9 - a subscription that has no notification within maxKeepAliveCount shall send a keepalive signal &quot;, function () {
+
+        // pretend the client has sent many pending PublishRequests
+        fake_publish_engine.pendingPublishRequestCount = 1000;
+
+        var subscription = new Subscription({
+            publishingInterval: 1000,
+            lifeTimeCount: 100000, // very large lifetime not to be bother by client not pinging us
+            maxKeepAliveCount: 20,
+            //
+            publishEngine: fake_publish_engine
+        });
+
+
+        var expire_event_spy = sinon.spy();
+        var notification_event_spy = sinon.spy();
+        var keepalive_event_spy = sinon.spy();
+        subscription.on(&quot;expired&quot;, expire_event_spy);
+        subscription.on(&quot;notification&quot;, notification_event_spy);
+        subscription.on(&quot;keepalive&quot;, keepalive_event_spy);
+
+        var terminate_spy = sinon.spy(subscription, &quot;terminate&quot;);
+
+        this.clock.tick(subscription.publishingInterval * (subscription.maxKeepAliveCount - 5));
+
+        terminate_spy.callCount.should.equal(0);
+        expire_event_spy.callCount.should.equal(0);
+        notification_event_spy.callCount.should.equal(0);
+        keepalive_event_spy.callCount.should.equal(1);
+
+        this.clock.tick(subscription.publishingInterval * 10);
+
+        terminate_spy.callCount.should.equal(0);
+        expire_event_spy.callCount.should.equal(0);
+        notification_event_spy.callCount.should.equal(0);
+        keepalive_event_spy.callCount.should.equal(2);
+
+        this.clock.tick(subscription.publishingInterval * (subscription.maxKeepAliveCount + 3));
+
+        terminate_spy.callCount.should.equal(0);
+        expire_event_spy.callCount.should.equal(0);
+        notification_event_spy.callCount.should.equal(0);
+        keepalive_event_spy.callCount.should.equal(3);
+
+        subscription.terminate();
+
+    });
+
+    it(&quot;T10 - a subscription shall maintain a retransmission queue of pending NotificationMessages.&quot;, function () {
+
+        var subscription = new Subscription({
+            id: 1234,
+            publishingInterval: 1000,
+            lifeTimeCount: 1000,
+            maxKeepAliveCount: 20,
+            //
+            publishEngine: fake_publish_engine,
+            maxNotificationsPerPublish: 2,
+
+        });
+        var monitoredItem  = add_mock_monitored_item(subscription);
+
+        monitoredItem.simulateMonitoredItemAddingNotification();
+        monitoredItem.simulateMonitoredItemAddingNotification();
+
+        monitoredItem.simulateMonitoredItemAddingNotification();
+        monitoredItem.simulateMonitoredItemAddingNotification();
+
+        monitoredItem.simulateMonitoredItemAddingNotification();
+        monitoredItem.simulateMonitoredItemAddingNotification();
+
+        monitoredItem.simulateMonitoredItemAddingNotification();
+        monitoredItem.simulateMonitoredItemAddingNotification();
+
+        subscription.pendingNotificationsCount.should.equal(0);
+        this.clock.tick(subscription.publishingInterval);
+        subscription.state.should.eql(SubscriptionState.LATE);
+
+        // pretend we have received  PublishRequest from client
+        fake_publish_engine.pendingPublishRequestCount = 4;
+        this.clock.tick(subscription.publishingInterval);
+
+        subscription.sentNotificationsCount.should.equal(1);
+        subscription.pendingNotificationsCount.should.equal(3);
+
+        subscription.terminate();
+
+
+    });
+
+    //OPC Unified Architecture, Part 4 74 Release 1.01
+    it(&quot;T11 - a subscription shall maintain a retransmission queue of sent NotificationMessages.&quot;, function () {
+
+        var subscription = new Subscription({
+            id: 1234,
+            publishingInterval: 1000,
+            lifeTimeCount: 1000,
+            maxKeepAliveCount: 20,
+            //
+            publishEngine: fake_publish_engine
+        });
+        fake_publish_engine.pendingPublishRequestCount = 10;
+
+        var monitoredItem  = add_mock_monitored_item(subscription);
+
+        subscription.pendingNotificationsCount.should.equal(0);
+        subscription.sentNotificationsCount.should.equal(0);
+
+        monitoredItem.simulateMonitoredItemAddingNotification();
+
+        this.clock.tick(subscription.publishingInterval);
+        subscription.pendingNotificationsCount.should.equal(0);
+        subscription.sentNotificationsCount.should.equal(1);
+
+
+        monitoredItem.simulateMonitoredItemAddingNotification();
+        this.clock.tick(subscription.publishingInterval);
+        subscription.pendingNotificationsCount.should.equal(0);
+        subscription.sentNotificationsCount.should.equal(2);
+
+        subscription.terminate();
+
+
+    });
+
+    describe(&quot;T12 - NotificationMessages are retained in this queue until they are acknowledged or until they have been in the queue for a minimum of one keep-alive interval.&quot;, function () {
+
+        it(&quot;T12-1 a NotificationMessage is retained in this queue until it is acknowledged&quot;, function () {
+
+            var subscription = new Subscription({
+                id: 1234,
+                publishingInterval: 1000,
+                lifeTimeCount: 1000,
+                maxKeepAliveCount: 20,
+                //
+                publishEngine: fake_publish_engine
+            });
+
+            var send_notification_message_spy = sinon.spy();
+            fake_publish_engine.send_notification_message = send_notification_message_spy;
+
+            var monitoredItem  = add_mock_monitored_item(subscription);
+
+            monitoredItem.simulateMonitoredItemAddingNotification();
+            monitoredItem.simulateMonitoredItemAddingNotification();
+            subscription.sentNotificationsCount.should.equal(0);
+
+            fake_publish_engine.pendingPublishRequestCount = 10;
+
+            this.clock.tick(subscription.publishingInterval);
+            subscription.sentNotificationsCount.should.equal(1);
+
+            send_notification_message_spy.callCount.should.equal(1);
+
+            monitoredItem.simulateMonitoredItemAddingNotification();
+            this.clock.tick(subscription.publishingInterval);
+            subscription.sentNotificationsCount.should.equal(2);
+
+            var notification1 = send_notification_message_spy.getCall(0).args[0];
+            notification1.sequenceNumber.should.eql(1);
+
+            var notification2 = send_notification_message_spy.getCall(1).args[0];
+            notification2.sequenceNumber.should.eql(2);
+
+            subscription.acknowledgeNotification(notification2.sequenceNumber);
+            subscription.sentNotificationsCount.should.equal(1);
+
+            subscription.acknowledgeNotification(notification1.sequenceNumber);
+            subscription.sentNotificationsCount.should.equal(0);
+
+            subscription.terminate();
+
+        });
+
+        it(&quot;T12-2 A notificationMessage that hasn&#x27;t been acknowledge should be accessiblef for republish&quot;, function () {
+
+            var send_notification_message_spy = sinon.spy();
+            fake_publish_engine.pendingPublishRequestCount = 10;
+            fake_publish_engine.send_notification_message = send_notification_message_spy;
+
+            //#getMessageForSequenceNumber
+            var subscription = new Subscription({
+                id: 1234,
+                publishingInterval: 1000,
+                lifeTimeCount: 1000,
+                maxKeepAliveCount: 20,
+                //
+                publishEngine: fake_publish_engine
+            });
+
+            var monitoredItem  = add_mock_monitored_item(subscription);
+
+            should(subscription.getMessageForSequenceNumber(35)).eql(null);
+
+            monitoredItem.simulateMonitoredItemAddingNotification();
+            monitoredItem.simulateMonitoredItemAddingNotification();
+
+            subscription.sentNotificationsCount.should.equal(0);
+
+            this.clock.tick(subscription.publishingInterval);
+            subscription.sentNotificationsCount.should.equal(1);
+
+            var notification1 = send_notification_message_spy.getCall(0).args[0];
+            notification1.sequenceNumber.should.eql(1);
+            var seqNum = notification1.sequenceNumber;
+
+
+            //
+            var message = subscription.getMessageForSequenceNumber(seqNum);
+            message.sequenceNumber.should.eql(seqNum);
+
+            subscription.terminate();
+
+        });
+
+        it(&quot;T12-3 - 1.02 the server shall retain a maximum number of un-acknowledge NotificationMessage until they are acknoledged&quot;, function () {
+            // TODO
+        });
+
+        xit(&quot;T12-4 - 1.01 a NotificationMessage is retained until it has been in the queue for a minimum of one keep-alive interval.&quot;, function () {
+            // this conforms to OPC UA specifciation 1.01 and is now obsolete as behavior has been chanded in 1.02
+
+            var subscription = new Subscription({
+                id: 1234,
+                publishingInterval: 1000,
+                lifeTimeCount: 1000,
+                maxKeepAliveCount: 20,
+                //
+                publishEngine: fake_publish_engine
+            });
+            // create a notification at t=0
+            subscription.addNotificationMessage(fakeNotificationData);
+            subscription._popNotificationToSend();
+            subscription.sentNotificationsCount.should.equal(1);
+
+            this.clock.tick(1000 * 5);
+            // create a notification at t=1000*5
+            subscription.addNotificationMessage(fakeNotificationData);
+            subscription._popNotificationToSend();
+            subscription.sentNotificationsCount.should.equal(2);
+
+            this.clock.tick(1000 * 20);
+            // now check that at t=1000*25 , old notification has been discarded
+            subscription.sentNotificationsCount.should.equal(1);
+
+            this.clock.tick(1000 * 100);
+            // now check that at t=1000*100 , old notification has been discarded
+            subscription.sentNotificationsCount.should.equal(0);
+
+            subscription.terminate();
+        });
+
+    });
+
+
+    it(&quot;T13 - a subscription that have no monitored items shall not terminate if client has sent enough PublishRequest&quot;, function () {
+
+        // pretend there is plenty of PublishRequest in publish engine
+        fake_publish_engine.pendingPublishRequestCount = 1000;
+
+        var subscription = new Subscription({
+            publishingInterval: 100,
+            maxKeepAliveCount: 20,
+            lifeTimeCount: 10,
+            publishEngine: fake_publish_engine
+        });
+
+        var notification_event_spy = sinon.spy();
+        var keepalive_event_spy = sinon.spy();
+        var expire_event_spy = sinon.spy();
+
+        subscription.on(&quot;notification&quot;, notification_event_spy);
+        subscription.on(&quot;keepalive&quot;, keepalive_event_spy);
+        subscription.on(&quot;expired&quot;, expire_event_spy);
+
+        subscription.maxKeepAliveCount.should.eql(20);
+        subscription.publishingInterval.should.eql(100);
+
+        this.clock.tick( 6 * subscription.publishingInterval * subscription.maxKeepAliveCount);
+
+        subscription.publishIntervalCount.should.equal(120,
+            &quot; 3000 ms with a publishingInterval: 100 ms means publishIntervalCount = 30&quot;);
+
+
+        expire_event_spy.callCount.should.equal(0);
+        keepalive_event_spy.callCount.should.equal(6);
+        notification_event_spy.callCount.should.equal(0);
+
+        this.clock.tick( 6 * subscription.publishingInterval * subscription.maxKeepAliveCount);
+        expire_event_spy.callCount.should.equal(0);
+        keepalive_event_spy.callCount.should.equal(12);
+        notification_event_spy.callCount.should.equal(0);
+
+        this.clock.tick( 6 * subscription.publishingInterval * subscription.maxKeepAliveCount);
+        expire_event_spy.callCount.should.equal(0);
+        keepalive_event_spy.callCount.should.equal(18);
+        notification_event_spy.callCount.should.equal(0);
+
+        subscription.terminate();
+    });
+
+    it(&quot;T14 - a subscription send a first message at the end of the first publishing cycle without waiting for the maximum  count to be reached&quot;, function () {
+        // pretend the client has sent many pending PublishRequests
+        fake_publish_engine.pendingPublishRequestCount = 1000;
+
+        /**
+         * When a Subscription is created, the first Message is sent at the end of the first publishing cycle to
+         * inform the Client that the Subscription is operational. A Notification Message is sent if there are
+         * Notifications ready to be reported. If there are none, a keep-alive Message is sent instead that
+         * contains a sequence number of 1, indicating that the first Notification Message has not yet been
+         * sent. This is the only time a keep-alive Message is sent without waiting for the maximum keep-alive
+         * count to be reached, as specified in (f) above.
+         *
+         */
+        var subscription = new Subscription({
+            publishingInterval: 1000,
+            maxKeepAliveCount: 20,
+            //
+            publishEngine: fake_publish_engine
+        });
+        var monitoredItem  = add_mock_monitored_item(subscription);
+
+        // pretend that we already have notification messages
+        // a notification finally arrived !
+        monitoredItem.simulateMonitoredItemAddingNotification();
+
+        var notification_event_spy = sinon.spy();
+        var keepalive_event_spy = sinon.spy();
+        var expire_event_spy = sinon.spy();
+
+        subscription.on(&quot;notification&quot;, notification_event_spy);
+        subscription.on(&quot;keepalive&quot;, keepalive_event_spy);
+        subscription.on(&quot;expired&quot;, expire_event_spy);
+
+        this.clock.tick(200);
+        keepalive_event_spy.callCount.should.equal(0);
+        notification_event_spy.callCount.should.eql(0);
+
+        this.clock.tick(1000);
+        keepalive_event_spy.callCount.should.equal(0);
+        notification_event_spy.callCount.should.eql(1);
+
+        this.clock.tick(1000);
+        keepalive_event_spy.callCount.should.equal(0);
+        notification_event_spy.callCount.should.eql(1);
+
+        this.clock.tick(30000);
+        keepalive_event_spy.callCount.should.equal(1);
+        notification_event_spy.callCount.should.eql(1);
+
+        subscription.terminate();
+
+    });
+
+    it(&quot;T15 - the first Notification Message sent on a Subscription has a sequence number of 1.&quot;, function () {
+        var subscription = new Subscription({
+            publishEngine: fake_publish_engine
+        });
+        subscription._get_future_sequence_number().should.equal(1);
+        subscription._get_next_sequence_number().should.equal(1);
+        subscription._get_next_sequence_number().should.equal(2);
+        subscription._get_next_sequence_number().should.equal(3);
+        subscription._get_future_sequence_number().should.equal(4);
+
+        subscription.terminate();
+    });
+
+    it(&quot;T16 - should return BadMonitorItemInvalid when trying to remove a monitored item that doesn&#x27;t exist&quot;, function () {
+
+        var subscription = new Subscription({
+            publishEngine: fake_publish_engine
+        });
+        subscription.removeMonitoredItem(26).should.eql(StatusCodes.BadMonitoredItemIdInvalid);
+
+        subscription.terminate();
+
+    });
+
+    xit(&quot;closing a Subscription causes its MonitoredItems to be deleted. &quot;, function () {
+
+    });
+
+
+});
+
+describe(&quot;Subscription#setPublishingMode&quot;, function () {
+
+    beforeEach(function () {
+        this.clock = sinon.useFakeTimers();
+        reconstruct_fake_publish_engine();
+    });
+
+    afterEach(function () {
+        this.clock.restore();
+    });
+    it(&quot;W1 - a subscription created with publishingEnabled=true shall emit notification&quot;, function (done) {
+
+        // pretend the client has sent many pending PublishRequests
+        fake_publish_engine.pendingPublishRequestCount = 1000;
+
+        var subscription = new Subscription({
+            publishingInterval: 100,
+            maxKeepAliveCount: 5,
+            lifeTimeCount: 10,
+            publishingEnabled: true,              //  PUBLISHING IS ENABLED !!!
+            publishEngine: fake_publish_engine
+        });
+
+        var monitoredItem  = add_mock_monitored_item(subscription);
+
+        // pretend that we already have notification messages
+        // a notification finally arrived !
+        monitoredItem.simulateMonitoredItemAddingNotification();
+
+        // a notification finally arrived !
+        monitoredItem.simulateMonitoredItemAddingNotification();
+
+        // a notification finally arrived !
+        monitoredItem.simulateMonitoredItemAddingNotification();
+
+        // a notification finally arrived !
+        monitoredItem.simulateMonitoredItemAddingNotification();
+
+        // a notification finally arrived !
+        monitoredItem.simulateMonitoredItemAddingNotification();
+
+        var notification_event_spy = sinon.spy();
+        var keepalive_event_spy = sinon.spy();
+        var expire_event_spy = sinon.spy();
+
+        subscription.on(&quot;notification&quot;, notification_event_spy);
+        subscription.on(&quot;keepalive&quot;, keepalive_event_spy);
+        subscription.on(&quot;expired&quot;, expire_event_spy);
+
+        this.clock.tick(subscription.publishingInterval*4);
+
+        keepalive_event_spy.callCount.should.equal(0);
+        notification_event_spy.callCount.should.eql(1); // all notif shall be compressed into one message
+
+
+        monitoredItem.simulateMonitoredItemAddingNotification();
+        this.clock.tick(subscription.publishingInterval);
+
+        monitoredItem.simulateMonitoredItemAddingNotification();
+        this.clock.tick(subscription.publishingInterval);
+
+        monitoredItem.simulateMonitoredItemAddingNotification();
+        this.clock.tick(subscription.publishingInterval);
+
+        monitoredItem.simulateMonitoredItemAddingNotification();
+        this.clock.tick(subscription.publishingInterval);
+
+        notification_event_spy.callCount.should.be.greaterThan(4);
+
+        subscription.terminate();
+
+        done();
+    });
+
+    it(&quot;W2 - a subscription created with publishingEnabled=false shall not emit notification (but keepalive)&quot;, function (done) {
+
+        // pretend the client has sent many pending PublishRequests
+        fake_publish_engine.pendingPublishRequestCount = 1000;
+
+        var subscription = new Subscription({
+            publishingInterval: 100,
+            maxKeepAliveCount: 5,
+            lifeTimeCount: 10,
+
+            publishingEnabled: false,              //  PUBLISHING IS DISABLED !!!
+
+            publishEngine: fake_publish_engine
+
+        });
+        var notification_event_spy = sinon.spy();
+        var keepalive_event_spy = sinon.spy();
+        var expire_event_spy = sinon.spy();
+
+        subscription.on(&quot;notification&quot;, notification_event_spy);
+        subscription.on(&quot;keepalive&quot;, keepalive_event_spy);
+        subscription.on(&quot;expired&quot;, expire_event_spy);
+
+        var monitoredItem  = add_mock_monitored_item(subscription);
+
+
+        monitoredItem.simulateMonitoredItemAddingNotification();
+        this.clock.tick(subscription.publishingInterval);
+
+        monitoredItem.simulateMonitoredItemAddingNotification();
+        this.clock.tick(subscription.publishingInterval);
+
+        monitoredItem.simulateMonitoredItemAddingNotification();
+        this.clock.tick(subscription.publishingInterval);
+
+        monitoredItem.simulateMonitoredItemAddingNotification();
+        this.clock.tick(subscription.publishingInterval);
+
+        monitoredItem.simulateMonitoredItemAddingNotification();
+        this.clock.tick(subscription.publishingInterval);
+
+
+        this.clock.tick(4* subscription.publishingInterval * subscription.maxKeepAliveCount);
+        keepalive_event_spy.callCount.should.equal(5);
+        notification_event_spy.callCount.should.eql(0);
+
+        subscription.terminate();
+        done();
+    });
+
+    it(&quot;W3 - a publishing subscription can be disabled and re-enabled&quot;, function (done) {
+
+        // pretend the client has sent many pending PublishRequests
+        fake_publish_engine.pendingPublishRequestCount = 1000;
+
+        var subscription = new Subscription({
+            publishingInterval: 100,
+            maxKeepAliveCount: 5,
+            lifeTimeCount: 10,
+            publishingEnabled: true,              //  PUBLISHING IS ENABLED !!!
+            publishEngine: fake_publish_engine
+        });
+
+        var monitoredItem  = add_mock_monitored_item(subscription);
+
+        // the monitoredItem provides a new notification every 50ms
+        function push_some_notification() {
+            monitoredItem.simulateMonitoredItemAddingNotification();
+        }
+        var t = setInterval(push_some_notification, 50);
+
+        var notification_event_spy = sinon.spy();
+        var keepalive_event_spy = sinon.spy();
+        var expire_event_spy = sinon.spy();
+
+        subscription.on(&quot;notification&quot;, notification_event_spy);
+        subscription.on(&quot;keepalive&quot;, keepalive_event_spy);
+        subscription.on(&quot;expired&quot;, expire_event_spy);
+
+        this.clock.tick(subscription.publishingInterval * 22);
+        keepalive_event_spy.callCount.should.equal(0);
+        notification_event_spy.callCount.should.be.greaterThan(20);
+
+        // now disable
+        subscription.setPublishingMode(false);
+        this.clock.tick(4 * subscription.publishingInterval * subscription.maxKeepAliveCount);
+        keepalive_event_spy.callCount.should.equal(4);
+        notification_event_spy.callCount.should.be.greaterThan(20);
+
+
+        subscription.setPublishingMode(true);
+        this.clock.tick(4 * subscription.publishingInterval * subscription.maxKeepAliveCount);
+        keepalive_event_spy.callCount.should.equal(4);
+        notification_event_spy.callCount.should.be.greaterThan(40);
+
+        clearInterval(t);
+
+        subscription.terminate();
+        done();
+
+
+    });
+
+    it(&quot;W4 - a disabled subscription shall continue to send keep-alive notifications&quot;,function(done){
+
+        // What the specs say:
+        // Publishing by a Subscription may be enabled or disabled by the Client when created, or
+        // subsequently using the SetPublishingMode Service. Disabling causes the Subscription to
+        // cease sending NotificationMessages to the Client. However, the Subscription continues
+        // to execute cyclically and continues to send keep-alive Messages to the Client.
+
+
+        // pretend the client has sent many pending PublishRequests
+        fake_publish_engine.pendingPublishRequestCount = 1000;
+
+        var subscription = new Subscription({
+            publishingInterval: 100,
+            maxKeepAliveCount: 5,
+            lifeTimeCount: 10,
+            publishingEnabled: false,              //  PUBLISHING IS DISABLED !!!
+            publishEngine: fake_publish_engine
+        });
+
+        var monitoredItem  = add_mock_monitored_item(subscription);
+
+        // the monitoredItem provides a new notification every 50ms
+        function push_some_notification() {
+            monitoredItem.simulateMonitoredItemAddingNotification();
+        }
+        var t = setInterval(push_some_notification, 50);
+
+        var notification_event_spy = sinon.spy();
+        var keepalive_event_spy = sinon.spy();
+        var expire_event_spy = sinon.spy();
+
+        subscription.on(&quot;notification&quot;, notification_event_spy);
+        subscription.on(&quot;keepalive&quot;, keepalive_event_spy);
+        subscription.on(&quot;expired&quot;, expire_event_spy);
+
+        this.clock.tick(4* subscription.publishingInterval * subscription.maxKeepAliveCount);
+        keepalive_event_spy.callCount.should.equal(4); // 2000 = 4*5*100
+        notification_event_spy.callCount.should.be.equal(0);
+
+
+        subscription.setPublishingMode(true);
+
+        this.clock.tick(4* subscription.publishingInterval * subscription.maxKeepAliveCount);
+        keepalive_event_spy.callCount.should.equal(4);
+        notification_event_spy.callCount.should.be.greaterThan(19);
+        var nb = notification_event_spy.callCount;
+
+        subscription.setPublishingMode(false);
+        this.clock.tick(4* subscription.publishingInterval * subscription.maxKeepAliveCount);
+        keepalive_event_spy.callCount.should.equal(8);
+        notification_event_spy.callCount.should.be.equal(nb);
+
+        clearInterval(t);
+
+        subscription.terminate();
+        done();
+
+    })
+});
+
+describe(&quot;Subscription#adjustSamplingInterval&quot;, function () {
+
+    beforeEach(function () {
+//xx        this.clock = sinon.useFakeTimers();
+        reconstruct_fake_publish_engine();
+    });
+
+    it(&quot;should have a minimum sampling interval, with a strictly positive value ( which is the fastest possible rate)&quot;, function () {
+        MonitoredItem.minimumSamplingInterval.should.be.greaterThan(4);
+    });
+
+    it(&quot;should have a default sampling interval, greater than minimumSamplingInterval &quot;, function () {
+        MonitoredItem.defaultSamplingInterval.should.be.greaterThan(MonitoredItem.minimumSamplingInterval);
+    });
+
+    it(&quot;should have a maximum sampling interval, greater than defaultSamplingInterval &quot;, function () {
+        MonitoredItem.maximumSamplingInterval.should.be.greaterThan(MonitoredItem.defaultSamplingInterval);
+    });
+
+    it(&quot;should adjust sampling interval to subscription publish interval when requested sampling interval === -1&quot;, function () {
+        var subscription = new Subscription({publishingInterval: 1234, publishEngine: fake_publish_engine});
+
+
+        subscription.adjustSamplingInterval(-1).should.eql(subscription.publishingInterval);
+
+        subscription.terminate();
+    });
+
+    var fake_node = {
+        readAttribute: function (context, attributeId) {
+            context.should.be.instanceOf(SessionContext);
+            attributeId.should.eql(AttributeIds.MinimumSamplingInterval);
+            return  new DataValue({value: {dataType: DataType.Double, value: 0.0 }});
+        }
+    };
+
+    it(&quot;should adjust sampling interval to subscription publish interval when requested sampling interval is a negative value !== -1&quot;, function () {
+        var subscription = new Subscription({publishingInterval: 1234, publishEngine: fake_publish_engine});
+        subscription.adjustSamplingInterval(-2,fake_node).should.eql(subscription.publishingInterval);
+        subscription.adjustSamplingInterval(-0.02,fake_node).should.eql(subscription.publishingInterval);
+
+        subscription.terminate();
+    });
+
+    it(&quot;should leave sampling interval to 0 when requested sampling interval === 0 ( 0 means Event Based mode)&quot;, function () {
+        var subscription = new Subscription({publishingInterval: 1234, publishEngine: fake_publish_engine});
+        subscription.adjustSamplingInterval(0,fake_node).should.eql(0);
+        subscription.terminate();
+    });
+
+    it(&quot;should adjust sampling interval to minimum when requested sampling interval === 1&quot;, function () {
+        var subscription = new Subscription({publishingInterval: 1234, publishEngine: fake_publish_engine});
+        subscription.adjustSamplingInterval(1,fake_node).should.eql(MonitoredItem.minimumSamplingInterval);
+        subscription.terminate();
+    });
+
+    it(&quot;should adjust sampling interval to maximum when requested sampling interval is too high&quot;, function () {
+        var subscription = new Subscription({publishingInterval: 1234, publishEngine: fake_publish_engine});
+        subscription.adjustSamplingInterval(1E10,fake_node).should.eql(MonitoredItem.maximumSamplingInterval);
+        subscription.terminate();
+    });
+
+    it(&quot;should return an unmodified sampling interval when requested sampling is in valid range&quot;, function () {
+        var subscription = new Subscription({publishingInterval: 1234, publishEngine: fake_publish_engine});
+        var someValidSamplingInterval = (MonitoredItem.maximumSamplingInterval + MonitoredItem.minimumSamplingInterval) / 2.0;
+        subscription.adjustSamplingInterval(someValidSamplingInterval,fake_node).should.eql(someValidSamplingInterval);
+        subscription.terminate();
+    });
+
+    it(&quot;should adjust sampling interval the minimumSamplingInterval when requested sampling is too low&quot;, function () {
+        var subscription = new Subscription({publishingInterval: 1234, publishEngine: fake_publish_engine});
+        var someVeryLowSamplingInterval = 1;
+        subscription.adjustSamplingInterval(someVeryLowSamplingInterval,fake_node).should.eql(MonitoredItem.minimumSamplingInterval);
+        subscription.terminate();
+    });
+
+});
+
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

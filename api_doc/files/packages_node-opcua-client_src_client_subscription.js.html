@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>packages\node-opcua-client\src\client_subscription.js - The NodeOPCUA API</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.1.0-pre</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/AcknowledgeMessage.html">AcknowledgeMessage</a></li>
+                                <li><a href="../classes/ActivateSessionRequest.html">ActivateSessionRequest</a></li>
+                                <li><a href="../classes/ActivateSessionResponse.html">ActivateSessionResponse</a></li>
+                                <li><a href="../classes/AddNodesItem.html">AddNodesItem</a></li>
+                                <li><a href="../classes/AddNodesRequest.html">AddNodesRequest</a></li>
+                                <li><a href="../classes/AddNodesResponse.html">AddNodesResponse</a></li>
+                                <li><a href="../classes/AddNodesResult.html">AddNodesResult</a></li>
+                                <li><a href="../classes/AddReferencesItem.html">AddReferencesItem</a></li>
+                                <li><a href="../classes/AddReferencesRequest.html">AddReferencesRequest</a></li>
+                                <li><a href="../classes/AddReferencesResponse.html">AddReferencesResponse</a></li>
+                                <li><a href="../classes/AddressSpace.html">AddressSpace</a></li>
+                                <li><a href="../classes/AggregateConfiguration.html">AggregateConfiguration</a></li>
+                                <li><a href="../classes/AggregateFilter.html">AggregateFilter</a></li>
+                                <li><a href="../classes/AnonymousIdentityToken.html">AnonymousIdentityToken</a></li>
+                                <li><a href="../classes/ApplicationDescription.html">ApplicationDescription</a></li>
+                                <li><a href="../classes/ApplicationInstanceCertificate.html">ApplicationInstanceCertificate</a></li>
+                                <li><a href="../classes/Argument.html">Argument</a></li>
+                                <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
+                                <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+                                <li><a href="../classes/AttributeNameById.html">AttributeNameById</a></li>
+                                <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
+                                <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
+                                <li><a href="../classes/BaseEventType.html">BaseEventType</a></li>
+                                <li><a href="../classes/BaseNode.html">BaseNode</a></li>
+                                <li><a href="../classes/BaseUAObject.html">BaseUAObject</a></li>
+                                <li><a href="../classes/BinaryStream.html">BinaryStream</a></li>
+                                <li><a href="../classes/BinaryStreamSizeCalculator.html">BinaryStreamSizeCalculator</a></li>
+                                <li><a href="../classes/BrowseDescription.html">BrowseDescription</a></li>
+                                <li><a href="../classes/BrowseDirection.html">BrowseDirection</a></li>
+                                <li><a href="../classes/BrowseNextRequest.html">BrowseNextRequest</a></li>
+                                <li><a href="../classes/BrowseNextResponse.html">BrowseNextResponse</a></li>
+                                <li><a href="../classes/BrowsePath.html">BrowsePath</a></li>
+                                <li><a href="../classes/BrowsePathResult.html">BrowsePathResult</a></li>
+                                <li><a href="../classes/BrowsePathTarget.html">BrowsePathTarget</a></li>
+                                <li><a href="../classes/BrowseRequest.html">BrowseRequest</a></li>
+                                <li><a href="../classes/BrowseResponse.html">BrowseResponse</a></li>
+                                <li><a href="../classes/BrowseResult.html">BrowseResult</a></li>
+                                <li><a href="../classes/BuildInfo.html">BuildInfo</a></li>
+                                <li><a href="../classes/CallMethodRequest.html">CallMethodRequest</a></li>
+                                <li><a href="../classes/CallMethodResult.html">CallMethodResult</a></li>
+                                <li><a href="../classes/CallRequest.html">CallRequest</a></li>
+                                <li><a href="../classes/CallResponse.html">CallResponse</a></li>
+                                <li><a href="../classes/CancelRequest.html">CancelRequest</a></li>
+                                <li><a href="../classes/CancelResponse.html">CancelResponse</a></li>
+                                <li><a href="../classes/ChannelSecurityToken.html">ChannelSecurityToken</a></li>
+                                <li><a href="../classes/ChunkManager.html">ChunkManager</a></li>
+                                <li><a href="../classes/ClientMonitoredItem.html">ClientMonitoredItem</a></li>
+                                <li><a href="../classes/ClientMonitoredItemGroup.html">ClientMonitoredItemGroup</a></li>
+                                <li><a href="../classes/ClientSecureChannelLayer.html">ClientSecureChannelLayer</a></li>
+                                <li><a href="../classes/ClientSession.html">ClientSession</a></li>
+                                <li><a href="../classes/ClientSidePublishEngine.html">ClientSidePublishEngine</a></li>
+                                <li><a href="../classes/ClientSubscription.html">ClientSubscription</a></li>
+                                <li><a href="../classes/ClientTCP_transport.html">ClientTCP_transport</a></li>
+                                <li><a href="../classes/CloseSecureChannelRequest.html">CloseSecureChannelRequest</a></li>
+                                <li><a href="../classes/CloseSecureChannelResponse.html">CloseSecureChannelResponse</a></li>
+                                <li><a href="../classes/CloseSessionRequest.html">CloseSessionRequest</a></li>
+                                <li><a href="../classes/CloseSessionResponse.html">CloseSessionResponse</a></li>
+                                <li><a href="../classes/Company.html">Company</a></li>
+                                <li><a href="../classes/ConditionInfo.html">ConditionInfo</a></li>
+                                <li><a href="../classes/ConditionSnapshot.html">ConditionSnapshot</a></li>
+                                <li><a href="../classes/ContentFilter.html">ContentFilter</a></li>
+                                <li><a href="../classes/ContentFilterElement.html">ContentFilterElement</a></li>
+                                <li><a href="../classes/ContentFilterElementResult.html">ContentFilterElementResult</a></li>
+                                <li><a href="../classes/ContentFilterResult.html">ContentFilterResult</a></li>
+                                <li><a href="../classes/CreateMonitoredItemsRequest.html">CreateMonitoredItemsRequest</a></li>
+                                <li><a href="../classes/CreateMonitoredItemsResponse.html">CreateMonitoredItemsResponse</a></li>
+                                <li><a href="../classes/CreateSessionRequest.html">CreateSessionRequest</a></li>
+                                <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
+                                <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
+                                <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
+                                <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
+                                <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
+                                <li><a href="../classes/DataValue.html">DataValue</a></li>
+                                <li><a href="../classes/DeleteMonitoredItemsRequest.html">DeleteMonitoredItemsRequest</a></li>
+                                <li><a href="../classes/DeleteMonitoredItemsResponse.html">DeleteMonitoredItemsResponse</a></li>
+                                <li><a href="../classes/DeleteNodesItem.html">DeleteNodesItem</a></li>
+                                <li><a href="../classes/DeleteNodesRequest.html">DeleteNodesRequest</a></li>
+                                <li><a href="../classes/DeleteNodesResponse.html">DeleteNodesResponse</a></li>
+                                <li><a href="../classes/DeleteReferencesItem.html">DeleteReferencesItem</a></li>
+                                <li><a href="../classes/DeleteReferencesRequest.html">DeleteReferencesRequest</a></li>
+                                <li><a href="../classes/DeleteReferencesResponse.html">DeleteReferencesResponse</a></li>
+                                <li><a href="../classes/DeleteSubscriptionsRequest.html">DeleteSubscriptionsRequest</a></li>
+                                <li><a href="../classes/DeleteSubscriptionsResponse.html">DeleteSubscriptionsResponse</a></li>
+                                <li><a href="../classes/DiagnosticInfo.html">DiagnosticInfo</a></li>
+                                <li><a href="../classes/DummyObject.html">DummyObject</a></li>
+                                <li><a href="../classes/ElementOperand.html">ElementOperand</a></li>
+                                <li><a href="../classes/Employee.html">Employee</a></li>
+                                <li><a href="../classes/EndpointDescription.html">EndpointDescription</a></li>
+                                <li><a href="../classes/Enum.html">Enum</a></li>
+                                <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
+                                <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
+                                <li><a href="../classes/EUInformation.html">EUInformation</a></li>
+                                <li><a href="../classes/EventData.html">EventData</a></li>
+                                <li><a href="../classes/EventFieldList.html">EventFieldList</a></li>
+                                <li><a href="../classes/EventFilter.html">EventFilter</a></li>
+                                <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
+                                <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
+                                <li><a href="../classes/ExpandedNodeId.html">ExpandedNodeId</a></li>
+                                <li><a href="../classes/Factory.html">Factory</a></li>
+                                <li><a href="../classes/FilterOperand.html">FilterOperand</a></li>
+                                <li><a href="../classes/FindServersRequest.html">FindServersRequest</a></li>
+                                <li><a href="../classes/FindServersResponse.html">FindServersResponse</a></li>
+                                <li><a href="../classes/FooBar.html">FooBar</a></li>
+                                <li><a href="../classes/FooBarDerived.html">FooBarDerived</a></li>
+                                <li><a href="../classes/FooWithRecursion.html">FooWithRecursion</a></li>
+                                <li><a href="../classes/GetEndpointsRequest.html">GetEndpointsRequest</a></li>
+                                <li><a href="../classes/GetEndpointsResponse.html">GetEndpointsResponse</a></li>
+                                <li><a href="../classes/HelloMessage.html">HelloMessage</a></li>
+                                <li><a href="../classes/HistoryData.html">HistoryData</a></li>
+                                <li><a href="../classes/HistoryModifiedData.html">HistoryModifiedData</a></li>
+                                <li><a href="../classes/HistoryReadDetails.html">HistoryReadDetails</a></li>
+                                <li><a href="../classes/HistoryReadRequest.html">HistoryReadRequest</a></li>
+                                <li><a href="../classes/HistoryReadResponse.html">HistoryReadResponse</a></li>
+                                <li><a href="../classes/HistoryReadResult.html">HistoryReadResult</a></li>
+                                <li><a href="../classes/HistoryReadValueId.html">HistoryReadValueId</a></li>
+                                <li><a href="../classes/HistoryServerCapabilities.html">HistoryServerCapabilities</a></li>
+                                <li><a href="../classes/HistoryUpdateRequest.html">HistoryUpdateRequest</a></li>
+                                <li><a href="../classes/HistoryUpdateResponse.html">HistoryUpdateResponse</a></li>
+                                <li><a href="../classes/HistoryUpdateResult.html">HistoryUpdateResult</a></li>
+                                <li><a href="../classes/IssuedIdentityToken.html">IssuedIdentityToken</a></li>
+                                <li><a href="../classes/LiteralOperand.html">LiteralOperand</a></li>
+                                <li><a href="../classes/LocalizedText.html">LocalizedText</a></li>
+                                <li><a href="../classes/MessageBuilder.html">MessageBuilder</a></li>
+                                <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
+                                <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
+                                <li><a href="../classes/MetaShapeForUnitTest.html">MetaShapeForUnitTest</a></li>
+                                <li><a href="../classes/ModelChangeStructure.html">ModelChangeStructure</a></li>
+                                <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
+                                <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
+                                <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
+                                <li><a href="../classes/ModifySubscriptionRequest.html">ModifySubscriptionRequest</a></li>
+                                <li><a href="../classes/ModifySubscriptionResponse.html">ModifySubscriptionResponse</a></li>
+                                <li><a href="../classes/MonitoredItem.html">MonitoredItem</a></li>
+                                <li><a href="../classes/MonitoredItemCreateRequest.html">MonitoredItemCreateRequest</a></li>
+                                <li><a href="../classes/MonitoredItemCreateResult.html">MonitoredItemCreateResult</a></li>
+                                <li><a href="../classes/MonitoredItemModifyRequest.html">MonitoredItemModifyRequest</a></li>
+                                <li><a href="../classes/MonitoredItemModifyResult.html">MonitoredItemModifyResult</a></li>
+                                <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
+                                <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
+                                <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+                                <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
+                                <li><a href="../classes/NodeId.html">NodeId</a></li>
+                                <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
+                                <li><a href="../classes/NodeTypeDescription.html">NodeTypeDescription</a></li>
+                                <li><a href="../classes/NotificationMessage.html">NotificationMessage</a></li>
+                                <li><a href="../classes/ObjWithAccessLevel.html">ObjWithAccessLevel</a></li>
+                                <li><a href="../classes/ObjWithIntegerId.html">ObjWithIntegerId</a></li>
+                                <li><a href="../classes/opcua.html">opcua</a></li>
+                                <li><a href="../classes/OPCUABaseServer.html">OPCUABaseServer</a></li>
+                                <li><a href="../classes/OPCUAClient.html">OPCUAClient</a></li>
+                                <li><a href="../classes/OPCUAClientBase.html">OPCUAClientBase</a></li>
+                                <li><a href="../classes/OPCUASecureObject.html">OPCUASecureObject</a></li>
+                                <li><a href="../classes/OPCUAServer.html">OPCUAServer</a></li>
+                                <li><a href="../classes/OPCUAServerEndPoint
+                
+                A sever end point is listening to one port.html">OPCUAServerEndPoint
+                
+                A sever end point is listening to one port</a></li>
+                                <li><a href="../classes/OpenSecureChannelRequest.html">OpenSecureChannelRequest</a></li>
+                                <li><a href="../classes/OpenSecureChannelResponse.html">OpenSecureChannelResponse</a></li>
+                                <li><a href="../classes/OperationLimits.html">OperationLimits</a></li>
+                                <li><a href="../classes/PacketAssembler.html">PacketAssembler</a></li>
+                                <li><a href="../classes/ParsingResult.html">ParsingResult</a></li>
+                                <li><a href="../classes/Person.html">Person</a></li>
+                                <li><a href="../classes/Person2.html">Person2</a></li>
+                                <li><a href="../classes/Potato.html">Potato</a></li>
+                                <li><a href="../classes/PublishRequest.html">PublishRequest</a></li>
+                                <li><a href="../classes/PublishResponse.html">PublishResponse</a></li>
+                                <li><a href="../classes/QualifiedName.html">QualifiedName</a></li>
+                                <li><a href="../classes/QueryDataDescription.html">QueryDataDescription</a></li>
+                                <li><a href="../classes/QueryDataSet.html">QueryDataSet</a></li>
+                                <li><a href="../classes/QueryFirstRequest.html">QueryFirstRequest</a></li>
+                                <li><a href="../classes/QueryFirstResponse.html">QueryFirstResponse</a></li>
+                                <li><a href="../classes/QueryNextRequest.html">QueryNextRequest</a></li>
+                                <li><a href="../classes/QueryNextResponse.html">QueryNextResponse</a></li>
+                                <li><a href="../classes/Range.html">Range</a></li>
+                                <li><a href="../classes/ReadAtTimeDetails.html">ReadAtTimeDetails</a></li>
+                                <li><a href="../classes/ReaderState.html">ReaderState</a></li>
+                                <li><a href="../classes/ReadEventDetails.html">ReadEventDetails</a></li>
+                                <li><a href="../classes/ReadProcessedDetails.html">ReadProcessedDetails</a></li>
+                                <li><a href="../classes/ReadRawModifiedDetails.html">ReadRawModifiedDetails</a></li>
+                                <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
+                                <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
+                                <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+                                <li><a href="../classes/RedundantServer.html">RedundantServer</a></li>
+                                <li><a href="../classes/Reference.html">Reference</a></li>
+                                <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
+                                <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
+                                <li><a href="../classes/RegisteredServer.html">RegisteredServer</a></li>
+                                <li><a href="../classes/RegisterNodesRequest.html">RegisterNodesRequest</a></li>
+                                <li><a href="../classes/RegisterNodesResponse.html">RegisterNodesResponse</a></li>
+                                <li><a href="../classes/RegisterServerRequest.html">RegisterServerRequest</a></li>
+                                <li><a href="../classes/RegisterServerResponse.html">RegisterServerResponse</a></li>
+                                <li><a href="../classes/RelativePath.html">RelativePath</a></li>
+                                <li><a href="../classes/RelativePathElement.html">RelativePathElement</a></li>
+                                <li><a href="../classes/RepublishRequest.html">RepublishRequest</a></li>
+                                <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
+                                <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
+                                <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+                                <li><a href="../classes/Role.html">Role</a></li>
+                                <li><a href="../classes/SamplingIntervalDiagnostics.html">SamplingIntervalDiagnostics</a></li>
+                                <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
+                                <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
+                                <li><a href="../classes/SemanticChangeStructure.html">SemanticChangeStructure</a></li>
+                                <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
+                                <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
+                                <li><a href="../classes/ServerCapabilities.html">ServerCapabilities</a></li>
+                                <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
+                                <li><a href="../classes/ServerEngine.html">ServerEngine</a></li>
+                                <li><a href="../classes/ServerSecureChannelLayer.html">ServerSecureChannelLayer</a></li>
+                                <li><a href="../classes/ServerSession.html">ServerSession</a></li>
+                                <li><a href="../classes/ServerSidePublishEngine.html">ServerSidePublishEngine</a></li>
+                                <li><a href="../classes/ServerSideUnimplementedRequest.html">ServerSideUnimplementedRequest</a></li>
+                                <li><a href="../classes/ServerStatus.html">ServerStatus</a></li>
+                                <li><a href="../classes/ServerTCP_transport.html">ServerTCP_transport</a></li>
+                                <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
+                                <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
+                                <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+                                <li><a href="../classes/SessionSecurityDiagnostics.html">SessionSecurityDiagnostics</a></li>
+                                <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
+                                <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
+                                <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
+                                <li><a href="../classes/SetPublishingModeResponse.html">SetPublishingModeResponse</a></li>
+                                <li><a href="../classes/SetTriggeringRequest.html">SetTriggeringRequest</a></li>
+                                <li><a href="../classes/SetTriggeringResponse.html">SetTriggeringResponse</a></li>
+                                <li><a href="../classes/Shape.html">Shape</a></li>
+                                <li><a href="../classes/SignatureData.html">SignatureData</a></li>
+                                <li><a href="../classes/SignedSoftwareCertificate.html">SignedSoftwareCertificate</a></li>
+                                <li><a href="../classes/SimpleAttributeOperand.html">SimpleAttributeOperand</a></li>
+                                <li><a href="../classes/Simulator.html">Simulator</a></li>
+                                <li><a href="../classes/StatusChangeNotification.html">StatusChangeNotification</a></li>
+                                <li><a href="../classes/StatusCode.html">StatusCode</a></li>
+                                <li><a href="../classes/Subscription.html">Subscription</a></li>
+                                <li><a href="../classes/SubscriptionAcknowledgement.html">SubscriptionAcknowledgement</a></li>
+                                <li><a href="../classes/SubscriptionDiagnostics.html">SubscriptionDiagnostics</a></li>
+                                <li><a href="../classes/SymmetricAlgorithmSecurityHeader.html">SymmetricAlgorithmSecurityHeader</a></li>
+                                <li><a href="../classes/TCP_transport.html">TCP_transport</a></li>
+                                <li><a href="../classes/TCPErrorMessage.html">TCPErrorMessage</a></li>
+                                <li><a href="../classes/TimestampsToReturn.html">TimestampsToReturn</a></li>
+                                <li><a href="../classes/TimeZone.html">TimeZone</a></li>
+                                <li><a href="../classes/ToolBrowsePath.html">ToolBrowsePath</a></li>
+                                <li><a href="../classes/TransferResult.html">TransferResult</a></li>
+                                <li><a href="../classes/TransferSubscriptionsRequest.html">TransferSubscriptionsRequest</a></li>
+                                <li><a href="../classes/TransferSubscriptionsResponse.html">TransferSubscriptionsResponse</a></li>
+                                <li><a href="../classes/TranslateBrowsePathsToNodeIdsRequest.html">TranslateBrowsePathsToNodeIdsRequest</a></li>
+                                <li><a href="../classes/TranslateBrowsePathsToNodeIdsResponse.html">TranslateBrowsePathsToNodeIdsResponse</a></li>
+                                <li><a href="../classes/TypeSchema.html">TypeSchema</a></li>
+                                <li><a href="../classes/UAAcknowledgeableConditionBase.html">UAAcknowledgeableConditionBase</a></li>
+                                <li><a href="../classes/UAAlarmConditionBase.html">UAAlarmConditionBase</a></li>
+                                <li><a href="../classes/UACertificateExpirationAlarm.html">UACertificateExpirationAlarm</a></li>
+                                <li><a href="../classes/UAConditionBase.html">UAConditionBase</a></li>
+                                <li><a href="../classes/UADataType.html">UADataType</a></li>
+                                <li><a href="../classes/UADiscreteAlarm.html">UADiscreteAlarm</a></li>
+                                <li><a href="../classes/UAExclusiveDeviationAlarm.html">UAExclusiveDeviationAlarm</a></li>
+                                <li><a href="../classes/UAExclusiveLevelAlarm.html">UAExclusiveLevelAlarm</a></li>
+                                <li><a href="../classes/UAExclusiveLimitAlarm.html">UAExclusiveLimitAlarm</a></li>
+                                <li><a href="../classes/UAExclusiveRateOfChangeAlarm.html">UAExclusiveRateOfChangeAlarm</a></li>
+                                <li><a href="../classes/UALimitAlarm.html">UALimitAlarm</a></li>
+                                <li><a href="../classes/UANonExclusiveDeviationAlarm.html">UANonExclusiveDeviationAlarm</a></li>
+                                <li><a href="../classes/UANonExclusiveLimitAlarm.html">UANonExclusiveLimitAlarm</a></li>
+                                <li><a href="../classes/UAObject.html">UAObject</a></li>
+                                <li><a href="../classes/UAObjectType.html">UAObjectType</a></li>
+                                <li><a href="../classes/UAOffNormalAlarm.html">UAOffNormalAlarm</a></li>
+                                <li><a href="../classes/UASystemOffNormalAlarm.html">UASystemOffNormalAlarm</a></li>
+                                <li><a href="../classes/UATripAlarm.html">UATripAlarm</a></li>
+                                <li><a href="../classes/UATwoStateVariable.html">UATwoStateVariable</a></li>
+                                <li><a href="../classes/UAVariable.html">UAVariable</a></li>
+                                <li><a href="../classes/UAVariableType.html">UAVariableType</a></li>
+                                <li><a href="../classes/UnregisterNodesRequest.html">UnregisterNodesRequest</a></li>
+                                <li><a href="../classes/UnregisterNodesResponse.html">UnregisterNodesResponse</a></li>
+                                <li><a href="../classes/UserNameIdentityToken.html">UserNameIdentityToken</a></li>
+                                <li><a href="../classes/UserTokenPolicy.html">UserTokenPolicy</a></li>
+                                <li><a href="../classes/Variant.html">Variant</a></li>
+                                <li><a href="../classes/View.html">View</a></li>
+                                <li><a href="../classes/ViewDescription.html">ViewDescription</a></li>
+                                <li><a href="../classes/WriteRequest.html">WriteRequest</a></li>
+                                <li><a href="../classes/WriteResponse.html">WriteResponse</a></li>
+                                <li><a href="../classes/WriteValue.html">WriteValue</a></li>
+                                <li><a href="../classes/X509IdentityToken.html">X509IdentityToken</a></li>
+                                <li><a href="../classes/Xml2Json.html">Xml2Json</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/opcua.address_space.html">opcua.address_space</a></li>
+                                <li><a href="../modules/opcua.address_space.AlarmsAndConditions.html">opcua.address_space.AlarmsAndConditions</a></li>
+                                <li><a href="../modules/opcua.address_space.types.html">opcua.address_space.types</a></li>
+                                <li><a href="../modules/opcua.client.html">opcua.client</a></li>
+                                <li><a href="../modules/opcua.data-value.html">opcua.data-value</a></li>
+                                <li><a href="../modules/opcua.datamodel.html">opcua.datamodel</a></li>
+                                <li><a href="../modules/opcua.miscellaneous.html">opcua.miscellaneous</a></li>
+                                <li><a href="../modules/opcua.server.html">opcua.server</a></li>
+                                <li><a href="../modules/opcua.server.simulation.html">opcua.server.simulation</a></li>
+                                <li><a href="../modules/opcua.status-code.html">opcua.status-code</a></li>
+                                <li><a href="../modules/opcua.transport.html">opcua.transport</a></li>
+                                <li><a href="../modules/opcua.utils.html">opcua.utils</a></li>
+                                <li><a href="../modules/opcua.variant.html">opcua.variant</a></li>
+                                <li><a href="../modules/service.filter.tools.html">service.filter.tools</a></li>
+                                <li><a href="../modules/services.browse.html">services.browse</a></li>
+                                <li><a href="../modules/services.call.html">services.call</a></li>
+                                <li><a href="../modules/services.discovery.html">services.discovery</a></li>
+                                <li><a href="../modules/services.endpoints.html">services.endpoints</a></li>
+                                <li><a href="../modules/services.filter.html">services.filter</a></li>
+                                <li><a href="../modules/services.history.html">services.history</a></li>
+                                <li><a href="../modules/services.node_management.html">services.node_management</a></li>
+                                <li><a href="../modules/services.query.html">services.query</a></li>
+                                <li><a href="../modules/services.read.html">services.read</a></li>
+                                <li><a href="../modules/services.register-server.html">services.register-server</a></li>
+                                <li><a href="../modules/services.register_node.html">services.register_node</a></li>
+                                <li><a href="../modules/services.secure-channel.html">services.secure-channel</a></li>
+                                <li><a href="../modules/services.session.html">services.session</a></li>
+                                <li><a href="../modules/services.subscription.html">services.subscription</a></li>
+                                <li><a href="../modules/services.translate-browse-path.html">services.translate-browse-path</a></li>
+                                <li><a href="../modules/services.write.html">services.write</a></li>
+                                <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
+                                <li><a href="../modules/xml2json
+                
+                node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+                
+                node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: packages\node-opcua-client\src\client_subscription.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+&quot;use strict&quot;;
+/**
+ * @module opcua.client
+ */
+
+
+var util = require(&quot;util&quot;);
+var assert = require(&quot;node-opcua-assert&quot;);
+var _ = require(&quot;underscore&quot;);
+
+var EventEmitter = require(&quot;events&quot;).EventEmitter;
+
+var utils = require(&quot;node-opcua-utils&quot;);
+
+var subscription_service = require(&quot;node-opcua-service-subscription&quot;);
+
+var ClientSession = require(&quot;../src/client_session&quot;).ClientSession;
+var ClientMonitoredItem = require(&quot;../src/client_monitored_item&quot;).ClientMonitoredItem;
+
+var StatusCodes = require(&quot;node-opcua-status-code&quot;).StatusCodes;
+
+var resolveNodeId = require(&quot;node-opcua-nodeid&quot;).resolveNodeId;
+
+var AttributeIds = require(&quot;node-opcua-data-model&quot;).AttributeIds;
+var TimestampsToReturn = require(&quot;node-opcua-service-read&quot;).TimestampsToReturn;
+
+var debugLog = require(&quot;node-opcua-debug&quot;).make_debugLog(__filename);
+var doDebug = require(&quot;node-opcua-debug&quot;).checkDebugFlag(__filename);
+
+/**
+ * a object to manage a subscription on the client side.
+ *
+ * @class ClientSubscription
+ * @extends EventEmitter
+ *
+ * @param session
+ * @param options {Object}
+ * @param options.requestedPublishingInterval {Number}
+ * @param options.requestedLifetimeCount {Number}
+ * @param options.requestedMaxKeepAliveCount {Number}
+ * @param options.maxNotificationsPerPublish {Number}
+ * @param options.publishingEnabled {Boolean}
+ * @param options.priority {Number}
+ * @constructor
+ *
+ * events:
+ *    &quot;started&quot;,     callback(subscriptionId)  : the subscription has been initiated
+ *    &quot;terminated&quot;                             : the subscription has been deleted
+ *    &quot;error&quot;,                                 : the subscription has received an error
+ *    &quot;keepalive&quot;,                             : the subscription has received a keep alive message from the server
+ *    &quot;received_notifications&quot;,                : the subscription has received one or more notification
+ */
+function ClientSubscription(session, options) {
+
+    assert(session instanceof ClientSession);
+
+    var self = this;
+    self.publish_engine = session.getPublishEngine();
+
+
+    //// options should have
+    //var allowedProperties = [
+    //    &#x27;requestedPublishingInterval&#x27;,
+    //    &#x27;requestedLifetimeCount&#x27;,
+    //    &#x27;requestedMaxKeepAliveCount&#x27;,
+    //    &#x27;maxNotificationsPerPublish&#x27;,
+    //    &#x27;publishingEnabled&#x27;,
+    //    &#x27;priority&#x27;
+    //];
+
+    options = options || {};
+    options.requestedPublishingInterval = options.requestedPublishingInterval || 100;
+    options.requestedLifetimeCount = options.requestedLifetimeCount || 60;
+    options.requestedMaxKeepAliveCount = options.requestedMaxKeepAliveCount || 10;
+    options.maxNotificationsPerPublish = utils.isNullOrUndefined(options.maxNotificationsPerPublish) ? 0 : options.maxNotificationsPerPublish;
+    options.publishingEnabled = options.publishingEnabled ? true : false;
+    options.priority = options.priority || 1;
+
+
+    self.publishingInterval = options.requestedPublishingInterval;
+    self.lifetimeCount = options.requestedLifetimeCount;
+    self.maxKeepAliveCount = options.requestedMaxKeepAliveCount;
+    self.maxNotificationsPerPublish = options.maxNotificationsPerPublish;
+    self.publishingEnabled = options.publishingEnabled;
+    self.priority = options.priority;
+
+    self.subscriptionId = &quot;pending&quot;;
+
+    self._next_client_handle = 0;
+    self.monitoredItems = {};
+
+    /**
+     * set to True when the server has notified us that this sbuscription has timed out
+     * ( maxLifeCounter x published interval without being able to process a PublishRequest
+     * @property hasTimedOut
+     * @type {boolean}
+     */
+    self.hasTimedOut = false;
+
+    setImmediate(function () {
+
+        self.__create_subscription(function (err) {
+
+            if (!err) {
+
+
+                setImmediate(function () {
+                    /**
+                     * notify the observers that the subscription has now started
+                     * @event started
+                     */
+                    self.emit(&quot;started&quot;, self.subscriptionId);
+                });
+            }
+        });
+    });
+}
+util.inherits(ClientSubscription, EventEmitter);
+
+
+ClientSubscription.prototype.__create_subscription = function (callback) {
+
+    assert(_.isFunction(callback));
+
+    var self = this;
+
+    var session = self.publish_engine.session;
+
+    debugLog(&quot;ClientSubscription created &quot;.yellow.bold);
+
+    var request = new subscription_service.CreateSubscriptionRequest({
+        requestedPublishingInterval: self.publishingInterval,
+        requestedLifetimeCount: self.lifetimeCount,
+        requestedMaxKeepAliveCount: self.maxKeepAliveCount,
+        maxNotificationsPerPublish: self.maxNotificationsPerPublish,
+        publishingEnabled: self.publishingEnabled,
+        priority: self.priority
+    });
+
+    session.createSubscription(request, function (err, response) {
+
+        if (err) {
+            /* istanbul ignore next */
+            self.emit(&quot;internal_error&quot;, err);
+            if (callback) {
+                return callback(err);
+            }
+
+        } else {
+            self.subscriptionId = response.subscriptionId;
+            self.publishingInterval = response.revisedPublishingInterval;
+            self.lifetimeCount = response.revisedLifetimeCount;
+            self.maxKeepAliveCount = response.revisedMaxKeepAliveCount;
+
+            self.timeoutHint = (self.maxKeepAliveCount + 10 ) * self.publishingInterval;
+
+            if (doDebug) {
+                debugLog(&quot;registering callback&quot;.yellow.bold);
+                debugLog(&quot;publishingInterval               &quot;.yellow.bold, self.publishingInterval);
+                debugLog(&quot;lifetimeCount                    &quot;.yellow.bold, self.lifetimeCount);
+                debugLog(&quot;maxKeepAliveCount                &quot;.yellow.bold, self.maxKeepAliveCount);
+                debugLog(&quot;publish request timeout hint =   &quot;.yellow.bold, self.timeoutHint);
+            }
+
+            self.publish_engine.registerSubscription(self);
+
+            if (callback) {
+                callback(err);
+            }
+        }
+    });
+};
+
+
+ClientSubscription.prototype.__on_publish_response_DataChangeNotification = function (notification) {
+
+    assert(notification._schema.name === &quot;DataChangeNotification&quot;);
+
+    var self = this;
+
+    var monitoredItems = notification.monitoredItems;
+
+    monitoredItems.forEach(function (monitoredItem) {
+
+        var monitorItemObj = self.monitoredItems[monitoredItem.clientHandle];
+        if (monitorItemObj) {
+            if (monitorItemObj.itemToMonitor.attributeId === AttributeIds.EventNotifier) {
+                console.log(&quot;Warning&quot;.yellow, &quot; Server send a DataChangeNotification for an EventNotifier. EventNotificationList was expected&quot;.cyan);
+                console.log(&quot;         the Server may not be fully OPCUA compliant&quot;.cyan, &quot;. This notification will be ignored.&quot;.yellow);
+            } else {
+                monitorItemObj._notify_value_change(monitoredItem.value);
+            }
+        }
+
+    });
+
+};
+
+ClientSubscription.prototype.__on_publish_response_StatusChangeNotification = function (notification) {
+
+    var self = this;
+
+    assert(notification._schema.name === &quot;StatusChangeNotification&quot;);
+
+    debugLog(&quot;Client has received a Status Change Notification &quot;, notification.statusCode.toString());
+
+    self.publish_engine.cleanup_acknowledgment_for_subscription(notification.subscriptionId);
+
+    if (notification.statusCode === StatusCodes.GoodSubscriptionTransferred) {
+        // OPCUA UA Spec 1.0.3 : part 3 - page 82 - 5.13.7 TransferSubscriptions:
+        // If the Server transfers the Subscription to the new Session, the Server shall issue a StatusChangeNotification
+        // notificationMessage with the status code Good_SubscriptionTransferred to the old Session.
+        console.log(&quot;ClientSubscription#__on_publish_response_StatusChangeNotification : GoodSubscriptionTransferred&quot;);
+        self.hasTimedOut = true;
+        self.terminate();
+    }
+    if (notification.statusCode === StatusCodes.BadTimeout) {
+        // the server tells use that the subscription has timed out ..
+        // this mean that this subscription has been closed on the server side and cannot process any
+        // new PublishRequest.
+        //
+        // from Spec OPCUA Version 1.03 Part 4 - 5.13.1.1 Description : Page 69:
+        //
+        // h. Subscriptions have a lifetime counter that counts the number of consecutive publishing cycles in
+        //    which there have been no Publish requests available to send a Publish response for the
+        //    Subscription. Any Service call that uses the SubscriptionId or the processing of a Publish
+        //    response resets the lifetime counter of this Subscription. When this counter reaches the value
+        //    calculated for the lifetime of a Subscription based on the MaxKeepAliveCount parameter in the
+        //    CreateSubscription Service (5.13.2), the Subscription is closed. Closing the Subscription causes
+        //    its MonitoredItems to be deleted. In addition the Server shall issue a StatusChangeNotification
+        //    notificationMessage with the status code Bad_Timeout.
+        //
+        self.hasTimedOut = true;
+        self.terminate();
+    }
+    /**
+     * notify the observers that the server has send a status changed notification (such as BadTimeout )
+     * @event status_changed
+     */
+    self.emit(&quot;status_changed&quot;, notification.statusCode, notification.diagnosticInfo);
+
+};
+
+ClientSubscription.prototype.__on_publish_response_EventNotificationList = function (notification) {
+    assert(notification._schema.name === &quot;EventNotificationList&quot;);
+
+    var self = this;
+
+    notification.events.forEach(function (event) {
+        var monitorItemObj = self.monitoredItems[event.clientHandle];
+        assert(monitorItemObj, &quot;Expecting a monitored item&quot;);
+
+
+        monitorItemObj._notify_value_change(event.eventFields);
+    });
+};
+
+ClientSubscription.prototype.onNotificationMessage = function (notificationMessage) {
+
+    var self = this;
+    assert(notificationMessage.hasOwnProperty(&quot;sequenceNumber&quot;));
+    self.lastSequenceNumber = notificationMessage.sequenceNumber;
+
+    self.emit(&quot;raw_notification&quot;, notificationMessage);
+
+    var notificationData = notificationMessage.notificationData;
+
+    if (notificationData.length === 0) {
+        // this is a keep alive message
+        debugLog(&quot;Client : received a keep alive notification from client&quot;.yellow);
+        /**
+         * notify the observers that a keep alive Publish Response has been received from the server.
+         * @event keepalive
+         */
+        self.emit(&quot;keepalive&quot;);
+
+    } else {
+
+        /**
+         * notify the observers that some notifications has been received from the server in  a PublishResponse
+         * each modified monitored Item
+         * @event  received_notifications
+         */
+        self.emit(&quot;received_notifications&quot;, notificationMessage);
+        // let publish a global event
+
+        // now process all notifications
+        notificationData.forEach(function (notification) {
+            // DataChangeNotification / StatusChangeNotification / EventNotification
+            switch (notification._schema.name) {
+                case &quot;DataChangeNotification&quot;:
+                    // now inform each individual monitored item
+                    self.__on_publish_response_DataChangeNotification(notification);
+                    break;
+                case &quot;StatusChangeNotification&quot;:
+                    self.__on_publish_response_StatusChangeNotification(notification);
+                    break;
+                case &quot;EventNotificationList&quot;:
+                    self.__on_publish_response_EventNotificationList(notification);
+                    break;
+                default:
+                    console.log(&quot; Invalid notification :&quot;, notification.toString());
+            }
+        });
+    }
+
+};
+
+
+/**
+ * the associated session
+ * @property session
+ * @type {ClientSession}
+ */
+ClientSubscription.prototype.__defineGetter__(&quot;session&quot;, function () {
+    return this.publish_engine.session;
+});
+
+
+ClientSubscription.prototype._terminate_step2 = function (callback) {
+    var self = this;
+
+
+    setImmediate(function () {
+        /**
+         * notify the observers tha the client subscription has terminated
+         * @event  terminated
+         */
+        self.subscriptionId = &quot;terminated&quot;;
+        self.emit(&quot;terminated&quot;);
+        callback();
+    });
+
+};
+
+/**
+ * @method terminate
+ */
+ClientSubscription.prototype.terminate = function (callback) {
+
+    var self = this;
+
+    callback = callback || function () {
+      };
+
+    if (self.subscriptionId === &quot;terminated&quot;) {
+        // already terminated... just ignore
+        callback(new Error(&quot;Already Terminated&quot;));
+        return;
+    }
+
+    if (_.isFinite(self.subscriptionId)) {
+
+        self.publish_engine.unregisterSubscription(self.subscriptionId);
+
+        if (!self.session) {
+            return self._terminate_step2(callback);
+        }
+
+
+        self.session.deleteSubscriptions({
+            subscriptionIds: [self.subscriptionId]
+        }, function (err) {
+
+            if (err) {
+                /**
+                 * notify the observers that an error has occurred
+                 * @event internal_error
+                 * @param {Error} err the error
+                 */
+                self.emit(&quot;internal_error&quot;, err);
+            }
+            self._terminate_step2(callback);
+        });
+
+    } else {
+        assert(self.subscriptionId === &quot;pending&quot;);
+        self._terminate_step2(callback);
+    }
+};
+
+/**
+ * @method nextClientHandle
+ */
+ClientSubscription.prototype.nextClientHandle = function () {
+    this._next_client_handle += 1;
+    return this._next_client_handle;
+};
+
+
+ClientSubscription.prototype._add_monitored_item = function (clientHandle, monitoredItem) {
+    var self = this;
+    assert(self.isActive(), &quot;subscription must be active and not terminated&quot;);
+    assert(monitoredItem.monitoringParameters.clientHandle === clientHandle);
+    self.monitoredItems[clientHandle] = monitoredItem;
+
+    /**
+     * notify the observers that a new monitored item has been added to the subscription.
+     * @event item_added
+     * @param {MonitoredItem} the monitored item.
+     */
+    self.emit(&quot;item_added&quot;, monitoredItem);
+};
+
+
+ClientSubscription.prototype._wait_for_subscription_to_be_ready = function (done) {
+
+    var self = this;
+
+    var _watch_dog = 0;
+
+    function wait_for_subscription_and_monitor() {
+
+        _watch_dog++;
+
+        if (self.subscriptionId === &quot;pending&quot;) {
+            // the subscriptionID is not yet known because the server hasn&#x27;t replied yet
+            // let postpone this call, a little bit, to let things happen
+            setImmediate(wait_for_subscription_and_monitor);
+
+        } else if (self.subscriptionId === &quot;terminated&quot;) {
+            // the subscription has been terminated in the meantime
+            // this indicates a potential issue in the code using this api.
+            if (_.isFunction(done)) {
+                done(new Error(&quot;subscription has been deleted&quot;));
+            }
+        } else {
+            done();
+        }
+    }
+
+    setImmediate(wait_for_subscription_and_monitor);
+
+};
+/**
+ * add a monitor item to the subscription
+ *
+ * @method monitor
+ * @async
+ * @param itemToMonitor                        {ReadValueId}
+ * @param itemToMonitor.nodeId                 {NodeId}
+ * @param itemToMonitor.attributeId            {AttributeId}
+ * @param itemToMonitor.indexRange             {null|NumericRange}
+ * @param itemToMonitor.dataEncoding
+ * @param requestedParameters                  {MonitoringParameters}
+ * @param requestedParameters.clientHandle     {IntegerId}
+ * @param requestedParameters.samplingInterval {Duration}
+ * @param requestedParameters.filter           {ExtensionObject|null} EventFilter/DataChangeFilter
+ * @param requestedParameters.queueSize        {Counter}
+ * @param requestedParameters.discardOldest    {Boolean}
+ * @param timestampsToReturn                   {TimestampsToReturn} //{TimestampsToReturnId}
+ * @param  [done]                              {Function} optional done callback
+ * @return {ClientMonitoredItem}
+ *
+ *
+ * Monitoring a simple Value Change
+ * ---------------------------------
+ *
+ * @example:
+ *
+ *   clientSubscription.monitor(
+ *     // itemToMonitor:
+ *     {
+ *       nodeId: &quot;ns=0;i=2258&quot;,
+ *       attributeId: AttributeIds.Value,
+ *       indexRange: null,
+ *       dataEncoding: { namespaceIndex: 0, name: null }
+ *     },
+ *     // requestedParameters:
+ *     {
+ *        samplingInterval: 3000,
+ *        filter: null,
+ *        queueSize: 1,
+ *        discardOldest: true
+ *     },
+ *     TimestampsToReturn.Neither
+ *   );
+ *
+ * Monitoring a Value Change With a DataChange  Filter
+ * ---------------------------------------------------
+ *
+ * options.trigger       {DataChangeTrigger} {Status|StatusValue|StatusValueTimestamp}
+ * options.deadbandType  {DeadbandType}      {None|Absolute|Percent}
+ * options.deadbandValue {Double}
+
+ * @example:
+ *
+ *   clientSubscription.monitor(
+ *     // itemToMonitor:
+ *     {
+ *       nodeId: &quot;ns=0;i=2258&quot;,
+ *       attributeId: AttributeIds.Value,
+ *     },
+ *     // requestedParameters:
+ *     {
+ *        samplingInterval: 3000,
+ *        filter: new DataChangeFilter({
+ *             trigger: DataChangeTrigger.StatusValue,
+ *             deadbandType: DeadBandType.Absolute,
+ *             deadbandValue: 0.1
+ *        }),
+ *        queueSize: 1,
+ *        discardOldest: true
+ *     },
+ *     TimestampsToReturn.Neither
+ *   );
+ *
+ *
+ * Monitoring an Event
+ * -------------------
+ *
+ *  If the monitor attributeId is EventNotifier then the filter must be specified
+ *
+ * @example:
+ *
+ *  var filter =  new subscription_service.EventFilter({
+ *    selectClauses: [
+ *             { browsePath: [ {name: &#x27;ActiveState&#x27;  }, {name: &#x27;id&#x27;}  ]},
+ *             { browsePath: [ {name: &#x27;ConditionName&#x27;}                ]}
+ *    ],
+ *    whereClause: []
+ *  });
+ *
+ *  clientSubscription.monitor(
+ *     // itemToMonitor:
+ *     {
+ *       nodeId: &quot;ns=0;i=2258&quot;,
+ *       attributeId: AttributeIds.EventNotifier,
+ *       indexRange: null,
+ *       dataEncoding: { namespaceIndex: 0, name: null }
+ *     },
+ *     // requestedParameters:
+ *     {
+ *        samplingInterval: 3000,
+ *
+ *        filter: filter,
+ *
+ *        queueSize: 1,
+ *        discardOldest: true
+ *     },
+ *     TimestampsToReturn.Neither
+ *   );
+ *
+ *
+ *
+ *
+ *
+ *
+ */
+ClientSubscription.prototype.monitor = function (itemToMonitor, requestedParameters, timestampsToReturn, done) {
+    var self = this;
+    assert(done === undefined || _.isFunction(done));
+
+    itemToMonitor.nodeId = resolveNodeId(itemToMonitor.nodeId);
+    var monitoredItem = new ClientMonitoredItem(this, itemToMonitor, requestedParameters, timestampsToReturn);
+
+    self._wait_for_subscription_to_be_ready(function (err) {
+        if (err) {
+            return done &amp;&amp; done(err);
+        }
+        monitoredItem._monitor(done);
+    });
+    return monitoredItem;
+};
+
+
+var ClientMonitoredItemGroup = require(&quot;./client_monitored_item_group&quot;).ClientMonitoredItemGroup;
+/**
+ *
+ * @param itemsToMonitor
+ * @param requestedParameters
+ * @param timestampsToReturn
+ * @param done
+ */
+ClientSubscription.prototype.monitorItems = function (itemsToMonitor, requestedParameters, timestampsToReturn, done) {
+    var self = this;
+
+    // Try to resolve the nodeId and fail fast if we can&#x27;t.
+    itemsToMonitor.forEach(function (itemToMonitor) {
+        itemToMonitor.nodeId = resolveNodeId(itemToMonitor.nodeId);
+    });
+
+    var monitoredItemGroup = new ClientMonitoredItemGroup(this, itemsToMonitor, requestedParameters, timestampsToReturn);
+
+    self._wait_for_subscription_to_be_ready(function (err) {
+        if (err) {
+            return done &amp;&amp; done(err);
+        }
+        monitoredItemGroup._monitor(done);
+    });
+    return monitoredItemGroup;
+};
+
+// ClientSubscription.prototype.monitorOld = function (itemToMonitor, requestedParameters, timestampsToReturn, done) {
+//
+//     var self = this;
+//
+//
+//     assert(itemToMonitor.nodeId);
+//     assert(itemToMonitor.attributeId);
+//     assert(done === undefined || _.isFunction(done));
+//     assert(!_.isFunction(timestampsToReturn));
+//
+//     // Try to resolve the nodeId and fail fast if we can&#x27;t.
+//     resolveNodeId(itemToMonitor.nodeId);
+//
+//     timestampsToReturn = timestampsToReturn || TimestampsToReturn.Neither;
+//
+//
+//     var monitoredItem = new ClientMonitoredItem(this, itemToMonitor, requestedParameters, timestampsToReturn);
+//
+//     var _watch_dog = 0;
+//
+//     function wait_for_subscription_and_monitor() {
+//
+//         _watch_dog++;
+//
+//         if (self.subscriptionId === &quot;pending&quot;) {
+//             // the subscriptionID is not yet known because the server hasn&#x27;t replied yet
+//             // let postpone this call, a little bit, to let things happen
+//             setImmediate(wait_for_subscription_and_monitor);
+//
+//         } else if (self.subscriptionId === &quot;terminated&quot;) {
+//             // the subscription has been terminated in the meantime
+//             // this indicates a potential issue in the code using this api.
+//             if (_.isFunction(done)) {
+//                 done(new Error(&quot;subscription has been deleted&quot;));
+//             }
+//         } else {
+//             //xxx console.log(&quot;xxxx _watch_dog &quot;,_watch_dog);
+//             monitoredItem._monitor(done);
+//         }
+//     }
+//
+//     setImmediate(wait_for_subscription_and_monitor);
+//     return monitoredItem;
+// };
+
+
+ClientSubscription.prototype.isActive = function () {
+    var self = this;
+    return typeof self.subscriptionId !== &quot;string&quot;;
+};
+
+ClientSubscription.prototype._remove = function (monitoredItem) {
+    var self = this;
+    var clientHandle = monitoredItem.monitoringParameters.clientHandle;
+    assert(clientHandle);
+    assert(self.monitoredItems.hasOwnProperty(clientHandle));
+    monitoredItem.removeAllListeners();
+    delete self.monitoredItems[clientHandle];
+};
+
+ClientSubscription.prototype._delete_monitored_items = function (monitoredItems, callback) {
+    assert(_.isArray(monitoredItems));
+    var self = this;
+    assert(self.isActive());
+
+    monitoredItems.forEach(function (monitoredItem) {
+        self._remove(monitoredItem);
+    });
+
+    self.session.deleteMonitoredItems({
+        subscriptionId: self.subscriptionId,
+        monitoredItemIds: monitoredItems.map(function (monitoredItem) {
+            return monitoredItem.monitoredItemId;
+        })
+    }, function (err) {
+
+
+        callback(err);
+    });
+};
+
+ClientSubscription.prototype._delete_monitored_item = function (monitoredItem, callback) {
+    var self = this;
+    self._delete_monitored_items([monitoredItem], callback);
+};
+
+ClientSubscription.prototype.setPublishingMode = function (publishingEnabled, callback) {
+    assert(_.isFunction(callback));
+    var self = this;
+    self.session.setPublishingMode(publishingEnabled, self.subscriptionId, function (err, results) {
+        if (err) {
+            return callback(err);
+        }
+        if (results[0] !== StatusCodes.Good) {
+            return callback(new Error(&quot;Cannot setPublishingMode &quot; + results[0].toString()));
+        }
+        callback();
+    });
+};
+
+
+var async = require(&quot;async&quot;);
+/**
+ *  utility function to recreate new subscription
+ *  @method recreateSubscriptionAndMonitoredItem
+ */
+ClientSubscription.prototype.recreateSubscriptionAndMonitoredItem = function (callback) {
+
+    debugLog(&quot;ClientSubscription#recreateSubscriptionAndMonitoredItem&quot;);
+    var subscription = this;
+
+    var monitoredItems_old = subscription.monitoredItems;
+
+    subscription.publish_engine.unregisterSubscription(subscription.subscriptionId);
+
+    async.series([
+
+        subscription.__create_subscription.bind(subscription),
+
+        function (callback) {
+
+            var test = subscription.publish_engine.getSubscription(subscription.subscriptionId);
+            assert(test === subscription);
+
+            // re-create monitored items
+
+            var itemsToCreate = [];
+            _.forEach(monitoredItems_old, function (monitoredItem /*, clientHandle*/) {
+                assert(monitoredItem.monitoringParameters.clientHandle &gt; 0);
+                itemsToCreate.push({
+                    itemToMonitor: monitoredItem.itemToMonitor,
+                    monitoringMode: monitoredItem.monitoringMode,
+                    requestedParameters: monitoredItem.monitoringParameters
+                });
+
+            });
+
+            var createMonitorItemsRequest = new subscription_service.CreateMonitoredItemsRequest({
+                subscriptionId: subscription.subscriptionId,
+                timestampsToReturn: TimestampsToReturn.Both, // self.timestampsToReturn,
+                itemsToCreate: itemsToCreate
+            });
+
+            subscription.session.createMonitoredItems(createMonitorItemsRequest, function (err, response) {
+
+                if (!err) {
+                    assert(response instanceof subscription_service.CreateMonitoredItemsResponse);
+                    var monitoredItemResults = response.results;
+
+                    monitoredItemResults.forEach(function (monitoredItemResult, index) {
+
+                        var clientHandle = itemsToCreate[index].requestedParameters.clientHandle;
+                        var monitoredItem = subscription.monitoredItems[clientHandle];
+
+                        if (monitoredItemResult.statusCode === StatusCodes.Good) {
+
+                            monitoredItem.result = monitoredItemResult;
+                            monitoredItem.monitoredItemId = monitoredItemResult.monitoredItemId;
+                            monitoredItem.monitoringParameters.samplingInterval = monitoredItemResult.revisedSamplingInterval;
+                            monitoredItem.monitoringParameters.queueSize = monitoredItemResult.revisedQueueSize;
+                            monitoredItem.filterResult = monitoredItemResult.filterResult;
+
+                            // istanbul ignore next
+                            if (doDebug) {
+                                debugLog(&quot;monitoredItemResult.statusCode = &quot;, monitoredItemResult.toString());
+                            }
+
+                        } else {
+                            // TODO: what should we do ?
+                            debugLog(&quot;monitoredItemResult.statusCode = &quot;, monitoredItemResult.statusCode.toString());
+                        }
+                    });
+
+                }
+                callback(err);
+            });
+
+        }
+
+    ], callback);
+};
+
+exports.ClientSubscription = ClientSubscription;
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

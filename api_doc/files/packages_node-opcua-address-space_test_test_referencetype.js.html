@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>packages\node-opcua-address-space\test\test_referencetype.js - The NodeOPCUA API</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.1.0-pre</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/AcknowledgeMessage.html">AcknowledgeMessage</a></li>
+                                <li><a href="../classes/ActivateSessionRequest.html">ActivateSessionRequest</a></li>
+                                <li><a href="../classes/ActivateSessionResponse.html">ActivateSessionResponse</a></li>
+                                <li><a href="../classes/AddNodesItem.html">AddNodesItem</a></li>
+                                <li><a href="../classes/AddNodesRequest.html">AddNodesRequest</a></li>
+                                <li><a href="../classes/AddNodesResponse.html">AddNodesResponse</a></li>
+                                <li><a href="../classes/AddNodesResult.html">AddNodesResult</a></li>
+                                <li><a href="../classes/AddReferencesItem.html">AddReferencesItem</a></li>
+                                <li><a href="../classes/AddReferencesRequest.html">AddReferencesRequest</a></li>
+                                <li><a href="../classes/AddReferencesResponse.html">AddReferencesResponse</a></li>
+                                <li><a href="../classes/AddressSpace.html">AddressSpace</a></li>
+                                <li><a href="../classes/AggregateConfiguration.html">AggregateConfiguration</a></li>
+                                <li><a href="../classes/AggregateFilter.html">AggregateFilter</a></li>
+                                <li><a href="../classes/AnonymousIdentityToken.html">AnonymousIdentityToken</a></li>
+                                <li><a href="../classes/ApplicationDescription.html">ApplicationDescription</a></li>
+                                <li><a href="../classes/ApplicationInstanceCertificate.html">ApplicationInstanceCertificate</a></li>
+                                <li><a href="../classes/Argument.html">Argument</a></li>
+                                <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
+                                <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+                                <li><a href="../classes/AttributeNameById.html">AttributeNameById</a></li>
+                                <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
+                                <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
+                                <li><a href="../classes/BaseEventType.html">BaseEventType</a></li>
+                                <li><a href="../classes/BaseNode.html">BaseNode</a></li>
+                                <li><a href="../classes/BaseUAObject.html">BaseUAObject</a></li>
+                                <li><a href="../classes/BinaryStream.html">BinaryStream</a></li>
+                                <li><a href="../classes/BinaryStreamSizeCalculator.html">BinaryStreamSizeCalculator</a></li>
+                                <li><a href="../classes/BrowseDescription.html">BrowseDescription</a></li>
+                                <li><a href="../classes/BrowseDirection.html">BrowseDirection</a></li>
+                                <li><a href="../classes/BrowseNextRequest.html">BrowseNextRequest</a></li>
+                                <li><a href="../classes/BrowseNextResponse.html">BrowseNextResponse</a></li>
+                                <li><a href="../classes/BrowsePath.html">BrowsePath</a></li>
+                                <li><a href="../classes/BrowsePathResult.html">BrowsePathResult</a></li>
+                                <li><a href="../classes/BrowsePathTarget.html">BrowsePathTarget</a></li>
+                                <li><a href="../classes/BrowseRequest.html">BrowseRequest</a></li>
+                                <li><a href="../classes/BrowseResponse.html">BrowseResponse</a></li>
+                                <li><a href="../classes/BrowseResult.html">BrowseResult</a></li>
+                                <li><a href="../classes/BuildInfo.html">BuildInfo</a></li>
+                                <li><a href="../classes/CallMethodRequest.html">CallMethodRequest</a></li>
+                                <li><a href="../classes/CallMethodResult.html">CallMethodResult</a></li>
+                                <li><a href="../classes/CallRequest.html">CallRequest</a></li>
+                                <li><a href="../classes/CallResponse.html">CallResponse</a></li>
+                                <li><a href="../classes/CancelRequest.html">CancelRequest</a></li>
+                                <li><a href="../classes/CancelResponse.html">CancelResponse</a></li>
+                                <li><a href="../classes/ChannelSecurityToken.html">ChannelSecurityToken</a></li>
+                                <li><a href="../classes/ChunkManager.html">ChunkManager</a></li>
+                                <li><a href="../classes/ClientMonitoredItem.html">ClientMonitoredItem</a></li>
+                                <li><a href="../classes/ClientMonitoredItemGroup.html">ClientMonitoredItemGroup</a></li>
+                                <li><a href="../classes/ClientSecureChannelLayer.html">ClientSecureChannelLayer</a></li>
+                                <li><a href="../classes/ClientSession.html">ClientSession</a></li>
+                                <li><a href="../classes/ClientSidePublishEngine.html">ClientSidePublishEngine</a></li>
+                                <li><a href="../classes/ClientSubscription.html">ClientSubscription</a></li>
+                                <li><a href="../classes/ClientTCP_transport.html">ClientTCP_transport</a></li>
+                                <li><a href="../classes/CloseSecureChannelRequest.html">CloseSecureChannelRequest</a></li>
+                                <li><a href="../classes/CloseSecureChannelResponse.html">CloseSecureChannelResponse</a></li>
+                                <li><a href="../classes/CloseSessionRequest.html">CloseSessionRequest</a></li>
+                                <li><a href="../classes/CloseSessionResponse.html">CloseSessionResponse</a></li>
+                                <li><a href="../classes/Company.html">Company</a></li>
+                                <li><a href="../classes/ConditionInfo.html">ConditionInfo</a></li>
+                                <li><a href="../classes/ConditionSnapshot.html">ConditionSnapshot</a></li>
+                                <li><a href="../classes/ContentFilter.html">ContentFilter</a></li>
+                                <li><a href="../classes/ContentFilterElement.html">ContentFilterElement</a></li>
+                                <li><a href="../classes/ContentFilterElementResult.html">ContentFilterElementResult</a></li>
+                                <li><a href="../classes/ContentFilterResult.html">ContentFilterResult</a></li>
+                                <li><a href="../classes/CreateMonitoredItemsRequest.html">CreateMonitoredItemsRequest</a></li>
+                                <li><a href="../classes/CreateMonitoredItemsResponse.html">CreateMonitoredItemsResponse</a></li>
+                                <li><a href="../classes/CreateSessionRequest.html">CreateSessionRequest</a></li>
+                                <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
+                                <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
+                                <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
+                                <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
+                                <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
+                                <li><a href="../classes/DataValue.html">DataValue</a></li>
+                                <li><a href="../classes/DeleteMonitoredItemsRequest.html">DeleteMonitoredItemsRequest</a></li>
+                                <li><a href="../classes/DeleteMonitoredItemsResponse.html">DeleteMonitoredItemsResponse</a></li>
+                                <li><a href="../classes/DeleteNodesItem.html">DeleteNodesItem</a></li>
+                                <li><a href="../classes/DeleteNodesRequest.html">DeleteNodesRequest</a></li>
+                                <li><a href="../classes/DeleteNodesResponse.html">DeleteNodesResponse</a></li>
+                                <li><a href="../classes/DeleteReferencesItem.html">DeleteReferencesItem</a></li>
+                                <li><a href="../classes/DeleteReferencesRequest.html">DeleteReferencesRequest</a></li>
+                                <li><a href="../classes/DeleteReferencesResponse.html">DeleteReferencesResponse</a></li>
+                                <li><a href="../classes/DeleteSubscriptionsRequest.html">DeleteSubscriptionsRequest</a></li>
+                                <li><a href="../classes/DeleteSubscriptionsResponse.html">DeleteSubscriptionsResponse</a></li>
+                                <li><a href="../classes/DiagnosticInfo.html">DiagnosticInfo</a></li>
+                                <li><a href="../classes/DummyObject.html">DummyObject</a></li>
+                                <li><a href="../classes/ElementOperand.html">ElementOperand</a></li>
+                                <li><a href="../classes/Employee.html">Employee</a></li>
+                                <li><a href="../classes/EndpointDescription.html">EndpointDescription</a></li>
+                                <li><a href="../classes/Enum.html">Enum</a></li>
+                                <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
+                                <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
+                                <li><a href="../classes/EUInformation.html">EUInformation</a></li>
+                                <li><a href="../classes/EventData.html">EventData</a></li>
+                                <li><a href="../classes/EventFieldList.html">EventFieldList</a></li>
+                                <li><a href="../classes/EventFilter.html">EventFilter</a></li>
+                                <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
+                                <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
+                                <li><a href="../classes/ExpandedNodeId.html">ExpandedNodeId</a></li>
+                                <li><a href="../classes/Factory.html">Factory</a></li>
+                                <li><a href="../classes/FilterOperand.html">FilterOperand</a></li>
+                                <li><a href="../classes/FindServersRequest.html">FindServersRequest</a></li>
+                                <li><a href="../classes/FindServersResponse.html">FindServersResponse</a></li>
+                                <li><a href="../classes/FooBar.html">FooBar</a></li>
+                                <li><a href="../classes/FooBarDerived.html">FooBarDerived</a></li>
+                                <li><a href="../classes/FooWithRecursion.html">FooWithRecursion</a></li>
+                                <li><a href="../classes/GetEndpointsRequest.html">GetEndpointsRequest</a></li>
+                                <li><a href="../classes/GetEndpointsResponse.html">GetEndpointsResponse</a></li>
+                                <li><a href="../classes/HelloMessage.html">HelloMessage</a></li>
+                                <li><a href="../classes/HistoryData.html">HistoryData</a></li>
+                                <li><a href="../classes/HistoryModifiedData.html">HistoryModifiedData</a></li>
+                                <li><a href="../classes/HistoryReadDetails.html">HistoryReadDetails</a></li>
+                                <li><a href="../classes/HistoryReadRequest.html">HistoryReadRequest</a></li>
+                                <li><a href="../classes/HistoryReadResponse.html">HistoryReadResponse</a></li>
+                                <li><a href="../classes/HistoryReadResult.html">HistoryReadResult</a></li>
+                                <li><a href="../classes/HistoryReadValueId.html">HistoryReadValueId</a></li>
+                                <li><a href="../classes/HistoryServerCapabilities.html">HistoryServerCapabilities</a></li>
+                                <li><a href="../classes/HistoryUpdateRequest.html">HistoryUpdateRequest</a></li>
+                                <li><a href="../classes/HistoryUpdateResponse.html">HistoryUpdateResponse</a></li>
+                                <li><a href="../classes/HistoryUpdateResult.html">HistoryUpdateResult</a></li>
+                                <li><a href="../classes/IssuedIdentityToken.html">IssuedIdentityToken</a></li>
+                                <li><a href="../classes/LiteralOperand.html">LiteralOperand</a></li>
+                                <li><a href="../classes/LocalizedText.html">LocalizedText</a></li>
+                                <li><a href="../classes/MessageBuilder.html">MessageBuilder</a></li>
+                                <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
+                                <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
+                                <li><a href="../classes/MetaShapeForUnitTest.html">MetaShapeForUnitTest</a></li>
+                                <li><a href="../classes/ModelChangeStructure.html">ModelChangeStructure</a></li>
+                                <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
+                                <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
+                                <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
+                                <li><a href="../classes/ModifySubscriptionRequest.html">ModifySubscriptionRequest</a></li>
+                                <li><a href="../classes/ModifySubscriptionResponse.html">ModifySubscriptionResponse</a></li>
+                                <li><a href="../classes/MonitoredItem.html">MonitoredItem</a></li>
+                                <li><a href="../classes/MonitoredItemCreateRequest.html">MonitoredItemCreateRequest</a></li>
+                                <li><a href="../classes/MonitoredItemCreateResult.html">MonitoredItemCreateResult</a></li>
+                                <li><a href="../classes/MonitoredItemModifyRequest.html">MonitoredItemModifyRequest</a></li>
+                                <li><a href="../classes/MonitoredItemModifyResult.html">MonitoredItemModifyResult</a></li>
+                                <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
+                                <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
+                                <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+                                <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
+                                <li><a href="../classes/NodeId.html">NodeId</a></li>
+                                <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
+                                <li><a href="../classes/NodeTypeDescription.html">NodeTypeDescription</a></li>
+                                <li><a href="../classes/NotificationMessage.html">NotificationMessage</a></li>
+                                <li><a href="../classes/ObjWithAccessLevel.html">ObjWithAccessLevel</a></li>
+                                <li><a href="../classes/ObjWithIntegerId.html">ObjWithIntegerId</a></li>
+                                <li><a href="../classes/opcua.html">opcua</a></li>
+                                <li><a href="../classes/OPCUABaseServer.html">OPCUABaseServer</a></li>
+                                <li><a href="../classes/OPCUAClient.html">OPCUAClient</a></li>
+                                <li><a href="../classes/OPCUAClientBase.html">OPCUAClientBase</a></li>
+                                <li><a href="../classes/OPCUASecureObject.html">OPCUASecureObject</a></li>
+                                <li><a href="../classes/OPCUAServer.html">OPCUAServer</a></li>
+                                <li><a href="../classes/OPCUAServerEndPoint
+                
+                A sever end point is listening to one port.html">OPCUAServerEndPoint
+                
+                A sever end point is listening to one port</a></li>
+                                <li><a href="../classes/OpenSecureChannelRequest.html">OpenSecureChannelRequest</a></li>
+                                <li><a href="../classes/OpenSecureChannelResponse.html">OpenSecureChannelResponse</a></li>
+                                <li><a href="../classes/OperationLimits.html">OperationLimits</a></li>
+                                <li><a href="../classes/PacketAssembler.html">PacketAssembler</a></li>
+                                <li><a href="../classes/ParsingResult.html">ParsingResult</a></li>
+                                <li><a href="../classes/Person.html">Person</a></li>
+                                <li><a href="../classes/Person2.html">Person2</a></li>
+                                <li><a href="../classes/Potato.html">Potato</a></li>
+                                <li><a href="../classes/PublishRequest.html">PublishRequest</a></li>
+                                <li><a href="../classes/PublishResponse.html">PublishResponse</a></li>
+                                <li><a href="../classes/QualifiedName.html">QualifiedName</a></li>
+                                <li><a href="../classes/QueryDataDescription.html">QueryDataDescription</a></li>
+                                <li><a href="../classes/QueryDataSet.html">QueryDataSet</a></li>
+                                <li><a href="../classes/QueryFirstRequest.html">QueryFirstRequest</a></li>
+                                <li><a href="../classes/QueryFirstResponse.html">QueryFirstResponse</a></li>
+                                <li><a href="../classes/QueryNextRequest.html">QueryNextRequest</a></li>
+                                <li><a href="../classes/QueryNextResponse.html">QueryNextResponse</a></li>
+                                <li><a href="../classes/Range.html">Range</a></li>
+                                <li><a href="../classes/ReadAtTimeDetails.html">ReadAtTimeDetails</a></li>
+                                <li><a href="../classes/ReaderState.html">ReaderState</a></li>
+                                <li><a href="../classes/ReadEventDetails.html">ReadEventDetails</a></li>
+                                <li><a href="../classes/ReadProcessedDetails.html">ReadProcessedDetails</a></li>
+                                <li><a href="../classes/ReadRawModifiedDetails.html">ReadRawModifiedDetails</a></li>
+                                <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
+                                <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
+                                <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+                                <li><a href="../classes/RedundantServer.html">RedundantServer</a></li>
+                                <li><a href="../classes/Reference.html">Reference</a></li>
+                                <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
+                                <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
+                                <li><a href="../classes/RegisteredServer.html">RegisteredServer</a></li>
+                                <li><a href="../classes/RegisterNodesRequest.html">RegisterNodesRequest</a></li>
+                                <li><a href="../classes/RegisterNodesResponse.html">RegisterNodesResponse</a></li>
+                                <li><a href="../classes/RegisterServerRequest.html">RegisterServerRequest</a></li>
+                                <li><a href="../classes/RegisterServerResponse.html">RegisterServerResponse</a></li>
+                                <li><a href="../classes/RelativePath.html">RelativePath</a></li>
+                                <li><a href="../classes/RelativePathElement.html">RelativePathElement</a></li>
+                                <li><a href="../classes/RepublishRequest.html">RepublishRequest</a></li>
+                                <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
+                                <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
+                                <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+                                <li><a href="../classes/Role.html">Role</a></li>
+                                <li><a href="../classes/SamplingIntervalDiagnostics.html">SamplingIntervalDiagnostics</a></li>
+                                <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
+                                <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
+                                <li><a href="../classes/SemanticChangeStructure.html">SemanticChangeStructure</a></li>
+                                <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
+                                <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
+                                <li><a href="../classes/ServerCapabilities.html">ServerCapabilities</a></li>
+                                <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
+                                <li><a href="../classes/ServerEngine.html">ServerEngine</a></li>
+                                <li><a href="../classes/ServerSecureChannelLayer.html">ServerSecureChannelLayer</a></li>
+                                <li><a href="../classes/ServerSession.html">ServerSession</a></li>
+                                <li><a href="../classes/ServerSidePublishEngine.html">ServerSidePublishEngine</a></li>
+                                <li><a href="../classes/ServerSideUnimplementedRequest.html">ServerSideUnimplementedRequest</a></li>
+                                <li><a href="../classes/ServerStatus.html">ServerStatus</a></li>
+                                <li><a href="../classes/ServerTCP_transport.html">ServerTCP_transport</a></li>
+                                <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
+                                <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
+                                <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+                                <li><a href="../classes/SessionSecurityDiagnostics.html">SessionSecurityDiagnostics</a></li>
+                                <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
+                                <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
+                                <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
+                                <li><a href="../classes/SetPublishingModeResponse.html">SetPublishingModeResponse</a></li>
+                                <li><a href="../classes/SetTriggeringRequest.html">SetTriggeringRequest</a></li>
+                                <li><a href="../classes/SetTriggeringResponse.html">SetTriggeringResponse</a></li>
+                                <li><a href="../classes/Shape.html">Shape</a></li>
+                                <li><a href="../classes/SignatureData.html">SignatureData</a></li>
+                                <li><a href="../classes/SignedSoftwareCertificate.html">SignedSoftwareCertificate</a></li>
+                                <li><a href="../classes/SimpleAttributeOperand.html">SimpleAttributeOperand</a></li>
+                                <li><a href="../classes/Simulator.html">Simulator</a></li>
+                                <li><a href="../classes/StatusChangeNotification.html">StatusChangeNotification</a></li>
+                                <li><a href="../classes/StatusCode.html">StatusCode</a></li>
+                                <li><a href="../classes/Subscription.html">Subscription</a></li>
+                                <li><a href="../classes/SubscriptionAcknowledgement.html">SubscriptionAcknowledgement</a></li>
+                                <li><a href="../classes/SubscriptionDiagnostics.html">SubscriptionDiagnostics</a></li>
+                                <li><a href="../classes/SymmetricAlgorithmSecurityHeader.html">SymmetricAlgorithmSecurityHeader</a></li>
+                                <li><a href="../classes/TCP_transport.html">TCP_transport</a></li>
+                                <li><a href="../classes/TCPErrorMessage.html">TCPErrorMessage</a></li>
+                                <li><a href="../classes/TimestampsToReturn.html">TimestampsToReturn</a></li>
+                                <li><a href="../classes/TimeZone.html">TimeZone</a></li>
+                                <li><a href="../classes/ToolBrowsePath.html">ToolBrowsePath</a></li>
+                                <li><a href="../classes/TransferResult.html">TransferResult</a></li>
+                                <li><a href="../classes/TransferSubscriptionsRequest.html">TransferSubscriptionsRequest</a></li>
+                                <li><a href="../classes/TransferSubscriptionsResponse.html">TransferSubscriptionsResponse</a></li>
+                                <li><a href="../classes/TranslateBrowsePathsToNodeIdsRequest.html">TranslateBrowsePathsToNodeIdsRequest</a></li>
+                                <li><a href="../classes/TranslateBrowsePathsToNodeIdsResponse.html">TranslateBrowsePathsToNodeIdsResponse</a></li>
+                                <li><a href="../classes/TypeSchema.html">TypeSchema</a></li>
+                                <li><a href="../classes/UAAcknowledgeableConditionBase.html">UAAcknowledgeableConditionBase</a></li>
+                                <li><a href="../classes/UAAlarmConditionBase.html">UAAlarmConditionBase</a></li>
+                                <li><a href="../classes/UACertificateExpirationAlarm.html">UACertificateExpirationAlarm</a></li>
+                                <li><a href="../classes/UAConditionBase.html">UAConditionBase</a></li>
+                                <li><a href="../classes/UADataType.html">UADataType</a></li>
+                                <li><a href="../classes/UADiscreteAlarm.html">UADiscreteAlarm</a></li>
+                                <li><a href="../classes/UAExclusiveDeviationAlarm.html">UAExclusiveDeviationAlarm</a></li>
+                                <li><a href="../classes/UAExclusiveLevelAlarm.html">UAExclusiveLevelAlarm</a></li>
+                                <li><a href="../classes/UAExclusiveLimitAlarm.html">UAExclusiveLimitAlarm</a></li>
+                                <li><a href="../classes/UAExclusiveRateOfChangeAlarm.html">UAExclusiveRateOfChangeAlarm</a></li>
+                                <li><a href="../classes/UALimitAlarm.html">UALimitAlarm</a></li>
+                                <li><a href="../classes/UANonExclusiveDeviationAlarm.html">UANonExclusiveDeviationAlarm</a></li>
+                                <li><a href="../classes/UANonExclusiveLimitAlarm.html">UANonExclusiveLimitAlarm</a></li>
+                                <li><a href="../classes/UAObject.html">UAObject</a></li>
+                                <li><a href="../classes/UAObjectType.html">UAObjectType</a></li>
+                                <li><a href="../classes/UAOffNormalAlarm.html">UAOffNormalAlarm</a></li>
+                                <li><a href="../classes/UASystemOffNormalAlarm.html">UASystemOffNormalAlarm</a></li>
+                                <li><a href="../classes/UATripAlarm.html">UATripAlarm</a></li>
+                                <li><a href="../classes/UATwoStateVariable.html">UATwoStateVariable</a></li>
+                                <li><a href="../classes/UAVariable.html">UAVariable</a></li>
+                                <li><a href="../classes/UAVariableType.html">UAVariableType</a></li>
+                                <li><a href="../classes/UnregisterNodesRequest.html">UnregisterNodesRequest</a></li>
+                                <li><a href="../classes/UnregisterNodesResponse.html">UnregisterNodesResponse</a></li>
+                                <li><a href="../classes/UserNameIdentityToken.html">UserNameIdentityToken</a></li>
+                                <li><a href="../classes/UserTokenPolicy.html">UserTokenPolicy</a></li>
+                                <li><a href="../classes/Variant.html">Variant</a></li>
+                                <li><a href="../classes/View.html">View</a></li>
+                                <li><a href="../classes/ViewDescription.html">ViewDescription</a></li>
+                                <li><a href="../classes/WriteRequest.html">WriteRequest</a></li>
+                                <li><a href="../classes/WriteResponse.html">WriteResponse</a></li>
+                                <li><a href="../classes/WriteValue.html">WriteValue</a></li>
+                                <li><a href="../classes/X509IdentityToken.html">X509IdentityToken</a></li>
+                                <li><a href="../classes/Xml2Json.html">Xml2Json</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/opcua.address_space.html">opcua.address_space</a></li>
+                                <li><a href="../modules/opcua.address_space.AlarmsAndConditions.html">opcua.address_space.AlarmsAndConditions</a></li>
+                                <li><a href="../modules/opcua.address_space.types.html">opcua.address_space.types</a></li>
+                                <li><a href="../modules/opcua.client.html">opcua.client</a></li>
+                                <li><a href="../modules/opcua.data-value.html">opcua.data-value</a></li>
+                                <li><a href="../modules/opcua.datamodel.html">opcua.datamodel</a></li>
+                                <li><a href="../modules/opcua.miscellaneous.html">opcua.miscellaneous</a></li>
+                                <li><a href="../modules/opcua.server.html">opcua.server</a></li>
+                                <li><a href="../modules/opcua.server.simulation.html">opcua.server.simulation</a></li>
+                                <li><a href="../modules/opcua.status-code.html">opcua.status-code</a></li>
+                                <li><a href="../modules/opcua.transport.html">opcua.transport</a></li>
+                                <li><a href="../modules/opcua.utils.html">opcua.utils</a></li>
+                                <li><a href="../modules/opcua.variant.html">opcua.variant</a></li>
+                                <li><a href="../modules/service.filter.tools.html">service.filter.tools</a></li>
+                                <li><a href="../modules/services.browse.html">services.browse</a></li>
+                                <li><a href="../modules/services.call.html">services.call</a></li>
+                                <li><a href="../modules/services.discovery.html">services.discovery</a></li>
+                                <li><a href="../modules/services.endpoints.html">services.endpoints</a></li>
+                                <li><a href="../modules/services.filter.html">services.filter</a></li>
+                                <li><a href="../modules/services.history.html">services.history</a></li>
+                                <li><a href="../modules/services.node_management.html">services.node_management</a></li>
+                                <li><a href="../modules/services.query.html">services.query</a></li>
+                                <li><a href="../modules/services.read.html">services.read</a></li>
+                                <li><a href="../modules/services.register-server.html">services.register-server</a></li>
+                                <li><a href="../modules/services.register_node.html">services.register_node</a></li>
+                                <li><a href="../modules/services.secure-channel.html">services.secure-channel</a></li>
+                                <li><a href="../modules/services.session.html">services.session</a></li>
+                                <li><a href="../modules/services.subscription.html">services.subscription</a></li>
+                                <li><a href="../modules/services.translate-browse-path.html">services.translate-browse-path</a></li>
+                                <li><a href="../modules/services.write.html">services.write</a></li>
+                                <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
+                                <li><a href="../modules/xml2json
+                
+                node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+                
+                node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: packages\node-opcua-address-space\test\test_referencetype.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+&quot;use strict&quot;;
+/* global describe,it,require,before*/
+require(&quot;should&quot;);
+
+
+var address_space = require(&quot;..&quot;);
+var AddressSpace = address_space.AddressSpace;
+var nodeid = require(&quot;node-opcua-nodeid&quot;);
+var NodeId = require(&quot;node-opcua-nodeid&quot;).NodeId;
+
+var AttributeIds = require(&quot;node-opcua-data-model&quot;).AttributeIds;
+var DataType = require(&quot;node-opcua-variant&quot;).DataType;
+var StatusCodes = require(&quot;node-opcua-status-code&quot;).StatusCodes;
+var BrowseDirection = require(&quot;node-opcua-data-model&quot;).BrowseDirection;
+
+
+var _ = require(&quot;underscore&quot;);
+var redirectToFile = require(&quot;node-opcua-debug&quot;).redirectToFile;
+var get_mini_address_space = require(&quot;../test_helpers/get_mini_address_space&quot;).get_mini_address_space;
+
+
+var context = require(&quot;..&quot;).SessionContext.defaultContext;
+var BaseNode = require(&quot;..&quot;).BaseNode;
+
+var describe = require(&quot;node-opcua-leak-detector&quot;).describeWithLeakDetector;
+describe(&quot;testing ReferenceType&quot;, function () {
+    var addressSpace;
+    var rootFolder;
+    before(function (done) {
+        get_mini_address_space(function (err, data) {
+
+            if (err) {
+                return done(err);
+            }
+
+            addressSpace = data;
+            addressSpace.should.be.instanceOf(AddressSpace);
+
+            rootFolder = addressSpace.rootFolder;
+            rootFolder.browseName.toString().should.equal(&quot;Root&quot;);
+
+            done();
+        });
+    });
+    after(function (done) {
+        if (addressSpace) {
+            addressSpace.dispose();
+            addressSpace = null;
+        }
+        rootFolder = null;
+        done();
+    });
+
+    it(&quot;should find &#x27;HierarchicalReferences&#x27;&quot;, function () {
+
+        var hr = addressSpace.findReferenceType(&quot;HierarchicalReferences&quot;);
+        hr.browseName.toString().should.equal(&quot;HierarchicalReferences&quot;);
+        hr.nodeId.toString().should.eql(nodeid.makeNodeId(33).toString());
+
+    });
+
+    it(&quot;HierarchicalReferences should have an Abstract attribute set to true &quot;, function () {
+
+        var hr = addressSpace.findReferenceType(&quot;HierarchicalReferences&quot;);
+        var v = hr.readAttribute(context, AttributeIds.IsAbstract);
+        v.statusCode.should.eql(StatusCodes.Good);
+        v.value.dataType.should.eql(DataType.Boolean);
+        v.value.value.should.eql(true);
+
+    });
+
+    it(&quot;Organizes should have an Abstract attribute set to true &quot;, function () {
+
+        var hr = addressSpace.findReferenceType(&quot;Organizes&quot;);
+        var v = hr.readAttribute(context, AttributeIds.IsAbstract);
+        v.statusCode.should.eql(StatusCodes.Good);
+        v.value.dataType.should.eql(DataType.Boolean);
+        v.value.value.should.eql(false);
+    });
+
+    it(&quot;should find &#x27;Organizes&#x27;&quot;, function () {
+        var organizes_refId = addressSpace.findReferenceType(&quot;Organizes&quot;);
+        organizes_refId.browseName.toString().should.equal(&quot;Organizes&quot;);
+        organizes_refId.nodeId.toString().should.eql(nodeid.makeNodeId(35).toString());
+    });
+
+    it(&quot;&#x27;Organizes&#x27; should be a super type of &#x27;HierarchicalReferences&#x27;&quot;, function () {
+
+        var hr = addressSpace.findReferenceType(&quot;HierarchicalReferences&quot;);
+        var organizes_refId = addressSpace.findReferenceType(&quot;Organizes&quot;);
+
+        organizes_refId.isSupertypeOf(hr).should.eql(true);
+        hr.isSupertypeOf(organizes_refId).should.eql(false);
+
+    });
+
+    it(&quot;&#x27;HasTypeDefinition&#x27; should *not* be a super-type of &#x27;HierarchicalReferences&#x27;&quot;, function () {
+
+        var hr = addressSpace.findReferenceType(&quot;HierarchicalReferences&quot;);
+        var hasTypeDefinition_refId = addressSpace.findReferenceType(&quot;HasTypeDefinition&quot;);
+
+        hasTypeDefinition_refId.isSupertypeOf(hr).should.eql(false);
+        hr.isSupertypeOf(hasTypeDefinition_refId).should.eql(false);
+
+    });
+
+    it(&quot;&#x27;HasTypeDefinition&#x27; should  be a super-type of &#x27;NonHierarchicalReferences&#x27;&quot;, function () {
+
+        var nhr = addressSpace.findReferenceType(&quot;NonHierarchicalReferences&quot;);
+        var hasTypeDefinition_refId = addressSpace.findReferenceType(&quot;HasTypeDefinition&quot;);
+
+        hasTypeDefinition_refId.isSupertypeOf(nhr).should.eql(true);
+        nhr.isSupertypeOf(hasTypeDefinition_refId).should.eql(false);
+
+    });
+
+
+    it(&quot;should return 4 refs for browseNode on RootFolder ,  referenceTypeId=null,!includeSubtypes  &quot;, function () {
+
+        var references = rootFolder.browseNode({
+            browseDirection: BrowseDirection.Forward,
+            referenceTypeId: null,
+            includeSubtypes: false,
+            nodeClassMask: 0, // 0 = all nodes
+            resultMask: 0x3F
+        });
+        references.length.should.be.greaterThan(2);
+
+        var names = references.map(function (ref) {
+            return addressSpace.findNode(ref.nodeId).browseName.toString();
+        });
+        var expectedNames = [&quot;FolderType&quot;, &quot;Objects&quot;, &quot;Types&quot;, &quot;Views&quot;];
+        _.intersection(names, expectedNames).length.should.eql(expectedNames.length);
+    });
+
+    it(&quot;should return 1 refs for browseNode on RootFolder ,  NonHierarchicalReferences, includeSubtypes  &quot;, function () {
+
+        var references = rootFolder.browseNode({
+            browseDirection: BrowseDirection.Forward,
+            referenceTypeId: &quot;NonHierarchicalReferences&quot;,
+            includeSubtypes: true,
+            nodeClassMask: 0, // 0 = all nodes
+            resultMask: 0x3F
+        });
+        references.length.should.equal(1);
+    });
+
+    it(&quot;should return 3 refs for browseNode on RootFolder , Organizes ,!includeSubtypes  &quot;, function () {
+
+        var references = rootFolder.browseNode({
+            browseDirection: BrowseDirection.Forward,
+            referenceTypeId: &quot;Organizes&quot;,
+            includeSubtypes: false,
+            nodeClassMask: 0, // 0 = all nodes
+            resultMask: 0x3F
+        });
+        references.length.should.be.greaterThan(2);
+
+        var names = references.map(function (ref) {
+            return addressSpace.findNode(ref.nodeId).browseName.toString();
+        });
+        var expectedNames = [&quot;Objects&quot;, &quot;Types&quot;, &quot;Views&quot;];
+        _.intersection(names, expectedNames).length.should.eql(expectedNames.length);
+    });
+
+    it(&quot;should return 0 refs for browseNode on RootFolder , HierarchicalReferences ,!includeSubtypes  &quot;, function () {
+
+        var references = rootFolder.browseNode({
+            browseDirection: BrowseDirection.Both,
+            referenceTypeId: &quot;HierarchicalReferences&quot;,
+            includeSubtypes: false,
+            nodeClassMask: 0, // 0 = all nodes
+            resultMask: 0x3F
+        });
+        var browseNames = references.map(function (r) {
+            return r.browseName.name;
+        });
+        browseNames.length.should.be.equal(0);
+
+        references.length.should.equal(0);
+    });
+
+
+    it(&quot;should return 3 refs for browseNode on RootFolder , HierarchicalReferences , includeSubtypes  &quot;, function () {
+
+        var serverStatus = rootFolder.objects.server.serverStatus;
+        serverStatus.browseName.toString().should.equal(&quot;ServerStatus&quot;);
+
+        var references = rootFolder.browseNode({
+            browseDirection: BrowseDirection.Both,
+            referenceTypeId: &quot;HierarchicalReferences&quot;,
+            includeSubtypes: true,
+            nodeClassMask: 0, // 0 = all nodes
+            resultMask: 0x3F
+        });
+        references.length.should.be.greaterThan(2);
+    });
+
+    it(&quot;should return 6 refs for browseNode on ServerStatus (BrowseDirection.Forward)&quot;, function () {
+
+        var serverStatus = rootFolder.objects.server.serverStatus;
+        serverStatus.browseName.toString().should.equal(&quot;ServerStatus&quot;);
+
+        var references = serverStatus.browseNode({
+            browseDirection: BrowseDirection.Forward,
+            referenceTypeId: &quot;HierarchicalReferences&quot;,
+            includeSubtypes: true,
+            nodeClassMask: 0, // 0 = all nodes
+            resultMask: 0x3F
+        });
+        var browseNames = references.map(function (r) {
+            return r.browseName.name;
+        });
+        //xx console.log(&quot;              &quot; + browseNames.join(&quot; , &quot;));
+
+        references.length.should.equal(6);
+
+        var expectedBrowseNames = [&#x27;StartTime&#x27;, &#x27;CurrentTime&#x27;, &#x27;State&#x27;, &#x27;BuildInfo&#x27;, &#x27;SecondsTillShutdown&#x27;, &#x27;ShutdownReason&#x27;];
+
+        _.intersection(browseNames, expectedBrowseNames).length.should.eql(expectedBrowseNames.length);
+
+    });
+
+    it(&quot;ServerStatus parent shall be Server&quot;, function (done) {
+
+        var server = rootFolder.objects.server;
+        server.browseName.toString().should.equal(&quot;Server&quot;);
+        server.nodeId.toString().should.equal(&quot;ns=0;i=2253&quot;);
+
+        var serverStatus = server.serverStatus;
+        serverStatus.browseName.toString().should.equal(&quot;ServerStatus&quot;);
+        serverStatus.nodeId.toString().should.equal(&quot;ns=0;i=2256&quot;);
+
+        serverStatus.parent.nodeId.should.equal(server.nodeId);
+        done();
+    });
+
+
+    it(&quot;should return 1 refs for browseNode on ServerStatus (BrowseDirection.Reverse)&quot;, function (done) {
+
+        var serverStatus = rootFolder.objects.server.serverStatus;
+
+        var references = serverStatus.browseNode({
+            browseDirection: BrowseDirection.Inverse,
+            referenceTypeId: &quot;HierarchicalReferences&quot;,
+            includeSubtypes: true,
+            nodeClassMask: 0, // 0 = all nodes
+            resultMask: 0x3F
+        });
+
+        var browseNames = references.map(function (r) {
+            return r.browseName.name;
+        });
+        console.log(&quot;             browseNames :  &quot; + browseNames.join(&quot; , &quot;));
+
+        //xx references.length.should.equal(7);
+        var expectedBrowseNames = [&#x27;Server&#x27;];
+        _.intersection(browseNames, expectedBrowseNames).length.should.eql(expectedBrowseNames.length);
+
+        redirectToFile(&quot;ReferenceDescription1.log&quot;, function () {
+            _.isArray(references).should.eql(true);
+            var dump = require(&quot;../src/base_node&quot;).dumpReferenceDescriptions;
+            dump(addressSpace, references);
+        }, done);
+    });
+
+
+    it(&quot;should return 7 refs for browseNode on ServerStatus (BrowseDirection.Both)&quot;, function (done) {
+
+        var serverStatus = rootFolder.objects.server.serverStatus;
+
+        var references = serverStatus.browseNode({
+            browseDirection: BrowseDirection.Both,
+            referenceTypeId: &quot;HierarchicalReferences&quot;,
+            includeSubtypes: true,
+            nodeClassMask: 0, // 0 = all nodes
+            resultMask: 0x3F
+        });
+
+        var browseNames = references.map(function (r) {
+            return r.browseName.name;
+        });
+
+        //xx console.log(&quot;              &quot; + browseNames.join(&quot; , &quot;));
+
+        var expectedBrowseNames = [&#x27;StartTime&#x27;, &#x27;CurrentTime&#x27;, &#x27;State&#x27;, &#x27;BuildInfo&#x27;, &#x27;SecondsTillShutdown&#x27;, &#x27;ShutdownReason&#x27;, &#x27;Server&#x27;];
+        _.intersection(browseNames, expectedBrowseNames).length.should.eql(expectedBrowseNames.length);
+
+        redirectToFile(&quot;ReferenceDescription2.log&quot;, function () {
+            _.isArray(references).should.eql(true);
+            var dump = require(&quot;../src/base_node&quot;).dumpReferenceDescriptions;
+            dump(addressSpace, references);
+        }, done);
+
+    });
+
+    it(&quot;should return 1 refs for browseNode on ServerStatus (BrowseDirection.Reverse)&quot;, function () {
+
+        var serverStatus = rootFolder.objects.server.serverStatus;
+
+        var references = serverStatus.browseNode({
+            browseDirection: BrowseDirection.Inverse,
+            referenceTypeId: &quot;HierarchicalReferences&quot;,
+            includeSubtypes: true,
+            nodeClassMask: 0, // 0 = all nodes
+            resultMask: 0x3F
+        });
+
+        references.length.should.equal(1);
+        var browseNames = references.map(function (r) {
+            return r.browseName.name;
+        });
+        var expectedBrowseNames = [&#x27;Server&#x27;];
+        _.intersection(browseNames, expectedBrowseNames).length.should.eql(expectedBrowseNames.length);
+    });
+
+    it(&quot;should return 1 refs for browseNode on Server (BrowseDirection.Forward) and NodeClass set to Method&quot;, function () {
+
+        var makeNodeClassMask = require(&quot;node-opcua-data-model&quot;).makeNodeClassMask;
+        var BrowseDirection = require(&quot;node-opcua-data-model&quot;).BrowseDirection;
+        var mask = makeNodeClassMask(&quot;Method&quot;);
+
+        var server = rootFolder.objects.server;
+        server.browseName.toString().should.equal(&quot;Server&quot;);
+
+        var references = server.browseNode({
+            browseDirection: BrowseDirection.Forward,
+            referenceTypeId: &quot;HierarchicalReferences&quot;,
+            includeSubtypes: true,
+            nodeClassMask: mask, // &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+            resultMask: 0x3F
+        });
+
+        var browseNames = references.map(function (r) {
+            return r.browseName.name;
+        });
+
+        references.length.should.equal(1);
+
+        var expectedBrowseNames = [&#x27;GetMonitoredItems&#x27;];
+        _.intersection(browseNames, expectedBrowseNames).length.should.eql(expectedBrowseNames.length);
+
+    });
+
+    it(&quot;ReferenceType should have a toString (HierarchicalReferences)&quot;, function () {
+        var hr = addressSpace.findReferenceType(&quot;HierarchicalReferences&quot;);
+
+        hr.toString().should.eql(&quot;A  HierarchicalReferences/HierarchicalReferences ns=0;i=33&quot;);
+    });
+
+    it(&quot;ReferenceType should have a toString (Organizes)&quot;, function () {
+        var hr = addressSpace.findReferenceType(&quot;Organizes&quot;);
+
+        hr.toString().should.eql(&quot;   Organizes/OrganizedBy ns=0;i=35&quot;);
+    });
+
+    /**
+     *
+     */
+    it(&quot;ReferenceType#getAllSubtypes should extract all possible referenceType &quot;, function () {
+
+
+        var hr = addressSpace.findReferenceType(&quot;HierarchicalReferences&quot;);
+        var derivedTypes = hr.getAllSubtypes();
+
+        var s = derivedTypes.map(function (r) {
+            return r.browseName.toString();
+        }).join(&quot; &quot;);
+        s.should.eql(&quot;HierarchicalReferences HasChild Aggregates HasProperty HasComponent HasOrderedComponent HasHistoricalConfiguration HasSubtype Organizes HasEventSource HasNotifier&quot;);
+        //xx console.log(s);
+
+        var aggregates = addressSpace.findReferenceType(&quot;Aggregates&quot;);
+        derivedTypes = aggregates.getAllSubtypes();
+        s = derivedTypes.map(function (r) {
+            return r.browseName.toString();
+        }).join(&quot; &quot;);
+        s.should.eql(&quot;Aggregates HasProperty HasComponent HasOrderedComponent HasHistoricalConfiguration&quot;);
+        //xx console.log(s);
+
+    });
+
+
+    function _is_valid_BrowseDirection(browseDirection) {
+        return browseDirection === BrowseDirection.Forward ||
+          browseDirection === BrowseDirection.Inverse ||
+          browseDirection === BrowseDirection.Both
+          ;
+    }
+
+    /**
+     * find all references that have the provided referenceType or are subType of this referenceType
+     * @method findReferencesEx
+     * @param strReference {String} the referenceType as a string.
+     * @param  [browseDirection=BrowseDirection.Forward] {BrowseDirection}
+     * @return {Array&lt;ReferenceDescription&gt;}
+     */
+    BaseNode.prototype.findReferencesEx_deprecated = function (strReference, browseDirection) {
+
+        browseDirection = browseDirection || BrowseDirection.Forward;
+        _is_valid_BrowseDirection(browseDirection).should.eql(true);
+
+        var addressSpace = this.addressSpace;
+
+        var referenceType = addressSpace.findReferenceType(strReference);
+        if (!referenceType) {
+            // note: when loading nodeset2.xml files, reference type may not exit yet
+            // throw new Error(&quot;expecting valid reference name &quot; + strReference);
+            return [];
+        }
+        referenceType.nodeId.should.be.instanceOf(NodeId);
+
+        var browseResults = this.browseNode({
+            browseDirection: browseDirection,
+            referenceTypeId: referenceType.nodeId,
+            includeSubtypes: true,
+            nodeClassMask: 0,
+            resultMask: 0x3F
+        });
+        return browseResults;
+    };
+
+    it(&quot;BaseNode#findReferencesEx should be fast &quot;, function (done) {
+
+        var Benchmarker = require(&quot;node-opcua-benchmarker&quot;).Benchmarker;
+
+        this.timeout(Math.max(this._timeout, 100000));
+
+        var bench = new Benchmarker();
+
+        var server = addressSpace.findNode(&quot;i=63&quot;);//rootFolder.objects.server;
+
+        //xx console.log(&quot;referenceTypes&quot;,referenceTypes.map(function(e){return e.browseName;}));
+        bench.add(&quot;findReferencesEx slow&quot;, function () {
+
+
+            var a = server.findReferencesEx_deprecated(&quot;HasChild&quot;, BrowseDirection.Forward);
+            var a = server.findReferencesEx_deprecated(&quot;HasChild&quot;, BrowseDirection.Inverse);
+
+        })
+        .add(&quot;findReferencesEx fast&quot;, function () {
+
+            var a = server.findReferencesEx(&quot;HasChild&quot;, BrowseDirection.Forward);
+            var a = server.findReferencesEx(&quot;HasChild&quot;, BrowseDirection.Inverse);
+
+        })
+        .on(&quot;cycle&quot;, function (message) {
+            console.log(message);
+        })
+        .on(&quot;complete&quot;, function () {
+
+            console.log(&#x27; Fastest is &#x27; + this.fastest.name);
+            console.log(&#x27; Speed Up : x&#x27;, this.speedUp);
+            this.fastest.name.should.eql(&quot;findReferencesEx fast&quot;);
+
+            //xx this.speedUp.should.be.greaterThan(5); // at least 5 time faster
+
+            done();
+        })
+        .run({
+            max_time: 0.2, // Sec
+            min_count: 300
+        });
+    });
+
+});
+
+
+describe(&quot; improving performance of isSupertypeOf&quot;, function () {
+
+
+    var NodeClass = require(&quot;node-opcua-data-model&quot;).NodeClass;
+    //  References i=31
+    //  +-&gt;(hasSubtype) NoHierarchicalReferences
+    //                  +-&gt;(hasSubtype) HasTypeDefinition
+    //  +-&gt;(hasSubtype) HierarchicalReferences
+    //                  +-&gt;(hasSubtype) HasChild/ChildOf
+    //                                  +-&gt;(hasSubtype) Aggregates/AggregatedBy
+    //                                                  +-&gt; HasProperty/PropertyOf
+    //                                                  +-&gt; HasComponent/ComponentOf
+    //                                                  +-&gt; HasHistoricalConfiguration/HistoricalConfigurationOf
+    //                                 +-&gt;(hasSubtype) HasSubtype/HasSupertype
+    //                  +-&gt;(hasSubtype) Organizes/OrganizedBy
+    //                  +-&gt;(hasSubtype) HasEventSource/EventSourceOf
+    var Benchmarker = require(&quot;node-opcua-benchmarker&quot;).Benchmarker;
+
+    var referenceTypeNames = Object.keys(require(&quot;node-opcua-constants&quot;).ReferenceTypeIds);
+
+    var referenceTypes = [];
+
+    var addressSpace;
+    before(function (done) {
+        get_mini_address_space(function (err, data) {
+
+            if (err) {
+                return done(err);
+            }
+
+            addressSpace = data;
+
+            referenceTypes = referenceTypeNames.map(function (referenceTypeName) {
+                return addressSpace.findReferenceType(referenceTypeName);
+            });
+            referenceTypes = referenceTypes.filter(function (e) {
+                return e !== undefined;
+            });
+
+            referenceTypes[0].nodeClass.should.eql(NodeClass.ReferenceType);
+            done();
+        });
+    });
+    after(function (done) {
+        if (addressSpace) {
+            addressSpace.dispose();
+            addressSpace = null;
+        }
+        done();
+    });
+
+
+    it(&quot;should ensure that optimized version of isSupertypeOf produce same result as brute force version&quot;, function (done) {
+
+        referenceTypes.forEach(function (referenceType) {
+            var flags1 = referenceTypes.map(function (refType) {
+                return referenceType.isSupertypeOf(refType);
+            });
+            var flags2 = referenceTypes.map(function (refType) {
+                return referenceType._slow_isSupertypeOf(refType);
+            });
+
+            //xx console.log( referenceType.browseName,flags1.map(function(f){return f ? 1 :0;}).join(&quot; - &quot;));
+            //xx console.log( referenceType.browseName,flags2.map(function(f){return f ? 1 :0;}).join(&quot; - &quot;));
+            flags1.should.eql(flags2);
+
+        });
+        done();
+    });
+
+    it(&quot;should ensure that optimized version of isSupertypeOf is really faster that brute force version&quot;, function (done) {
+
+        this.timeout(Math.max(this._timeout, 100000));
+
+        var bench = new Benchmarker();
+
+        //xx console.log(&quot;referenceTypes&quot;,referenceTypes.map(function(e){return e.browseName;}));
+        bench.add(&quot;isSupertypeOf slow&quot;, function () {
+
+            referenceTypes.forEach(function (referenceType) {
+                referenceTypes.map(function (refType) {
+                    return referenceType._slow_isSupertypeOf(refType);
+                });
+            });
+
+        })
+        .add(&quot;isSupertypeOf fast&quot;, function () {
+
+            referenceTypes.forEach(function (referenceType) {
+                referenceTypes.map(function (refType) {
+                    return referenceType.isSupertypeOf(refType);
+                });
+
+            });
+        })
+        .on(&quot;cycle&quot;, function (message) {
+            console.log(message);
+        })
+        .on(&quot;complete&quot;, function () {
+
+            console.log(&#x27; Fastest is &#x27; + this.fastest.name);
+            console.log(&#x27; Speed Up : x&#x27;, this.speedUp);
+            this.fastest.name.should.eql(&quot;isSupertypeOf fast&quot;);
+
+            this.speedUp.should.be.greaterThan(3); // at least 3 time faster
+
+            done();
+        })
+        .run({
+            max_time: 0.2, // Sec
+            min_count: 300,
+        });
+    });
+
+    it(&quot;ZZ should ensure that fast version isSupertypeOf shall update its cache when new References are added &quot;, function () {
+
+        function allSubTypes(n) {
+            return n.getAllSubtypes().map(function (c) {
+                return c.browseName.toString()
+            }).join(&quot;,&quot;);
+        }
+
+        var nhr = addressSpace.findReferenceType(&quot;NonHierarchicalReferences&quot;);
+        nhr.browseName.toString().should.eql(&quot;NonHierarchicalReferences&quot;);
+
+        //xx console.log(allSubTypes(nhr));
+
+        allSubTypes(nhr).indexOf(&quot;NonHierarchicalReferences&quot;).should.be.aboveOrEqual(0);
+
+        var hasTypeDefinition = addressSpace.findReferenceType(&quot;HasTypeDefinition&quot;);
+
+        hasTypeDefinition.isSupertypeOf(nhr).should.eql(true);
+        nhr.isSupertypeOf(hasTypeDefinition).should.eql(false);
+
+        var flowTo = addressSpace.addReferenceType({
+            browseName: &quot;FlowTo&quot;,
+            inverseName: &quot;FlowFrom&quot;,
+            isAbstract: false,
+            subtypeOf: &quot;NonHierarchicalReferences&quot;
+        });
+
+        flowTo.isSupertypeOf(nhr).should.eql(true);
+
+        //xx console.log(allSubTypes(nhr));
+        allSubTypes(nhr).indexOf(&quot;FlowTo&quot;).should.be.aboveOrEqual(0);
+
+    });
+});
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

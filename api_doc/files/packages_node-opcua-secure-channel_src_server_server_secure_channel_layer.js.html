@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>packages\node-opcua-secure-channel\src\server\server_secure_channel_layer.js - The NodeOPCUA API</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.1.0-pre</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/AcknowledgeMessage.html">AcknowledgeMessage</a></li>
+                                <li><a href="../classes/ActivateSessionRequest.html">ActivateSessionRequest</a></li>
+                                <li><a href="../classes/ActivateSessionResponse.html">ActivateSessionResponse</a></li>
+                                <li><a href="../classes/AddNodesItem.html">AddNodesItem</a></li>
+                                <li><a href="../classes/AddNodesRequest.html">AddNodesRequest</a></li>
+                                <li><a href="../classes/AddNodesResponse.html">AddNodesResponse</a></li>
+                                <li><a href="../classes/AddNodesResult.html">AddNodesResult</a></li>
+                                <li><a href="../classes/AddReferencesItem.html">AddReferencesItem</a></li>
+                                <li><a href="../classes/AddReferencesRequest.html">AddReferencesRequest</a></li>
+                                <li><a href="../classes/AddReferencesResponse.html">AddReferencesResponse</a></li>
+                                <li><a href="../classes/AddressSpace.html">AddressSpace</a></li>
+                                <li><a href="../classes/AggregateConfiguration.html">AggregateConfiguration</a></li>
+                                <li><a href="../classes/AggregateFilter.html">AggregateFilter</a></li>
+                                <li><a href="../classes/AnonymousIdentityToken.html">AnonymousIdentityToken</a></li>
+                                <li><a href="../classes/ApplicationDescription.html">ApplicationDescription</a></li>
+                                <li><a href="../classes/ApplicationInstanceCertificate.html">ApplicationInstanceCertificate</a></li>
+                                <li><a href="../classes/Argument.html">Argument</a></li>
+                                <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
+                                <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+                                <li><a href="../classes/AttributeNameById.html">AttributeNameById</a></li>
+                                <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
+                                <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
+                                <li><a href="../classes/BaseEventType.html">BaseEventType</a></li>
+                                <li><a href="../classes/BaseNode.html">BaseNode</a></li>
+                                <li><a href="../classes/BaseUAObject.html">BaseUAObject</a></li>
+                                <li><a href="../classes/BinaryStream.html">BinaryStream</a></li>
+                                <li><a href="../classes/BinaryStreamSizeCalculator.html">BinaryStreamSizeCalculator</a></li>
+                                <li><a href="../classes/BrowseDescription.html">BrowseDescription</a></li>
+                                <li><a href="../classes/BrowseDirection.html">BrowseDirection</a></li>
+                                <li><a href="../classes/BrowseNextRequest.html">BrowseNextRequest</a></li>
+                                <li><a href="../classes/BrowseNextResponse.html">BrowseNextResponse</a></li>
+                                <li><a href="../classes/BrowsePath.html">BrowsePath</a></li>
+                                <li><a href="../classes/BrowsePathResult.html">BrowsePathResult</a></li>
+                                <li><a href="../classes/BrowsePathTarget.html">BrowsePathTarget</a></li>
+                                <li><a href="../classes/BrowseRequest.html">BrowseRequest</a></li>
+                                <li><a href="../classes/BrowseResponse.html">BrowseResponse</a></li>
+                                <li><a href="../classes/BrowseResult.html">BrowseResult</a></li>
+                                <li><a href="../classes/BuildInfo.html">BuildInfo</a></li>
+                                <li><a href="../classes/CallMethodRequest.html">CallMethodRequest</a></li>
+                                <li><a href="../classes/CallMethodResult.html">CallMethodResult</a></li>
+                                <li><a href="../classes/CallRequest.html">CallRequest</a></li>
+                                <li><a href="../classes/CallResponse.html">CallResponse</a></li>
+                                <li><a href="../classes/CancelRequest.html">CancelRequest</a></li>
+                                <li><a href="../classes/CancelResponse.html">CancelResponse</a></li>
+                                <li><a href="../classes/ChannelSecurityToken.html">ChannelSecurityToken</a></li>
+                                <li><a href="../classes/ChunkManager.html">ChunkManager</a></li>
+                                <li><a href="../classes/ClientMonitoredItem.html">ClientMonitoredItem</a></li>
+                                <li><a href="../classes/ClientMonitoredItemGroup.html">ClientMonitoredItemGroup</a></li>
+                                <li><a href="../classes/ClientSecureChannelLayer.html">ClientSecureChannelLayer</a></li>
+                                <li><a href="../classes/ClientSession.html">ClientSession</a></li>
+                                <li><a href="../classes/ClientSidePublishEngine.html">ClientSidePublishEngine</a></li>
+                                <li><a href="../classes/ClientSubscription.html">ClientSubscription</a></li>
+                                <li><a href="../classes/ClientTCP_transport.html">ClientTCP_transport</a></li>
+                                <li><a href="../classes/CloseSecureChannelRequest.html">CloseSecureChannelRequest</a></li>
+                                <li><a href="../classes/CloseSecureChannelResponse.html">CloseSecureChannelResponse</a></li>
+                                <li><a href="../classes/CloseSessionRequest.html">CloseSessionRequest</a></li>
+                                <li><a href="../classes/CloseSessionResponse.html">CloseSessionResponse</a></li>
+                                <li><a href="../classes/Company.html">Company</a></li>
+                                <li><a href="../classes/ConditionInfo.html">ConditionInfo</a></li>
+                                <li><a href="../classes/ConditionSnapshot.html">ConditionSnapshot</a></li>
+                                <li><a href="../classes/ContentFilter.html">ContentFilter</a></li>
+                                <li><a href="../classes/ContentFilterElement.html">ContentFilterElement</a></li>
+                                <li><a href="../classes/ContentFilterElementResult.html">ContentFilterElementResult</a></li>
+                                <li><a href="../classes/ContentFilterResult.html">ContentFilterResult</a></li>
+                                <li><a href="../classes/CreateMonitoredItemsRequest.html">CreateMonitoredItemsRequest</a></li>
+                                <li><a href="../classes/CreateMonitoredItemsResponse.html">CreateMonitoredItemsResponse</a></li>
+                                <li><a href="../classes/CreateSessionRequest.html">CreateSessionRequest</a></li>
+                                <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
+                                <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
+                                <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
+                                <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
+                                <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
+                                <li><a href="../classes/DataValue.html">DataValue</a></li>
+                                <li><a href="../classes/DeleteMonitoredItemsRequest.html">DeleteMonitoredItemsRequest</a></li>
+                                <li><a href="../classes/DeleteMonitoredItemsResponse.html">DeleteMonitoredItemsResponse</a></li>
+                                <li><a href="../classes/DeleteNodesItem.html">DeleteNodesItem</a></li>
+                                <li><a href="../classes/DeleteNodesRequest.html">DeleteNodesRequest</a></li>
+                                <li><a href="../classes/DeleteNodesResponse.html">DeleteNodesResponse</a></li>
+                                <li><a href="../classes/DeleteReferencesItem.html">DeleteReferencesItem</a></li>
+                                <li><a href="../classes/DeleteReferencesRequest.html">DeleteReferencesRequest</a></li>
+                                <li><a href="../classes/DeleteReferencesResponse.html">DeleteReferencesResponse</a></li>
+                                <li><a href="../classes/DeleteSubscriptionsRequest.html">DeleteSubscriptionsRequest</a></li>
+                                <li><a href="../classes/DeleteSubscriptionsResponse.html">DeleteSubscriptionsResponse</a></li>
+                                <li><a href="../classes/DiagnosticInfo.html">DiagnosticInfo</a></li>
+                                <li><a href="../classes/DummyObject.html">DummyObject</a></li>
+                                <li><a href="../classes/ElementOperand.html">ElementOperand</a></li>
+                                <li><a href="../classes/Employee.html">Employee</a></li>
+                                <li><a href="../classes/EndpointDescription.html">EndpointDescription</a></li>
+                                <li><a href="../classes/Enum.html">Enum</a></li>
+                                <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
+                                <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
+                                <li><a href="../classes/EUInformation.html">EUInformation</a></li>
+                                <li><a href="../classes/EventData.html">EventData</a></li>
+                                <li><a href="../classes/EventFieldList.html">EventFieldList</a></li>
+                                <li><a href="../classes/EventFilter.html">EventFilter</a></li>
+                                <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
+                                <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
+                                <li><a href="../classes/ExpandedNodeId.html">ExpandedNodeId</a></li>
+                                <li><a href="../classes/Factory.html">Factory</a></li>
+                                <li><a href="../classes/FilterOperand.html">FilterOperand</a></li>
+                                <li><a href="../classes/FindServersRequest.html">FindServersRequest</a></li>
+                                <li><a href="../classes/FindServersResponse.html">FindServersResponse</a></li>
+                                <li><a href="../classes/FooBar.html">FooBar</a></li>
+                                <li><a href="../classes/FooBarDerived.html">FooBarDerived</a></li>
+                                <li><a href="../classes/FooWithRecursion.html">FooWithRecursion</a></li>
+                                <li><a href="../classes/GetEndpointsRequest.html">GetEndpointsRequest</a></li>
+                                <li><a href="../classes/GetEndpointsResponse.html">GetEndpointsResponse</a></li>
+                                <li><a href="../classes/HelloMessage.html">HelloMessage</a></li>
+                                <li><a href="../classes/HistoryData.html">HistoryData</a></li>
+                                <li><a href="../classes/HistoryModifiedData.html">HistoryModifiedData</a></li>
+                                <li><a href="../classes/HistoryReadDetails.html">HistoryReadDetails</a></li>
+                                <li><a href="../classes/HistoryReadRequest.html">HistoryReadRequest</a></li>
+                                <li><a href="../classes/HistoryReadResponse.html">HistoryReadResponse</a></li>
+                                <li><a href="../classes/HistoryReadResult.html">HistoryReadResult</a></li>
+                                <li><a href="../classes/HistoryReadValueId.html">HistoryReadValueId</a></li>
+                                <li><a href="../classes/HistoryServerCapabilities.html">HistoryServerCapabilities</a></li>
+                                <li><a href="../classes/HistoryUpdateRequest.html">HistoryUpdateRequest</a></li>
+                                <li><a href="../classes/HistoryUpdateResponse.html">HistoryUpdateResponse</a></li>
+                                <li><a href="../classes/HistoryUpdateResult.html">HistoryUpdateResult</a></li>
+                                <li><a href="../classes/IssuedIdentityToken.html">IssuedIdentityToken</a></li>
+                                <li><a href="../classes/LiteralOperand.html">LiteralOperand</a></li>
+                                <li><a href="../classes/LocalizedText.html">LocalizedText</a></li>
+                                <li><a href="../classes/MessageBuilder.html">MessageBuilder</a></li>
+                                <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
+                                <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
+                                <li><a href="../classes/MetaShapeForUnitTest.html">MetaShapeForUnitTest</a></li>
+                                <li><a href="../classes/ModelChangeStructure.html">ModelChangeStructure</a></li>
+                                <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
+                                <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
+                                <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
+                                <li><a href="../classes/ModifySubscriptionRequest.html">ModifySubscriptionRequest</a></li>
+                                <li><a href="../classes/ModifySubscriptionResponse.html">ModifySubscriptionResponse</a></li>
+                                <li><a href="../classes/MonitoredItem.html">MonitoredItem</a></li>
+                                <li><a href="../classes/MonitoredItemCreateRequest.html">MonitoredItemCreateRequest</a></li>
+                                <li><a href="../classes/MonitoredItemCreateResult.html">MonitoredItemCreateResult</a></li>
+                                <li><a href="../classes/MonitoredItemModifyRequest.html">MonitoredItemModifyRequest</a></li>
+                                <li><a href="../classes/MonitoredItemModifyResult.html">MonitoredItemModifyResult</a></li>
+                                <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
+                                <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
+                                <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+                                <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
+                                <li><a href="../classes/NodeId.html">NodeId</a></li>
+                                <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
+                                <li><a href="../classes/NodeTypeDescription.html">NodeTypeDescription</a></li>
+                                <li><a href="../classes/NotificationMessage.html">NotificationMessage</a></li>
+                                <li><a href="../classes/ObjWithAccessLevel.html">ObjWithAccessLevel</a></li>
+                                <li><a href="../classes/ObjWithIntegerId.html">ObjWithIntegerId</a></li>
+                                <li><a href="../classes/opcua.html">opcua</a></li>
+                                <li><a href="../classes/OPCUABaseServer.html">OPCUABaseServer</a></li>
+                                <li><a href="../classes/OPCUAClient.html">OPCUAClient</a></li>
+                                <li><a href="../classes/OPCUAClientBase.html">OPCUAClientBase</a></li>
+                                <li><a href="../classes/OPCUASecureObject.html">OPCUASecureObject</a></li>
+                                <li><a href="../classes/OPCUAServer.html">OPCUAServer</a></li>
+                                <li><a href="../classes/OPCUAServerEndPoint
+                
+                A sever end point is listening to one port.html">OPCUAServerEndPoint
+                
+                A sever end point is listening to one port</a></li>
+                                <li><a href="../classes/OpenSecureChannelRequest.html">OpenSecureChannelRequest</a></li>
+                                <li><a href="../classes/OpenSecureChannelResponse.html">OpenSecureChannelResponse</a></li>
+                                <li><a href="../classes/OperationLimits.html">OperationLimits</a></li>
+                                <li><a href="../classes/PacketAssembler.html">PacketAssembler</a></li>
+                                <li><a href="../classes/ParsingResult.html">ParsingResult</a></li>
+                                <li><a href="../classes/Person.html">Person</a></li>
+                                <li><a href="../classes/Person2.html">Person2</a></li>
+                                <li><a href="../classes/Potato.html">Potato</a></li>
+                                <li><a href="../classes/PublishRequest.html">PublishRequest</a></li>
+                                <li><a href="../classes/PublishResponse.html">PublishResponse</a></li>
+                                <li><a href="../classes/QualifiedName.html">QualifiedName</a></li>
+                                <li><a href="../classes/QueryDataDescription.html">QueryDataDescription</a></li>
+                                <li><a href="../classes/QueryDataSet.html">QueryDataSet</a></li>
+                                <li><a href="../classes/QueryFirstRequest.html">QueryFirstRequest</a></li>
+                                <li><a href="../classes/QueryFirstResponse.html">QueryFirstResponse</a></li>
+                                <li><a href="../classes/QueryNextRequest.html">QueryNextRequest</a></li>
+                                <li><a href="../classes/QueryNextResponse.html">QueryNextResponse</a></li>
+                                <li><a href="../classes/Range.html">Range</a></li>
+                                <li><a href="../classes/ReadAtTimeDetails.html">ReadAtTimeDetails</a></li>
+                                <li><a href="../classes/ReaderState.html">ReaderState</a></li>
+                                <li><a href="../classes/ReadEventDetails.html">ReadEventDetails</a></li>
+                                <li><a href="../classes/ReadProcessedDetails.html">ReadProcessedDetails</a></li>
+                                <li><a href="../classes/ReadRawModifiedDetails.html">ReadRawModifiedDetails</a></li>
+                                <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
+                                <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
+                                <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+                                <li><a href="../classes/RedundantServer.html">RedundantServer</a></li>
+                                <li><a href="../classes/Reference.html">Reference</a></li>
+                                <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
+                                <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
+                                <li><a href="../classes/RegisteredServer.html">RegisteredServer</a></li>
+                                <li><a href="../classes/RegisterNodesRequest.html">RegisterNodesRequest</a></li>
+                                <li><a href="../classes/RegisterNodesResponse.html">RegisterNodesResponse</a></li>
+                                <li><a href="../classes/RegisterServerRequest.html">RegisterServerRequest</a></li>
+                                <li><a href="../classes/RegisterServerResponse.html">RegisterServerResponse</a></li>
+                                <li><a href="../classes/RelativePath.html">RelativePath</a></li>
+                                <li><a href="../classes/RelativePathElement.html">RelativePathElement</a></li>
+                                <li><a href="../classes/RepublishRequest.html">RepublishRequest</a></li>
+                                <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
+                                <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
+                                <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+                                <li><a href="../classes/Role.html">Role</a></li>
+                                <li><a href="../classes/SamplingIntervalDiagnostics.html">SamplingIntervalDiagnostics</a></li>
+                                <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
+                                <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
+                                <li><a href="../classes/SemanticChangeStructure.html">SemanticChangeStructure</a></li>
+                                <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
+                                <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
+                                <li><a href="../classes/ServerCapabilities.html">ServerCapabilities</a></li>
+                                <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
+                                <li><a href="../classes/ServerEngine.html">ServerEngine</a></li>
+                                <li><a href="../classes/ServerSecureChannelLayer.html">ServerSecureChannelLayer</a></li>
+                                <li><a href="../classes/ServerSession.html">ServerSession</a></li>
+                                <li><a href="../classes/ServerSidePublishEngine.html">ServerSidePublishEngine</a></li>
+                                <li><a href="../classes/ServerSideUnimplementedRequest.html">ServerSideUnimplementedRequest</a></li>
+                                <li><a href="../classes/ServerStatus.html">ServerStatus</a></li>
+                                <li><a href="../classes/ServerTCP_transport.html">ServerTCP_transport</a></li>
+                                <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
+                                <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
+                                <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+                                <li><a href="../classes/SessionSecurityDiagnostics.html">SessionSecurityDiagnostics</a></li>
+                                <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
+                                <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
+                                <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
+                                <li><a href="../classes/SetPublishingModeResponse.html">SetPublishingModeResponse</a></li>
+                                <li><a href="../classes/SetTriggeringRequest.html">SetTriggeringRequest</a></li>
+                                <li><a href="../classes/SetTriggeringResponse.html">SetTriggeringResponse</a></li>
+                                <li><a href="../classes/Shape.html">Shape</a></li>
+                                <li><a href="../classes/SignatureData.html">SignatureData</a></li>
+                                <li><a href="../classes/SignedSoftwareCertificate.html">SignedSoftwareCertificate</a></li>
+                                <li><a href="../classes/SimpleAttributeOperand.html">SimpleAttributeOperand</a></li>
+                                <li><a href="../classes/Simulator.html">Simulator</a></li>
+                                <li><a href="../classes/StatusChangeNotification.html">StatusChangeNotification</a></li>
+                                <li><a href="../classes/StatusCode.html">StatusCode</a></li>
+                                <li><a href="../classes/Subscription.html">Subscription</a></li>
+                                <li><a href="../classes/SubscriptionAcknowledgement.html">SubscriptionAcknowledgement</a></li>
+                                <li><a href="../classes/SubscriptionDiagnostics.html">SubscriptionDiagnostics</a></li>
+                                <li><a href="../classes/SymmetricAlgorithmSecurityHeader.html">SymmetricAlgorithmSecurityHeader</a></li>
+                                <li><a href="../classes/TCP_transport.html">TCP_transport</a></li>
+                                <li><a href="../classes/TCPErrorMessage.html">TCPErrorMessage</a></li>
+                                <li><a href="../classes/TimestampsToReturn.html">TimestampsToReturn</a></li>
+                                <li><a href="../classes/TimeZone.html">TimeZone</a></li>
+                                <li><a href="../classes/ToolBrowsePath.html">ToolBrowsePath</a></li>
+                                <li><a href="../classes/TransferResult.html">TransferResult</a></li>
+                                <li><a href="../classes/TransferSubscriptionsRequest.html">TransferSubscriptionsRequest</a></li>
+                                <li><a href="../classes/TransferSubscriptionsResponse.html">TransferSubscriptionsResponse</a></li>
+                                <li><a href="../classes/TranslateBrowsePathsToNodeIdsRequest.html">TranslateBrowsePathsToNodeIdsRequest</a></li>
+                                <li><a href="../classes/TranslateBrowsePathsToNodeIdsResponse.html">TranslateBrowsePathsToNodeIdsResponse</a></li>
+                                <li><a href="../classes/TypeSchema.html">TypeSchema</a></li>
+                                <li><a href="../classes/UAAcknowledgeableConditionBase.html">UAAcknowledgeableConditionBase</a></li>
+                                <li><a href="../classes/UAAlarmConditionBase.html">UAAlarmConditionBase</a></li>
+                                <li><a href="../classes/UACertificateExpirationAlarm.html">UACertificateExpirationAlarm</a></li>
+                                <li><a href="../classes/UAConditionBase.html">UAConditionBase</a></li>
+                                <li><a href="../classes/UADataType.html">UADataType</a></li>
+                                <li><a href="../classes/UADiscreteAlarm.html">UADiscreteAlarm</a></li>
+                                <li><a href="../classes/UAExclusiveDeviationAlarm.html">UAExclusiveDeviationAlarm</a></li>
+                                <li><a href="../classes/UAExclusiveLevelAlarm.html">UAExclusiveLevelAlarm</a></li>
+                                <li><a href="../classes/UAExclusiveLimitAlarm.html">UAExclusiveLimitAlarm</a></li>
+                                <li><a href="../classes/UAExclusiveRateOfChangeAlarm.html">UAExclusiveRateOfChangeAlarm</a></li>
+                                <li><a href="../classes/UALimitAlarm.html">UALimitAlarm</a></li>
+                                <li><a href="../classes/UANonExclusiveDeviationAlarm.html">UANonExclusiveDeviationAlarm</a></li>
+                                <li><a href="../classes/UANonExclusiveLimitAlarm.html">UANonExclusiveLimitAlarm</a></li>
+                                <li><a href="../classes/UAObject.html">UAObject</a></li>
+                                <li><a href="../classes/UAObjectType.html">UAObjectType</a></li>
+                                <li><a href="../classes/UAOffNormalAlarm.html">UAOffNormalAlarm</a></li>
+                                <li><a href="../classes/UASystemOffNormalAlarm.html">UASystemOffNormalAlarm</a></li>
+                                <li><a href="../classes/UATripAlarm.html">UATripAlarm</a></li>
+                                <li><a href="../classes/UATwoStateVariable.html">UATwoStateVariable</a></li>
+                                <li><a href="../classes/UAVariable.html">UAVariable</a></li>
+                                <li><a href="../classes/UAVariableType.html">UAVariableType</a></li>
+                                <li><a href="../classes/UnregisterNodesRequest.html">UnregisterNodesRequest</a></li>
+                                <li><a href="../classes/UnregisterNodesResponse.html">UnregisterNodesResponse</a></li>
+                                <li><a href="../classes/UserNameIdentityToken.html">UserNameIdentityToken</a></li>
+                                <li><a href="../classes/UserTokenPolicy.html">UserTokenPolicy</a></li>
+                                <li><a href="../classes/Variant.html">Variant</a></li>
+                                <li><a href="../classes/View.html">View</a></li>
+                                <li><a href="../classes/ViewDescription.html">ViewDescription</a></li>
+                                <li><a href="../classes/WriteRequest.html">WriteRequest</a></li>
+                                <li><a href="../classes/WriteResponse.html">WriteResponse</a></li>
+                                <li><a href="../classes/WriteValue.html">WriteValue</a></li>
+                                <li><a href="../classes/X509IdentityToken.html">X509IdentityToken</a></li>
+                                <li><a href="../classes/Xml2Json.html">Xml2Json</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/opcua.address_space.html">opcua.address_space</a></li>
+                                <li><a href="../modules/opcua.address_space.AlarmsAndConditions.html">opcua.address_space.AlarmsAndConditions</a></li>
+                                <li><a href="../modules/opcua.address_space.types.html">opcua.address_space.types</a></li>
+                                <li><a href="../modules/opcua.client.html">opcua.client</a></li>
+                                <li><a href="../modules/opcua.data-value.html">opcua.data-value</a></li>
+                                <li><a href="../modules/opcua.datamodel.html">opcua.datamodel</a></li>
+                                <li><a href="../modules/opcua.miscellaneous.html">opcua.miscellaneous</a></li>
+                                <li><a href="../modules/opcua.server.html">opcua.server</a></li>
+                                <li><a href="../modules/opcua.server.simulation.html">opcua.server.simulation</a></li>
+                                <li><a href="../modules/opcua.status-code.html">opcua.status-code</a></li>
+                                <li><a href="../modules/opcua.transport.html">opcua.transport</a></li>
+                                <li><a href="../modules/opcua.utils.html">opcua.utils</a></li>
+                                <li><a href="../modules/opcua.variant.html">opcua.variant</a></li>
+                                <li><a href="../modules/service.filter.tools.html">service.filter.tools</a></li>
+                                <li><a href="../modules/services.browse.html">services.browse</a></li>
+                                <li><a href="../modules/services.call.html">services.call</a></li>
+                                <li><a href="../modules/services.discovery.html">services.discovery</a></li>
+                                <li><a href="../modules/services.endpoints.html">services.endpoints</a></li>
+                                <li><a href="../modules/services.filter.html">services.filter</a></li>
+                                <li><a href="../modules/services.history.html">services.history</a></li>
+                                <li><a href="../modules/services.node_management.html">services.node_management</a></li>
+                                <li><a href="../modules/services.query.html">services.query</a></li>
+                                <li><a href="../modules/services.read.html">services.read</a></li>
+                                <li><a href="../modules/services.register-server.html">services.register-server</a></li>
+                                <li><a href="../modules/services.register_node.html">services.register_node</a></li>
+                                <li><a href="../modules/services.secure-channel.html">services.secure-channel</a></li>
+                                <li><a href="../modules/services.session.html">services.session</a></li>
+                                <li><a href="../modules/services.subscription.html">services.subscription</a></li>
+                                <li><a href="../modules/services.translate-browse-path.html">services.translate-browse-path</a></li>
+                                <li><a href="../modules/services.write.html">services.write</a></li>
+                                <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
+                                <li><a href="../modules/xml2json
+                
+                node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+                
+                node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: packages\node-opcua-secure-channel\src\server\server_secure_channel_layer.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+&quot;use strict&quot;;
+/**
+ * @module opcua.server
+ */
+
+var _ = require(&quot;underscore&quot;);
+var assert = require(&quot;node-opcua-assert&quot;);
+var util = require(&quot;util&quot;);
+var EventEmitter = require(&quot;events&quot;).EventEmitter;
+
+
+var crypto_utils = require(&quot;node-opcua-crypto&quot;).crypto_utils;
+
+var MessageBuilder = require(&quot;../message_builder&quot;).MessageBuilder;
+var MessageChunker = require(&quot;../message_chunker&quot;).MessageChunker;
+
+var securityPolicy_m =require(&quot;../security_policy&quot;);
+var SecurityPolicy = securityPolicy_m.SecurityPolicy;
+
+
+var ServerTCP_transport = require(&quot;node-opcua-transport&quot;).ServerTCP_transport;
+
+var StatusCode = require(&quot;node-opcua-status-code&quot;).StatusCode;
+var StatusCodes = require(&quot;node-opcua-status-code&quot;).StatusCodes;
+
+var secure_channel_service = require(&quot;../services&quot;);
+var AsymmetricAlgorithmSecurityHeader = secure_channel_service.AsymmetricAlgorithmSecurityHeader;
+var MessageSecurityMode = require(&quot;node-opcua-service-secure-channel&quot;).MessageSecurityMode;
+var ChannelSecurityToken = secure_channel_service.ChannelSecurityToken;
+var ServiceFault = secure_channel_service.ServiceFault;
+var OpenSecureChannelRequest = secure_channel_service.OpenSecureChannelRequest;
+var OpenSecureChannelResponse = secure_channel_service.OpenSecureChannelResponse;
+var SecurityTokenRequestType = secure_channel_service.SecurityTokenRequestType;
+
+
+
+var split_der = require(&quot;node-opcua-crypto&quot;).crypto_explore_certificate.split_der;
+
+
+
+assert(MessageSecurityMode);
+assert(ChannelSecurityToken);
+assert(OpenSecureChannelRequest);
+assert(OpenSecureChannelResponse);
+assert(SecurityTokenRequestType);
+assert(ServiceFault);
+
+var do_trace_message = process.env.DEBUG &amp;&amp; (process.env.DEBUG.indexOf(&quot;TRACE&quot;)) &gt;= 0;
+
+
+var crypto = require(&quot;crypto&quot;);
+var analyze_object_binary_encoding = require(&quot;node-opcua-packet-analyzer&quot;).analyze_object_binary_encoding;
+
+var debugLog = require(&quot;node-opcua-debug&quot;).make_debugLog(__filename);
+var doDebug = require(&quot;node-opcua-debug&quot;).checkDebugFlag(__filename);
+
+var last_channel_id = 0;
+function getNextChannelId() {
+    last_channel_id += 1;
+    return last_channel_id;
+}
+
+var get_clock_tick = require(&quot;node-opcua-utils&quot;).get_clock_tick;
+
+/**
+ * @class ServerSecureChannelLayer
+ * @extends EventEmitter
+ * @uses MessageBuilder
+ * @uses MessageChunker
+ * @constructor
+ * @param options
+ * @param options.parent {OPCUAServerEndPoint} parent
+ * @param [options.timeout = 10000] {Number} timeout in milliseconds
+ * @param [options.defaultSecureTokenLifetime = 30000] defaultSecureTokenLifetime
+ * @param [options.objectFactory] an factory that provides a method createObjectId(id) for the message builder
+ */
+function ServerSecureChannelLayer(options) {
+
+    options = options || {};
+
+    var self = this;
+
+    self.parent = options.parent;
+
+    self.protocolVersion = 0;
+
+    self.lastTokenId = 0;
+
+    self.timeout = options.timeout || 10000; // connection timeout
+
+    self.defaultSecureTokenLifetime = options.defaultSecureTokenLifetime || 600000;
+
+    // uninitialized securityToken
+    self.securityToken = {secureChannelId: 0, tokenId: 0};
+
+    self.serverNonce = null; // will be created when needed
+
+
+    options.objectFactory = options.objectFactory || require(&quot;node-opcua-factory&quot;);
+    assert(_.isObject(options.objectFactory));
+
+    self.messageBuilder = new MessageBuilder({objectFactory: options.objectFactory});
+
+    self.messageBuilder.privateKey = self.getPrivateKey();
+
+    //disabled self.messageBuilder.on(&quot;chunk&quot;, function (chunk) {});
+
+    //disabled self.messageBuilder.on(&quot;full_message_body&quot;, function (full_message_body) { });
+
+    self.messageBuilder.on(&quot;error&quot;, function (err) {
+
+        // istanbul ignore next
+        if (doDebug) {
+            debugLog(&quot;xxxxx error &quot;.red,err.message.yellow,err.stack);
+            debugLog(&quot;xxxxx Server is now closing socket, without further notice&quot;.red);
+        }
+        // close socket immediately
+        self.close(undefined);
+    });
+
+
+    // at first use a anonymous connection
+    self.securityHeader = new AsymmetricAlgorithmSecurityHeader({
+        securityPolicyUri: &quot;http://opcfoundation.org/UA/SecurityPolicy#None&quot;,
+        senderCertificate: null,
+        receiverCertificateThumbprint: null
+    });
+
+    self.messageChunker = new MessageChunker({
+        securityHeader: self.securityHeader // for OPN
+    });
+
+    self.secureChannelId = getNextChannelId();
+
+    self._tick0 = 0;
+
+    self.securityMode = MessageSecurityMode.INVALID;
+
+    self.timeoutId = 0;
+
+    self._transactionsCount = 0;
+
+    self.sessionTokens = {};
+}
+
+util.inherits(ServerSecureChannelLayer, EventEmitter);
+
+var ObjectRegistry = require(&quot;node-opcua-object-registry&quot;).ObjectRegistry;
+ServerSecureChannelLayer.registry = new ObjectRegistry();
+/**
+ * the endpoint associated with this secure channel
+ * @property endpoints
+ * @type {OPCUAServerEndPoint}
+ *
+ */
+ServerSecureChannelLayer.prototype.__defineGetter__(&quot;endpoints&quot;, function () {
+    return this.parent;
+});
+
+ServerSecureChannelLayer.prototype.setSecurity = function (securityMode, securityPolicy) {
+    var self = this;
+    // TODO verify that the endpoint really supports this mode
+
+    self.messageBuilder.setSecurity(securityMode, securityPolicy);
+};
+
+/**
+ * @method getCertificate
+ * @return {Buffer} the X509 DER form certificate
+ */
+ServerSecureChannelLayer.prototype.getCertificateChain = function () {
+    assert(this.parent, &quot;expecting a valid parent&quot;);
+    return this.parent.getCertificateChain();
+};
+
+/**
+ * @method getCertificate
+ * @return {Buffer} the X509 DER form certificate
+ */
+ServerSecureChannelLayer.prototype.getCertificate = function () {
+    assert(this.parent, &quot;expecting a valid parent&quot;);
+    return this.parent.getCertificate();
+};
+
+ServerSecureChannelLayer.prototype.getSignatureLength = function () {
+
+    var self = this;
+    var chain = self.getCertificateChain();
+    var s = split_der(chain)[0];
+    var cert = crypto_utils.exploreCertificate(s);
+    return cert.publicKeyLength; // 1024 bits = 128Bytes or 2048=256Bytes
+};
+
+/**
+ * @method getPrivateKey
+ * @return {Buffer} the privateKey
+ */
+ServerSecureChannelLayer.prototype.getPrivateKey = function () {
+    return this.parent ? this.parent._privateKey : null;
+};
+
+ServerSecureChannelLayer.prototype.__defineGetter__(&quot;securityTokenCount&quot;, function () {
+    assert(_.isNumber(this.lastTokenId));
+    return this.lastTokenId;
+});
+
+
+function _stop_security_token_watch_dog() {
+
+    /* jshint validthis: true */
+    var self = this;
+
+    if (self._securityTokenTimeout) {
+        clearTimeout(self._securityTokenTimeout);
+        self._securityTokenTimeout = null;
+    }
+}
+
+function _start_security_token_watch_dog() {
+
+    /* jshint validthis: true */
+    var self = this;
+
+    // install securityToken timeout watchdog
+    self._securityTokenTimeout = setTimeout(function () {
+        console.log(&quot; Security token has really expired and shall be discarded !!!!&quot;);
+        console.log(&quot; Server will now refuse message with token &quot;, self.securityToken.tokenId);
+        self._securityTokenTimeout = null;
+    }, self.securityToken.revisedLifeTime * 120 / 100);
+
+}
+
+ServerSecureChannelLayer.prototype._add_new_security_token = function () {
+
+    // The  Server  has  to accept requests secured with the old SecurityToken  until that  SecurityToken  expires
+    // or until it receives a  Message  from the  Client  secured with the new  SecurityToken.
+    var self = this;
+
+    _stop_security_token_watch_dog.call(self);
+    self.lastTokenId += 1;
+
+    var securityToken = new ChannelSecurityToken({
+        secureChannelId: self.secureChannelId,
+        tokenId: self.lastTokenId, // todo ?
+        createdAt: new Date(), // now
+        revisedLifeTime: self.revisedLifeTime
+    });
+
+    assert(!securityToken.expired);
+    assert(_.isFinite(securityToken.revisedLifeTime));
+
+    self.securityToken = securityToken;
+
+    debugLog(&quot;SecurityToken&quot;, securityToken.tokenId);
+
+    _start_security_token_watch_dog.call(self);
+};
+
+function _prepare_security_token(openSecureChannelRequest) {
+
+    /* jshint validthis: true */
+    var self = this;
+    assert(openSecureChannelRequest instanceof OpenSecureChannelRequest);
+
+    delete self.securityToken;
+
+    if (openSecureChannelRequest.requestType === SecurityTokenRequestType.RENEW) {
+
+        _stop_security_token_watch_dog.call(self);
+
+    } else if (openSecureChannelRequest.requestType === SecurityTokenRequestType.ISSUE) {
+        // TODO
+    } else {
+        // Invalid requestType
+    }
+
+    self._add_new_security_token();
+}
+
+function _set_lifetime(requestedLifetime) {
+
+    /* jshint validthis: true */
+    var self = this;
+
+    assert(_.isFinite(requestedLifetime));
+
+
+    // revised lifetime
+    self.revisedLifeTime = requestedLifetime;
+    if (self.revisedLifeTime === 0) {
+        self.revisedLifeTime = self.defaultSecureTokenLifetime;
+    } else {
+        self.revisedLifeTime = Math.min(self.defaultSecureTokenLifetime, self.revisedLifeTime);
+    }
+
+}
+
+function _stop_open_channel_watch_dog() {
+
+    /* jshint validthis: true */
+    var self = this;
+
+    if (self.timeoutId) {
+        clearTimeout(self.timeoutId);
+        self.timeoutId = null;
+    }
+}
+
+
+ServerSecureChannelLayer.prototype._cleanup_pending_timers = function () {
+
+    var self = this;
+
+    // there is no need for the security token expiration event to trigger anymore
+    _stop_security_token_watch_dog.call(self);
+
+    _stop_open_channel_watch_dog.call(self);
+};
+
+/**
+ * @method init
+ * @async
+ * @param socket {Socket}
+ * @param callback {Function}
+ */
+ServerSecureChannelLayer.prototype.init = function (socket, callback) {
+
+    var self = this;
+
+    self.transport = new ServerTCP_transport();
+    self.transport.timeout = self.timeout;
+
+    self.transport.init(socket, function (err) {
+        if (err) {
+            callback(err);
+        } else {
+            // bind low level TCP transport to messageBuilder
+            self.transport.on(&quot;message&quot;, function (message_chunk) {
+                assert(self.messageBuilder);
+                self.messageBuilder.feed(message_chunk);
+            });
+            debugLog(&quot;ServerSecureChannelLayer : Transport layer has been initialized &quot;);
+            debugLog(&quot;... now waiting for OpenSecureChannelRequest...&quot;);
+
+            ServerSecureChannelLayer.registry.register(self);
+
+            _wait_for_open_secure_channel_request.call(self, callback, self.timeout);
+        }
+    });
+
+    // detect transport closure
+    self._transport_socket_close_listener = function(err) {
+       self._abort();
+    };
+    self.transport.on(&quot;socket_closed&quot;,self._transport_socket_close_listener);
+
+
+};
+
+ServerSecureChannelLayer.prototype._rememberClientAddressAndPort = function() {
+    if (this.transport._socket) {
+        this._remoteAddress = this.transport._socket.remoteAddress;
+        this._remotePort = this.transport._socket.remotePort;
+    }
+};
+
+ServerSecureChannelLayer.prototype.__defineGetter__(&quot;remoteAddress&quot;,function() {
+    return  this._remoteAddress;
+});
+
+ServerSecureChannelLayer.prototype.__defineGetter__(&quot;remotePort&quot;,function() {
+    return  this._remotePort;
+});
+
+
+function _cancel_wait_for_open_secure_channel_request_timeout() {
+
+    /* jshint validthis: true */
+    var self = this;
+
+    assert(self);
+
+    _stop_open_channel_watch_dog.call(self);
+    //xx assert(self.timeoutId);
+    //xx // suspend timeout handler
+    //xx clearTimeout(self.timeoutId);
+    //xx self.timeoutId = null;
+}
+
+function _install_wait_for_open_secure_channel_request_timeout(callback, timeout) {
+
+    /* jshint validthis: true */
+    var self = this;
+
+    assert(_.isFinite(timeout));
+    assert(_.isFunction(callback));
+    assert(self);
+
+    self.timeoutId = setTimeout(function () {
+
+        self.timeoutId = null;
+        var err = new Error(&quot;Timeout waiting for OpenChannelRequest (timeout was &quot; + timeout + &quot; ms)&quot;);
+        debugLog(err.message);
+        self.close(function () {
+            callback(err);
+        });
+    }, timeout);
+
+}
+
+function _on_initial_open_secure_channel_request(callback, request, msgType, requestId, secureChannelId) {
+
+    /* istanbul ignore next */
+    if (do_trace_message) {
+        dump_request(request,requestId,secureChannelId);
+    }
+
+    assert(_.isFunction(callback));
+    /* jshint validthis: true */
+    var self = this;
+
+    assert(self);
+
+    // check that the request is a OpenSecureChannelRequest
+    /* istanbul ignore next */
+    if (doDebug) {
+        debugLog(self.messageBuilder.sequenceHeader.toString());
+        debugLog(self.messageBuilder.securityHeader.toString());
+        //xx analyze_object_binary_encoding(request);
+    }
+
+    _cancel_wait_for_open_secure_channel_request_timeout.call(self);
+
+    requestId = self.messageBuilder.sequenceHeader.requestId;
+    assert(requestId &gt; 0);
+
+    var message = {
+        request: request,
+        securityHeader: self.messageBuilder.securityHeader,
+        requestId: requestId
+    };
+    assert(message.requestId === requestId);
+
+    self.clientSecurityHeader = message.securityHeader;
+
+    _on_initial_OpenSecureChannelRequest.call(self, message, callback);
+
+}
+
+function _wait_for_open_secure_channel_request(callback, timeout) {
+
+    /* jshint validthis: true */
+    var self = this;
+    _install_wait_for_open_secure_channel_request_timeout.call(self, callback, timeout);
+    self.messageBuilder.once(&quot;message&quot;, _on_initial_open_secure_channel_request.bind(self, callback));
+}
+
+function _send_chunk(callback, messageChunk) {
+
+    /* jshint validthis: true */
+    var self = this;
+
+    if (messageChunk) {
+        self.transport.write(messageChunk);
+    } else {
+        // record tick 3 : transaction completed.
+        self._tick3 = get_clock_tick();
+
+        if (callback) {
+            setImmediate(callback);
+        }
+
+        self._record_transaction_statistics();
+
+        /* istanbul ignore next */
+        if (doDebug) {
+            // dump some statistics about transaction ( time and sizes )
+            self._dump_transaction_statistics();
+        }
+
+        self.emit(&quot;transaction_done&quot;);
+
+    }
+}
+
+
+ServerSecureChannelLayer.prototype._get_security_options_for_OPN = function () {
+
+    var self = this;
+    var cryptoFactory = self.messageBuilder.cryptoFactory;
+    var options = {};
+    // install sign &amp; sign-encrypt behavior
+    if (self.securityMode === MessageSecurityMode.SIGN || self.securityMode === MessageSecurityMode.SIGNANDENCRYPT) {
+
+        assert(cryptoFactory, &quot;ServerSecureChannelLayer must have a crypto strategy&quot;);
+
+        options.signatureLength = self.getSignatureLength();
+
+        options.signingFunc = function (chunk) {
+            var signed = cryptoFactory.asymmetricSign(chunk, self.getPrivateKey());
+            assert(signed.length === options.signatureLength);
+            return signed;
+        };
+
+        assert(self.receiverPublicKeyLength &gt;= 0);
+        options.plainBlockSize = self.receiverPublicKeyLength - cryptoFactory.blockPaddingSize;
+        options.cipherBlockSize = self.receiverPublicKeyLength;
+
+        options.encrypt_buffer = function (chunk) {
+            return cryptoFactory.asymmetricEncrypt(chunk, self.receiverPublicKey);
+        };
+    }
+    return options;
+};
+
+ServerSecureChannelLayer.prototype._get_security_options_for_MSG = function () {
+
+    var self = this;
+    if (self.securityMode === MessageSecurityMode.NONE) {
+        return null;
+    }
+    var cryptoFactory = self.messageBuilder.cryptoFactory;
+
+    /* istanbul ignore next */
+    if (!cryptoFactory) {
+        return null;
+    }
+
+    assert(cryptoFactory, &quot;ServerSecureChannelLayer must have a crypto strategy&quot;);
+    assert(self.derivedKeys.derivedServerKeys);
+    var derivedServerKeys = self.derivedKeys.derivedServerKeys;
+    return securityPolicy_m.getOptionsForSymmetricSignAndEncrypt(self.securityMode, derivedServerKeys);
+};
+
+
+/**
+ * @method send_response
+ * @async
+ * @param msgType
+ * @param response
+ * @param message
+ * @param  {Function} [callback] an optional callback function
+ */
+ServerSecureChannelLayer.prototype.send_response = function (msgType, response, message, callback) {
+
+    var request = message.request;
+    var requestId = message.requestId;
+    var self = this;
+
+    // istanbul ignore next
+    if (doDebug) {
+        assert(response._schema);
+        assert(request._schema);
+        assert(requestId &amp;&amp; requestId &gt; 0);
+        // verify that response for a given requestId is only sent once.
+        if (!self.__verifId) {
+            self.__verifId = {};
+        }
+        assert(!self.__verifId[requestId],&quot; response for requestId has already been sent !! - Internal Error&quot;);
+        self.__verifId[requestId] = requestId;
+    }
+
+    self.msgType = msgType;
+
+    // record tick : send response received.
+    self._tick2 = get_clock_tick();
+
+    assert(self.securityToken);
+
+    var options = {
+        requestId: requestId,
+        secureChannelId: self.securityToken.secureChannelId,
+        tokenId: self.securityToken.tokenId,
+
+        chunkSize: self.transport.receiveBufferSize
+
+    };
+
+    var security_options = (msgType === &quot;OPN&quot;) ? self._get_security_options_for_OPN() : self._get_security_options_for_MSG();
+    options = _.extend(options, security_options);
+
+    //xx assert(_.isFinite(request.requestHeader.requestHandle));
+
+    response.responseHeader.requestHandle = request.requestHeader.requestHandle;
+
+    /* istanbul ignore next */
+    if (0 &amp;&amp; doDebug) {
+        console.log(&quot; options &quot;, options);
+        analyze_object_binary_encoding(response);
+    }
+
+    //xx console.log(&quot; sending request &quot;.bgWhite.red,requestId,message.request.constructor.name);
+
+    /* istanbul ignore next */
+    if (do_trace_message) {
+        console.log(&quot;xxxx   &gt;&gt;&gt;&gt; ---------------------------------------- &quot;.cyan.bold, response._schema.name.green.bold,requestId);
+        console.log(response.toString());
+        console.log(&quot;xxxx   &gt;&gt;&gt;&gt; ----------------------------------------|\n&quot;.cyan.bold);
+    }
+
+    if (self._on_response) {
+        self._on_response(msgType, response, message);
+    }
+
+    self._transactionsCount += 1;
+    self.messageChunker.chunkSecureMessage(msgType, options, response, _send_chunk.bind(self, callback));
+};
+
+
+/**
+ *
+ * send a ServiceFault response
+ * @method send_error_and_abort
+ * @async
+ * @param statusCode  {StatusCode} the status code
+ * @param description {String}
+ * @param message     {String}
+ * @param callback    {Function}
+ */
+ServerSecureChannelLayer.prototype.send_error_and_abort = function (statusCode, description, message, callback) {
+
+    var self = this;
+
+    assert(statusCode instanceof StatusCode);
+    assert(message.request._schema);
+    assert(message.requestId &amp;&amp; message.requestId &gt; 0);
+    assert(_.isFunction(callback));
+
+    var response = new ServiceFault({
+        responseHeader: {serviceResult: statusCode}
+    });
+
+    response.description = description;
+    self.send_response(&quot;MSG&quot;, response, message, function () {
+        self.close(callback);
+    });
+
+};
+
+
+/**
+ * _process_certificates extracts client public keys from client certificate
+ *  and store them in self.receiverPublicKey and self.receiverCertificate
+ *  it also caches self.receiverPublicKeyLength.
+ *
+ *  so they can be used by security channel.
+ *
+ * @method _process_certificates
+ * @param message the message coming from the client
+ * @param callback
+ * @private
+ * @async
+ */
+ServerSecureChannelLayer.prototype._process_certificates = function (message, callback) {
+
+    var self = this;
+
+    self.receiverPublicKey = null;
+    self.receiverPublicKeyLength = 0;
+    self.receiverCertificate = message.securityHeader ? message.securityHeader.senderCertificate : null;
+
+    // ignore receiverCertificate that have a zero length
+    /* istanbul ignore next */
+    if (self.receiverCertificate &amp;&amp; self.receiverCertificate.length === 0) {
+        self.receiverCertificate = null;
+    }
+
+    if (self.receiverCertificate) {
+        // extract public key
+        crypto_utils.extractPublicKeyFromCertificate(self.receiverCertificate, function (err, key) {
+            if (!err) {
+                self.receiverPublicKey = key;
+                self.receiverPublicKeyLength = crypto_utils.rsa_length(key);
+            }
+            callback(err);
+        });
+    } else {
+        self.receiverPublicKey = null;
+        callback();
+    }
+};
+
+/**
+ * @method _prepare_security_header
+ * @param request
+ * @param message
+ * @return {AsymmetricAlgorithmSecurityHeader}
+ * @private
+ */
+function _prepare_security_header(request, message) {
+
+    /* jshint validthis: true */
+    var self = this;
+    var securityHeader = null;
+    // senderCertificate:
+    //    The X509v3 certificate assigned to the sending application instance.
+    //    This is a DER encoded blob.
+    //    This indicates what private key was used to sign the MessageChunk.
+    //    This field shall be null if the message is not signed.
+    // receiverCertificateThumbprint:
+    //    The thumbprint of the X509v3 certificate assigned to the receiving application
+    //    The thumbprint is the SHA1 digest of the DER encoded form of the certificate.
+    //    This indicates what public key was used to encrypt the MessageChunk
+    //   This field shall be null if the message is not encrypted.
+    switch (request.securityMode.value) {
+        case MessageSecurityMode.NONE.value:
+            assert(!message.securityHeader || message.securityHeader.securityPolicyUri === &quot;http://opcfoundation.org/UA/SecurityPolicy#None&quot;);
+            securityHeader = new AsymmetricAlgorithmSecurityHeader({
+                securityPolicyUri: &quot;http://opcfoundation.org/UA/SecurityPolicy#None&quot;,
+                senderCertificate: null, // message not signed
+                receiverCertificateThumbprint: null // message not encrypted
+            });
+
+            break;
+        case MessageSecurityMode.SIGN.value:
+        case MessageSecurityMode.SIGNANDENCRYPT.value:
+
+            // get the thumbprint of the client certificate
+            var thumbprint = self.receiverCertificate ? crypto_utils.makeSHA1Thumbprint(self.receiverCertificate) : null;
+
+            securityHeader = new AsymmetricAlgorithmSecurityHeader({
+                securityPolicyUri: self.clientSecurityHeader.securityPolicyUri,
+                senderCertificate: self.getCertificateChain(), // certificate of the private key used to sign the message
+                receiverCertificateThumbprint: thumbprint // message not encrypted (????)
+            });
+            break;
+    }
+    return securityHeader;
+}
+
+
+function _handle_OpenSecureChannelRequest(message, callback) {
+
+    /* jshint validthis: true */
+    var self = this;
+
+    var request = message.request;
+    var requestId = message.requestId;
+    assert(request._schema.name === &quot;OpenSecureChannelRequest&quot;);
+    assert(requestId &amp;&amp; requestId &gt; 0);
+
+    self.clientNonce = request.clientNonce;
+
+    _set_lifetime.call(self, request.requestedLifetime);
+
+    _prepare_security_token.call(self, request);
+
+
+    var serviceResult = StatusCodes.Good;
+
+    var cryptoFactory = self.messageBuilder.cryptoFactory;
+    if (cryptoFactory) {
+
+        // serverNonce: A random number that shall not be used in any other request. A new
+        //    serverNonce shall be generated for each time a SecureChannel is renewed.
+        //    This parameter shall have a length equal to key size used for the symmetric
+        //    encryption algorithm that is identified by the securityPolicyUri.
+        self.serverNonce = crypto.randomBytes(cryptoFactory.symmetricKeyLength);
+
+        if (self.clientNonce.length !== self.serverNonce.length) {
+
+            console.log(&quot;warning client Nonce length doesn&#x27;t match server nonce length&quot;.red,self.clientNonce.length ,&quot; !== &quot;,self.serverNonce.length);
+            // what can we do
+            // - just ignore it ?
+            // - or adapt serverNonce length to clientNonce Length ?
+            //xx self.serverNonce = crypto.randomBytes(self.clientNonce.length);
+            // - or adapt clientNonce length to serverNonce Length ?
+            //xx self.clientNonce = self.clientNonce.slice(0,self.serverNonce.length);
+            //
+            // - or abort connection ? &lt;&lt; LET BE SAFE AND CHOOSE THIS ONE !
+            serviceResult = StatusCodes.BadSecurityModeRejected; // ToDo check code
+
+        }
+        // expose derivedKey to use for symmetric sign&amp;encrypt
+        // to help us decrypting and verifying messages received from client
+        self.derivedKeys = cryptoFactory.compute_derived_keys(this.serverNonce, this.clientNonce);
+    }
+
+    var derivedClientKeys = this.derivedKeys ? this.derivedKeys.derivedClientKeys : null;
+    this.messageBuilder.pushNewToken(this.securityToken, derivedClientKeys);
+
+    // let prepare self.securityHeader;
+    self.securityHeader = _prepare_security_header.call(self, request, message);
+    assert(self.securityHeader);
+
+    var derivedServerKeys = self.derivedKeys ? self.derivedKeys.derivedServerKeys : null;
+
+    self.messageChunker.update({
+
+        // for OPN
+        securityHeader: self.securityHeader,
+
+        // derived keys for symmetric encryption of standard MSG
+        // to sign and encrypt MSG sent to client
+        derivedKeys: derivedServerKeys
+    });
+
+    var response = new OpenSecureChannelResponse({
+        responseHeader: {
+            serviceResult: serviceResult
+        },
+        serverProtocolVersion: self.protocolVersion,
+        securityToken: self.securityToken,
+        serverNonce: self.serverNonce
+    });
+
+    // get the clientCertificate from message securityHeader
+    // for convenience
+    self.clientCertificate = message.securityHeader ? message.securityHeader.senderCertificate : null;
+
+    var description;
+
+    // If the SecurityMode is not None then the Server shall verify that a SenderCertificate and a
+    // ReceiverCertificateThumbprint were specified in the SecurityHeader.
+    if (self.securityMode.value !== MessageSecurityMode.NONE.value) {
+
+        if (!_check_receiverCertificateThumbprint.call(self, self.clientSecurityHeader)) {
+            description = &quot;Server#OpenSecureChannelRequest : Invalid receiver certificate thumbprint : the thumbprint doesn&#x27;t match server certificate !&quot;;
+            console.log(description.cyan);
+            response.responseHeader.serviceResult = StatusCodes.BadCertificateInvalid;
+        }
+    }
+
+    if (self.clientCertificate) {
+        var certificate_status = _check_certificate_validity(self.clientCertificate);
+        if (StatusCodes.Good !== certificate_status) {
+
+            description = &quot;Sender Certificate Error&quot;;
+            console.log(description.cyan, certificate_status.toString().bgRed.yellow);
+            // OPCUA specification v1.02 part 6 page 42 $6.7.4
+            // If an error occurs after the  Server  has verified  Message  security  it  shall  return a  ServiceFault  instead
+            // of a OpenSecureChannel  response. The  ServiceFault  Message  is described in  Part  4,   7.28.
+            response = new ServiceFault({responseHeader: {serviceResult: certificate_status}});
+        }
+    }
+
+    self.send_response(&quot;OPN&quot;, response, message, function (/*err*/) {
+        if (response.responseHeader.serviceResult !== StatusCodes.Good) {
+            self.close();
+        }
+        callback(null);
+
+    });
+
+}
+
+
+
+ServerSecureChannelLayer.prototype._abort = function () {
+
+    var self = this;
+    if (self._abort_has_been_called) {
+        return;
+    }
+
+    ServerSecureChannelLayer.registry.unregister(self);
+
+    self._abort_has_been_called = true;
+
+    self._cleanup_pending_timers();
+    /**
+     * notify the observers that the SecureChannel has aborted.
+     * the reason could be :
+     *   - a CloseSecureChannelRequest has been received.
+     *   - a invalid message has been received
+     * the event is sent after the underlying transport layer has been closed.
+     *
+     * @event abort
+     */
+    self.emit(&quot;abort&quot;);
+
+};
+
+/**
+ * Abruptly close a Server SecureChannel ,by terminating the underlying transport.
+ *
+ *
+ * @method close
+ * @async
+ * @param callback {Function}
+ */
+ServerSecureChannelLayer.prototype.close = function (callback) {
+
+    var self = this;
+    debugLog(&quot;ServerSecureChannelLayer#close&quot;);
+    // close socket
+    self.transport.disconnect(function () {
+        self._abort();
+        if (_.isFunction(callback)) {
+            callback();
+        }
+    });
+};
+
+ServerSecureChannelLayer.prototype._record_transaction_statistics = function () {
+
+    var self = this;
+    self._bytesRead_before   = self._bytesRead_before || 0;
+    self._byesWritten_before = self._byesWritten_before || 0;
+
+    self.last_transaction_stats = {
+        bytesRead:       self.bytesRead - self._bytesRead_before,
+        bytesWritten:    self.bytesWritten - self._bytesWritten_before,
+        lap_reception:   self._tick1 - self._tick0,
+        lap_processing:  self._tick2 - self._tick1,
+        lap_emission:    self._tick3 - self._tick2,
+        //last_transaction_time: Date.now()
+    };
+
+    // final operation in statistics
+    self._bytesRead_before = self.bytesRead;
+    self._bytesWritten_before = self.bytesWritten;
+
+};
+
+ServerSecureChannelLayer.prototype._dump_transaction_statistics = function () {
+    var self = this;
+    console.log(&quot;                Bytes Read : &quot;, self.last_transaction_stats.bytesRead);
+    console.log(&quot;             Bytes Written : &quot;, self.last_transaction_stats.bytesWritten);
+    console.log(&quot;   time to receive request : &quot;, self.last_transaction_stats.lap_reception / 1000, &quot; sec&quot;);
+    console.log(&quot;   time to process request : &quot;, self.last_transaction_stats.lap_processing / 1000, &quot; sec&quot;);
+    console.log(&quot;   time to send response   : &quot;, self.last_transaction_stats.lap_emission / 1000, &quot; sec&quot;);
+};
+
+
+ServerSecureChannelLayer.prototype.has_endpoint_for_security_mode_and_policy = function (securityMode, securityPolicy) {
+    var self = this;
+    if (!self.endpoints) {
+        return true;
+    }
+    var endpoint_desc = self.endpoints.getEndpointDescription(securityMode, securityPolicy);
+    return (endpoint_desc !== null);
+};
+
+// istanbul ignore next
+function dump_request(request,requestId,secureChannelId) {
+    console.log(&quot;xxxx   &lt;&lt;&lt;&lt; ---------------------------------------- &quot;.cyan, request._schema.name.yellow, &quot;requestId&quot;, requestId, &quot;secureChannelId=&quot;, secureChannelId);
+    console.log(request.toString());
+    console.log(&quot;xxxx   &lt;&lt;&lt;&lt; ---------------------------------------- \n&quot;.cyan);
+}
+
+var _on_common_message = function (request, msgType, requestId, secureChannelId) {
+    var self = this;
+
+    /* istanbul ignore next */
+    if (do_trace_message) {
+        dump_request(request,requestId,secureChannelId);
+    }
+
+    requestId = self.messageBuilder.sequenceHeader.requestId;
+
+    var message = {
+        request: request,
+        requestId: requestId,
+        channel: self
+    };
+
+    if (msgType === &quot;CLO&quot; &amp;&amp; request._schema.name === &quot;CloseSecureChannelRequest&quot;) {
+
+        self.close();
+
+    } else if (msgType === &quot;OPN&quot; &amp;&amp; request._schema.name === &quot;OpenSecureChannelRequest&quot;) {
+        // intercept client request to renew security Token
+        _handle_OpenSecureChannelRequest.call(self, message, function () {
+        });
+    } else {
+
+        if (request._schema.name === &quot;CloseSecureChannelRequest&quot;) {
+            console.log(&quot;WARNING : RECEIVED a CloseSecureChannelRequest with MSGTYPE=&quot; + msgType);
+            self.close();
+
+        } else {
+
+            // record tick 1 : after message has been received, before message processing
+            self._tick1 = get_clock_tick();
+
+            /**
+             * notify the observer that a OPCUA message has been received.
+             * It is up to one observer to call send_response or send_error_and_abort to complete
+             * the transaction.
+             *
+             * @event message
+             * @param message
+             */
+            self.emit(&quot;message&quot;, message);
+        }
+    }
+};
+
+/**
+ * @method _check_receiverCertificateThumbprint
+ * verify that the receiverCertificateThumbprint send by the client
+ * matching the CertificateThumbPrint of the server
+ * @param clientSecurityHeader
+ * @return {boolean}
+ * @private
+ */
+function _check_receiverCertificateThumbprint(clientSecurityHeader) {
+    /* jshint validthis: true */
+    var self = this;
+    if (clientSecurityHeader.receiverCertificateThumbprint) {
+        // check if the receiverCertificateThumbprint is my certificate thumbprint
+        var serverCertificateChain  = self.getCertificateChain();
+        //xx var serverCertificate = split_der(serverCertificateChain)[0];
+        var myCertificateThumbPrint = crypto_utils.makeSHA1Thumbprint(serverCertificateChain);
+        //xx console.log(&quot;xxxx     my certificate thumbprint&quot;,myCertificateThumbPrint.toString(&quot;hex&quot;) );
+        //xx console.log(&quot;xxxx receiverCertificateThumbprint&quot;,securityHeader.receiverCertificateThumbprint.toString(&quot;hex&quot;) );
+        return myCertificateThumbPrint.toString(&quot;hex&quot;) === clientSecurityHeader.receiverCertificateThumbprint.toString(&quot;hex&quot;);
+    }
+    return true;
+}
+
+
+// Bad_CertificateHostNameInvalid            The HostName used to connect to a Server does not match a HostName in the
+//                                           Certificate.
+// Bad_CertificateIssuerRevocationUnknown    It was not possible to determine if the Issuer Certificate has been revoked.
+// Bad_CertificateIssuerUseNotAllowed        The Issuer Certificate may not be used for the requested operation.
+// Bad_CertificateIssuerTimeInvalid          An Issuer Certificate has expired or is not yet valid.
+// Bad_CertificateIssuerRevoked              The Issuer Certificate has been revoked.
+// Bad_CertificateInvalid                    The certificate provided as a parameter is not valid.
+// Bad_CertificateRevocationUnknown          It was not possible to determine if the Certificate has been revoked.
+// Bad_CertificateRevoked                    The Certificate has been revoked.
+// Bad_CertificateTimeInvalid                The Certificate has expired or is not yet valid.
+// Bad_CertificateUriInvalid                 The URI specified in the ApplicationDescription does not match the URI in the Certificate.
+// Bad_CertificateUntrusted                  The Certificate is not trusted.
+// Bad_CertificateUseNotAllowed              The Certificate may not be used for the requested operation.
+
+// also see OPCUA 1.02 part 4 :
+//  - page 95  6.1.3 Determining if a Certificate is Trusted
+// -  page 100 6.2.3 Validating a Software Certificate
+//
+function _check_certificate_validity(certificate) {
+
+    // Is the  signature on the SoftwareCertificate valid .?
+    if (!certificate) {
+        // missing certificate
+        return StatusCodes.BadSecurityChecksFailed;
+    }
+
+    //-- var split_der = require(&quot;node-opcua-crypto&quot;).crypto_explore_certificate.split_der;
+    //-- var chain = split_der(securityHeader.senderCertificate);
+    //-- //xx console.log(&quot;xxx NB CERTIFICATE IN CHAIN = &quot;.red,chain.length);
+
+    // Has SoftwareCertificate passed its issue date and has it not expired ?
+    // check dates
+    var cert = crypto_utils.exploreCertificate(certificate);
+
+    var now = new Date();
+
+    if (cert.notBefore.getTime() &gt; now.getTime()) {
+        // certificate is not active yet
+        console.log(&quot; Sender certificate is invalid : certificate is not active yet !&quot;.red + &quot;  not before date =&quot; + cert.notBefore);
+        return StatusCodes.BadCertificateTimeInvalid;
+    }
+    if (cert.notAfter.getTime() &lt;= now.getTime()) {
+        // certificate is obsolete
+        console.log(&quot; Sender certificate is invalid : certificate has expired !&quot;.red + &quot; not after date =&quot; + cert.notAfter);
+        return StatusCodes.BadCertificateTimeInvalid;
+    }
+
+    // Has SoftwareCertificate has  been revoked by the issuer ?
+    // TODO: check if certificate is revoked or not ...
+    // StatusCodes.BadCertificateRevoked
+
+    // is issuer Certificate  valid and has not been revoked by the CA that issued it. ?
+    // TODO : check validity of issuer certificate
+    // StatusCodes.BadCertificateIssuerRevoked
+
+    //does the URI specified in the ApplicationDescription  match the URI in the Certificate ?
+    // TODO : check ApplicationDescription of issuer certificate
+    // return StatusCodes.BadCertificateUriInvalid
+
+    return StatusCodes.Good;
+}
+
+// Bad_RequestTypeInvalid     The security token request type is not valid.
+// Bad_SecurityModeRejected   The security mode does not meet the requirements set by the Server.
+// Bad_SecurityPolicyRejected The security policy does not meet the requirements set by the Server.
+// Bad_SecureChannelIdInvalid
+// Bad_NonceInvalid
+
+function isValidSecurityPolicy(securityPolicy) {
+    switch (securityPolicy.value) {
+        case SecurityPolicy.None.value:
+        case SecurityPolicy.Basic128Rsa15.value:
+        case SecurityPolicy.Basic256.value:
+        case SecurityPolicy.Basic256Sha256.value:
+            return StatusCodes.Good;
+        default:
+            return StatusCodes.BadSecurityPolicyRejected;
+    }
+}
+
+function _send_error(statusCode, description, message, callback) {
+    /* jshint validthis: true */
+    var self = this;
+
+    // turn of security mode as we haven&#x27;t manage to set it to
+    self.securityMode = MessageSecurityMode.NONE;
+
+    // unexpected message type ! let close the channel
+    var err = new Error(description);
+    self.send_error_and_abort(statusCode, description, message, function () {
+        callback(err); // OK
+    });
+
+}
+function _on_initial_OpenSecureChannelRequest(message, callback) {
+
+    assert(_.isFunction(callback));
+
+    /* jshint validthis: true */
+    var self = this;
+
+    var request = message.request;
+    var requestId = message.requestId;
+
+    assert(requestId &gt; 0);
+    assert(_.isFinite(request.requestHeader.requestHandle));
+    var description;
+
+    // expecting a OpenChannelRequest as first communication message
+    if (!(request instanceof OpenSecureChannelRequest)) {
+        description = &quot;Expecting OpenSecureChannelRequest&quot;;
+        console.log(&quot;ERROR&quot;.red, &quot;BadCommunicationError: expecting a OpenChannelRequest as first communication message&quot;);
+        return _send_error.call(this, StatusCodes.BadCommunicationError, description, message, callback);
+    }
+
+    var securityPolicy = securityPolicy_m.fromURI(message.securityHeader.securityPolicyUri);
+
+    // check security header
+    var check_security_policy = isValidSecurityPolicy(securityPolicy);
+    if (check_security_policy !== StatusCodes.Good) {
+        description = &quot; Unsupported securityPolicyUri &quot; + self.messageBuilder.securityHeader.securityPolicyUri;
+        return _send_error.call(this, check_security_policy, description, message, callback);
+    }
+
+    assert(request.securityMode);
+    self.securityMode = request.securityMode;
+    self.messageBuilder.securityMode = self.securityMode;
+
+    var has_endpoint = self.has_endpoint_for_security_mode_and_policy(self.securityMode, securityPolicy);
+
+    if (!has_endpoint) {
+        // there is no
+        description = &quot; This server doesn&#x27;t not support  &quot; + securityPolicy.toString() + &quot; &quot; + self.securityMode.toString();
+        return _send_error.call(self, StatusCodes.BadSecurityPolicyRejected, description, message, callback);
+    }
+
+    self.endpoint = self.endpoints &amp;&amp; self.endpoints.getEndpointDescription(self.securityMode, securityPolicy);
+
+
+    self.messageBuilder
+        .on(&quot;message&quot;, _on_common_message.bind(self))
+        .on(&quot;start_chunk&quot;, function () {
+            //record tick 0: when the first chunk is received
+            self._tick0 = get_clock_tick();
+
+        });
+
+    // handle initial OpenSecureChannelRequest
+    self._process_certificates(message, function () {
+        _handle_OpenSecureChannelRequest.call(self, message, callback);
+    });
+
+}
+
+
+/**
+ * the number of bytes read so far by this channel
+ * @property bytesRead
+ * @type {Number}
+ */
+ServerSecureChannelLayer.prototype.__defineGetter__(&quot;bytesRead&quot;, function () {
+    var self = this;
+    return self.transport ? self.transport.bytesRead : 0;
+});
+
+/**
+ * the number of bytes written so far by this channel
+ * @property bytesWritten
+ * @type {Number}
+ */
+ServerSecureChannelLayer.prototype.__defineGetter__(&quot;bytesWritten&quot;, function () {
+    var self = this;
+    return self.transport ? self.transport.bytesWritten : 0;
+});
+
+ServerSecureChannelLayer.prototype.__defineGetter__(&quot;transactionsCount&quot;, function () {
+    var self = this;
+    return self._transactionsCount;
+});
+
+/**
+ * true when the secure channel has been opened successfully
+ * @property isOpened
+ * @type {Boolean}
+ *
+ */
+ServerSecureChannelLayer.prototype.__defineGetter__(&quot;isOpened&quot;,function() {
+    var self = this;
+    return self.clientCertificate;
+});
+
+/**
+ * true when the secure channel is assigned to a active session
+ * @property hasSession
+ * @type {Boolean}
+ */
+ServerSecureChannelLayer.prototype.__defineGetter__(&quot;hasSession&quot;,function() {
+    var self = this;
+    return Object.keys(self.sessionTokens).length&gt;0;
+});
+
+/**
+ * The unique hash key to identify this secure channel
+ * @property hashKey
+ * @type {String}
+ */
+ServerSecureChannelLayer.prototype.__defineGetter__(&quot;hashKey&quot;,function() {
+    var self = this;
+    return self.securityToken.secureChannelId.toString();
+});
+
+
+exports.ServerSecureChannelLayer = ServerSecureChannelLayer;
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

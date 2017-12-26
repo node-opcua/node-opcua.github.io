@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>packages\node-opcua-address-space\src\alarms_and_conditions\alarm_condition.js - The NodeOPCUA API</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.1.0-pre</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/AcknowledgeMessage.html">AcknowledgeMessage</a></li>
+                                <li><a href="../classes/ActivateSessionRequest.html">ActivateSessionRequest</a></li>
+                                <li><a href="../classes/ActivateSessionResponse.html">ActivateSessionResponse</a></li>
+                                <li><a href="../classes/AddNodesItem.html">AddNodesItem</a></li>
+                                <li><a href="../classes/AddNodesRequest.html">AddNodesRequest</a></li>
+                                <li><a href="../classes/AddNodesResponse.html">AddNodesResponse</a></li>
+                                <li><a href="../classes/AddNodesResult.html">AddNodesResult</a></li>
+                                <li><a href="../classes/AddReferencesItem.html">AddReferencesItem</a></li>
+                                <li><a href="../classes/AddReferencesRequest.html">AddReferencesRequest</a></li>
+                                <li><a href="../classes/AddReferencesResponse.html">AddReferencesResponse</a></li>
+                                <li><a href="../classes/AddressSpace.html">AddressSpace</a></li>
+                                <li><a href="../classes/AggregateConfiguration.html">AggregateConfiguration</a></li>
+                                <li><a href="../classes/AggregateFilter.html">AggregateFilter</a></li>
+                                <li><a href="../classes/AnonymousIdentityToken.html">AnonymousIdentityToken</a></li>
+                                <li><a href="../classes/ApplicationDescription.html">ApplicationDescription</a></li>
+                                <li><a href="../classes/ApplicationInstanceCertificate.html">ApplicationInstanceCertificate</a></li>
+                                <li><a href="../classes/Argument.html">Argument</a></li>
+                                <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
+                                <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+                                <li><a href="../classes/AttributeNameById.html">AttributeNameById</a></li>
+                                <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
+                                <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
+                                <li><a href="../classes/BaseEventType.html">BaseEventType</a></li>
+                                <li><a href="../classes/BaseNode.html">BaseNode</a></li>
+                                <li><a href="../classes/BaseUAObject.html">BaseUAObject</a></li>
+                                <li><a href="../classes/BinaryStream.html">BinaryStream</a></li>
+                                <li><a href="../classes/BinaryStreamSizeCalculator.html">BinaryStreamSizeCalculator</a></li>
+                                <li><a href="../classes/BrowseDescription.html">BrowseDescription</a></li>
+                                <li><a href="../classes/BrowseDirection.html">BrowseDirection</a></li>
+                                <li><a href="../classes/BrowseNextRequest.html">BrowseNextRequest</a></li>
+                                <li><a href="../classes/BrowseNextResponse.html">BrowseNextResponse</a></li>
+                                <li><a href="../classes/BrowsePath.html">BrowsePath</a></li>
+                                <li><a href="../classes/BrowsePathResult.html">BrowsePathResult</a></li>
+                                <li><a href="../classes/BrowsePathTarget.html">BrowsePathTarget</a></li>
+                                <li><a href="../classes/BrowseRequest.html">BrowseRequest</a></li>
+                                <li><a href="../classes/BrowseResponse.html">BrowseResponse</a></li>
+                                <li><a href="../classes/BrowseResult.html">BrowseResult</a></li>
+                                <li><a href="../classes/BuildInfo.html">BuildInfo</a></li>
+                                <li><a href="../classes/CallMethodRequest.html">CallMethodRequest</a></li>
+                                <li><a href="../classes/CallMethodResult.html">CallMethodResult</a></li>
+                                <li><a href="../classes/CallRequest.html">CallRequest</a></li>
+                                <li><a href="../classes/CallResponse.html">CallResponse</a></li>
+                                <li><a href="../classes/CancelRequest.html">CancelRequest</a></li>
+                                <li><a href="../classes/CancelResponse.html">CancelResponse</a></li>
+                                <li><a href="../classes/ChannelSecurityToken.html">ChannelSecurityToken</a></li>
+                                <li><a href="../classes/ChunkManager.html">ChunkManager</a></li>
+                                <li><a href="../classes/ClientMonitoredItem.html">ClientMonitoredItem</a></li>
+                                <li><a href="../classes/ClientMonitoredItemGroup.html">ClientMonitoredItemGroup</a></li>
+                                <li><a href="../classes/ClientSecureChannelLayer.html">ClientSecureChannelLayer</a></li>
+                                <li><a href="../classes/ClientSession.html">ClientSession</a></li>
+                                <li><a href="../classes/ClientSidePublishEngine.html">ClientSidePublishEngine</a></li>
+                                <li><a href="../classes/ClientSubscription.html">ClientSubscription</a></li>
+                                <li><a href="../classes/ClientTCP_transport.html">ClientTCP_transport</a></li>
+                                <li><a href="../classes/CloseSecureChannelRequest.html">CloseSecureChannelRequest</a></li>
+                                <li><a href="../classes/CloseSecureChannelResponse.html">CloseSecureChannelResponse</a></li>
+                                <li><a href="../classes/CloseSessionRequest.html">CloseSessionRequest</a></li>
+                                <li><a href="../classes/CloseSessionResponse.html">CloseSessionResponse</a></li>
+                                <li><a href="../classes/Company.html">Company</a></li>
+                                <li><a href="../classes/ConditionInfo.html">ConditionInfo</a></li>
+                                <li><a href="../classes/ConditionSnapshot.html">ConditionSnapshot</a></li>
+                                <li><a href="../classes/ContentFilter.html">ContentFilter</a></li>
+                                <li><a href="../classes/ContentFilterElement.html">ContentFilterElement</a></li>
+                                <li><a href="../classes/ContentFilterElementResult.html">ContentFilterElementResult</a></li>
+                                <li><a href="../classes/ContentFilterResult.html">ContentFilterResult</a></li>
+                                <li><a href="../classes/CreateMonitoredItemsRequest.html">CreateMonitoredItemsRequest</a></li>
+                                <li><a href="../classes/CreateMonitoredItemsResponse.html">CreateMonitoredItemsResponse</a></li>
+                                <li><a href="../classes/CreateSessionRequest.html">CreateSessionRequest</a></li>
+                                <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
+                                <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
+                                <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
+                                <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
+                                <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
+                                <li><a href="../classes/DataValue.html">DataValue</a></li>
+                                <li><a href="../classes/DeleteMonitoredItemsRequest.html">DeleteMonitoredItemsRequest</a></li>
+                                <li><a href="../classes/DeleteMonitoredItemsResponse.html">DeleteMonitoredItemsResponse</a></li>
+                                <li><a href="../classes/DeleteNodesItem.html">DeleteNodesItem</a></li>
+                                <li><a href="../classes/DeleteNodesRequest.html">DeleteNodesRequest</a></li>
+                                <li><a href="../classes/DeleteNodesResponse.html">DeleteNodesResponse</a></li>
+                                <li><a href="../classes/DeleteReferencesItem.html">DeleteReferencesItem</a></li>
+                                <li><a href="../classes/DeleteReferencesRequest.html">DeleteReferencesRequest</a></li>
+                                <li><a href="../classes/DeleteReferencesResponse.html">DeleteReferencesResponse</a></li>
+                                <li><a href="../classes/DeleteSubscriptionsRequest.html">DeleteSubscriptionsRequest</a></li>
+                                <li><a href="../classes/DeleteSubscriptionsResponse.html">DeleteSubscriptionsResponse</a></li>
+                                <li><a href="../classes/DiagnosticInfo.html">DiagnosticInfo</a></li>
+                                <li><a href="../classes/DummyObject.html">DummyObject</a></li>
+                                <li><a href="../classes/ElementOperand.html">ElementOperand</a></li>
+                                <li><a href="../classes/Employee.html">Employee</a></li>
+                                <li><a href="../classes/EndpointDescription.html">EndpointDescription</a></li>
+                                <li><a href="../classes/Enum.html">Enum</a></li>
+                                <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
+                                <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
+                                <li><a href="../classes/EUInformation.html">EUInformation</a></li>
+                                <li><a href="../classes/EventData.html">EventData</a></li>
+                                <li><a href="../classes/EventFieldList.html">EventFieldList</a></li>
+                                <li><a href="../classes/EventFilter.html">EventFilter</a></li>
+                                <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
+                                <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
+                                <li><a href="../classes/ExpandedNodeId.html">ExpandedNodeId</a></li>
+                                <li><a href="../classes/Factory.html">Factory</a></li>
+                                <li><a href="../classes/FilterOperand.html">FilterOperand</a></li>
+                                <li><a href="../classes/FindServersRequest.html">FindServersRequest</a></li>
+                                <li><a href="../classes/FindServersResponse.html">FindServersResponse</a></li>
+                                <li><a href="../classes/FooBar.html">FooBar</a></li>
+                                <li><a href="../classes/FooBarDerived.html">FooBarDerived</a></li>
+                                <li><a href="../classes/FooWithRecursion.html">FooWithRecursion</a></li>
+                                <li><a href="../classes/GetEndpointsRequest.html">GetEndpointsRequest</a></li>
+                                <li><a href="../classes/GetEndpointsResponse.html">GetEndpointsResponse</a></li>
+                                <li><a href="../classes/HelloMessage.html">HelloMessage</a></li>
+                                <li><a href="../classes/HistoryData.html">HistoryData</a></li>
+                                <li><a href="../classes/HistoryModifiedData.html">HistoryModifiedData</a></li>
+                                <li><a href="../classes/HistoryReadDetails.html">HistoryReadDetails</a></li>
+                                <li><a href="../classes/HistoryReadRequest.html">HistoryReadRequest</a></li>
+                                <li><a href="../classes/HistoryReadResponse.html">HistoryReadResponse</a></li>
+                                <li><a href="../classes/HistoryReadResult.html">HistoryReadResult</a></li>
+                                <li><a href="../classes/HistoryReadValueId.html">HistoryReadValueId</a></li>
+                                <li><a href="../classes/HistoryServerCapabilities.html">HistoryServerCapabilities</a></li>
+                                <li><a href="../classes/HistoryUpdateRequest.html">HistoryUpdateRequest</a></li>
+                                <li><a href="../classes/HistoryUpdateResponse.html">HistoryUpdateResponse</a></li>
+                                <li><a href="../classes/HistoryUpdateResult.html">HistoryUpdateResult</a></li>
+                                <li><a href="../classes/IssuedIdentityToken.html">IssuedIdentityToken</a></li>
+                                <li><a href="../classes/LiteralOperand.html">LiteralOperand</a></li>
+                                <li><a href="../classes/LocalizedText.html">LocalizedText</a></li>
+                                <li><a href="../classes/MessageBuilder.html">MessageBuilder</a></li>
+                                <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
+                                <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
+                                <li><a href="../classes/MetaShapeForUnitTest.html">MetaShapeForUnitTest</a></li>
+                                <li><a href="../classes/ModelChangeStructure.html">ModelChangeStructure</a></li>
+                                <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
+                                <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
+                                <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
+                                <li><a href="../classes/ModifySubscriptionRequest.html">ModifySubscriptionRequest</a></li>
+                                <li><a href="../classes/ModifySubscriptionResponse.html">ModifySubscriptionResponse</a></li>
+                                <li><a href="../classes/MonitoredItem.html">MonitoredItem</a></li>
+                                <li><a href="../classes/MonitoredItemCreateRequest.html">MonitoredItemCreateRequest</a></li>
+                                <li><a href="../classes/MonitoredItemCreateResult.html">MonitoredItemCreateResult</a></li>
+                                <li><a href="../classes/MonitoredItemModifyRequest.html">MonitoredItemModifyRequest</a></li>
+                                <li><a href="../classes/MonitoredItemModifyResult.html">MonitoredItemModifyResult</a></li>
+                                <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
+                                <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
+                                <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+                                <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
+                                <li><a href="../classes/NodeId.html">NodeId</a></li>
+                                <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
+                                <li><a href="../classes/NodeTypeDescription.html">NodeTypeDescription</a></li>
+                                <li><a href="../classes/NotificationMessage.html">NotificationMessage</a></li>
+                                <li><a href="../classes/ObjWithAccessLevel.html">ObjWithAccessLevel</a></li>
+                                <li><a href="../classes/ObjWithIntegerId.html">ObjWithIntegerId</a></li>
+                                <li><a href="../classes/opcua.html">opcua</a></li>
+                                <li><a href="../classes/OPCUABaseServer.html">OPCUABaseServer</a></li>
+                                <li><a href="../classes/OPCUAClient.html">OPCUAClient</a></li>
+                                <li><a href="../classes/OPCUAClientBase.html">OPCUAClientBase</a></li>
+                                <li><a href="../classes/OPCUASecureObject.html">OPCUASecureObject</a></li>
+                                <li><a href="../classes/OPCUAServer.html">OPCUAServer</a></li>
+                                <li><a href="../classes/OPCUAServerEndPoint
+                
+                A sever end point is listening to one port.html">OPCUAServerEndPoint
+                
+                A sever end point is listening to one port</a></li>
+                                <li><a href="../classes/OpenSecureChannelRequest.html">OpenSecureChannelRequest</a></li>
+                                <li><a href="../classes/OpenSecureChannelResponse.html">OpenSecureChannelResponse</a></li>
+                                <li><a href="../classes/OperationLimits.html">OperationLimits</a></li>
+                                <li><a href="../classes/PacketAssembler.html">PacketAssembler</a></li>
+                                <li><a href="../classes/ParsingResult.html">ParsingResult</a></li>
+                                <li><a href="../classes/Person.html">Person</a></li>
+                                <li><a href="../classes/Person2.html">Person2</a></li>
+                                <li><a href="../classes/Potato.html">Potato</a></li>
+                                <li><a href="../classes/PublishRequest.html">PublishRequest</a></li>
+                                <li><a href="../classes/PublishResponse.html">PublishResponse</a></li>
+                                <li><a href="../classes/QualifiedName.html">QualifiedName</a></li>
+                                <li><a href="../classes/QueryDataDescription.html">QueryDataDescription</a></li>
+                                <li><a href="../classes/QueryDataSet.html">QueryDataSet</a></li>
+                                <li><a href="../classes/QueryFirstRequest.html">QueryFirstRequest</a></li>
+                                <li><a href="../classes/QueryFirstResponse.html">QueryFirstResponse</a></li>
+                                <li><a href="../classes/QueryNextRequest.html">QueryNextRequest</a></li>
+                                <li><a href="../classes/QueryNextResponse.html">QueryNextResponse</a></li>
+                                <li><a href="../classes/Range.html">Range</a></li>
+                                <li><a href="../classes/ReadAtTimeDetails.html">ReadAtTimeDetails</a></li>
+                                <li><a href="../classes/ReaderState.html">ReaderState</a></li>
+                                <li><a href="../classes/ReadEventDetails.html">ReadEventDetails</a></li>
+                                <li><a href="../classes/ReadProcessedDetails.html">ReadProcessedDetails</a></li>
+                                <li><a href="../classes/ReadRawModifiedDetails.html">ReadRawModifiedDetails</a></li>
+                                <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
+                                <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
+                                <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+                                <li><a href="../classes/RedundantServer.html">RedundantServer</a></li>
+                                <li><a href="../classes/Reference.html">Reference</a></li>
+                                <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
+                                <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
+                                <li><a href="../classes/RegisteredServer.html">RegisteredServer</a></li>
+                                <li><a href="../classes/RegisterNodesRequest.html">RegisterNodesRequest</a></li>
+                                <li><a href="../classes/RegisterNodesResponse.html">RegisterNodesResponse</a></li>
+                                <li><a href="../classes/RegisterServerRequest.html">RegisterServerRequest</a></li>
+                                <li><a href="../classes/RegisterServerResponse.html">RegisterServerResponse</a></li>
+                                <li><a href="../classes/RelativePath.html">RelativePath</a></li>
+                                <li><a href="../classes/RelativePathElement.html">RelativePathElement</a></li>
+                                <li><a href="../classes/RepublishRequest.html">RepublishRequest</a></li>
+                                <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
+                                <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
+                                <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+                                <li><a href="../classes/Role.html">Role</a></li>
+                                <li><a href="../classes/SamplingIntervalDiagnostics.html">SamplingIntervalDiagnostics</a></li>
+                                <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
+                                <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
+                                <li><a href="../classes/SemanticChangeStructure.html">SemanticChangeStructure</a></li>
+                                <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
+                                <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
+                                <li><a href="../classes/ServerCapabilities.html">ServerCapabilities</a></li>
+                                <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
+                                <li><a href="../classes/ServerEngine.html">ServerEngine</a></li>
+                                <li><a href="../classes/ServerSecureChannelLayer.html">ServerSecureChannelLayer</a></li>
+                                <li><a href="../classes/ServerSession.html">ServerSession</a></li>
+                                <li><a href="../classes/ServerSidePublishEngine.html">ServerSidePublishEngine</a></li>
+                                <li><a href="../classes/ServerSideUnimplementedRequest.html">ServerSideUnimplementedRequest</a></li>
+                                <li><a href="../classes/ServerStatus.html">ServerStatus</a></li>
+                                <li><a href="../classes/ServerTCP_transport.html">ServerTCP_transport</a></li>
+                                <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
+                                <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
+                                <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+                                <li><a href="../classes/SessionSecurityDiagnostics.html">SessionSecurityDiagnostics</a></li>
+                                <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
+                                <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
+                                <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
+                                <li><a href="../classes/SetPublishingModeResponse.html">SetPublishingModeResponse</a></li>
+                                <li><a href="../classes/SetTriggeringRequest.html">SetTriggeringRequest</a></li>
+                                <li><a href="../classes/SetTriggeringResponse.html">SetTriggeringResponse</a></li>
+                                <li><a href="../classes/Shape.html">Shape</a></li>
+                                <li><a href="../classes/SignatureData.html">SignatureData</a></li>
+                                <li><a href="../classes/SignedSoftwareCertificate.html">SignedSoftwareCertificate</a></li>
+                                <li><a href="../classes/SimpleAttributeOperand.html">SimpleAttributeOperand</a></li>
+                                <li><a href="../classes/Simulator.html">Simulator</a></li>
+                                <li><a href="../classes/StatusChangeNotification.html">StatusChangeNotification</a></li>
+                                <li><a href="../classes/StatusCode.html">StatusCode</a></li>
+                                <li><a href="../classes/Subscription.html">Subscription</a></li>
+                                <li><a href="../classes/SubscriptionAcknowledgement.html">SubscriptionAcknowledgement</a></li>
+                                <li><a href="../classes/SubscriptionDiagnostics.html">SubscriptionDiagnostics</a></li>
+                                <li><a href="../classes/SymmetricAlgorithmSecurityHeader.html">SymmetricAlgorithmSecurityHeader</a></li>
+                                <li><a href="../classes/TCP_transport.html">TCP_transport</a></li>
+                                <li><a href="../classes/TCPErrorMessage.html">TCPErrorMessage</a></li>
+                                <li><a href="../classes/TimestampsToReturn.html">TimestampsToReturn</a></li>
+                                <li><a href="../classes/TimeZone.html">TimeZone</a></li>
+                                <li><a href="../classes/ToolBrowsePath.html">ToolBrowsePath</a></li>
+                                <li><a href="../classes/TransferResult.html">TransferResult</a></li>
+                                <li><a href="../classes/TransferSubscriptionsRequest.html">TransferSubscriptionsRequest</a></li>
+                                <li><a href="../classes/TransferSubscriptionsResponse.html">TransferSubscriptionsResponse</a></li>
+                                <li><a href="../classes/TranslateBrowsePathsToNodeIdsRequest.html">TranslateBrowsePathsToNodeIdsRequest</a></li>
+                                <li><a href="../classes/TranslateBrowsePathsToNodeIdsResponse.html">TranslateBrowsePathsToNodeIdsResponse</a></li>
+                                <li><a href="../classes/TypeSchema.html">TypeSchema</a></li>
+                                <li><a href="../classes/UAAcknowledgeableConditionBase.html">UAAcknowledgeableConditionBase</a></li>
+                                <li><a href="../classes/UAAlarmConditionBase.html">UAAlarmConditionBase</a></li>
+                                <li><a href="../classes/UACertificateExpirationAlarm.html">UACertificateExpirationAlarm</a></li>
+                                <li><a href="../classes/UAConditionBase.html">UAConditionBase</a></li>
+                                <li><a href="../classes/UADataType.html">UADataType</a></li>
+                                <li><a href="../classes/UADiscreteAlarm.html">UADiscreteAlarm</a></li>
+                                <li><a href="../classes/UAExclusiveDeviationAlarm.html">UAExclusiveDeviationAlarm</a></li>
+                                <li><a href="../classes/UAExclusiveLevelAlarm.html">UAExclusiveLevelAlarm</a></li>
+                                <li><a href="../classes/UAExclusiveLimitAlarm.html">UAExclusiveLimitAlarm</a></li>
+                                <li><a href="../classes/UAExclusiveRateOfChangeAlarm.html">UAExclusiveRateOfChangeAlarm</a></li>
+                                <li><a href="../classes/UALimitAlarm.html">UALimitAlarm</a></li>
+                                <li><a href="../classes/UANonExclusiveDeviationAlarm.html">UANonExclusiveDeviationAlarm</a></li>
+                                <li><a href="../classes/UANonExclusiveLimitAlarm.html">UANonExclusiveLimitAlarm</a></li>
+                                <li><a href="../classes/UAObject.html">UAObject</a></li>
+                                <li><a href="../classes/UAObjectType.html">UAObjectType</a></li>
+                                <li><a href="../classes/UAOffNormalAlarm.html">UAOffNormalAlarm</a></li>
+                                <li><a href="../classes/UASystemOffNormalAlarm.html">UASystemOffNormalAlarm</a></li>
+                                <li><a href="../classes/UATripAlarm.html">UATripAlarm</a></li>
+                                <li><a href="../classes/UATwoStateVariable.html">UATwoStateVariable</a></li>
+                                <li><a href="../classes/UAVariable.html">UAVariable</a></li>
+                                <li><a href="../classes/UAVariableType.html">UAVariableType</a></li>
+                                <li><a href="../classes/UnregisterNodesRequest.html">UnregisterNodesRequest</a></li>
+                                <li><a href="../classes/UnregisterNodesResponse.html">UnregisterNodesResponse</a></li>
+                                <li><a href="../classes/UserNameIdentityToken.html">UserNameIdentityToken</a></li>
+                                <li><a href="../classes/UserTokenPolicy.html">UserTokenPolicy</a></li>
+                                <li><a href="../classes/Variant.html">Variant</a></li>
+                                <li><a href="../classes/View.html">View</a></li>
+                                <li><a href="../classes/ViewDescription.html">ViewDescription</a></li>
+                                <li><a href="../classes/WriteRequest.html">WriteRequest</a></li>
+                                <li><a href="../classes/WriteResponse.html">WriteResponse</a></li>
+                                <li><a href="../classes/WriteValue.html">WriteValue</a></li>
+                                <li><a href="../classes/X509IdentityToken.html">X509IdentityToken</a></li>
+                                <li><a href="../classes/Xml2Json.html">Xml2Json</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/opcua.address_space.html">opcua.address_space</a></li>
+                                <li><a href="../modules/opcua.address_space.AlarmsAndConditions.html">opcua.address_space.AlarmsAndConditions</a></li>
+                                <li><a href="../modules/opcua.address_space.types.html">opcua.address_space.types</a></li>
+                                <li><a href="../modules/opcua.client.html">opcua.client</a></li>
+                                <li><a href="../modules/opcua.data-value.html">opcua.data-value</a></li>
+                                <li><a href="../modules/opcua.datamodel.html">opcua.datamodel</a></li>
+                                <li><a href="../modules/opcua.miscellaneous.html">opcua.miscellaneous</a></li>
+                                <li><a href="../modules/opcua.server.html">opcua.server</a></li>
+                                <li><a href="../modules/opcua.server.simulation.html">opcua.server.simulation</a></li>
+                                <li><a href="../modules/opcua.status-code.html">opcua.status-code</a></li>
+                                <li><a href="../modules/opcua.transport.html">opcua.transport</a></li>
+                                <li><a href="../modules/opcua.utils.html">opcua.utils</a></li>
+                                <li><a href="../modules/opcua.variant.html">opcua.variant</a></li>
+                                <li><a href="../modules/service.filter.tools.html">service.filter.tools</a></li>
+                                <li><a href="../modules/services.browse.html">services.browse</a></li>
+                                <li><a href="../modules/services.call.html">services.call</a></li>
+                                <li><a href="../modules/services.discovery.html">services.discovery</a></li>
+                                <li><a href="../modules/services.endpoints.html">services.endpoints</a></li>
+                                <li><a href="../modules/services.filter.html">services.filter</a></li>
+                                <li><a href="../modules/services.history.html">services.history</a></li>
+                                <li><a href="../modules/services.node_management.html">services.node_management</a></li>
+                                <li><a href="../modules/services.query.html">services.query</a></li>
+                                <li><a href="../modules/services.read.html">services.read</a></li>
+                                <li><a href="../modules/services.register-server.html">services.register-server</a></li>
+                                <li><a href="../modules/services.register_node.html">services.register_node</a></li>
+                                <li><a href="../modules/services.secure-channel.html">services.secure-channel</a></li>
+                                <li><a href="../modules/services.session.html">services.session</a></li>
+                                <li><a href="../modules/services.subscription.html">services.subscription</a></li>
+                                <li><a href="../modules/services.translate-browse-path.html">services.translate-browse-path</a></li>
+                                <li><a href="../modules/services.write.html">services.write</a></li>
+                                <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
+                                <li><a href="../modules/xml2json
+                
+                node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+                
+                node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: packages\node-opcua-address-space\src\alarms_and_conditions\alarm_condition.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+&quot;use strict&quot;;
+
+/**
+ * @module opcua.address_space.AlarmsAndConditions
+ */
+
+
+var assert = require(&quot;node-opcua-assert&quot;);
+var _ = require(&quot;underscore&quot;);
+var UAVariable = require(&quot;../ua_variable&quot;).UAVariable;
+var Variant = require(&quot;node-opcua-variant&quot;).Variant;
+var DataType = require(&quot;node-opcua-variant&quot;).DataType;
+var StatusCodes = require(&quot;node-opcua-status-code&quot;).StatusCodes;
+
+
+var util = require(&quot;util&quot;);
+
+var conditions = require(&quot;./condition&quot;);
+var ConditionInfo = require(&quot;./condition&quot;).ConditionInfo;
+var ConditionSnapshot = conditions.ConditionSnapshot;
+var AddressSpace = require(&quot;../address_space&quot;).AddressSpace;
+var NodeId = require(&quot;node-opcua-nodeid&quot;).NodeId;
+
+var UAAcknowledgeableConditionBase = require(&quot;./acknowledgeable_condition&quot;).UAAcknowledgeableConditionBase;
+
+var doDebug = false;
+//----------------------------------------------------------------------------------------------------------------------
+// UAShelvingStateMachine
+//----------------------------------------------------------------------------------------------------------------------
+var UAStateMachine = require(&quot;../state_machine/finite_state_machine&quot;).UAStateMachine;
+
+function UAShelvingStateMachine() {
+
+}
+
+util.inherits(UAShelvingStateMachine, UAStateMachine);
+
+UAShelvingStateMachine.promote = function (shelvingState) {
+
+    UAStateMachine.promote(shelvingState);
+
+    Object.setPrototypeOf(shelvingState, UAShelvingStateMachine.prototype);
+    shelvingState._timer = null;
+
+    if (shelvingState.unshelve) {
+        shelvingState.unshelve.bindMethod(_unshelve_method);
+    }
+    if (shelvingState.timedShelve) {
+        shelvingState.timedShelve.bindMethod(_timedShelve_method);
+    }
+    if (shelvingState.oneShotShelve) {
+        shelvingState.oneShotShelve.bindMethod(_oneShotShelve_method);
+    }
+    // install unshelveTime
+    if (shelvingState.unshelveTime) {
+        shelvingState.unshelveTime.minimumSamplingInterval = 500;
+        shelvingState.unshelveTime.bindVariable({
+            get: _unShelveTimeFunc.bind(null, shelvingState)
+        }, true);
+    }
+
+    assert(shelvingState instanceof UAShelvingStateMachine);
+};
+
+
+//----------------------------------------------------------------------------------------------------------------------
+// Extension of the snapshot object
+//----------------------------------------------------------------------------------------------------------------------
+
+/**
+ * @class ConditionSnapshot
+ */
+/**
+ * @method getSuppressedState
+ * @return {Boolean}
+ */
+ConditionSnapshot.prototype.getSuppressedState = function () {
+    var self = this;
+    return self._get_twoStateVariable(&quot;suppressedState&quot;);
+};
+
+/**
+ * @method setSuppressedState
+ * @param suppressed {Boolean}
+ */
+ConditionSnapshot.prototype.setSuppressedState = function (suppressed) {
+    suppressed = !!suppressed;
+    var self = this;
+    self._set_twoStateVariable(&quot;suppressedState&quot;, suppressed);
+};
+
+ConditionSnapshot.prototype.getActiveState = function () {
+    var self = this;
+    return self._get_twoStateVariable(&quot;activeState&quot;);
+};
+
+ConditionSnapshot.prototype.setActiveState = function (newActiveState) {
+    var self = this;
+    //xx var activeState = self.getActiveState();
+    //xx if (activeState === newActiveState) {
+    //xx     return StatusCodes.Bad;
+    //xx }
+    self._set_twoStateVariable(&quot;activeState&quot;, newActiveState);
+    return StatusCodes.Good;
+};
+
+ConditionSnapshot.prototype.setShelvingState = function (state) {
+
+};
+
+/**
+ * @class UAAlarmConditionBase
+ * @constructor
+ * @extends UAAcknowledgeableConditionBase
+ */
+function UAAlarmConditionBase() {
+
+}
+
+util.inherits(UAAlarmConditionBase, UAAcknowledgeableConditionBase);
+
+UAAlarmConditionBase.prototype.dispose = function () {
+    var self = this;
+    if (self.shelvingState) {
+        _clear_timer_if_any(self.shelvingState);
+    }
+    UAAcknowledgeableConditionBase.prototype.dispose.apply(self, arguments);
+};
+
+
+/**
+ * @method activateAlarm
+ */
+UAAlarmConditionBase.prototype.activateAlarm = function () {
+    // will set acknowledgeable to false and retain to true
+    var self = this;
+    var branch = self.currentBranch();
+    branch.setRetain(true);
+    branch.setActiveState(true);
+    branch.setAckedState(false);
+};
+
+/**
+ * @method desactivateAlarm
+ */
+UAAlarmConditionBase.prototype.desactivateAlarm = function () {
+    var self = this;
+    var branch = self.currentBranch();
+    branch.setRetain(true);
+    branch.setActiveState(false);
+};
+
+
+/**
+ * @method isSuppressedOrShelved
+ * @return {boolean}
+ */
+UAAlarmConditionBase.prototype.isSuppressedOrShelved = function () {
+
+    var node = this;
+    var suppressed = false;
+    if (node.suppressedState) {
+        suppressed = node.suppressedState.id.readValue().value.value;
+    }
+    var shelved = false;
+    if (node.shelvingState) {
+        var shelvedValue = node.shelvingState.currentState.readValue().value.value;
+        if (shelvedValue &amp;&amp; shelvedValue.text !== &quot;Unshelved&quot;) {
+            shelved = true;
+        }
+        //console.log(&quot;shelved = shelved&quot;,shelvedValue,shelved);
+    }
+    //xx console.log(&quot; isSuppressedOrShelved &quot;,suppressed,shelved);
+    return suppressed || shelved;
+};
+
+/**
+ * @method getSuppressedOrShelved
+ * @return {Boolean}
+ */
+UAAlarmConditionBase.prototype.getSuppressedOrShelved = function () {
+    var node = this;
+    return node.suppressedOrShelved.readValue().value.value;
+};
+
+/**
+ * @method setMaxTimeShelved
+ * @param duration  ( Duration in Milliseconds)
+ */
+UAAlarmConditionBase.prototype.setMaxTimeShelved = function (duration) {
+    var self = this;
+    self.maxTimeShelved.setValueFromSource({
+        dataType: &quot;Duration&quot;, // &lt;= Duration is basic Type Double! ( milliseconds)
+        value: duration
+    });
+};
+
+UAAlarmConditionBase.MaxDuration = 999999999.999;
+/**
+ * @method getMaxTimeShelved
+ * @return {Duration}
+ */
+UAAlarmConditionBase.prototype.getMaxTimeShelved = function () {
+    var node = this;
+    if (!node.maxTimeShelved) {
+        return UAAlarmConditionBase.MaxDuration;
+    }
+    var dataValue = node.maxTimeShelved.readValue();
+    assert(dataValue.value.dataType === DataType.Double); // Double &lt;= Duration
+    return dataValue.value.value;
+};
+
+function _update_suppressedOrShelved(alarmNode) {
+
+    alarmNode.suppressedOrShelved.setValueFromSource({
+        dataType: DataType.Boolean,
+        value: alarmNode.isSuppressedOrShelved()
+    });
+}
+
+// The Unshelve Method sets the AlarmCondition to the Unshelved state. Normally, the MethodId found
+// the Shelving child of the Condition instance and the NodeId of the Shelving object as the ObjectId
+// are passed to the Call Service. However, some Servers do not expose Condition instances in the
+// AddressSpace. Therefore all Servers shall also allow Clients to call the Unshelve Method by
+// specifying ConditionId as the ObjectId. The Method cannot be called with an ObjectId of the
+// ShelvedStateMachineType Node.
+// output =&gt; Bad_ConditionNotShelved
+function _unshelve_method(inputArguments, context, callback) {
+
+    assert(inputArguments.length === 0);
+    // var alarmNode = context.object.parent;
+    // if (!(alarmNode instanceof UAAlarmConditionBase)) {
+    //     return callback(null, {statusCode: StatusCodes.BadNodeIdInvalid});
+    // }
+    //
+    // if (!alarmNode.getEnabledState() ) {
+    //     return callback(null, {statusCode: StatusCodes.BadConditionDisabled});
+    // }
+
+    var shelvingState = context.object;
+    if (shelvingState.getCurrentState() === &quot;Unshelved&quot;) {
+        return callback(null, {
+            statusCode: StatusCodes.BadConditionNotShelved
+        });
+    }
+    shelvingState.setState(&quot;Unshelved&quot;);
+
+    shelvingState._unsheveldTime = new Date(); // now
+
+    _clear_timer_if_any(shelvingState);
+    assert(!shelvingState._timer);
+
+    return callback(null, {
+        statusCode: StatusCodes.Good
+    });
+}
+
+function _clear_timer_if_any(shelvingState) {
+    assert(shelvingState instanceof UAShelvingStateMachine);
+    if (shelvingState._timer) {
+        clearTimeout(shelvingState._timer);
+        //xx console.log(&quot;_clear_timer_if_any shelvingState = &quot;,shelvingState._timer,shelvingState.constructor.name);
+        shelvingState._timer = null;
+    }
+}
+
+function _automatically_unshelve(shelvingState) {
+
+    assert(shelvingState._timer, &quot;expecting timerId to be set&quot;);
+    shelvingState._timer = null;
+
+    if (doDebug) {
+        console.log(&quot;Automatically unshelving variable &quot;, shelvingState.browseName.toString());
+    }
+
+    if (shelvingState.getCurrentState() === &quot;Unshelved&quot;) {
+        throw new Error(StatusCodes.BadConditionNotShelved);
+    }
+    shelvingState.setState(&quot;Unshelved&quot;);
+
+    shelvingState._unsheveldTime = new Date(); // now
+    assert(!shelvingState._timer);
+}
+
+function _start_timer_for_automatic_unshelve(shelvingState, duration) {
+
+    shelvingState._sheveldTime = new Date(); // now
+    shelvingState._duration = duration;
+    if (doDebug) {
+        console.log(&quot;shelvingState._duration&quot;, shelvingState._duration);
+    }
+
+    assert(!shelvingState._timer);
+    if (duration !== UAAlarmConditionBase.MaxDuration) {
+        assert(!shelvingState._timer);
+        shelvingState._timer = setTimeout(_automatically_unshelve.bind(null, shelvingState), shelvingState._duration);
+    }
+}
+
+// Spec 1.03:
+// The TimedShelve Method sets the AlarmCondition to the TimedShelved state
+// (parameters are defined in Table 38 and result codes are described in Table 39).
+// Normally, the MethodId found in the Shelving child of the Condition instance and the NodeId of the Shelving object
+// as the ObjectId are passed to the Call Service. However, some Servers do not expose Condition instances in the
+// AddressSpace. Therefore all Servers shall also allow Clients to call the TimedShelve Method by specifying
+// ConditionId as the ObjectId. The Method cannot be called with an ObjectId of the ShelvedStateMachineType Node.
+//
+// Signature:   TimedShelve([in] Duration ShelvingTime);
+//
+// ShelvingTime Specifies a fixed time for which the Alarm is to be shelved. The Server may refuse the provided duration.
+//              If a MaxTimeShelved Property exist on the Alarm than the Shelving time shall be less than or equal
+//              to the value of this Property.
+// StatusCode :
+//               Bad_ConditionAlreadyShelved The Alarm is already in TimedShelved state and the system does not allow
+//                                           a reset of the shelved timer.
+//               Bad_ShelvingTimeOutOfRange
+function _timedShelve_method(inputArguments, context, callback) {
+    assert(inputArguments.length === 1);
+
+    var shelvingState = context.object;
+    assert(shelvingState instanceof UAShelvingStateMachine);
+
+    if (shelvingState.getCurrentState() !== &quot;Unshelved&quot;) {
+        return callback(null, {
+            statusCode: StatusCodes.BadConditionAlreadyShelved
+        });
+    }
+    // checking duration ...
+    var alarmNode = context.object.parent;
+
+    // istanbul ignore next
+    if (!(alarmNode instanceof UAAlarmConditionBase)) {
+        return callback(null, {
+            statusCode: StatusCodes.BadNodeIdInvalid
+        });
+    }
+    var maxTimeShelved = alarmNode.getMaxTimeShelved();
+    assert(_.isFinite(maxTimeShelved));
+
+    assert(inputArguments[0].dataType === DataType.Double); // Duration
+    assert(inputArguments[0] instanceof Variant);
+
+    //xx console.log(&quot;inputArguments&quot;,inputArguments[0].toString());
+
+    var proposedDuration = inputArguments[0].value; // as double (milliseconds)
+    if (proposedDuration &gt; maxTimeShelved) {
+        return callback(null, {
+            statusCode: StatusCodes.BadShelvingTimeOutOfRange
+        });
+    }
+
+    _clear_timer_if_any(shelvingState);
+    shelvingState.setState(&quot;TimedShelved&quot;);
+    _start_timer_for_automatic_unshelve(shelvingState, proposedDuration);
+
+    return callback(null, {
+        statusCode: StatusCodes.Good
+    });
+
+}
+
+
+// Spec 1.03:
+// OneShotShelve Method
+// The OneShotShelve Method sets the AlarmCondition to the OneShotShelved state. Normally, the MethodId found in the
+// Shelving child of the Condition instance and the NodeId of the Shelving object as the ObjectId are passed to the
+// Call Service. However, some Servers do not expose Condition instances in the AddressSpace. Therefore all Servers
+// shall also allow Clients to call the OneShotShelve Method by specifying ConditionId as the ObjectId. The Method
+// cannot be called with an ObjectId of the ShelvedStateMachineType Node
+function _oneShotShelve_method(inputArguments, context, callback) {
+
+    assert(inputArguments.length === 0);
+    var shelvingState = context.object;
+    if (shelvingState.getCurrentState() === &quot;OneShotShelved&quot;) {
+        return callback(null, {
+            statusCode: StatusCodes.BadConditionAlreadyShelved
+        });
+    }
+    // checking duration ...
+    var alarmNode = context.object.parent;
+
+    // istanbul ignore next
+    if (!(alarmNode instanceof UAAlarmConditionBase)) {
+        return callback(null, {
+            statusCode: StatusCodes.BadNodeIdInvalid
+        });
+    }
+
+
+    var maxTimeShelved = alarmNode.getMaxTimeShelved();
+    assert(_.isFinite(maxTimeShelved));
+    assert(maxTimeShelved !== UAAlarmConditionBase.MaxDuration);
+
+    // set automatic unshelving timer
+    _clear_timer_if_any(shelvingState);
+    shelvingState.setState(&quot;OneShotShelved&quot;);
+    _start_timer_for_automatic_unshelve(shelvingState, maxTimeShelved);
+
+    return callback(null, {
+        statusCode: StatusCodes.Good
+    });
+}
+
+// from spec 1.03 :
+// * UnshelveTime specifies the remaining time in milliseconds until the Alarm automatically
+//   transitions into the Un-shelved state.
+// * For the TimedShelved state this time is initialised with the ShelvingTime argument of the
+//   TimedShelve Method call.
+// * For the OneShotShelved state the UnshelveTime will be a constant set to the maximum Duration
+//   except if a MaxTimeShelved Property is provided.
+function _unShelveTimeFunc(shelvingState) {
+
+
+    if (shelvingState.getCurrentState() === &quot;Unshelved&quot;) {
+        return new Variant({
+            dataType: DataType.StatusCode,
+            value: StatusCodes.BadConditionNotShelved
+        });
+    }
+
+    if (shelvingState.getCurrentState() === &quot;OneShotShelved&quot; &amp;&amp; shelvingState._duration === UAAlarmConditionBase.MaxDuration) {
+        return new Variant({
+            dataType: DataType.Double,
+            value: UAAlarmConditionBase.MaxDuration
+        });
+    }
+    var now = new Date();
+    var timeToAutomaticUnshelvedState = shelvingState._duration - (now - shelvingState._sheveldTime);
+    // timeToAutomaticUnshelvedState should be greater than zero
+
+    return new Variant({
+        dataType: DataType.Double, // duration
+        value: timeToAutomaticUnshelvedState
+    });
+}
+
+
+/**
+ * @method getInputNodeNode
+ * @return {BaseNode} return the node in the address space pointed by the inputNode value
+ * 
+ * Note: please note the difference between alarm.inputNode
+ *    *  alarm.inputNode is a UAVariable property of the alarm object holding the nodeid of the input node in its value.
+ *    *  getInputNodeNode() is the UAVariable that contains the value that affects the state of the alarm and 
+ *       whose node id is stored in alarm.inputNode
+ */
+UAAlarmConditionBase.prototype.getInputNodeNode = function () {
+    var nodeId = this.inputNode.readValue().value.value;
+    assert(nodeId instanceof NodeId || nodeId === null);
+    return this.addressSpace.findNode(nodeId);
+};
+
+/**
+ * @method getInputNodeValue
+ * @return {*}
+ */
+UAAlarmConditionBase.prototype.getInputNodeValue = function () {
+    var node = this.getInputNodeNode();
+    if (!node) {
+        return null;
+    }
+    assert(node instanceof UAVariable);
+    return node.readValue().value.value;
+};
+
+UAAlarmConditionBase.prototype.updateState = function () {
+    var alarm = this;
+    var dataValue = alarm.getInputNodeNode().readValue();
+    alarm._onInputDataValueChange(dataValue);
+};
+
+UAAlarmConditionBase.prototype._onInputDataValueChange = function (newValue) {
+    //xx console.log(&quot;class=&quot;,this.constructor.name,this.browseName.toString());
+    //xx throw new Error(&quot;_onInputDataValueChange must be overridden&quot;);
+};
+/**
+ * install mechanism that listen to input node datavalue changes so that alarm status
+ * can be automatically updated appropriatly.
+ * @protected  
+ */
+UAAlarmConditionBase.prototype._installInputNodeMonitoring = function (inputNode) {
+    var alarm = this;
+    /**
+     *
+     *
+     * The InputNode Property provides the NodeId of the Variable the Value of which is used as
+     * primary input in the calculation of the Alarm state. If this Variable is not in the AddressSpace,
+     * a Null NodeId shall be provided. In some systems, an Alarm may be calculated based on
+     * multiple Variables Values; it is up to the system to determine which Variable’s NodeId is used.
+     * @property inputNode
+     * @type     UAVariable
+     * dataType is DataType.NodeId
+     */
+    assert(alarm.inputNode instanceof UAVariable);
+
+
+    var addressSpace = this.addressSpace;
+    assert(inputNode, &quot; must provide options.inputNode (NodeId or BaseNode object)&quot;);
+
+    if (inputNode === NodeId.NullNodeId) {
+
+        alarm.inputNode.setValueFromSource({
+            dataType: DataType.NodeId,
+            value: NodeId.NullNodeId
+        });
+
+    } else {
+
+        alarm.inputNode.setValueFromSource({
+            dataType: &quot;NodeId&quot;,
+            value: inputNode.nodeId
+        });
+
+        var _node = addressSpace._coerceNode(inputNode);
+        if (!_node) {
+            console.log(&quot; cannot find nodeId &quot;, inputNode);
+        }
+        assert(_node, &quot;Expecting a valid input node&quot;);
+        alarm.inputNode.setValueFromSource({
+            dataType: DataType.NodeId,
+            value: _node.nodeId
+        });
+        alarm.getInputNodeNode().on(&quot;value_changed&quot;, function (newDataValue /*, oldDataValue */) {
+            if (!alarm.getEnabledState()) {
+                // disabled alarms shall ignored input node value change event
+                // (alarm shall be reevaluated when EnabledState goes back to true)
+                return;
+            }
+            alarm._onInputDataValueChange(newDataValue);
+        });
+    }
+
+
+};
+
+UAAlarmConditionBase.prototype.getCurrentConditionInfo = function () {
+
+    var alarm = this;
+
+    var oldSeverity = alarm.currentBranch().getSeverity();
+    var oldQuality = alarm.currentBranch().getQuality();
+    var oldMessage = alarm.currentBranch().getMessage();
+    var oldRetain = alarm.currentBranch().getRetain();
+
+    var oldConditionInfo = new ConditionInfo({
+        severity: oldSeverity,
+        quality: oldQuality,
+        message: oldMessage,
+        retain: oldRetain
+    });
+
+    return oldConditionInfo;
+};
+
+
+/***
+ * @method  _calculateConditionInfo
+ * @param stateData {Object}   the new calculated state of the alarm
+ * @param isActive  {Boolean}
+ * @param value     {Number}   the new value of the limit alarm
+ * @param oldCondition  {ConditionInfo} given for information purpose
+ * @param oldCondition.severity
+ * @param oldCondition.quality
+ * @param oldCondition.message
+ * @param oldCondition.retain
+ * @return {ConditionInfo} the new condition info
+ *
+ * this method need to be overridden by the instantiate to allow custom message and severity
+ * to be set based on specific context of the alarm.
+ *
+ * @example
+ *
+ *
+ *    var myAlarm = addressSpace.instantiateExclusiveLimitAlarm({...});
+ *    myAlarm._calculateConditionInfo = function(stateName,value,oldCondition) {
+ *       var percent = Math.ceil(value * 100);
+ *       return new ConditionInfo({
+ *            message: &quot;Tank is almost &quot; + percent + &quot;% full&quot;,
+ *            severity: 100,
+ *            quality: StatusCodes.Good
+ *      });
+ *    };
+ *
+ */
+UAAlarmConditionBase.prototype._calculateConditionInfo = function (stateData, isActive, value, oldCondition) {
+
+    if (!stateData) {
+        return new ConditionInfo({
+            severity: 0,
+            message: &quot;Back to normal&quot;,
+            quality: StatusCodes.Good,
+            retain: true
+        });
+    } else {
+        return new ConditionInfo({
+            severity: 150,
+            message: &quot;Condition value is &quot; + value + &quot; and state is &quot; + stateData,
+            quality: StatusCodes.Good,
+            retain: true
+        });
+
+    }
+};
+
+UAAlarmConditionBase.prototype._signalInitialCondition = function () {
+    var alarm = this;
+    alarm.currentBranch().setActiveState(false);
+    alarm.currentBranch().setAckedState(true);
+};
+UAAlarmConditionBase.prototype._signalNewCondition = function (stateName, isActive, value) {
+
+    var alarm = this;
+    //xx if(stateName === null) {
+    //xx     alarm.currentBranch().setActiveState(false);
+    //xx     alarm.currentBranch().setAckedState(true);
+    //xx     return;
+    //xx }
+    // disabled alarm shall not generate new condition events
+    assert(alarm.getEnabledState() === true);
+    //xx assert(isActive !== alarm.activeState.getValue());
+
+    var oldConditionInfo = alarm.getCurrentConditionInfo();
+    var newConditionInfo = alarm._calculateConditionInfo(stateName, isActive, value, oldConditionInfo);
+
+    // detect potential internal bugs due to misused of _signalNewCondition
+    if (_.isEqual(oldConditionInfo, newConditionInfo)) {
+        console.log(oldConditionInfo);
+        throw new Error(&quot;condition values have not change, shall we really raise an event ? alarm &quot; + alarm.browseName.toString());
+    }
+    assert(!_.isEqual(oldConditionInfo, newConditionInfo), &quot;condition values have not change, shall we really raise an event ?&quot;);
+
+    if (isActive) {
+        alarm.currentBranch().setActiveState(true);
+        alarm.currentBranch().setAckedState(false);
+        alarm.raiseNewCondition(newConditionInfo);
+    } else {
+
+        if (alarm.currentBranch().getAckedState() === false) {
+            // prior state need acknowledgement
+            // note : TODO : timestamp of branch and new state of current branch must be identical
+
+            if (alarm.currentBranch().getRetain()) {
+
+                // we need to create a new branch so the previous state could be acknowledged
+                var newBranch = alarm.createBranch();
+                assert(newBranch.getBranchId() !== NodeId.NullNodeId);
+                // also raised a new Event for the new branch as branchId has changed
+                alarm.raiseNewBranchState(newBranch);
+
+            }
+        }
+
+        alarm.currentBranch().setActiveState(false);
+        alarm.currentBranch().setAckedState(true);
+
+        alarm.raiseNewCondition(newConditionInfo);
+    }
+};
+
+exports.UAAlarmConditionBase = UAAlarmConditionBase;
+
+/**
+ * @method (static)UAAlarmConditionBase.instantiate
+ * @param alarmConditionTypeId
+ * @param options
+ * @param options.inputNode
+ * @param options.optionals  could be &quot;SuppressedState&quot; , &quot;ShelvingState&quot;
+ * @param [options.maxTimeShelved {Number|null}] max TimeShelved duration (in ms)
+ * @param data
+ */
+UAAlarmConditionBase.instantiate = function (addressSpace, alarmConditionTypeId, options, data) {
+
+    //xx assert(options.hasOwnProperty(&quot;conditionOf&quot;)); // must provide a conditionOf
+    assert(options.hasOwnProperty(&quot;inputNode&quot;)); // must provide a inputNode
+    var alarmConditionType = addressSpace.findEventType(alarmConditionTypeId);
+
+    /* istanbul ignore next */
+    if (!alarmConditionType) {
+        throw new Error(&quot; cannot find Alarm Condition Type for &quot; + alarmConditionTypeId);
+    }
+
+    var alarmConditionTypeBase = addressSpace.findEventType(&quot;AlarmConditionType&quot;);
+    /* istanbul ignore next */
+    if (!alarmConditionTypeBase) {
+        throw new Error(&quot;cannot find AlarmConditionType&quot;);
+    }
+
+    options.optionals = options.optionals || [];
+    if (options.hasOwnProperty(&quot;maxTimeShelved&quot;)) {
+        options.optionals.push(&quot;MaxTimeShelved&quot;);
+        assert(_.isFinite(options.maxTimeShelved));
+    }
+
+    assert(alarmConditionTypeBase === alarmConditionType || alarmConditionType.isSupertypeOf(alarmConditionTypeBase));
+
+    var alarmNode = UAAcknowledgeableConditionBase.instantiate(addressSpace, alarmConditionTypeId, options, data);
+    Object.setPrototypeOf(alarmNode, UAAlarmConditionBase.prototype);
+
+    // ----------------------- Install Alarm specifics
+    //
+
+    // Specs 1.03:
+    // ActiveState/Id when set to TRUE indicates that the situation the Condition is representing
+    // currently exists. When a Condition instance is in the inactive state (ActiveState/Id when set to
+    // FALSE) it is representing a situation that has returned to a normal state. The transitions of
+    // Conditions to the inactive and Active states are triggered by Server specific actions. Sub-
+    // Types of the AlarmConditionType specified later in this document will have sub-state models
+    // that further define the Active state. Recommended state names are described in Annex A.
+    // install activeState - Mandatory
+
+    /**
+     * @property activeState
+     * @type {UATwoStateVariable}
+     */
+    AddressSpace._install_TwoStateVariable_machinery(alarmNode.activeState, {
+        trueState: &quot;Active&quot;,
+        falseState: &quot;Inactive&quot;
+    });
+
+    alarmNode.currentBranch().setActiveState(false);
+
+    // Specs 1.03:
+    /**
+     *
+     * SuppressState is used internally by a Server to automatically suppress Alarms due to system
+     * specific reasons. For example a system may be configured to suppress Alarms that are
+     * associated with machinery that is shutdown, such as a low level Alarm for a tank that is
+     * currently not in use.
+     *
+     * @property suppressedState
+     * @type UATwoStateVariable
+     */
+    if (alarmNode.suppressedState) {
+        // install activeState - Optional
+        AddressSpace._install_TwoStateVariable_machinery(alarmNode.suppressedState, {
+            trueState: &quot;Suppressed&quot;,
+            falseState: &quot;Unsuppressed&quot;
+        });
+
+    }
+    // Specs 1.03:
+    /**
+     * ShelvingState suggests whether an Alarm shall (temporarily) be prevented from being
+     * displayed to the user. It is quite often used to block nuisance Alarms.
+     *
+     * @property shelvingState
+     * @type UAShelvingStateMachine
+     */
+    if (alarmNode.shelvingState) {
+        UAShelvingStateMachine.promote(alarmNode.shelvingState);
+
+    }
+
+    // SuppressedOrShelved : Mandatory
+    // install supressedOrShelved automatic detection
+    /**
+     * The SuppressedState and the ShelvingState together result in the SuppressedOrShelved status of the
+     * Condition. When an Alarm is in one of the states, the SuppressedOrShelved property will be set TRUE
+     * and this Alarm is then typically not displayed by the Client. State transitions associated with the
+     * Alarm do occur, but they are not typically displayed by the Clients as long as the Alarm remains in
+     * either the Suppressed or Shelved state.
+     * @property suppressedState
+     * @type UAVariable - DataType Boolean
+     *
+     */
+    if (alarmNode.suppressedState) {
+        alarmNode.suppressedState.on(&quot;value_changed&quot;, function (newDataValue) {
+            _update_suppressedOrShelved(alarmNode);
+        });
+    }
+    if (alarmNode.shelvingState) {
+        alarmNode.shelvingState.currentState.on(&quot;value_changed&quot;, function (newDataValue) {
+            _update_suppressedOrShelved(alarmNode);
+        });
+    }
+    _update_suppressedOrShelved(alarmNode);
+
+    /**
+     * The optional Property MaxTimeShelved is used to set the maximum time that an Alarm Condition may be shelved.
+     * The value is expressed as duration. Systems can use this Property to prevent permanent Shelving of an Alarm.
+     * If this Property is present it will be an upper limit on the duration passed into a TimedShelve Method call.
+     * If a value that exceeds the value of this property is passed to the TimedShelve Method,
+     * than a Bad_ShelvingTimeOutOfRange error code is returned on the call. If this Property is present it will
+     * also be enforced for the OneShotShelved state, in that an Alarm Condition will transition to the Unshelved
+     * state from the OneShotShelved state if the duration specified in this Property expires following a
+     * OneShotShelve operation without a change of any of the other items associated with the Condition.
+     *
+     * @property maxTimeShelved
+     * @type {UAVariable}
+     */
+    if (alarmNode.maxTimeShelved) {
+        options.maxTimeShelved = options.maxTimeShelved || 60.0 * 1000; // 60 seconds
+        alarmNode.maxTimeShelved.setValueFromSource({
+            dataType: &quot;Duration&quot;,
+            value: options.maxTimeShelved
+        });
+    }
+
+
+    // ---------- install inputNode
+    assert(options.inputNode, &quot; must provide options.inputNode (NodeId or BaseNode object)&quot;);
+    alarmNode._installInputNodeMonitoring(options.inputNode);
+
+    assert(alarmNode instanceof UAAcknowledgeableConditionBase);
+    assert(alarmNode instanceof UAAlarmConditionBase);
+    return alarmNode;
+};
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

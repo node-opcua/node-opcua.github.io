@@ -1,0 +1,1707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>packages\node-opcua-address-space-for-conformance-testing\src\address_space_for_conformance_testing.js - The NodeOPCUA API</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.1.0-pre</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/AcknowledgeMessage.html">AcknowledgeMessage</a></li>
+                                <li><a href="../classes/ActivateSessionRequest.html">ActivateSessionRequest</a></li>
+                                <li><a href="../classes/ActivateSessionResponse.html">ActivateSessionResponse</a></li>
+                                <li><a href="../classes/AddNodesItem.html">AddNodesItem</a></li>
+                                <li><a href="../classes/AddNodesRequest.html">AddNodesRequest</a></li>
+                                <li><a href="../classes/AddNodesResponse.html">AddNodesResponse</a></li>
+                                <li><a href="../classes/AddNodesResult.html">AddNodesResult</a></li>
+                                <li><a href="../classes/AddReferencesItem.html">AddReferencesItem</a></li>
+                                <li><a href="../classes/AddReferencesRequest.html">AddReferencesRequest</a></li>
+                                <li><a href="../classes/AddReferencesResponse.html">AddReferencesResponse</a></li>
+                                <li><a href="../classes/AddressSpace.html">AddressSpace</a></li>
+                                <li><a href="../classes/AggregateConfiguration.html">AggregateConfiguration</a></li>
+                                <li><a href="../classes/AggregateFilter.html">AggregateFilter</a></li>
+                                <li><a href="../classes/AnonymousIdentityToken.html">AnonymousIdentityToken</a></li>
+                                <li><a href="../classes/ApplicationDescription.html">ApplicationDescription</a></li>
+                                <li><a href="../classes/ApplicationInstanceCertificate.html">ApplicationInstanceCertificate</a></li>
+                                <li><a href="../classes/Argument.html">Argument</a></li>
+                                <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
+                                <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+                                <li><a href="../classes/AttributeNameById.html">AttributeNameById</a></li>
+                                <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
+                                <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
+                                <li><a href="../classes/BaseEventType.html">BaseEventType</a></li>
+                                <li><a href="../classes/BaseNode.html">BaseNode</a></li>
+                                <li><a href="../classes/BaseUAObject.html">BaseUAObject</a></li>
+                                <li><a href="../classes/BinaryStream.html">BinaryStream</a></li>
+                                <li><a href="../classes/BinaryStreamSizeCalculator.html">BinaryStreamSizeCalculator</a></li>
+                                <li><a href="../classes/BrowseDescription.html">BrowseDescription</a></li>
+                                <li><a href="../classes/BrowseDirection.html">BrowseDirection</a></li>
+                                <li><a href="../classes/BrowseNextRequest.html">BrowseNextRequest</a></li>
+                                <li><a href="../classes/BrowseNextResponse.html">BrowseNextResponse</a></li>
+                                <li><a href="../classes/BrowsePath.html">BrowsePath</a></li>
+                                <li><a href="../classes/BrowsePathResult.html">BrowsePathResult</a></li>
+                                <li><a href="../classes/BrowsePathTarget.html">BrowsePathTarget</a></li>
+                                <li><a href="../classes/BrowseRequest.html">BrowseRequest</a></li>
+                                <li><a href="../classes/BrowseResponse.html">BrowseResponse</a></li>
+                                <li><a href="../classes/BrowseResult.html">BrowseResult</a></li>
+                                <li><a href="../classes/BuildInfo.html">BuildInfo</a></li>
+                                <li><a href="../classes/CallMethodRequest.html">CallMethodRequest</a></li>
+                                <li><a href="../classes/CallMethodResult.html">CallMethodResult</a></li>
+                                <li><a href="../classes/CallRequest.html">CallRequest</a></li>
+                                <li><a href="../classes/CallResponse.html">CallResponse</a></li>
+                                <li><a href="../classes/CancelRequest.html">CancelRequest</a></li>
+                                <li><a href="../classes/CancelResponse.html">CancelResponse</a></li>
+                                <li><a href="../classes/ChannelSecurityToken.html">ChannelSecurityToken</a></li>
+                                <li><a href="../classes/ChunkManager.html">ChunkManager</a></li>
+                                <li><a href="../classes/ClientMonitoredItem.html">ClientMonitoredItem</a></li>
+                                <li><a href="../classes/ClientMonitoredItemGroup.html">ClientMonitoredItemGroup</a></li>
+                                <li><a href="../classes/ClientSecureChannelLayer.html">ClientSecureChannelLayer</a></li>
+                                <li><a href="../classes/ClientSession.html">ClientSession</a></li>
+                                <li><a href="../classes/ClientSidePublishEngine.html">ClientSidePublishEngine</a></li>
+                                <li><a href="../classes/ClientSubscription.html">ClientSubscription</a></li>
+                                <li><a href="../classes/ClientTCP_transport.html">ClientTCP_transport</a></li>
+                                <li><a href="../classes/CloseSecureChannelRequest.html">CloseSecureChannelRequest</a></li>
+                                <li><a href="../classes/CloseSecureChannelResponse.html">CloseSecureChannelResponse</a></li>
+                                <li><a href="../classes/CloseSessionRequest.html">CloseSessionRequest</a></li>
+                                <li><a href="../classes/CloseSessionResponse.html">CloseSessionResponse</a></li>
+                                <li><a href="../classes/Company.html">Company</a></li>
+                                <li><a href="../classes/ConditionInfo.html">ConditionInfo</a></li>
+                                <li><a href="../classes/ConditionSnapshot.html">ConditionSnapshot</a></li>
+                                <li><a href="../classes/ContentFilter.html">ContentFilter</a></li>
+                                <li><a href="../classes/ContentFilterElement.html">ContentFilterElement</a></li>
+                                <li><a href="../classes/ContentFilterElementResult.html">ContentFilterElementResult</a></li>
+                                <li><a href="../classes/ContentFilterResult.html">ContentFilterResult</a></li>
+                                <li><a href="../classes/CreateMonitoredItemsRequest.html">CreateMonitoredItemsRequest</a></li>
+                                <li><a href="../classes/CreateMonitoredItemsResponse.html">CreateMonitoredItemsResponse</a></li>
+                                <li><a href="../classes/CreateSessionRequest.html">CreateSessionRequest</a></li>
+                                <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
+                                <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
+                                <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
+                                <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
+                                <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
+                                <li><a href="../classes/DataValue.html">DataValue</a></li>
+                                <li><a href="../classes/DeleteMonitoredItemsRequest.html">DeleteMonitoredItemsRequest</a></li>
+                                <li><a href="../classes/DeleteMonitoredItemsResponse.html">DeleteMonitoredItemsResponse</a></li>
+                                <li><a href="../classes/DeleteNodesItem.html">DeleteNodesItem</a></li>
+                                <li><a href="../classes/DeleteNodesRequest.html">DeleteNodesRequest</a></li>
+                                <li><a href="../classes/DeleteNodesResponse.html">DeleteNodesResponse</a></li>
+                                <li><a href="../classes/DeleteReferencesItem.html">DeleteReferencesItem</a></li>
+                                <li><a href="../classes/DeleteReferencesRequest.html">DeleteReferencesRequest</a></li>
+                                <li><a href="../classes/DeleteReferencesResponse.html">DeleteReferencesResponse</a></li>
+                                <li><a href="../classes/DeleteSubscriptionsRequest.html">DeleteSubscriptionsRequest</a></li>
+                                <li><a href="../classes/DeleteSubscriptionsResponse.html">DeleteSubscriptionsResponse</a></li>
+                                <li><a href="../classes/DiagnosticInfo.html">DiagnosticInfo</a></li>
+                                <li><a href="../classes/DummyObject.html">DummyObject</a></li>
+                                <li><a href="../classes/ElementOperand.html">ElementOperand</a></li>
+                                <li><a href="../classes/Employee.html">Employee</a></li>
+                                <li><a href="../classes/EndpointDescription.html">EndpointDescription</a></li>
+                                <li><a href="../classes/Enum.html">Enum</a></li>
+                                <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
+                                <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
+                                <li><a href="../classes/EUInformation.html">EUInformation</a></li>
+                                <li><a href="../classes/EventData.html">EventData</a></li>
+                                <li><a href="../classes/EventFieldList.html">EventFieldList</a></li>
+                                <li><a href="../classes/EventFilter.html">EventFilter</a></li>
+                                <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
+                                <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
+                                <li><a href="../classes/ExpandedNodeId.html">ExpandedNodeId</a></li>
+                                <li><a href="../classes/Factory.html">Factory</a></li>
+                                <li><a href="../classes/FilterOperand.html">FilterOperand</a></li>
+                                <li><a href="../classes/FindServersRequest.html">FindServersRequest</a></li>
+                                <li><a href="../classes/FindServersResponse.html">FindServersResponse</a></li>
+                                <li><a href="../classes/FooBar.html">FooBar</a></li>
+                                <li><a href="../classes/FooBarDerived.html">FooBarDerived</a></li>
+                                <li><a href="../classes/FooWithRecursion.html">FooWithRecursion</a></li>
+                                <li><a href="../classes/GetEndpointsRequest.html">GetEndpointsRequest</a></li>
+                                <li><a href="../classes/GetEndpointsResponse.html">GetEndpointsResponse</a></li>
+                                <li><a href="../classes/HelloMessage.html">HelloMessage</a></li>
+                                <li><a href="../classes/HistoryData.html">HistoryData</a></li>
+                                <li><a href="../classes/HistoryModifiedData.html">HistoryModifiedData</a></li>
+                                <li><a href="../classes/HistoryReadDetails.html">HistoryReadDetails</a></li>
+                                <li><a href="../classes/HistoryReadRequest.html">HistoryReadRequest</a></li>
+                                <li><a href="../classes/HistoryReadResponse.html">HistoryReadResponse</a></li>
+                                <li><a href="../classes/HistoryReadResult.html">HistoryReadResult</a></li>
+                                <li><a href="../classes/HistoryReadValueId.html">HistoryReadValueId</a></li>
+                                <li><a href="../classes/HistoryServerCapabilities.html">HistoryServerCapabilities</a></li>
+                                <li><a href="../classes/HistoryUpdateRequest.html">HistoryUpdateRequest</a></li>
+                                <li><a href="../classes/HistoryUpdateResponse.html">HistoryUpdateResponse</a></li>
+                                <li><a href="../classes/HistoryUpdateResult.html">HistoryUpdateResult</a></li>
+                                <li><a href="../classes/IssuedIdentityToken.html">IssuedIdentityToken</a></li>
+                                <li><a href="../classes/LiteralOperand.html">LiteralOperand</a></li>
+                                <li><a href="../classes/LocalizedText.html">LocalizedText</a></li>
+                                <li><a href="../classes/MessageBuilder.html">MessageBuilder</a></li>
+                                <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
+                                <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
+                                <li><a href="../classes/MetaShapeForUnitTest.html">MetaShapeForUnitTest</a></li>
+                                <li><a href="../classes/ModelChangeStructure.html">ModelChangeStructure</a></li>
+                                <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
+                                <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
+                                <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
+                                <li><a href="../classes/ModifySubscriptionRequest.html">ModifySubscriptionRequest</a></li>
+                                <li><a href="../classes/ModifySubscriptionResponse.html">ModifySubscriptionResponse</a></li>
+                                <li><a href="../classes/MonitoredItem.html">MonitoredItem</a></li>
+                                <li><a href="../classes/MonitoredItemCreateRequest.html">MonitoredItemCreateRequest</a></li>
+                                <li><a href="../classes/MonitoredItemCreateResult.html">MonitoredItemCreateResult</a></li>
+                                <li><a href="../classes/MonitoredItemModifyRequest.html">MonitoredItemModifyRequest</a></li>
+                                <li><a href="../classes/MonitoredItemModifyResult.html">MonitoredItemModifyResult</a></li>
+                                <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
+                                <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
+                                <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+                                <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
+                                <li><a href="../classes/NodeId.html">NodeId</a></li>
+                                <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
+                                <li><a href="../classes/NodeTypeDescription.html">NodeTypeDescription</a></li>
+                                <li><a href="../classes/NotificationMessage.html">NotificationMessage</a></li>
+                                <li><a href="../classes/ObjWithAccessLevel.html">ObjWithAccessLevel</a></li>
+                                <li><a href="../classes/ObjWithIntegerId.html">ObjWithIntegerId</a></li>
+                                <li><a href="../classes/opcua.html">opcua</a></li>
+                                <li><a href="../classes/OPCUABaseServer.html">OPCUABaseServer</a></li>
+                                <li><a href="../classes/OPCUAClient.html">OPCUAClient</a></li>
+                                <li><a href="../classes/OPCUAClientBase.html">OPCUAClientBase</a></li>
+                                <li><a href="../classes/OPCUASecureObject.html">OPCUASecureObject</a></li>
+                                <li><a href="../classes/OPCUAServer.html">OPCUAServer</a></li>
+                                <li><a href="../classes/OPCUAServerEndPoint
+                
+                A sever end point is listening to one port.html">OPCUAServerEndPoint
+                
+                A sever end point is listening to one port</a></li>
+                                <li><a href="../classes/OpenSecureChannelRequest.html">OpenSecureChannelRequest</a></li>
+                                <li><a href="../classes/OpenSecureChannelResponse.html">OpenSecureChannelResponse</a></li>
+                                <li><a href="../classes/OperationLimits.html">OperationLimits</a></li>
+                                <li><a href="../classes/PacketAssembler.html">PacketAssembler</a></li>
+                                <li><a href="../classes/ParsingResult.html">ParsingResult</a></li>
+                                <li><a href="../classes/Person.html">Person</a></li>
+                                <li><a href="../classes/Person2.html">Person2</a></li>
+                                <li><a href="../classes/Potato.html">Potato</a></li>
+                                <li><a href="../classes/PublishRequest.html">PublishRequest</a></li>
+                                <li><a href="../classes/PublishResponse.html">PublishResponse</a></li>
+                                <li><a href="../classes/QualifiedName.html">QualifiedName</a></li>
+                                <li><a href="../classes/QueryDataDescription.html">QueryDataDescription</a></li>
+                                <li><a href="../classes/QueryDataSet.html">QueryDataSet</a></li>
+                                <li><a href="../classes/QueryFirstRequest.html">QueryFirstRequest</a></li>
+                                <li><a href="../classes/QueryFirstResponse.html">QueryFirstResponse</a></li>
+                                <li><a href="../classes/QueryNextRequest.html">QueryNextRequest</a></li>
+                                <li><a href="../classes/QueryNextResponse.html">QueryNextResponse</a></li>
+                                <li><a href="../classes/Range.html">Range</a></li>
+                                <li><a href="../classes/ReadAtTimeDetails.html">ReadAtTimeDetails</a></li>
+                                <li><a href="../classes/ReaderState.html">ReaderState</a></li>
+                                <li><a href="../classes/ReadEventDetails.html">ReadEventDetails</a></li>
+                                <li><a href="../classes/ReadProcessedDetails.html">ReadProcessedDetails</a></li>
+                                <li><a href="../classes/ReadRawModifiedDetails.html">ReadRawModifiedDetails</a></li>
+                                <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
+                                <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
+                                <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+                                <li><a href="../classes/RedundantServer.html">RedundantServer</a></li>
+                                <li><a href="../classes/Reference.html">Reference</a></li>
+                                <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
+                                <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
+                                <li><a href="../classes/RegisteredServer.html">RegisteredServer</a></li>
+                                <li><a href="../classes/RegisterNodesRequest.html">RegisterNodesRequest</a></li>
+                                <li><a href="../classes/RegisterNodesResponse.html">RegisterNodesResponse</a></li>
+                                <li><a href="../classes/RegisterServerRequest.html">RegisterServerRequest</a></li>
+                                <li><a href="../classes/RegisterServerResponse.html">RegisterServerResponse</a></li>
+                                <li><a href="../classes/RelativePath.html">RelativePath</a></li>
+                                <li><a href="../classes/RelativePathElement.html">RelativePathElement</a></li>
+                                <li><a href="../classes/RepublishRequest.html">RepublishRequest</a></li>
+                                <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
+                                <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
+                                <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+                                <li><a href="../classes/Role.html">Role</a></li>
+                                <li><a href="../classes/SamplingIntervalDiagnostics.html">SamplingIntervalDiagnostics</a></li>
+                                <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
+                                <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
+                                <li><a href="../classes/SemanticChangeStructure.html">SemanticChangeStructure</a></li>
+                                <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
+                                <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
+                                <li><a href="../classes/ServerCapabilities.html">ServerCapabilities</a></li>
+                                <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
+                                <li><a href="../classes/ServerEngine.html">ServerEngine</a></li>
+                                <li><a href="../classes/ServerSecureChannelLayer.html">ServerSecureChannelLayer</a></li>
+                                <li><a href="../classes/ServerSession.html">ServerSession</a></li>
+                                <li><a href="../classes/ServerSidePublishEngine.html">ServerSidePublishEngine</a></li>
+                                <li><a href="../classes/ServerSideUnimplementedRequest.html">ServerSideUnimplementedRequest</a></li>
+                                <li><a href="../classes/ServerStatus.html">ServerStatus</a></li>
+                                <li><a href="../classes/ServerTCP_transport.html">ServerTCP_transport</a></li>
+                                <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
+                                <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
+                                <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+                                <li><a href="../classes/SessionSecurityDiagnostics.html">SessionSecurityDiagnostics</a></li>
+                                <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
+                                <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
+                                <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
+                                <li><a href="../classes/SetPublishingModeResponse.html">SetPublishingModeResponse</a></li>
+                                <li><a href="../classes/SetTriggeringRequest.html">SetTriggeringRequest</a></li>
+                                <li><a href="../classes/SetTriggeringResponse.html">SetTriggeringResponse</a></li>
+                                <li><a href="../classes/Shape.html">Shape</a></li>
+                                <li><a href="../classes/SignatureData.html">SignatureData</a></li>
+                                <li><a href="../classes/SignedSoftwareCertificate.html">SignedSoftwareCertificate</a></li>
+                                <li><a href="../classes/SimpleAttributeOperand.html">SimpleAttributeOperand</a></li>
+                                <li><a href="../classes/Simulator.html">Simulator</a></li>
+                                <li><a href="../classes/StatusChangeNotification.html">StatusChangeNotification</a></li>
+                                <li><a href="../classes/StatusCode.html">StatusCode</a></li>
+                                <li><a href="../classes/Subscription.html">Subscription</a></li>
+                                <li><a href="../classes/SubscriptionAcknowledgement.html">SubscriptionAcknowledgement</a></li>
+                                <li><a href="../classes/SubscriptionDiagnostics.html">SubscriptionDiagnostics</a></li>
+                                <li><a href="../classes/SymmetricAlgorithmSecurityHeader.html">SymmetricAlgorithmSecurityHeader</a></li>
+                                <li><a href="../classes/TCP_transport.html">TCP_transport</a></li>
+                                <li><a href="../classes/TCPErrorMessage.html">TCPErrorMessage</a></li>
+                                <li><a href="../classes/TimestampsToReturn.html">TimestampsToReturn</a></li>
+                                <li><a href="../classes/TimeZone.html">TimeZone</a></li>
+                                <li><a href="../classes/ToolBrowsePath.html">ToolBrowsePath</a></li>
+                                <li><a href="../classes/TransferResult.html">TransferResult</a></li>
+                                <li><a href="../classes/TransferSubscriptionsRequest.html">TransferSubscriptionsRequest</a></li>
+                                <li><a href="../classes/TransferSubscriptionsResponse.html">TransferSubscriptionsResponse</a></li>
+                                <li><a href="../classes/TranslateBrowsePathsToNodeIdsRequest.html">TranslateBrowsePathsToNodeIdsRequest</a></li>
+                                <li><a href="../classes/TranslateBrowsePathsToNodeIdsResponse.html">TranslateBrowsePathsToNodeIdsResponse</a></li>
+                                <li><a href="../classes/TypeSchema.html">TypeSchema</a></li>
+                                <li><a href="../classes/UAAcknowledgeableConditionBase.html">UAAcknowledgeableConditionBase</a></li>
+                                <li><a href="../classes/UAAlarmConditionBase.html">UAAlarmConditionBase</a></li>
+                                <li><a href="../classes/UACertificateExpirationAlarm.html">UACertificateExpirationAlarm</a></li>
+                                <li><a href="../classes/UAConditionBase.html">UAConditionBase</a></li>
+                                <li><a href="../classes/UADataType.html">UADataType</a></li>
+                                <li><a href="../classes/UADiscreteAlarm.html">UADiscreteAlarm</a></li>
+                                <li><a href="../classes/UAExclusiveDeviationAlarm.html">UAExclusiveDeviationAlarm</a></li>
+                                <li><a href="../classes/UAExclusiveLevelAlarm.html">UAExclusiveLevelAlarm</a></li>
+                                <li><a href="../classes/UAExclusiveLimitAlarm.html">UAExclusiveLimitAlarm</a></li>
+                                <li><a href="../classes/UAExclusiveRateOfChangeAlarm.html">UAExclusiveRateOfChangeAlarm</a></li>
+                                <li><a href="../classes/UALimitAlarm.html">UALimitAlarm</a></li>
+                                <li><a href="../classes/UANonExclusiveDeviationAlarm.html">UANonExclusiveDeviationAlarm</a></li>
+                                <li><a href="../classes/UANonExclusiveLimitAlarm.html">UANonExclusiveLimitAlarm</a></li>
+                                <li><a href="../classes/UAObject.html">UAObject</a></li>
+                                <li><a href="../classes/UAObjectType.html">UAObjectType</a></li>
+                                <li><a href="../classes/UAOffNormalAlarm.html">UAOffNormalAlarm</a></li>
+                                <li><a href="../classes/UASystemOffNormalAlarm.html">UASystemOffNormalAlarm</a></li>
+                                <li><a href="../classes/UATripAlarm.html">UATripAlarm</a></li>
+                                <li><a href="../classes/UATwoStateVariable.html">UATwoStateVariable</a></li>
+                                <li><a href="../classes/UAVariable.html">UAVariable</a></li>
+                                <li><a href="../classes/UAVariableType.html">UAVariableType</a></li>
+                                <li><a href="../classes/UnregisterNodesRequest.html">UnregisterNodesRequest</a></li>
+                                <li><a href="../classes/UnregisterNodesResponse.html">UnregisterNodesResponse</a></li>
+                                <li><a href="../classes/UserNameIdentityToken.html">UserNameIdentityToken</a></li>
+                                <li><a href="../classes/UserTokenPolicy.html">UserTokenPolicy</a></li>
+                                <li><a href="../classes/Variant.html">Variant</a></li>
+                                <li><a href="../classes/View.html">View</a></li>
+                                <li><a href="../classes/ViewDescription.html">ViewDescription</a></li>
+                                <li><a href="../classes/WriteRequest.html">WriteRequest</a></li>
+                                <li><a href="../classes/WriteResponse.html">WriteResponse</a></li>
+                                <li><a href="../classes/WriteValue.html">WriteValue</a></li>
+                                <li><a href="../classes/X509IdentityToken.html">X509IdentityToken</a></li>
+                                <li><a href="../classes/Xml2Json.html">Xml2Json</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/opcua.address_space.html">opcua.address_space</a></li>
+                                <li><a href="../modules/opcua.address_space.AlarmsAndConditions.html">opcua.address_space.AlarmsAndConditions</a></li>
+                                <li><a href="../modules/opcua.address_space.types.html">opcua.address_space.types</a></li>
+                                <li><a href="../modules/opcua.client.html">opcua.client</a></li>
+                                <li><a href="../modules/opcua.data-value.html">opcua.data-value</a></li>
+                                <li><a href="../modules/opcua.datamodel.html">opcua.datamodel</a></li>
+                                <li><a href="../modules/opcua.miscellaneous.html">opcua.miscellaneous</a></li>
+                                <li><a href="../modules/opcua.server.html">opcua.server</a></li>
+                                <li><a href="../modules/opcua.server.simulation.html">opcua.server.simulation</a></li>
+                                <li><a href="../modules/opcua.status-code.html">opcua.status-code</a></li>
+                                <li><a href="../modules/opcua.transport.html">opcua.transport</a></li>
+                                <li><a href="../modules/opcua.utils.html">opcua.utils</a></li>
+                                <li><a href="../modules/opcua.variant.html">opcua.variant</a></li>
+                                <li><a href="../modules/service.filter.tools.html">service.filter.tools</a></li>
+                                <li><a href="../modules/services.browse.html">services.browse</a></li>
+                                <li><a href="../modules/services.call.html">services.call</a></li>
+                                <li><a href="../modules/services.discovery.html">services.discovery</a></li>
+                                <li><a href="../modules/services.endpoints.html">services.endpoints</a></li>
+                                <li><a href="../modules/services.filter.html">services.filter</a></li>
+                                <li><a href="../modules/services.history.html">services.history</a></li>
+                                <li><a href="../modules/services.node_management.html">services.node_management</a></li>
+                                <li><a href="../modules/services.query.html">services.query</a></li>
+                                <li><a href="../modules/services.read.html">services.read</a></li>
+                                <li><a href="../modules/services.register-server.html">services.register-server</a></li>
+                                <li><a href="../modules/services.register_node.html">services.register_node</a></li>
+                                <li><a href="../modules/services.secure-channel.html">services.secure-channel</a></li>
+                                <li><a href="../modules/services.session.html">services.session</a></li>
+                                <li><a href="../modules/services.subscription.html">services.subscription</a></li>
+                                <li><a href="../modules/services.translate-browse-path.html">services.translate-browse-path</a></li>
+                                <li><a href="../modules/services.write.html">services.write</a></li>
+                                <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
+                                <li><a href="../modules/xml2json
+                
+                node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+                
+                node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: packages\node-opcua-address-space-for-conformance-testing\src\address_space_for_conformance_testing.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+&quot;use strict&quot;;
+/**
+ * @module opcua.server.simulation
+ * @type {async|exports}
+ * @class Simulator
+ *
+ */
+
+var _ = require(&quot;underscore&quot;);
+var assert = require(&quot;node-opcua-assert&quot;);
+var path = require(&quot;path&quot;);
+var fs = require(&quot;fs&quot;);
+
+
+var coerceNodeId = require(&quot;node-opcua-nodeid&quot;).coerceNodeId;
+var makeNodeId = require(&quot;node-opcua-nodeid&quot;).makeNodeId;
+var StatusCodes = require(&quot;node-opcua-status-code&quot;).StatusCodes;
+var address_space = require(&quot;node-opcua-address-space&quot;);
+var AddressSpace = address_space.AddressSpace;
+
+var Variant = require(&quot;node-opcua-variant&quot;).Variant;
+var DataType = require(&quot;node-opcua-variant&quot;).DataType;
+var VariantArrayType = require(&quot;node-opcua-variant&quot;).VariantArrayType;
+var buildVariantArray = require(&quot;node-opcua-variant&quot;).buildVariantArray;
+
+var findBuiltInType = require(&quot;node-opcua-factory&quot;).findBuiltInType;
+var DataValue =  require(&quot;node-opcua-data-value&quot;).DataValue;
+
+var namespaceIndex = 411;
+
+var ec = require(&quot;node-opcua-basic-types&quot;);
+var QualifiedName = require(&quot;node-opcua-data-model&quot;).QualifiedName;
+var LocalizedText = require(&quot;node-opcua-data-model&quot;).LocalizedText;
+
+var standardUnits = require(&quot;node-opcua-data-access&quot;).standardUnits;
+
+var add_eventGeneratorObject = require(&quot;node-opcua-address-space/test_helpers/add_event_generator_object&quot;).add_eventGeneratorObject;
+
+function defaultValidator(/*value*/) {
+    return true;
+}
+function getValidatorFuncForType(dataType) {
+    var f = ec[&quot;isValid&quot; + dataType];
+    return f || defaultValidator;
+}
+function getRandomFuncForType(dataType) {
+
+    assert(dataType);
+    dataType = dataType.key;
+
+    var f = ec[&quot;random&quot; + dataType];
+
+    if (f) {
+        return f;
+    }
+
+    //xx console.log(&quot;xxxx dataType  &quot;,dataType);
+    switch (dataType) {
+        case &quot;Variant&quot;:
+            return function () {
+                return new Variant();
+            };
+        case &quot;QualifiedName&quot;:
+            return function () {
+                return new QualifiedName({name: ec.randomString()});
+            };
+        case &quot;LocalizedText&quot;:
+            return function () {
+                return new LocalizedText({text: ec.randomString()});
+            };
+        case &quot;XmlElement&quot; :
+            return function () {
+                var element = ec.randomString();
+                var content = ec.randomString();
+                return &quot;&lt;&quot; + element + &quot;&gt;&quot; + content + &quot;&lt;/&quot; + element + &quot;&gt;&quot;;
+            };
+        default:
+            // istanbul ignore next
+            throw new Error(&quot;Cannot find random&quot; + dataType + &quot;() func anywhere&quot;);
+    }
+}
+
+
+function _findDataType(dataTypeName) {
+    var builtInDataTypeName = findBuiltInType(dataTypeName);
+    var dataType = DataType[builtInDataTypeName.name];
+    // istanbul ignore next
+    if (!dataType) {
+        throw new Error(&quot; dataType &quot; + dataTypeName + &quot; must exists&quot;);
+    }
+    return dataType;
+}
+
+function validate_value_or_array(isArray, variantValue, validatorFunc) {
+
+    assert(_.isFunction(validatorFunc));
+    var i, value;
+    if (isArray) {
+
+        var n = Math.min(10, variantValue.length);
+
+        for (i = 0; i &lt; n; i++) {
+            value = variantValue[i];
+            // istanbul ignore next
+            if (!validatorFunc(value)) {
+                throw new Error(&quot;default value must be valid for dataType &quot; + variantValue + &quot; at index &quot; + i + &quot; got &quot; + value);
+            }
+        }
+
+    } else {
+        // scalar
+        // istanbul ignore next
+        if (!validatorFunc(variantValue)) {
+            throw new Error(&quot;default value must be valid for dataType &quot; + variantValue);
+        }
+    }
+
+}
+
+function makeVariant(dataTypeName, isArray, current_value) {
+
+    isArray = ( isArray === null) ? false : isArray;
+    var arrayType = VariantArrayType.Scalar;
+    if (isArray) {
+        arrayType = VariantArrayType.Array;
+    }
+    var dataType = _findDataType(dataTypeName);
+    assert(!dataType.isAbstract);
+
+    var validatorFunc = getValidatorFuncForType(dataType);
+
+    validate_value_or_array(isArray, current_value, validatorFunc);
+
+    var variant = new Variant({
+        dataType: dataType,
+        arrayType: arrayType,
+        value: current_value
+    });
+    return variant;
+}
+
+function _add_variable(addressSpace, parent, varName, dataTypeName, current_value, isArray, extra_name) {
+
+    assert(typeof extra_name === &quot;string&quot;);
+    assert(addressSpace instanceof AddressSpace);
+
+    var variant = makeVariant(dataTypeName, isArray, current_value);
+
+    var name = parent.browseName.toString() + &quot;_&quot; + varName + extra_name;
+
+    var nodeId = makeNodeId(name, namespaceIndex);
+
+    var placeholder = {
+        variant: variant
+    };
+
+    var variable = addressSpace.addVariable({
+        componentOf: parent,
+        browseName: name,
+        description: {locale: &quot;en&quot;, text: name},
+        nodeId: nodeId,
+        dataType: varName,
+        valueRank: isArray ? 1 : -1,
+        value: variant
+    });
+    variable._backdoor_placeholder = placeholder;
+    assert(addressSpace.findNode(nodeId));
+    return variable;
+}
+
+
+function add_variable(addressSpace, parent, name, realType, default_value, extra_name) {
+
+    assert(typeof extra_name === &quot;string&quot;);
+    var initialValue = _.isFunction(default_value) ? default_value() : default_value;
+    var variable = _add_variable(addressSpace, parent, name, realType, initialValue, false, extra_name);
+    assert(variable.valueRank === -1);
+    assert(variable.accessLevel.key === &quot;CurrentRead | CurrentWrite&quot;);
+    assert(variable.userAccessLevel.key === &quot;CurrentRead | CurrentWrite&quot;);
+    assert(variable.historizing === false);
+    return variable;
+}
+
+function add_variable_array(addressSpace, parent, dataTypeName, default_value, realTypeName, arrayLength, extra_name) {
+
+    assert(typeof dataTypeName === &quot;string&quot;);
+    assert(typeof realTypeName === &quot;string&quot;);
+
+    // istanbul ignore next
+    if (!DataType[realTypeName]) {
+        console.log(&quot;dataTypeName&quot;, dataTypeName);
+        console.log(&quot;realTypeName&quot;, realTypeName);
+    }
+
+    assert(DataType[realTypeName], &quot; expecting a valid real type&quot;);
+    arrayLength = arrayLength || 10;
+
+    var local_defaultValue = _.isFunction(default_value) ? default_value() : default_value;
+
+    var current_value = buildVariantArray(DataType[realTypeName], arrayLength, local_defaultValue);
+
+    var variable = _add_variable(addressSpace, parent, dataTypeName, realTypeName, current_value, true, extra_name);
+
+    assert(variable.accessLevel.key === &quot;CurrentRead | CurrentWrite&quot;);
+    assert(variable.userAccessLevel.key === &quot;CurrentRead | CurrentWrite&quot;);
+    assert(variable.historizing === false);
+
+}
+
+
+function add_mass_variables_of_type(addressSpace, parent, dataTypeName, default_value, realType) {
+    // Mass Mass_Boolean -&gt; Mass_Boolean_Boolean_00 ...
+    var nodeName = &quot;Scalar_Mass_&quot; + dataTypeName;
+
+    //xx console.log(&quot;xxxx adding mass variable &quot;, nodeName);
+    var scalarMass_Type = addressSpace.addObject({
+        organizedBy: parent,
+        browseName: nodeName,
+        description: &quot;This folder will contain 100 items per supported data-type.&quot;,
+        nodeId: makeNodeId(nodeName, namespaceIndex)
+    });
+    for (var i = 0; i &lt;= 99; i++) {
+        var extra_name = &quot;_&quot; + (&quot;00&quot; + i.toString()).substr(-2);
+        var local_defaultValue = _.isFunction(default_value) ? default_value() : default_value;
+        _add_variable(addressSpace, scalarMass_Type, dataTypeName, realType, local_defaultValue, false, extra_name);
+    }
+
+}
+function add_mass_variables(addressSpace, scalarFolder) {
+
+    var scalarMass = addressSpace.addFolder(scalarFolder, {
+        browseName: &quot;Scalar_Mass&quot;,
+        description: &quot;This folder will contain 100 items per supported data-type.&quot;,
+        nodeId: makeNodeId(&quot;Scalar_Mass&quot;, namespaceIndex)
+    });
+
+    typeAndDefaultValue.forEach(function (e) {
+        var dataType = e.type;
+        var realType = e.realType || dataType;
+        add_mass_variables_of_type(addressSpace, scalarMass, dataType, e.defaultValue, realType);
+    });
+}
+
+/**
+ * @method build_address_space_for_conformance_testing
+ * @param addressSpace {ServerEngine}
+ * @param options
+ * @param options.mass_variable {Boolean}
+ */
+var build_address_space_for_conformance_testing;
+
+
+var DateTime_Min = new Date();
+
+var typeAndDefaultValue = [
+    {type: &quot;Boolean&quot;, defaultValue: false},
+    {type: &quot;ByteString&quot;, defaultValue: new Buffer(&quot;OPCUA&quot;)},
+    {type: &quot;DateTime&quot;, defaultValue: DateTime_Min},
+    {type: &quot;Double&quot;, defaultValue: 0.0},
+    {type: &quot;Float&quot;, defaultValue: 0.0},
+    {type: &quot;Guid&quot;, defaultValue: ec.emptyGuid},
+    {type: &quot;SByte&quot;, defaultValue: 0},
+    {type: &quot;Int16&quot;, defaultValue: 0},
+    {type: &quot;Int32&quot;, defaultValue: 0},
+    {
+        type: &quot;NodeId&quot;, defaultValue: function () {
+        return coerceNodeId(&quot;ns=&quot; + namespaceIndex + &quot;;g=00000000-0000-0000-0000-000000000023&quot;);
+    }
+    },
+    {type: &quot;String&quot;, defaultValue: &quot;OPCUA&quot;},
+    {type: &quot;Byte&quot;, defaultValue: 0},
+    {type: &quot;UInt16&quot;, defaultValue: 0},
+    {type: &quot;UInt32&quot;, defaultValue: 0},
+    {type: &quot;Duration&quot;, realType: &quot;Double&quot;, defaultValue: 0.0},
+    {type: &quot;Number&quot;, realType: &quot;UInt16&quot;, defaultValue: 0},// Number is abstract
+    {type: &quot;Integer&quot;, realType: &quot;Int64&quot;, defaultValue: 0},// because Integer is abstract , we choose Int32
+    {type: &quot;UInteger&quot;, realType: &quot;UInt64&quot;, defaultValue: 0},
+    {
+        type: &quot;UtcTime&quot;, realType: &quot;DateTime&quot;, defaultValue: function () {
+        return new Date();
+    }
+    },
+//xx        {  type: &quot;Int64&quot;,         defaultValue:  0},
+    {type: &quot;LocaleId&quot;, realType: &quot;String&quot;, defaultValue: &quot;&quot;},
+    {
+        type: &quot;LocalizedText&quot;, defaultValue: function () {
+        return new LocalizedText({});
+    }
+    },
+
+
+    {
+        type: &quot;QualifiedName&quot;, defaultValue: function () {
+        return new QualifiedName();
+    }
+    },
+    {type: &quot;Time&quot;, realType: &quot;String&quot;, defaultValue: &quot;00:00:00&quot;},
+    {type: &quot;UInt64&quot;, defaultValue: [0, 0]},
+    {type: &quot;Int64&quot;, defaultValue: [0, 0]},
+    //xx {type: &quot;Variant&quot;,   realType:   &quot;Variant&quot;, defaultValue:  {} },
+    {type: &quot;XmlElement&quot;, defaultValue: &quot;&lt;string1&gt;OPCUA&lt;/string1&gt;&quot;},
+    {type: &quot;ImageBMP&quot;, realType: &quot;ByteString&quot;},
+    {type: &quot;ImageGIF&quot;, realType: &quot;ByteString&quot;},
+    {type: &quot;ImageJPG&quot;, realType: &quot;ByteString&quot;},
+    {type: &quot;ImagePNG&quot;, realType: &quot;ByteString&quot;},
+    // {type: &quot;Enumeration&quot;, realType: &quot;UInt32&quot; , defaultValue:0}
+];
+
+
+function add_simulation_variables(addressSpace, scalarFolder) {
+
+
+    var values_to_change = [];
+
+    function add_simulation_variable(parent, dataTypeName, defaultValue, realTypeName) {
+
+        // the type of the default value
+        realTypeName = realTypeName || dataTypeName;
+
+        var dataType = _findDataType(realTypeName);
+        var randomFunc = getRandomFuncForType(dataType);
+
+        // istanbul ignore next
+        if (!_.isFunction(randomFunc)) {
+            throw new Error(&quot;a random function must exist for basicType &quot; + dataTypeName);
+        }
+
+        var variable = _add_variable(addressSpace, parent, dataTypeName, realTypeName, defaultValue, false, &quot;&quot;);
+
+        var value_to_change = {
+            dataType: dataType,
+            variable: variable,
+            randomFunc: randomFunc
+        };
+
+        values_to_change.push(value_to_change);
+
+        return variable;
+    }
+
+    var simulation = addressSpace.addObject({
+        organizedBy: scalarFolder,
+        browseName: &quot;Scalar_Simulation&quot;,
+        description: &quot;This folder will contain one item per supported data-type.&quot;,
+        nodeId: makeNodeId(&quot;Scalar_Simulation&quot;, namespaceIndex)
+    });
+
+
+    // add simulation variables
+    typeAndDefaultValue.forEach(function (e) {
+        var dataType = e.type;
+        var defaultValue = _.isFunction(e.defaultValue) ? e.defaultValue() : e.defaultValue;
+        var realType = e.realType || dataType;
+        add_simulation_variable(simulation, dataType, defaultValue, realType);
+    });
+
+
+    // add management nodes
+    var interval = 2000;
+    var enabled = true;
+    var timer;
+
+
+    function change_randomly() {
+
+        values_to_change.forEach(function (element) {
+
+            var variant = element.variable._backdoor_placeholder.variant;
+            variant.value = element.randomFunc();
+            element.variable.setValueFromSource(variant);
+
+        });
+    }
+
+    function delete_Timer() {
+        // delete previous timer if any
+        if (timer) {
+            clearInterval(timer);
+            timer = null;
+        }
+    }
+
+    function install_Timer() {
+        delete_Timer();
+        assert(!timer);
+        if (enabled) {
+            timer = setInterval(function () {
+                change_randomly();
+            }, interval);
+        }
+    }
+
+    function tearDown_Timer() {
+        delete_Timer();
+        values_to_change = [];
+    }
+
+    // var name = &quot;Interval&quot;, &quot;UInt16&quot;
+    var intervalVariable = addressSpace.addVariable({
+        componentOf: simulation,
+        browseName: &quot;Interval&quot;,
+        description: {locale: &quot;en&quot;, text: &quot;The rate (in msec) of change for all Simulated items.&quot;},
+        nodeId: makeNodeId(&quot;Scalar_Simulation_Interval&quot;, namespaceIndex),
+        dataType: &quot;UInt16&quot;,
+        value: new Variant({
+            dataType: DataType.UInt16,
+            arrayType: VariantArrayType.Scalar,
+            value: interval
+        })
+    });
+
+    intervalVariable.on(&quot;value_changed&quot;, function (dataValue/*,indexRange*/) {
+        var variant = dataValue.value;
+        assert(variant instanceof Variant);
+        assert(ec.isValidUInt16(variant.value) &amp;&amp; &quot; value must be valid for dataType&quot;);
+        interval = variant.value;
+        install_Timer();
+    });
+
+
+    var enabledVariable = addressSpace.addVariable({
+        componentOf: simulation,
+        browseName: &quot;Enabled&quot;,
+        description: {locale: &quot;en&quot;, text: &quot;Enabled&quot;},
+        nodeId: makeNodeId(&quot;Scalar_Simulation_Enabled&quot;, namespaceIndex),
+        dataType: &quot;Boolean&quot;,
+        value: new Variant({
+            dataType: DataType.Boolean,
+            arrayType: VariantArrayType.Scalar,
+            value: enabled
+        })
+    });
+    enabledVariable.on(&quot;value_changed&quot;, function (dataValue/*,indexRange*/) {
+        var variant = dataValue.value;
+        assert(variant instanceof Variant);
+        assert(ec.isValidBoolean(variant.value) &amp;&amp; &quot; value must be valid for dataType&quot;);
+        enabled = variant.value;
+        install_Timer();
+    });
+    install_Timer();
+
+    addressSpace.registerShutdownTask(tearDown_Timer);
+
+}
+
+function add_scalar_static_variables(addressSpace, scalarFolder) {
+
+    var scalarStatic = addressSpace.addObject({
+        organizedBy: scalarFolder,
+        browseName: &quot;Scalar_Static&quot;,
+        description: &quot;This folder will contain one item per supported data-type.&quot;,
+        nodeId: makeNodeId(&quot;Scalar_Static&quot;, namespaceIndex)
+    });
+
+    // add statics scalar Variables
+    typeAndDefaultValue.forEach(function (e) {
+        var dataType = e.type;
+        var realType = e.realType || dataType;
+        var defaultValue = _.isFunction(e.defaultValue) ? e.defaultValue() : e.defaultValue;
+        add_variable(addressSpace, scalarStatic, dataType, realType, defaultValue, &quot;&quot;);
+    });
+
+    function setImage__(imageType, filename) {
+        var fullpath = path.join(__dirname, &quot;data&quot;, filename);
+        var imageNode = addressSpace.findNode(&quot;ns=411;s=Scalar_Static_Image&quot; + imageType);
+
+
+
+        var options = {
+            refreshFunc: function (callback) {
+                fs.readFile(fullpath, function (err, data) {
+                    if (err) {
+                        return callback(null, new DataValue({
+                            statusCode: StatusCodes.BadInternalError,
+                            value: {dataType: &quot;ByteString&quot;, value: null}
+                        }));
+
+                    }
+                    assert(data instanceof Buffer);
+                    callback(null, new DataValue({value: {dataType: &quot;ByteString&quot;, value: data}}));
+                });
+            }
+        };
+        imageNode.bindVariable(options, /*overwrite=*/true);
+
+    }
+    function setImage(imageType, filename) {
+        var fullpath = path.join(__dirname, &quot;data&quot;, filename);
+        var imageNode = addressSpace.findNode(&quot;ns=411;s=Scalar_Static_Image&quot; + imageType);
+        fs.readFile(fullpath, function (err, data) {
+            imageNode.setValueFromSource(new Variant({dataType: DataType.ByteString, value: data}));
+        });
+    }
+    setImage(&quot;BMP&quot;, &quot;image.bmp&quot;);
+    setImage(&quot;PNG&quot;, &quot;tux.png&quot;);
+    setImage(&quot;GIF&quot;, &quot;gif-anime.gif&quot;);
+    setImage(&quot;JPG&quot;, &quot;tiger.jpg&quot;);
+
+
+    // add statics Array Variables
+    var scalarStaticArray = addressSpace.addObject({
+        organizedBy: scalarFolder,
+        browseName: &quot;Scalar_Static_Array&quot;,
+        description: &quot;Single dimension, suggested size of 10-elements per array. Unsupported types will be missing from the address-space.&quot;,
+        nodeId: makeNodeId(&quot;Scalar_Static_Array&quot;, namespaceIndex)
+    });
+    // add static Array
+    typeAndDefaultValue.forEach(function (e) {
+        var dataType = e.type;
+        var realType = e.realType || dataType;
+        add_variable_array(addressSpace, scalarStaticArray, dataType, e.defaultValue, realType, 10, &quot;&quot;);
+    });
+    // add static Mass
+
+}
+
+
+function add_access_right_variables(addressSpace, parentFolder) {
+
+    var accessRight_Folder = addressSpace.addFolder(parentFolder, {
+        browseName: &quot;AccessRight&quot;,
+        description: &quot;Folder containing various nodes with different access right behavior&quot;,
+        nodeId: makeNodeId(&quot;AccessRight&quot;, namespaceIndex)
+    });
+
+    var accessLevel_All_Folder = addressSpace.addFolder(accessRight_Folder, {
+        browseName: &quot;AccessLevel&quot;,
+        description: &quot;Various node with different access right behavior&quot;,
+        nodeId: makeNodeId(&quot;AccessLevel&quot;, namespaceIndex)
+    });
+
+
+    var name;
+
+    name = &quot;AccessLevel_CurrentRead&quot;;
+    addressSpace.addVariable({
+        componentOf: accessLevel_All_Folder,
+        browseName: name,
+        description: {locale: &quot;en&quot;, text: name},
+        nodeId: makeNodeId(name, namespaceIndex),
+        dataType: &quot;Int32&quot;,
+        valueRank: -1,
+
+        accessLevel: &quot;CurrentRead&quot;,
+        userAccessLevel: &quot;CurrentRead&quot;,
+
+        value: new Variant({
+            dataType: DataType.Int32,
+            arrayType: VariantArrayType.Scalar,
+            value: 36
+        })
+    });
+
+    name = &quot;AccessLevel_CurrentWrite&quot;;
+    addressSpace.addVariable({
+        componentOf: accessLevel_All_Folder,
+        browseName: name,
+        description: {locale: &quot;en&quot;, text: name},
+        nodeId: makeNodeId(name, namespaceIndex),
+        dataType: &quot;Int32&quot;,
+        valueRank: -1,
+        accessLevel: &quot;CurrentWrite&quot;,
+        userAccessLevel: &quot;CurrentWrite&quot;,
+        value: {}
+
+    });
+
+    name = &quot;AccessLevel_CurrentRead_NotUser&quot;;
+    addressSpace.addVariable({
+        componentOf: accessLevel_All_Folder,
+        browseName: name,
+        description: {locale: &quot;en&quot;, text: name},
+        nodeId: makeNodeId(name, namespaceIndex),
+        dataType: &quot;Int32&quot;,
+        valueRank: -1,
+
+        accessLevel: &quot;CurrentRead&quot;,
+
+        userAccessLevel: &quot;&quot;,
+
+        value: new Variant({
+            dataType: DataType.Int32,
+            arrayType: VariantArrayType.Scalar,
+            value: 36
+        })
+    });
+
+    name = &quot;AccessLevel_CurrentWrite_NotUser&quot;;
+    addressSpace.addVariable({
+        componentOf: accessLevel_All_Folder,
+        browseName: name,
+        description: {locale: &quot;en&quot;, text: name},
+        nodeId: makeNodeId(name, namespaceIndex),
+        dataType: &quot;Int32&quot;,
+        valueRank: -1,
+
+        accessLevel: &quot;CurrentWrite | CurrentRead&quot;,
+
+        userAccessLevel: &quot;CurrentRead&quot;,
+
+        value: new Variant({
+            dataType: DataType.Int32,
+            arrayType: VariantArrayType.Scalar,
+            value: 36
+        })
+    });
+
+    name = &quot;AccessLevel_CurrentRead_NotCurrentWrite&quot;;
+    addressSpace.addVariable({
+        componentOf: accessLevel_All_Folder,
+        browseName: name,
+        description: {locale: &quot;en&quot;, text: name},
+        nodeId: makeNodeId(name, namespaceIndex),
+        dataType: &quot;Int32&quot;,
+        valueRank: -1,
+
+        accessLevel: &quot;CurrentRead&quot;,
+
+        userAccessLevel: &quot;CurrentRead&quot;,
+
+        value: new Variant({
+            dataType: DataType.Int32,
+            arrayType: VariantArrayType.Scalar,
+            value: 36
+        })
+    });
+
+
+    name = &quot;AccessLevel_CurrentWrite_NotCurrentRead&quot;;
+    addressSpace.addVariable({
+        componentOf: accessLevel_All_Folder,
+        browseName: name,
+        description: {locale: &quot;en&quot;, text: name},
+        nodeId: makeNodeId(name, namespaceIndex),
+        dataType: &quot;Int32&quot;,
+        valueRank: -1,
+
+        accessLevel: &quot;CurrentWrite&quot;,
+
+        userAccessLevel: &quot;CurrentWrite&quot;,
+
+        value: new Variant({
+            dataType: DataType.Int32,
+            arrayType: VariantArrayType.Scalar,
+            value: 36
+        })
+    });
+
+    name = &quot;AccessLevel_DeniedAll&quot;;
+    addressSpace.addVariable({
+        componentOf: accessLevel_All_Folder,
+        browseName: name,
+        description: {locale: &quot;en&quot;, text: name},
+        nodeId: makeNodeId(name, namespaceIndex),
+        dataType: &quot;Int32&quot;,
+        valueRank: -1,
+
+        accessLevel: &quot;&quot;,
+        userAccessLevel: &quot;&quot;,
+
+        value: new Variant({
+            dataType: DataType.Int32,
+            arrayType: VariantArrayType.Scalar,
+            value: 36
+        })
+    });
+
+
+}
+function add_path_10deep(addressSpace, simulation_folder) {
+
+    var parent = simulation_folder;
+    for (var i = 1; i &lt; 15; i++) {
+        var name = &quot;Path_&quot; + i.toString() + &quot;Deep&quot;;
+
+        var child = addressSpace.addObject({
+            organizedBy: parent,
+            browseName: name,
+            description: &quot;A folder at the top of &quot; + i + &quot; elements&quot;,
+            typeDefinition: &quot;FolderType&quot;,
+            nodeId: makeNodeId(name, namespaceIndex)
+        });
+        parent = child;
+    }
+}
+function add_very_large_array_variables(addressSpace, objectsFolder) {
+
+    // add statics Array Variables
+    var scalarStaticLargeArray = addressSpace.addObject({
+        organizedBy: objectsFolder,
+        browseName: &quot;Scalar_Static_Large_Array&quot;,
+        description: &quot;Single dimension, suggested size of 100k-elements per array.&quot;,
+        nodeId: makeNodeId(&quot;Scalar_Static_Large_Array&quot;, namespaceIndex)
+    });
+    typeAndDefaultValue.forEach(function (e) {
+        var dataType = e.type;
+        var realType = e.realType || dataType;
+        add_variable_array(addressSpace, scalarStaticLargeArray, dataType, e.defaultValue, realType, 50 * 1024, &quot;&quot;);
+    });
+
+}
+//      BaseDataVariableType
+//         |
+//      DataItemType
+//         ^
+//         |
+//      +----------------+---------------------+
+//      |                |                     |
+// ArrayItemType   AnalogItemType         DiscreteItemType
+//                                             ^
+//                                             |
+//                +-----------------------------+---------------------------------+
+//                |                             |                                 |
+//           TwoStateDiscreteType     MultiStateDiscreteType                MutliStateValueDiscreteType
+//
+function add_analog_data_items(addressSpace, parentFolder) {
+
+
+
+    function _addDataItem(localParentFolder, dataType, initialValue) {
+
+        // istanbul ignore next
+        if (!(DataType[dataType])) {
+            throw new Error(&quot; Invalid dataType &quot; + dataType);
+        }
+
+        var name = dataType + &quot;DataItem&quot;;
+        var nodeId = makeNodeId(name, namespaceIndex);
+
+        addressSpace.addDataItem({
+            componentOf: localParentFolder,
+            nodeId: nodeId,
+            browseName: name,
+            definition: &quot;(tempA -25) + tempB&quot;,
+            dataType: dataType,
+            value: new Variant({
+                arrayType: VariantArrayType.Scalar,
+                dataType: DataType[dataType],
+                value: initialValue
+            })
+        });
+    }
+
+    function _addAnalogDataItem(localParentFolder, dataType, initialValue) {
+
+        // istanbul ignore next
+        if (!(DataType[dataType])) {
+            throw new Error(&quot; Invalid dataType &quot; + dataType);
+        }
+
+        var name = dataType + &quot;AnalogDataItem&quot;;
+        var nodeId = makeNodeId(name, namespaceIndex);
+        // UAAnalogItem
+        // add a UAAnalogItem
+        addressSpace.addAnalogDataItem({
+
+            componentOf: localParentFolder,
+
+            nodeId: nodeId,
+            browseName: name,
+            definition: &quot;(tempA -25) + tempB&quot;,
+            valuePrecision: 0.5,
+            engineeringUnitsRange: {low: 1, high: 50},
+            instrumentRange: {low: 1, high: 50},
+            engineeringUnits: standardUnits.degree_celsius,
+            dataType: dataType,
+            value: new Variant({
+                arrayType: VariantArrayType.Scalar,
+                dataType: DataType[dataType],
+                value: initialValue
+            })
+        });
+    }
+
+    function _addArrayAnalogDataItem(localParentFolder, dataType, initialValue) {
+        // istanbul ignore next
+        if (!(DataType[dataType])) {
+            throw new Error(&quot; Invalid dataType &quot; + dataType);
+        }
+        var name = dataType + &quot;ArrayAnalogDataItem&quot;;
+        var nodeId = makeNodeId(name, namespaceIndex);
+        // UAAnalogItem
+        // add a UAAnalogItem
+        addressSpace.addAnalogDataItem({
+
+            componentOf: localParentFolder,
+
+            nodeId: nodeId,
+            browseName: name,
+            definition: &quot;(tempA -25) + tempB&quot;,
+            valuePrecision: 0.5,
+            engineeringUnitsRange: {low: 1, high: 50},
+            instrumentRange: {low: 1, high: 50},
+            engineeringUnits: standardUnits.degree_celsius,
+            dataType: dataType,
+            value: new Variant({
+                arrayType: VariantArrayType.Array,
+                dataType: DataType[dataType],
+                value: [initialValue, initialValue]
+            })
+        });
+
+    }
+
+    // add statics Array Variables
+    var analogItemFolder = addressSpace.addObject({
+        organizedBy: parentFolder,
+        browseName: &quot;Simulation_AnalogDataItem&quot;,
+        typeDefinition: &quot;FolderType&quot;,
+        nodeId: makeNodeId(&quot;Simulation_AnalogDataItem&quot;, namespaceIndex)
+    });
+
+    var name = &quot;DoubleAnalogDataItemWithEU&quot;;
+    var nodeId = makeNodeId(name, namespaceIndex);
+
+    addressSpace.addAnalogDataItem({
+
+        componentOf: analogItemFolder,
+        nodeId: nodeId,
+        browseName: name,
+        definition: &quot;(tempA -25) + tempB&quot;,
+        valuePrecision: 0.5,
+        engineeringUnitsRange: {low: 100, high: 200},
+        instrumentRange: {low: -100, high: +200},
+        engineeringUnits: standardUnits.degree_celsius,
+        dataType: &quot;Double&quot;,
+
+        value: new Variant({
+            dataType: DataType.Double,
+            value: 19.5
+        })
+    });
+
+
+    var data = [
+        {dataType: &quot;Double&quot;, value: 3.14},
+        {dataType: &quot;Float&quot;, value: 3.14},
+        {dataType: &quot;Int16&quot;, value: -10},
+        {dataType: &quot;UInt16&quot;, value: 10},
+        {dataType: &quot;Int32&quot;, value: -100},
+        {dataType: &quot;UInt32&quot;, value: 100},
+        {dataType: &quot;Int64&quot;, value: [0, 0]},
+        {dataType: &quot;UInt64&quot;, value: [0, 0]},
+        {dataType: &quot;Byte&quot;, value: 120},
+        {dataType: &quot;SByte&quot;, value: -123},
+        {dataType: &quot;String&quot;, value: &quot;some string&quot;},
+        {dataType: &quot;DateTime&quot;, value: new Date()}
+    ];
+
+    data.forEach(function (e) {
+        _addAnalogDataItem(analogItemFolder, e.dataType, e.value);
+    });
+    data.forEach(function (e) {
+        _addDataItem(analogItemFolder, e.dataType, e.value);
+    });
+    data.forEach(function (e) {
+        _addArrayAnalogDataItem(analogItemFolder, e.dataType, e.value);
+    });
+
+
+}
+
+function getDADiscreteTypeFolder(addressSpace,parentFolder) {
+    var name = &quot;Simulation_DA_DiscreteType&quot;;
+    var nodeId =  makeNodeId(&quot;Simulation_DA_DiscreteType&quot;, namespaceIndex);
+
+    if (addressSpace.findNode(nodeId)){
+        return addressSpace.findNode(nodeId);
+    }
+    var node =addressSpace.addObject({
+        organizedBy: parentFolder,
+        typeDefinition: &quot;FolderType&quot;,
+        browseName: name,
+        nodeId: nodeId
+    });
+    return node;
+}
+function add_two_state_discrete_variables(addressSpace,parentFolder) {
+
+    var DADiscreteTypeFolder = getDADiscreteTypeFolder(addressSpace,parentFolder);
+
+    var twoStateDiscrete001 = addressSpace.addTwoStateDiscrete({
+        organizedBy: DADiscreteTypeFolder,
+        nodeId:  makeNodeId(&quot;TwoStateDiscrete001&quot;,namespaceIndex),
+        browseName: &quot;TwoStateDiscrete001&quot;,
+        trueState: &quot;Enabled&quot;,
+        falseState:&quot;Disabled&quot;
+    });
+
+
+    var twoStateDiscrete002 = addressSpace.addTwoStateDiscrete({
+        organizedBy: DADiscreteTypeFolder,
+        nodeId:  makeNodeId(&quot;TwoStateDiscrete002&quot;,namespaceIndex),
+        browseName: &quot;TwoStateDiscrete002&quot;,
+        trueState: &quot;On&quot;,
+        falseState:&quot;Off&quot;,
+        optionals:[&quot;TransitionTime&quot;,&quot;EffectiveDisplayName&quot;]
+    });
+
+    var twoStateDiscrete003 = addressSpace.addTwoStateDiscrete({
+        browseName: &quot;twoStateDiscrete003&quot;,
+        nodeId:  makeNodeId(&quot;TwoStateDiscrete003&quot;,namespaceIndex),
+        optionals:[&quot;TransitionTime&quot;],
+        isTrueSubStateOf: twoStateDiscrete002
+    });
+
+    var twoStateDiscrete004 = addressSpace.addTwoStateDiscrete({
+        organizedBy: DADiscreteTypeFolder,
+        nodeId:  makeNodeId(&quot;TwoStateDiscrete004&quot;,namespaceIndex),
+        browseName: &quot;TwoStateDiscrete004&quot;,
+        trueState: &quot;InProgress&quot;,
+        falseState:&quot;Stopped&quot;
+    });
+
+    var twoStateDiscrete005 = addressSpace.addTwoStateDiscrete({
+        organizedBy: DADiscreteTypeFolder,
+        nodeId:  makeNodeId(&quot;TwoStateDiscrete005&quot;,namespaceIndex),
+        browseName: &quot;TwoStateDiscrete005&quot;,
+        trueState: &quot;InProgress&quot;,
+        falseState:&quot;Stopped&quot;
+    });
+
+    twoStateDiscrete001.setValueFromSource( {dataType: &quot;Boolean&quot;, value: false});
+    twoStateDiscrete002.setValueFromSource( {dataType: &quot;Boolean&quot;, value: false});
+    twoStateDiscrete003.setValueFromSource( {dataType: &quot;Boolean&quot;, value: false});
+    twoStateDiscrete004.setValueFromSource( {dataType: &quot;Boolean&quot;, value: false});
+    twoStateDiscrete005.setValueFromSource( {dataType: &quot;Boolean&quot;, value: false});
+
+}
+
+function add_multi_state_discrete_variable(addressSpace,parentFolder) {
+
+    var DADiscreteTypeFolder = getDADiscreteTypeFolder(addressSpace,parentFolder);
+
+    //MultiStateDiscrete001
+    var multiStateDiscrete001 =addressSpace.addMultiStateDiscrete({
+        organizedBy: DADiscreteTypeFolder,
+        nodeId:  makeNodeId(&quot;MultiStateDiscrete001&quot;,namespaceIndex),
+        browseName: &quot;MultiStateDiscrete001&quot;,
+        enumStrings: [ &quot;Red&quot;,&quot;Orange&quot;,&quot;Green&quot;],
+        value: 1 // Orange
+    });
+    var makeAccessLevel = require(&quot;node-opcua-data-model&quot;).makeAccessLevel;
+
+
+
+    //MultiStateDiscrete002
+    addressSpace.addMultiStateDiscrete({
+        organizedBy: DADiscreteTypeFolder,
+        nodeId:  makeNodeId(&quot;MultiStateDiscrete002&quot;,namespaceIndex),
+        browseName: &quot;MultiStateDiscrete002&quot;,
+        enumStrings: [ &quot;Red&quot;,&quot;Orange&quot;,&quot;Green&quot;],
+        value: 1 // Orange
+    });
+
+    //MultiStateDiscrete002
+    addressSpace.addMultiStateDiscrete({
+        organizedBy: DADiscreteTypeFolder,
+        nodeId:  makeNodeId(&quot;MultiStateDiscrete003&quot;,namespaceIndex),
+        browseName: &quot;MultiStateDiscrete003&quot;,
+        enumStrings: [ &quot;Red&quot;,&quot;Orange&quot;,&quot;Green&quot;],
+        value: 1 // Orange
+    });
+
+    //MultiStateDiscrete002
+    addressSpace.addMultiStateDiscrete({
+        organizedBy: DADiscreteTypeFolder,
+        nodeId:  makeNodeId(&quot;MultiStateDiscrete004&quot;,namespaceIndex),
+        browseName: &quot;MultiStateDiscrete004&quot;,
+        enumStrings: [ &quot;Red&quot;,&quot;Orange&quot;,&quot;Green&quot;],
+        value: 1 // Orange
+    });
+
+    //MultiStateDiscrete002
+    addressSpace.addMultiStateDiscrete({
+        organizedBy: DADiscreteTypeFolder,
+        nodeId:  makeNodeId(&quot;MultiStateDiscrete005&quot;,namespaceIndex),
+        browseName: &quot;MultiStateDiscrete005&quot;,
+        enumStrings: [ &quot;Red&quot;,&quot;Orange&quot;,&quot;Green&quot;],
+        value: 1 // Orange
+    });
+
+}
+
+
+function add_multi_state_value_discrete_variables(addressSpace, parentFolder) {
+
+    var multistateValueDiscreteTypeFolder = addressSpace.addObject({
+        organizedBy: parentFolder,
+        typeDefinition: &quot;FolderType&quot;,
+        browseName: &quot;Simulation_DA_MultiStateValueDiscreteType&quot;,
+        nodeId: makeNodeId(&quot;Simulation_DA_MultiStateValueDiscreteType&quot;, namespaceIndex)
+    });
+
+    function _add_multi_state_variable(parentFolder, dataType) {
+
+        var name = dataType + &quot;MultiStateValueDiscrete&quot;;
+        var nodeId = makeNodeId(name, namespaceIndex);
+
+        var prop = addressSpace.addMultiStateValueDiscrete({
+            organizedBy: parentFolder,
+            browseName: name,
+            nodeId: nodeId,
+            dataType: dataType,
+            enumValues: {&quot;Red&quot;: 0xFF0000, &quot;Orange&quot;: 0xFF9933, &quot;Green&quot;: 0x00FF00, &quot;Blue&quot;: 0x0000FF},
+            value: 0xFF0000 // Red
+        });
+
+    }
+
+    var data = [
+        {dataType: &quot;Int16&quot;, value: -10},
+        {dataType: &quot;UInt16&quot;, value: 10},
+        {dataType: &quot;Int32&quot;, value: -100},
+        {dataType: &quot;UInt32&quot;, value: 100},
+        {dataType: &quot;Int64&quot;, value: [0, 0]},
+        {dataType: &quot;UInt64&quot;, value: [0, 0]},
+        {dataType: &quot;Byte&quot;, value: 120},
+        {dataType: &quot;SByte&quot;, value: -123}
+    ];
+    data.forEach(function (e) {
+        _add_multi_state_variable(multistateValueDiscreteTypeFolder, e.dataType);
+    });
+
+}
+
+function add_ObjectWithMethod(addressSpace, parentFolder) {
+
+    var namespaceIndex = 411;
+
+    var myObject = addressSpace.addObject({
+        nodeId: &quot;ns=411;s=ObjectWithMethods&quot;,
+        organizedBy: parentFolder,
+        browseName: &quot;ObjectWithMethods&quot;
+    });
+
+    var methodNoArgs = addressSpace.addMethod(myObject, {
+        ///xx modellingRule: &quot;Mandatory&quot;,
+        browseName: &quot;MethodNoArgs&quot;,
+        nodeId: makeNodeId(&quot;MethodNoArgs&quot;, namespaceIndex),
+        //xx inputArguments: [],
+        //xx outputArguments: []
+    });
+    assert(makeNodeId(&quot;MethodNoArgs&quot;, namespaceIndex).toString() === &quot;ns=411;s=MethodNoArgs&quot;);
+    assert(methodNoArgs.nodeId.toString() === &quot;ns=411;s=MethodNoArgs&quot;);
+
+    methodNoArgs.bindMethod(function (inputArguments, context, callback) {
+        // console.log(require(&quot;util&quot;).inspect(context).toString());
+        var callMethodResult = {
+            statusCode: StatusCodes.Good,
+            outputArguments: []
+        };
+        callback(null, callMethodResult);
+    });
+
+
+    var methodIO = addressSpace.addMethod(myObject, {
+
+        ///xx modellingRule: &quot;Mandatory&quot;,
+
+        browseName: &quot;MethodIO&quot;,
+        nodeId: makeNodeId(&quot;MethodIO&quot;, namespaceIndex),
+
+        inputArguments: [
+            {
+                name: &quot;ShutterLag&quot;,
+                description: {text: &quot;specifies the number of seconds to wait before the picture is taken &quot;},
+                dataType: DataType.UInt32
+            }
+        ],
+
+        outputArguments: [
+            {
+                name: &quot;Result&quot;,
+                description: {text: &quot;the result&quot;},
+                dataType: &quot;Int32&quot;
+            }
+        ]
+    });
+    methodIO.bindMethod(function (inputArguments, context, callback) {
+        // console.log(require(&quot;util&quot;).inspect(context).toString());
+        var callMethodResult = {
+            statusCode: StatusCodes.Good,
+            outputArguments: [
+                {
+                    dataType: DataType.Int32,
+                    value: 42
+                }
+            ]
+        };
+        callback(null, callMethodResult);
+    });
+
+    var methodI = addressSpace.addMethod(myObject, {
+
+        ///xx modellingRule: &quot;Mandatory&quot;,
+
+        browseName: &quot;MethodI&quot;,
+        nodeId: makeNodeId(&quot;MethodI&quot;, namespaceIndex),
+
+        inputArguments: [
+            {
+                name: &quot;ShutterLag&quot;,
+                description: {text: &quot;specifies the number of seconds to wait before the picture is taken &quot;},
+                dataType: DataType.UInt32
+            }
+        ],
+        //xx outputArguments: []
+
+    });
+    methodI.bindMethod(function (inputArguments, context, callback) {
+        // console.log(require(&quot;util&quot;).inspect(context).toString());
+        var callMethodResult = {
+            statusCode: StatusCodes.Good,
+            outputArguments: []
+        };
+        callback(null, callMethodResult);
+    });
+
+    var methodO = addressSpace.addMethod(myObject, {
+
+        ///xx modellingRule: &quot;Mandatory&quot;,
+
+        browseName: &quot;MethodO&quot;,
+        nodeId: makeNodeId(&quot;MethodO&quot;, namespaceIndex),
+
+        //xx inputArguments: [],
+        outputArguments: [
+            {
+                name: &quot;Result&quot;,
+                description: {text: &quot;the result&quot;},
+                dataType: &quot;Int32&quot;
+            }
+        ]
+
+    });
+    methodO.bindMethod(function (inputArguments, context, callback) {
+        // console.log(require(&quot;util&quot;).inspect(context).toString());
+        var callMethodResult = {
+            statusCode: StatusCodes.Good,
+            outputArguments: [
+                {
+                    dataType: DataType.Int32,
+                    value: 42
+                }
+            ]
+        };
+        callback(null, callMethodResult);
+    });
+
+}
+
+
+function add_enumeration_variable(addressSpace, parentFolder) {
+
+    var myEnumType = addressSpace.addEnumerationType({
+        browseName: &quot;SimulationEnumerationType&quot;,
+        enumeration: [
+            {value: 1, displayName: &quot;RUNNING&quot;},
+            {value: 2, displayName: &quot;BLOCKED&quot;},
+            {value: 3, displayName: &quot;IDLE&quot;},
+            {value: 4, displayName: &quot;UNDER MAINTENANCE&quot;}
+        ]
+    });
+
+    // now instantiate a variable that have this type.
+    var e = addressSpace.addVariable({
+        organizedBy: parentFolder,
+        propertyOf: addressSpace.rootFolder.objects.server.venderServerInfos,
+        dataType: myEnumType,
+        browseName: &quot;RunningState&quot;,
+        value: {
+            get: function () {
+                return new Variant({dataType: DataType.Int32, value: 1})
+            }
+        }
+    });
+
+}
+
+function add_trigger_nodes(addressSpace, parentFolder) {
+
+    // ns=411;s=TriggerNode01 ns=411;s=TriggerNode02
+    // add 2 nodes that generate an event when ever they are written to.
+
+    function _add_trigger_node(browseName, nodeId) {
+        var triggerNode = addressSpace.addVariable({
+            browseName: browseName,
+            nodeId: nodeId,
+            organizedBy: parentFolder,
+            dataType: &quot;Double&quot;,
+            typeDefinition: makeNodeId(68)
+        });
+
+        var value = 100.0;
+        var getFunc = function () {
+            return new Variant({
+                dataType: DataType.Double,
+                value: value
+            });
+        };
+        var setFunc = function (variant) {
+
+            value = variant.value;
+
+            var server = addressSpace.rootFolder.objects.server;
+
+            server.raiseEvent(&quot;MyEventType&quot;, {
+                message: {
+                    dataType: DataType.LocalizedText,
+                    value: {text: &quot;Hello World&quot;}
+                },
+                severity: {
+                    dataType: DataType.UInt32,
+                    value: 32
+                }
+
+            });
+        };
+
+        var options = {
+            get: getFunc,
+            set: setFunc
+        };
+        triggerNode.bindVariable(options);
+    }
+
+    var triggerNode01 = _add_trigger_node(&quot;TriggerNode01&quot;, &quot;ns=411;s=TriggerNode01&quot;);
+
+    var triggerNode02 = _add_trigger_node(&quot;TriggerNode02&quot;, &quot;ns=411;s=TriggerNode02&quot;);
+}
+
+function add_sampleView(addressSpace) {
+
+    addressSpace.addView({
+        organizedBy: addressSpace.rootFolder.views,
+        browseName: &quot;SampleView&quot;,
+        nodeId: &quot;ns=411;s=SampleView&quot;
+    });
+}
+build_address_space_for_conformance_testing = function (addressSpace, options) {
+
+    options = options || {};
+    options.mass_variable = options.mass_variable || false;
+
+    assert(addressSpace instanceof AddressSpace);
+
+    var objectsFolder = addressSpace.findNode(&quot;ObjectsFolder&quot;);
+
+    var simulationFolder = addressSpace.addFolder(objectsFolder, &quot;Simulation&quot;);
+
+    add_access_right_variables(addressSpace, simulationFolder);
+
+    var scalarFolder = addressSpace.addFolder(simulationFolder, {
+        browseName: &quot;Scalar&quot;,
+        description: &quot;Simply a parent folder&quot;
+    });
+
+    add_scalar_static_variables(addressSpace, scalarFolder);
+    if (options.mass_variables) {
+        add_mass_variables(addressSpace, scalarFolder);
+    }
+    add_simulation_variables(addressSpace, scalarFolder);
+
+    add_very_large_array_variables(addressSpace, scalarFolder);
+
+    add_analog_data_items(addressSpace, simulationFolder);
+
+    add_path_10deep(addressSpace, simulationFolder);
+
+    add_ObjectWithMethod(addressSpace, simulationFolder);
+
+    add_eventGeneratorObject(addressSpace, simulationFolder);
+
+    add_sampleView(addressSpace);
+
+    add_enumeration_variable(addressSpace, simulationFolder);
+
+    add_multi_state_value_discrete_variables(addressSpace, simulationFolder);
+
+    add_two_state_discrete_variables(addressSpace,simulationFolder);
+
+    add_multi_state_discrete_variable(addressSpace,simulationFolder);
+
+
+    add_trigger_nodes(addressSpace, simulationFolder);
+
+};
+exports.build_address_space_for_conformance_testing = build_address_space_for_conformance_testing;
+
+
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

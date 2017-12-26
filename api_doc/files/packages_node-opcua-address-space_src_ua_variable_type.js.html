@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>packages\node-opcua-address-space\src\ua_variable_type.js - The NodeOPCUA API</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.1.0-pre</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/AcknowledgeMessage.html">AcknowledgeMessage</a></li>
+                                <li><a href="../classes/ActivateSessionRequest.html">ActivateSessionRequest</a></li>
+                                <li><a href="../classes/ActivateSessionResponse.html">ActivateSessionResponse</a></li>
+                                <li><a href="../classes/AddNodesItem.html">AddNodesItem</a></li>
+                                <li><a href="../classes/AddNodesRequest.html">AddNodesRequest</a></li>
+                                <li><a href="../classes/AddNodesResponse.html">AddNodesResponse</a></li>
+                                <li><a href="../classes/AddNodesResult.html">AddNodesResult</a></li>
+                                <li><a href="../classes/AddReferencesItem.html">AddReferencesItem</a></li>
+                                <li><a href="../classes/AddReferencesRequest.html">AddReferencesRequest</a></li>
+                                <li><a href="../classes/AddReferencesResponse.html">AddReferencesResponse</a></li>
+                                <li><a href="../classes/AddressSpace.html">AddressSpace</a></li>
+                                <li><a href="../classes/AggregateConfiguration.html">AggregateConfiguration</a></li>
+                                <li><a href="../classes/AggregateFilter.html">AggregateFilter</a></li>
+                                <li><a href="../classes/AnonymousIdentityToken.html">AnonymousIdentityToken</a></li>
+                                <li><a href="../classes/ApplicationDescription.html">ApplicationDescription</a></li>
+                                <li><a href="../classes/ApplicationInstanceCertificate.html">ApplicationInstanceCertificate</a></li>
+                                <li><a href="../classes/Argument.html">Argument</a></li>
+                                <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
+                                <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+                                <li><a href="../classes/AttributeNameById.html">AttributeNameById</a></li>
+                                <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
+                                <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
+                                <li><a href="../classes/BaseEventType.html">BaseEventType</a></li>
+                                <li><a href="../classes/BaseNode.html">BaseNode</a></li>
+                                <li><a href="../classes/BaseUAObject.html">BaseUAObject</a></li>
+                                <li><a href="../classes/BinaryStream.html">BinaryStream</a></li>
+                                <li><a href="../classes/BinaryStreamSizeCalculator.html">BinaryStreamSizeCalculator</a></li>
+                                <li><a href="../classes/BrowseDescription.html">BrowseDescription</a></li>
+                                <li><a href="../classes/BrowseDirection.html">BrowseDirection</a></li>
+                                <li><a href="../classes/BrowseNextRequest.html">BrowseNextRequest</a></li>
+                                <li><a href="../classes/BrowseNextResponse.html">BrowseNextResponse</a></li>
+                                <li><a href="../classes/BrowsePath.html">BrowsePath</a></li>
+                                <li><a href="../classes/BrowsePathResult.html">BrowsePathResult</a></li>
+                                <li><a href="../classes/BrowsePathTarget.html">BrowsePathTarget</a></li>
+                                <li><a href="../classes/BrowseRequest.html">BrowseRequest</a></li>
+                                <li><a href="../classes/BrowseResponse.html">BrowseResponse</a></li>
+                                <li><a href="../classes/BrowseResult.html">BrowseResult</a></li>
+                                <li><a href="../classes/BuildInfo.html">BuildInfo</a></li>
+                                <li><a href="../classes/CallMethodRequest.html">CallMethodRequest</a></li>
+                                <li><a href="../classes/CallMethodResult.html">CallMethodResult</a></li>
+                                <li><a href="../classes/CallRequest.html">CallRequest</a></li>
+                                <li><a href="../classes/CallResponse.html">CallResponse</a></li>
+                                <li><a href="../classes/CancelRequest.html">CancelRequest</a></li>
+                                <li><a href="../classes/CancelResponse.html">CancelResponse</a></li>
+                                <li><a href="../classes/ChannelSecurityToken.html">ChannelSecurityToken</a></li>
+                                <li><a href="../classes/ChunkManager.html">ChunkManager</a></li>
+                                <li><a href="../classes/ClientMonitoredItem.html">ClientMonitoredItem</a></li>
+                                <li><a href="../classes/ClientMonitoredItemGroup.html">ClientMonitoredItemGroup</a></li>
+                                <li><a href="../classes/ClientSecureChannelLayer.html">ClientSecureChannelLayer</a></li>
+                                <li><a href="../classes/ClientSession.html">ClientSession</a></li>
+                                <li><a href="../classes/ClientSidePublishEngine.html">ClientSidePublishEngine</a></li>
+                                <li><a href="../classes/ClientSubscription.html">ClientSubscription</a></li>
+                                <li><a href="../classes/ClientTCP_transport.html">ClientTCP_transport</a></li>
+                                <li><a href="../classes/CloseSecureChannelRequest.html">CloseSecureChannelRequest</a></li>
+                                <li><a href="../classes/CloseSecureChannelResponse.html">CloseSecureChannelResponse</a></li>
+                                <li><a href="../classes/CloseSessionRequest.html">CloseSessionRequest</a></li>
+                                <li><a href="../classes/CloseSessionResponse.html">CloseSessionResponse</a></li>
+                                <li><a href="../classes/Company.html">Company</a></li>
+                                <li><a href="../classes/ConditionInfo.html">ConditionInfo</a></li>
+                                <li><a href="../classes/ConditionSnapshot.html">ConditionSnapshot</a></li>
+                                <li><a href="../classes/ContentFilter.html">ContentFilter</a></li>
+                                <li><a href="../classes/ContentFilterElement.html">ContentFilterElement</a></li>
+                                <li><a href="../classes/ContentFilterElementResult.html">ContentFilterElementResult</a></li>
+                                <li><a href="../classes/ContentFilterResult.html">ContentFilterResult</a></li>
+                                <li><a href="../classes/CreateMonitoredItemsRequest.html">CreateMonitoredItemsRequest</a></li>
+                                <li><a href="../classes/CreateMonitoredItemsResponse.html">CreateMonitoredItemsResponse</a></li>
+                                <li><a href="../classes/CreateSessionRequest.html">CreateSessionRequest</a></li>
+                                <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
+                                <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
+                                <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
+                                <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
+                                <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
+                                <li><a href="../classes/DataValue.html">DataValue</a></li>
+                                <li><a href="../classes/DeleteMonitoredItemsRequest.html">DeleteMonitoredItemsRequest</a></li>
+                                <li><a href="../classes/DeleteMonitoredItemsResponse.html">DeleteMonitoredItemsResponse</a></li>
+                                <li><a href="../classes/DeleteNodesItem.html">DeleteNodesItem</a></li>
+                                <li><a href="../classes/DeleteNodesRequest.html">DeleteNodesRequest</a></li>
+                                <li><a href="../classes/DeleteNodesResponse.html">DeleteNodesResponse</a></li>
+                                <li><a href="../classes/DeleteReferencesItem.html">DeleteReferencesItem</a></li>
+                                <li><a href="../classes/DeleteReferencesRequest.html">DeleteReferencesRequest</a></li>
+                                <li><a href="../classes/DeleteReferencesResponse.html">DeleteReferencesResponse</a></li>
+                                <li><a href="../classes/DeleteSubscriptionsRequest.html">DeleteSubscriptionsRequest</a></li>
+                                <li><a href="../classes/DeleteSubscriptionsResponse.html">DeleteSubscriptionsResponse</a></li>
+                                <li><a href="../classes/DiagnosticInfo.html">DiagnosticInfo</a></li>
+                                <li><a href="../classes/DummyObject.html">DummyObject</a></li>
+                                <li><a href="../classes/ElementOperand.html">ElementOperand</a></li>
+                                <li><a href="../classes/Employee.html">Employee</a></li>
+                                <li><a href="../classes/EndpointDescription.html">EndpointDescription</a></li>
+                                <li><a href="../classes/Enum.html">Enum</a></li>
+                                <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
+                                <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
+                                <li><a href="../classes/EUInformation.html">EUInformation</a></li>
+                                <li><a href="../classes/EventData.html">EventData</a></li>
+                                <li><a href="../classes/EventFieldList.html">EventFieldList</a></li>
+                                <li><a href="../classes/EventFilter.html">EventFilter</a></li>
+                                <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
+                                <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
+                                <li><a href="../classes/ExpandedNodeId.html">ExpandedNodeId</a></li>
+                                <li><a href="../classes/Factory.html">Factory</a></li>
+                                <li><a href="../classes/FilterOperand.html">FilterOperand</a></li>
+                                <li><a href="../classes/FindServersRequest.html">FindServersRequest</a></li>
+                                <li><a href="../classes/FindServersResponse.html">FindServersResponse</a></li>
+                                <li><a href="../classes/FooBar.html">FooBar</a></li>
+                                <li><a href="../classes/FooBarDerived.html">FooBarDerived</a></li>
+                                <li><a href="../classes/FooWithRecursion.html">FooWithRecursion</a></li>
+                                <li><a href="../classes/GetEndpointsRequest.html">GetEndpointsRequest</a></li>
+                                <li><a href="../classes/GetEndpointsResponse.html">GetEndpointsResponse</a></li>
+                                <li><a href="../classes/HelloMessage.html">HelloMessage</a></li>
+                                <li><a href="../classes/HistoryData.html">HistoryData</a></li>
+                                <li><a href="../classes/HistoryModifiedData.html">HistoryModifiedData</a></li>
+                                <li><a href="../classes/HistoryReadDetails.html">HistoryReadDetails</a></li>
+                                <li><a href="../classes/HistoryReadRequest.html">HistoryReadRequest</a></li>
+                                <li><a href="../classes/HistoryReadResponse.html">HistoryReadResponse</a></li>
+                                <li><a href="../classes/HistoryReadResult.html">HistoryReadResult</a></li>
+                                <li><a href="../classes/HistoryReadValueId.html">HistoryReadValueId</a></li>
+                                <li><a href="../classes/HistoryServerCapabilities.html">HistoryServerCapabilities</a></li>
+                                <li><a href="../classes/HistoryUpdateRequest.html">HistoryUpdateRequest</a></li>
+                                <li><a href="../classes/HistoryUpdateResponse.html">HistoryUpdateResponse</a></li>
+                                <li><a href="../classes/HistoryUpdateResult.html">HistoryUpdateResult</a></li>
+                                <li><a href="../classes/IssuedIdentityToken.html">IssuedIdentityToken</a></li>
+                                <li><a href="../classes/LiteralOperand.html">LiteralOperand</a></li>
+                                <li><a href="../classes/LocalizedText.html">LocalizedText</a></li>
+                                <li><a href="../classes/MessageBuilder.html">MessageBuilder</a></li>
+                                <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
+                                <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
+                                <li><a href="../classes/MetaShapeForUnitTest.html">MetaShapeForUnitTest</a></li>
+                                <li><a href="../classes/ModelChangeStructure.html">ModelChangeStructure</a></li>
+                                <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
+                                <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
+                                <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
+                                <li><a href="../classes/ModifySubscriptionRequest.html">ModifySubscriptionRequest</a></li>
+                                <li><a href="../classes/ModifySubscriptionResponse.html">ModifySubscriptionResponse</a></li>
+                                <li><a href="../classes/MonitoredItem.html">MonitoredItem</a></li>
+                                <li><a href="../classes/MonitoredItemCreateRequest.html">MonitoredItemCreateRequest</a></li>
+                                <li><a href="../classes/MonitoredItemCreateResult.html">MonitoredItemCreateResult</a></li>
+                                <li><a href="../classes/MonitoredItemModifyRequest.html">MonitoredItemModifyRequest</a></li>
+                                <li><a href="../classes/MonitoredItemModifyResult.html">MonitoredItemModifyResult</a></li>
+                                <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
+                                <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
+                                <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+                                <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
+                                <li><a href="../classes/NodeId.html">NodeId</a></li>
+                                <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
+                                <li><a href="../classes/NodeTypeDescription.html">NodeTypeDescription</a></li>
+                                <li><a href="../classes/NotificationMessage.html">NotificationMessage</a></li>
+                                <li><a href="../classes/ObjWithAccessLevel.html">ObjWithAccessLevel</a></li>
+                                <li><a href="../classes/ObjWithIntegerId.html">ObjWithIntegerId</a></li>
+                                <li><a href="../classes/opcua.html">opcua</a></li>
+                                <li><a href="../classes/OPCUABaseServer.html">OPCUABaseServer</a></li>
+                                <li><a href="../classes/OPCUAClient.html">OPCUAClient</a></li>
+                                <li><a href="../classes/OPCUAClientBase.html">OPCUAClientBase</a></li>
+                                <li><a href="../classes/OPCUASecureObject.html">OPCUASecureObject</a></li>
+                                <li><a href="../classes/OPCUAServer.html">OPCUAServer</a></li>
+                                <li><a href="../classes/OPCUAServerEndPoint
+                
+                A sever end point is listening to one port.html">OPCUAServerEndPoint
+                
+                A sever end point is listening to one port</a></li>
+                                <li><a href="../classes/OpenSecureChannelRequest.html">OpenSecureChannelRequest</a></li>
+                                <li><a href="../classes/OpenSecureChannelResponse.html">OpenSecureChannelResponse</a></li>
+                                <li><a href="../classes/OperationLimits.html">OperationLimits</a></li>
+                                <li><a href="../classes/PacketAssembler.html">PacketAssembler</a></li>
+                                <li><a href="../classes/ParsingResult.html">ParsingResult</a></li>
+                                <li><a href="../classes/Person.html">Person</a></li>
+                                <li><a href="../classes/Person2.html">Person2</a></li>
+                                <li><a href="../classes/Potato.html">Potato</a></li>
+                                <li><a href="../classes/PublishRequest.html">PublishRequest</a></li>
+                                <li><a href="../classes/PublishResponse.html">PublishResponse</a></li>
+                                <li><a href="../classes/QualifiedName.html">QualifiedName</a></li>
+                                <li><a href="../classes/QueryDataDescription.html">QueryDataDescription</a></li>
+                                <li><a href="../classes/QueryDataSet.html">QueryDataSet</a></li>
+                                <li><a href="../classes/QueryFirstRequest.html">QueryFirstRequest</a></li>
+                                <li><a href="../classes/QueryFirstResponse.html">QueryFirstResponse</a></li>
+                                <li><a href="../classes/QueryNextRequest.html">QueryNextRequest</a></li>
+                                <li><a href="../classes/QueryNextResponse.html">QueryNextResponse</a></li>
+                                <li><a href="../classes/Range.html">Range</a></li>
+                                <li><a href="../classes/ReadAtTimeDetails.html">ReadAtTimeDetails</a></li>
+                                <li><a href="../classes/ReaderState.html">ReaderState</a></li>
+                                <li><a href="../classes/ReadEventDetails.html">ReadEventDetails</a></li>
+                                <li><a href="../classes/ReadProcessedDetails.html">ReadProcessedDetails</a></li>
+                                <li><a href="../classes/ReadRawModifiedDetails.html">ReadRawModifiedDetails</a></li>
+                                <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
+                                <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
+                                <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+                                <li><a href="../classes/RedundantServer.html">RedundantServer</a></li>
+                                <li><a href="../classes/Reference.html">Reference</a></li>
+                                <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
+                                <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
+                                <li><a href="../classes/RegisteredServer.html">RegisteredServer</a></li>
+                                <li><a href="../classes/RegisterNodesRequest.html">RegisterNodesRequest</a></li>
+                                <li><a href="../classes/RegisterNodesResponse.html">RegisterNodesResponse</a></li>
+                                <li><a href="../classes/RegisterServerRequest.html">RegisterServerRequest</a></li>
+                                <li><a href="../classes/RegisterServerResponse.html">RegisterServerResponse</a></li>
+                                <li><a href="../classes/RelativePath.html">RelativePath</a></li>
+                                <li><a href="../classes/RelativePathElement.html">RelativePathElement</a></li>
+                                <li><a href="../classes/RepublishRequest.html">RepublishRequest</a></li>
+                                <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
+                                <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
+                                <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+                                <li><a href="../classes/Role.html">Role</a></li>
+                                <li><a href="../classes/SamplingIntervalDiagnostics.html">SamplingIntervalDiagnostics</a></li>
+                                <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
+                                <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
+                                <li><a href="../classes/SemanticChangeStructure.html">SemanticChangeStructure</a></li>
+                                <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
+                                <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
+                                <li><a href="../classes/ServerCapabilities.html">ServerCapabilities</a></li>
+                                <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
+                                <li><a href="../classes/ServerEngine.html">ServerEngine</a></li>
+                                <li><a href="../classes/ServerSecureChannelLayer.html">ServerSecureChannelLayer</a></li>
+                                <li><a href="../classes/ServerSession.html">ServerSession</a></li>
+                                <li><a href="../classes/ServerSidePublishEngine.html">ServerSidePublishEngine</a></li>
+                                <li><a href="../classes/ServerSideUnimplementedRequest.html">ServerSideUnimplementedRequest</a></li>
+                                <li><a href="../classes/ServerStatus.html">ServerStatus</a></li>
+                                <li><a href="../classes/ServerTCP_transport.html">ServerTCP_transport</a></li>
+                                <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
+                                <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
+                                <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+                                <li><a href="../classes/SessionSecurityDiagnostics.html">SessionSecurityDiagnostics</a></li>
+                                <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
+                                <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
+                                <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
+                                <li><a href="../classes/SetPublishingModeResponse.html">SetPublishingModeResponse</a></li>
+                                <li><a href="../classes/SetTriggeringRequest.html">SetTriggeringRequest</a></li>
+                                <li><a href="../classes/SetTriggeringResponse.html">SetTriggeringResponse</a></li>
+                                <li><a href="../classes/Shape.html">Shape</a></li>
+                                <li><a href="../classes/SignatureData.html">SignatureData</a></li>
+                                <li><a href="../classes/SignedSoftwareCertificate.html">SignedSoftwareCertificate</a></li>
+                                <li><a href="../classes/SimpleAttributeOperand.html">SimpleAttributeOperand</a></li>
+                                <li><a href="../classes/Simulator.html">Simulator</a></li>
+                                <li><a href="../classes/StatusChangeNotification.html">StatusChangeNotification</a></li>
+                                <li><a href="../classes/StatusCode.html">StatusCode</a></li>
+                                <li><a href="../classes/Subscription.html">Subscription</a></li>
+                                <li><a href="../classes/SubscriptionAcknowledgement.html">SubscriptionAcknowledgement</a></li>
+                                <li><a href="../classes/SubscriptionDiagnostics.html">SubscriptionDiagnostics</a></li>
+                                <li><a href="../classes/SymmetricAlgorithmSecurityHeader.html">SymmetricAlgorithmSecurityHeader</a></li>
+                                <li><a href="../classes/TCP_transport.html">TCP_transport</a></li>
+                                <li><a href="../classes/TCPErrorMessage.html">TCPErrorMessage</a></li>
+                                <li><a href="../classes/TimestampsToReturn.html">TimestampsToReturn</a></li>
+                                <li><a href="../classes/TimeZone.html">TimeZone</a></li>
+                                <li><a href="../classes/ToolBrowsePath.html">ToolBrowsePath</a></li>
+                                <li><a href="../classes/TransferResult.html">TransferResult</a></li>
+                                <li><a href="../classes/TransferSubscriptionsRequest.html">TransferSubscriptionsRequest</a></li>
+                                <li><a href="../classes/TransferSubscriptionsResponse.html">TransferSubscriptionsResponse</a></li>
+                                <li><a href="../classes/TranslateBrowsePathsToNodeIdsRequest.html">TranslateBrowsePathsToNodeIdsRequest</a></li>
+                                <li><a href="../classes/TranslateBrowsePathsToNodeIdsResponse.html">TranslateBrowsePathsToNodeIdsResponse</a></li>
+                                <li><a href="../classes/TypeSchema.html">TypeSchema</a></li>
+                                <li><a href="../classes/UAAcknowledgeableConditionBase.html">UAAcknowledgeableConditionBase</a></li>
+                                <li><a href="../classes/UAAlarmConditionBase.html">UAAlarmConditionBase</a></li>
+                                <li><a href="../classes/UACertificateExpirationAlarm.html">UACertificateExpirationAlarm</a></li>
+                                <li><a href="../classes/UAConditionBase.html">UAConditionBase</a></li>
+                                <li><a href="../classes/UADataType.html">UADataType</a></li>
+                                <li><a href="../classes/UADiscreteAlarm.html">UADiscreteAlarm</a></li>
+                                <li><a href="../classes/UAExclusiveDeviationAlarm.html">UAExclusiveDeviationAlarm</a></li>
+                                <li><a href="../classes/UAExclusiveLevelAlarm.html">UAExclusiveLevelAlarm</a></li>
+                                <li><a href="../classes/UAExclusiveLimitAlarm.html">UAExclusiveLimitAlarm</a></li>
+                                <li><a href="../classes/UAExclusiveRateOfChangeAlarm.html">UAExclusiveRateOfChangeAlarm</a></li>
+                                <li><a href="../classes/UALimitAlarm.html">UALimitAlarm</a></li>
+                                <li><a href="../classes/UANonExclusiveDeviationAlarm.html">UANonExclusiveDeviationAlarm</a></li>
+                                <li><a href="../classes/UANonExclusiveLimitAlarm.html">UANonExclusiveLimitAlarm</a></li>
+                                <li><a href="../classes/UAObject.html">UAObject</a></li>
+                                <li><a href="../classes/UAObjectType.html">UAObjectType</a></li>
+                                <li><a href="../classes/UAOffNormalAlarm.html">UAOffNormalAlarm</a></li>
+                                <li><a href="../classes/UASystemOffNormalAlarm.html">UASystemOffNormalAlarm</a></li>
+                                <li><a href="../classes/UATripAlarm.html">UATripAlarm</a></li>
+                                <li><a href="../classes/UATwoStateVariable.html">UATwoStateVariable</a></li>
+                                <li><a href="../classes/UAVariable.html">UAVariable</a></li>
+                                <li><a href="../classes/UAVariableType.html">UAVariableType</a></li>
+                                <li><a href="../classes/UnregisterNodesRequest.html">UnregisterNodesRequest</a></li>
+                                <li><a href="../classes/UnregisterNodesResponse.html">UnregisterNodesResponse</a></li>
+                                <li><a href="../classes/UserNameIdentityToken.html">UserNameIdentityToken</a></li>
+                                <li><a href="../classes/UserTokenPolicy.html">UserTokenPolicy</a></li>
+                                <li><a href="../classes/Variant.html">Variant</a></li>
+                                <li><a href="../classes/View.html">View</a></li>
+                                <li><a href="../classes/ViewDescription.html">ViewDescription</a></li>
+                                <li><a href="../classes/WriteRequest.html">WriteRequest</a></li>
+                                <li><a href="../classes/WriteResponse.html">WriteResponse</a></li>
+                                <li><a href="../classes/WriteValue.html">WriteValue</a></li>
+                                <li><a href="../classes/X509IdentityToken.html">X509IdentityToken</a></li>
+                                <li><a href="../classes/Xml2Json.html">Xml2Json</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/opcua.address_space.html">opcua.address_space</a></li>
+                                <li><a href="../modules/opcua.address_space.AlarmsAndConditions.html">opcua.address_space.AlarmsAndConditions</a></li>
+                                <li><a href="../modules/opcua.address_space.types.html">opcua.address_space.types</a></li>
+                                <li><a href="../modules/opcua.client.html">opcua.client</a></li>
+                                <li><a href="../modules/opcua.data-value.html">opcua.data-value</a></li>
+                                <li><a href="../modules/opcua.datamodel.html">opcua.datamodel</a></li>
+                                <li><a href="../modules/opcua.miscellaneous.html">opcua.miscellaneous</a></li>
+                                <li><a href="../modules/opcua.server.html">opcua.server</a></li>
+                                <li><a href="../modules/opcua.server.simulation.html">opcua.server.simulation</a></li>
+                                <li><a href="../modules/opcua.status-code.html">opcua.status-code</a></li>
+                                <li><a href="../modules/opcua.transport.html">opcua.transport</a></li>
+                                <li><a href="../modules/opcua.utils.html">opcua.utils</a></li>
+                                <li><a href="../modules/opcua.variant.html">opcua.variant</a></li>
+                                <li><a href="../modules/service.filter.tools.html">service.filter.tools</a></li>
+                                <li><a href="../modules/services.browse.html">services.browse</a></li>
+                                <li><a href="../modules/services.call.html">services.call</a></li>
+                                <li><a href="../modules/services.discovery.html">services.discovery</a></li>
+                                <li><a href="../modules/services.endpoints.html">services.endpoints</a></li>
+                                <li><a href="../modules/services.filter.html">services.filter</a></li>
+                                <li><a href="../modules/services.history.html">services.history</a></li>
+                                <li><a href="../modules/services.node_management.html">services.node_management</a></li>
+                                <li><a href="../modules/services.query.html">services.query</a></li>
+                                <li><a href="../modules/services.read.html">services.read</a></li>
+                                <li><a href="../modules/services.register-server.html">services.register-server</a></li>
+                                <li><a href="../modules/services.register_node.html">services.register_node</a></li>
+                                <li><a href="../modules/services.secure-channel.html">services.secure-channel</a></li>
+                                <li><a href="../modules/services.session.html">services.session</a></li>
+                                <li><a href="../modules/services.subscription.html">services.subscription</a></li>
+                                <li><a href="../modules/services.translate-browse-path.html">services.translate-browse-path</a></li>
+                                <li><a href="../modules/services.write.html">services.write</a></li>
+                                <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
+                                <li><a href="../modules/xml2json
+                
+                node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+                
+                node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: packages\node-opcua-address-space\src\ua_variable_type.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+&quot;use strict&quot;;
+
+/**
+ * @module opcua.address_space
+ */
+var assert = require(&quot;node-opcua-assert&quot;);
+var util = require(&quot;util&quot;);
+var _ = require(&quot;underscore&quot;);
+
+var NodeClass = require(&quot;node-opcua-data-model&quot;).NodeClass;
+
+var NodeId = require(&quot;node-opcua-nodeid&quot;).NodeId;
+var coerceNodeId = require(&quot;node-opcua-nodeid&quot;).coerceNodeId;
+var makeNodeId = require(&quot;node-opcua-nodeid&quot;).makeNodeId;
+var resolveNodeId = require(&quot;node-opcua-nodeid&quot;).resolveNodeId;
+var sameNodeId = require(&quot;node-opcua-nodeid&quot;).sameNodeId;
+
+
+var DataValue =  require(&quot;node-opcua-data-value&quot;).DataValue;
+
+var Variant  = require(&quot;node-opcua-variant&quot;).Variant;
+var DataType = require(&quot;node-opcua-variant&quot;).DataType;
+var VariantArrayType = require(&quot;node-opcua-variant&quot;).VariantArrayType;
+
+var StatusCodes = require(&quot;node-opcua-status-code&quot;).StatusCodes;
+
+var AttributeIds = require(&quot;node-opcua-data-model&quot;).AttributeIds;
+
+
+var isNullOrUndefined = require(&quot;node-opcua-utils&quot;).isNullOrUndefined;
+
+
+var BrowseDirection = require(&quot;node-opcua-data-model&quot;).BrowseDirection;
+
+var SessionContext = require(&quot;./session_context&quot;).SessionContext;
+var Reference = require(&quot;./reference&quot;).Reference;
+
+
+var debug =  require(&quot;node-opcua-debug&quot;);
+var debugLog = debug.make_debugLog(__filename);
+var doDebug = debug.checkDebugFlag(__filename);
+
+
+
+var BaseNode = require(&quot;./base_node&quot;).BaseNode;
+
+
+function prepareDataType(dataType) {
+    return coerceNodeId(dataType);
+}
+
+
+/**
+ * @class UAVariableType
+ * @extends  BaseNode
+ * @param options
+ * @constructor
+ */
+function UAVariableType(options) {
+
+    var self = this;
+
+    BaseNode.apply(self, arguments);
+
+    self.isAbstract = isNullOrUndefined(options.isAbstract) ? false : options.isAbstract;
+
+    self.value = options.value;          // optional default value for instances of this UAVariableType
+
+    self.dataType = prepareDataType(options.dataType);    // DataType (NodeId)
+
+    self.valueRank = options.valueRank || 0;  // Int32
+
+    // see OPC-UA part 5 : $3.7 Conventions for Node descriptions
+    self.arrayDimensions = options.arrayDimensions || [];
+
+    assert(_.isArray(this.arrayDimensions));
+
+    if (options.value) {
+        self.value = new Variant(options.value);
+        //xx console.log(&quot;setting &quot;,self.value.toString());
+    }
+}
+
+util.inherits(UAVariableType, BaseNode);
+UAVariableType.prototype.nodeClass = NodeClass.VariableType;
+
+UAVariableType.prototype.readAttribute = function (context, attributeId) {
+
+    assert(context instanceof SessionContext);
+
+    var options = {};
+    switch (attributeId) {
+        case AttributeIds.IsAbstract:
+            options.value = {dataType: DataType.Boolean, value: this.isAbstract ? true : false};
+            options.statusCode = StatusCodes.Good;
+            break;
+        case AttributeIds.Value:
+            if (this.hasOwnProperty(&quot;value&quot;) &amp;&amp; this.value !== undefined) {
+                assert(this.value._schema.name === &quot;Variant&quot;);
+                options.value = this.value;
+                options.statusCode = StatusCodes.Good;
+            } else {
+                debugLog(&quot; warning Value not implemented&quot;);
+                options.value = {dataType: DataType.UInt32, value: 0};
+                options.statusCode = StatusCodes.BadAttributeIdInvalid;
+            }
+            break;
+        case AttributeIds.DataType:
+            assert(this.dataType instanceof NodeId);
+            options.value = {dataType: DataType.NodeId, value: this.dataType};
+            options.statusCode = StatusCodes.Good;
+            break;
+        case AttributeIds.ValueRank:
+            options.value = {dataType: DataType.Int32, value: this.valueRank};
+            options.statusCode = StatusCodes.Good;
+            break;
+        case AttributeIds.ArrayDimensions:
+            assert(_.isArray(this.arrayDimensions) || this.arrayDimensions === null);
+            options.value = {dataType: DataType.UInt32, arrayType: VariantArrayType.Array, value: this.arrayDimensions};
+            options.statusCode = StatusCodes.Good;
+            break;
+        default:
+            return BaseNode.prototype.readAttribute.call(this, context, attributeId);
+    }
+    return new DataValue(options);
+};
+
+
+var tools = require(&quot;./tool_isSupertypeOf&quot;);
+UAVariableType.prototype.isSupertypeOf = tools.construct_isSupertypeOf(UAVariableType);
+
+
+/**
+ * return true if node is a mandatory child or a requested optional
+ * @param instance
+ * @param optionalsMap
+ * @return {Boolean}
+ */
+function MandatoryChildOrRequestedOptionalFilter(instance, optionalsMap) {
+    var self = this;
+    // should we clone the node to be a component or propertyOf of a instance
+    assert(_.isObject(optionalsMap));
+    assert(null !== instance);
+    self.optionalsMap= optionalsMap;
+    self.instance = instance;
+    self.references = [].concat(_.map(
+        instance._referenceIdx), _.map(instance._back_referenceIdx));
+
+}
+
+MandatoryChildOrRequestedOptionalFilter.prototype.shouldKeep = function(node)
+{
+    var self = this;
+
+    var addressSpace = node.addressSpace;
+
+    var alreadyIn = self.references.filter(function (r) {
+        var n = addressSpace.findNode(r.nodeId);
+        if (!_.isObject(n)) {
+            console.log(&quot; cannot find node &quot;,r.nodeId.toString());
+        }
+        assert(_.isObject(n) || false);
+        return n.browseName.name.toString() === node.browseName.name.toString();
+    });
+
+    if (alreadyIn.length &gt; 0) {
+        assert(alreadyIn.length === 1, &quot;Duplication found ?&quot;);
+        // a child with the same browse name has already been install
+        // probably from a SuperClass, we should ignore this.
+        return false; // ignore
+    }
+
+    var modellingRule = node.modellingRule;
+
+    switch (modellingRule) {
+        case null:
+            return false; // skip
+        case &quot;Mandatory&quot;:
+            return true;  // keep;
+        case &quot;Optional&quot;:
+            // only if in requested optionals
+            return (node.browseName.name in self.optionalsMap);
+            break;
+        case &quot;OptionalPlaceHolder&quot;:
+            return false; // ignored
+        default:
+            return false; // ignored
+    }
+};
+MandatoryChildOrRequestedOptionalFilter.prototype.filterFor = function(childinstance)
+{
+    // construct
+    var self = this;
+
+    var browseName =childinstance.browseName.name;
+
+    var map = {};
+
+    if (browseName in self.optionalsMap) {
+        map = self.optionalsMap[browseName];
+    }
+    var newFilter=  new MandatoryChildOrRequestedOptionalFilter(childinstance,map);
+    return newFilter;
+};
+
+
+
+
+/*
+ * @function _get_parent_as_VariableOrObjectType
+ * @param originalObject
+ * @return {null|UABaseNode}
+ * @private
+ */
+function _get_parent_as_VariableOrObjectType(originalObject) {
+
+    if (originalObject.nodeClass === NodeClass.Method) {
+        return null;
+    }
+
+    var addressSpace = originalObject.addressSpace;
+
+    var parent = originalObject.findReferencesEx(&quot;HasChild&quot;,BrowseDirection.Inverse);
+
+    // istanbul ignore next
+    if (parent.length &gt; 1) {
+        console.warn(&quot; object &quot;, originalObject.browseName.toString(), &quot; has more than one parent !&quot;);
+        console.warn(originalObject.toString());
+        console.warn(&quot; parents : &quot;);
+        for (var i = 0; i &lt; parent.length; i++) {
+            console.log(&quot;     &quot;,
+              parent[i].toString(),
+              addressSpace.findNode(parent[i].nodeId).browseName.toString()
+            );
+        }
+        return null;
+    }
+
+    assert(parent.length ===0 || parent.length === 1);
+    if (parent.length === 0){ return null; }
+    parent = addressSpace.findNode(parent[0].nodeId);
+    if (parent &amp;&amp; ( parent.nodeClass === NodeClass.VariableType || parent.nodeClass === NodeClass.ObjectType )) {
+        return parent;
+    }
+    return null;
+}
+
+
+function CloneHelper()
+{
+    this.mapOrgToClone = {};
+}
+
+CloneHelper.prototype.registerClonedObject = function(objInType,clonedObj) {
+
+    //xx console.log(&quot;zzzz =&gt; &quot;,objInType.nodeId.toString(), clonedObj.nodeId.toString());
+    this.mapOrgToClone[objInType.nodeId.toString()] = {
+        original: objInType,
+        cloned: clonedObj
+    };
+
+    //
+    //   /-----------------------------\
+    //   | AcknowledgableConditionType |
+    //   \-----------------------------/
+    //              ^        |
+    //              |        +---------------------|- (EnabledState)   (shadow element)
+    //              |
+    //   /-----------------------------\
+    //   |        AlarmConditionType   |
+    //   \-----------------------------/
+    //              |
+    //              +-------------------------------|- EnabledState    &lt;
+    //
+    // find also child object with the same browse name that are
+    // overridden in the SuperType
+    //
+    var origParent = _get_parent_as_VariableOrObjectType(objInType);
+    if (origParent) {
+
+        var base = origParent.subtypeOfObj;
+        while(base) {
+            var shadowChild = base.getChildByName(objInType.browseName);
+            if(shadowChild) {
+                this.mapOrgToClone[shadowChild.nodeId.toString()] = {
+                    original: shadowChild,
+                    cloned: clonedObj
+                };
+                //xx console.log(&quot;   zzzz =&gt;     &quot;,shadowChild.nodeId.toString(), clonedObj.nodeId.toString(),objInType.browseName.toString());
+            }
+            base = base.subtypeOfObj;
+        }
+    }
+    // find subTypeOf
+};
+
+// install properties and components on a instantiated Object
+//
+// based on their ModelingRule
+//  =&gt; Mandatory                 =&gt; Installed
+//  =&gt; Optional                  =&gt; Not Installed , unless it appear in optionals array
+//  =&gt; OptionalPlaceHolder       =&gt; Not Installed
+//  =&gt; null (no modelling rule ) =&gt; Not Installed
+//
+function _initialize_properties_and_components(instance,topMostType,typeNode,optionalsMap, extraInfo) {
+
+    optionalsMap = optionalsMap || {};
+
+    if (topMostType.nodeId === typeNode.nodeId) {
+        return; // nothing to do
+    }
+
+    var baseTypeNodeId = typeNode.subtypeOf;
+
+    var baseType = typeNode.subtypeOfObj;
+
+    // istanbul ignore next
+    if (!baseType) {
+        throw new Error(&quot;Cannot find object with nodeId &quot;.red + baseTypeNodeId);
+    }
+
+    var filter = new MandatoryChildOrRequestedOptionalFilter(instance,optionalsMap);
+
+
+    typeNode._clone_children_references(instance,filter,extraInfo);
+
+    // get properties and components from base class
+    _initialize_properties_and_components(instance,topMostType,baseType,optionalsMap , extraInfo);
+
+}
+
+/**
+ * returns true if the parent object has a child  with the provided browseName
+ * @param parent
+ * @param childBrowseName
+ */
+function hasChildWithBrowseName(parent,childBrowseName) {
+
+    assert(parent instanceof BaseNode);
+    // extract children
+    var children = parent.findReferencesAsObject(&quot;HasChild&quot;, true);
+
+    return children.filter(function(child){
+        return child.browseName.name.toString()  === childBrowseName;
+    }).length &gt; 0;
+
+}
+
+function getParent(options) {
+    var parent = options.componentOf || options.organizedBy ;
+    return parent;
+}
+function assertUnusedChildBrowseName(addressSpace,options) {
+
+    function resolveOptionalObject(node) {
+        return  node ? addressSpace._coerceNode(node) : null;
+    }
+    options.componentOf = resolveOptionalObject(options.componentOf);
+    options.organizedBy = resolveOptionalObject(options.organizedBy);
+
+    assert(!(options.componentOf &amp;&amp; options.organizedBy));
+
+    var parent = getParent(options);
+    if (!parent) {
+        return;
+    }
+    assert(_.isObject(parent));
+
+    // istanbul ignore next
+    // verify that no components already exists in parent
+    if( parent &amp;&amp; hasChildWithBrowseName(parent,options.browseName)){
+        throw new Error(&quot;object &quot; + parent.browseName.name.toString() +
+            &quot; have already a child with browseName &quot; + options.browseName.toString());
+    }
+
+}
+exports.assertUnusedChildBrowseName = assertUnusedChildBrowseName;
+exports.initialize_properties_and_components = initialize_properties_and_components;
+
+//xx var hasTypeDefintionNodeId = makeNodeId(40);
+//xx var hasModellingRuleNodeId = makeNodeId(37);
+function _remove_unwanted_ref(references) {
+    // filter out HasTypeDefinition (i=40) , HasModellingRule (i=37);
+    references = _.filter(references,function(reference) {
+        assert(reference instanceof Reference);
+        return reference.referenceType !== &quot;HasTypeDefinition&quot;  &amp;&amp;
+               reference.referenceType !== &quot;HasModellingRule&quot; ;
+    });
+    return references;
+}
+
+
+// todo: MEMOIZE this method
+function findNoHierarchicalReferences(originalObject) {
+
+    var addressSpace = originalObject.addressSpace;
+
+    var referenceId = addressSpace.findReferenceType(&quot;NonHierarchicalReferences&quot;);
+    if (!referenceId) { return []; }
+    assert(referenceId);
+
+    // we need to explore
+    var references = originalObject.findReferencesEx(&quot;NonHierarchicalReferences&quot;,BrowseDirection.Inverse);
+        
+    //xx references = [].concat(references,originalObject.findReferencesEx(&quot;NonHierarchicalReferences&quot;,BrowseDirection.Forward));
+    references = [].concat(references,originalObject.findReferencesEx(&quot;HasEventSource&quot;,BrowseDirection.Inverse));
+
+    var parent = _get_parent_as_VariableOrObjectType(originalObject);
+
+    if (parent &amp;&amp; parent.subtypeOfObj) {
+
+        // parent is a ObjectType or VariableType and is not a root type
+        assert(parent.nodeClass === NodeClass.VariableType || parent.nodeClass === NodeClass.ObjectType);
+
+        // let investigate the same child base child
+        var child = parent.subtypeOfObj.getChildByName(originalObject.browseName);
+
+        if (child) {
+            var baseRef = findNoHierarchicalReferences(child);
+            //xx console.log(&quot;  ... &quot;,originalObject.browseName.toString(), parent.browseName.toString(), references.length, baseRef.length);
+            references = [].concat(references,baseRef);
+        }
+    }
+    // perform some cleanup
+    references =  _remove_unwanted_ref(references);
+
+    return references;
+
+}
+
+function reconstructNonHierarchicalReferences(extraInfo) {
+
+    function findImplementedObject(ref) {
+        var info  = extraInfo.mapOrgToClone[ref.nodeId.toString()];
+        if (info) {
+            return info;
+        }
+        return null;
+    }
+
+    // navigate through original objects to find those that are being references by node that
+    // have been cloned .
+    // this could be node organized by some FunctionalGroup
+    //
+    _.forEach(extraInfo.mapOrgToClone,function(value,key) {
+
+
+        var originalObject     = value.original;
+        var clonedObject       = value.cloned;
+
+        // find NoHierarchical References on original object
+        var originalNonHierarchical = findNoHierarchicalReferences(originalObject);
+
+        if(originalNonHierarchical.length === 0 ){
+            return;
+        }
+
+        // istanbul ignore next
+        if (doDebug) {
+            debugLog( &quot; investigation &quot;, value.original.browseName.toString() , value.cloned.nodeClass.toString(),value.original.nodeClass.toString(),value.original.nodeId.toString(),value.cloned.nodeId.toString());
+        }
+
+        originalNonHierarchical.forEach(function(ref) {
+
+            var info =findImplementedObject(ref);
+
+            // if the object pointed by this reference is also cloned ...
+            if (info) {
+
+                var originalDest = info.original;
+                var cloneDest    = info.cloned;
+
+                // istanbul ignore next
+                if (doDebug) {
+                    debugLog(&quot;   adding reference &quot;.cyan ,ref.referenceType , &quot; from cloned &quot;,
+                                clonedObject.nodeId.toString(),clonedObject.browseName.toString(),
+                                &quot; to cloned &quot;, cloneDest.nodeId.toString(),cloneDest.browseName.toString() );
+                }
+
+                // restore reference
+                clonedObject.addReference({
+                    referenceType: ref.referenceType,
+                    isForward: false,
+                    nodeId: cloneDest.nodeId
+                });
+            }
+        });
+    });
+}
+
+/**
+ * recreate functional group types according to type definition
+ *
+ * @method reconstructFunctionalGroupType
+ * @param baseType
+ */
+
+/* @example:
+ *
+ *    MyDeviceType
+ *        |
+ *        +----------|- ParameterSet(BaseObjectType)
+ *        |                   |
+ *        |                   +-----------------|- Parameter1
+ *        |                                             ^
+ *        +----------|- Config(FunctionalGroupType)     |
+ *                                |                     |
+ *                                +-------- Organizes---+
+ */
+function reconstructFunctionalGroupType(extraInfo)
+{
+    // navigate through original objects to find those that are being organized by some FunctionalGroup
+    _.forEach(extraInfo.mapOrgToClone,function(value,key){
+
+        var originalObject = value.original;
+        var instantiatedObject = value.cloned;
+        var organizedByArray = originalObject.findReferencesEx(&quot;Organizes&quot;,BrowseDirection.Inverse);
+
+
+        //function dumpRef(r) {
+        //    var referenceTd = addressSpace.findNode(r.referenceTypeId);
+        //    var obj = addressSpace.findNode(r.nodeId);
+        //    return &quot;&lt;-- &quot; + referenceTd.browseName.toString() + &quot; -- &quot; + obj.browseName.toString();
+        //}
+        //
+        //console.log(&quot;xxxxx ========================================================&quot;.bgRed,originalObject.browseName.toString(),
+        //    organizedByArray.map(dumpRef).join(&quot;\n&quot;));
+        organizedByArray.forEach(function(ref) {
+
+            if (extraInfo.mapOrgToClone.hasOwnProperty(ref.nodeId.toString())) {
+
+                var info = extraInfo.mapOrgToClone[ref.nodeId.toString()];
+                var folder = info.original;
+
+                assert(folder.typeDefinitionObj.browseName.name.toString() === &quot;FunctionalGroupType&quot;);
+
+                // now create the same reference with the instantiated function group
+                 var destFolder = info.cloned;
+
+                assert(ref.referenceType);
+
+                destFolder.addReference({
+                    referenceType: ref.referenceType,
+                    isForward: !ref.isForward,
+                    nodeId: instantiatedObject.nodeId
+                });
+                //xx console.log(&quot;xxx ============&gt; adding reference &quot;,ref.browse )
+            }
+        });
+    });
+}
+
+var makeOptionalsMap = require(&quot;./make_optionals_map&quot;).makeOptionalsMap;
+function initialize_properties_and_components(instance,topMostType,nodeType,optionals) {
+
+    var extraInfo = new CloneHelper();
+
+    extraInfo.registerClonedObject(nodeType,instance);
+
+
+    var optionalsMap = makeOptionalsMap(optionals);
+    
+    _initialize_properties_and_components(instance,topMostType,nodeType,optionalsMap,extraInfo);
+
+    reconstructFunctionalGroupType(extraInfo);
+
+    reconstructNonHierarchicalReferences(extraInfo);
+
+}
+
+/**
+ * instantiate an object of this UAVariableType
+ * The instantiation takes care of object type inheritance when constructing inner properties
+ * @method instantiate
+ * @param options
+ * @param options.browseName {String}
+ * @param [options.description]
+ * @param [options.organizedBy]   {String|NodeId|BaseNode} the parent Folder holding this object
+ * @param [options.componentOf]   {String|NodeId|BaseNode} the parent Object holding this object
+ * @param [options.notifierOf] {NodeId|UANode}
+ * @param [options.eventSourceOf] {NodeId|UANode}
+ * @param [options.optionals]     {Array&lt;String&gt;} array of browseName of optional component/property to instantiate.
+ * @param [options.modellingRule] {String}
+ * @param [options.minimumSamplingInterval =0] {Number}
+ * @param [options.extensionObject =null]
+ * Note : HasComponent usage scope
+ *
+ *    Source          |     Destination
+ * -------------------+---------------------------
+ *  Object            | Object, Variable,Method
+ *  ObjectType        |
+ * -------------------+---------------------------
+ *  DataVariable      | Variable
+ *  DataVariableType  |
+ *
+ *
+ *  see : OPCUA 1.03 page 44 $6.4 Instances of ObjectTypes and VariableTypes
+ */
+UAVariableType.prototype.instantiate = function (options) {
+
+    var self = this;
+    var addressSpace = self.addressSpace;
+    //xx assert(!self.isAbstract, &quot;cannot instantiate abstract UAVariableType&quot;);
+
+    assert(options, &quot;missing option object&quot;);
+    assert(_.isString(options.browseName), &quot;expecting a browse name&quot;);
+    assert(!options.hasOwnProperty(&quot;propertyOf&quot;),&quot;Use addressSpace#addVariable({ propertyOf: xxx}); to add a property&quot;);
+
+    assertUnusedChildBrowseName(addressSpace,options);
+
+    var baseVariableType = addressSpace.findVariableType(&quot;BaseVariableType&quot;);
+    assert(baseVariableType, &quot;BaseVariableType must be defined in the address space&quot;);
+
+    var dataType =  (options.dataType !== undefined )? options.dataType  : self.dataType; // may be required (i.e YArrayItemType )
+    dataType = self.resolveNodeId(dataType);    // DataType (NodeId)
+    assert(dataType instanceof NodeId);
+
+    var valueRank      = (options.valueRank !== undefined) ? options.valueRank : self.valueRank ;
+    var arrayDimensions = (options.arrayDimensions !== undefined) ? options.arrayDimensions : self.arrayDimensions ;
+
+    // istanbul ignore next
+    if (!dataType || dataType.isEmpty()) {
+        console.warn(&quot; options.dataType&quot; , options.dataType ? options.dataType.toString() : &quot;&lt;null&gt;&quot;);
+        console.warn(&quot; self.dataType&quot; , self.dataType ? self.dataType.toString() : &quot;&lt;null&gt;&quot;);
+        throw new Error(&quot; A valid dataType must be specified&quot;);
+    }
+
+
+    var opts = {
+        browseName:     options.browseName,
+        description:    options.description || self.description,
+        componentOf:    options.componentOf,
+        organizedBy:    options.organizedBy,
+        notifierOf:     options.notifierOf,
+        eventSourceOf:  options.eventSourceOf,
+        typeDefinition: self.nodeId,
+        nodeId:         options.nodeId,
+        dataType:       dataType,
+        valueRank:      valueRank,
+        arrayDimensions: arrayDimensions,
+        value:          options.value,
+        modellingRule : options.modellingRule,
+        minimumSamplingInterval: options.minimumSamplingInterval
+    };
+
+    var instance = addressSpace.addVariable(opts);
+
+    //xx assert(instance.minimumSamplingInterval === options.minimumSamplingInterval);
+
+    initialize_properties_and_components(instance,baseVariableType,self,options.optionals);
+
+    // if VariableType is a type of Structure DataType
+    // we need to instantiate a dataValue
+    // and create a bidirectional binding with the individual properties of this type
+    instance.bindExtensionObject(options.extensionObject);
+
+
+    assert(instance.typeDefinition.toString()=== self.nodeId.toString());
+
+    instance.install_extra_properties();
+    
+    if (self._postInstantiateFunc) {
+        self._postInstantiateFunc(instance,self);
+    }
+
+    return instance;
+};
+exports.UAVariableType = UAVariableType;
+
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>
