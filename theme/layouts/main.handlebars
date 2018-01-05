@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N63SL9Q');</script>
+    <!-- End Google Tag Manager -->
+
+    <title>{{htmlTitle}}</title>
+    <link rel="stylesheet" href="{{yuiGridsUrl}}">
+    <link rel="stylesheet" href="{{projectAssets}}/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="{{projectAssets}}/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="{{projectAssets}}/css/custom.css">
+    <link rel="stylesheet" href="{{projectAssets}}/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="{{projectAssets}}/favicon.png">
+
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-8886208393040088",
+            enable_page_level_ads: true
+        });
+    </script>
+
+</head>
+<body class="yui3-skin-sam">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N63SL9Q"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+        {{#if projectLogo}}
+	    <img alt="{{projectName}}" src="{{projectLogo}}" style="max-height: 65%;" title="{{projectName}}">
+        {{else}}
+	    <img alt="{{projectName}}" src="{{projectAssets}}/css/logo.png" style="max-height: 65%;" title="{{projectName}}">
+        {{/if}}
+            {{projectName}}
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>{{projectVersion}}</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='[{{#search classes allModules}}{{/search}}]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+	    {{>sidebar}}
+        </div>
+        <div class="span9">
+            {{>options}}
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+{{>layout_content}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{{projectAssets}}/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="{{projectAssets}}/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="{{projectAssets}}/vendor/prettify/prettify-min.js"></script>
+<script src="{{projectAssets}}/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

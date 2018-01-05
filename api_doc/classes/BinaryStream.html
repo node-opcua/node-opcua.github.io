@@ -2,401 +2,439 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N63SL9Q');</script>
+    <!-- End Google Tag Manager -->
+
     <title>BinaryStream - The NodeOPCUA API</title>
-    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
-    <link rel="icon" href="../assets/favicon.ico">
-    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-8886208393040088",
+            enable_page_level_ads: true
+        });
+    </script>
+
 </head>
 <body class="yui3-skin-sam">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N63SL9Q"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
-<div id="doc">
-    <div id="hd" class="yui3-g header">
-        <div class="yui3-u-3-4">
-                <h1><img src="../assets/css/logo.png" title="The NodeOPCUA API" width="117" height="52"></h1>
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+	    <img alt="The NodeOPCUA API" src="../assets/css/logo.png" style="max-height: 65%;" title="The NodeOPCUA API">
+            The NodeOPCUA API
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>0.1.0-pre</b>
+                </p>
+            </li>
         </div>
-        <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.1.0-pre</em>
-        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/AcknowledgeMessage", "classes/ActivateSessionRequest", "classes/ActivateSessionResponse", "classes/AddNodesItem", "classes/AddNodesRequest", "classes/AddNodesResponse", "classes/AddNodesResult", "classes/AddReferencesItem", "classes/AddReferencesRequest", "classes/AddReferencesResponse", "classes/AddressSpace", "classes/AggregateConfiguration", "classes/AggregateFilter", "classes/AnonymousIdentityToken", "classes/ApplicationDescription", "classes/ApplicationInstanceCertificate", "classes/Argument", "classes/AsymmetricAlgorithmSecurityHeader", "classes/AttributeIds", "classes/AttributeNameById", "classes/AttributeOperand", "classes/AxisInformation", "classes/BaseEventType", "classes/BaseNode", "classes/BaseUAObject", "classes/BinaryStream", "classes/BinaryStreamSizeCalculator", "classes/BrowseDescription", "classes/BrowseDirection", "classes/BrowseNextRequest", "classes/BrowseNextResponse", "classes/BrowsePath", "classes/BrowsePathResult", "classes/BrowsePathTarget", "classes/BrowseRequest", "classes/BrowseResponse", "classes/BrowseResult", "classes/BuildInfo", "classes/CallMethodRequest", "classes/CallMethodResult", "classes/CallRequest", "classes/CallResponse", "classes/CancelRequest", "classes/CancelResponse", "classes/ChannelSecurityToken", "classes/ChunkManager", "classes/ClientMonitoredItem", "classes/ClientMonitoredItemGroup", "classes/ClientSecureChannelLayer", "classes/ClientSession", "classes/ClientSidePublishEngine", "classes/ClientSubscription", "classes/ClientTCP_transport", "classes/CloseSecureChannelRequest", "classes/CloseSecureChannelResponse", "classes/CloseSessionRequest", "classes/CloseSessionResponse", "classes/Company", "classes/ConditionInfo", "classes/ConditionSnapshot", "classes/ContentFilter", "classes/ContentFilterElement", "classes/ContentFilterElementResult", "classes/ContentFilterResult", "classes/CreateMonitoredItemsRequest", "classes/CreateMonitoredItemsResponse", "classes/CreateSessionRequest", "classes/CreateSessionResponse", "classes/CreateSubscriptionRequest", "classes/CreateSubscriptionResponse", "classes/DataChangeFilter", "classes/DataChangeNotification", "classes/DataValue", "classes/DeleteMonitoredItemsRequest", "classes/DeleteMonitoredItemsResponse", "classes/DeleteNodesItem", "classes/DeleteNodesRequest", "classes/DeleteNodesResponse", "classes/DeleteReferencesItem", "classes/DeleteReferencesRequest", "classes/DeleteReferencesResponse", "classes/DeleteSubscriptionsRequest", "classes/DeleteSubscriptionsResponse", "classes/DiagnosticInfo", "classes/DummyObject", "classes/ElementOperand", "classes/Employee", "classes/EndpointDescription", "classes/Enum", "classes/EnumValueType", "classes/ErrorMessage", "classes/EUInformation", "classes/EventData", "classes/EventFieldList", "classes/EventFilter", "classes/EventFilterResult", "classes/EventNotificationList", "classes/ExpandedNodeId", "classes/Factory", "classes/FilterOperand", "classes/FindServersRequest", "classes/FindServersResponse", "classes/FooBar", "classes/FooBarDerived", "classes/FooWithRecursion", "classes/GetEndpointsRequest", "classes/GetEndpointsResponse", "classes/HelloMessage", "classes/HistoryData", "classes/HistoryModifiedData", "classes/HistoryReadDetails", "classes/HistoryReadRequest", "classes/HistoryReadResponse", "classes/HistoryReadResult", "classes/HistoryReadValueId", "classes/HistoryServerCapabilities", "classes/HistoryUpdateRequest", "classes/HistoryUpdateResponse", "classes/HistoryUpdateResult", "classes/IssuedIdentityToken", "classes/LiteralOperand", "classes/LocalizedText", "classes/MessageBuilder", "classes/MessageBuilderBase", "classes/MessageChunker", "classes/MetaShapeForUnitTest", "classes/ModelChangeStructure", "classes/ModificationInfo", "classes/ModifyMonitoredItemsRequest", "classes/ModifyMonitoredItemsResponse", "classes/ModifySubscriptionRequest", "classes/ModifySubscriptionResponse", "classes/MonitoredItem", "classes/MonitoredItemCreateRequest", "classes/MonitoredItemCreateResult", "classes/MonitoredItemModifyRequest", "classes/MonitoredItemModifyResult", "classes/MonitoredItemNotification", "classes/MonitoringFilter", "classes/MonitoringParameters", "classes/NodeCrawler", "classes/NodeId", "classes/NodeIdType", "classes/NodeTypeDescription", "classes/NotificationMessage", "classes/ObjWithAccessLevel", "classes/ObjWithIntegerId", "classes/opcua", "classes/OPCUABaseServer", "classes/OPCUAClient", "classes/OPCUAClientBase", "classes/OPCUASecureObject", "classes/OPCUAServer", "classes/OPCUAServerEndPoint
+
+A sever end point is listening to one port", "classes/OpenSecureChannelRequest", "classes/OpenSecureChannelResponse", "classes/OperationLimits", "classes/PacketAssembler", "classes/ParsingResult", "classes/Person", "classes/Person2", "classes/Potato", "classes/PublishRequest", "classes/PublishResponse", "classes/QualifiedName", "classes/QueryDataDescription", "classes/QueryDataSet", "classes/QueryFirstRequest", "classes/QueryFirstResponse", "classes/QueryNextRequest", "classes/QueryNextResponse", "classes/Range", "classes/ReadAtTimeDetails", "classes/ReaderState", "classes/ReadEventDetails", "classes/ReadProcessedDetails", "classes/ReadRawModifiedDetails", "classes/ReadRequest", "classes/ReadResponse", "classes/ReadValueId", "classes/RedundantServer", "classes/Reference", "classes/ReferenceDescription", "classes/ReferenceType", "classes/RegisteredServer", "classes/RegisterNodesRequest", "classes/RegisterNodesResponse", "classes/RegisterServerRequest", "classes/RegisterServerResponse", "classes/RelativePath", "classes/RelativePathElement", "classes/RepublishRequest", "classes/RepublishResponse", "classes/RequestHeader", "classes/ResponseHeader", "classes/Role", "classes/SamplingIntervalDiagnostics", "classes/SecureMessageChunkManager", "classes/SecurityPolicy", "classes/SemanticChangeStructure", "classes/SequenceHeader", "classes/SequenceNumberGenerator", "classes/ServerCapabilities", "classes/ServerDiagnosticsSummary", "classes/ServerEngine", "classes/ServerSecureChannelLayer", "classes/ServerSession", "classes/ServerSidePublishEngine", "classes/ServerSideUnimplementedRequest", "classes/ServerStatus", "classes/ServerTCP_transport", "classes/ServiceCounter", "classes/ServiceFault", "classes/SessionDiagnostics", "classes/SessionSecurityDiagnostics", "classes/SetMonitoringModeRequest", "classes/SetMonitoringModeResponse", "classes/SetPublishingModeRequest", "classes/SetPublishingModeResponse", "classes/SetTriggeringRequest", "classes/SetTriggeringResponse", "classes/Shape", "classes/SignatureData", "classes/SignedSoftwareCertificate", "classes/SimpleAttributeOperand", "classes/Simulator", "classes/StatusChangeNotification", "classes/StatusCode", "classes/Subscription", "classes/SubscriptionAcknowledgement", "classes/SubscriptionDiagnostics", "classes/SymmetricAlgorithmSecurityHeader", "classes/TCP_transport", "classes/TCPErrorMessage", "classes/TimestampsToReturn", "classes/TimeZone", "classes/ToolBrowsePath", "classes/TransferResult", "classes/TransferSubscriptionsRequest", "classes/TransferSubscriptionsResponse", "classes/TranslateBrowsePathsToNodeIdsRequest", "classes/TranslateBrowsePathsToNodeIdsResponse", "classes/TypeSchema", "classes/UAAcknowledgeableConditionBase", "classes/UAAlarmConditionBase", "classes/UACertificateExpirationAlarm", "classes/UAConditionBase", "classes/UADataType", "classes/UADiscreteAlarm", "classes/UAExclusiveDeviationAlarm", "classes/UAExclusiveLevelAlarm", "classes/UAExclusiveLimitAlarm", "classes/UAExclusiveRateOfChangeAlarm", "classes/UALimitAlarm", "classes/UANonExclusiveDeviationAlarm", "classes/UANonExclusiveLimitAlarm", "classes/UAObject", "classes/UAObjectType", "classes/UAOffNormalAlarm", "classes/UASystemOffNormalAlarm", "classes/UATripAlarm", "classes/UATwoStateVariable", "classes/UAVariable", "classes/UAVariableType", "classes/UnregisterNodesRequest", "classes/UnregisterNodesResponse", "classes/UserNameIdentityToken", "classes/UserTokenPolicy", "classes/Variant", "classes/View", "classes/ViewDescription", "classes/WriteRequest", "classes/WriteResponse", "classes/WriteValue", "classes/X509IdentityToken", "classes/Xml2Json", "modules/opcua.address_space", "modules/opcua.address_space.AlarmsAndConditions", "modules/opcua.address_space.types", "modules/opcua.client", "modules/opcua.data-value", "modules/opcua.datamodel", "modules/opcua.miscellaneous", "modules/opcua.server", "modules/opcua.server.simulation", "modules/opcua.status-code", "modules/opcua.transport", "modules/opcua.utils", "modules/opcua.variant", "modules/service.filter.tools", "modules/services.browse", "modules/services.call", "modules/services.discovery", "modules/services.endpoints", "modules/services.filter", "modules/services.history", "modules/services.node_management", "modules/services.query", "modules/services.read", "modules/services.register-server", "modules/services.register_node", "modules/services.secure-channel", "modules/services.session", "modules/services.subscription", "modules/services.translate-browse-path", "modules/services.write", "modules/StatusCodes", "modules/xml2json
+
+node -> see if https://github.com/isaacs/sax-js could be used instead"]'>
+        </form>
     </div>
-    <div id="bd" class="yui3-g">
-
-        <div class="yui3-u-1-4">
-            <div id="docs-sidebar" class="sidebar apidocs">
-                <div id="api-list">
-                    <h2 class="off-left">APIs</h2>
-                    <div id="api-tabview" class="tabview">
-                        <ul class="tabs">
-                            <li><a href="#api-classes">Classes</a></li>
-                            <li><a href="#api-modules">Modules</a></li>
-                        </ul>
-                
-                        <div id="api-tabview-filter">
-                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
-                        </div>
-                
-                        <div id="api-tabview-panel">
-                            <ul id="api-classes" class="apis classes">
-                                <li><a href="../classes/AcknowledgeMessage.html">AcknowledgeMessage</a></li>
-                                <li><a href="../classes/ActivateSessionRequest.html">ActivateSessionRequest</a></li>
-                                <li><a href="../classes/ActivateSessionResponse.html">ActivateSessionResponse</a></li>
-                                <li><a href="../classes/AddNodesItem.html">AddNodesItem</a></li>
-                                <li><a href="../classes/AddNodesRequest.html">AddNodesRequest</a></li>
-                                <li><a href="../classes/AddNodesResponse.html">AddNodesResponse</a></li>
-                                <li><a href="../classes/AddNodesResult.html">AddNodesResult</a></li>
-                                <li><a href="../classes/AddReferencesItem.html">AddReferencesItem</a></li>
-                                <li><a href="../classes/AddReferencesRequest.html">AddReferencesRequest</a></li>
-                                <li><a href="../classes/AddReferencesResponse.html">AddReferencesResponse</a></li>
-                                <li><a href="../classes/AddressSpace.html">AddressSpace</a></li>
-                                <li><a href="../classes/AggregateConfiguration.html">AggregateConfiguration</a></li>
-                                <li><a href="../classes/AggregateFilter.html">AggregateFilter</a></li>
-                                <li><a href="../classes/AnonymousIdentityToken.html">AnonymousIdentityToken</a></li>
-                                <li><a href="../classes/ApplicationDescription.html">ApplicationDescription</a></li>
-                                <li><a href="../classes/ApplicationInstanceCertificate.html">ApplicationInstanceCertificate</a></li>
-                                <li><a href="../classes/Argument.html">Argument</a></li>
-                                <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
-                                <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
-                                <li><a href="../classes/AttributeNameById.html">AttributeNameById</a></li>
-                                <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
-                                <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
-                                <li><a href="../classes/BaseEventType.html">BaseEventType</a></li>
-                                <li><a href="../classes/BaseNode.html">BaseNode</a></li>
-                                <li><a href="../classes/BaseUAObject.html">BaseUAObject</a></li>
-                                <li><a href="../classes/BinaryStream.html">BinaryStream</a></li>
-                                <li><a href="../classes/BinaryStreamSizeCalculator.html">BinaryStreamSizeCalculator</a></li>
-                                <li><a href="../classes/BrowseDescription.html">BrowseDescription</a></li>
-                                <li><a href="../classes/BrowseDirection.html">BrowseDirection</a></li>
-                                <li><a href="../classes/BrowseNextRequest.html">BrowseNextRequest</a></li>
-                                <li><a href="../classes/BrowseNextResponse.html">BrowseNextResponse</a></li>
-                                <li><a href="../classes/BrowsePath.html">BrowsePath</a></li>
-                                <li><a href="../classes/BrowsePathResult.html">BrowsePathResult</a></li>
-                                <li><a href="../classes/BrowsePathTarget.html">BrowsePathTarget</a></li>
-                                <li><a href="../classes/BrowseRequest.html">BrowseRequest</a></li>
-                                <li><a href="../classes/BrowseResponse.html">BrowseResponse</a></li>
-                                <li><a href="../classes/BrowseResult.html">BrowseResult</a></li>
-                                <li><a href="../classes/BuildInfo.html">BuildInfo</a></li>
-                                <li><a href="../classes/CallMethodRequest.html">CallMethodRequest</a></li>
-                                <li><a href="../classes/CallMethodResult.html">CallMethodResult</a></li>
-                                <li><a href="../classes/CallRequest.html">CallRequest</a></li>
-                                <li><a href="../classes/CallResponse.html">CallResponse</a></li>
-                                <li><a href="../classes/CancelRequest.html">CancelRequest</a></li>
-                                <li><a href="../classes/CancelResponse.html">CancelResponse</a></li>
-                                <li><a href="../classes/ChannelSecurityToken.html">ChannelSecurityToken</a></li>
-                                <li><a href="../classes/ChunkManager.html">ChunkManager</a></li>
-                                <li><a href="../classes/ClientMonitoredItem.html">ClientMonitoredItem</a></li>
-                                <li><a href="../classes/ClientMonitoredItemGroup.html">ClientMonitoredItemGroup</a></li>
-                                <li><a href="../classes/ClientSecureChannelLayer.html">ClientSecureChannelLayer</a></li>
-                                <li><a href="../classes/ClientSession.html">ClientSession</a></li>
-                                <li><a href="../classes/ClientSidePublishEngine.html">ClientSidePublishEngine</a></li>
-                                <li><a href="../classes/ClientSubscription.html">ClientSubscription</a></li>
-                                <li><a href="../classes/ClientTCP_transport.html">ClientTCP_transport</a></li>
-                                <li><a href="../classes/CloseSecureChannelRequest.html">CloseSecureChannelRequest</a></li>
-                                <li><a href="../classes/CloseSecureChannelResponse.html">CloseSecureChannelResponse</a></li>
-                                <li><a href="../classes/CloseSessionRequest.html">CloseSessionRequest</a></li>
-                                <li><a href="../classes/CloseSessionResponse.html">CloseSessionResponse</a></li>
-                                <li><a href="../classes/Company.html">Company</a></li>
-                                <li><a href="../classes/ConditionInfo.html">ConditionInfo</a></li>
-                                <li><a href="../classes/ConditionSnapshot.html">ConditionSnapshot</a></li>
-                                <li><a href="../classes/ContentFilter.html">ContentFilter</a></li>
-                                <li><a href="../classes/ContentFilterElement.html">ContentFilterElement</a></li>
-                                <li><a href="../classes/ContentFilterElementResult.html">ContentFilterElementResult</a></li>
-                                <li><a href="../classes/ContentFilterResult.html">ContentFilterResult</a></li>
-                                <li><a href="../classes/CreateMonitoredItemsRequest.html">CreateMonitoredItemsRequest</a></li>
-                                <li><a href="../classes/CreateMonitoredItemsResponse.html">CreateMonitoredItemsResponse</a></li>
-                                <li><a href="../classes/CreateSessionRequest.html">CreateSessionRequest</a></li>
-                                <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
-                                <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
-                                <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
-                                <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
-                                <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
-                                <li><a href="../classes/DataValue.html">DataValue</a></li>
-                                <li><a href="../classes/DeleteMonitoredItemsRequest.html">DeleteMonitoredItemsRequest</a></li>
-                                <li><a href="../classes/DeleteMonitoredItemsResponse.html">DeleteMonitoredItemsResponse</a></li>
-                                <li><a href="../classes/DeleteNodesItem.html">DeleteNodesItem</a></li>
-                                <li><a href="../classes/DeleteNodesRequest.html">DeleteNodesRequest</a></li>
-                                <li><a href="../classes/DeleteNodesResponse.html">DeleteNodesResponse</a></li>
-                                <li><a href="../classes/DeleteReferencesItem.html">DeleteReferencesItem</a></li>
-                                <li><a href="../classes/DeleteReferencesRequest.html">DeleteReferencesRequest</a></li>
-                                <li><a href="../classes/DeleteReferencesResponse.html">DeleteReferencesResponse</a></li>
-                                <li><a href="../classes/DeleteSubscriptionsRequest.html">DeleteSubscriptionsRequest</a></li>
-                                <li><a href="../classes/DeleteSubscriptionsResponse.html">DeleteSubscriptionsResponse</a></li>
-                                <li><a href="../classes/DiagnosticInfo.html">DiagnosticInfo</a></li>
-                                <li><a href="../classes/DummyObject.html">DummyObject</a></li>
-                                <li><a href="../classes/ElementOperand.html">ElementOperand</a></li>
-                                <li><a href="../classes/Employee.html">Employee</a></li>
-                                <li><a href="../classes/EndpointDescription.html">EndpointDescription</a></li>
-                                <li><a href="../classes/Enum.html">Enum</a></li>
-                                <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
-                                <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
-                                <li><a href="../classes/EUInformation.html">EUInformation</a></li>
-                                <li><a href="../classes/EventData.html">EventData</a></li>
-                                <li><a href="../classes/EventFieldList.html">EventFieldList</a></li>
-                                <li><a href="../classes/EventFilter.html">EventFilter</a></li>
-                                <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
-                                <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
-                                <li><a href="../classes/ExpandedNodeId.html">ExpandedNodeId</a></li>
-                                <li><a href="../classes/Factory.html">Factory</a></li>
-                                <li><a href="../classes/FilterOperand.html">FilterOperand</a></li>
-                                <li><a href="../classes/FindServersRequest.html">FindServersRequest</a></li>
-                                <li><a href="../classes/FindServersResponse.html">FindServersResponse</a></li>
-                                <li><a href="../classes/FooBar.html">FooBar</a></li>
-                                <li><a href="../classes/FooBarDerived.html">FooBarDerived</a></li>
-                                <li><a href="../classes/FooWithRecursion.html">FooWithRecursion</a></li>
-                                <li><a href="../classes/GetEndpointsRequest.html">GetEndpointsRequest</a></li>
-                                <li><a href="../classes/GetEndpointsResponse.html">GetEndpointsResponse</a></li>
-                                <li><a href="../classes/HelloMessage.html">HelloMessage</a></li>
-                                <li><a href="../classes/HistoryData.html">HistoryData</a></li>
-                                <li><a href="../classes/HistoryModifiedData.html">HistoryModifiedData</a></li>
-                                <li><a href="../classes/HistoryReadDetails.html">HistoryReadDetails</a></li>
-                                <li><a href="../classes/HistoryReadRequest.html">HistoryReadRequest</a></li>
-                                <li><a href="../classes/HistoryReadResponse.html">HistoryReadResponse</a></li>
-                                <li><a href="../classes/HistoryReadResult.html">HistoryReadResult</a></li>
-                                <li><a href="../classes/HistoryReadValueId.html">HistoryReadValueId</a></li>
-                                <li><a href="../classes/HistoryServerCapabilities.html">HistoryServerCapabilities</a></li>
-                                <li><a href="../classes/HistoryUpdateRequest.html">HistoryUpdateRequest</a></li>
-                                <li><a href="../classes/HistoryUpdateResponse.html">HistoryUpdateResponse</a></li>
-                                <li><a href="../classes/HistoryUpdateResult.html">HistoryUpdateResult</a></li>
-                                <li><a href="../classes/IssuedIdentityToken.html">IssuedIdentityToken</a></li>
-                                <li><a href="../classes/LiteralOperand.html">LiteralOperand</a></li>
-                                <li><a href="../classes/LocalizedText.html">LocalizedText</a></li>
-                                <li><a href="../classes/MessageBuilder.html">MessageBuilder</a></li>
-                                <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
-                                <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
-                                <li><a href="../classes/MetaShapeForUnitTest.html">MetaShapeForUnitTest</a></li>
-                                <li><a href="../classes/ModelChangeStructure.html">ModelChangeStructure</a></li>
-                                <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
-                                <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
-                                <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
-                                <li><a href="../classes/ModifySubscriptionRequest.html">ModifySubscriptionRequest</a></li>
-                                <li><a href="../classes/ModifySubscriptionResponse.html">ModifySubscriptionResponse</a></li>
-                                <li><a href="../classes/MonitoredItem.html">MonitoredItem</a></li>
-                                <li><a href="../classes/MonitoredItemCreateRequest.html">MonitoredItemCreateRequest</a></li>
-                                <li><a href="../classes/MonitoredItemCreateResult.html">MonitoredItemCreateResult</a></li>
-                                <li><a href="../classes/MonitoredItemModifyRequest.html">MonitoredItemModifyRequest</a></li>
-                                <li><a href="../classes/MonitoredItemModifyResult.html">MonitoredItemModifyResult</a></li>
-                                <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
-                                <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
-                                <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
-                                <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
-                                <li><a href="../classes/NodeId.html">NodeId</a></li>
-                                <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
-                                <li><a href="../classes/NodeTypeDescription.html">NodeTypeDescription</a></li>
-                                <li><a href="../classes/NotificationMessage.html">NotificationMessage</a></li>
-                                <li><a href="../classes/ObjWithAccessLevel.html">ObjWithAccessLevel</a></li>
-                                <li><a href="../classes/ObjWithIntegerId.html">ObjWithIntegerId</a></li>
-                                <li><a href="../classes/opcua.html">opcua</a></li>
-                                <li><a href="../classes/OPCUABaseServer.html">OPCUABaseServer</a></li>
-                                <li><a href="../classes/OPCUAClient.html">OPCUAClient</a></li>
-                                <li><a href="../classes/OPCUAClientBase.html">OPCUAClientBase</a></li>
-                                <li><a href="../classes/OPCUASecureObject.html">OPCUASecureObject</a></li>
-                                <li><a href="../classes/OPCUAServer.html">OPCUAServer</a></li>
-                                <li><a href="../classes/OPCUAServerEndPoint
-                
-                A sever end point is listening to one port.html">OPCUAServerEndPoint
-                
-                A sever end point is listening to one port</a></li>
-                                <li><a href="../classes/OpenSecureChannelRequest.html">OpenSecureChannelRequest</a></li>
-                                <li><a href="../classes/OpenSecureChannelResponse.html">OpenSecureChannelResponse</a></li>
-                                <li><a href="../classes/OperationLimits.html">OperationLimits</a></li>
-                                <li><a href="../classes/PacketAssembler.html">PacketAssembler</a></li>
-                                <li><a href="../classes/ParsingResult.html">ParsingResult</a></li>
-                                <li><a href="../classes/Person.html">Person</a></li>
-                                <li><a href="../classes/Person2.html">Person2</a></li>
-                                <li><a href="../classes/Potato.html">Potato</a></li>
-                                <li><a href="../classes/PublishRequest.html">PublishRequest</a></li>
-                                <li><a href="../classes/PublishResponse.html">PublishResponse</a></li>
-                                <li><a href="../classes/QualifiedName.html">QualifiedName</a></li>
-                                <li><a href="../classes/QueryDataDescription.html">QueryDataDescription</a></li>
-                                <li><a href="../classes/QueryDataSet.html">QueryDataSet</a></li>
-                                <li><a href="../classes/QueryFirstRequest.html">QueryFirstRequest</a></li>
-                                <li><a href="../classes/QueryFirstResponse.html">QueryFirstResponse</a></li>
-                                <li><a href="../classes/QueryNextRequest.html">QueryNextRequest</a></li>
-                                <li><a href="../classes/QueryNextResponse.html">QueryNextResponse</a></li>
-                                <li><a href="../classes/Range.html">Range</a></li>
-                                <li><a href="../classes/ReadAtTimeDetails.html">ReadAtTimeDetails</a></li>
-                                <li><a href="../classes/ReaderState.html">ReaderState</a></li>
-                                <li><a href="../classes/ReadEventDetails.html">ReadEventDetails</a></li>
-                                <li><a href="../classes/ReadProcessedDetails.html">ReadProcessedDetails</a></li>
-                                <li><a href="../classes/ReadRawModifiedDetails.html">ReadRawModifiedDetails</a></li>
-                                <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
-                                <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
-                                <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
-                                <li><a href="../classes/RedundantServer.html">RedundantServer</a></li>
-                                <li><a href="../classes/Reference.html">Reference</a></li>
-                                <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
-                                <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
-                                <li><a href="../classes/RegisteredServer.html">RegisteredServer</a></li>
-                                <li><a href="../classes/RegisterNodesRequest.html">RegisterNodesRequest</a></li>
-                                <li><a href="../classes/RegisterNodesResponse.html">RegisterNodesResponse</a></li>
-                                <li><a href="../classes/RegisterServerRequest.html">RegisterServerRequest</a></li>
-                                <li><a href="../classes/RegisterServerResponse.html">RegisterServerResponse</a></li>
-                                <li><a href="../classes/RelativePath.html">RelativePath</a></li>
-                                <li><a href="../classes/RelativePathElement.html">RelativePathElement</a></li>
-                                <li><a href="../classes/RepublishRequest.html">RepublishRequest</a></li>
-                                <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
-                                <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
-                                <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
-                                <li><a href="../classes/Role.html">Role</a></li>
-                                <li><a href="../classes/SamplingIntervalDiagnostics.html">SamplingIntervalDiagnostics</a></li>
-                                <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
-                                <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
-                                <li><a href="../classes/SemanticChangeStructure.html">SemanticChangeStructure</a></li>
-                                <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
-                                <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
-                                <li><a href="../classes/ServerCapabilities.html">ServerCapabilities</a></li>
-                                <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
-                                <li><a href="../classes/ServerEngine.html">ServerEngine</a></li>
-                                <li><a href="../classes/ServerSecureChannelLayer.html">ServerSecureChannelLayer</a></li>
-                                <li><a href="../classes/ServerSession.html">ServerSession</a></li>
-                                <li><a href="../classes/ServerSidePublishEngine.html">ServerSidePublishEngine</a></li>
-                                <li><a href="../classes/ServerSideUnimplementedRequest.html">ServerSideUnimplementedRequest</a></li>
-                                <li><a href="../classes/ServerStatus.html">ServerStatus</a></li>
-                                <li><a href="../classes/ServerTCP_transport.html">ServerTCP_transport</a></li>
-                                <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
-                                <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
-                                <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
-                                <li><a href="../classes/SessionSecurityDiagnostics.html">SessionSecurityDiagnostics</a></li>
-                                <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
-                                <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
-                                <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
-                                <li><a href="../classes/SetPublishingModeResponse.html">SetPublishingModeResponse</a></li>
-                                <li><a href="../classes/SetTriggeringRequest.html">SetTriggeringRequest</a></li>
-                                <li><a href="../classes/SetTriggeringResponse.html">SetTriggeringResponse</a></li>
-                                <li><a href="../classes/Shape.html">Shape</a></li>
-                                <li><a href="../classes/SignatureData.html">SignatureData</a></li>
-                                <li><a href="../classes/SignedSoftwareCertificate.html">SignedSoftwareCertificate</a></li>
-                                <li><a href="../classes/SimpleAttributeOperand.html">SimpleAttributeOperand</a></li>
-                                <li><a href="../classes/Simulator.html">Simulator</a></li>
-                                <li><a href="../classes/StatusChangeNotification.html">StatusChangeNotification</a></li>
-                                <li><a href="../classes/StatusCode.html">StatusCode</a></li>
-                                <li><a href="../classes/Subscription.html">Subscription</a></li>
-                                <li><a href="../classes/SubscriptionAcknowledgement.html">SubscriptionAcknowledgement</a></li>
-                                <li><a href="../classes/SubscriptionDiagnostics.html">SubscriptionDiagnostics</a></li>
-                                <li><a href="../classes/SymmetricAlgorithmSecurityHeader.html">SymmetricAlgorithmSecurityHeader</a></li>
-                                <li><a href="../classes/TCP_transport.html">TCP_transport</a></li>
-                                <li><a href="../classes/TCPErrorMessage.html">TCPErrorMessage</a></li>
-                                <li><a href="../classes/TimestampsToReturn.html">TimestampsToReturn</a></li>
-                                <li><a href="../classes/TimeZone.html">TimeZone</a></li>
-                                <li><a href="../classes/ToolBrowsePath.html">ToolBrowsePath</a></li>
-                                <li><a href="../classes/TransferResult.html">TransferResult</a></li>
-                                <li><a href="../classes/TransferSubscriptionsRequest.html">TransferSubscriptionsRequest</a></li>
-                                <li><a href="../classes/TransferSubscriptionsResponse.html">TransferSubscriptionsResponse</a></li>
-                                <li><a href="../classes/TranslateBrowsePathsToNodeIdsRequest.html">TranslateBrowsePathsToNodeIdsRequest</a></li>
-                                <li><a href="../classes/TranslateBrowsePathsToNodeIdsResponse.html">TranslateBrowsePathsToNodeIdsResponse</a></li>
-                                <li><a href="../classes/TypeSchema.html">TypeSchema</a></li>
-                                <li><a href="../classes/UAAcknowledgeableConditionBase.html">UAAcknowledgeableConditionBase</a></li>
-                                <li><a href="../classes/UAAlarmConditionBase.html">UAAlarmConditionBase</a></li>
-                                <li><a href="../classes/UACertificateExpirationAlarm.html">UACertificateExpirationAlarm</a></li>
-                                <li><a href="../classes/UAConditionBase.html">UAConditionBase</a></li>
-                                <li><a href="../classes/UADataType.html">UADataType</a></li>
-                                <li><a href="../classes/UADiscreteAlarm.html">UADiscreteAlarm</a></li>
-                                <li><a href="../classes/UAExclusiveDeviationAlarm.html">UAExclusiveDeviationAlarm</a></li>
-                                <li><a href="../classes/UAExclusiveLevelAlarm.html">UAExclusiveLevelAlarm</a></li>
-                                <li><a href="../classes/UAExclusiveLimitAlarm.html">UAExclusiveLimitAlarm</a></li>
-                                <li><a href="../classes/UAExclusiveRateOfChangeAlarm.html">UAExclusiveRateOfChangeAlarm</a></li>
-                                <li><a href="../classes/UALimitAlarm.html">UALimitAlarm</a></li>
-                                <li><a href="../classes/UANonExclusiveDeviationAlarm.html">UANonExclusiveDeviationAlarm</a></li>
-                                <li><a href="../classes/UANonExclusiveLimitAlarm.html">UANonExclusiveLimitAlarm</a></li>
-                                <li><a href="../classes/UAObject.html">UAObject</a></li>
-                                <li><a href="../classes/UAObjectType.html">UAObjectType</a></li>
-                                <li><a href="../classes/UAOffNormalAlarm.html">UAOffNormalAlarm</a></li>
-                                <li><a href="../classes/UASystemOffNormalAlarm.html">UASystemOffNormalAlarm</a></li>
-                                <li><a href="../classes/UATripAlarm.html">UATripAlarm</a></li>
-                                <li><a href="../classes/UATwoStateVariable.html">UATwoStateVariable</a></li>
-                                <li><a href="../classes/UAVariable.html">UAVariable</a></li>
-                                <li><a href="../classes/UAVariableType.html">UAVariableType</a></li>
-                                <li><a href="../classes/UnregisterNodesRequest.html">UnregisterNodesRequest</a></li>
-                                <li><a href="../classes/UnregisterNodesResponse.html">UnregisterNodesResponse</a></li>
-                                <li><a href="../classes/UserNameIdentityToken.html">UserNameIdentityToken</a></li>
-                                <li><a href="../classes/UserTokenPolicy.html">UserTokenPolicy</a></li>
-                                <li><a href="../classes/Variant.html">Variant</a></li>
-                                <li><a href="../classes/View.html">View</a></li>
-                                <li><a href="../classes/ViewDescription.html">ViewDescription</a></li>
-                                <li><a href="../classes/WriteRequest.html">WriteRequest</a></li>
-                                <li><a href="../classes/WriteResponse.html">WriteResponse</a></li>
-                                <li><a href="../classes/WriteValue.html">WriteValue</a></li>
-                                <li><a href="../classes/X509IdentityToken.html">X509IdentityToken</a></li>
-                                <li><a href="../classes/Xml2Json.html">Xml2Json</a></li>
-                            </ul>
-                
-                
-                            <ul id="api-modules" class="apis modules">
-                                <li><a href="../modules/opcua.address_space.html">opcua.address_space</a></li>
-                                <li><a href="../modules/opcua.address_space.AlarmsAndConditions.html">opcua.address_space.AlarmsAndConditions</a></li>
-                                <li><a href="../modules/opcua.address_space.types.html">opcua.address_space.types</a></li>
-                                <li><a href="../modules/opcua.client.html">opcua.client</a></li>
-                                <li><a href="../modules/opcua.data-value.html">opcua.data-value</a></li>
-                                <li><a href="../modules/opcua.datamodel.html">opcua.datamodel</a></li>
-                                <li><a href="../modules/opcua.miscellaneous.html">opcua.miscellaneous</a></li>
-                                <li><a href="../modules/opcua.server.html">opcua.server</a></li>
-                                <li><a href="../modules/opcua.server.simulation.html">opcua.server.simulation</a></li>
-                                <li><a href="../modules/opcua.status-code.html">opcua.status-code</a></li>
-                                <li><a href="../modules/opcua.transport.html">opcua.transport</a></li>
-                                <li><a href="../modules/opcua.utils.html">opcua.utils</a></li>
-                                <li><a href="../modules/opcua.variant.html">opcua.variant</a></li>
-                                <li><a href="../modules/service.filter.tools.html">service.filter.tools</a></li>
-                                <li><a href="../modules/services.browse.html">services.browse</a></li>
-                                <li><a href="../modules/services.call.html">services.call</a></li>
-                                <li><a href="../modules/services.discovery.html">services.discovery</a></li>
-                                <li><a href="../modules/services.endpoints.html">services.endpoints</a></li>
-                                <li><a href="../modules/services.filter.html">services.filter</a></li>
-                                <li><a href="../modules/services.history.html">services.history</a></li>
-                                <li><a href="../modules/services.node_management.html">services.node_management</a></li>
-                                <li><a href="../modules/services.query.html">services.query</a></li>
-                                <li><a href="../modules/services.read.html">services.read</a></li>
-                                <li><a href="../modules/services.register-server.html">services.register-server</a></li>
-                                <li><a href="../modules/services.register_node.html">services.register_node</a></li>
-                                <li><a href="../modules/services.secure-channel.html">services.secure-channel</a></li>
-                                <li><a href="../modules/services.session.html">services.session</a></li>
-                                <li><a href="../modules/services.subscription.html">services.subscription</a></li>
-                                <li><a href="../modules/services.translate-browse-path.html">services.translate-browse-path</a></li>
-                                <li><a href="../modules/services.write.html">services.write</a></li>
-                                <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
-                                <li><a href="../modules/xml2json
-                
-                node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
-                
-                node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+	    <div>
+	        <h3>APIs</h3>
+	        <div id="sidebar">
+	            <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
+	                <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
+	                <li><a href="#modules" data-toggle="tab">Modules</a></li>
+	            </ul>
+	    
+	            <div id="api-tabview-filter">
+	                <input type="search" placeholder="Type to filter APIs">
+	            </div>
+	    
+	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
+	                <div class="tab-pane active" id="classes">
+	                    <ul id="api-classes" class="nav nav-list">
+	                            <li><a href="../classes/AcknowledgeMessage.html">AcknowledgeMessage</a></li>
+	                            <li><a href="../classes/ActivateSessionRequest.html">ActivateSessionRequest</a></li>
+	                            <li><a href="../classes/ActivateSessionResponse.html">ActivateSessionResponse</a></li>
+	                            <li><a href="../classes/AddNodesItem.html">AddNodesItem</a></li>
+	                            <li><a href="../classes/AddNodesRequest.html">AddNodesRequest</a></li>
+	                            <li><a href="../classes/AddNodesResponse.html">AddNodesResponse</a></li>
+	                            <li><a href="../classes/AddNodesResult.html">AddNodesResult</a></li>
+	                            <li><a href="../classes/AddReferencesItem.html">AddReferencesItem</a></li>
+	                            <li><a href="../classes/AddReferencesRequest.html">AddReferencesRequest</a></li>
+	                            <li><a href="../classes/AddReferencesResponse.html">AddReferencesResponse</a></li>
+	                            <li><a href="../classes/AddressSpace.html">AddressSpace</a></li>
+	                            <li><a href="../classes/AggregateConfiguration.html">AggregateConfiguration</a></li>
+	                            <li><a href="../classes/AggregateFilter.html">AggregateFilter</a></li>
+	                            <li><a href="../classes/AnonymousIdentityToken.html">AnonymousIdentityToken</a></li>
+	                            <li><a href="../classes/ApplicationDescription.html">ApplicationDescription</a></li>
+	                            <li><a href="../classes/ApplicationInstanceCertificate.html">ApplicationInstanceCertificate</a></li>
+	                            <li><a href="../classes/Argument.html">Argument</a></li>
+	                            <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
+	                            <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+	                            <li><a href="../classes/AttributeNameById.html">AttributeNameById</a></li>
+	                            <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
+	                            <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
+	                            <li><a href="../classes/BaseEventType.html">BaseEventType</a></li>
+	                            <li><a href="../classes/BaseNode.html">BaseNode</a></li>
+	                            <li><a href="../classes/BaseUAObject.html">BaseUAObject</a></li>
+	                            <li><a href="../classes/BinaryStream.html">BinaryStream</a></li>
+	                            <li><a href="../classes/BinaryStreamSizeCalculator.html">BinaryStreamSizeCalculator</a></li>
+	                            <li><a href="../classes/BrowseDescription.html">BrowseDescription</a></li>
+	                            <li><a href="../classes/BrowseDirection.html">BrowseDirection</a></li>
+	                            <li><a href="../classes/BrowseNextRequest.html">BrowseNextRequest</a></li>
+	                            <li><a href="../classes/BrowseNextResponse.html">BrowseNextResponse</a></li>
+	                            <li><a href="../classes/BrowsePath.html">BrowsePath</a></li>
+	                            <li><a href="../classes/BrowsePathResult.html">BrowsePathResult</a></li>
+	                            <li><a href="../classes/BrowsePathTarget.html">BrowsePathTarget</a></li>
+	                            <li><a href="../classes/BrowseRequest.html">BrowseRequest</a></li>
+	                            <li><a href="../classes/BrowseResponse.html">BrowseResponse</a></li>
+	                            <li><a href="../classes/BrowseResult.html">BrowseResult</a></li>
+	                            <li><a href="../classes/BuildInfo.html">BuildInfo</a></li>
+	                            <li><a href="../classes/CallMethodRequest.html">CallMethodRequest</a></li>
+	                            <li><a href="../classes/CallMethodResult.html">CallMethodResult</a></li>
+	                            <li><a href="../classes/CallRequest.html">CallRequest</a></li>
+	                            <li><a href="../classes/CallResponse.html">CallResponse</a></li>
+	                            <li><a href="../classes/CancelRequest.html">CancelRequest</a></li>
+	                            <li><a href="../classes/CancelResponse.html">CancelResponse</a></li>
+	                            <li><a href="../classes/ChannelSecurityToken.html">ChannelSecurityToken</a></li>
+	                            <li><a href="../classes/ChunkManager.html">ChunkManager</a></li>
+	                            <li><a href="../classes/ClientMonitoredItem.html">ClientMonitoredItem</a></li>
+	                            <li><a href="../classes/ClientMonitoredItemGroup.html">ClientMonitoredItemGroup</a></li>
+	                            <li><a href="../classes/ClientSecureChannelLayer.html">ClientSecureChannelLayer</a></li>
+	                            <li><a href="../classes/ClientSession.html">ClientSession</a></li>
+	                            <li><a href="../classes/ClientSidePublishEngine.html">ClientSidePublishEngine</a></li>
+	                            <li><a href="../classes/ClientSubscription.html">ClientSubscription</a></li>
+	                            <li><a href="../classes/ClientTCP_transport.html">ClientTCP_transport</a></li>
+	                            <li><a href="../classes/CloseSecureChannelRequest.html">CloseSecureChannelRequest</a></li>
+	                            <li><a href="../classes/CloseSecureChannelResponse.html">CloseSecureChannelResponse</a></li>
+	                            <li><a href="../classes/CloseSessionRequest.html">CloseSessionRequest</a></li>
+	                            <li><a href="../classes/CloseSessionResponse.html">CloseSessionResponse</a></li>
+	                            <li><a href="../classes/Company.html">Company</a></li>
+	                            <li><a href="../classes/ConditionInfo.html">ConditionInfo</a></li>
+	                            <li><a href="../classes/ContentFilter.html">ContentFilter</a></li>
+	                            <li><a href="../classes/ContentFilterElement.html">ContentFilterElement</a></li>
+	                            <li><a href="../classes/ContentFilterElementResult.html">ContentFilterElementResult</a></li>
+	                            <li><a href="../classes/ContentFilterResult.html">ContentFilterResult</a></li>
+	                            <li><a href="../classes/CreateMonitoredItemsRequest.html">CreateMonitoredItemsRequest</a></li>
+	                            <li><a href="../classes/CreateMonitoredItemsResponse.html">CreateMonitoredItemsResponse</a></li>
+	                            <li><a href="../classes/CreateSessionRequest.html">CreateSessionRequest</a></li>
+	                            <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
+	                            <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
+	                            <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
+	                            <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
+	                            <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
+	                            <li><a href="../classes/DataValue.html">DataValue</a></li>
+	                            <li><a href="../classes/DeleteMonitoredItemsRequest.html">DeleteMonitoredItemsRequest</a></li>
+	                            <li><a href="../classes/DeleteMonitoredItemsResponse.html">DeleteMonitoredItemsResponse</a></li>
+	                            <li><a href="../classes/DeleteNodesItem.html">DeleteNodesItem</a></li>
+	                            <li><a href="../classes/DeleteNodesRequest.html">DeleteNodesRequest</a></li>
+	                            <li><a href="../classes/DeleteNodesResponse.html">DeleteNodesResponse</a></li>
+	                            <li><a href="../classes/DeleteReferencesItem.html">DeleteReferencesItem</a></li>
+	                            <li><a href="../classes/DeleteReferencesRequest.html">DeleteReferencesRequest</a></li>
+	                            <li><a href="../classes/DeleteReferencesResponse.html">DeleteReferencesResponse</a></li>
+	                            <li><a href="../classes/DeleteSubscriptionsRequest.html">DeleteSubscriptionsRequest</a></li>
+	                            <li><a href="../classes/DeleteSubscriptionsResponse.html">DeleteSubscriptionsResponse</a></li>
+	                            <li><a href="../classes/DiagnosticInfo.html">DiagnosticInfo</a></li>
+	                            <li><a href="../classes/DummyObject.html">DummyObject</a></li>
+	                            <li><a href="../classes/ElementOperand.html">ElementOperand</a></li>
+	                            <li><a href="../classes/Employee.html">Employee</a></li>
+	                            <li><a href="../classes/EndpointDescription.html">EndpointDescription</a></li>
+	                            <li><a href="../classes/Enum.html">Enum</a></li>
+	                            <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
+	                            <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
+	                            <li><a href="../classes/EUInformation.html">EUInformation</a></li>
+	                            <li><a href="../classes/EventData.html">EventData</a></li>
+	                            <li><a href="../classes/EventFieldList.html">EventFieldList</a></li>
+	                            <li><a href="../classes/EventFilter.html">EventFilter</a></li>
+	                            <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
+	                            <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
+	                            <li><a href="../classes/ExpandedNodeId.html">ExpandedNodeId</a></li>
+	                            <li><a href="../classes/Factory.html">Factory</a></li>
+	                            <li><a href="../classes/FilterOperand.html">FilterOperand</a></li>
+	                            <li><a href="../classes/FindServersRequest.html">FindServersRequest</a></li>
+	                            <li><a href="../classes/FindServersResponse.html">FindServersResponse</a></li>
+	                            <li><a href="../classes/FooBar.html">FooBar</a></li>
+	                            <li><a href="../classes/FooBarDerived.html">FooBarDerived</a></li>
+	                            <li><a href="../classes/FooWithRecursion.html">FooWithRecursion</a></li>
+	                            <li><a href="../classes/GetEndpointsRequest.html">GetEndpointsRequest</a></li>
+	                            <li><a href="../classes/GetEndpointsResponse.html">GetEndpointsResponse</a></li>
+	                            <li><a href="../classes/HelloMessage.html">HelloMessage</a></li>
+	                            <li><a href="../classes/HistoryData.html">HistoryData</a></li>
+	                            <li><a href="../classes/HistoryModifiedData.html">HistoryModifiedData</a></li>
+	                            <li><a href="../classes/HistoryReadDetails.html">HistoryReadDetails</a></li>
+	                            <li><a href="../classes/HistoryReadRequest.html">HistoryReadRequest</a></li>
+	                            <li><a href="../classes/HistoryReadResponse.html">HistoryReadResponse</a></li>
+	                            <li><a href="../classes/HistoryReadResult.html">HistoryReadResult</a></li>
+	                            <li><a href="../classes/HistoryReadValueId.html">HistoryReadValueId</a></li>
+	                            <li><a href="../classes/HistoryServerCapabilities.html">HistoryServerCapabilities</a></li>
+	                            <li><a href="../classes/HistoryUpdateRequest.html">HistoryUpdateRequest</a></li>
+	                            <li><a href="../classes/HistoryUpdateResponse.html">HistoryUpdateResponse</a></li>
+	                            <li><a href="../classes/HistoryUpdateResult.html">HistoryUpdateResult</a></li>
+	                            <li><a href="../classes/IssuedIdentityToken.html">IssuedIdentityToken</a></li>
+	                            <li><a href="../classes/LiteralOperand.html">LiteralOperand</a></li>
+	                            <li><a href="../classes/LocalizedText.html">LocalizedText</a></li>
+	                            <li><a href="../classes/MessageBuilder.html">MessageBuilder</a></li>
+	                            <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
+	                            <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
+	                            <li><a href="../classes/MetaShapeForUnitTest.html">MetaShapeForUnitTest</a></li>
+	                            <li><a href="../classes/ModelChangeStructure.html">ModelChangeStructure</a></li>
+	                            <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
+	                            <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
+	                            <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
+	                            <li><a href="../classes/ModifySubscriptionRequest.html">ModifySubscriptionRequest</a></li>
+	                            <li><a href="../classes/ModifySubscriptionResponse.html">ModifySubscriptionResponse</a></li>
+	                            <li><a href="../classes/MonitoredItem.html">MonitoredItem</a></li>
+	                            <li><a href="../classes/MonitoredItemCreateRequest.html">MonitoredItemCreateRequest</a></li>
+	                            <li><a href="../classes/MonitoredItemCreateResult.html">MonitoredItemCreateResult</a></li>
+	                            <li><a href="../classes/MonitoredItemModifyRequest.html">MonitoredItemModifyRequest</a></li>
+	                            <li><a href="../classes/MonitoredItemModifyResult.html">MonitoredItemModifyResult</a></li>
+	                            <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
+	                            <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
+	                            <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+	                            <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
+	                            <li><a href="../classes/NodeId.html">NodeId</a></li>
+	                            <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
+	                            <li><a href="../classes/NodeTypeDescription.html">NodeTypeDescription</a></li>
+	                            <li><a href="../classes/NotificationMessage.html">NotificationMessage</a></li>
+	                            <li><a href="../classes/ObjWithAccessLevel.html">ObjWithAccessLevel</a></li>
+	                            <li><a href="../classes/ObjWithIntegerId.html">ObjWithIntegerId</a></li>
+	                            <li><a href="../classes/opcua.html">opcua</a></li>
+	                            <li><a href="../classes/OPCUABaseServer.html">OPCUABaseServer</a></li>
+	                            <li><a href="../classes/OPCUAClient.html">OPCUAClient</a></li>
+	                            <li><a href="../classes/OPCUAClientBase.html">OPCUAClientBase</a></li>
+	                            <li><a href="../classes/OPCUASecureObject.html">OPCUASecureObject</a></li>
+	                            <li><a href="../classes/OPCUAServer.html">OPCUAServer</a></li>
+	                            <li><a href="../classes/OPCUAServerEndPoint
+	    
+	    A sever end point is listening to one port.html">OPCUAServerEndPoint
+	    
+	    A sever end point is listening to one port</a></li>
+	                            <li><a href="../classes/OpenSecureChannelRequest.html">OpenSecureChannelRequest</a></li>
+	                            <li><a href="../classes/OpenSecureChannelResponse.html">OpenSecureChannelResponse</a></li>
+	                            <li><a href="../classes/OperationLimits.html">OperationLimits</a></li>
+	                            <li><a href="../classes/PacketAssembler.html">PacketAssembler</a></li>
+	                            <li><a href="../classes/ParsingResult.html">ParsingResult</a></li>
+	                            <li><a href="../classes/Person.html">Person</a></li>
+	                            <li><a href="../classes/Person2.html">Person2</a></li>
+	                            <li><a href="../classes/Potato.html">Potato</a></li>
+	                            <li><a href="../classes/PublishRequest.html">PublishRequest</a></li>
+	                            <li><a href="../classes/PublishResponse.html">PublishResponse</a></li>
+	                            <li><a href="../classes/QualifiedName.html">QualifiedName</a></li>
+	                            <li><a href="../classes/QueryDataDescription.html">QueryDataDescription</a></li>
+	                            <li><a href="../classes/QueryDataSet.html">QueryDataSet</a></li>
+	                            <li><a href="../classes/QueryFirstRequest.html">QueryFirstRequest</a></li>
+	                            <li><a href="../classes/QueryFirstResponse.html">QueryFirstResponse</a></li>
+	                            <li><a href="../classes/QueryNextRequest.html">QueryNextRequest</a></li>
+	                            <li><a href="../classes/QueryNextResponse.html">QueryNextResponse</a></li>
+	                            <li><a href="../classes/Range.html">Range</a></li>
+	                            <li><a href="../classes/ReadAtTimeDetails.html">ReadAtTimeDetails</a></li>
+	                            <li><a href="../classes/ReadEventDetails.html">ReadEventDetails</a></li>
+	                            <li><a href="../classes/ReadProcessedDetails.html">ReadProcessedDetails</a></li>
+	                            <li><a href="../classes/ReadRawModifiedDetails.html">ReadRawModifiedDetails</a></li>
+	                            <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
+	                            <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
+	                            <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+	                            <li><a href="../classes/RedundantServer.html">RedundantServer</a></li>
+	                            <li><a href="../classes/Reference.html">Reference</a></li>
+	                            <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
+	                            <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
+	                            <li><a href="../classes/RegisteredServer.html">RegisteredServer</a></li>
+	                            <li><a href="../classes/RegisterNodesRequest.html">RegisterNodesRequest</a></li>
+	                            <li><a href="../classes/RegisterNodesResponse.html">RegisterNodesResponse</a></li>
+	                            <li><a href="../classes/RegisterServerRequest.html">RegisterServerRequest</a></li>
+	                            <li><a href="../classes/RegisterServerResponse.html">RegisterServerResponse</a></li>
+	                            <li><a href="../classes/RelativePath.html">RelativePath</a></li>
+	                            <li><a href="../classes/RelativePathElement.html">RelativePathElement</a></li>
+	                            <li><a href="../classes/RepublishRequest.html">RepublishRequest</a></li>
+	                            <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
+	                            <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
+	                            <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+	                            <li><a href="../classes/Role.html">Role</a></li>
+	                            <li><a href="../classes/SamplingIntervalDiagnostics.html">SamplingIntervalDiagnostics</a></li>
+	                            <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
+	                            <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
+	                            <li><a href="../classes/SemanticChangeStructure.html">SemanticChangeStructure</a></li>
+	                            <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
+	                            <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
+	                            <li><a href="../classes/ServerCapabilities.html">ServerCapabilities</a></li>
+	                            <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
+	                            <li><a href="../classes/ServerEngine.html">ServerEngine</a></li>
+	                            <li><a href="../classes/ServerSecureChannelLayer.html">ServerSecureChannelLayer</a></li>
+	                            <li><a href="../classes/ServerSidePublishEngine.html">ServerSidePublishEngine</a></li>
+	                            <li><a href="../classes/ServerSideUnimplementedRequest.html">ServerSideUnimplementedRequest</a></li>
+	                            <li><a href="../classes/ServerStatus.html">ServerStatus</a></li>
+	                            <li><a href="../classes/ServerTCP_transport.html">ServerTCP_transport</a></li>
+	                            <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
+	                            <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
+	                            <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+	                            <li><a href="../classes/SessionSecurityDiagnostics.html">SessionSecurityDiagnostics</a></li>
+	                            <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
+	                            <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
+	                            <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
+	                            <li><a href="../classes/SetPublishingModeResponse.html">SetPublishingModeResponse</a></li>
+	                            <li><a href="../classes/SetTriggeringRequest.html">SetTriggeringRequest</a></li>
+	                            <li><a href="../classes/SetTriggeringResponse.html">SetTriggeringResponse</a></li>
+	                            <li><a href="../classes/Shape.html">Shape</a></li>
+	                            <li><a href="../classes/SignatureData.html">SignatureData</a></li>
+	                            <li><a href="../classes/SignedSoftwareCertificate.html">SignedSoftwareCertificate</a></li>
+	                            <li><a href="../classes/SimpleAttributeOperand.html">SimpleAttributeOperand</a></li>
+	                            <li><a href="../classes/Simulator.html">Simulator</a></li>
+	                            <li><a href="../classes/StatusChangeNotification.html">StatusChangeNotification</a></li>
+	                            <li><a href="../classes/StatusCode.html">StatusCode</a></li>
+	                            <li><a href="../classes/Subscription.html">Subscription</a></li>
+	                            <li><a href="../classes/SubscriptionAcknowledgement.html">SubscriptionAcknowledgement</a></li>
+	                            <li><a href="../classes/SubscriptionDiagnostics.html">SubscriptionDiagnostics</a></li>
+	                            <li><a href="../classes/SymmetricAlgorithmSecurityHeader.html">SymmetricAlgorithmSecurityHeader</a></li>
+	                            <li><a href="../classes/TCP_transport.html">TCP_transport</a></li>
+	                            <li><a href="../classes/TCPErrorMessage.html">TCPErrorMessage</a></li>
+	                            <li><a href="../classes/TimestampsToReturn.html">TimestampsToReturn</a></li>
+	                            <li><a href="../classes/TimeZone.html">TimeZone</a></li>
+	                            <li><a href="../classes/ToolBrowsePath.html">ToolBrowsePath</a></li>
+	                            <li><a href="../classes/TransferResult.html">TransferResult</a></li>
+	                            <li><a href="../classes/TransferSubscriptionsRequest.html">TransferSubscriptionsRequest</a></li>
+	                            <li><a href="../classes/TransferSubscriptionsResponse.html">TransferSubscriptionsResponse</a></li>
+	                            <li><a href="../classes/TranslateBrowsePathsToNodeIdsRequest.html">TranslateBrowsePathsToNodeIdsRequest</a></li>
+	                            <li><a href="../classes/TranslateBrowsePathsToNodeIdsResponse.html">TranslateBrowsePathsToNodeIdsResponse</a></li>
+	                            <li><a href="../classes/TypeSchema.html">TypeSchema</a></li>
+	                            <li><a href="../classes/UAAcknowledgeableConditionBase.html">UAAcknowledgeableConditionBase</a></li>
+	                            <li><a href="../classes/UAAlarmConditionBase.html">UAAlarmConditionBase</a></li>
+	                            <li><a href="../classes/UACertificateExpirationAlarm.html">UACertificateExpirationAlarm</a></li>
+	                            <li><a href="../classes/UAConditionBase.html">UAConditionBase</a></li>
+	                            <li><a href="../classes/UADataType.html">UADataType</a></li>
+	                            <li><a href="../classes/UADiscreteAlarm.html">UADiscreteAlarm</a></li>
+	                            <li><a href="../classes/UAExclusiveDeviationAlarm.html">UAExclusiveDeviationAlarm</a></li>
+	                            <li><a href="../classes/UAExclusiveLevelAlarm.html">UAExclusiveLevelAlarm</a></li>
+	                            <li><a href="../classes/UAExclusiveLimitAlarm.html">UAExclusiveLimitAlarm</a></li>
+	                            <li><a href="../classes/UAExclusiveRateOfChangeAlarm.html">UAExclusiveRateOfChangeAlarm</a></li>
+	                            <li><a href="../classes/UALimitAlarm.html">UALimitAlarm</a></li>
+	                            <li><a href="../classes/UANonExclusiveDeviationAlarm.html">UANonExclusiveDeviationAlarm</a></li>
+	                            <li><a href="../classes/UANonExclusiveLimitAlarm.html">UANonExclusiveLimitAlarm</a></li>
+	                            <li><a href="../classes/UAObject.html">UAObject</a></li>
+	                            <li><a href="../classes/UAObjectType.html">UAObjectType</a></li>
+	                            <li><a href="../classes/UAOffNormalAlarm.html">UAOffNormalAlarm</a></li>
+	                            <li><a href="../classes/UASystemOffNormalAlarm.html">UASystemOffNormalAlarm</a></li>
+	                            <li><a href="../classes/UATripAlarm.html">UATripAlarm</a></li>
+	                            <li><a href="../classes/UATwoStateVariable.html">UATwoStateVariable</a></li>
+	                            <li><a href="../classes/UAVariable.html">UAVariable</a></li>
+	                            <li><a href="../classes/UAVariableType.html">UAVariableType</a></li>
+	                            <li><a href="../classes/UnregisterNodesRequest.html">UnregisterNodesRequest</a></li>
+	                            <li><a href="../classes/UnregisterNodesResponse.html">UnregisterNodesResponse</a></li>
+	                            <li><a href="../classes/UserNameIdentityToken.html">UserNameIdentityToken</a></li>
+	                            <li><a href="../classes/UserTokenPolicy.html">UserTokenPolicy</a></li>
+	                            <li><a href="../classes/Variant.html">Variant</a></li>
+	                            <li><a href="../classes/View.html">View</a></li>
+	                            <li><a href="../classes/ViewDescription.html">ViewDescription</a></li>
+	                            <li><a href="../classes/WriteRequest.html">WriteRequest</a></li>
+	                            <li><a href="../classes/WriteResponse.html">WriteResponse</a></li>
+	                            <li><a href="../classes/WriteValue.html">WriteValue</a></li>
+	                            <li><a href="../classes/X509IdentityToken.html">X509IdentityToken</a></li>
+	                            <li><a href="../classes/Xml2Json.html">Xml2Json</a></li>
+	                    </ul>
+	                </div>
+	    
+	                <div class="tab-pane" id="modules">
+	                    <ul id="api-modules" class="nav nav-list">
+	                            <li><a href="../modules/opcua.address_space.html">opcua.address_space</a></li>
+	                            <li><a href="../modules/opcua.address_space.AlarmsAndConditions.html">opcua.address_space.AlarmsAndConditions</a></li>
+	                            <li><a href="../modules/opcua.address_space.types.html">opcua.address_space.types</a></li>
+	                            <li><a href="../modules/opcua.client.html">opcua.client</a></li>
+	                            <li><a href="../modules/opcua.data-value.html">opcua.data-value</a></li>
+	                            <li><a href="../modules/opcua.datamodel.html">opcua.datamodel</a></li>
+	                            <li><a href="../modules/opcua.miscellaneous.html">opcua.miscellaneous</a></li>
+	                            <li><a href="../modules/opcua.server.html">opcua.server</a></li>
+	                            <li><a href="../modules/opcua.server.simulation.html">opcua.server.simulation</a></li>
+	                            <li><a href="../modules/opcua.status-code.html">opcua.status-code</a></li>
+	                            <li><a href="../modules/opcua.transport.html">opcua.transport</a></li>
+	                            <li><a href="../modules/opcua.utils.html">opcua.utils</a></li>
+	                            <li><a href="../modules/opcua.variant.html">opcua.variant</a></li>
+	                            <li><a href="../modules/service.filter.tools.html">service.filter.tools</a></li>
+	                            <li><a href="../modules/services.browse.html">services.browse</a></li>
+	                            <li><a href="../modules/services.call.html">services.call</a></li>
+	                            <li><a href="../modules/services.discovery.html">services.discovery</a></li>
+	                            <li><a href="../modules/services.endpoints.html">services.endpoints</a></li>
+	                            <li><a href="../modules/services.filter.html">services.filter</a></li>
+	                            <li><a href="../modules/services.history.html">services.history</a></li>
+	                            <li><a href="../modules/services.node_management.html">services.node_management</a></li>
+	                            <li><a href="../modules/services.query.html">services.query</a></li>
+	                            <li><a href="../modules/services.read.html">services.read</a></li>
+	                            <li><a href="../modules/services.register-server.html">services.register-server</a></li>
+	                            <li><a href="../modules/services.register_node.html">services.register_node</a></li>
+	                            <li><a href="../modules/services.secure-channel.html">services.secure-channel</a></li>
+	                            <li><a href="../modules/services.session.html">services.session</a></li>
+	                            <li><a href="../modules/services.subscription.html">services.subscription</a></li>
+	                            <li><a href="../modules/services.translate-browse-path.html">services.translate-browse-path</a></li>
+	                            <li><a href="../modules/services.write.html">services.write</a></li>
+	                            <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
+	                            <li><a href="../modules/xml2json
+	    
+	    node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+	    
+	    node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
         </div>
-        <div class="yui3-u-3-4">
-                <div id="api-options">
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
                     Show:
-                    <label for="api-show-inherited">
+                    <label for="api-show-inherited" class="checkbox">
                         <input type="checkbox" id="api-show-inherited" checked>
                         Inherited
                     </label>
             
-                    <label for="api-show-protected">
+                    <label for="api-show-protected" class="checkbox">
                         <input type="checkbox" id="api-show-protected">
                         Protected
                     </label>
             
-                    <label for="api-show-private">
+                    <label for="api-show-private" class="checkbox">
                         <input type="checkbox" id="api-show-private">
                         Private
                     </label>
-                    <label for="api-show-deprecated">
+                    <label for="api-show-deprecated" class="checkbox">
                         <input type="checkbox" id="api-show-deprecated">
                         Deprecated
                     </label>
             
-                </div>
+                </form>
             
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-<h1>BinaryStream Class</h1>
-<div class="box meta">
+<div class="page-header">
+    <h1>BinaryStream <small>Class</small></h1>
+</div>
+
+<div class="well well-small">
 
 
         <div class="foundat">
-            Defined in: <a href="../files/packages_node-opcua-binary-stream_src_binaryStream.js.html#l14"><code>packages\node-opcua-binary-stream\src\binaryStream.js:14</code></a>
+            Defined in: <a href="../files/packages_node-opcua-binary-stream_src_binaryStream.js.html#l14"><code>packages&#x2F;node-opcua-binary-stream&#x2F;src&#x2F;binaryStream.js:14</code></a>
         </div>
 
             Module: <a href="../modules/opcua.miscellaneous.html">opcua.miscellaneous</a>
@@ -404,7 +442,7 @@
 </div>
 
 
-<div class="box intro">
+<div class="well well-small">
     <p>a BinaryStream can be use to perform sequential read or write
 inside a buffer.
 The BinaryStream maintains a cursor up to date as the caller
@@ -425,69 +463,68 @@ convention.</p>
 
     <div class="constructor">
         <h2>Constructor</h2>
-<div id="method_BinaryStream" class="method item">
-    <h3 class="name"><code>BinaryStream</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>data</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-
-
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/packages_node-opcua-binary-stream_src_binaryStream.js.html#l14"><code>packages\node-opcua-binary-stream\src\binaryStream.js:14</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
+        <div id="method_BinaryStream" class="method item">
+            <h3 class="name"><code>BinaryStream</code></h3>
         
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">data</code>
-                        <span class="type">Null | Buffer | Number</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-            </ul>
+                <div class="args">
+                    <span class="paren">(</span><ul class="args-list inline commas">
+                        <li class="arg">
+                                <code>data</code>
+                        </li>
+                    </ul><span class="paren">)</span>
+                </div>
+        
+        
+        
+        
+        
+        
+        
+        
+            <div class="meta">
+                        <p>
+                        Defined in
+                <a href="../files/packages_node-opcua-binary-stream_src_binaryStream.js.html#l14"><code>packages&#x2F;node-opcua-binary-stream&#x2F;src&#x2F;binaryStream.js:14</code></a>
+                </p>
+        
+        
+        
+            </div>
+        
+            <div class="description">
+                
+            </div>
+        
+                <div class="params">
+                    <h4>Parameters:</h4>
+        
+                    <ul class="params-list">
+                        <li class="param">
+                                <code class="param-name">data</code>
+                                <span class="type">Null | Buffer | Number</span>
+        
+        
+                            <div class="param-description">
+                                 
+                            </div>
+        
+                        </li>
+                    </ul>
+                </div>
+        
+        
         </div>
-
-
-
-</div>
     </div>
 
-<div id="classdocs" class="tabview">
-    <ul class="api-class-tabs">
-        <li class="api-class-tab index"><a href="#index">Index</a></li>
+<div>
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#index">Index</a></li>
 
-            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
+            <li><a data-toggle="tab" href="#methods">Methods</a></li>
     </ul>
 
-    <div>
-        <div id="index" class="api-class-tabpanel index">
+    <div class="tab-content">
+        <div id="index" class="tab-pane active">
             <h2 class="off-left">Item Index</h2>
 
                 <div class="index-section methods">
@@ -495,99 +532,99 @@ convention.</p>
 
                     <ul class="index-list methods">
                             <li class="index-item method">
-                                <a href="#method_BinaryStream.rewind">BinaryStream.rewind</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method_BinaryStream.rewind" data-tablink="BinaryStream.rewind">BinaryStream.rewind</a>
 
                             </li>
                             <li class="index-item method">
-                                <a href="#method_decodeArray">decodeArray</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method_decodeArray" data-tablink="decodeArray">decodeArray</a>
 
                             </li>
                             <li class="index-item method">
-                                <a href="#method_encodeArray">encodeArray</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method_encodeArray" data-tablink="encodeArray">encodeArray</a>
 
                             </li>
                             <li class="index-item method private">
-                                <a href="#method_getRandomInt">getRandomInt</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method_getRandomInt" data-tablink="getRandomInt">getRandomInt</a>
 
                             </li>
                             <li class="index-item method private">
-                                <a href="#method_getRandomInt">getRandomInt</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method_getRandomInt" data-tablink="getRandomInt">getRandomInt</a>
 
                             </li>
                             <li class="index-item method">
-                                <a href="#method_readByte">readByte</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method_readByte" data-tablink="readByte">readByte</a>
 
                             </li>
                             <li class="index-item method">
-                                <a href="#method_readByteStream">readByteStream</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method_readByteStream" data-tablink="readByteStream">readByteStream</a>
 
                             </li>
                             <li class="index-item method">
-                                <a href="#method_readDouble">readDouble</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method_readDouble" data-tablink="readDouble">readDouble</a>
 
                             </li>
                             <li class="index-item method">
-                                <a href="#method_readFloat">readFloat</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method_readFloat" data-tablink="readFloat">readFloat</a>
 
                             </li>
                             <li class="index-item method">
-                                <a href="#method_readInt16">readInt16</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method_readInt16" data-tablink="readInt16">readInt16</a>
 
                             </li>
                             <li class="index-item method">
-                                <a href="#method_readInteger">readInteger</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method_readInteger" data-tablink="readInteger">readInteger</a>
 
                             </li>
                             <li class="index-item method">
-                                <a href="#method_readUInt16">readUInt16</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method_readUInt16" data-tablink="readUInt16">readUInt16</a>
 
                             </li>
                             <li class="index-item method">
-                                <a href="#method_readUInt32">readUInt32</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method_readUInt32" data-tablink="readUInt32">readUInt32</a>
 
                             </li>
                             <li class="index-item method">
-                                <a href="#method_readUInt8">readUInt8</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method_readUInt8" data-tablink="readUInt8">readUInt8</a>
 
                             </li>
                             <li class="index-item method">
-                                <a href="#method_test_encode_decode">test_encode_decode</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method_test_encode_decode" data-tablink="test_encode_decode">test_encode_decode</a>
 
                             </li>
                             <li class="index-item method">
-                                <a href="#method_writeByteStream">writeByteStream</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method_writeByteStream" data-tablink="writeByteStream">writeByteStream</a>
 
                             </li>
                             <li class="index-item method">
-                                <a href="#method_writeDouble">writeDouble</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method_writeDouble" data-tablink="writeDouble">writeDouble</a>
 
                             </li>
                             <li class="index-item method">
-                                <a href="#method_writeFloat">writeFloat</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method_writeFloat" data-tablink="writeFloat">writeFloat</a>
 
                             </li>
                             <li class="index-item method">
-                                <a href="#method_writeInt16">writeInt16</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method_writeInt16" data-tablink="writeInt16">writeInt16</a>
 
                             </li>
                             <li class="index-item method">
-                                <a href="#method_writeInt8">writeInt8</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method_writeInt8" data-tablink="writeInt8">writeInt8</a>
 
                             </li>
                             <li class="index-item method">
-                                <a href="#method_writeInteger">writeInteger</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method_writeInteger" data-tablink="writeInteger">writeInteger</a>
 
                             </li>
                             <li class="index-item method">
-                                <a href="#method_writeUInt16">writeUInt16</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method_writeUInt16" data-tablink="writeUInt16">writeUInt16</a>
 
                             </li>
                             <li class="index-item method">
-                                <a href="#method_writeUInt32">writeUInt32</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method_writeUInt32" data-tablink="writeUInt32">writeUInt32</a>
 
                             </li>
                             <li class="index-item method">
-                                <a href="#method_writeUInt8">writeUInt8</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method_writeUInt8" data-tablink="writeUInt8">writeUInt8</a>
 
                             </li>
                     </ul>
@@ -597,1407 +634,1383 @@ convention.</p>
 
         </div>
 
-            <div id="methods" class="api-class-tabpanel">
+            <div id="methods" class="tab-pane">
                 <h2 class="off-left">Methods</h2>
 
-<div id="method_BinaryStream.rewind" class="method item">
-    <h3 class="name"><code>BinaryStream.rewind</code></h3>
-
-        <span class="paren">()</span>
-
-        <span class="returns-inline">
-            <span class="type"></span>
-        </span>
-
-
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/packages_node-opcua-binary-stream_src_binaryStream.js.html#l54"><code>packages\node-opcua-binary-stream\src\binaryStream.js:54</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>set the cursor to the begining of the stream</p>
-
-    </div>
-
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                    <p>null</p>
-
-            </div>
-        </div>
-
-
-</div>
-<div id="method_decodeArray" class="method item">
-    <h3 class="name"><code>decodeArray</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>stream</code>
-                </li>
-                <li class="arg">
-                        <code>decode_element_func</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-        <span class="returns-inline">
-            <span class="type">Array</span>
-        </span>
-
-
-
-
-
-
-
-    <div class="meta">
-                    <p>Provided by the <a href="../modules/opcua.server.simulation.html">opcua.server.simulation</a> module.</p>
-                <p>
-                Defined in
-        <a href="../files/packages_node-opcua-basic-types_src_array.js.html#l24"><code>packages\node-opcua-basic-types\src\array.js:24</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">stream</code>
-                        <span class="type"><a href="../classes/BinaryStream.html" class="crosslink">BinaryStream</a></span>
-
-
-                    <div class="param-description">
-                        <p>the stream.</p>
-
-                    </div>
-
-                </li>
-                <li class="param">
-                        <code class="param-name">decode_element_func</code>
-                        <span class="type">Function</span>
-
-
-                    <div class="param-description">
-                        <p>The  function to decode a single array element. This function returns the element decoded from the stream</p>
-
-                    </div>
-
-                        <ul class="params-list">
-                            <li class="param">
-                                    <code class="param-name">stream</code>
-                                    <span class="type"><a href="../classes/BinaryStream.html" class="crosslink">BinaryStream</a></span>
-
-                                <div class="param-description">
-                                    <p>the stream.</p>
-
+                    <div id="method_BinaryStream.rewind" class="method item">
+                        <h3 class="name"><code>BinaryStream.rewind</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                            <span class="returns-inline">
+                                <span class="type"></span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/packages_node-opcua-binary-stream_src_binaryStream.js.html#l54"><code>packages&#x2F;node-opcua-binary-stream&#x2F;src&#x2F;binaryStream.js:54</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>set the cursor to the begining of the stream</p>
+                    
+                        </div>
+                    
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                        <p>null</p>
+                    
                                 </div>
-
-                            </li>
-                        </ul>
-                </li>
-            </ul>
-        </div>
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type">Array</span>:
-            </div>
-        </div>
-
-
-</div>
-<div id="method_encodeArray" class="method item">
-    <h3 class="name"><code>encodeArray</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>arr</code>
-                </li>
-                <li class="arg">
-                        <code>stream</code>
-                </li>
-                <li class="arg">
-                        <code>encode_element_func</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-
-
-
-
-
-
-
-    <div class="meta">
-                    <p>Provided by the <a href="../modules/opcua.server.simulation.html">opcua.server.simulation</a> module.</p>
-                <p>
-                Defined in
-        <a href="../files/packages_node-opcua-basic-types_src_array.js.html#l4"><code>packages\node-opcua-basic-types\src\array.js:4</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">arr</code>
-                        <span class="type">Array</span>
-
-
-                    <div class="param-description">
-                        <p>the array to encode.</p>
-
+                            </div>
+                    
                     </div>
-
-                </li>
-                <li class="param">
-                        <code class="param-name">stream</code>
-                        <span class="type"><a href="../classes/BinaryStream.html" class="crosslink">BinaryStream</a></span>
-
-
-                    <div class="param-description">
-                        <p>the stream.</p>
-
-                    </div>
-
-                </li>
-                <li class="param">
-                        <code class="param-name">encode_element_func</code>
-                        <span class="type">Function</span>
-
-
-                    <div class="param-description">
-                        <p>The  function to encode a single array element.</p>
-
-                    </div>
-
-                        <ul class="params-list">
-                            <li class="param">
-                                    <code class="param-name">element</code>
-                                    <span class="type">Object</span>
-
-                                <div class="param-description">
-                                    
+                    <div id="method_decodeArray" class="method item">
+                        <h3 class="name"><code>decodeArray</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>stream</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>decode_element_func</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type">Array</span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                        <p>Provided by the <a href="../modules/opcua.server.simulation.html">opcua.server.simulation</a> module.</p>
+                                    <p>
+                                    Defined in
+                            <a href="../files/packages_node-opcua-basic-types_src_array.js.html#l24"><code>packages&#x2F;node-opcua-basic-types&#x2F;src&#x2F;array.js:24</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">stream</code>
+                                            <span class="type"><a href="../classes/BinaryStream.html" class="crosslink">BinaryStream</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>the stream.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">decode_element_func</code>
+                                            <span class="type">Function</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The  function to decode a single array element. This function returns the element decoded from the stream</p>
+                    
+                                        </div>
+                    
+                                            <ul class="params-list">
+                                                <li class="param">
+                                                        <code class="param-name">stream</code>
+                                                        <span class="type"><a href="../classes/BinaryStream.html" class="crosslink">BinaryStream</a></span>
+                    
+                                                    <div class="param-description">
+                                                        <p>the stream.</p>
+                    
+                                                    </div>
+                    
+                                                </li>
+                                            </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">Array</span>:
                                 </div>
-
-                            </li>
-                            <li class="param">
-                                    <code class="param-name">stream</code>
-                                    <span class="type"><a href="../classes/BinaryStream.html" class="crosslink">BinaryStream</a></span>
-
-                                <div class="param-description">
-                                    <p>the stream.</p>
-
+                            </div>
+                    
+                    </div>
+                    <div id="method_encodeArray" class="method item">
+                        <h3 class="name"><code>encodeArray</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>arr</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>stream</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>encode_element_func</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                        <p>Provided by the <a href="../modules/opcua.server.simulation.html">opcua.server.simulation</a> module.</p>
+                                    <p>
+                                    Defined in
+                            <a href="../files/packages_node-opcua-basic-types_src_array.js.html#l4"><code>packages&#x2F;node-opcua-basic-types&#x2F;src&#x2F;array.js:4</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">arr</code>
+                                            <span class="type">Array</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>the array to encode.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">stream</code>
+                                            <span class="type"><a href="../classes/BinaryStream.html" class="crosslink">BinaryStream</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>the stream.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">encode_element_func</code>
+                                            <span class="type">Function</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The  function to encode a single array element.</p>
+                    
+                                        </div>
+                    
+                                            <ul class="params-list">
+                                                <li class="param">
+                                                        <code class="param-name">element</code>
+                                                        <span class="type">Object</span>
+                    
+                                                    <div class="param-description">
+                                                        
+                                                    </div>
+                    
+                                                </li>
+                                                <li class="param">
+                                                        <code class="param-name">stream</code>
+                                                        <span class="type"><a href="../classes/BinaryStream.html" class="crosslink">BinaryStream</a></span>
+                    
+                                                    <div class="param-description">
+                                                        <p>the stream.</p>
+                    
+                                                    </div>
+                    
+                                                </li>
+                                            </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
+                    <div id="method_getRandomInt" class="method item private">
+                        <h3 class="name"><code>getRandomInt</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>min</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>max</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type"></span>
+                            </span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                        <p>Provided by the <a href="../modules/opcua.server.simulation.html">opcua.server.simulation</a> module.</p>
+                                    <p>
+                                    Defined in
+                            <a href="../files/packages_node-opcua-basic-types_src_floats.js.html#l8"><code>packages&#x2F;node-opcua-basic-types&#x2F;src&#x2F;floats.js:8</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>return a random float value in the range of  min inclusive and  max exclusive</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">min</code>
+                                            <span class="type">Object</span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">max</code>
+                                            <span class="type">Object</span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"></span>:
                                 </div>
-
-                            </li>
-                        </ul>
-                </li>
-            </ul>
-        </div>
-
-
-
-</div>
-<div id="method_getRandomInt" class="method item private">
-    <h3 class="name"><code>getRandomInt</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>min</code>
-                </li>
-                <li class="arg">
-                        <code>max</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-        <span class="returns-inline">
-            <span class="type"></span>
-        </span>
-
-
-        <span class="flag private">private</span>
-
-
-
-
-
-    <div class="meta">
-                    <p>Provided by the <a href="../modules/opcua.server.simulation.html">opcua.server.simulation</a> module.</p>
-                <p>
-                Defined in
-        <a href="../files/packages_node-opcua-basic-types_src_floats.js.html#l8"><code>packages\node-opcua-basic-types\src\floats.js:8</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>return a random float value in the range of  min inclusive and  max exclusive</p>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">min</code>
-                        <span class="type">Object</span>
-
-
-                    <div class="param-description">
-                         
+                            </div>
+                    
                     </div>
-
-                </li>
-                <li class="param">
-                        <code class="param-name">max</code>
-                        <span class="type">Object</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type"></span>:
-            </div>
-        </div>
-
-
-</div>
-<div id="method_getRandomInt" class="method item private">
-    <h3 class="name"><code>getRandomInt</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>min</code>
-                </li>
-                <li class="arg">
-                        <code>max</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-        <span class="returns-inline">
-            <span class="type"></span>
-        </span>
-
-
-        <span class="flag private">private</span>
-
-
-
-
-
-    <div class="meta">
-                    <p>Provided by the <a href="../modules/opcua.server.simulation.html">opcua.server.simulation</a> module.</p>
-                <p>
-                Defined in
-        <a href="../files/packages_node-opcua-basic-types_src_utils.js.html#l3"><code>packages\node-opcua-basic-types\src\utils.js:3</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>return a random integer value in the range of  min inclusive and  max exclusive</p>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">min</code>
-                        <span class="type">Object</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-                <li class="param">
-                        <code class="param-name">max</code>
-                        <span class="type">Object</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type"></span>:
-            </div>
-        </div>
-
-
-</div>
-<div id="method_readByte" class="method item">
-    <h3 class="name"><code>readByte</code></h3>
-
-        <span class="paren">()</span>
-
-        <span class="returns-inline">
-            <span class="type">Number</span>
-        </span>
-
-
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/packages_node-opcua-binary-stream_src_binaryStream.js.html#l207"><code>packages\node-opcua-binary-stream\src\binaryStream.js:207</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>read a single signed byte  (8 bits) from the stream.</p>
-
-    </div>
-
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type">Number</span>:
-            </div>
-        </div>
-
-
-</div>
-<div id="method_readByteStream" class="method item">
-    <h3 class="name"><code>readByteStream</code></h3>
-
-        <span class="paren">()</span>
-
-        <span class="returns-inline">
-            <span class="type">Buffer</span>
-        </span>
-
-
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/packages_node-opcua-binary-stream_src_binaryStream.js.html#l333"><code>packages\node-opcua-binary-stream\src\binaryStream.js:333</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>read a byte stream to the stream.
-The method reads the length of the byte array from the stream as a 32 bits integer before reading the byte stream.</p>
-
-    </div>
-
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type">Buffer</span>:
-            </div>
-        </div>
-
-
-</div>
-<div id="method_readDouble" class="method item">
-    <h3 class="name"><code>readDouble</code></h3>
-
-        <span class="paren">()</span>
-
-        <span class="returns-inline">
-            <span class="type">Number</span>
-        </span>
-
-
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/packages_node-opcua-binary-stream_src_binaryStream.js.html#l284"><code>packages\node-opcua-binary-stream\src\binaryStream.js:284</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>read a single 64-bit floating point number from the stream.</p>
-
-    </div>
-
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type">Number</span>:
-                    <p>the value read from the stream</p>
-
-            </div>
-        </div>
-
-
-</div>
-<div id="method_readFloat" class="method item">
-    <h3 class="name"><code>readFloat</code></h3>
-
-        <span class="paren">()</span>
-
-        <span class="returns-inline">
-            <span class="type">Number</span>
-        </span>
-
-
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/packages_node-opcua-binary-stream_src_binaryStream.js.html#l273"><code>packages\node-opcua-binary-stream\src\binaryStream.js:273</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>read a single  32-bit floating point number from the stream.</p>
-
-    </div>
-
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type">Number</span>:
-                    <p>the value read from the stream</p>
-
-            </div>
-        </div>
-
-
-</div>
-<div id="method_readInt16" class="method item">
-    <h3 class="name"><code>readInt16</code></h3>
-
-        <span class="paren">()</span>
-
-        <span class="returns-inline">
-            <span class="type">Number</span>
-        </span>
-
-
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/packages_node-opcua-binary-stream_src_binaryStream.js.html#l229"><code>packages\node-opcua-binary-stream\src\binaryStream.js:229</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>read a single signed 16-bit integer from the stream.</p>
-
-    </div>
-
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type">Number</span>:
-            </div>
-        </div>
-
-
-</div>
-<div id="method_readInteger" class="method item">
-    <h3 class="name"><code>readInteger</code></h3>
-
-        <span class="paren">()</span>
-
-        <span class="returns-inline">
-            <span class="type">Number</span>
-        </span>
-
-
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/packages_node-opcua-binary-stream_src_binaryStream.js.html#l251"><code>packages\node-opcua-binary-stream\src\binaryStream.js:251</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>read a single signed 32-bit integer from the stream.</p>
-
-    </div>
-
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type">Number</span>:
-            </div>
-        </div>
-
-
-</div>
-<div id="method_readUInt16" class="method item">
-    <h3 class="name"><code>readUInt16</code></h3>
-
-        <span class="paren">()</span>
-
-        <span class="returns-inline">
-            <span class="type">Number</span>
-        </span>
-
-
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/packages_node-opcua-binary-stream_src_binaryStream.js.html#l240"><code>packages\node-opcua-binary-stream\src\binaryStream.js:240</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>read a single unsigned 16-bit integer from the stream.</p>
-
-    </div>
-
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type">Number</span>:
-                    <p>q</p>
-
-            </div>
-        </div>
-
-
-</div>
-<div id="method_readUInt32" class="method item">
-    <h3 class="name"><code>readUInt32</code></h3>
-
-        <span class="paren">()</span>
-
-        <span class="returns-inline">
-            <span class="type">Number</span>
-        </span>
-
-
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/packages_node-opcua-binary-stream_src_binaryStream.js.html#l262"><code>packages\node-opcua-binary-stream\src\binaryStream.js:262</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>read a single unsigned 32-bit integer from the stream.</p>
-
-    </div>
-
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type">Number</span>:
-                    <p>the value read from the stream</p>
-
-            </div>
-        </div>
-
-
-</div>
-<div id="method_readUInt8" class="method item">
-    <h3 class="name"><code>readUInt8</code></h3>
-
-        <span class="paren">()</span>
-
-        <span class="returns-inline">
-            <span class="type">Number</span>
-        </span>
-
-
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/packages_node-opcua-binary-stream_src_binaryStream.js.html#l218"><code>packages\node-opcua-binary-stream\src\binaryStream.js:218</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>read a single unsigned byte (8 bits) from the stream.</p>
-
-    </div>
-
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type">Number</span>:
-            </div>
-        </div>
-
-
-</div>
-<div id="method_test_encode_decode" class="method item">
-    <h3 class="name"><code>test_encode_decode</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>obj</code>
-                </li>
-                <li class="arg">
-                        <code>encode_func</code>
-                </li>
-                <li class="arg">
-                        <code>decode_func</code>
-                </li>
-                <li class="arg">
-                        <code>expectedLength</code>
-                </li>
-                <li class="arg">
-                        <code class="optional">[verify_buffer_func=null]</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-
-
-
-
-
-
-
-    <div class="meta">
-                    <p>Provided by the <a href="../modules/opcua.server.simulation.html">opcua.server.simulation</a> module.</p>
-                <p>
-                Defined in
-        <a href="../files/packages_node-opcua-basic-types_test_test_encode_decode.js.html#l19"><code>packages\node-opcua-basic-types\test\test_encode_decode.js:19</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">obj</code>
-                        <span class="type">Object</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-                <li class="param">
-                        <code class="param-name">encode_func</code>
-                        <span class="type">Function</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                        <ul class="params-list">
-                            <li class="param">
-                                    <code class="param-name">obj</code>
-                                    <span class="type">Object</span>
-
-                                <div class="param-description">
-                                    
+                    <div id="method_getRandomInt" class="method item private">
+                        <h3 class="name"><code>getRandomInt</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>min</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>max</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type"></span>
+                            </span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                        <p>Provided by the <a href="../modules/opcua.server.simulation.html">opcua.server.simulation</a> module.</p>
+                                    <p>
+                                    Defined in
+                            <a href="../files/packages_node-opcua-basic-types_src_utils.js.html#l3"><code>packages&#x2F;node-opcua-basic-types&#x2F;src&#x2F;utils.js:3</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>return a random integer value in the range of  min inclusive and  max exclusive</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">min</code>
+                                            <span class="type">Object</span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">max</code>
+                                            <span class="type">Object</span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"></span>:
                                 </div>
-
-                            </li>
-                            <li class="param">
-                                    <code class="param-name">binaryStream</code>
-                                    <span class="type"><a href="../classes/BinaryStream.html" class="crosslink">BinaryStream</a></span>
-
-                                <div class="param-description">
-                                    
+                            </div>
+                    
+                    </div>
+                    <div id="method_readByte" class="method item">
+                        <h3 class="name"><code>readByte</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                            <span class="returns-inline">
+                                <span class="type">Number</span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/packages_node-opcua-binary-stream_src_binaryStream.js.html#l207"><code>packages&#x2F;node-opcua-binary-stream&#x2F;src&#x2F;binaryStream.js:207</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>read a single signed byte  (8 bits) from the stream.</p>
+                    
+                        </div>
+                    
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">Number</span>:
                                 </div>
-
-                            </li>
-                        </ul>
-                </li>
-                <li class="param">
-                        <code class="param-name">decode_func</code>
-                        <span class="type">Function</span>
-
-
-                    <div class="param-description">
-                         
+                            </div>
+                    
                     </div>
-
-                        <ul class="params-list">
-                            <li class="param">
-                                    <code class="param-name">binaryStream</code>
-                                    <span class="type"><a href="../classes/BinaryStream.html" class="crosslink">BinaryStream</a></span>
-
-                                <div class="param-description">
-                                    
+                    <div id="method_readByteStream" class="method item">
+                        <h3 class="name"><code>readByteStream</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                            <span class="returns-inline">
+                                <span class="type">Buffer</span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/packages_node-opcua-binary-stream_src_binaryStream.js.html#l333"><code>packages&#x2F;node-opcua-binary-stream&#x2F;src&#x2F;binaryStream.js:333</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>read a byte stream to the stream.
+                    The method reads the length of the byte array from the stream as a 32 bits integer before reading the byte stream.</p>
+                    
+                        </div>
+                    
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">Buffer</span>:
                                 </div>
-
-                            </li>
-                        </ul>
-                </li>
-                <li class="param">
-                        <code class="param-name">expectedLength</code>
-                        <span class="type">Integer</span>
-
-
-                    <div class="param-description">
-                         
+                            </div>
+                    
                     </div>
-
-                </li>
-                <li class="param">
-                        <code class="param-name optional">[verify_buffer_func=null]</code>
-                        <span class="type">Function</span>
-                        <span class="flag optional" title="This parameter is optional.">optional</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                        <ul class="params-list">
-                            <li class="param">
-                                    <code class="param-name">buffer</code>
-                                    <span class="type">Buffer</span>
-
-                                <div class="param-description">
-                                    
+                    <div id="method_readDouble" class="method item">
+                        <h3 class="name"><code>readDouble</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                            <span class="returns-inline">
+                                <span class="type">Number</span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/packages_node-opcua-binary-stream_src_binaryStream.js.html#l284"><code>packages&#x2F;node-opcua-binary-stream&#x2F;src&#x2F;binaryStream.js:284</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>read a single 64-bit floating point number from the stream.</p>
+                    
+                        </div>
+                    
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">Number</span>:
+                                        <p>the value read from the stream</p>
+                    
                                 </div>
-
-                            </li>
-                        </ul>
-                </li>
-            </ul>
-        </div>
-
-
-
-</div>
-<div id="method_writeByteStream" class="method item">
-    <h3 class="name"><code>writeByteStream</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>buf</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-
-
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/packages_node-opcua-binary-stream_src_binaryStream.js.html#l295"><code>packages\node-opcua-binary-stream\src\binaryStream.js:295</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>write a byte stream to the stream.
-The method writes the length of the byte array into the stream as a 32 bits integer before the byte stream.</p>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">buf</code>
-                        <span class="type">Buffer</span>
-
-
-                    <div class="param-description">
-                        <p>the    buffer to write.
-the buffer buf.length the buffer to write</p>
-
+                            </div>
+                    
                     </div>
-
-                </li>
-            </ul>
-        </div>
-
-
-
-</div>
-<div id="method_writeDouble" class="method item">
-    <h3 class="name"><code>writeDouble</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>value</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-
-
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/packages_node-opcua-binary-stream_src_binaryStream.js.html#l143"><code>packages\node-opcua-binary-stream\src\binaryStream.js:143</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>write a single 64 bit floating number to the stream.</p>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">value</code>
-                        <span class="type">Object</span>
-
-
-                    <div class="param-description">
-                         
+                    <div id="method_readFloat" class="method item">
+                        <h3 class="name"><code>readFloat</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                            <span class="returns-inline">
+                                <span class="type">Number</span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/packages_node-opcua-binary-stream_src_binaryStream.js.html#l273"><code>packages&#x2F;node-opcua-binary-stream&#x2F;src&#x2F;binaryStream.js:273</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>read a single  32-bit floating point number from the stream.</p>
+                    
+                        </div>
+                    
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">Number</span>:
+                                        <p>the value read from the stream</p>
+                    
+                                </div>
+                            </div>
+                    
                     </div>
-
-                </li>
-            </ul>
-        </div>
-
-
-
-</div>
-<div id="method_writeFloat" class="method item">
-    <h3 class="name"><code>writeFloat</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>value</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-
-
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/packages_node-opcua-binary-stream_src_binaryStream.js.html#l133"><code>packages\node-opcua-binary-stream\src\binaryStream.js:133</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>write a single 32 bit floating number to the stream.</p>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">value</code>
-                        <span class="type">Number</span>
-
-
-                    <div class="param-description">
-                         
+                    <div id="method_readInt16" class="method item">
+                        <h3 class="name"><code>readInt16</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                            <span class="returns-inline">
+                                <span class="type">Number</span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/packages_node-opcua-binary-stream_src_binaryStream.js.html#l229"><code>packages&#x2F;node-opcua-binary-stream&#x2F;src&#x2F;binaryStream.js:229</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>read a single signed 16-bit integer from the stream.</p>
+                    
+                        </div>
+                    
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">Number</span>:
+                                </div>
+                            </div>
+                    
                     </div>
-
-                </li>
-            </ul>
-        </div>
-
-
-
-</div>
-<div id="method_writeInt16" class="method item">
-    <h3 class="name"><code>writeInt16</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>value</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-
-
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/packages_node-opcua-binary-stream_src_binaryStream.js.html#l86"><code>packages\node-opcua-binary-stream\src\binaryStream.js:86</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>write a single 16 bit signed integer to the stream.</p>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">value</code>
-                        <span class="type">Number</span>
-
-
-                    <div class="param-description">
-                         
+                    <div id="method_readInteger" class="method item">
+                        <h3 class="name"><code>readInteger</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                            <span class="returns-inline">
+                                <span class="type">Number</span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/packages_node-opcua-binary-stream_src_binaryStream.js.html#l251"><code>packages&#x2F;node-opcua-binary-stream&#x2F;src&#x2F;binaryStream.js:251</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>read a single signed 32-bit integer from the stream.</p>
+                    
+                        </div>
+                    
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">Number</span>:
+                                </div>
+                            </div>
+                    
                     </div>
-
-                </li>
-            </ul>
-        </div>
-
-
-
-</div>
-<div id="method_writeInt8" class="method item">
-    <h3 class="name"><code>writeInt8</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>value</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-
-
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/packages_node-opcua-binary-stream_src_binaryStream.js.html#l63"><code>packages\node-opcua-binary-stream\src\binaryStream.js:63</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>write a single signed byte (8 bits) to the stream.
-value must be in the range of [-127,128]</p>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">value</code>
-                        <span class="type">Number</span>
-
-
-                    <div class="param-description">
-                         
+                    <div id="method_readUInt16" class="method item">
+                        <h3 class="name"><code>readUInt16</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                            <span class="returns-inline">
+                                <span class="type">Number</span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/packages_node-opcua-binary-stream_src_binaryStream.js.html#l240"><code>packages&#x2F;node-opcua-binary-stream&#x2F;src&#x2F;binaryStream.js:240</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>read a single unsigned 16-bit integer from the stream.</p>
+                    
+                        </div>
+                    
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">Number</span>:
+                                        <p>q</p>
+                    
+                                </div>
+                            </div>
+                    
                     </div>
-
-                </li>
-            </ul>
-        </div>
-
-
-
-</div>
-<div id="method_writeInteger" class="method item">
-    <h3 class="name"><code>writeInteger</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>value</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-
-
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/packages_node-opcua-binary-stream_src_binaryStream.js.html#l107"><code>packages\node-opcua-binary-stream\src\binaryStream.js:107</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>write a single 32 bit signed integer to the stream.</p>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">value</code>
-                        <span class="type">Number</span>
-
-
-                    <div class="param-description">
-                         
+                    <div id="method_readUInt32" class="method item">
+                        <h3 class="name"><code>readUInt32</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                            <span class="returns-inline">
+                                <span class="type">Number</span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/packages_node-opcua-binary-stream_src_binaryStream.js.html#l262"><code>packages&#x2F;node-opcua-binary-stream&#x2F;src&#x2F;binaryStream.js:262</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>read a single unsigned 32-bit integer from the stream.</p>
+                    
+                        </div>
+                    
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">Number</span>:
+                                        <p>the value read from the stream</p>
+                    
+                                </div>
+                            </div>
+                    
                     </div>
-
-                </li>
-            </ul>
-        </div>
-
-
-
-</div>
-<div id="method_writeUInt16" class="method item">
-    <h3 class="name"><code>writeUInt16</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>value</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-
-
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/packages_node-opcua-binary-stream_src_binaryStream.js.html#l96"><code>packages\node-opcua-binary-stream\src\binaryStream.js:96</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>write a single 16 bit unsigned integer to the stream.</p>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">value</code>
-                        <span class="type">Number</span>
-
-
-                    <div class="param-description">
-                         
+                    <div id="method_readUInt8" class="method item">
+                        <h3 class="name"><code>readUInt8</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                            <span class="returns-inline">
+                                <span class="type">Number</span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/packages_node-opcua-binary-stream_src_binaryStream.js.html#l218"><code>packages&#x2F;node-opcua-binary-stream&#x2F;src&#x2F;binaryStream.js:218</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>read a single unsigned byte (8 bits) from the stream.</p>
+                    
+                        </div>
+                    
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">Number</span>:
+                                </div>
+                            </div>
+                    
                     </div>
-
-                </li>
-            </ul>
-        </div>
-
-
-
-</div>
-<div id="method_writeUInt32" class="method item">
-    <h3 class="name"><code>writeUInt32</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>value</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-
-
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/packages_node-opcua-binary-stream_src_binaryStream.js.html#l117"><code>packages\node-opcua-binary-stream\src\binaryStream.js:117</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>write a single 32 bit unsigned integer to the stream.</p>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">value</code>
-                        <span class="type">Number</span>
-
-
-                    <div class="param-description">
-                         
+                    <div id="method_test_encode_decode" class="method item">
+                        <h3 class="name"><code>test_encode_decode</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>obj</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>encode_func</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>decode_func</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>expectedLength</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code class="optional">[verify_buffer_func=null]</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                        <p>Provided by the <a href="../modules/opcua.server.simulation.html">opcua.server.simulation</a> module.</p>
+                                    <p>
+                                    Defined in
+                            <a href="../files/packages_node-opcua-basic-types_test_test_encode_decode.js.html#l19"><code>packages&#x2F;node-opcua-basic-types&#x2F;test&#x2F;test_encode_decode.js:19</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">obj</code>
+                                            <span class="type">Object</span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">encode_func</code>
+                                            <span class="type">Function</span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                            <ul class="params-list">
+                                                <li class="param">
+                                                        <code class="param-name">obj</code>
+                                                        <span class="type">Object</span>
+                    
+                                                    <div class="param-description">
+                                                        
+                                                    </div>
+                    
+                                                </li>
+                                                <li class="param">
+                                                        <code class="param-name">binaryStream</code>
+                                                        <span class="type"><a href="../classes/BinaryStream.html" class="crosslink">BinaryStream</a></span>
+                    
+                                                    <div class="param-description">
+                                                        
+                                                    </div>
+                    
+                                                </li>
+                                            </ul>
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">decode_func</code>
+                                            <span class="type">Function</span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                            <ul class="params-list">
+                                                <li class="param">
+                                                        <code class="param-name">binaryStream</code>
+                                                        <span class="type"><a href="../classes/BinaryStream.html" class="crosslink">BinaryStream</a></span>
+                    
+                                                    <div class="param-description">
+                                                        
+                                                    </div>
+                    
+                                                </li>
+                                            </ul>
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">expectedLength</code>
+                                            <span class="type">Integer</span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name optional">[verify_buffer_func=null]</code>
+                                            <span class="type">Function</span>
+                                            <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                            <ul class="params-list">
+                                                <li class="param">
+                                                        <code class="param-name">buffer</code>
+                                                        <span class="type">Buffer</span>
+                    
+                                                    <div class="param-description">
+                                                        
+                                                    </div>
+                    
+                                                </li>
+                                            </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
                     </div>
-
-                </li>
-            </ul>
-        </div>
-
-
-
-</div>
-<div id="method_writeUInt8" class="method item">
-    <h3 class="name"><code>writeUInt8</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>value</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-
-
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/packages_node-opcua-binary-stream_src_binaryStream.js.html#l75"><code>packages\node-opcua-binary-stream\src\binaryStream.js:75</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>write a single unsigned byte (8 bits) to the stream.</p>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">value</code>
-                        <span class="type">Number</span>
-
-
-                    <div class="param-description">
-                         
+                    <div id="method_writeByteStream" class="method item">
+                        <h3 class="name"><code>writeByteStream</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>buf</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/packages_node-opcua-binary-stream_src_binaryStream.js.html#l295"><code>packages&#x2F;node-opcua-binary-stream&#x2F;src&#x2F;binaryStream.js:295</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>write a byte stream to the stream.
+                    The method writes the length of the byte array into the stream as a 32 bits integer before the byte stream.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">buf</code>
+                                            <span class="type">Buffer</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>the    buffer to write.
+                    the buffer buf.length the buffer to write</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
                     </div>
-
-                </li>
-            </ul>
-        </div>
-
-
-
-</div>
+                    <div id="method_writeDouble" class="method item">
+                        <h3 class="name"><code>writeDouble</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>value</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/packages_node-opcua-binary-stream_src_binaryStream.js.html#l143"><code>packages&#x2F;node-opcua-binary-stream&#x2F;src&#x2F;binaryStream.js:143</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>write a single 64 bit floating number to the stream.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">value</code>
+                                            <span class="type">Object</span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
+                    <div id="method_writeFloat" class="method item">
+                        <h3 class="name"><code>writeFloat</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>value</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/packages_node-opcua-binary-stream_src_binaryStream.js.html#l133"><code>packages&#x2F;node-opcua-binary-stream&#x2F;src&#x2F;binaryStream.js:133</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>write a single 32 bit floating number to the stream.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">value</code>
+                                            <span class="type">Number</span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
+                    <div id="method_writeInt16" class="method item">
+                        <h3 class="name"><code>writeInt16</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>value</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/packages_node-opcua-binary-stream_src_binaryStream.js.html#l86"><code>packages&#x2F;node-opcua-binary-stream&#x2F;src&#x2F;binaryStream.js:86</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>write a single 16 bit signed integer to the stream.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">value</code>
+                                            <span class="type">Number</span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
+                    <div id="method_writeInt8" class="method item">
+                        <h3 class="name"><code>writeInt8</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>value</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/packages_node-opcua-binary-stream_src_binaryStream.js.html#l63"><code>packages&#x2F;node-opcua-binary-stream&#x2F;src&#x2F;binaryStream.js:63</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>write a single signed byte (8 bits) to the stream.
+                    value must be in the range of [-127,128]</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">value</code>
+                                            <span class="type">Number</span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
+                    <div id="method_writeInteger" class="method item">
+                        <h3 class="name"><code>writeInteger</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>value</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/packages_node-opcua-binary-stream_src_binaryStream.js.html#l107"><code>packages&#x2F;node-opcua-binary-stream&#x2F;src&#x2F;binaryStream.js:107</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>write a single 32 bit signed integer to the stream.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">value</code>
+                                            <span class="type">Number</span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
+                    <div id="method_writeUInt16" class="method item">
+                        <h3 class="name"><code>writeUInt16</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>value</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/packages_node-opcua-binary-stream_src_binaryStream.js.html#l96"><code>packages&#x2F;node-opcua-binary-stream&#x2F;src&#x2F;binaryStream.js:96</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>write a single 16 bit unsigned integer to the stream.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">value</code>
+                                            <span class="type">Number</span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
+                    <div id="method_writeUInt32" class="method item">
+                        <h3 class="name"><code>writeUInt32</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>value</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/packages_node-opcua-binary-stream_src_binaryStream.js.html#l117"><code>packages&#x2F;node-opcua-binary-stream&#x2F;src&#x2F;binaryStream.js:117</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>write a single 32 bit unsigned integer to the stream.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">value</code>
+                                            <span class="type">Number</span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
+                    <div id="method_writeUInt8" class="method item">
+                        <h3 class="name"><code>writeUInt8</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>value</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/packages_node-opcua-binary-stream_src_binaryStream.js.html#l75"><code>packages&#x2F;node-opcua-binary-stream&#x2F;src&#x2F;binaryStream.js:75</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>write a single unsigned byte (8 bits) to the stream.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">value</code>
+                                            <span class="type">Number</span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
             </div>
 
 
@@ -2010,13 +2023,10 @@ value must be in the range of [-127,128]</p>
         </div>
     </div>
 </div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
 <script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
 <script>prettyPrint();</script>
-<script src="../assets/js/yui-prettify.js"></script>
-<script src="../assets/../api.js"></script>
-<script src="../assets/js/api-filter.js"></script>
-<script src="../assets/js/api-list.js"></script>
-<script src="../assets/js/api-search.js"></script>
-<script src="../assets/js/apidocs.js"></script>
 </body>
 </html>
