@@ -162,9 +162,11 @@ var OPCUAClient = opcua.OPCUAClient;
 
 As you can see, this code is far more verbose.
 
-***So ! Which one do you prefer ? Isn't it time to switch to [nodejs 9](https://nodejs.org) ?**
 
-  
+**So ! Which one do you prefer ? **
+**Isn't it time to switch to [nodejs 9](https://nodejs.org) ?**
+
+
 ### reference:
  * [mastering async-await in nodejs](https://blog.risingstack.com/mastering-async-await-in-nodejs)
  * [async await explained](https://tutorialzine.com/2017/07/javascript-async-await-explained) 
@@ -172,4 +174,4 @@ As you can see, this code is far more verbose.
  the various evolution of the Javascript language.
 
 
-by Etienne Rossignon - Founder at [Sterfive](https://www.sterfive.com) and [https://node-opcua.github.io](NodeOPCUA) author
+by Etienne Rossignon - Founder at [Sterfive](https://www.sterfive.com) and [NodeOPCUA](https://node-opcua.github.io) author
