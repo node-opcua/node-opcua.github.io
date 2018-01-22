@@ -1,18 +1,18 @@
 ---
 layout: default
 ---
-<script id="dsq-count-scr" src="//node-opcua-github-io.disqus.com/count.js" async></script>
+<!-- <script id="dsq-count-scr" src="//node-opcua-github-io.disqus.com/count.js" async></script> -->
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+<ul class="post-list">
+{% for post in site.posts %}
+  <li>
+    <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-        <h3>
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}#disqus_thread">{{ post.title }}</a>
-        </h3>
-    </li>
-    {% endfor %}
-  </ul>
+    <h3>
+    <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+    </h3>
+</li>
+{% endfor %}
+</ul>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>

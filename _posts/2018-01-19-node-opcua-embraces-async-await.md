@@ -4,7 +4,7 @@ title: "node-opcua 0.2.0 will make it easier than ever to write OPCUA Client cod
 date:   2018-01-22 12:00:00  +0100
 comments: true
 categories: tutorial
-author: etienne
+author: Etienne
 ---
 
 ![image](/images/demo1_typescript_async.png){:class="img-responsive"}
