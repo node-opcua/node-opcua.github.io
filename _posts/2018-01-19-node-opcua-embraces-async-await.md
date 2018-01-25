@@ -7,7 +7,7 @@ categories: tutorial
 author: Etienne
 ---
 
-![image](/images/demo1_typescript_async.png){:class="img-responsive"}
+![image](/images/demo2_typescript_async.png){:class="img-responsive"}
 
 
 Since node-opcua@0.2.0, it's possible to take advantage of the latest Javascript ES2017 feature such as [async/await]().
@@ -163,8 +163,9 @@ var OPCUAClient = opcua.OPCUAClient;
 As you can see, this code is far more verbose.
 
 
-**So ! Which one do you prefer ? **
-**Isn't it time to switch to [nodejs 9](https://nodejs.org) ?**
+** So ! Which one do you prefer ? **
+
+** Isn't it time to switch to [nodejs 9](https://nodejs.org) ?**
 
 
 ### reference:
