@@ -15583,7 +15583,7 @@
                 {
                     "name": "inputNode",
                     "description": "",
-                    "type": "UABaseNode"
+                    "type": "BaseNode"
                 }
             ],
             "return": {
@@ -21089,7 +21089,7 @@
                 {
                     "name": "node",
                     "description": "",
-                    "type": "UABaseNode"
+                    "type": "BaseNode"
                 }
             ],
             "return": {
@@ -23901,14 +23901,38 @@
                 }
             ],
             "example": [
-                " :\n\n\n    // create a anonymous session\n    client.createSession(function(err) {\n      if (err) {} else {}\n    });\n\n    // create a session with a userName and password\n    client.createSession({userName: \"JoeDoe\", password:\"secret\"}, function(err) {\n      if (err) {} else {}\n    });\n"
+                " :\n    // create a anonymous session\n    client.createSession(function(err,session) {\n      if (err) {} else {}\n    });",
+                " :\n    // create a session with a userName and password\n    client.createSession({userName: \"JoeDoe\", password:\"secret\"}, function(err,session) {\n      if (err) {} else {}\n    });\n"
             ],
             "class": "OPCUAClient",
             "module": "opcua.client"
         },
         {
             "file": "packages\\node-opcua-client\\src\\opcua_client.js",
-            "line": 650,
+            "line": 600,
+            "itemtype": "method",
+            "name": "changeSessionIdentity",
+            "params": [
+                {
+                    "name": "session",
+                    "description": ""
+                },
+                {
+                    "name": "userIdentityInfo",
+                    "description": ""
+                },
+                {
+                    "name": "callback",
+                    "description": ""
+                }
+            ],
+            "async": 1,
+            "class": "OPCUAClient",
+            "module": "opcua.client"
+        },
+        {
+            "file": "packages\\node-opcua-client\\src\\opcua_client.js",
+            "line": 656,
             "itemtype": "method",
             "name": "closeSession",
             "async": 1,
@@ -23941,7 +23965,7 @@
         },
         {
             "file": "packages\\node-opcua-client\\src\\opcua_client.js",
-            "line": 894,
+            "line": 900,
             "itemtype": "method",
             "name": "withSession",
             "params": [
@@ -23967,6 +23991,129 @@
                     "description": "",
                     "type": "Function"
                 }
+            ],
+            "class": "OPCUAClient",
+            "module": "opcua.client"
+        },
+        {
+            "file": "packages\\node-opcua-client\\src\\opcua_client.js",
+            "line": 987,
+            "itemtype": "method",
+            "name": "connect",
+            "params": [
+                {
+                    "name": "endpointUrl",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "async": 1,
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "OPCUAClient",
+            "module": "opcua.client"
+        },
+        {
+            "file": "packages\\node-opcua-client\\src\\opcua_client.js",
+            "line": 994,
+            "itemtype": "method",
+            "name": "disconnect\ndisconnect client from server",
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "async": 1,
+            "class": "OPCUAClient",
+            "module": "opcua.client"
+        },
+        {
+            "file": "packages\\node-opcua-client\\src\\opcua_client.js",
+            "line": 1001,
+            "itemtype": "method",
+            "name": "createSession",
+            "params": [
+                {
+                    "name": "userIdentityInfo",
+                    "description": "optional",
+                    "type": "Object",
+                    "optional": true,
+                    "props": [
+                        {
+                            "name": "userName",
+                            "description": "",
+                            "type": "String",
+                            "optional": true
+                        },
+                        {
+                            "name": "password",
+                            "description": "",
+                            "type": "String",
+                            "optional": true
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "async": 1,
+            "example": [
+                "\n    // create a anonymous session\n    const session = await client.createSession();",
+                "\n    // create a session with a userName and password\n    const userIdentityInfo  = { userName: \"JoeDoe\", password:\"secret\"};\n    const session = client.createSession(userIdentityInfo);\n"
+            ],
+            "class": "OPCUAClient",
+            "module": "opcua.client"
+        },
+        {
+            "file": "packages\\node-opcua-client\\src\\opcua_client.js",
+            "line": 1020,
+            "itemtype": "method",
+            "name": "changeSessionIdentity",
+            "params": [
+                {
+                    "name": "session",
+                    "description": ""
+                },
+                {
+                    "name": "userIdentityInfo",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "async": 1,
+            "class": "OPCUAClient",
+            "module": "opcua.client"
+        },
+        {
+            "file": "packages\\node-opcua-client\\src\\opcua_client.js",
+            "line": 1028,
+            "itemtype": "method",
+            "name": "closeSession",
+            "params": [
+                {
+                    "name": "session",
+                    "description": "",
+                    "type": "ClientSession"
+                },
+                {
+                    "name": "deleteSubscriptions",
+                    "description": "- whether to delete",
+                    "type": "Boolean"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "async": 1,
+            "example": [
+                "\n   const session  = await client.createSession();\n   await client.closeSession(session);"
             ],
             "class": "OPCUAClient",
             "module": "opcua.client"
