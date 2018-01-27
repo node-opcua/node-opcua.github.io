@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-25438821-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-25438821-3');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N63SL9Q');</script>
+    <!-- End Google Tag Manager -->
+
+    <title>packages\node-opcua-server\src\server_session.js - The NodeOPCUA API</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-8886208393040088",
+            enable_page_level_ads: true
+        });
+    </script>
+
+</head>
+<body class="yui3-skin-sam">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N63SL9Q"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+	    <img alt="The NodeOPCUA API" src="../assets/css/logo.png" style="max-height: 65%;" title="The NodeOPCUA API">
+            The NodeOPCUA API
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>0.2.0</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/AcknowledgeMessage", "classes/ActivateSessionRequest", "classes/ActivateSessionResponse", "classes/AddNodesItem", "classes/AddNodesRequest", "classes/AddNodesResponse", "classes/AddNodesResult", "classes/AddReferencesItem", "classes/AddReferencesRequest", "classes/AddReferencesResponse", "classes/AddressSpace", "classes/AggregateConfiguration", "classes/AggregateFilter", "classes/AnonymousIdentityToken", "classes/ApplicationDescription", "classes/ApplicationInstanceCertificate", "classes/Argument", "classes/AsymmetricAlgorithmSecurityHeader", "classes/AttributeIds", "classes/AttributeNameById", "classes/AttributeOperand", "classes/AxisInformation", "classes/BaseEventType", "classes/BaseNode", "classes/BaseUAObject", "classes/BinaryStream", "classes/BinaryStreamSizeCalculator", "classes/BrowseDescription", "classes/BrowseDirection", "classes/BrowseNextRequest", "classes/BrowseNextResponse", "classes/BrowsePath", "classes/BrowsePathResult", "classes/BrowsePathTarget", "classes/BrowseRequest", "classes/BrowseResponse", "classes/BrowseResult", "classes/BuildInfo", "classes/CallMethodRequest", "classes/CallMethodResult", "classes/CallRequest", "classes/CallResponse", "classes/CancelRequest", "classes/CancelResponse", "classes/ChannelSecurityToken", "classes/ChunkManager", "classes/ClientMonitoredItem", "classes/ClientMonitoredItemGroup", "classes/ClientSecureChannelLayer", "classes/ClientSession", "classes/ClientSidePublishEngine", "classes/ClientSubscription", "classes/ClientTCP_transport", "classes/CloseSecureChannelRequest", "classes/CloseSecureChannelResponse", "classes/CloseSessionRequest", "classes/CloseSessionResponse", "classes/ConditionInfo", "classes/ConditionSnapshot", "classes/ContentFilter", "classes/ContentFilterElement", "classes/ContentFilterElementResult", "classes/ContentFilterResult", "classes/CreateMonitoredItemsRequest", "classes/CreateMonitoredItemsResponse", "classes/CreateSessionRequest", "classes/CreateSessionResponse", "classes/CreateSubscriptionRequest", "classes/CreateSubscriptionResponse", "classes/DataChangeFilter", "classes/DataChangeNotification", "classes/DataValue", "classes/DeleteMonitoredItemsRequest", "classes/DeleteMonitoredItemsResponse", "classes/DeleteNodesItem", "classes/DeleteNodesRequest", "classes/DeleteNodesResponse", "classes/DeleteReferencesItem", "classes/DeleteReferencesRequest", "classes/DeleteReferencesResponse", "classes/DeleteSubscriptionsRequest", "classes/DeleteSubscriptionsResponse", "classes/DiagnosticInfo", "classes/ElementOperand", "classes/EndpointDescription", "classes/Enum", "classes/EnumValueType", "classes/ErrorMessage", "classes/EUInformation", "classes/EventData", "classes/EventFieldList", "classes/EventFilter", "classes/EventFilterResult", "classes/EventNotificationList", "classes/ExpandedNodeId", "classes/Factory", "classes/FilterOperand", "classes/FindServersRequest", "classes/FindServersResponse", "classes/GetEndpointsRequest", "classes/GetEndpointsResponse", "classes/HelloMessage", "classes/HistoryData", "classes/HistoryModifiedData", "classes/HistoryReadDetails", "classes/HistoryReadRequest", "classes/HistoryReadResponse", "classes/HistoryReadResult", "classes/HistoryReadValueId", "classes/HistoryServerCapabilities", "classes/HistoryUpdateRequest", "classes/HistoryUpdateResponse", "classes/HistoryUpdateResult", "classes/IssuedIdentityToken", "classes/LiteralOperand", "classes/LocalizedText", "classes/MandatoryChildOrRequestedOptionalFilter
+return true if node is a mandatory child or a requested optional", "classes/MessageBuilder", "classes/MessageBuilderBase", "classes/MessageChunker", "classes/ModelChangeStructure", "classes/ModificationInfo", "classes/ModifyMonitoredItemsRequest", "classes/ModifyMonitoredItemsResponse", "classes/ModifySubscriptionRequest", "classes/ModifySubscriptionResponse", "classes/MonitoredItem", "classes/MonitoredItemCreateRequest", "classes/MonitoredItemCreateResult", "classes/MonitoredItemModifyRequest", "classes/MonitoredItemModifyResult", "classes/MonitoredItemNotification", "classes/MonitoringFilter", "classes/MonitoringParameters", "classes/NodeCrawler", "classes/NodeId", "classes/NodeIdType", "classes/NodeTypeDescription", "classes/NotificationMessage", "classes/opcua", "classes/OPCUABaseServer", "classes/OPCUAClient", "classes/OPCUAClientBase", "classes/OPCUASecureObject", "classes/OPCUAServer", "classes/OPCUAServerEndPoint
+
+A sever end point is listening to one port", "classes/OpenSecureChannelRequest", "classes/OpenSecureChannelResponse", "classes/OperationLimits", "classes/PacketAssembler", "classes/ParsingResult", "classes/PublishRequest", "classes/PublishResponse", "classes/QualifiedName", "classes/QueryDataDescription", "classes/QueryDataSet", "classes/QueryFirstRequest", "classes/QueryFirstResponse", "classes/QueryNextRequest", "classes/QueryNextResponse", "classes/Range", "classes/ReadAtTimeDetails", "classes/ReaderState", "classes/ReadEventDetails", "classes/ReadProcessedDetails", "classes/ReadRawModifiedDetails", "classes/ReadRequest", "classes/ReadResponse", "classes/ReadValueId", "classes/RedundantServer", "classes/Reference", "classes/ReferenceDescription", "classes/ReferenceType", "classes/RegisteredServer", "classes/RegisterNodesRequest", "classes/RegisterNodesResponse", "classes/RegisterServerRequest", "classes/RegisterServerResponse", "classes/RelativePath", "classes/RelativePathElement", "classes/RepublishRequest", "classes/RepublishResponse", "classes/RequestHeader", "classes/ResponseHeader", "classes/SamplingIntervalDiagnostics", "classes/SecureMessageChunkManager", "classes/SecurityPolicy", "classes/SemanticChangeStructure", "classes/SequenceHeader", "classes/SequenceNumberGenerator", "classes/ServerCapabilities", "classes/ServerDiagnosticsSummary", "classes/ServerEngine", "classes/ServerSecureChannelLayer", "classes/ServerSession", "classes/ServerSidePublishEngine", "classes/ServerStatus", "classes/ServerTCP_transport", "classes/ServiceCounter", "classes/ServiceFault", "classes/SessionContext", "classes/SessionDiagnostics", "classes/SessionSecurityDiagnostics", "classes/SetMonitoringModeRequest", "classes/SetMonitoringModeResponse", "classes/SetPublishingModeRequest", "classes/SetPublishingModeResponse", "classes/SetTriggeringRequest", "classes/SetTriggeringResponse", "classes/SignatureData", "classes/SignedSoftwareCertificate", "classes/SimpleAttributeOperand", "classes/Simulator", "classes/StatusChangeNotification", "classes/StatusCode", "classes/Subscription", "classes/SubscriptionAcknowledgement", "classes/SubscriptionDiagnostics", "classes/SymmetricAlgorithmSecurityHeader", "classes/TCP_transport", "classes/TCPErrorMessage", "classes/TimestampsToReturn", "classes/TimeZone", "classes/ToolBrowsePath", "classes/TransferResult", "classes/TransferSubscriptionsRequest", "classes/TransferSubscriptionsResponse", "classes/TranslateBrowsePathsToNodeIdsRequest", "classes/TranslateBrowsePathsToNodeIdsResponse", "classes/TypeSchema", "classes/UAAcknowledgeableConditionBase", "classes/UAAlarmConditionBase", "classes/UACertificateExpirationAlarm", "classes/UAConditionBase", "classes/UADataType", "classes/UADiscreteAlarm", "classes/UAExclusiveDeviationAlarm", "classes/UAExclusiveLevelAlarm", "classes/UAExclusiveLimitAlarm", "classes/UAExclusiveRateOfChangeAlarm", "classes/UALimitAlarm", "classes/UAMultiStateDiscreteType", "classes/UANonExclusiveDeviationAlarm", "classes/UANonExclusiveLimitAlarm", "classes/UAObject", "classes/UAObjectType", "classes/UAOffNormalAlarm", "classes/UAProxyManager", "classes/UASystemOffNormalAlarm", "classes/UATripAlarm", "classes/UATwoStateVariable", "classes/UAVariable", "classes/UAVariableType", "classes/UnregisterNodesRequest", "classes/UnregisterNodesResponse", "classes/UserNameIdentityToken", "classes/UserTokenPolicy", "classes/Variant", "classes/View", "classes/ViewDescription", "classes/WriteRequest", "classes/WriteResponse", "classes/WriteValue", "classes/X509IdentityToken", "classes/Xml2Json", "modules/opcua.address_space", "modules/opcua.address_space.AlarmsAndConditions", "modules/opcua.address_space.types", "modules/opcua.client", "modules/opcua.data-value", "modules/opcua.datamodel", "modules/opcua.miscellaneous", "modules/opcua.server", "modules/opcua.server.simulation", "modules/opcua.status-code", "modules/opcua.transport", "modules/opcua.utils", "modules/opcua.variant", "modules/service.filter.tools", "modules/services.browse", "modules/services.call", "modules/services.discovery", "modules/services.endpoints", "modules/services.filter", "modules/services.history", "modules/services.node_management", "modules/services.query", "modules/services.read", "modules/services.register-server", "modules/services.register_node", "modules/services.secure-channel", "modules/services.session", "modules/services.subscription", "modules/services.translate-browse-path", "modules/services.write", "modules/StatusCodes", "modules/xml2json
+
+node -> see if https://github.com/isaacs/sax-js could be used instead"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+
+<div class="row">
+<script type="text/javascript" src="http://www.google.com/cse/query_renderer.js"></script>
+<div id="queries"></div>
+<script src="http://www.google.com/cse/api/partner-pub-8886208393040088/cse/1374394727/queries/js?oe=UTF-8&amp;callback=(new+PopularQueryRenderer(document.getElementById(%22queries%22))).render"></script>
+
+</div>
+
+    <div class="row">
+        <div class="span3">
+
+            <!-- Ad by Google -->
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-format="fluid"
+                 data-ad-layout-key="-8h+1u-de+eo+dy"
+                 data-ad-client="ca-pub-8886208393040088"
+                 data-ad-slot="9362364253"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <!-- -->
+
+	         <div>
+	             <h3>APIs</h3>
+	             <div id="sidebar">
+	                 <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
+	                     <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
+	                     <li><a href="#modules" data-toggle="tab">Modules</a></li>
+	                 </ul>
+	         
+	                 <div id="api-tabview-filter">
+	                     <input type="search" placeholder="Type to filter APIs">
+	                 </div>
+	         
+	                 <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
+	                     <div class="tab-pane active" id="classes">
+	                         <ul id="api-classes" class="nav nav-list">
+	                                 <li><a href="../classes/AcknowledgeMessage.html">AcknowledgeMessage</a></li>
+	                                 <li><a href="../classes/ActivateSessionRequest.html">ActivateSessionRequest</a></li>
+	                                 <li><a href="../classes/ActivateSessionResponse.html">ActivateSessionResponse</a></li>
+	                                 <li><a href="../classes/AddNodesItem.html">AddNodesItem</a></li>
+	                                 <li><a href="../classes/AddNodesRequest.html">AddNodesRequest</a></li>
+	                                 <li><a href="../classes/AddNodesResponse.html">AddNodesResponse</a></li>
+	                                 <li><a href="../classes/AddNodesResult.html">AddNodesResult</a></li>
+	                                 <li><a href="../classes/AddReferencesItem.html">AddReferencesItem</a></li>
+	                                 <li><a href="../classes/AddReferencesRequest.html">AddReferencesRequest</a></li>
+	                                 <li><a href="../classes/AddReferencesResponse.html">AddReferencesResponse</a></li>
+	                                 <li><a href="../classes/AddressSpace.html">AddressSpace</a></li>
+	                                 <li><a href="../classes/AggregateConfiguration.html">AggregateConfiguration</a></li>
+	                                 <li><a href="../classes/AggregateFilter.html">AggregateFilter</a></li>
+	                                 <li><a href="../classes/AnonymousIdentityToken.html">AnonymousIdentityToken</a></li>
+	                                 <li><a href="../classes/ApplicationDescription.html">ApplicationDescription</a></li>
+	                                 <li><a href="../classes/ApplicationInstanceCertificate.html">ApplicationInstanceCertificate</a></li>
+	                                 <li><a href="../classes/Argument.html">Argument</a></li>
+	                                 <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
+	                                 <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+	                                 <li><a href="../classes/AttributeNameById.html">AttributeNameById</a></li>
+	                                 <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
+	                                 <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
+	                                 <li><a href="../classes/BaseEventType.html">BaseEventType</a></li>
+	                                 <li><a href="../classes/BaseNode.html">BaseNode</a></li>
+	                                 <li><a href="../classes/BaseUAObject.html">BaseUAObject</a></li>
+	                                 <li><a href="../classes/BinaryStream.html">BinaryStream</a></li>
+	                                 <li><a href="../classes/BinaryStreamSizeCalculator.html">BinaryStreamSizeCalculator</a></li>
+	                                 <li><a href="../classes/BrowseDescription.html">BrowseDescription</a></li>
+	                                 <li><a href="../classes/BrowseDirection.html">BrowseDirection</a></li>
+	                                 <li><a href="../classes/BrowseNextRequest.html">BrowseNextRequest</a></li>
+	                                 <li><a href="../classes/BrowseNextResponse.html">BrowseNextResponse</a></li>
+	                                 <li><a href="../classes/BrowsePath.html">BrowsePath</a></li>
+	                                 <li><a href="../classes/BrowsePathResult.html">BrowsePathResult</a></li>
+	                                 <li><a href="../classes/BrowsePathTarget.html">BrowsePathTarget</a></li>
+	                                 <li><a href="../classes/BrowseRequest.html">BrowseRequest</a></li>
+	                                 <li><a href="../classes/BrowseResponse.html">BrowseResponse</a></li>
+	                                 <li><a href="../classes/BrowseResult.html">BrowseResult</a></li>
+	                                 <li><a href="../classes/BuildInfo.html">BuildInfo</a></li>
+	                                 <li><a href="../classes/CallMethodRequest.html">CallMethodRequest</a></li>
+	                                 <li><a href="../classes/CallMethodResult.html">CallMethodResult</a></li>
+	                                 <li><a href="../classes/CallRequest.html">CallRequest</a></li>
+	                                 <li><a href="../classes/CallResponse.html">CallResponse</a></li>
+	                                 <li><a href="../classes/CancelRequest.html">CancelRequest</a></li>
+	                                 <li><a href="../classes/CancelResponse.html">CancelResponse</a></li>
+	                                 <li><a href="../classes/ChannelSecurityToken.html">ChannelSecurityToken</a></li>
+	                                 <li><a href="../classes/ChunkManager.html">ChunkManager</a></li>
+	                                 <li><a href="../classes/ClientMonitoredItem.html">ClientMonitoredItem</a></li>
+	                                 <li><a href="../classes/ClientMonitoredItemGroup.html">ClientMonitoredItemGroup</a></li>
+	                                 <li><a href="../classes/ClientSecureChannelLayer.html">ClientSecureChannelLayer</a></li>
+	                                 <li><a href="../classes/ClientSession.html">ClientSession</a></li>
+	                                 <li><a href="../classes/ClientSidePublishEngine.html">ClientSidePublishEngine</a></li>
+	                                 <li><a href="../classes/ClientSubscription.html">ClientSubscription</a></li>
+	                                 <li><a href="../classes/ClientTCP_transport.html">ClientTCP_transport</a></li>
+	                                 <li><a href="../classes/CloseSecureChannelRequest.html">CloseSecureChannelRequest</a></li>
+	                                 <li><a href="../classes/CloseSecureChannelResponse.html">CloseSecureChannelResponse</a></li>
+	                                 <li><a href="../classes/CloseSessionRequest.html">CloseSessionRequest</a></li>
+	                                 <li><a href="../classes/CloseSessionResponse.html">CloseSessionResponse</a></li>
+	                                 <li><a href="../classes/ConditionInfo.html">ConditionInfo</a></li>
+	                                 <li><a href="../classes/ContentFilter.html">ContentFilter</a></li>
+	                                 <li><a href="../classes/ContentFilterElement.html">ContentFilterElement</a></li>
+	                                 <li><a href="../classes/ContentFilterElementResult.html">ContentFilterElementResult</a></li>
+	                                 <li><a href="../classes/ContentFilterResult.html">ContentFilterResult</a></li>
+	                                 <li><a href="../classes/CreateMonitoredItemsRequest.html">CreateMonitoredItemsRequest</a></li>
+	                                 <li><a href="../classes/CreateMonitoredItemsResponse.html">CreateMonitoredItemsResponse</a></li>
+	                                 <li><a href="../classes/CreateSessionRequest.html">CreateSessionRequest</a></li>
+	                                 <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
+	                                 <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
+	                                 <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
+	                                 <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
+	                                 <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
+	                                 <li><a href="../classes/DataValue.html">DataValue</a></li>
+	                                 <li><a href="../classes/DeleteMonitoredItemsRequest.html">DeleteMonitoredItemsRequest</a></li>
+	                                 <li><a href="../classes/DeleteMonitoredItemsResponse.html">DeleteMonitoredItemsResponse</a></li>
+	                                 <li><a href="../classes/DeleteNodesItem.html">DeleteNodesItem</a></li>
+	                                 <li><a href="../classes/DeleteNodesRequest.html">DeleteNodesRequest</a></li>
+	                                 <li><a href="../classes/DeleteNodesResponse.html">DeleteNodesResponse</a></li>
+	                                 <li><a href="../classes/DeleteReferencesItem.html">DeleteReferencesItem</a></li>
+	                                 <li><a href="../classes/DeleteReferencesRequest.html">DeleteReferencesRequest</a></li>
+	                                 <li><a href="../classes/DeleteReferencesResponse.html">DeleteReferencesResponse</a></li>
+	                                 <li><a href="../classes/DeleteSubscriptionsRequest.html">DeleteSubscriptionsRequest</a></li>
+	                                 <li><a href="../classes/DeleteSubscriptionsResponse.html">DeleteSubscriptionsResponse</a></li>
+	                                 <li><a href="../classes/DiagnosticInfo.html">DiagnosticInfo</a></li>
+	                                 <li><a href="../classes/ElementOperand.html">ElementOperand</a></li>
+	                                 <li><a href="../classes/EndpointDescription.html">EndpointDescription</a></li>
+	                                 <li><a href="../classes/Enum.html">Enum</a></li>
+	                                 <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
+	                                 <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
+	                                 <li><a href="../classes/EUInformation.html">EUInformation</a></li>
+	                                 <li><a href="../classes/EventData.html">EventData</a></li>
+	                                 <li><a href="../classes/EventFieldList.html">EventFieldList</a></li>
+	                                 <li><a href="../classes/EventFilter.html">EventFilter</a></li>
+	                                 <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
+	                                 <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
+	                                 <li><a href="../classes/ExpandedNodeId.html">ExpandedNodeId</a></li>
+	                                 <li><a href="../classes/Factory.html">Factory</a></li>
+	                                 <li><a href="../classes/FilterOperand.html">FilterOperand</a></li>
+	                                 <li><a href="../classes/FindServersRequest.html">FindServersRequest</a></li>
+	                                 <li><a href="../classes/FindServersResponse.html">FindServersResponse</a></li>
+	                                 <li><a href="../classes/GetEndpointsRequest.html">GetEndpointsRequest</a></li>
+	                                 <li><a href="../classes/GetEndpointsResponse.html">GetEndpointsResponse</a></li>
+	                                 <li><a href="../classes/HelloMessage.html">HelloMessage</a></li>
+	                                 <li><a href="../classes/HistoryData.html">HistoryData</a></li>
+	                                 <li><a href="../classes/HistoryModifiedData.html">HistoryModifiedData</a></li>
+	                                 <li><a href="../classes/HistoryReadDetails.html">HistoryReadDetails</a></li>
+	                                 <li><a href="../classes/HistoryReadRequest.html">HistoryReadRequest</a></li>
+	                                 <li><a href="../classes/HistoryReadResponse.html">HistoryReadResponse</a></li>
+	                                 <li><a href="../classes/HistoryReadResult.html">HistoryReadResult</a></li>
+	                                 <li><a href="../classes/HistoryReadValueId.html">HistoryReadValueId</a></li>
+	                                 <li><a href="../classes/HistoryServerCapabilities.html">HistoryServerCapabilities</a></li>
+	                                 <li><a href="../classes/HistoryUpdateRequest.html">HistoryUpdateRequest</a></li>
+	                                 <li><a href="../classes/HistoryUpdateResponse.html">HistoryUpdateResponse</a></li>
+	                                 <li><a href="../classes/HistoryUpdateResult.html">HistoryUpdateResult</a></li>
+	                                 <li><a href="../classes/IssuedIdentityToken.html">IssuedIdentityToken</a></li>
+	                                 <li><a href="../classes/LiteralOperand.html">LiteralOperand</a></li>
+	                                 <li><a href="../classes/LocalizedText.html">LocalizedText</a></li>
+	                                 <li><a href="../classes/MandatoryChildOrRequestedOptionalFilter
+	         return true if node is a mandatory child or a requested optional.html">MandatoryChildOrRequestedOptionalFilter
+	         return true if node is a mandatory child or a requested optional</a></li>
+	                                 <li><a href="../classes/MessageBuilder.html">MessageBuilder</a></li>
+	                                 <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
+	                                 <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
+	                                 <li><a href="../classes/ModelChangeStructure.html">ModelChangeStructure</a></li>
+	                                 <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
+	                                 <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
+	                                 <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
+	                                 <li><a href="../classes/ModifySubscriptionRequest.html">ModifySubscriptionRequest</a></li>
+	                                 <li><a href="../classes/ModifySubscriptionResponse.html">ModifySubscriptionResponse</a></li>
+	                                 <li><a href="../classes/MonitoredItem.html">MonitoredItem</a></li>
+	                                 <li><a href="../classes/MonitoredItemCreateRequest.html">MonitoredItemCreateRequest</a></li>
+	                                 <li><a href="../classes/MonitoredItemCreateResult.html">MonitoredItemCreateResult</a></li>
+	                                 <li><a href="../classes/MonitoredItemModifyRequest.html">MonitoredItemModifyRequest</a></li>
+	                                 <li><a href="../classes/MonitoredItemModifyResult.html">MonitoredItemModifyResult</a></li>
+	                                 <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
+	                                 <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
+	                                 <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+	                                 <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
+	                                 <li><a href="../classes/NodeId.html">NodeId</a></li>
+	                                 <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
+	                                 <li><a href="../classes/NodeTypeDescription.html">NodeTypeDescription</a></li>
+	                                 <li><a href="../classes/NotificationMessage.html">NotificationMessage</a></li>
+	                                 <li><a href="../classes/opcua.html">opcua</a></li>
+	                                 <li><a href="../classes/OPCUABaseServer.html">OPCUABaseServer</a></li>
+	                                 <li><a href="../classes/OPCUAClient.html">OPCUAClient</a></li>
+	                                 <li><a href="../classes/OPCUAClientBase.html">OPCUAClientBase</a></li>
+	                                 <li><a href="../classes/OPCUASecureObject.html">OPCUASecureObject</a></li>
+	                                 <li><a href="../classes/OPCUAServer.html">OPCUAServer</a></li>
+	                                 <li><a href="../classes/OPCUAServerEndPoint
+	         
+	         A sever end point is listening to one port.html">OPCUAServerEndPoint
+	         
+	         A sever end point is listening to one port</a></li>
+	                                 <li><a href="../classes/OpenSecureChannelRequest.html">OpenSecureChannelRequest</a></li>
+	                                 <li><a href="../classes/OpenSecureChannelResponse.html">OpenSecureChannelResponse</a></li>
+	                                 <li><a href="../classes/OperationLimits.html">OperationLimits</a></li>
+	                                 <li><a href="../classes/PacketAssembler.html">PacketAssembler</a></li>
+	                                 <li><a href="../classes/ParsingResult.html">ParsingResult</a></li>
+	                                 <li><a href="../classes/PublishRequest.html">PublishRequest</a></li>
+	                                 <li><a href="../classes/PublishResponse.html">PublishResponse</a></li>
+	                                 <li><a href="../classes/QualifiedName.html">QualifiedName</a></li>
+	                                 <li><a href="../classes/QueryDataDescription.html">QueryDataDescription</a></li>
+	                                 <li><a href="../classes/QueryDataSet.html">QueryDataSet</a></li>
+	                                 <li><a href="../classes/QueryFirstRequest.html">QueryFirstRequest</a></li>
+	                                 <li><a href="../classes/QueryFirstResponse.html">QueryFirstResponse</a></li>
+	                                 <li><a href="../classes/QueryNextRequest.html">QueryNextRequest</a></li>
+	                                 <li><a href="../classes/QueryNextResponse.html">QueryNextResponse</a></li>
+	                                 <li><a href="../classes/Range.html">Range</a></li>
+	                                 <li><a href="../classes/ReadAtTimeDetails.html">ReadAtTimeDetails</a></li>
+	                                 <li><a href="../classes/ReadEventDetails.html">ReadEventDetails</a></li>
+	                                 <li><a href="../classes/ReadProcessedDetails.html">ReadProcessedDetails</a></li>
+	                                 <li><a href="../classes/ReadRawModifiedDetails.html">ReadRawModifiedDetails</a></li>
+	                                 <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
+	                                 <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
+	                                 <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+	                                 <li><a href="../classes/RedundantServer.html">RedundantServer</a></li>
+	                                 <li><a href="../classes/Reference.html">Reference</a></li>
+	                                 <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
+	                                 <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
+	                                 <li><a href="../classes/RegisteredServer.html">RegisteredServer</a></li>
+	                                 <li><a href="../classes/RegisterNodesRequest.html">RegisterNodesRequest</a></li>
+	                                 <li><a href="../classes/RegisterNodesResponse.html">RegisterNodesResponse</a></li>
+	                                 <li><a href="../classes/RegisterServerRequest.html">RegisterServerRequest</a></li>
+	                                 <li><a href="../classes/RegisterServerResponse.html">RegisterServerResponse</a></li>
+	                                 <li><a href="../classes/RelativePath.html">RelativePath</a></li>
+	                                 <li><a href="../classes/RelativePathElement.html">RelativePathElement</a></li>
+	                                 <li><a href="../classes/RepublishRequest.html">RepublishRequest</a></li>
+	                                 <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
+	                                 <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
+	                                 <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+	                                 <li><a href="../classes/SamplingIntervalDiagnostics.html">SamplingIntervalDiagnostics</a></li>
+	                                 <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
+	                                 <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
+	                                 <li><a href="../classes/SemanticChangeStructure.html">SemanticChangeStructure</a></li>
+	                                 <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
+	                                 <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
+	                                 <li><a href="../classes/ServerCapabilities.html">ServerCapabilities</a></li>
+	                                 <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
+	                                 <li><a href="../classes/ServerEngine.html">ServerEngine</a></li>
+	                                 <li><a href="../classes/ServerSecureChannelLayer.html">ServerSecureChannelLayer</a></li>
+	                                 <li><a href="../classes/ServerSidePublishEngine.html">ServerSidePublishEngine</a></li>
+	                                 <li><a href="../classes/ServerStatus.html">ServerStatus</a></li>
+	                                 <li><a href="../classes/ServerTCP_transport.html">ServerTCP_transport</a></li>
+	                                 <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
+	                                 <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
+	                                 <li><a href="../classes/SessionContext.html">SessionContext</a></li>
+	                                 <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+	                                 <li><a href="../classes/SessionSecurityDiagnostics.html">SessionSecurityDiagnostics</a></li>
+	                                 <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
+	                                 <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
+	                                 <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
+	                                 <li><a href="../classes/SetPublishingModeResponse.html">SetPublishingModeResponse</a></li>
+	                                 <li><a href="../classes/SetTriggeringRequest.html">SetTriggeringRequest</a></li>
+	                                 <li><a href="../classes/SetTriggeringResponse.html">SetTriggeringResponse</a></li>
+	                                 <li><a href="../classes/SignatureData.html">SignatureData</a></li>
+	                                 <li><a href="../classes/SignedSoftwareCertificate.html">SignedSoftwareCertificate</a></li>
+	                                 <li><a href="../classes/SimpleAttributeOperand.html">SimpleAttributeOperand</a></li>
+	                                 <li><a href="../classes/Simulator.html">Simulator</a></li>
+	                                 <li><a href="../classes/StatusChangeNotification.html">StatusChangeNotification</a></li>
+	                                 <li><a href="../classes/StatusCode.html">StatusCode</a></li>
+	                                 <li><a href="../classes/Subscription.html">Subscription</a></li>
+	                                 <li><a href="../classes/SubscriptionAcknowledgement.html">SubscriptionAcknowledgement</a></li>
+	                                 <li><a href="../classes/SubscriptionDiagnostics.html">SubscriptionDiagnostics</a></li>
+	                                 <li><a href="../classes/SymmetricAlgorithmSecurityHeader.html">SymmetricAlgorithmSecurityHeader</a></li>
+	                                 <li><a href="../classes/TCP_transport.html">TCP_transport</a></li>
+	                                 <li><a href="../classes/TCPErrorMessage.html">TCPErrorMessage</a></li>
+	                                 <li><a href="../classes/TimestampsToReturn.html">TimestampsToReturn</a></li>
+	                                 <li><a href="../classes/TimeZone.html">TimeZone</a></li>
+	                                 <li><a href="../classes/ToolBrowsePath.html">ToolBrowsePath</a></li>
+	                                 <li><a href="../classes/TransferResult.html">TransferResult</a></li>
+	                                 <li><a href="../classes/TransferSubscriptionsRequest.html">TransferSubscriptionsRequest</a></li>
+	                                 <li><a href="../classes/TransferSubscriptionsResponse.html">TransferSubscriptionsResponse</a></li>
+	                                 <li><a href="../classes/TranslateBrowsePathsToNodeIdsRequest.html">TranslateBrowsePathsToNodeIdsRequest</a></li>
+	                                 <li><a href="../classes/TranslateBrowsePathsToNodeIdsResponse.html">TranslateBrowsePathsToNodeIdsResponse</a></li>
+	                                 <li><a href="../classes/TypeSchema.html">TypeSchema</a></li>
+	                                 <li><a href="../classes/UAAcknowledgeableConditionBase.html">UAAcknowledgeableConditionBase</a></li>
+	                                 <li><a href="../classes/UAAlarmConditionBase.html">UAAlarmConditionBase</a></li>
+	                                 <li><a href="../classes/UACertificateExpirationAlarm.html">UACertificateExpirationAlarm</a></li>
+	                                 <li><a href="../classes/UAConditionBase.html">UAConditionBase</a></li>
+	                                 <li><a href="../classes/UADataType.html">UADataType</a></li>
+	                                 <li><a href="../classes/UADiscreteAlarm.html">UADiscreteAlarm</a></li>
+	                                 <li><a href="../classes/UAExclusiveDeviationAlarm.html">UAExclusiveDeviationAlarm</a></li>
+	                                 <li><a href="../classes/UAExclusiveLevelAlarm.html">UAExclusiveLevelAlarm</a></li>
+	                                 <li><a href="../classes/UAExclusiveLimitAlarm.html">UAExclusiveLimitAlarm</a></li>
+	                                 <li><a href="../classes/UAExclusiveRateOfChangeAlarm.html">UAExclusiveRateOfChangeAlarm</a></li>
+	                                 <li><a href="../classes/UALimitAlarm.html">UALimitAlarm</a></li>
+	                                 <li><a href="../classes/UAMultiStateDiscreteType.html">UAMultiStateDiscreteType</a></li>
+	                                 <li><a href="../classes/UANonExclusiveDeviationAlarm.html">UANonExclusiveDeviationAlarm</a></li>
+	                                 <li><a href="../classes/UANonExclusiveLimitAlarm.html">UANonExclusiveLimitAlarm</a></li>
+	                                 <li><a href="../classes/UAObject.html">UAObject</a></li>
+	                                 <li><a href="../classes/UAObjectType.html">UAObjectType</a></li>
+	                                 <li><a href="../classes/UAOffNormalAlarm.html">UAOffNormalAlarm</a></li>
+	                                 <li><a href="../classes/UAProxyManager.html">UAProxyManager</a></li>
+	                                 <li><a href="../classes/UASystemOffNormalAlarm.html">UASystemOffNormalAlarm</a></li>
+	                                 <li><a href="../classes/UATripAlarm.html">UATripAlarm</a></li>
+	                                 <li><a href="../classes/UATwoStateVariable.html">UATwoStateVariable</a></li>
+	                                 <li><a href="../classes/UAVariable.html">UAVariable</a></li>
+	                                 <li><a href="../classes/UAVariableType.html">UAVariableType</a></li>
+	                                 <li><a href="../classes/UnregisterNodesRequest.html">UnregisterNodesRequest</a></li>
+	                                 <li><a href="../classes/UnregisterNodesResponse.html">UnregisterNodesResponse</a></li>
+	                                 <li><a href="../classes/UserNameIdentityToken.html">UserNameIdentityToken</a></li>
+	                                 <li><a href="../classes/UserTokenPolicy.html">UserTokenPolicy</a></li>
+	                                 <li><a href="../classes/Variant.html">Variant</a></li>
+	                                 <li><a href="../classes/View.html">View</a></li>
+	                                 <li><a href="../classes/ViewDescription.html">ViewDescription</a></li>
+	                                 <li><a href="../classes/WriteRequest.html">WriteRequest</a></li>
+	                                 <li><a href="../classes/WriteResponse.html">WriteResponse</a></li>
+	                                 <li><a href="../classes/WriteValue.html">WriteValue</a></li>
+	                                 <li><a href="../classes/X509IdentityToken.html">X509IdentityToken</a></li>
+	                                 <li><a href="../classes/Xml2Json.html">Xml2Json</a></li>
+	                         </ul>
+	                     </div>
+	         
+	                     <div class="tab-pane" id="modules">
+	                         <ul id="api-modules" class="nav nav-list">
+	                                 <li><a href="../modules/opcua.address_space.html">opcua.address_space</a></li>
+	                                 <li><a href="../modules/opcua.address_space.AlarmsAndConditions.html">opcua.address_space.AlarmsAndConditions</a></li>
+	                                 <li><a href="../modules/opcua.address_space.types.html">opcua.address_space.types</a></li>
+	                                 <li><a href="../modules/opcua.client.html">opcua.client</a></li>
+	                                 <li><a href="../modules/opcua.data-value.html">opcua.data-value</a></li>
+	                                 <li><a href="../modules/opcua.datamodel.html">opcua.datamodel</a></li>
+	                                 <li><a href="../modules/opcua.miscellaneous.html">opcua.miscellaneous</a></li>
+	                                 <li><a href="../modules/opcua.server.html">opcua.server</a></li>
+	                                 <li><a href="../modules/opcua.server.simulation.html">opcua.server.simulation</a></li>
+	                                 <li><a href="../modules/opcua.status-code.html">opcua.status-code</a></li>
+	                                 <li><a href="../modules/opcua.transport.html">opcua.transport</a></li>
+	                                 <li><a href="../modules/opcua.utils.html">opcua.utils</a></li>
+	                                 <li><a href="../modules/opcua.variant.html">opcua.variant</a></li>
+	                                 <li><a href="../modules/service.filter.tools.html">service.filter.tools</a></li>
+	                                 <li><a href="../modules/services.browse.html">services.browse</a></li>
+	                                 <li><a href="../modules/services.call.html">services.call</a></li>
+	                                 <li><a href="../modules/services.discovery.html">services.discovery</a></li>
+	                                 <li><a href="../modules/services.endpoints.html">services.endpoints</a></li>
+	                                 <li><a href="../modules/services.filter.html">services.filter</a></li>
+	                                 <li><a href="../modules/services.history.html">services.history</a></li>
+	                                 <li><a href="../modules/services.node_management.html">services.node_management</a></li>
+	                                 <li><a href="../modules/services.query.html">services.query</a></li>
+	                                 <li><a href="../modules/services.read.html">services.read</a></li>
+	                                 <li><a href="../modules/services.register-server.html">services.register-server</a></li>
+	                                 <li><a href="../modules/services.register_node.html">services.register_node</a></li>
+	                                 <li><a href="../modules/services.secure-channel.html">services.secure-channel</a></li>
+	                                 <li><a href="../modules/services.session.html">services.session</a></li>
+	                                 <li><a href="../modules/services.subscription.html">services.subscription</a></li>
+	                                 <li><a href="../modules/services.translate-browse-path.html">services.translate-browse-path</a></li>
+	                                 <li><a href="../modules/services.write.html">services.write</a></li>
+	                                 <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
+	                                 <li><a href="../modules/xml2json
+	         
+	         node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+	         
+	         node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
+	                         </ul>
+	                     </div>
+	                 </div>
+	             </div>
+	         </div>
+	    
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+                    Show:
+                    <label for="api-show-inherited" class="checkbox">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected" class="checkbox">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private" class="checkbox">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated" class="checkbox">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </form>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<div class="page-header">
+    <h1>packages\node-opcua-server\src\server_session.js <small>File</small></h1>
+</div>
+
+<div class="file">
+    <pre class="prettyprint linenums">
+&quot;use strict&quot;;
+/**
+ * @module opcua.server
+ */
+
+var NodeId = require(&quot;node-opcua-nodeid&quot;).NodeId;
+var NodeIdType = require(&quot;node-opcua-nodeid&quot;).NodeIdType;
+var ServerSidePublishEngine = require(&quot;./server_publish_engine&quot;).ServerSidePublishEngine;
+var StatusCodes = require(&quot;node-opcua-status-code&quot;).StatusCodes;
+var ContinuationPointManager = require(&quot;./continuation_point_manager&quot;).ContinuationPointManager;
+var NodeClass = require(&quot;node-opcua-data-model&quot;).NodeClass;
+
+var DataValue = require(&quot;node-opcua-data-value&quot;).DataValue;
+var VariableIds = require(&quot;node-opcua-constants&quot;).VariableIds;
+
+var ec = require(&quot;node-opcua-basic-types&quot;);
+var crypto = require(&quot;crypto&quot;);
+var assert = require(&quot;node-opcua-assert&quot;);
+var util = require(&quot;util&quot;);
+var EventEmitter = require(&quot;events&quot;).EventEmitter;
+var _ = require(&quot;underscore&quot;);
+
+var WatchDog = require(&quot;node-opcua-utils/src/watchdog&quot;).WatchDog;
+
+var theWatchDog = new WatchDog();
+
+var utils = require(&quot;node-opcua-utils&quot;);
+var debugLog = require(&quot;node-opcua-debug&quot;).make_debugLog(__filename);
+var doDebug = require(&quot;node-opcua-debug&quot;).checkDebugFlag(__filename);
+
+/**
+ *
+ * A Server session object.
+ *
+ * **from OPCUA Spec 1.02:**
+ *
+ * * Sessions are created to be independent of the underlying communications connection. Therefore, if a communication
+ *   connection fails, the Session is not immediately affected. The exact mechanism to recover from an underlying
+ *   communication connection error depends on the SecureChannel mapping as described in Part 6.
+ *
+ * * Sessions are terminated by the Server automatically if the Client fails to issue a Service request on the Session
+ *   within the timeout period negotiated by the Server in the CreateSession Service response. This protects the Server
+ *   against Client failures and against situations where a failed underlying connection cannot be re-established.
+ *
+ * * Clients shall be prepared to submit requests in a timely manner to prevent the Session from closing automatically.
+ *
+ * * Clients may explicitly terminate Sessions using the CloseSession Service.
+ *
+ * * When a Session is terminated, all outstanding requests on the Session are aborted and Bad_SessionClosed StatusCodes
+ *   are returned to the Client. In addition, the Server deletes the entry for the Client from its
+ *   SessionDiagnosticsArray Variable and notifies any other Clients who were subscribed to this entry.
+ *
+ * @class ServerSession
+ *
+ * @param parent {SessionEngine}
+ * @param sessionId {Number}
+ * @param sessionTimeout {Number}
+ * @private
+ * @constructor
+ */
+function ServerSession(parent, sessionId, sessionTimeout) {
+
+    var self = this;
+    self.parent = parent; // SessionEngine
+
+    EventEmitter.apply(self, arguments);
+
+    assert(_.isFinite(sessionId));
+    assert(sessionId !== 0, &quot; sessionId is null/empty. this is not allowed&quot;);
+
+    assert(_.isFinite(sessionTimeout));
+    assert(sessionTimeout &gt;= 0, &quot; sessionTimeout&quot;);
+    self.sessionTimeout = sessionTimeout;
+
+    var authenticationTokenBuf = crypto.randomBytes(16);
+    self.authenticationToken = new NodeId(NodeIdType.BYTESTRING, authenticationTokenBuf);
+
+    // the sessionId
+    self.nodeId = new NodeId(NodeIdType.GUID, ec.randomGuid(), 1);
+
+    assert(self.authenticationToken instanceof NodeId);
+    assert(self.nodeId instanceof NodeId);
+
+    self._cumulatedSubscriptionCount = 0;
+
+    self.publishEngine = new ServerSidePublishEngine({
+        maxPublishRequestInQueue: ServerSession.maxPublishRequestInQueue
+    });
+
+    self.publishEngine.setMaxListeners(100);
+
+    theWatchDog.addSubscriber(self, self.sessionTimeout);
+
+    self.__status = &quot;new&quot;;
+
+    /**
+     * the continuation point manager for this session
+     * @property continuationPointManager
+     * @type {ContinuationPointManager}
+     */
+    self.continuationPointManager = new ContinuationPointManager();
+
+    /**
+     * @property creationDate
+     * @type {Date}
+     */
+    self.creationDate = new Date();
+
+}
+
+util.inherits(ServerSession, EventEmitter);
+
+ServerSession.maxPublishRequestInQueue = 100;
+
+var eoan = require(&quot;node-opcua-address-space&quot;);
+var makeNodeId = require(&quot;node-opcua-nodeid&quot;).makeNodeId;
+var ObjectIds = require(&quot;node-opcua-constants&quot;).ObjectIds;
+
+Object.defineProperty(ServerSession.prototype, &quot;clientConnectionTime&quot;, {
+    get: function () {
+        var self = this;
+        return self.creationDate;
+    }
+});
+
+Object.defineProperty(ServerSession.prototype, &quot;clientLastContactTime&quot;, {
+    get: function () {
+        var self = this;
+        return self._watchDogData.last_seen;
+    }
+});
+
+Object.defineProperty(ServerSession.prototype, &quot;status&quot;, {
+    get: function () {
+        return this.__status;
+    },
+    set: function (value) {
+
+        if (value === &quot;active&quot;) {
+            assert(this.__value !== &quot;active&quot;);
+            this._createSessionObjectInAddressSpace();
+        }
+        this.__status = value;
+    }
+});
+
+ServerSession.prototype.__defineGetter__(&quot;addressSpace&quot;, function () {
+    return this.parent.addressSpace;
+});
+
+ServerSession.prototype.__defineGetter__(&quot;currentPublishRequestInQueue&quot;, function () {
+    var self = this;
+    return self.publishEngine ? self.publishEngine.pendingPublishRequestCount : 0;
+});
+
+//xx ServerSession.prototype.__defineGetter__(&quot;serverDiagnostics&quot;)
+
+var ServiceCounter = require(&quot;node-opcua-common&quot;).ServiceCounter;
+var SessionDiagnostics = require(&quot;node-opcua-common&quot;).SessionDiagnostics;
+var SubscriptionDiagnostics = require(&quot;node-opcua-common&quot;).SubscriptionDiagnostics;
+
+var DataType = require(&quot;node-opcua-variant&quot;).DataType;
+var Variant = require(&quot;node-opcua-variant&quot;).Variant;
+var getCurrentClock = require(&quot;node-opcua-date-time&quot;).getCurrentClock;
+
+
+ServerSession.prototype.updateClientLastContactTime = function (currentTime) {
+    var self = this;
+    if (self._sessionDiagnostics &amp;&amp; self._sessionDiagnostics.clientLastContactTime) {
+        currentTime = currentTime || new Date();
+        // do not record all ticks as this may be overwhelming,
+        if (currentTime.getTime() - 250 &gt;= self._sessionDiagnostics.clientLastContactTime.getTime()) {
+            self._sessionDiagnostics.clientLastContactTime = currentTime;
+        }
+    }
+};
+
+
+/**
+ * @method onClientSeen
+ * required for watch dog
+ * @param currentTime {DateTime}
+ * @private
+ */
+ServerSession.prototype.onClientSeen = function (currentTime) {
+    var self = this;
+
+    self.updateClientLastContactTime(currentTime);
+
+    if (self._sessionDiagnostics) {
+        // see https://opcfoundation-onlineapplications.org/mantis/view.php?id=4111
+        assert(self._sessionDiagnostics.hasOwnProperty(&quot;currentMonitoredItemsCount&quot;));
+        assert(self._sessionDiagnostics.hasOwnProperty(&quot;currentSubscriptionsCount&quot;));
+        assert(self._sessionDiagnostics.hasOwnProperty(&quot;currentPublishRequestsInQueue&quot;));
+
+        // note : https://opcfoundation-onlineapplications.org/mantis/view.php?id=4111
+        // sessionDiagnostics extension object uses a different spelling
+        // here with an S !!!!
+        self._sessionDiagnostics.currentMonitoredItemsCount = self.currentMonitoredItemCount;
+        self._sessionDiagnostics.currentSubscriptionsCount = self.currentSubscriptionCount;
+        self._sessionDiagnostics.currentPublishRequestsInQueue = self.currentPublishRequestInQueue;
+    }
+};
+
+ServerSession.prototype.incrementTotalRequestCount = function () {
+
+    var self = this;
+    if (self._sessionDiagnostics &amp;&amp; self._sessionDiagnostics.totalRequestCount) {
+        self._sessionDiagnostics.totalRequestCount.totalCount += 1;
+    }
+};
+
+var lowerFirstLetter = require(&quot;node-opcua-utils&quot;).lowerFirstLetter;
+
+ServerSession.prototype.incrementRequestTotalCounter = function (counterName) {
+    var self = this;
+    if (self._sessionDiagnostics) {
+        var propName = lowerFirstLetter(counterName + &quot;Count&quot;);
+        if (!self._sessionDiagnostics.hasOwnProperty(propName)) {
+            console.log(&quot; cannot find&quot;, propName);
+            //xx return;
+        }
+        //   console.log(self._sessionDiagnostics.toString());
+        self._sessionDiagnostics[propName].totalCount = self._sessionDiagnostics[propName].totalCount + 1;
+    }
+};
+ServerSession.prototype.incrementRequestErrorCounter = function (counterName) {
+    var self = this;
+    if (self._sessionDiagnostics) {
+        var propName = lowerFirstLetter(counterName + &quot;Count&quot;);
+        if (!self._sessionDiagnostics.hasOwnProperty(propName)) {
+            console.log(&quot; cannot find&quot;, propName);
+            //xx  return;
+        }
+        self._sessionDiagnostics[propName].errorCount += 1;
+    }
+};
+
+ServerSession.prototype.getSessionDiagnosticsArray = function () {
+    var self = this;
+    return self.addressSpace.rootFolder.objects.server.serverDiagnostics.sessionsDiagnosticsSummary.sessionDiagnosticsArray
+};
+
+
+ServerSession.prototype._createSessionObjectInAddressSpace = function () {
+
+    var self = this;
+    if (self.sessionObject) {
+        return;
+    }
+
+
+    assert(!self.sessionObject, &quot;ServerSession#_createSessionObjectInAddressSpace already called ?&quot;);
+
+    self.sessionObject = null;
+    if (!self.addressSpace) {
+        console.log(&quot;ServerSession#_createSessionObjectInAddressSpace : no addressSpace&quot;);
+        return; // no addressSpace
+    }
+    var root = self.addressSpace.findNode(makeNodeId(ObjectIds.RootFolder));
+    assert(root, &quot;expecting a root object&quot;);
+
+    if (!root.objects) {
+        console.log(&quot;ServerSession#_createSessionObjectInAddressSpace : no object folder&quot;);
+        return false;
+    }
+    if (!root.objects.server) {
+        console.log(&quot;ServerSession#_createSessionObjectInAddressSpace : no server object&quot;);
+        return false;
+    }
+
+    // self.addressSpace.findNode(makeNodeId(ObjectIds.Server_ServerDiagnostics));
+    var serverDiagnosticsNode = root.objects.server.serverDiagnostics;
+
+    if (!serverDiagnosticsNode || !serverDiagnosticsNode.sessionsDiagnosticsSummary) {
+        console.log(&quot;ServerSession#_createSessionObjectInAddressSpace : no serverDiagnostics.sessionsDiagnosticsSummary&quot;);
+        return false;
+    }
+
+    var sessionDiagnosticsDataType = self.addressSpace.findDataType(&quot;SessionDiagnosticsDataType&quot;);
+
+    var sessionDiagnosticsObjectType = self.addressSpace.findObjectType(&quot;SessionDiagnosticsObjectType&quot;);
+    var sessionDiagnosticsVariableType = self.addressSpace.findVariableType(&quot;SessionDiagnosticsVariableType&quot;);
+
+    var references = [];
+    if (sessionDiagnosticsObjectType) {
+        references.push({referenceType: &quot;HasTypeDefinition&quot;, isForward: true, nodeId: sessionDiagnosticsObjectType});
+    }
+
+    self.sessionObject = self.addressSpace.createNode({
+        nodeId: self.nodeId,
+        nodeClass: NodeClass.Object,
+        browseName: self.sessionName || &quot;Session:&quot; + self.nodeId.toString(),
+        componentOf: serverDiagnosticsNode.sessionsDiagnosticsSummary,
+        typeDefinition: sessionDiagnosticsObjectType,
+        references: references
+    });
+
+    if (sessionDiagnosticsDataType &amp;&amp; sessionDiagnosticsVariableType) {
+
+        // the extension object
+        self._sessionDiagnostics = self.addressSpace.constructExtensionObject(sessionDiagnosticsDataType, {});
+
+        // install property getter on property that are unlikely to change
+        if (self.parent.clientDescription) {
+            self._sessionDiagnostics.clientDescription = self.parent.clientDescription;
+        }
+
+        Object.defineProperty(self._sessionDiagnostics, &quot;clientConnectionTime&quot;, {
+            get: function () {
+                return self.clientConnectionTime;
+            }
+        });
+
+        Object.defineProperty(self._sessionDiagnostics, &quot;actualSessionTimeout&quot;, {
+            get: function () {
+                return self.sessionTimeout;
+            }
+        });
+
+        Object.defineProperty(self._sessionDiagnostics, &quot;sessionId&quot;, {
+            get: function () {
+                return self.nodeId;
+            }
+        });
+        Object.defineProperty(self._sessionDiagnostics, &quot;sessionName&quot;, {
+            get: function () {
+                assert(_.isString(self.sessionName));
+                return self.sessionName.toString();
+            }
+        });
+
+        self.sessionDiagnostics = sessionDiagnosticsVariableType.instantiate({
+            browseName: &quot;SessionDiagnostics&quot;,
+            componentOf: self.sessionObject,
+            extensionObject: self._sessionDiagnostics,
+            minimumSamplingInterval: 2000 // 2 seconds
+        });
+
+        self._sessionDiagnostics = self.sessionDiagnostics.$extensionObject;
+
+        var sessionDiagnosticsArray = self.getSessionDiagnosticsArray();
+
+        // make sessionDiagnostics
+        eoan.addElement(self._sessionDiagnostics, sessionDiagnosticsArray);
+
+    }
+    return self.sessionObject;
+};
+
+ServerSession.prototype._removeSessionObjectFromAddressSpace = function () {
+
+    var self = this;
+
+    // todo : dump session statistics in a file or somewhere for deeper diagnostic analysis on closed session
+
+    if (!self.addressSpace) {
+        return;
+    }
+    if (self.sessionDiagnostics) {
+
+        var sessionDiagnosticsArray = self.getSessionDiagnosticsArray();
+        eoan.removeElement(sessionDiagnosticsArray, self.sessionDiagnostics.$extensionObject);
+
+        self.addressSpace.deleteNode(self.sessionDiagnostics);
+        self._sessionDiagnostics = null;
+        self.sessionDiagnostics = null;
+
+    }
+    if (self.sessionObject) {
+        self.addressSpace.deleteNode(self.sessionObject);
+        self.sessionObject = null;
+    }
+};
+
+var Subscription = require(&quot;./subscription&quot;).Subscription;
+
+
+// note OPCUA 1.03 part 4 page 76
+// The Server-assigned identifier for the Subscription (see 7.14 for IntegerId definition). This identifier shall
+// be unique for the entire Server, not just for the Session, in order to allow the Subscription to be transferred
+// to another Session using the TransferSubscriptions service.
+// After Server start-up the generation of subscriptionIds should start from a random IntegerId or continue from
+// the point before the restart.
+var next_subscriptionId = Math.ceil(Math.random() * 1000000);
+
+function _get_next_subscriptionId() {
+    debugLog(&quot; next_subscriptionId = &quot;, next_subscriptionId);
+    return next_subscriptionId++;
+}
+
+
+var eoan = require(&quot;node-opcua-address-space&quot;);
+
+ServerSession.prototype._getSubscriptionDiagnosticsArray = function () {
+
+    var self = this;
+    if (!self.addressSpace) {
+        if (doDebug) {
+            console.warn(&quot;ServerSession#_exposeSubscriptionDiagnostics : no addressSpace&quot;);
+        }
+        return null; // no addressSpace
+    }
+    var subscriptionDiagnosticsType = self.addressSpace.findVariableType(&quot;SubscriptionDiagnosticsType&quot;);
+    if (!subscriptionDiagnosticsType) {
+        if (doDebug) {
+            console.warn(&quot;ServerSession#_exposeSubscriptionDiagnostics : cannot find SubscriptionDiagnosticsType&quot;);
+        }
+    }
+
+    // SubscriptionDiagnosticsArray = i=2290
+    var subscriptionDiagnosticsArray = self.addressSpace.findNode(makeNodeId(VariableIds.Server_ServerDiagnostics_SubscriptionDiagnosticsArray));
+
+    return subscriptionDiagnosticsArray;
+};
+ServerSession.prototype._exposeSubscriptionDiagnostics = function (subscription) {
+
+    var self = this;
+    var subscriptionDiagnosticsArray = self._getSubscriptionDiagnosticsArray();
+    var subscriptionDiagnostics = subscription.subscriptionDiagnostics;
+    if (subscriptionDiagnostics &amp;&amp; subscriptionDiagnosticsArray) {
+        eoan.addElement(subscriptionDiagnostics, subscriptionDiagnosticsArray);
+    }
+};
+
+function compareSessionId(sessionDiagnostics1, sessionDiagnostics2) {
+    return sessionDiagnostics1.sessionId.toString() == sessionDiagnostics2.sessionId.toString();
+}
+
+ServerSession.prototype._unexposeSubscriptionDiagnostics = function (subscription) {
+
+    var self = this;
+    var subscriptionDiagnosticsArray = self._getSubscriptionDiagnosticsArray();
+    var subscriptionDiagnostics = subscription.subscriptionDiagnostics;
+    assert(subscriptionDiagnostics instanceof SubscriptionDiagnostics);
+    if (subscriptionDiagnostics &amp;&amp; subscriptionDiagnosticsArray) {
+        eoan.removeElement(subscriptionDiagnosticsArray, subscriptionDiagnostics);
+    }
+};
+/**
+ * create a new subscription
+ * @method createSubscription
+ * @param request
+ * @param request.requestedPublishingInterval {Duration}
+ * @param request.requestedLifetimeCount {Counter}
+ * @param request.requestedMaxKeepAliveCount {Counter}
+ * @param request.maxNotificationsPerPublish {Counter}
+ * @param request.publishingEnabled {Boolean}
+ * @param request.priority {Byte}
+ * @return {Subscription}
+ */
+ServerSession.prototype.createSubscription = function (request) {
+
+    assert(request.hasOwnProperty(&quot;requestedPublishingInterval&quot;)); // Duration
+    assert(request.hasOwnProperty(&quot;requestedLifetimeCount&quot;));      // Counter
+    assert(request.hasOwnProperty(&quot;requestedMaxKeepAliveCount&quot;));  // Counter
+    assert(request.hasOwnProperty(&quot;maxNotificationsPerPublish&quot;));  // Counter
+    assert(request.hasOwnProperty(&quot;publishingEnabled&quot;));           // Boolean
+    assert(request.hasOwnProperty(&quot;priority&quot;));                    // Byte
+
+    var self = this;
+
+    self._cumulatedSubscriptionCount += 1;
+
+    var subscription = new Subscription({
+        publishingInterval: request.requestedPublishingInterval,
+        lifeTimeCount: request.requestedLifetimeCount,
+        maxKeepAliveCount: request.requestedMaxKeepAliveCount,
+        maxNotificationsPerPublish: request.maxNotificationsPerPublish,
+        publishingEnabled: request.publishingEnabled,
+        priority: request.priority,
+        id: _get_next_subscriptionId(),
+        // -------------------
+        publishEngine: self.publishEngine,
+        sessionId: self.nodeId
+    });
+
+
+    self.publishEngine.add_subscription(subscription);
+
+    // Notify the owner that a new subscription has been created
+    // @event new_subscription
+    // @param {Subscription} subscription
+    +self.emit(&quot;new_subscription&quot;, subscription);
+
+    // add subscription diagnostics to SubscriptionDiagnosticsArray
+    self._exposeSubscriptionDiagnostics(subscription);
+
+    subscription.once(&quot;terminated&quot;, function () {
+
+        self._unexposeSubscriptionDiagnostics(subscription);
+
+        // Notify the owner that a new subscription has been terminated
+        // @event subscription_terminated
+        // @param {Subscription} subscription
+        self.emit(&quot;subscription_terminated&quot;, subscription);
+
+    });
+
+
+    return subscription;
+};
+
+
+/**
+ * number of active subscriptions
+ * @property currentSubscriptionCount
+ * @type {Number}
+ */
+ServerSession.prototype.__defineGetter__(&quot;currentSubscriptionCount&quot;, function () {
+    var self = this;
+    return self.publishEngine ? self.publishEngine.subscriptionCount : 0;
+});
+
+/**
+ * number of subscriptions ever created since this object is live
+ * @property cumulatedSubscriptionCount
+ * @type {Number}
+ */
+ServerSession.prototype.__defineGetter__(&quot;cumulatedSubscriptionCount&quot;, function () {
+    return this._cumulatedSubscriptionCount;
+});
+
+/**
+ * number of monitored items
+ * @property currentMonitoredItemCount
+ * @type {Number}
+ */
+ServerSession.prototype.__defineGetter__(&quot;currentMonitoredItemCount&quot;, function () {
+    var self = this;
+    return self.publishEngine ? self.publishEngine.currentMonitoredItemCount : 0;
+});
+
+
+var SubscriptionState = require(&quot;./subscription&quot;).SubscriptionState;
+/**
+ * retrieve an existing subscription by subscriptionId
+ * @method getSubscription
+ * @param subscriptionId {Integer}
+ * @return {Subscription}
+ */
+ServerSession.prototype.getSubscription = function (subscriptionId) {
+    var subscription = this.publishEngine.getSubscriptionById(subscriptionId);
+    if (subscription &amp;&amp; subscription.state === SubscriptionState.CLOSED) {
+        // subscription is CLOSED but has not been notified yet
+        // it should be considered as excluded
+        return null;
+    }
+    assert(!subscription || subscription.state !== SubscriptionState.CLOSED, &quot;CLOSED subscription shall not be managed by publish engine anymore&quot;);
+    return subscription;
+};
+
+/**
+ * @method deleteSubscription
+ * @param subscriptionId {Integer}
+ * @return {StatusCode}
+ */
+ServerSession.prototype.deleteSubscription = function (subscriptionId) {
+
+    var self = this;
+    var subscription = self.getSubscription(subscriptionId);
+    if (!subscription) {
+        return StatusCodes.BadSubscriptionIdInvalid;
+    }
+
+    //xx this.publishEngine.remove_subscription(subscription);
+    subscription.terminate();
+
+
+    if (self.currentSubscriptionCount === 0) {
+
+        var local_publishEngine = self.publishEngine;
+        local_publishEngine.cancelPendingPublishRequest();
+    }
+    return StatusCodes.Good;
+};
+
+ServerSession.prototype._deleteSubscriptions = function () {
+
+    var self = this;
+    assert(self.publishEngine);
+
+    var subscriptions = self.publishEngine.subscriptions;
+
+    subscriptions.forEach(function (subscription) {
+        self.deleteSubscription(subscription.id);
+    });
+
+};
+
+
+/**
+ * close a ServerSession, this will also delete the subscriptions if the flag is set.
+ *
+ * Spec extract:
+ *
+ * If a Client invokes the CloseSession Service then all Subscriptions associated with the Session are also deleted
+ * if the deleteSubscriptions flag is set to TRUE. If a Server terminates a Session for any other reason,
+ * Subscriptions associated with the Session, are not deleted. Each Subscription has its own lifetime to protect
+ * against data loss in the case of a Session termination. In these cases, the Subscription can be reassigned to
+ * another Client before its lifetime expires.
+ *
+ * @method close
+ * @param {Boolean} deleteSubscriptions : should we delete subscription ?
+ * @param {String} [reason = &quot;CloseSession&quot;] the reason for closing the session (shall be &quot;Timeout&quot;, &quot;Terminated&quot; or &quot;CloseSession&quot;)
+ *
+ */
+ServerSession.prototype.close = function (deleteSubscriptions, reason) {
+
+    //xx console.log(&quot;xxxxxxxxxxxxxxxxxxxxxxxxxxx =&gt; ServerSession.close() &quot;);
+    var self = this;
+
+    if (self.publishEngine) {
+        self.publishEngine.onSessionClose();
+    }
+
+    theWatchDog.removeSubscriber(self);
+    // ---------------  delete associated subscriptions ---------------------
+
+
+    if (!deleteSubscriptions &amp;&amp; self.currentSubscriptionCount !== 0) {
+
+        // I don&#x27;t know what to do yet if deleteSubscriptions is false
+        console.log(&quot;TO DO : Closing session without deleting subscription not yet implemented&quot;);
+        //to do: Put subscriptions in safe place for future transfer if any
+
+    }
+
+    self._deleteSubscriptions();
+
+    assert(self.currentSubscriptionCount === 0);
+
+    // ---------------- shut down publish engine
+    if (self.publishEngine) {
+
+
+        // remove subscription
+        self.publishEngine.shutdown();
+
+        assert(self.publishEngine.subscriptionCount === 0);
+        self.publishEngine = null;
+    }
+
+    // Post-Conditions
+    assert(self.currentSubscriptionCount === 0);
+
+    self.status = &quot;closed&quot;;
+    /**
+     * @event session_closed
+     * @param deleteSubscriptions {Boolean}
+     * @param reason {String}
+     */
+    self.emit(&quot;session_closed&quot;, self, deleteSubscriptions, reason);
+
+    self._removeSessionObjectFromAddressSpace();
+
+    assert(!self.sessionDiagnostics, &quot;ServerSession#_removeSessionObjectFromAddressSpace must be called&quot;);
+    assert(!self.sessionObject, &quot;ServerSession#_removeSessionObjectFromAddressSpace must be called&quot;);
+
+
+};
+
+/**
+ * @method watchdogReset
+ * used as a callback for the Watchdog
+ * @private
+ */
+ServerSession.prototype.watchdogReset = function () {
+    var self = this;
+    // the server session has expired and must be removed from the server
+    self.emit(&quot;timeout&quot;);
+};
+
+
+exports.ServerSession = ServerSession;
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Ad by Google -->
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-format="fluid"
+                 data-ad-layout-key="-8h+1u-de+eo+dy"
+                 data-ad-client="ca-pub-8886208393040088"
+                 data-ad-slot="9362364253"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <!-- -->
+
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

@@ -42,8 +42,7 @@ const OPCUAClient = opcua.OPCUAClient;
 This simple program establishes a connection to a remote OPCUA Server, opens a session with some credentials, 
 reads a variable value out of one of the temperature sensor exposed by the OPCUA server, print out the value, and shutdown the connection properly.
 
-The code looks sequential, but almost every ````await```` statements  are in fact asynchronous calls that perform a round trip transaction 
-with the remote server.
+The code looks sequential, but almost every ````await```` statements  are in fact asynchronous calls that perform a round trip transaction with the remote server.
 
 This also works in TypeScript. 
 Modern IDE such as Visual Studio Code or WebStorm provides intelisense support Typescript. This 
