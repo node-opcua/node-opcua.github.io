@@ -195,7 +195,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "ServerEngine",
         "ServerSecureChannelLayer",
         "ServerSession",
-        "ServerSidePublishEngine",
+        "ServerSidePublishEngine\n a Publish Engine for a given session",
         "ServerStatus",
         "ServerTCP_transport",
         "ServiceCounter",
