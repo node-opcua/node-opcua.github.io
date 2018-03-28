@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="flattr:id" content="me93y1">
 
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -1110,11 +1111,13 @@ function getRequiredEndpointInfo(endpoint) {
     // securityPolicyUri, userIdentityTokens, transportProfileUri and securityLevel with all
     // other parameters set to null. Only the recommended parameters shall be verified by
     // the client.
+
     var e=  new EndpointDescription({
-        endpointUrl: endpoint.endpointUrl,
+        endpointUrl:      endpoint.endpointUrl,
         securityMode: endpoint.securityMode,
         securityPolicyUri: endpoint.securityPolicyUri,
         userIdentityTokens: endpoint.userIdentityTokens,
+        transportProfileUri: endpoint.transportProfileUri,
         securityLevel: endpoint.securityLevel,
     });
     // reduce even further by explicitly setting unwanted members to null

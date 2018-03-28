@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="flattr:id" content="me93y1">
 
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -738,7 +739,7 @@ useful to determine which DataType to use when constructing a Variant</a>
 
                             </li>
                             <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_read" data-tablink="read">read</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method_read_form4" data-tablink="read_form4">read_form4</a>
 
                             </li>
                             <li class="index-item method">
@@ -949,7 +950,7 @@ send when the session has been closed by the server ( proabably due to inactivit
                             <div class="args">
                                 <span class="paren">(</span><ul class="args-list inline commas">
                                     <li class="arg">
-                                            <code>nodesToBrowse</code>
+                                            <code>nodeToBrowse</code>
                                     </li>
                                     <li class="arg">
                                             <code>callback</code>
@@ -964,7 +965,7 @@ send when the session has been closed by the server ( proabably due to inactivit
                                             <code>nodesToBrowse</code>
                                     </li>
                                     <li class="arg">
-                                            <code>nodesToBrowse</code>
+                                            <code>nodeToBrowse</code>
                                     </li>
                                 </ul><span class="paren">)</span>
                             </div>
@@ -983,7 +984,7 @@ send when the session has been closed by the server ( proabably due to inactivit
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l86"><code>packages\node-opcua-client\src\client_session.js:86</code></a>
+                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l88"><code>packages\node-opcua-client\src\client_session.js:88</code></a>
                             </p>
                     
                     
@@ -999,7 +1000,7 @@ send when the session has been closed by the server ( proabably due to inactivit
                     
                                 <ul class="params-list">
                                     <li class="param">
-                                            <code class="param-name">nodesToBrowse</code>
+                                            <code class="param-name">nodeToBrowse</code>
                                             <span class="type">String | <a href="../classes/BrowseDescription.html" class="crosslink">BrowseDescription</a></span>
                     
                     
@@ -1090,7 +1091,7 @@ send when the session has been closed by the server ( proabably due to inactivit
                     
                                     </li>
                                     <li class="param">
-                                            <code class="param-name">nodesToBrowse</code>
+                                            <code class="param-name">nodeToBrowse</code>
                                             <span class="type">String | <a href="../classes/BrowseDescription.html" class="crosslink">BrowseDescription</a></span>
                     
                     
@@ -1121,19 +1122,19 @@ send when the session has been closed by the server ( proabably due to inactivit
                       callback();
                     } );
                     </code></pre>
-                    <pre class="code prettyprint"><code class="language-javascript">   var browseDescription = {
-                          nodeId: "ObjectsFolder",
-                          referenceTypeId: "Organizes",
-                          browseDirection: BrowseDirection.Inverse,
-                          includeSubtypes: true,
-                          nodeClassMask: 0,
-                          resultMask: 63
-                       }
-                       session.browse(browseDescription,function(err, browseResult) {
-                          if(err) return callback(err);
-                          console.log(browseResult.toString());
-                          callback();
-                       });
+                    <pre class="code prettyprint"><code class="language-javascript">var browseDescription = {
+                       nodeId: "ObjectsFolder",
+                       referenceTypeId: "Organizes",
+                       browseDirection: BrowseDirection.Inverse,
+                       includeSubtypes: true,
+                       nodeClassMask: 0,
+                       resultMask: 63
+                    }
+                    session.browse(browseDescription,function(err, browseResult) {
+                       if(err) return callback(err);
+                       console.log(browseResult.toString());
+                       callback();
+                    });
                     </code></pre>
                     <pre class="code prettyprint"><code class="language-javascript">session.browse([ "RootFolder", "ObjectsFolder"],function(err, browseResults) {
                           assert(browseResults.length === 2);
@@ -1188,7 +1189,7 @@ send when the session has been closed by the server ( proabably due to inactivit
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l1196"><code>packages\node-opcua-client\src\client_session.js:1196</code></a>
+                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l1199"><code>packages\node-opcua-client\src\client_session.js:1199</code></a>
                             </p>
                     
                     
@@ -1357,7 +1358,7 @@ send when the session has been closed by the server ( proabably due to inactivit
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l1166"><code>packages\node-opcua-client\src\client_session.js:1166</code></a>
+                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l1169"><code>packages\node-opcua-client\src\client_session.js:1169</code></a>
                             </p>
                     
                     
@@ -1527,7 +1528,7 @@ send when the session has been closed by the server ( proabably due to inactivit
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l939"><code>packages\node-opcua-client\src\client_session.js:939</code></a>
+                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l942"><code>packages\node-opcua-client\src\client_session.js:942</code></a>
                             </p>
                     
                     
@@ -1618,7 +1619,7 @@ send when the session has been closed by the server ( proabably due to inactivit
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l865"><code>packages\node-opcua-client\src\client_session.js:865</code></a>
+                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l868"><code>packages\node-opcua-client\src\client_session.js:868</code></a>
                             </p>
                     
                     
@@ -1775,7 +1776,7 @@ send when the session has been closed by the server ( proabably due to inactivit
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l1026"><code>packages\node-opcua-client\src\client_session.js:1026</code></a>
+                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l1029"><code>packages\node-opcua-client\src\client_session.js:1029</code></a>
                             </p>
                     
                     
@@ -1854,7 +1855,7 @@ send when the session has been closed by the server ( proabably due to inactivit
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l904"><code>packages\node-opcua-client\src\client_session.js:904</code></a>
+                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l907"><code>packages\node-opcua-client\src\client_session.js:907</code></a>
                             </p>
                     
                     
@@ -2040,7 +2041,7 @@ send when the session has been closed by the server ( proabably due to inactivit
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l1343"><code>packages\node-opcua-client\src\client_session.js:1343</code></a>
+                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l1346"><code>packages\node-opcua-client\src\client_session.js:1346</code></a>
                             </p>
                     
                     
@@ -2168,7 +2169,7 @@ send when the session has been closed by the server ( proabably due to inactivit
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l1614"><code>packages\node-opcua-client\src\client_session.js:1614</code></a>
+                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l1617"><code>packages\node-opcua-client\src\client_session.js:1617</code></a>
                             </p>
                     
                     
@@ -2272,7 +2273,7 @@ send when the session has been closed by the server ( proabably due to inactivit
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l1284"><code>packages\node-opcua-client\src\client_session.js:1284</code></a>
+                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l1287"><code>packages\node-opcua-client\src\client_session.js:1287</code></a>
                             </p>
                     
                     
@@ -2362,7 +2363,7 @@ send when the session has been closed by the server ( proabably due to inactivit
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l55"><code>packages\node-opcua-client\src\client_session.js:55</code></a>
+                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l57"><code>packages\node-opcua-client\src\client_session.js:57</code></a>
                             </p>
                     
                     
@@ -2401,7 +2402,7 @@ send when the session has been closed by the server ( proabably due to inactivit
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l1188"><code>packages\node-opcua-client\src\client_session.js:1188</code></a>
+                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l1191"><code>packages\node-opcua-client\src\client_session.js:1191</code></a>
                             </p>
                     
                     
@@ -2447,7 +2448,7 @@ send when the session has been closed by the server ( proabably due to inactivit
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l955"><code>packages\node-opcua-client\src\client_session.js:955</code></a>
+                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l958"><code>packages\node-opcua-client\src\client_session.js:958</code></a>
                             </p>
                     
                     
@@ -2538,7 +2539,7 @@ send when the session has been closed by the server ( proabably due to inactivit
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l971"><code>packages\node-opcua-client\src\client_session.js:971</code></a>
+                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l974"><code>packages\node-opcua-client\src\client_session.js:974</code></a>
                             </p>
                     
                     
@@ -2629,7 +2630,7 @@ send when the session has been closed by the server ( proabably due to inactivit
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l994"><code>packages\node-opcua-client\src\client_session.js:994</code></a>
+                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l997"><code>packages\node-opcua-client\src\client_session.js:997</code></a>
                             </p>
                     
                     
@@ -2719,7 +2720,7 @@ send when the session has been closed by the server ( proabably due to inactivit
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l1501"><code>packages\node-opcua-client\src\client_session.js:1501</code></a>
+                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l1504"><code>packages\node-opcua-client\src\client_session.js:1504</code></a>
                             </p>
                     
                     
@@ -2779,8 +2780,8 @@ send when the session has been closed by the server ( proabably due to inactivit
                     
                     
                     </div>
-                    <div id="method_read" class="method item">
-                        <h3 class="name"><code>read</code></h3>
+                    <div id="method_read_form4" class="method item">
+                        <h3 class="name"><code>read_form4</code></h3>
                     
                             <div class="args">
                                 <span class="paren">(</span><ul class="args-list inline commas">
@@ -2831,7 +2832,7 @@ send when the session has been closed by the server ( proabably due to inactivit
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l676"><code>packages\node-opcua-client\src\client_session.js:676</code></a>
+                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l677"><code>packages\node-opcua-client\src\client_session.js:677</code></a>
                             </p>
                     
                     
@@ -3061,7 +3062,7 @@ send when the session has been closed by the server ( proabably due to inactivit
                     
                                 <div class="example-content">
                                     <p>:</p>
-                    <p>form2: reading a single node</p>
+                    <p>form1: reading a single node</p>
                     <pre class="code prettyprint"><code class="language-javascript">  var nodeToRead = {
                                nodeId:      "ns=2;s=Furnace_1.Temperature",
                                attributeId: AttributeIds.BrowseName
@@ -3115,7 +3116,7 @@ send when the session has been closed by the server ( proabably due to inactivit
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l613"><code>packages\node-opcua-client\src\client_session.js:613</code></a>
+                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l614"><code>packages\node-opcua-client\src\client_session.js:614</code></a>
                             </p>
                     
                     
@@ -3260,7 +3261,7 @@ send when the session has been closed by the server ( proabably due to inactivit
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l344"><code>packages\node-opcua-client\src\client_session.js:344</code></a>
+                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l345"><code>packages\node-opcua-client\src\client_session.js:345</code></a>
                             </p>
                     
                     
@@ -3405,7 +3406,7 @@ send when the session has been closed by the server ( proabably due to inactivit
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l234"><code>packages\node-opcua-client\src\client_session.js:234</code></a>
+                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l235"><code>packages\node-opcua-client\src\client_session.js:235</code></a>
                             </p>
                     
                     
@@ -3610,7 +3611,7 @@ send when the session has been closed by the server ( proabably due to inactivit
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l1010"><code>packages\node-opcua-client\src\client_session.js:1010</code></a>
+                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l1013"><code>packages\node-opcua-client\src\client_session.js:1013</code></a>
                             </p>
                     
                     
@@ -3704,7 +3705,7 @@ send when the session has been closed by the server ( proabably due to inactivit
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l1041"><code>packages\node-opcua-client\src\client_session.js:1041</code></a>
+                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l1044"><code>packages\node-opcua-client\src\client_session.js:1044</code></a>
                             </p>
                     
                     
@@ -3793,7 +3794,7 @@ send when the session has been closed by the server ( proabably due to inactivit
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l923"><code>packages\node-opcua-client\src\client_session.js:923</code></a>
+                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l926"><code>packages\node-opcua-client\src\client_session.js:926</code></a>
                             </p>
                     
                     
@@ -3884,7 +3885,7 @@ send when the session has been closed by the server ( proabably due to inactivit
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l1077"><code>packages\node-opcua-client\src\client_session.js:1077</code></a>
+                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l1080"><code>packages\node-opcua-client\src\client_session.js:1080</code></a>
                             </p>
                     
                     
@@ -3984,7 +3985,7 @@ send when the session has been closed by the server ( proabably due to inactivit
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l412"><code>packages\node-opcua-client\src\client_session.js:412</code></a>
+                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l413"><code>packages\node-opcua-client\src\client_session.js:413</code></a>
                             </p>
                     
                     
@@ -4228,7 +4229,7 @@ send when the session has been closed by the server ( proabably due to inactivit
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l530"><code>packages\node-opcua-client\src\client_session.js:530</code></a>
+                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l531"><code>packages\node-opcua-client\src\client_session.js:531</code></a>
                             </p>
                     
                     
@@ -4361,7 +4362,7 @@ send when the session has been closed by the server ( proabably due to inactivit
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l1448"><code>packages\node-opcua-client\src\client_session.js:1448</code></a>
+                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l1451"><code>packages\node-opcua-client\src\client_session.js:1451</code></a>
                             </p>
                     
                     
@@ -4392,7 +4393,7 @@ send when the session has been closed by the server ( proabably due to inactivit
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l1543"><code>packages\node-opcua-client\src\client_session.js:1543</code></a>
+                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l1546"><code>packages\node-opcua-client\src\client_session.js:1546</code></a>
                             </p>
                     
                     
@@ -4416,7 +4417,7 @@ send when the session has been closed by the server ( proabably due to inactivit
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l1535"><code>packages\node-opcua-client\src\client_session.js:1535</code></a>
+                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l1538"><code>packages\node-opcua-client\src\client_session.js:1538</code></a>
                             </p>
                     
                     
@@ -4444,7 +4445,7 @@ send when the session has been closed by the server ( proabably due to inactivit
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l849"><code>packages\node-opcua-client\src\client_session.js:849</code></a>
+                            <a href="../files/packages_node-opcua-client_src_client_session.js.html#l852"><code>packages\node-opcua-client\src\client_session.js:852</code></a>
                             </p>
                     
                     

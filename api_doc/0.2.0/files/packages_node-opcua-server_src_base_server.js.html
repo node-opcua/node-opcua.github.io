@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="flattr:id" content="me93y1">
 
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -821,6 +822,7 @@ OPCUABaseServer.prototype._on_FindServersRequest = function (message, channel) {
     //   Service.  This can be achieved by preparing the result in advance.   The  Server  should  also add a
     //   short delay before starting processing of a request during high traffic conditions.
 
+
     var shortDelay = 2;
     setTimeout(function () {
 
@@ -829,7 +831,6 @@ OPCUABaseServer.prototype._on_FindServersRequest = function (message, channel) {
         assert(request instanceof FindServersRequest);
 
         var servers = server.getServers(channel);
-
         // apply filters
         // TODO /
         if (request.serverUris &amp;&amp; request.serverUris.length &gt; 0) {

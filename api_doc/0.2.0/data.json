@@ -6709,7 +6709,7 @@
             "module": "opcua.datamodel",
             "namespace": "",
             "file": "packages\\node-opcua-nodeid\\src\\nodeid.js",
-            "line": 390,
+            "line": 392,
             "description": "Construct a node ID",
             "params": [
                 {
@@ -6749,7 +6749,7 @@
             "module": "opcua.datamodel",
             "namespace": "",
             "file": "packages\\node-opcua-nodeid\\src\\nodeid.js",
-            "line": 367,
+            "line": 369,
             "description": "construct a node Id from a value and a namespace.",
             "itemtype": "method",
             "static": 1,
@@ -15690,16 +15690,16 @@
         {
             "file": "packages\\node-opcua-address-space\\src\\alarms_and_conditions\\alarm_condition.js",
             "line": 520,
-            "description": "The InputNode Property provides the NodeId of the Variable the Value of which is used as\n primary input in the calculation of the Alarm state. If this Variable is not in the AddressSpace,\n a Null NodeId shall be provided. In some systems, an Alarm may be calculated based on\n multiple Variables Values; it is up to the system to determine which Variable’s NodeId is used.",
+            "description": "The InputNode Property provides the NodeId of the Variable the Value of which is used as\n primary input in the calculation of the Alarm state. If this Variable is not in the AddressSpace,\n a Null NodeId shall be provided. In some systems, an Alarm may be calculated based on\n multiple Variables Values; it is up to the system to determine which Variable’s NodeId is used.\n dataType is DataType.NodeId",
             "itemtype": "property",
             "name": "inputNode",
-            "type": "UAVariable\n dataType is DataType.NodeId",
+            "type": "UAVariable",
             "class": "UAAlarmConditionBase",
             "module": "opcua.address_space.AlarmsAndConditions"
         },
         {
             "file": "packages\\node-opcua-address-space\\src\\alarms_and_conditions\\alarm_condition.js",
-            "line": 593,
+            "line": 592,
             "itemtype": "method",
             "name": "_calculateConditionInfo",
             "params": [
@@ -15754,7 +15754,7 @@
         },
         {
             "file": "packages\\node-opcua-address-space\\src\\alarms_and_conditions\\alarm_condition.js",
-            "line": 699,
+            "line": 698,
             "itemtype": "method",
             "name": "(static)UAAlarmConditionBase.instantiate",
             "params": [
@@ -15792,7 +15792,7 @@
         },
         {
             "file": "packages\\node-opcua-address-space\\src\\alarms_and_conditions\\alarm_condition.js",
-            "line": 748,
+            "line": 747,
             "itemtype": "property",
             "name": "activeState",
             "type": "{UATwoStateVariable}",
@@ -15801,7 +15801,7 @@
         },
         {
             "file": "packages\\node-opcua-address-space\\src\\alarms_and_conditions\\alarm_condition.js",
-            "line": 760,
+            "line": 759,
             "description": "SuppressState is used internally by a Server to automatically suppress Alarms due to system\n specific reasons. For example a system may be configured to suppress Alarms that are\n associated with machinery that is shutdown, such as a low level Alarm for a tank that is\n currently not in use.",
             "itemtype": "property",
             "name": "suppressedState",
@@ -15811,7 +15811,7 @@
         },
         {
             "file": "packages\\node-opcua-address-space\\src\\alarms_and_conditions\\alarm_condition.js",
-            "line": 779,
+            "line": 778,
             "description": "ShelvingState suggests whether an Alarm shall (temporarily) be prevented from being\ndisplayed to the user. It is quite often used to block nuisance Alarms.",
             "itemtype": "property",
             "name": "shelvingState",
@@ -15821,11 +15821,11 @@
         },
         {
             "file": "packages\\node-opcua-address-space\\src\\alarms_and_conditions\\alarm_condition.js",
-            "line": 793,
-            "description": "The SuppressedState and the ShelvingState together result in the SuppressedOrShelved status of the\nCondition. When an Alarm is in one of the states, the SuppressedOrShelved property will be set TRUE\nand this Alarm is then typically not displayed by the Client. State transitions associated with the\nAlarm do occur, but they are not typically displayed by the Clients as long as the Alarm remains in\neither the Suppressed or Shelved state.",
+            "line": 792,
+            "description": "The SuppressedState and the ShelvingState together result in the SuppressedOrShelved status of the\nCondition. When an Alarm is in one of the states, the SuppressedOrShelved property will be set TRUE\nand this Alarm is then typically not displayed by the Client. State transitions associated with the\nAlarm do occur, but they are not typically displayed by the Clients as long as the Alarm remains in\neither the Suppressed or Shelved state.\nThe dataType is Boolean.",
             "itemtype": "property",
             "name": "suppressedState",
-            "type": "UAVariable - DataType Boolean",
+            "type": "UAVariable",
             "class": "UAAlarmConditionBase",
             "module": "opcua.address_space.AlarmsAndConditions"
         },
@@ -16746,45 +16746,50 @@
         {
             "file": "packages\\node-opcua-address-space\\src\\alarms_and_conditions\\condition.js",
             "line": 1827,
+            "description": "dataType is DataType.NodeId",
             "itemtype": "property",
             "name": "eventType",
-            "type": "{UAVariableType}\n\ndataType is DataType.NodeId",
+            "type": "{UAVariableType}",
             "class": "ConditionInfo",
             "module": "opcua.address_space.AlarmsAndConditions"
         },
         {
             "file": "packages\\node-opcua-address-space\\src\\alarms_and_conditions\\condition.js",
             "line": 1841,
+            "description": "dataType is DataType.NodeId",
             "itemtype": "property",
             "name": "branchId",
-            "type": "{UAVariableType}\n\ndataType is DataType.NodeId",
+            "type": "{UAVariableType}",
             "class": "ConditionInfo",
             "module": "opcua.address_space.AlarmsAndConditions"
         },
         {
             "file": "packages\\node-opcua-address-space\\src\\alarms_and_conditions\\condition.js",
             "line": 1853,
+            "description": "dataType is DataType.LocalizedText",
             "itemtype": "property",
             "name": "comment",
-            "type": "{UAVariableType}\n\ndataType is DataType.LocalizedText",
+            "type": "{UAVariableType}",
             "class": "ConditionInfo",
             "module": "opcua.address_space.AlarmsAndConditions"
         },
         {
             "file": "packages\\node-opcua-address-space\\src\\alarms_and_conditions\\condition.js",
             "line": 1863,
+            "description": "dataType is DataType.StatusCode",
             "itemtype": "property",
             "name": "quality",
-            "type": "{UAVariableType}\n\ndataType is DataType.StatusCode",
+            "type": "{UAVariableType}",
             "class": "ConditionInfo",
             "module": "opcua.address_space.AlarmsAndConditions"
         },
         {
             "file": "packages\\node-opcua-address-space\\src\\alarms_and_conditions\\condition.js",
             "line": 1873,
+            "description": "dataType is DataType.StatusCode",
             "itemtype": "property",
             "name": "lastSeverity",
-            "type": "{UAVariableType}\n\ndataType is DataType.StatusCode",
+            "type": "{UAVariableType}",
             "class": "ConditionInfo",
             "module": "opcua.address_space.AlarmsAndConditions"
         },
@@ -16827,27 +16832,30 @@
         {
             "file": "packages\\node-opcua-address-space\\src\\alarms_and_conditions\\condition.js",
             "line": 1962,
+            "description": "dataType is DataType.NodeId",
             "itemtype": "property",
             "name": "sourceNode",
-            "type": "{UAVariableType}\n\ndataType is DataType.NodeId",
+            "type": "{UAVariableType}",
             "class": "ConditionInfo",
             "module": "opcua.address_space.AlarmsAndConditions"
         },
         {
             "file": "packages\\node-opcua-address-space\\src\\alarms_and_conditions\\condition.js",
-            "line": 2006,
+            "line": 2005,
+            "description": "dataType: DataType.NodeId\nAs per spec OPCUA 1.03 part 9:\n    ConditionClassId specifies in which domain this Condition is used. It is the NodeId of the\n    corresponding ConditionClassType. See 5.9 for the definition of ConditionClass and a set of\n    ConditionClasses defined in this standard. When using this Property for filtering, Clients have\n    to specify all individual ConditionClassType NodeIds. The OfType operator cannot be applied.\n    BaseConditionClassType is used as class whenever a Condition cannot be assigned to a\n    more concrete class.\n                       BaseConditionClassType\n                                   |\n                      +---------------------------+----------------------------+\n                     |                           |                             |\n            ProcessConditionClassType  MaintenanceConditionClassType  SystemConditionClassType",
             "itemtype": "property",
             "name": "conditionName",
-            "type": "{UAVariable}\n\ndataType: DataType.NodeId\n\nAs per spec OPCUA 1.03 part 9:\n  ConditionClassId specifies in which domain this Condition is used. It is the NodeId of the\n  corresponding ConditionClassType. See 5.9 for the definition of ConditionClass and a set of\n  ConditionClasses defined in this standard. When using this Property for filtering, Clients have\n  to specify all individual ConditionClassType NodeIds. The OfType operator cannot be applied.\n  BaseConditionClassType is used as class whenever a Condition cannot be assigned to a\n  more concrete class.\n\n                       BaseConditionClassType\n                                 |\n                    +---------------------------+----------------------------+\n                   |                           |                             |\n          ProcessConditionClassType  MaintenanceConditionClassType  SystemConditionClassType",
+            "type": "{UAVariable}",
             "class": "ConditionInfo",
             "module": "opcua.address_space.AlarmsAndConditions"
         },
         {
             "file": "packages\\node-opcua-address-space\\src\\alarms_and_conditions\\condition.js",
-            "line": 2057,
+            "line": 2056,
+            "description": "dataType: DataType.String\nAs per spec OPCUA 1.03 part 9:\n   ConditionName identifies the Condition instance that the Event originated from. It can be used\n   together with the SourceName in a user display to distinguish between different Condition\n   instances. If a ConditionSource has only one instance of a ConditionType, and the Server has\n   no instance name, the Server shall supply the ConditionType browse name.",
             "itemtype": "property",
             "name": "conditionName",
-            "type": "{UAVariable}\n\ndataType: DataType.String\n\nAs per spec OPCUA 1.03 part 9:\n  ConditionName identifies the Condition instance that the Event originated from. It can be used\n  together with the SourceName in a user display to distinguish between different Condition\n  instances. If a ConditionSource has only one instance of a ConditionType, and the Server has\n  no instance name, the Server shall supply the ConditionType browse name.",
+            "type": "{UAVariable}",
             "class": "ConditionInfo",
             "module": "opcua.address_space.AlarmsAndConditions"
         },
@@ -17812,7 +17820,7 @@
                 {
                     "name": "indexRange",
                     "description": "",
-                    "type": "NumericRange || null"
+                    "type": "NumericRange |null"
                 },
                 {
                     "name": "dataEncoding",
@@ -18429,8 +18437,8 @@
                         },
                         {
                             "name": "arrayDimensions",
-                            "description": "}",
-                            "type": "Null| ArrayInt",
+                            "description": "",
+                            "type": "Null| Array<Int>",
                             "optional": true
                         }
                     ]
@@ -19824,7 +19832,7 @@
                 {
                     "name": "references",
                     "description": "",
-                    "type": "Array<Reference>||null"
+                    "type": "Array<Reference>|null"
                 }
             ],
             "static": 1,
@@ -20914,7 +20922,7 @@
                 {
                     "name": "indexRange",
                     "description": "",
-                    "type": "NumericRange || null"
+                    "type": "NumericRange | null"
                 },
                 {
                     "name": "dataEncoding",
@@ -22825,7 +22833,7 @@
         },
         {
             "file": "packages\\node-opcua-client\\src\\client_session.js",
-            "line": 55,
+            "line": 57,
             "itemtype": "method",
             "name": "getPublishEngine",
             "return": {
@@ -22837,13 +22845,13 @@
         },
         {
             "file": "packages\\node-opcua-client\\src\\client_session.js",
-            "line": 86,
+            "line": 88,
             "itemtype": "method",
             "name": "browse",
             "async": 1,
             "params": [
                 {
-                    "name": "nodesToBrowse",
+                    "name": "nodeToBrowse",
                     "description": "",
                     "type": "String|BrowseDescription"
                 },
@@ -22892,14 +22900,14 @@
                     "type": "Array<String|BrowseDescription>"
                 },
                 {
-                    "name": "nodesToBrowse",
+                    "name": "nodeToBrowse",
                     "description": "",
                     "type": "String|BrowseDescription"
                 }
             ],
             "example": [
-                ":\n\n   ``` javascript\n   session.browse(\"RootFolder\",function(err,browseResult) {\n     if(err) return callback(err);\n     console.log(browseResult.toString());\n     callback();\n   } );\n   ```",
-                "\n\n``` javascript\n   var browseDescription = {\n      nodeId: \"ObjectsFolder\",\n      referenceTypeId: \"Organizes\",\n      browseDirection: BrowseDirection.Inverse,\n      includeSubtypes: true,\n      nodeClassMask: 0,\n      resultMask: 63\n   }\n   session.browse(browseDescription,function(err, browseResult) {\n      if(err) return callback(err);\n      console.log(browseResult.toString());\n      callback();\n   });\n   ```",
+                ":\n\n   ```javascript\n   session.browse(\"RootFolder\",function(err,browseResult) {\n     if(err) return callback(err);\n     console.log(browseResult.toString());\n     callback();\n   } );\n   ```",
+                "\n\n   ``` javascript\n   var browseDescription = {\n      nodeId: \"ObjectsFolder\",\n      referenceTypeId: \"Organizes\",\n      browseDirection: BrowseDirection.Inverse,\n      includeSubtypes: true,\n      nodeClassMask: 0,\n      resultMask: 63\n   }\n   session.browse(browseDescription,function(err, browseResult) {\n      if(err) return callback(err);\n      console.log(browseResult.toString());\n      callback();\n   });\n   ```",
                 "\n\n``` javascript\nsession.browse([ \"RootFolder\", \"ObjectsFolder\"],function(err, browseResults) {\n      assert(browseResults.length === 2);\n});\n```",
                 "\n  ``` javascript\n   var browseDescriptions = [\n     {\n         nodeId: \"ObjectsFolder\",\n         referenceTypeId: \"Organizes\",\n         browseDirection: BrowseDirection.Inverse,\n         includeSubtypes: true,\n         nodeClassMask: 0,\n         resultMask: 63\n     },\n     // {...}\n   ]\n   session.browse(browseDescriptions,function(err, browseResults) {\n\n   });\n   ```"
             ],
@@ -22912,7 +22920,7 @@
         },
         {
             "file": "packages\\node-opcua-client\\src\\client_session.js",
-            "line": 234,
+            "line": 235,
             "itemtype": "method",
             "name": "readVariableValue",
             "async": 1,
@@ -22987,7 +22995,7 @@
         },
         {
             "file": "packages\\node-opcua-client\\src\\client_session.js",
-            "line": 344,
+            "line": 345,
             "itemtype": "method",
             "name": "readHistoryValue",
             "async": 1,
@@ -23031,7 +23039,7 @@
         },
         {
             "file": "packages\\node-opcua-client\\src\\client_session.js",
-            "line": 412,
+            "line": 413,
             "itemtype": "method",
             "name": "write",
             "params": [
@@ -23108,7 +23116,7 @@
         },
         {
             "file": "packages\\node-opcua-client\\src\\client_session.js",
-            "line": 530,
+            "line": 531,
             "itemtype": "method",
             "name": "writeSingleNode",
             "async": 1,
@@ -23160,7 +23168,7 @@
         },
         {
             "file": "packages\\node-opcua-client\\src\\client_session.js",
-            "line": 613,
+            "line": 614,
             "itemtype": "method",
             "name": "readAllAttributes",
             "example": [
@@ -23213,10 +23221,9 @@
         },
         {
             "file": "packages\\node-opcua-client\\src\\client_session.js",
-            "line": 676,
+            "line": 677,
             "itemtype": "method",
-            "name": "read",
-            "async": 1,
+            "name": "read_form4",
             "params": [
                 {
                     "name": "nodeToRead",
@@ -23321,8 +23328,9 @@
                     "optional": true
                 }
             ],
+            "async": 1,
             "example": [
-                ":\n\nform2: reading a single node\n\n ``` javascript\n   var nodeToRead = {\n            nodeId:      \"ns=2;s=Furnace_1.Temperature\",\n            attributeId: AttributeIds.BrowseName\n   };\n\n   session.read(nodeToRead,function(err,dataValue) {\n       if (!err) {\n          console.log(dataValue.toString());\n       }\n   });\n   ```",
+                ":\n\nform1: reading a single node\n\n ``` javascript\n   var nodeToRead = {\n            nodeId:      \"ns=2;s=Furnace_1.Temperature\",\n            attributeId: AttributeIds.BrowseName\n   };\n\n   session.read(nodeToRead,function(err,dataValue) {\n       if (!err) {\n          console.log(dataValue.toString());\n       }\n   });\n   ```",
                 "\n\n  ``` javascript\n  var nodesToRead = [\n       {\n            nodeId:      \"ns=2;s=Furnace_1.Temperature\",\n            attributeId: AttributeIds.BrowseName\n       }\n  ];\n  session.read(nodesToRead,function(err,dataValues) {\n    if (!err) {\n      dataValues.forEach(dataValue=>console.log(dataValue.toString()));\n    }\n  });\n  ```",
                 ":"
             ],
@@ -23335,7 +23343,7 @@
         },
         {
             "file": "packages\\node-opcua-client\\src\\client_session.js",
-            "line": 849,
+            "line": 852,
             "itemtype": "event",
             "name": "session_closed\nsend when the session has been closed by the server ( proabably due to inactivity and timeout)",
             "class": "ClientSession",
@@ -23343,7 +23351,7 @@
         },
         {
             "file": "packages\\node-opcua-client\\src\\client_session.js",
-            "line": 865,
+            "line": 868,
             "itemtype": "method",
             "name": "createSubscription",
             "async": 1,
@@ -23411,7 +23419,7 @@
         },
         {
             "file": "packages\\node-opcua-client\\src\\client_session.js",
-            "line": 904,
+            "line": 907,
             "itemtype": "method",
             "name": "deleteSubscriptions",
             "async": 1,
@@ -23447,7 +23455,7 @@
         },
         {
             "file": "packages\\node-opcua-client\\src\\client_session.js",
-            "line": 923,
+            "line": 926,
             "itemtype": "method",
             "name": "transferSubscriptions",
             "async": 1,
@@ -23480,7 +23488,7 @@
         },
         {
             "file": "packages\\node-opcua-client\\src\\client_session.js",
-            "line": 939,
+            "line": 942,
             "itemtype": "method",
             "name": "createMonitoredItems",
             "async": 1,
@@ -23513,7 +23521,7 @@
         },
         {
             "file": "packages\\node-opcua-client\\src\\client_session.js",
-            "line": 955,
+            "line": 958,
             "itemtype": "method",
             "name": "modifyMonitoredItems",
             "async": 1,
@@ -23546,7 +23554,7 @@
         },
         {
             "file": "packages\\node-opcua-client\\src\\client_session.js",
-            "line": 971,
+            "line": 974,
             "itemtype": "method",
             "name": "modifySubscription",
             "async": 1,
@@ -23579,7 +23587,7 @@
         },
         {
             "file": "packages\\node-opcua-client\\src\\client_session.js",
-            "line": 994,
+            "line": 997,
             "itemtype": "method",
             "name": "publish",
             "async": 1,
@@ -23612,7 +23620,7 @@
         },
         {
             "file": "packages\\node-opcua-client\\src\\client_session.js",
-            "line": 1010,
+            "line": 1013,
             "itemtype": "method",
             "name": "republish",
             "async": 1,
@@ -23645,7 +23653,7 @@
         },
         {
             "file": "packages\\node-opcua-client\\src\\client_session.js",
-            "line": 1026,
+            "line": 1029,
             "itemtype": "method",
             "name": "deleteMonitoredItems",
             "async": 1,
@@ -23673,7 +23681,7 @@
         },
         {
             "file": "packages\\node-opcua-client\\src\\client_session.js",
-            "line": 1041,
+            "line": 1044,
             "itemtype": "method",
             "name": "setPublishingMode",
             "async": 1,
@@ -23706,7 +23714,7 @@
         },
         {
             "file": "packages\\node-opcua-client\\src\\client_session.js",
-            "line": 1077,
+            "line": 1080,
             "itemtype": "method",
             "name": "translateBrowsePath",
             "async": 1,
@@ -23739,7 +23747,7 @@
         },
         {
             "file": "packages\\node-opcua-client\\src\\client_session.js",
-            "line": 1166,
+            "line": 1169,
             "itemtype": "method",
             "name": "close",
             "async": 1,
@@ -23762,7 +23770,7 @@
         },
         {
             "file": "packages\\node-opcua-client\\src\\client_session.js",
-            "line": 1188,
+            "line": 1191,
             "itemtype": "method",
             "name": "hasBeenClosed",
             "return": {
@@ -23774,7 +23782,7 @@
         },
         {
             "file": "packages\\node-opcua-client\\src\\client_session.js",
-            "line": 1196,
+            "line": 1199,
             "itemtype": "method",
             "name": "call",
             "params": [
@@ -23832,7 +23840,7 @@
         },
         {
             "file": "packages\\node-opcua-client\\src\\client_session.js",
-            "line": 1284,
+            "line": 1287,
             "itemtype": "method",
             "name": "getMonitoredItems",
             "params": [
@@ -23867,7 +23875,7 @@
         },
         {
             "file": "packages\\node-opcua-client\\src\\client_session.js",
-            "line": 1343,
+            "line": 1346,
             "itemtype": "method",
             "name": "getArgumentDefinition",
             "params": [
@@ -23918,7 +23926,7 @@
         },
         {
             "file": "packages\\node-opcua-client\\src\\client_session.js",
-            "line": 1448,
+            "line": 1451,
             "description": "the endpoint on which this session is operating",
             "itemtype": "property",
             "name": "endpoint",
@@ -23928,13 +23936,13 @@
         },
         {
             "file": "packages\\node-opcua-client\\src\\client_session.js",
-            "line": 1458,
+            "line": 1461,
             "class": "ClientSession",
             "module": "opcua.client"
         },
         {
             "file": "packages\\node-opcua-client\\src\\client_session.js",
-            "line": 1501,
+            "line": 1504,
             "itemtype": "method",
             "name": "queryFirst",
             "params": [
@@ -23966,7 +23974,7 @@
         },
         {
             "file": "packages\\node-opcua-client\\src\\client_session.js",
-            "line": 1535,
+            "line": 1538,
             "description": "raised when a keep-alive request has failed on the session, may be the session has timeout\nunexpectidaly on the server side, may be the connection is broken.",
             "itemtype": "event",
             "name": "keepalive_failure",
@@ -23975,7 +23983,7 @@
         },
         {
             "file": "packages\\node-opcua-client\\src\\client_session.js",
-            "line": 1543,
+            "line": 1546,
             "itemtype": "event",
             "name": "keepalive",
             "class": "ClientSession",
@@ -23983,7 +23991,7 @@
         },
         {
             "file": "packages\\node-opcua-client\\src\\client_session.js",
-            "line": 1614,
+            "line": 1617,
             "itemtype": "method",
             "name": "getBuiltInDataType\nretrieve the built-in DataType of a Variable, from its DataType attribute\nuseful to determine which DataType to use when constructing a Variant",
             "params": [
@@ -28012,7 +28020,7 @@
                 {
                     "name": "item",
                     "description": "The object to check with.",
-                    "type": "EnumItem || String || Number"
+                    "type": "EnumItem | String | Number"
                 }
             ],
             "return": {
@@ -28032,7 +28040,7 @@
                 {
                     "name": "value",
                     "description": "The object to check with.",
-                    "type": "EnumItem || String || Number"
+                    "type": "EnumItem | String |Number"
                 }
             ],
             "return": {
@@ -30214,7 +30222,7 @@
         },
         {
             "file": "packages\\node-opcua-server\\src\\opcua_server.js",
-            "line": 1024,
+            "line": 1026,
             "itemtype": "method",
             "name": "userNameIdentityTokenAuthenticateUser",
             "params": [
@@ -30261,7 +30269,7 @@
         },
         {
             "file": "packages\\node-opcua-server\\src\\opcua_server.js",
-            "line": 1186,
+            "line": 1188,
             "itemtype": "method",
             "name": "_on_ActivateSessionRequest",
             "params": [
@@ -30283,7 +30291,7 @@
         },
         {
             "file": "packages\\node-opcua-server\\src\\opcua_server.js",
-            "line": 1404,
+            "line": 1406,
             "description": "ensure that action is performed on a valid session object,",
             "itemtype": "method",
             "name": "_apply_on_SessionObject",
@@ -30350,7 +30358,7 @@
         },
         {
             "file": "packages\\node-opcua-server\\src\\opcua_server.js",
-            "line": 1483,
+            "line": 1485,
             "itemtype": "method",
             "name": "_apply_on_Subscription",
             "params": [
@@ -30378,7 +30386,7 @@
         },
         {
             "file": "packages\\node-opcua-server\\src\\opcua_server.js",
-            "line": 1507,
+            "line": 1509,
             "itemtype": "method",
             "name": "_apply_on_SubscriptionIds",
             "params": [
@@ -30406,7 +30414,7 @@
         },
         {
             "file": "packages\\node-opcua-server\\src\\opcua_server.js",
-            "line": 1541,
+            "line": 1543,
             "itemtype": "method",
             "name": "_apply_on_Subscriptions",
             "params": [
@@ -30434,7 +30442,7 @@
         },
         {
             "file": "packages\\node-opcua-server\\src\\opcua_server.js",
-            "line": 1564,
+            "line": 1566,
             "itemtype": "method",
             "name": "_on_CloseSessionRequest",
             "params": [
@@ -30454,7 +30462,7 @@
         },
         {
             "file": "packages\\node-opcua-server\\src\\opcua_server.js",
-            "line": 1623,
+            "line": 1625,
             "itemtype": "method",
             "name": "_on_BrowseRequest",
             "params": [
@@ -30474,7 +30482,7 @@
         },
         {
             "file": "packages\\node-opcua-server\\src\\opcua_server.js",
-            "line": 1687,
+            "line": 1689,
             "itemtype": "method",
             "name": "_on_BrowseNextRequest",
             "params": [
@@ -30494,7 +30502,7 @@
         },
         {
             "file": "packages\\node-opcua-server\\src\\opcua_server.js",
-            "line": 2660,
+            "line": 2662,
             "itemtype": "method",
             "name": "registerServer",
             "async": 1,
@@ -43830,7 +43838,7 @@
                         {
                             "name": "err",
                             "description": "err = null if init succeeded",
-                            "type": "Error||null"
+                            "type": "Error|null"
                         }
                     ]
                 }
@@ -44450,10 +44458,6 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " packages\\node-opcua-data-value\\src\\datavalue.js:196"
-        },
-        {
-            "message": "replacing incorrect tag: returns with return",
             "line": " packages\\node-opcua-date-time\\src\\date_time.js:73"
         },
         {
@@ -44486,7 +44490,7 @@
         },
         {
             "message": "Missing item type",
-            "line": " packages\\node-opcua-client\\src\\client_session.js:1458"
+            "line": " packages\\node-opcua-client\\src\\client_session.js:1461"
         },
         {
             "message": "Missing item type\nreturn a deep copy of the dataValue by applying indexRange if necessary on  Array/Matrix",
