@@ -1,0 +1,1726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="flattr:id" content="me93y1">
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-25438821-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-25438821-3');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N63SL9Q');</script>
+    <!-- End Google Tag Manager -->
+
+    <title>packages\node-opcua-address-space\src\address_space.js - The NodeOPCUA API</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-8886208393040088",
+            enable_page_level_ads: true
+        });
+    </script>
+
+</head>
+<body class="yui3-skin-sam">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N63SL9Q"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+	    <img alt="The NodeOPCUA API" src="../assets/css/logo.png" style="max-height: 65%;" title="The NodeOPCUA API">
+            The NodeOPCUA API
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>0.4.5</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/AcknowledgeMessage", "classes/ActivateSessionRequest", "classes/ActivateSessionResponse", "classes/AddNodesItem", "classes/AddNodesRequest", "classes/AddNodesResponse", "classes/AddNodesResult", "classes/AddReferencesItem", "classes/AddReferencesRequest", "classes/AddReferencesResponse", "classes/AddressSpace", "classes/AggregateConfiguration", "classes/AggregateFilter", "classes/AnonymousIdentityToken", "classes/ApplicationDescription", "classes/ApplicationInstanceCertificate", "classes/Argument", "classes/AsymmetricAlgorithmSecurityHeader", "classes/AttributeIds", "classes/AttributeNameById", "classes/AttributeOperand", "classes/AxisInformation", "classes/BaseEventType", "classes/BaseNode
+
+BaseNode is the base class for all the OPCUA objects in the address space
+It provides attributes and a set of references to other nodes.
+see:
+{{#crossLink "UAObject"}}{{/crossLink}},
+{{#crossLink "UAVariable"}}{{/crossLink}},
+{{#crossLink "Reference"}}{{/crossLink}},
+{{#crossLink "UAMethod"}}{{/crossLink}},
+{{#crossLink "UAView"}}{{/crossLink}},
+{{#crossLink "UAObjecType"}}{{/crossLink}},
+{{#crossLink "UADataType"}}{{/crossLink}},
+{{#crossLink "UAVariableType"}}{{/crossLink}},", "classes/BaseUAObject", "classes/BinaryStream", "classes/BinaryStreamSizeCalculator", "classes/BrowseDescription", "classes/BrowseDirection", "classes/BrowseNextRequest", "classes/BrowseNextResponse", "classes/BrowsePath", "classes/BrowsePathResult", "classes/BrowsePathTarget", "classes/BrowseRequest", "classes/BrowseResponse", "classes/BrowseResult", "classes/BuildInfo", "classes/CallMethodRequest", "classes/CallMethodResult", "classes/CallRequest", "classes/CallResponse", "classes/CancelRequest", "classes/CancelResponse", "classes/ChannelSecurityToken", "classes/ChunkManager", "classes/ClientMonitoredItem", "classes/ClientMonitoredItemGroup", "classes/ClientSecureChannelLayer", "classes/ClientSession", "classes/ClientSidePublishEngine
+
+The ClientSidePublishEngine encapsulates the mechanism to
+deal with a OPCUA Server and constantly sending PublishRequest
+The ClientSidePublishEngine also performs  notification acknowledgements.
+Finally, ClientSidePublishEngine dispatch PublishResponse to the correct
+Subscription id callback", "classes/ClientSubscription", "classes/ClientTCP_transport", "classes/CloseSecureChannelRequest", "classes/CloseSecureChannelResponse", "classes/CloseSessionRequest", "classes/CloseSessionResponse", "classes/ConditionInfo", "classes/ConditionSnapshot", "classes/ContentFilter", "classes/ContentFilterElement", "classes/ContentFilterElementResult", "classes/ContentFilterResult", "classes/CreateMonitoredItemsRequest", "classes/CreateMonitoredItemsResponse", "classes/CreateSessionRequest", "classes/CreateSessionResponse", "classes/CreateSubscriptionRequest", "classes/CreateSubscriptionResponse", "classes/DataChangeFilter", "classes/DataChangeNotification", "classes/DataValue", "classes/DeleteMonitoredItemsRequest", "classes/DeleteMonitoredItemsResponse", "classes/DeleteNodesItem", "classes/DeleteNodesRequest", "classes/DeleteNodesResponse", "classes/DeleteReferencesItem", "classes/DeleteReferencesRequest", "classes/DeleteReferencesResponse", "classes/DeleteSubscriptionsRequest", "classes/DeleteSubscriptionsResponse", "classes/DiagnosticInfo", "classes/ElementOperand", "classes/EndpointDescription", "classes/Enum", "classes/EnumValueType", "classes/ErrorMessage", "classes/EUInformation", "classes/EventData", "classes/EventFieldList", "classes/EventFilter", "classes/EventFilterResult", "classes/EventNotificationList", "classes/ExpandedNodeId", "classes/Factory", "classes/FilterOperand", "classes/FindServersOnNetworkRequest", "classes/FindServersOnNetworkResponse", "classes/FindServersRequest", "classes/FindServersResponse", "classes/GetEndpointsRequest", "classes/GetEndpointsResponse", "classes/HelloMessage", "classes/HistoryData", "classes/HistoryModifiedData", "classes/HistoryReadDetails", "classes/HistoryReadRequest", "classes/HistoryReadResponse", "classes/HistoryReadResult", "classes/HistoryReadValueId", "classes/HistoryServerCapabilities", "classes/HistoryUpdateRequest", "classes/HistoryUpdateResponse", "classes/HistoryUpdateResult", "classes/IssuedIdentityToken", "classes/LiteralOperand", "classes/LocalizedText", "classes/MandatoryChildOrRequestedOptionalFilter
+return true if node is a mandatory child or a requested optional", "classes/MdnsDiscoveryConfiguration", "classes/MessageBuilder", "classes/MessageBuilderBase", "classes/MessageChunker", "classes/ModelChangeStructure", "classes/ModificationInfo", "classes/ModifyMonitoredItemsRequest", "classes/ModifyMonitoredItemsResponse", "classes/ModifySubscriptionRequest", "classes/ModifySubscriptionResponse", "classes/MonitoredItem", "classes/MonitoredItemCreateRequest", "classes/MonitoredItemCreateResult", "classes/MonitoredItemModifyRequest", "classes/MonitoredItemModifyResult", "classes/MonitoredItemNotification", "classes/MonitoringFilter", "classes/MonitoringParameters", "classes/NodeCrawler", "classes/NodeId", "classes/NodeIdType", "classes/NodeTypeDescription", "classes/NotificationMessage", "classes/opcua", "classes/OPCUABaseServer", "classes/OPCUAClient", "classes/OPCUAClientBase", "classes/OPCUASecureObject", "classes/OPCUAServer", "classes/OPCUAServerEndPoint
+
+A sever end point is listening to one port", "classes/OpenSecureChannelRequest", "classes/OpenSecureChannelResponse", "classes/OperationLimits", "classes/PacketAssembler", "classes/ParsingResult", "classes/PublishRequest", "classes/PublishResponse", "classes/QualifiedName", "classes/QueryDataDescription", "classes/QueryDataSet", "classes/QueryFirstRequest", "classes/QueryFirstResponse", "classes/QueryNextRequest", "classes/QueryNextResponse", "classes/Range", "classes/ReadAtTimeDetails", "classes/ReaderState", "classes/ReadEventDetails", "classes/ReadProcessedDetails", "classes/ReadRawModifiedDetails", "classes/ReadRequest", "classes/ReadResponse", "classes/ReadValueId", "classes/RedundantServer", "classes/Reference", "classes/ReferenceDescription", "classes/ReferenceType", "classes/RegisteredServer", "classes/RegisterNodesRequest", "classes/RegisterNodesResponse", "classes/RegisterServer2Request", "classes/RegisterServer2Response", "classes/RegisterServerRequest", "classes/RegisterServerResponse", "classes/RelativePath", "classes/RelativePathElement", "classes/RepublishRequest", "classes/RepublishResponse", "classes/RequestHeader", "classes/ResponseHeader", "classes/SamplingIntervalDiagnostics", "classes/SecureMessageChunkManager", "classes/SecurityPolicy", "classes/SemanticChangeStructure", "classes/SequenceHeader", "classes/SequenceNumberGenerator", "classes/ServerCapabilities", "classes/ServerDiagnosticsSummary", "classes/ServerEngine", "classes/ServerOnNetwork", "classes/ServerSecureChannelLayer", "classes/ServerSession", "classes/ServerSidePublishEngine
+ a Publish Engine for a given session", "classes/ServerStatus", "classes/ServerTCP_transport", "classes/ServiceCounter", "classes/ServiceFault", "classes/SessionContext", "classes/SessionDiagnostics", "classes/SessionSecurityDiagnostics", "classes/SetMonitoringModeRequest", "classes/SetMonitoringModeResponse", "classes/SetPublishingModeRequest", "classes/SetPublishingModeResponse", "classes/SetTriggeringRequest", "classes/SetTriggeringResponse", "classes/SignatureData", "classes/SignedSoftwareCertificate", "classes/SimpleAttributeOperand", "classes/Simulator", "classes/StatusChangeNotification", "classes/StatusCode", "classes/Subscription", "classes/SubscriptionAcknowledgement", "classes/SubscriptionDiagnostics", "classes/SymmetricAlgorithmSecurityHeader", "classes/TCP_transport", "classes/TCPErrorMessage", "classes/TimestampsToReturn", "classes/TimeZone", "classes/ToolBrowsePath", "classes/TransferResult", "classes/TransferSubscriptionsRequest", "classes/TransferSubscriptionsResponse", "classes/TranslateBrowsePathsToNodeIdsRequest", "classes/TranslateBrowsePathsToNodeIdsResponse", "classes/TypeSchema", "classes/UAAcknowledgeableConditionBase", "classes/UAAlarmConditionBase", "classes/UACertificateExpirationAlarm
+
+This SystemOffNormalAlarmType is raised by the Server when the Server’s Certificate is within the ExpirationLimit
+of expiration. This alarm automatically returns to normal when the certificate is updated.", "classes/UAConditionBase", "classes/UADataType", "classes/UADiscreteAlarm
+
+The DiscreteAlarmType is used to classify Types into Alarm Conditions where the input for the
+Alarm may take on only a certain number of possible values (e.g. true/false,
+running/stopped/terminating).", "classes/UAExclusiveDeviationAlarm", "classes/UAExclusiveLevelAlarm", "classes/UAExclusiveLimitAlarm", "classes/UAExclusiveRateOfChangeAlarm", "classes/UALimitAlarm", "classes/UAMultiStateDiscreteType", "classes/UANonExclusiveDeviationAlarm", "classes/UANonExclusiveLimitAlarm", "classes/UAObject", "classes/UAObjectType", "classes/UAOffNormalAlarm", "classes/UAProxyManager", "classes/UASystemOffNormalAlarm", "classes/UATripAlarm
+
+The TripAlarmType is a specialization of the OffNormalAlarmType intended to represent an equipment trip Condition.
+The Alarm becomes active when the monitored piece of equipment experiences some abnormal fault such as a motor
+shutting down due to an overload Condition. This Type is mainly used for categorization.", "classes/UATwoStateVariable", "classes/UAVariable", "classes/UAVariableType", "classes/UnregisterNodesRequest", "classes/UnregisterNodesResponse", "classes/UserNameIdentityToken", "classes/UserTokenPolicy", "classes/Variant", "classes/View", "classes/ViewDescription", "classes/WriteRequest", "classes/WriteResponse", "classes/WriteValue", "classes/X509IdentityToken", "classes/Xml2Json", "modules/opcua.address_space", "modules/opcua.address_space.AlarmsAndConditions", "modules/opcua.address_space.types", "modules/opcua.client", "modules/opcua.data-value", "modules/opcua.datamodel", "modules/opcua.miscellaneous", "modules/opcua.server", "modules/opcua.server.simulation", "modules/opcua.status-code", "modules/opcua.transport", "modules/opcua.utils", "modules/opcua.variant", "modules/service.filter.tools", "modules/services.browse", "modules/services.call", "modules/services.discovery", "modules/services.endpoints", "modules/services.filter", "modules/services.history", "modules/services.node_management", "modules/services.query", "modules/services.read", "modules/services.register-server", "modules/services.register_node", "modules/services.secure-channel", "modules/services.session", "modules/services.subscription", "modules/services.translate-browse-path", "modules/services.write", "modules/StatusCodes", "modules/xml2json
+
+node -> see if https://github.com/isaacs/sax-js could be used instead"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+
+<div class="row">
+<script type="text/javascript" src="http://www.google.com/cse/query_renderer.js"></script>
+<div id="queries"></div>
+<script src="http://www.google.com/cse/api/partner-pub-8886208393040088/cse/1374394727/queries/js?oe=UTF-8&amp;callback=(new+PopularQueryRenderer(document.getElementById(%22queries%22))).render"></script>
+
+</div>
+
+    <div class="row">
+        <div class="span3">
+
+            <!-- Ad by Google -->
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-format="fluid"
+                 data-ad-layout-key="-8h+1u-de+eo+dy"
+                 data-ad-client="ca-pub-8886208393040088"
+                 data-ad-slot="9362364253"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <!-- -->
+
+	         <div>
+	             <h3>APIs</h3>
+	             <div id="sidebar">
+	                 <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
+	                     <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
+	                     <li><a href="#modules" data-toggle="tab">Modules</a></li>
+	                 </ul>
+	         
+	                 <div id="api-tabview-filter">
+	                     <input type="search" placeholder="Type to filter APIs">
+	                 </div>
+	         
+	                 <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
+	                     <div class="tab-pane active" id="classes">
+	                         <ul id="api-classes" class="nav nav-list">
+	                                 <li><a href="../classes/AcknowledgeMessage.html">AcknowledgeMessage</a></li>
+	                                 <li><a href="../classes/ActivateSessionRequest.html">ActivateSessionRequest</a></li>
+	                                 <li><a href="../classes/ActivateSessionResponse.html">ActivateSessionResponse</a></li>
+	                                 <li><a href="../classes/AddNodesItem.html">AddNodesItem</a></li>
+	                                 <li><a href="../classes/AddNodesRequest.html">AddNodesRequest</a></li>
+	                                 <li><a href="../classes/AddNodesResponse.html">AddNodesResponse</a></li>
+	                                 <li><a href="../classes/AddNodesResult.html">AddNodesResult</a></li>
+	                                 <li><a href="../classes/AddReferencesItem.html">AddReferencesItem</a></li>
+	                                 <li><a href="../classes/AddReferencesRequest.html">AddReferencesRequest</a></li>
+	                                 <li><a href="../classes/AddReferencesResponse.html">AddReferencesResponse</a></li>
+	                                 <li><a href="../classes/AddressSpace.html">AddressSpace</a></li>
+	                                 <li><a href="../classes/AggregateConfiguration.html">AggregateConfiguration</a></li>
+	                                 <li><a href="../classes/AggregateFilter.html">AggregateFilter</a></li>
+	                                 <li><a href="../classes/AnonymousIdentityToken.html">AnonymousIdentityToken</a></li>
+	                                 <li><a href="../classes/ApplicationDescription.html">ApplicationDescription</a></li>
+	                                 <li><a href="../classes/ApplicationInstanceCertificate.html">ApplicationInstanceCertificate</a></li>
+	                                 <li><a href="../classes/Argument.html">Argument</a></li>
+	                                 <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
+	                                 <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+	                                 <li><a href="../classes/AttributeNameById.html">AttributeNameById</a></li>
+	                                 <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
+	                                 <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
+	                                 <li><a href="../classes/BaseEventType.html">BaseEventType</a></li>
+	                                 <li><a href="../classes/BaseNode
+	         
+	         BaseNode is the base class for all the OPCUA objects in the address space
+	         It provides attributes and a set of references to other nodes.
+	         see:
+	         {{#crossLink &quot;UAObject&quot;}}{{/crossLink}},
+	         {{#crossLink &quot;UAVariable&quot;}}{{/crossLink}},
+	         {{#crossLink &quot;Reference&quot;}}{{/crossLink}},
+	         {{#crossLink &quot;UAMethod&quot;}}{{/crossLink}},
+	         {{#crossLink &quot;UAView&quot;}}{{/crossLink}},
+	         {{#crossLink &quot;UAObjecType&quot;}}{{/crossLink}},
+	         {{#crossLink &quot;UADataType&quot;}}{{/crossLink}},
+	         {{#crossLink &quot;UAVariableType&quot;}}{{/crossLink}},.html">BaseNode
+	         
+	         BaseNode is the base class for all the OPCUA objects in the address space
+	         It provides attributes and a set of references to other nodes.
+	         see:
+	         {{#crossLink &quot;UAObject&quot;}}{{/crossLink}},
+	         {{#crossLink &quot;UAVariable&quot;}}{{/crossLink}},
+	         {{#crossLink &quot;Reference&quot;}}{{/crossLink}},
+	         {{#crossLink &quot;UAMethod&quot;}}{{/crossLink}},
+	         {{#crossLink &quot;UAView&quot;}}{{/crossLink}},
+	         {{#crossLink &quot;UAObjecType&quot;}}{{/crossLink}},
+	         {{#crossLink &quot;UADataType&quot;}}{{/crossLink}},
+	         {{#crossLink &quot;UAVariableType&quot;}}{{/crossLink}},</a></li>
+	                                 <li><a href="../classes/BaseUAObject.html">BaseUAObject</a></li>
+	                                 <li><a href="../classes/BinaryStream.html">BinaryStream</a></li>
+	                                 <li><a href="../classes/BinaryStreamSizeCalculator.html">BinaryStreamSizeCalculator</a></li>
+	                                 <li><a href="../classes/BrowseDescription.html">BrowseDescription</a></li>
+	                                 <li><a href="../classes/BrowseDirection.html">BrowseDirection</a></li>
+	                                 <li><a href="../classes/BrowseNextRequest.html">BrowseNextRequest</a></li>
+	                                 <li><a href="../classes/BrowseNextResponse.html">BrowseNextResponse</a></li>
+	                                 <li><a href="../classes/BrowsePath.html">BrowsePath</a></li>
+	                                 <li><a href="../classes/BrowsePathResult.html">BrowsePathResult</a></li>
+	                                 <li><a href="../classes/BrowsePathTarget.html">BrowsePathTarget</a></li>
+	                                 <li><a href="../classes/BrowseRequest.html">BrowseRequest</a></li>
+	                                 <li><a href="../classes/BrowseResponse.html">BrowseResponse</a></li>
+	                                 <li><a href="../classes/BrowseResult.html">BrowseResult</a></li>
+	                                 <li><a href="../classes/BuildInfo.html">BuildInfo</a></li>
+	                                 <li><a href="../classes/CallMethodRequest.html">CallMethodRequest</a></li>
+	                                 <li><a href="../classes/CallMethodResult.html">CallMethodResult</a></li>
+	                                 <li><a href="../classes/CallRequest.html">CallRequest</a></li>
+	                                 <li><a href="../classes/CallResponse.html">CallResponse</a></li>
+	                                 <li><a href="../classes/CancelRequest.html">CancelRequest</a></li>
+	                                 <li><a href="../classes/CancelResponse.html">CancelResponse</a></li>
+	                                 <li><a href="../classes/ChannelSecurityToken.html">ChannelSecurityToken</a></li>
+	                                 <li><a href="../classes/ChunkManager.html">ChunkManager</a></li>
+	                                 <li><a href="../classes/ClientMonitoredItem.html">ClientMonitoredItem</a></li>
+	                                 <li><a href="../classes/ClientMonitoredItemGroup.html">ClientMonitoredItemGroup</a></li>
+	                                 <li><a href="../classes/ClientSecureChannelLayer.html">ClientSecureChannelLayer</a></li>
+	                                 <li><a href="../classes/ClientSession.html">ClientSession</a></li>
+	                                 <li><a href="../classes/ClientSidePublishEngine
+	         
+	         The ClientSidePublishEngine encapsulates the mechanism to
+	         deal with a OPCUA Server and constantly sending PublishRequest
+	         The ClientSidePublishEngine also performs  notification acknowledgements.
+	         Finally, ClientSidePublishEngine dispatch PublishResponse to the correct
+	         Subscription id callback.html">ClientSidePublishEngine
+	         
+	         The ClientSidePublishEngine encapsulates the mechanism to
+	         deal with a OPCUA Server and constantly sending PublishRequest
+	         The ClientSidePublishEngine also performs  notification acknowledgements.
+	         Finally, ClientSidePublishEngine dispatch PublishResponse to the correct
+	         Subscription id callback</a></li>
+	                                 <li><a href="../classes/ClientSubscription.html">ClientSubscription</a></li>
+	                                 <li><a href="../classes/ClientTCP_transport.html">ClientTCP_transport</a></li>
+	                                 <li><a href="../classes/CloseSecureChannelRequest.html">CloseSecureChannelRequest</a></li>
+	                                 <li><a href="../classes/CloseSecureChannelResponse.html">CloseSecureChannelResponse</a></li>
+	                                 <li><a href="../classes/CloseSessionRequest.html">CloseSessionRequest</a></li>
+	                                 <li><a href="../classes/CloseSessionResponse.html">CloseSessionResponse</a></li>
+	                                 <li><a href="../classes/ConditionInfo.html">ConditionInfo</a></li>
+	                                 <li><a href="../classes/ContentFilter.html">ContentFilter</a></li>
+	                                 <li><a href="../classes/ContentFilterElement.html">ContentFilterElement</a></li>
+	                                 <li><a href="../classes/ContentFilterElementResult.html">ContentFilterElementResult</a></li>
+	                                 <li><a href="../classes/ContentFilterResult.html">ContentFilterResult</a></li>
+	                                 <li><a href="../classes/CreateMonitoredItemsRequest.html">CreateMonitoredItemsRequest</a></li>
+	                                 <li><a href="../classes/CreateMonitoredItemsResponse.html">CreateMonitoredItemsResponse</a></li>
+	                                 <li><a href="../classes/CreateSessionRequest.html">CreateSessionRequest</a></li>
+	                                 <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
+	                                 <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
+	                                 <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
+	                                 <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
+	                                 <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
+	                                 <li><a href="../classes/DataValue.html">DataValue</a></li>
+	                                 <li><a href="../classes/DeleteMonitoredItemsRequest.html">DeleteMonitoredItemsRequest</a></li>
+	                                 <li><a href="../classes/DeleteMonitoredItemsResponse.html">DeleteMonitoredItemsResponse</a></li>
+	                                 <li><a href="../classes/DeleteNodesItem.html">DeleteNodesItem</a></li>
+	                                 <li><a href="../classes/DeleteNodesRequest.html">DeleteNodesRequest</a></li>
+	                                 <li><a href="../classes/DeleteNodesResponse.html">DeleteNodesResponse</a></li>
+	                                 <li><a href="../classes/DeleteReferencesItem.html">DeleteReferencesItem</a></li>
+	                                 <li><a href="../classes/DeleteReferencesRequest.html">DeleteReferencesRequest</a></li>
+	                                 <li><a href="../classes/DeleteReferencesResponse.html">DeleteReferencesResponse</a></li>
+	                                 <li><a href="../classes/DeleteSubscriptionsRequest.html">DeleteSubscriptionsRequest</a></li>
+	                                 <li><a href="../classes/DeleteSubscriptionsResponse.html">DeleteSubscriptionsResponse</a></li>
+	                                 <li><a href="../classes/DiagnosticInfo.html">DiagnosticInfo</a></li>
+	                                 <li><a href="../classes/ElementOperand.html">ElementOperand</a></li>
+	                                 <li><a href="../classes/EndpointDescription.html">EndpointDescription</a></li>
+	                                 <li><a href="../classes/Enum.html">Enum</a></li>
+	                                 <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
+	                                 <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
+	                                 <li><a href="../classes/EUInformation.html">EUInformation</a></li>
+	                                 <li><a href="../classes/EventData.html">EventData</a></li>
+	                                 <li><a href="../classes/EventFieldList.html">EventFieldList</a></li>
+	                                 <li><a href="../classes/EventFilter.html">EventFilter</a></li>
+	                                 <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
+	                                 <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
+	                                 <li><a href="../classes/ExpandedNodeId.html">ExpandedNodeId</a></li>
+	                                 <li><a href="../classes/Factory.html">Factory</a></li>
+	                                 <li><a href="../classes/FilterOperand.html">FilterOperand</a></li>
+	                                 <li><a href="../classes/FindServersOnNetworkRequest.html">FindServersOnNetworkRequest</a></li>
+	                                 <li><a href="../classes/FindServersOnNetworkResponse.html">FindServersOnNetworkResponse</a></li>
+	                                 <li><a href="../classes/FindServersRequest.html">FindServersRequest</a></li>
+	                                 <li><a href="../classes/FindServersResponse.html">FindServersResponse</a></li>
+	                                 <li><a href="../classes/GetEndpointsRequest.html">GetEndpointsRequest</a></li>
+	                                 <li><a href="../classes/GetEndpointsResponse.html">GetEndpointsResponse</a></li>
+	                                 <li><a href="../classes/HelloMessage.html">HelloMessage</a></li>
+	                                 <li><a href="../classes/HistoryData.html">HistoryData</a></li>
+	                                 <li><a href="../classes/HistoryModifiedData.html">HistoryModifiedData</a></li>
+	                                 <li><a href="../classes/HistoryReadDetails.html">HistoryReadDetails</a></li>
+	                                 <li><a href="../classes/HistoryReadRequest.html">HistoryReadRequest</a></li>
+	                                 <li><a href="../classes/HistoryReadResponse.html">HistoryReadResponse</a></li>
+	                                 <li><a href="../classes/HistoryReadResult.html">HistoryReadResult</a></li>
+	                                 <li><a href="../classes/HistoryReadValueId.html">HistoryReadValueId</a></li>
+	                                 <li><a href="../classes/HistoryServerCapabilities.html">HistoryServerCapabilities</a></li>
+	                                 <li><a href="../classes/HistoryUpdateRequest.html">HistoryUpdateRequest</a></li>
+	                                 <li><a href="../classes/HistoryUpdateResponse.html">HistoryUpdateResponse</a></li>
+	                                 <li><a href="../classes/HistoryUpdateResult.html">HistoryUpdateResult</a></li>
+	                                 <li><a href="../classes/IssuedIdentityToken.html">IssuedIdentityToken</a></li>
+	                                 <li><a href="../classes/LiteralOperand.html">LiteralOperand</a></li>
+	                                 <li><a href="../classes/LocalizedText.html">LocalizedText</a></li>
+	                                 <li><a href="../classes/MandatoryChildOrRequestedOptionalFilter
+	         return true if node is a mandatory child or a requested optional.html">MandatoryChildOrRequestedOptionalFilter
+	         return true if node is a mandatory child or a requested optional</a></li>
+	                                 <li><a href="../classes/MdnsDiscoveryConfiguration.html">MdnsDiscoveryConfiguration</a></li>
+	                                 <li><a href="../classes/MessageBuilder.html">MessageBuilder</a></li>
+	                                 <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
+	                                 <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
+	                                 <li><a href="../classes/ModelChangeStructure.html">ModelChangeStructure</a></li>
+	                                 <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
+	                                 <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
+	                                 <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
+	                                 <li><a href="../classes/ModifySubscriptionRequest.html">ModifySubscriptionRequest</a></li>
+	                                 <li><a href="../classes/ModifySubscriptionResponse.html">ModifySubscriptionResponse</a></li>
+	                                 <li><a href="../classes/MonitoredItem.html">MonitoredItem</a></li>
+	                                 <li><a href="../classes/MonitoredItemCreateRequest.html">MonitoredItemCreateRequest</a></li>
+	                                 <li><a href="../classes/MonitoredItemCreateResult.html">MonitoredItemCreateResult</a></li>
+	                                 <li><a href="../classes/MonitoredItemModifyRequest.html">MonitoredItemModifyRequest</a></li>
+	                                 <li><a href="../classes/MonitoredItemModifyResult.html">MonitoredItemModifyResult</a></li>
+	                                 <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
+	                                 <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
+	                                 <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+	                                 <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
+	                                 <li><a href="../classes/NodeId.html">NodeId</a></li>
+	                                 <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
+	                                 <li><a href="../classes/NodeTypeDescription.html">NodeTypeDescription</a></li>
+	                                 <li><a href="../classes/NotificationMessage.html">NotificationMessage</a></li>
+	                                 <li><a href="../classes/opcua.html">opcua</a></li>
+	                                 <li><a href="../classes/OPCUABaseServer.html">OPCUABaseServer</a></li>
+	                                 <li><a href="../classes/OPCUAClient.html">OPCUAClient</a></li>
+	                                 <li><a href="../classes/OPCUAClientBase.html">OPCUAClientBase</a></li>
+	                                 <li><a href="../classes/OPCUASecureObject.html">OPCUASecureObject</a></li>
+	                                 <li><a href="../classes/OPCUAServer.html">OPCUAServer</a></li>
+	                                 <li><a href="../classes/OPCUAServerEndPoint
+	         
+	         A sever end point is listening to one port.html">OPCUAServerEndPoint
+	         
+	         A sever end point is listening to one port</a></li>
+	                                 <li><a href="../classes/OpenSecureChannelRequest.html">OpenSecureChannelRequest</a></li>
+	                                 <li><a href="../classes/OpenSecureChannelResponse.html">OpenSecureChannelResponse</a></li>
+	                                 <li><a href="../classes/OperationLimits.html">OperationLimits</a></li>
+	                                 <li><a href="../classes/PacketAssembler.html">PacketAssembler</a></li>
+	                                 <li><a href="../classes/ParsingResult.html">ParsingResult</a></li>
+	                                 <li><a href="../classes/PublishRequest.html">PublishRequest</a></li>
+	                                 <li><a href="../classes/PublishResponse.html">PublishResponse</a></li>
+	                                 <li><a href="../classes/QualifiedName.html">QualifiedName</a></li>
+	                                 <li><a href="../classes/QueryDataDescription.html">QueryDataDescription</a></li>
+	                                 <li><a href="../classes/QueryDataSet.html">QueryDataSet</a></li>
+	                                 <li><a href="../classes/QueryFirstRequest.html">QueryFirstRequest</a></li>
+	                                 <li><a href="../classes/QueryFirstResponse.html">QueryFirstResponse</a></li>
+	                                 <li><a href="../classes/QueryNextRequest.html">QueryNextRequest</a></li>
+	                                 <li><a href="../classes/QueryNextResponse.html">QueryNextResponse</a></li>
+	                                 <li><a href="../classes/Range.html">Range</a></li>
+	                                 <li><a href="../classes/ReadAtTimeDetails.html">ReadAtTimeDetails</a></li>
+	                                 <li><a href="../classes/ReadEventDetails.html">ReadEventDetails</a></li>
+	                                 <li><a href="../classes/ReadProcessedDetails.html">ReadProcessedDetails</a></li>
+	                                 <li><a href="../classes/ReadRawModifiedDetails.html">ReadRawModifiedDetails</a></li>
+	                                 <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
+	                                 <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
+	                                 <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+	                                 <li><a href="../classes/RedundantServer.html">RedundantServer</a></li>
+	                                 <li><a href="../classes/Reference.html">Reference</a></li>
+	                                 <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
+	                                 <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
+	                                 <li><a href="../classes/RegisteredServer.html">RegisteredServer</a></li>
+	                                 <li><a href="../classes/RegisterNodesRequest.html">RegisterNodesRequest</a></li>
+	                                 <li><a href="../classes/RegisterNodesResponse.html">RegisterNodesResponse</a></li>
+	                                 <li><a href="../classes/RegisterServer2Request.html">RegisterServer2Request</a></li>
+	                                 <li><a href="../classes/RegisterServer2Response.html">RegisterServer2Response</a></li>
+	                                 <li><a href="../classes/RegisterServerRequest.html">RegisterServerRequest</a></li>
+	                                 <li><a href="../classes/RegisterServerResponse.html">RegisterServerResponse</a></li>
+	                                 <li><a href="../classes/RelativePath.html">RelativePath</a></li>
+	                                 <li><a href="../classes/RelativePathElement.html">RelativePathElement</a></li>
+	                                 <li><a href="../classes/RepublishRequest.html">RepublishRequest</a></li>
+	                                 <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
+	                                 <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
+	                                 <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+	                                 <li><a href="../classes/SamplingIntervalDiagnostics.html">SamplingIntervalDiagnostics</a></li>
+	                                 <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
+	                                 <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
+	                                 <li><a href="../classes/SemanticChangeStructure.html">SemanticChangeStructure</a></li>
+	                                 <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
+	                                 <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
+	                                 <li><a href="../classes/ServerCapabilities.html">ServerCapabilities</a></li>
+	                                 <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
+	                                 <li><a href="../classes/ServerEngine.html">ServerEngine</a></li>
+	                                 <li><a href="../classes/ServerOnNetwork.html">ServerOnNetwork</a></li>
+	                                 <li><a href="../classes/ServerSecureChannelLayer.html">ServerSecureChannelLayer</a></li>
+	                                 <li><a href="../classes/ServerSidePublishEngine
+	          a Publish Engine for a given session.html">ServerSidePublishEngine
+	          a Publish Engine for a given session</a></li>
+	                                 <li><a href="../classes/ServerStatus.html">ServerStatus</a></li>
+	                                 <li><a href="../classes/ServerTCP_transport.html">ServerTCP_transport</a></li>
+	                                 <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
+	                                 <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
+	                                 <li><a href="../classes/SessionContext.html">SessionContext</a></li>
+	                                 <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+	                                 <li><a href="../classes/SessionSecurityDiagnostics.html">SessionSecurityDiagnostics</a></li>
+	                                 <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
+	                                 <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
+	                                 <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
+	                                 <li><a href="../classes/SetPublishingModeResponse.html">SetPublishingModeResponse</a></li>
+	                                 <li><a href="../classes/SetTriggeringRequest.html">SetTriggeringRequest</a></li>
+	                                 <li><a href="../classes/SetTriggeringResponse.html">SetTriggeringResponse</a></li>
+	                                 <li><a href="../classes/SignatureData.html">SignatureData</a></li>
+	                                 <li><a href="../classes/SignedSoftwareCertificate.html">SignedSoftwareCertificate</a></li>
+	                                 <li><a href="../classes/SimpleAttributeOperand.html">SimpleAttributeOperand</a></li>
+	                                 <li><a href="../classes/Simulator.html">Simulator</a></li>
+	                                 <li><a href="../classes/StatusChangeNotification.html">StatusChangeNotification</a></li>
+	                                 <li><a href="../classes/StatusCode.html">StatusCode</a></li>
+	                                 <li><a href="../classes/Subscription.html">Subscription</a></li>
+	                                 <li><a href="../classes/SubscriptionAcknowledgement.html">SubscriptionAcknowledgement</a></li>
+	                                 <li><a href="../classes/SubscriptionDiagnostics.html">SubscriptionDiagnostics</a></li>
+	                                 <li><a href="../classes/SymmetricAlgorithmSecurityHeader.html">SymmetricAlgorithmSecurityHeader</a></li>
+	                                 <li><a href="../classes/TCP_transport.html">TCP_transport</a></li>
+	                                 <li><a href="../classes/TCPErrorMessage.html">TCPErrorMessage</a></li>
+	                                 <li><a href="../classes/TimestampsToReturn.html">TimestampsToReturn</a></li>
+	                                 <li><a href="../classes/TimeZone.html">TimeZone</a></li>
+	                                 <li><a href="../classes/ToolBrowsePath.html">ToolBrowsePath</a></li>
+	                                 <li><a href="../classes/TransferResult.html">TransferResult</a></li>
+	                                 <li><a href="../classes/TransferSubscriptionsRequest.html">TransferSubscriptionsRequest</a></li>
+	                                 <li><a href="../classes/TransferSubscriptionsResponse.html">TransferSubscriptionsResponse</a></li>
+	                                 <li><a href="../classes/TranslateBrowsePathsToNodeIdsRequest.html">TranslateBrowsePathsToNodeIdsRequest</a></li>
+	                                 <li><a href="../classes/TranslateBrowsePathsToNodeIdsResponse.html">TranslateBrowsePathsToNodeIdsResponse</a></li>
+	                                 <li><a href="../classes/TypeSchema.html">TypeSchema</a></li>
+	                                 <li><a href="../classes/UAAcknowledgeableConditionBase.html">UAAcknowledgeableConditionBase</a></li>
+	                                 <li><a href="../classes/UAAlarmConditionBase.html">UAAlarmConditionBase</a></li>
+	                                 <li><a href="../classes/UACertificateExpirationAlarm
+	         
+	         This SystemOffNormalAlarmType is raised by the Server when the Server’s Certificate is within the ExpirationLimit
+	         of expiration. This alarm automatically returns to normal when the certificate is updated..html">UACertificateExpirationAlarm
+	         
+	         This SystemOffNormalAlarmType is raised by the Server when the Server’s Certificate is within the ExpirationLimit
+	         of expiration. This alarm automatically returns to normal when the certificate is updated.</a></li>
+	                                 <li><a href="../classes/UAConditionBase.html">UAConditionBase</a></li>
+	                                 <li><a href="../classes/UADataType.html">UADataType</a></li>
+	                                 <li><a href="../classes/UADiscreteAlarm
+	         
+	         The DiscreteAlarmType is used to classify Types into Alarm Conditions where the input for the
+	         Alarm may take on only a certain number of possible values (e.g. true/false,
+	         running/stopped/terminating)..html">UADiscreteAlarm
+	         
+	         The DiscreteAlarmType is used to classify Types into Alarm Conditions where the input for the
+	         Alarm may take on only a certain number of possible values (e.g. true/false,
+	         running/stopped/terminating).</a></li>
+	                                 <li><a href="../classes/UAExclusiveDeviationAlarm.html">UAExclusiveDeviationAlarm</a></li>
+	                                 <li><a href="../classes/UAExclusiveLevelAlarm.html">UAExclusiveLevelAlarm</a></li>
+	                                 <li><a href="../classes/UAExclusiveLimitAlarm.html">UAExclusiveLimitAlarm</a></li>
+	                                 <li><a href="../classes/UAExclusiveRateOfChangeAlarm.html">UAExclusiveRateOfChangeAlarm</a></li>
+	                                 <li><a href="../classes/UALimitAlarm.html">UALimitAlarm</a></li>
+	                                 <li><a href="../classes/UAMultiStateDiscreteType.html">UAMultiStateDiscreteType</a></li>
+	                                 <li><a href="../classes/UANonExclusiveDeviationAlarm.html">UANonExclusiveDeviationAlarm</a></li>
+	                                 <li><a href="../classes/UANonExclusiveLimitAlarm.html">UANonExclusiveLimitAlarm</a></li>
+	                                 <li><a href="../classes/UAObject.html">UAObject</a></li>
+	                                 <li><a href="../classes/UAObjectType.html">UAObjectType</a></li>
+	                                 <li><a href="../classes/UAOffNormalAlarm.html">UAOffNormalAlarm</a></li>
+	                                 <li><a href="../classes/UAProxyManager.html">UAProxyManager</a></li>
+	                                 <li><a href="../classes/UASystemOffNormalAlarm.html">UASystemOffNormalAlarm</a></li>
+	                                 <li><a href="../classes/UATripAlarm
+	         
+	         The TripAlarmType is a specialization of the OffNormalAlarmType intended to represent an equipment trip Condition.
+	         The Alarm becomes active when the monitored piece of equipment experiences some abnormal fault such as a motor
+	         shutting down due to an overload Condition. This Type is mainly used for categorization..html">UATripAlarm
+	         
+	         The TripAlarmType is a specialization of the OffNormalAlarmType intended to represent an equipment trip Condition.
+	         The Alarm becomes active when the monitored piece of equipment experiences some abnormal fault such as a motor
+	         shutting down due to an overload Condition. This Type is mainly used for categorization.</a></li>
+	                                 <li><a href="../classes/UATwoStateVariable.html">UATwoStateVariable</a></li>
+	                                 <li><a href="../classes/UAVariable.html">UAVariable</a></li>
+	                                 <li><a href="../classes/UAVariableType.html">UAVariableType</a></li>
+	                                 <li><a href="../classes/UnregisterNodesRequest.html">UnregisterNodesRequest</a></li>
+	                                 <li><a href="../classes/UnregisterNodesResponse.html">UnregisterNodesResponse</a></li>
+	                                 <li><a href="../classes/UserNameIdentityToken.html">UserNameIdentityToken</a></li>
+	                                 <li><a href="../classes/UserTokenPolicy.html">UserTokenPolicy</a></li>
+	                                 <li><a href="../classes/Variant.html">Variant</a></li>
+	                                 <li><a href="../classes/View.html">View</a></li>
+	                                 <li><a href="../classes/ViewDescription.html">ViewDescription</a></li>
+	                                 <li><a href="../classes/WriteRequest.html">WriteRequest</a></li>
+	                                 <li><a href="../classes/WriteResponse.html">WriteResponse</a></li>
+	                                 <li><a href="../classes/WriteValue.html">WriteValue</a></li>
+	                                 <li><a href="../classes/X509IdentityToken.html">X509IdentityToken</a></li>
+	                                 <li><a href="../classes/Xml2Json.html">Xml2Json</a></li>
+	                         </ul>
+	                     </div>
+	         
+	                     <div class="tab-pane" id="modules">
+	                         <ul id="api-modules" class="nav nav-list">
+	                                 <li><a href="../modules/opcua.address_space.html">opcua.address_space</a></li>
+	                                 <li><a href="../modules/opcua.address_space.AlarmsAndConditions.html">opcua.address_space.AlarmsAndConditions</a></li>
+	                                 <li><a href="../modules/opcua.address_space.types.html">opcua.address_space.types</a></li>
+	                                 <li><a href="../modules/opcua.client.html">opcua.client</a></li>
+	                                 <li><a href="../modules/opcua.data-value.html">opcua.data-value</a></li>
+	                                 <li><a href="../modules/opcua.datamodel.html">opcua.datamodel</a></li>
+	                                 <li><a href="../modules/opcua.miscellaneous.html">opcua.miscellaneous</a></li>
+	                                 <li><a href="../modules/opcua.server.html">opcua.server</a></li>
+	                                 <li><a href="../modules/opcua.server.simulation.html">opcua.server.simulation</a></li>
+	                                 <li><a href="../modules/opcua.status-code.html">opcua.status-code</a></li>
+	                                 <li><a href="../modules/opcua.transport.html">opcua.transport</a></li>
+	                                 <li><a href="../modules/opcua.utils.html">opcua.utils</a></li>
+	                                 <li><a href="../modules/opcua.variant.html">opcua.variant</a></li>
+	                                 <li><a href="../modules/service.filter.tools.html">service.filter.tools</a></li>
+	                                 <li><a href="../modules/services.browse.html">services.browse</a></li>
+	                                 <li><a href="../modules/services.call.html">services.call</a></li>
+	                                 <li><a href="../modules/services.discovery.html">services.discovery</a></li>
+	                                 <li><a href="../modules/services.endpoints.html">services.endpoints</a></li>
+	                                 <li><a href="../modules/services.filter.html">services.filter</a></li>
+	                                 <li><a href="../modules/services.history.html">services.history</a></li>
+	                                 <li><a href="../modules/services.node_management.html">services.node_management</a></li>
+	                                 <li><a href="../modules/services.query.html">services.query</a></li>
+	                                 <li><a href="../modules/services.read.html">services.read</a></li>
+	                                 <li><a href="../modules/services.register-server.html">services.register-server</a></li>
+	                                 <li><a href="../modules/services.register_node.html">services.register_node</a></li>
+	                                 <li><a href="../modules/services.secure-channel.html">services.secure-channel</a></li>
+	                                 <li><a href="../modules/services.session.html">services.session</a></li>
+	                                 <li><a href="../modules/services.subscription.html">services.subscription</a></li>
+	                                 <li><a href="../modules/services.translate-browse-path.html">services.translate-browse-path</a></li>
+	                                 <li><a href="../modules/services.write.html">services.write</a></li>
+	                                 <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
+	                                 <li><a href="../modules/xml2json
+	         
+	         node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+	         
+	         node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
+	                         </ul>
+	                     </div>
+	                 </div>
+	             </div>
+	         </div>
+	    
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+                    Show:
+                    <label for="api-show-inherited" class="checkbox">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected" class="checkbox">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private" class="checkbox">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated" class="checkbox">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </form>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<div class="page-header">
+    <h1>packages\node-opcua-address-space\src\address_space.js <small>File</small></h1>
+</div>
+
+<div class="file">
+    <pre class="prettyprint linenums">
+&quot;use strict&quot;;
+
+/**
+ * @module opcua.address_space
+ */
+
+
+const NodeClass = require(&quot;node-opcua-data-model&quot;).NodeClass;
+const NodeId = require(&quot;node-opcua-nodeid&quot;).NodeId;
+const makeNodeId = require(&quot;node-opcua-nodeid&quot;).makeNodeId;
+const resolveNodeId = require(&quot;node-opcua-nodeid&quot;).resolveNodeId;
+const sameNodeId =require(&quot;node-opcua-nodeid&quot;).sameNodeId;
+
+const assert = require(&quot;node-opcua-assert&quot;).assert;
+const _ = require(&quot;underscore&quot;);
+const Dequeue = require(&quot;dequeue&quot;);
+
+const utils = require(&quot;node-opcua-utils&quot;);
+const dumpIf = require(&quot;node-opcua-debug&quot;).dumpIf;
+
+
+
+
+const BaseNode = require(&quot;./base_node&quot;).BaseNode;
+const ReferenceType = require(&quot;./referenceType&quot;).ReferenceType;
+const UAVariable = require(&quot;./ua_variable&quot;).UAVariable;
+const UAVariableType = require(&quot;./ua_variable_type&quot;).UAVariableType;
+const UAObjectType = require(&quot;./ua_object_type&quot;).UAObjectType;
+const UAObject = require(&quot;./ua_object&quot;).UAObject;
+const UAMethod = require(&quot;./ua_method&quot;).UAMethod;
+const UADataType = require(&quot;./ua_data_type&quot;).UADataType;
+const Reference = require(&quot;./reference&quot;).Reference;
+const View = require(&quot;./view&quot;).View;
+
+const BrowseResult = require(&quot;node-opcua-service-browse&quot;).BrowseResult;
+
+
+const BrowseDirection = require(&quot;node-opcua-data-model&quot;).BrowseDirection;
+
+const QualifiedName = require(&quot;node-opcua-data-model&quot;).QualifiedName;
+const doDebug = false;
+
+const DataTypeIds = require(&quot;node-opcua-constants&quot;).DataTypeIds;
+const VariableTypeIds = require(&quot;node-opcua-constants&quot;).VariableTypeIds;
+
+
+
+
+function _extract_namespace_and_browse_name_as_string(addressSpace,browseName,namespaceIndex)
+{
+    assert(!namespaceIndex || namespaceIndex &gt;=0);
+
+    let result ;
+    if (namespaceIndex &gt;0) {
+        assert(typeof browseName ===&quot;string&quot; &amp;&amp; &quot;expecting a string when namespaceIndex is specified&quot;);
+        result = [ addressSpace.getNamespace(namespaceIndex) , browseName];
+    } else if (typeof browseName ===&quot;string&quot;) {
+        // split
+        if(browseName.indexOf(&quot;:&quot;)&gt;=0) {
+            const a = browseName.split(&quot;:&quot;);
+            namespaceIndex = a.length === 2 ? parseInt(a[0]) : namespaceIndex;
+            browseName   = a.length === 2 ? a[1] : browseName;
+        }
+        result =  [addressSpace.getNamespace(namespaceIndex||0),browseName];
+    } else if (browseName instanceof QualifiedName) {
+        namespaceIndex = browseName.namespaceIndex;
+        result =  [addressSpace.getNamespace(namespaceIndex),browseName.name];
+    } else if (browseName.key/* instanceof EnumItem*/) {
+        //xxnamespaceIndex = addressSpace.getDefaultNamespace();
+        result = [addressSpace.getDefaultNamespace(), browseName.key ];
+    }
+    if (!result || !result[0]) {
+        throw new Error(&quot; Cannot find namespace associated with &quot;,browseName,namespaceIndex);
+    }
+    return result;
+}
+
+
+/**
+ * &#x60;AddressSpace&#x60; is a collection of UA nodes.
+ *
+ *     const addressSpace = new AddressSpace();
+ *
+ *
+ * @class AddressSpace
+ * @constructor
+ */
+function AddressSpace() {
+
+    const self = this;
+    self._private_namespaceIndex = 1;
+    self._constructNamespaceArray();
+    AddressSpace.registry.register(self);
+}
+
+const ObjectRegistry = require(&quot;node-opcua-object-registry&quot;).ObjectRegistry;
+AddressSpace.registry  = new ObjectRegistry();
+
+
+AddressSpace.prototype._constructNamespaceArray = function () {
+    this._namespaceArray = [];
+    if (this._namespaceArray.length === 0) {
+        this.registerNamespace(&quot;http://opcfoundation.org/UA/&quot;);
+    }
+};
+
+AddressSpace.prototype.getNamespaceUri = function (namespaceIndex) {
+    assert(namespaceIndex &gt;= 0 &amp;&amp; namespaceIndex &lt; this._namespaceArray.length);
+    return this._namespaceArray[namespaceIndex].namespaceUri;
+};
+
+AddressSpace.prototype.getNamespace = function (namespaceIndexOrName) {
+   const self = this;
+   if (typeof namespaceIndexOrName ===&quot;number&quot;) {
+        const namespaceIndex =namespaceIndexOrName;
+        assert(namespaceIndex &gt;= 0 &amp;&amp; namespaceIndex &lt; this._namespaceArray.length,&quot;invalid namespace index ( out of bound)&quot;);
+        return self._namespaceArray[namespaceIndex];
+    } else {
+       const namespaceUri =namespaceIndexOrName;
+       assert(typeof namespaceUri === &quot;string&quot;);
+        const index = self.getNamespaceIndex(namespaceUri);
+        return self._namespaceArray[index];
+    }
+};
+
+AddressSpace.prototype.getDefaultNamespace= function() {
+    return this.getNamespace(0);
+};
+AddressSpace.prototype.getOwnNamespace= function() {
+
+    const self = this;
+    if (this._private_namespaceIndex&gt;=self._namespaceArray.length){
+        throw new Error(&quot;please create the private namespace&quot;);
+    }
+
+    return this.getNamespace(this._private_namespaceIndex);
+};
+
+
+const Namespace = require(&quot;./namespace&quot;).Namespace;
+
+/**
+ *
+ * @param namespaceUri {string}
+ * @returns {Namespace}
+ */
+AddressSpace.prototype.registerNamespace = function (namespaceUri) {
+
+    const self = this;
+
+    let index = this._namespaceArray.findIndex(ns=&gt; ns.namespaceUri === namespaceUri);
+    if (index !== -1) {
+        assert(self._namespaceArray[index].addressSpace === self);
+        return self._namespaceArray[index];
+    }
+
+    index= self._namespaceArray.length;
+    self._namespaceArray.push(new Namespace({
+        namespaceUri: namespaceUri,
+        addressSpace: self,
+        index: index,
+        version: &quot;undefined&quot;,
+        publicationDate: new Date()
+    }));
+    return self._namespaceArray[index];
+};
+
+AddressSpace.prototype.getNamespaceIndex = function (namespaceUri) {
+    assert(typeof namespaceUri === &quot;string&quot;);
+    const self = this;
+    return  self._namespaceArray.findIndex(ns=&gt; ns.namespaceUri === namespaceUri);
+};
+
+AddressSpace.prototype.getNamespaceArray = function () {
+    return this._namespaceArray;
+};
+
+/**
+ *
+ * @method addAlias
+ * @param alias_name {String} the alias name
+ * @param nodeId {NodeId}
+ */
+AddressSpace.prototype.addAlias = function (alias_name, nodeId) {
+    assert(typeof alias_name === &quot;string&quot;);
+    assert(nodeId instanceof NodeId);
+    this.getNamespace(nodeId.namespace).addAlias(alias_name,nodeId);
+};
+
+/**
+ * find an node by node Id
+ * @method findNode
+ * @param nodeId {NodeId|String}  a nodeId or a string coerce-able to nodeID, representing the object to find.
+ * @return {BaseNode|null}
+ */
+AddressSpace.prototype.findNode = function (nodeId) {
+    nodeId = this.resolveNodeId(nodeId);
+    assert(nodeId instanceof NodeId);
+    if (nodeId.namespace  &lt;0 || nodeId.namespace&gt;= this._namespaceArray.length) {
+        // namespace index is out of bound
+        return null;
+    }
+    const namespace = this.getNamespace(nodeId.namespace);
+    return namespace.findNode(nodeId);
+};
+
+
+AddressSpace.prototype.findMethod = function (nodeId) {
+    const node = this.findNode(nodeId);
+    assert(node instanceof UAMethod);
+    return node;
+};
+
+
+/**
+ * @property rootFolder
+ * @type     {BaseNode}
+ */
+Object.defineProperty(AddressSpace.prototype,&quot;rootFolder&quot;, {
+    get: function () {
+        return this.findNode(this.resolveNodeId(&quot;RootFolder&quot;));
+    }
+});
+
+
+
+
+
+
+AddressSpace.prototype._register = function (node) {
+    assert(node.nodeId instanceof NodeId);
+    const namespace = this.getNamespace(node.nodeId.namespace);
+    namespace._register(node);
+};
+
+
+function _getNamespace(addressSpace,nodeOrNodId){
+    let nodeId = nodeOrNodId;
+    if (nodeOrNodId instanceof BaseNode) {
+        nodeId = nodeOrNodId.nodeId;
+    }
+    return addressSpace.getNamespace(nodeId.namespace);
+}
+
+AddressSpace.prototype.deleteNode = function (nodeOrNodeId) {
+    _getNamespace(this,nodeOrNodeId).deleteNode(nodeOrNodeId);
+};
+
+/**
+ * resolved a string or a nodeId to a nodeID
+ *
+ * @method resolveNodeId
+ * @param nodeId {NodeId|String}
+ * @return {NodeId}
+ */
+AddressSpace.prototype.resolveNodeId = function (nodeId) {
+
+    if (typeof nodeId === &quot;string&quot;) {
+
+        // split alias
+        const a = nodeId.split(&quot;:&quot;);
+        const namespaceIndex = a.length === 2 ? parseInt(a[0]) : 0;
+
+        const namespace = this.getNamespace(namespaceIndex);
+        // check if the string is a known alias
+        const alias = namespace._aliases[nodeId];
+        if (alias !== undefined) {
+            return alias;
+        }
+    }
+    return resolveNodeId(nodeId);
+};
+
+
+function _find_by_node_id(addressSpace,CLASS,nodeId,namespaceIndex) {
+    assert (nodeId instanceof NodeId);
+    assert(namespaceIndex === undefined);
+    const obj = addressSpace.findNode(nodeId);
+    assert(!obj || obj instanceof CLASS);
+    return obj;
+}
+
+
+/**
+ * Find the DataType node from a NodeId or a browseName
+ * @method findDataType
+ * @param dataType {String|NodeId}
+ * @param [namespaceIndex=0 {Number}] an optional namespace index
+ * @return {DataType|null}
+ *
+ *
+ * @example
+ *
+ *      const dataDouble = addressSpace.findDataType(&quot;Double&quot;);
+ *
+ *      const dataDouble = addressSpace.findDataType(resolveNodeId(&quot;ns=0;i=3&quot;));
+ */
+AddressSpace.prototype.findDataType = function (dataType,namespaceIndex) {
+    // startingNode i=24  :
+    // BaseDataType
+    // +-&gt; Boolean (i=1) {BooleanDataType (ns=2:9898)
+    // +-&gt; String (i=12)
+    //     +-&gt;NumericRange
+    //     +-&gt;Time
+    // +-&gt; DateTime
+    // +-&gt; Structure
+    //       +-&gt; Node
+    //            +-&gt; ObjectNode
+    if (dataType instanceof NodeId) {
+        return _find_by_node_id(this,UADataType,dataType,namespaceIndex);
+    }
+    const res = _extract_namespace_and_browse_name_as_string(this,dataType,namespaceIndex);
+    const namespace = res[0];
+    const browseName = res[1];
+    assert(namespace instanceof Namespace);
+    return namespace.findDataType(browseName);
+};
+
+const DataType = require(&quot;node-opcua-variant&quot;).DataType;
+
+/**
+ * @method findCorrespondingBasicDataType
+ * @param dataTypeNode
+ *
+ *
+ * @example
+ *
+ *     const dataType = addressSpace.findDataType(&quot;ns=0;i=12&quot;);
+ *     addressSpace.findCorrespondingBasicDataType(dataType).should.eql(DataType.String);
+ *
+ *     const dataType = addressSpace.findDataType(&quot;ServerStatus&quot;); // ServerStatus
+ *     addressSpace.findCorrespondingBasicDataType(dataType).should.eql(DataType.ExtensionObject);
+ *
+ */
+AddressSpace.prototype.findCorrespondingBasicDataType = function(dataTypeNode) {
+
+    const self =this;
+    assert(dataTypeNode,&quot;expecting a dataTypeNode&quot;);
+
+    if (typeof dataTypeNode === &quot;string&quot;) {
+        dataTypeNode = this.resolveNodeId(dataTypeNode);
+    }
+
+    if (dataTypeNode instanceof NodeId) {
+        const _orig_dataTypeNode = dataTypeNode;
+        dataTypeNode = this.findDataType(dataTypeNode);
+        if (!dataTypeNode) {
+            throw Error(&quot;cannot find dataTypeNode &quot; + _orig_dataTypeNode.toString());
+        }
+    }
+    assert(dataTypeNode instanceof UADataType);
+
+    const id =  dataTypeNode.nodeId.value;
+
+    const enumerationType = self.findDataType(&quot;Enumeration&quot;);
+    if (sameNodeId(enumerationType.nodeId ,dataTypeNode.nodeId)) {
+        return DataType.Int32;
+    }
+
+    if (dataTypeNode.nodeId.namespace === 0 &amp;&amp; DataType.get(id)) {
+
+        return DataType.get(id);
+    }
+    return this.findCorrespondingBasicDataType(dataTypeNode.subtypeOfObj);
+};
+
+/**
+ *
+ * @method findObjectType
+ * @param objectType  {String|NodeId|QualifiedName}
+ * @param [namespaceIndex=0 {Number}] an optional namespace index
+ * @return {UAObjectType|null}
+ *
+ * @example
+ *
+ *     const objectType = addressSpace.findObjectType(&quot;ns=0;i=58&quot;);
+ *     objectType.browseName.toString().should.eql(&quot;BaseObjectType&quot;);
+ *
+ *     const objectType = addressSpace.findObjectType(&quot;BaseObjectType&quot;);
+ *     objectType.browseName.toString().should.eql(&quot;BaseObjectType&quot;);
+ *
+ *     const objectType = addressSpace.findObjectType(resolveNodeId(&quot;ns=0;i=58&quot;));
+ *     objectType.browseName.toString().should.eql(&quot;BaseObjectType&quot;);
+ *
+ *     const objectType = addressSpace.findObjectType(&quot;CustomObjectType&quot;,36);
+ *     objectType.nodeId.namespace.should.eql(36);
+ *     objectType.browseName.toString().should.eql(&quot;BaseObjectType&quot;);
+ *
+ *     const objectType = addressSpace.findObjectType(&quot;36:CustomObjectType&quot;);
+ *     objectType.nodeId.namespace.should.eql(36);
+ *     objectType.browseName.toString().should.eql(&quot;BaseObjectType&quot;);
+ */
+AddressSpace.prototype.findObjectType = function (objectType,namespaceIndex) {
+    if (objectType instanceof NodeId) {
+        return _find_by_node_id(this,UAObjectType,objectType,namespaceIndex);
+    }
+    const [namespace, browseName ] = _extract_namespace_and_browse_name_as_string(this,objectType,namespaceIndex);
+    return namespace.findObjectType(browseName);
+};
+
+/**
+ * @method findVariableType
+ * @param variableType  {String|NodeId}
+ * @param [namespaceIndex=0 {Number}] an optional namespace index
+ * @return {UAObjectType|null}
+ *
+ * @example
+ *
+ *     const objectType = addressSpace.findVariableType(&quot;ns=0;i=62&quot;);
+ *     objectType.browseName.toString().should.eql(&quot;BaseVariableType&quot;);
+ *
+ *     const objectType = addressSpace.findVariableType(&quot;BaseVariableType&quot;);
+ *     objectType.browseName.toString().should.eql(&quot;BaseVariableType&quot;);
+ *
+ *     const objectType = addressSpace.findVariableType(resolveNodeId(&quot;ns=0;i=62&quot;));
+ *     objectType.browseName.toString().should.eql(&quot;BaseVariableType&quot;);
+ */
+AddressSpace.prototype.findVariableType = function (variableType,namespaceIndex) {
+    if (variableType instanceof NodeId) {
+        return _find_by_node_id(this,UAVariableType,variableType,namespaceIndex);
+    }
+    const [namespace, browseName ] = _extract_namespace_and_browse_name_as_string(this,variableType,namespaceIndex);
+    return namespace.findVariableType(browseName);
+};
+
+
+
+/**
+ * returns true if str matches a nodeID, e.g i=123 or ns=...
+ * @method isNodeIdString
+ * @param str
+ * @type {boolean}
+ */
+function isNodeIdString(str) {
+    if (typeof str !== &quot;string&quot;) {
+        return false;
+    }
+    return str.substring(0, 2) === &quot;i=&quot; || str.substring(0, 3) === &quot;ns=&quot;;
+}
+AddressSpace.isNodeIdString = isNodeIdString;
+
+
+AddressSpace.prototype._findReferenceType = function (refType,namespaceIndex) {
+    if (refType instanceof NodeId) {
+        return _find_by_node_id(this,ReferenceType,refType,namespaceIndex);
+    }
+    const [namespace, browseName ] = _extract_namespace_and_browse_name_as_string(this,refType,namespaceIndex);
+    return namespace.findReferenceType(browseName);
+};
+
+/**
+ * @method findReferenceType
+ * @param refType {String|NodeId}
+ * @param [namespace=0 {Number}] an optional namespace index
+ * @return {ReferenceType|null}
+ *
+ * refType could be
+ *    a string representing a nodeid       : e.g.    &#x27;i=9004&#x27; or ns=1;i=6030
+ *    a string representing a browse name  : e.g     &#x27;HasTypeDefinition&#x27;
+ *      in this case it should be in the alias list
+ *
+ */
+AddressSpace.prototype.findReferenceType = function (refType,namespace) {
+
+    // startingNode ns=0;i=31 : References
+    //  References i=31
+    //  +-&gt;(hasSubtype) NoHierarchicalReferences
+    //                  +-&gt;(hasSubtype) HasTypeDefinition
+    //  +-&gt;(hasSubtype) HierarchicalReferences
+    //                  +-&gt;(hasSubtype) HasChild/ChildOf
+    //                                  +-&gt;(hasSubtype) Aggregates/AggregatedBy
+    //                                                  +-&gt; HasProperty/PropertyOf
+    //                                                  +-&gt; HasComponent/ComponentOf
+    //                                                  +-&gt; HasHistoricalConfiguration/HistoricalConfigurationOf
+    //                                 +-&gt;(hasSubtype) HasSubtype/HasSupertype
+    //                  +-&gt;(hasSubtype) Organizes/OrganizedBy
+    //                  +-&gt;(hasSubtype) HasEventSource/EventSourceOf
+    let node;
+
+    if (isNodeIdString(refType)) {
+        refType = resolveNodeId(refType);
+    }
+    if (refType instanceof NodeId) {
+        node = this.findNode(refType);
+        // istanbul ignore next
+        if (!(node &amp;&amp; (node.nodeClass === NodeClass.ReferenceType))) {
+            // throw new Error(&quot;cannot resolve referenceId &quot;+ refType.toString());
+            return null;
+        }
+    } else {
+        assert(_.isString(refType));
+        node = this._findReferenceType(refType,namespace);
+    }
+    return node;
+};
+
+/**
+ * find a ReferenceType by its inverse name.
+ * @method findReferenceTypeFromInverseName
+ * @param inverseName {String} the inverse name of the ReferenceType to find
+ * @return {ReferenceType}
+ */
+AddressSpace.prototype.findReferenceTypeFromInverseName = function (inverseName) {
+    return this.getDefaultNamespace().findReferenceTypeFromInverseName(inverseName);
+};
+
+/**
+ * @method normalizeReferenceType
+ * @param params.referenceType  {String|nodeId}
+ * @param params.isForward  {Boolean} default value: true;
+ * @return {Object} a new reference object  with the normalized name { referenceType: &lt;value&gt;, isForward: &lt;flag&gt;}
+ */
+AddressSpace.prototype.normalizeReferenceType = function (params) {
+
+    if (params instanceof Reference) {
+        // a reference has already been normalized
+        return params;
+    }
+    // ----------------------------------------------- handle is forward
+    assert(params.isForward === undefined || typeof params.isForward === &quot;boolean&quot;);
+    params.isForward = utils.isNullOrUndefined(params.isForward) ? true : !!params.isForward;
+
+    // referenceType = Organizes   , isForward = true =&gt;   referenceType = Organizes , isForward = true
+    // referenceType = Organizes   , isForward = false =&gt;  referenceType = Organizes , isForward = false
+    // referenceType = OrganizedBy , isForward = true =&gt;   referenceType = Organizes , isForward = **false**
+    // referenceType = OrganizedBy , isForward = false =&gt;  referenceType = Organizes , isForward =  **true**
+
+    // ----------------------------------------------- handle referenceType
+    if (params.referenceType instanceof ReferenceType) {
+        params._referenceType = params.referenceType;
+        params.referenceType =  params.referenceType.nodeId;
+
+    } else if (typeof params.referenceType === &quot;string&quot;){
+        const inv = this.findReferenceTypeFromInverseName(params.referenceType );
+        if(inv) {
+            params.referenceType = inv.nodeId;
+            params._referenceType = inv;
+            params.isForward = !params.isForward;
+        } else {
+            params.referenceType = resolveNodeId(params.referenceType);
+            const refType = this.findReferenceType(params.referenceType);
+            if (refType) {
+                params._referenceType = refType;
+            }
+        }
+    }
+    assert(params.referenceType instanceof NodeId);
+
+
+    // ----------- now resolve target NodeId;
+    if (params.nodeId instanceof BaseNode) {
+        assert(!params.hasOwnProperty(&quot;node&quot;));
+        params.node = params.nodeId;
+        params.nodeId = params.node.nodeId;
+    } else {
+        let _nodeId = params.nodeId;
+        assert(_nodeId, &quot;missing &#x27;nodeId&#x27; in reference&quot;);
+        if (_nodeId &amp;&amp;  _nodeId.nodeId) {
+            _nodeId = _nodeId.nodeId;
+        }
+        _nodeId = resolveNodeId(_nodeId);
+        // istanbul ignore next
+        if (!(_nodeId instanceof NodeId) || _nodeId.isEmpty()) {
+            throw new Error(&quot; Invalid reference nodeId &quot; + _nodeId.toString() + &quot; &quot; + JSON.stringify(reference,null));
+        }
+        params.nodeId = _nodeId;
+    }
+
+    return new Reference(params);
+
+
+/*
+
+    const n1 = this.findReferenceType(params.referenceType);
+    const n2 = (typeof params.referenceType === &quot;string&quot;) ? this.findReferenceTypeFromInverseName(params.referenceType):null;
+
+    if (!n1 &amp;&amp; !n2) {
+        // unknown type, there is nothing we can do about it yet.
+        // this case could happen when reading a nodeset.xml file for instance
+        // when a reference type is being used before being defined.
+        return new Reference(params);
+    } else if (n1) {
+        assert(!n2 || n1.nodeId.toString() === n2.nodeId.toString());
+        params.referenceType = n1.nodeId;
+        params._referenceType = n1;
+        return new Reference(params);
+    } else {
+        assert(n2);
+        // make sure we preserve integrity of object passed as a argument
+        const new_params = _.clone(params);
+        new_params.referenceType = n2.nodeId;
+        new_params.isForward = !params.isForward;
+        new_params._referenceType = n2;
+        return new Reference(new_params);
+    }
+*/
+};
+
+AddressSpace.prototype.normalizeReferenceTypes = function(arr) {
+    if (!arr) {
+        return arr;
+    }
+    assert(_.isArray(arr));
+    return arr.map(AddressSpace.prototype.normalizeReferenceType.bind(this));
+};
+
+/**
+ * returns the inverse name of the referenceType.
+ *
+ * @method inverseReferenceType
+ * @param referenceType {String} : the reference type name
+ * @return {String} the name of the inverse reference type.
+ *
+ * @example
+ *
+ *    &#x60;&#x60;&#x60;javascript
+ *    addressSpace.inverseReferenceType(&quot;OrganizedBy&quot;).should.eql(&quot;Organizes&quot;);
+ *    addressSpace.inverseReferenceType(&quot;Organizes&quot;).should.eql(&quot;OrganizedBy&quot;);
+ *    &#x60;&#x60;&#x60;
+ *
+ */
+AddressSpace.prototype.inverseReferenceType = function (referenceType) {
+
+    assert(typeof referenceType === &quot;string&quot;);
+
+    const n1 = this.findReferenceType(referenceType);
+    const n2 = this.findReferenceTypeFromInverseName(referenceType);
+    if (n1) {
+        assert(!n2);
+        return n1.inverseName.text;
+    } else {
+        assert(n2);
+        return n2.browseName.toString();
+    }
+};
+
+
+//----------------------------------------------------------------------------------------------------------------------
+
+AddressSpace.prototype._build_new_NodeId = function () {
+
+    if (this._namespaceArray.length &lt;= 1) {
+        throw new Error(&quot;Please create a private namespace&quot;);
+    }
+    const privateNamespace = this.getOwnNamespace();
+    return privateNamespace._build_new_NodeId();
+};
+
+
+AddressSpace.prototype._coerce_Type = function (dataType, typeMap, typeMapName, finderMethod) {
+
+    assert(dataType,&quot;expecting a dataType&quot;);
+    if ( dataType instanceof BaseNode) {
+        dataType = dataType.nodeId;
+    }
+    assert(_.isObject(typeMap));
+    const self = this;
+    let nodeId;
+    if (typeof dataType === &quot;string&quot;) {
+
+        const namespace0 = self.getDefaultNamespace();
+        // resolve dataType
+        nodeId = namespace0._aliases[dataType];
+        if (!nodeId) {
+            // dataType was not found in the aliases database
+
+            if (typeMap[dataType]) {
+                nodeId = makeNodeId(typeMap[dataType], 0);
+                return nodeId;
+            } else {
+                nodeId = resolveNodeId(dataType);
+            }
+        }
+    } else if (typeof dataType === &quot;number&quot;) {
+        nodeId = makeNodeId(dataType, 0);
+    } else {
+        nodeId = resolveNodeId(dataType);
+    }
+    assert(nodeId instanceof NodeId);
+
+    const el = finderMethod.call(this,nodeId);
+
+    if (!el) {
+        // verify that node Id exists in standard type map typeMap
+        const find = _.filter(typeMap, function (a) {
+            return a === nodeId.value;
+        });
+        /* istanbul ignore next */
+        if (find.length !== 1) {
+            throw new Error(&quot; cannot find &quot; + dataType.toString() + &quot; in typeMap &quot; + typeMapName + &quot; L = &quot;+ find.length);
+        }
+    }
+    return nodeId;
+};
+
+AddressSpace.prototype._coerce_DataType = function (dataType) {
+    const self = this;
+    if (dataType instanceof NodeId) {
+        //xx assert(self.findDataType(dataType));
+        return dataType;
+    }
+    return self._coerce_Type(dataType, DataTypeIds, &quot;DataTypeIds&quot;,AddressSpace.prototype.findDataType);
+};
+
+AddressSpace.prototype._coerce_VariableTypeIds = function (dataType) {
+    return this._coerce_Type(dataType, VariableTypeIds, &quot;VariableTypeIds&quot;,AddressSpace.prototype.findVariableType);
+};
+
+AddressSpace.prototype._coerceTypeDefinition = function (typeDefinition) {
+    const self = this;
+    if (typeof typeDefinition === &quot;string&quot;) {
+        // coerce parent folder to an node
+        typeDefinition = self.findNode(typeDefinition);
+        typeDefinition = typeDefinition.nodeId;
+    }
+    //xx console.log(&quot;typeDefinition = &quot;,typeDefinition);
+    assert(typeDefinition instanceof NodeId);
+    return typeDefinition;
+};
+
+
+AddressSpace.prototype._coerceType = function (baseType,topMostBaseType,nodeClass) {
+
+    const self = this;
+    assert(typeof topMostBaseType === &quot;string&quot;);
+    const topMostBaseTypeNode = self.findNode(topMostBaseType);
+
+    // istanbul ignore next
+    if (!topMostBaseTypeNode) {
+        throw new Error(&quot;Cannot find topMostBaseTypeNode &quot; + topMostBaseType.toString());
+    }
+    assert(topMostBaseTypeNode instanceof BaseNode);
+    assert(topMostBaseTypeNode.nodeClass === nodeClass);
+
+    if (!baseType) {
+        return topMostBaseTypeNode;
+    }
+
+    assert(typeof baseType === &quot;string&quot; || baseType instanceof BaseNode);
+    let baseTypeNode;
+    if ( baseType instanceof BaseNode) {
+        baseTypeNode = baseType;
+    } else {
+        baseTypeNode = self.findNode(baseType);
+    }
+
+    /* istanbul ignore next*/
+    if (!baseTypeNode) {
+        throw new Error(&quot;Cannot find ObjectType or VariableType for &quot; + baseType.toString());
+    }
+
+    assert(baseTypeNode);
+    assert(baseTypeNode.isSupertypeOf(topMostBaseTypeNode));
+    //xx console.log(&quot;baseTypeNode = &quot;,baseTypeNode.toString());
+    return baseTypeNode;
+};
+
+
+
+/**
+ * return true if nodeId is a Folder
+ * @method _isFolder
+ * @param addressSpace
+ * @param folder
+ * @return {Boolean}
+ * @private
+ */
+function _isFolder(addressSpace,folder) {
+    const self = addressSpace;
+    const folderType = self.findObjectType(&quot;FolderType&quot;);
+    assert(folder instanceof BaseNode);
+    assert(folder.typeDefinitionObj);
+    return folder.typeDefinitionObj.isSupertypeOf(folderType);
+}
+
+
+/**
+ * @method _coerceNode
+ * @param node
+ * @return {*}
+ * @private
+ */
+AddressSpace.prototype._coerceNode = function (node) {
+
+    const self = this;
+
+    // coerce to BaseNode object
+    if (!(node instanceof BaseNode)) {
+
+        if (typeof node === &quot;string&quot;) {
+            // coerce parent folder to an object
+            node = self.findNode(self.resolveNodeId(node)) || node;
+        }
+        if (!node || !node.typeDefinition) {
+            node = self.findNode(node) || node;
+            if (!node || !node.typeDefinition) {
+                //xx console.log(&quot;xxxx cannot find folder &quot;, folder);
+                return null;
+            }
+        }
+    }
+    return node;
+};
+
+AddressSpace.prototype._coerceFolder = function (folder) {
+
+    const self = this;
+    folder = self._coerceNode(folder);
+    // istanbul ignore next
+    if (folder &amp;&amp; !_isFolder(self,folder)) {
+        throw new Error(&quot;Parent folder must be of FolderType &quot; + folder.typeDefinition.toString());
+    }
+    return folder;
+};
+
+
+
+AddressSpace.isNonEmptyQualifiedName = Namespace.isNonEmptyQualifiedName;
+
+
+AddressSpace.prototype._collectModelChange = function(view,modelChange) {
+    //xx console.log(&quot;in _collectModelChange&quot;, modelChange.verb, verbFlags.get(modelChange.verb).toString());
+    this._modelChanges.push(modelChange);
+};
+
+
+/**
+ *
+ * walk up the hierarchy of objects until a view is found
+ * objects may belong to multiples views.
+ * Note: this method doesn&#x27;t return the main view =&gt; Server object.
+ * @method extractRootViews
+ * @param node {BaseNode}
+ * @return {BaseNode[]}
+ */
+AddressSpace.prototype.extractRootViews = function(node) {
+
+    const addressSpace = this;
+    assert(node.nodeClass === NodeClass.Object || node.nodeClass === NodeClass.Variable);
+
+    const visitedMap ={};
+
+    const q = new Dequeue();
+    q.push(node);
+
+
+    const objectsFolder = addressSpace.rootFolder.objects;
+    assert(objectsFolder instanceof UAObject);
+
+    const results = [];
+
+    while(q.length) {
+        node = q.shift();
+
+        const references = node.findReferencesEx(&quot;HierarchicalReferences&quot;,BrowseDirection.Inverse);
+        const parentNodes = references.map(function(r){
+            return Reference._resolveReferenceNode(addressSpace,r);
+        });
+
+        parentNodes.forEach(function(parent){
+            if (sameNodeId(parent.nodeId,objectsFolder.nodeId)) {
+                return ; // nothing to do
+            }
+            if (parent.nodeClass === NodeClass.View) {
+                results.push(parent);
+            } else {
+                const key = parent.nodeId.toString();
+                if (visitedMap.hasOwnProperty(key)) {
+                    return;
+                }
+                visitedMap[key] = parent;
+                q.push(parent);
+            }
+        });
+    }
+    return results;
+};
+
+AddressSpace.prototype.modelChangeTransaction = function(func) {
+
+    const addressSpace = this;
+
+    this._modelChangeTransactionCounter = this._modelChangeTransactionCounter || 0;
+
+    function beginModelChange(node) {
+        /* jshint validthis:true */
+        assert(this);
+        this._modelChanges = addressSpace._modelChanges || [];
+        assert(this._modelChangeTransactionCounter &gt;=0);
+        this._modelChangeTransactionCounter +=1;
+    }
+    function endModelChange(node) {
+        /* jshint validthis:true */
+        assert(this);
+        this._modelChangeTransactionCounter -=1;
+
+        if (this._modelChangeTransactionCounter === 0) {
+
+            if (this._modelChanges.length === 0 ) {
+                return; // nothing to do
+            }
+            //xx console.log( &quot;xx dealing with &quot;,this._modelChanges.length);
+            // increase version number of participating nodes
+
+            let nodes = _.uniq(this._modelChanges.map(function(c) { return c.affected; }));
+
+            nodes = nodes.map(function(nodeId) { return addressSpace.findNode(nodeId); });
+
+            nodes.forEach(_increase_version_number);
+            // raise events
+
+            if (addressSpace.rootFolder.objects.server) {
+
+                const eventTypeNode = addressSpace.findEventType(&quot;GeneralModelChangeEventType&quot;);
+
+                if (eventTypeNode) {
+                    //xx console.log(&quot;xx raising event on server object&quot;);
+                    addressSpace.rootFolder.objects.server.raiseEvent(eventTypeNode,{
+                        // Part 5 - 6.4.32 GeneralModelChangeEventType
+                        changes: { dataType: &quot;ExtensionObject&quot;, value: this._modelChanges }
+                    });
+                }
+
+            }
+            this._modelChanges = [];
+
+            // _notifyModelChange(this);
+        }
+    }
+
+    beginModelChange.call(this);
+    try {
+        func();
+    }
+    catch(err) {
+        throw err;
+    }
+    finally {
+        endModelChange.call(this);
+    }
+};
+
+
+function _increase_version_number(node) {
+    if (node &amp;&amp; node.nodeVersion) {
+        const previousValue = parseInt(node.nodeVersion.readValue().value.value);
+        node.nodeVersion.setValueFromSource({ dataType: &quot;String&quot;, value: (previousValue+1).toString() });
+        //xx console.log(&quot;xxx increasing version number of node &quot;, node.browseName.toString(),previousValue);
+    }
+}
+
+
+AddressSpace.prototype._resolveRequestedNamespace =  function(options)
+{
+    if (!options.nodeId) {
+        return this.getOwnNamespace();
+    }
+    if (typeof options.nodeId === &quot;string&quot;){
+        if (options.nodeId.match(/^(i|s|g|b)=/)) {
+            options.nodeId = this.getOwnNamespace()._construct_nodeId(options);
+        }
+    }
+    options.nodeId = resolveNodeId(options.nodeId);
+    return this.getNamespace(options.nodeId.namespace);
+};
+
+
+AddressSpace.prototype.addObject =function(options) {
+    return this._resolveRequestedNamespace(options).addObject(options);
+};
+
+utils.setDeprecated(AddressSpace,&quot;addObject&quot;,&quot;use addressSpace.getOwnNamespace().addObject(..) instead&quot;);
+AddressSpace.prototype.addVariable =function(options) {
+    return this._resolveRequestedNamespace(options).addVariable(options);
+};
+utils.setDeprecated(AddressSpace,&quot;addVariable&quot;,&quot;use addressSpace.getOwnNamespace().addVariable(..) instead&quot;);
+
+AddressSpace.prototype.addObjectType =function(options) {
+    return this._resolveRequestedNamespace(options).addObjectType(options);
+};
+utils.setDeprecated(AddressSpace,&quot;addObjectType&quot;,&quot;use addressSpace.getOwnNamespace().addObjectType() instead&quot;);
+
+AddressSpace.prototype.addVariableType =function(options) {
+   return this._resolveRequestedNamespace(options).addVariableType(options);
+};
+utils.setDeprecated(AddressSpace,&quot;addVariableType&quot;,&quot;use addressSpace.getOwnNamespace().addVariableType() instead&quot;);
+
+/**
+ *
+ * @method addFolder
+ * @param parentFolder
+ * @param options {String|Object}
+ * @param options.browseName {String} the name of the folder
+ * @param [options.nodeId] {NodeId}. An optional nodeId for this object
+ *
+ * @return {BaseNode}
+ */
+AddressSpace.prototype.addFolder = function (parentFolder, options) {
+    return this.getOwnNamespace().addFolder(parentFolder, options);
+};
+utils.setDeprecated(AddressSpace,&quot;addFolder&quot;,&quot;use addressSpace.getOwnNamespace().addFolder(..) instead&quot;);
+
+
+/**
+ * cleanup all resources maintained by this addressSpace.
+ * @method dispose
+ */
+AddressSpace.prototype.dispose = function() {
+
+    this._namespaceArray.map(namespace=&gt;namespace.dispose());
+    this._aliases = null;
+
+    AddressSpace.registry.unregister(this);
+
+    if(this._shutdownTask &amp;&amp; this._shutdownTask.length &gt; 0) {
+        throw new Error(&quot;AddressSpace#dispose : shutdown has not been called&quot;);
+    }
+};
+
+
+
+/**
+ * register a function that will be called when the server will perform its shut down.
+ * @method registerShutdownTask
+ */
+AddressSpace.prototype.registerShutdownTask = function (task) {
+    this._shutdownTask = this._shutdownTask || [];
+    assert(_.isFunction(task));
+    this._shutdownTask.push(task);
+};
+AddressSpace.prototype.shutdown = function() {
+
+    //xxx console.log(&quot;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx DO ADDRESSSPACE SHUTDOWN&quot;.bgWhite);
+    const self = this;
+    if (!self._shutdownTask) {
+        return;
+    }
+    // perform registerShutdownTask
+    self._shutdownTask.forEach(function (task) {
+        task.call(self);
+    });
+    self._shutdownTask = [];
+};
+
+const StatusCodes = require(&quot;node-opcua-status-code&quot;).StatusCodes;
+/**
+ *
+ * @method browseSingleNode
+ * @param nodeId {NodeId|String} : the nodeid of the element to browse
+ * @param browseDescription
+ * @param browseDescription.browseDirection {BrowseDirection} :
+ * @param browseDescription.referenceTypeId {String|NodeId}
+ * @param [session] {ServerSession}
+ * @return {BrowseResult}
+ */
+AddressSpace.prototype.browseSingleNode = function (nodeId, browseDescription, session) {
+    const addressSpace = this;
+    // create default browseDescription
+    browseDescription = browseDescription || {};
+    browseDescription.browseDirection = browseDescription.browseDirection || BrowseDirection.Forward;
+
+    assert(browseDescription.browseDirection);
+
+    //xx console.log(util.inspect(browseDescription,{colors:true,depth:5}));
+    browseDescription = browseDescription || {};
+
+    if (typeof nodeId === &quot;string&quot;) {
+        const node = addressSpace.findNode(addressSpace.resolveNodeId(nodeId));
+        if (node) {
+            nodeId = node.nodeId;
+        }
+    }
+
+    const browseResult = {
+        statusCode: StatusCodes.Good,
+        continuationPoint: null,
+        references: null
+    };
+    if (browseDescription.browseDirection === BrowseDirection.Invalid) {
+        browseResult.statusCode = StatusCodes.BadBrowseDirectionInvalid;
+        return new BrowseResult(browseResult);
+    }
+
+    // check if referenceTypeId is correct
+    if (browseDescription.referenceTypeId instanceof NodeId) {
+        if (browseDescription.referenceTypeId.value === 0) {
+            browseDescription.referenceTypeId = null;
+        } else {
+            const rf = addressSpace.findNode(browseDescription.referenceTypeId);
+            if (!rf || !(rf instanceof ReferenceType)) {
+                browseResult.statusCode = StatusCodes.BadReferenceTypeIdInvalid;
+                return new BrowseResult(browseResult);
+            }
+        }
+    }
+
+    const obj = addressSpace.findNode(nodeId);
+    if (!obj) {
+        // Object Not Found
+        browseResult.statusCode = StatusCodes.BadNodeIdUnknown;
+        //xx console.log(&quot;xxxxxx browsing &quot;,nodeId.toString() , &quot; not found&quot; );
+    } else {
+        browseResult.statusCode = StatusCodes.Good;
+        browseResult.references = obj.browseNode(browseDescription, session);
+    }
+    return new BrowseResult(browseResult);
+};
+
+
+exports.AddressSpace = AddressSpace;
+
+
+require(&quot;./address_space_add_event_type&quot;).install(AddressSpace);
+require(&quot;./address_space_add_method&quot;).install(AddressSpace);
+require(&quot;./address_space_browse&quot;).install(AddressSpace);
+
+require(&quot;./address_space_construct_extension_object&quot;).install(AddressSpace);
+require(&quot;./ua_two_state_variable&quot;).install(AddressSpace);
+
+// State Machines
+require(&quot;./state_machine/address_space_state_machine&quot;).install(AddressSpace);
+
+// DI
+require(&quot;./address_space_add_enumeration_type&quot;).install(AddressSpace);
+
+require(&quot;./data_access/address_space_add_AnalogItem&quot;).install(AddressSpace);
+require(&quot;./data_access/address_space_add_MultiStateDiscrete&quot;).install(AddressSpace);
+require(&quot;./data_access/address_space_add_TwoStateDiscrete&quot;).install(AddressSpace);
+require(&quot;./data_access/address_space_add_MultiStateValueDiscrete&quot;).install(AddressSpace);
+require(&quot;./data_access/address_space_add_YArrayItem&quot;).install(AddressSpace);
+
+
+require(&quot;./historical_access/address_space_historical_data_node&quot;).install(AddressSpace);
+
+//
+// Alarms &amp; Conditions
+//
+require(&quot;./alarms_and_conditions/install&quot;).install(AddressSpace);
+
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Ad by Google -->
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-format="fluid"
+                 data-ad-layout-key="-8h+1u-de+eo+dy"
+                 data-ad-client="ca-pub-8886208393040088"
+                 data-ad-slot="9362364253"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <!-- -->
+
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

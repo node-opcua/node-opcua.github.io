@@ -1,0 +1,2446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="flattr:id" content="me93y1">
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-25438821-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-25438821-3');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N63SL9Q');</script>
+    <!-- End Google Tag Manager -->
+
+    <title>packages\node-opcua-server\src\server_engine.js - The NodeOPCUA API</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-8886208393040088",
+            enable_page_level_ads: true
+        });
+    </script>
+
+</head>
+<body class="yui3-skin-sam">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N63SL9Q"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+	    <img alt="The NodeOPCUA API" src="../assets/css/logo.png" style="max-height: 65%;" title="The NodeOPCUA API">
+            The NodeOPCUA API
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>0.4.5</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/AcknowledgeMessage", "classes/ActivateSessionRequest", "classes/ActivateSessionResponse", "classes/AddNodesItem", "classes/AddNodesRequest", "classes/AddNodesResponse", "classes/AddNodesResult", "classes/AddReferencesItem", "classes/AddReferencesRequest", "classes/AddReferencesResponse", "classes/AddressSpace", "classes/AggregateConfiguration", "classes/AggregateFilter", "classes/AnonymousIdentityToken", "classes/ApplicationDescription", "classes/ApplicationInstanceCertificate", "classes/Argument", "classes/AsymmetricAlgorithmSecurityHeader", "classes/AttributeIds", "classes/AttributeNameById", "classes/AttributeOperand", "classes/AxisInformation", "classes/BaseEventType", "classes/BaseNode
+
+BaseNode is the base class for all the OPCUA objects in the address space
+It provides attributes and a set of references to other nodes.
+see:
+{{#crossLink "UAObject"}}{{/crossLink}},
+{{#crossLink "UAVariable"}}{{/crossLink}},
+{{#crossLink "Reference"}}{{/crossLink}},
+{{#crossLink "UAMethod"}}{{/crossLink}},
+{{#crossLink "UAView"}}{{/crossLink}},
+{{#crossLink "UAObjecType"}}{{/crossLink}},
+{{#crossLink "UADataType"}}{{/crossLink}},
+{{#crossLink "UAVariableType"}}{{/crossLink}},", "classes/BaseUAObject", "classes/BinaryStream", "classes/BinaryStreamSizeCalculator", "classes/BrowseDescription", "classes/BrowseDirection", "classes/BrowseNextRequest", "classes/BrowseNextResponse", "classes/BrowsePath", "classes/BrowsePathResult", "classes/BrowsePathTarget", "classes/BrowseRequest", "classes/BrowseResponse", "classes/BrowseResult", "classes/BuildInfo", "classes/CallMethodRequest", "classes/CallMethodResult", "classes/CallRequest", "classes/CallResponse", "classes/CancelRequest", "classes/CancelResponse", "classes/ChannelSecurityToken", "classes/ChunkManager", "classes/ClientMonitoredItem", "classes/ClientMonitoredItemGroup", "classes/ClientSecureChannelLayer", "classes/ClientSession", "classes/ClientSidePublishEngine
+
+The ClientSidePublishEngine encapsulates the mechanism to
+deal with a OPCUA Server and constantly sending PublishRequest
+The ClientSidePublishEngine also performs  notification acknowledgements.
+Finally, ClientSidePublishEngine dispatch PublishResponse to the correct
+Subscription id callback", "classes/ClientSubscription", "classes/ClientTCP_transport", "classes/CloseSecureChannelRequest", "classes/CloseSecureChannelResponse", "classes/CloseSessionRequest", "classes/CloseSessionResponse", "classes/ConditionInfo", "classes/ConditionSnapshot", "classes/ContentFilter", "classes/ContentFilterElement", "classes/ContentFilterElementResult", "classes/ContentFilterResult", "classes/CreateMonitoredItemsRequest", "classes/CreateMonitoredItemsResponse", "classes/CreateSessionRequest", "classes/CreateSessionResponse", "classes/CreateSubscriptionRequest", "classes/CreateSubscriptionResponse", "classes/DataChangeFilter", "classes/DataChangeNotification", "classes/DataValue", "classes/DeleteMonitoredItemsRequest", "classes/DeleteMonitoredItemsResponse", "classes/DeleteNodesItem", "classes/DeleteNodesRequest", "classes/DeleteNodesResponse", "classes/DeleteReferencesItem", "classes/DeleteReferencesRequest", "classes/DeleteReferencesResponse", "classes/DeleteSubscriptionsRequest", "classes/DeleteSubscriptionsResponse", "classes/DiagnosticInfo", "classes/ElementOperand", "classes/EndpointDescription", "classes/Enum", "classes/EnumValueType", "classes/ErrorMessage", "classes/EUInformation", "classes/EventData", "classes/EventFieldList", "classes/EventFilter", "classes/EventFilterResult", "classes/EventNotificationList", "classes/ExpandedNodeId", "classes/Factory", "classes/FilterOperand", "classes/FindServersOnNetworkRequest", "classes/FindServersOnNetworkResponse", "classes/FindServersRequest", "classes/FindServersResponse", "classes/GetEndpointsRequest", "classes/GetEndpointsResponse", "classes/HelloMessage", "classes/HistoryData", "classes/HistoryModifiedData", "classes/HistoryReadDetails", "classes/HistoryReadRequest", "classes/HistoryReadResponse", "classes/HistoryReadResult", "classes/HistoryReadValueId", "classes/HistoryServerCapabilities", "classes/HistoryUpdateRequest", "classes/HistoryUpdateResponse", "classes/HistoryUpdateResult", "classes/IssuedIdentityToken", "classes/LiteralOperand", "classes/LocalizedText", "classes/MandatoryChildOrRequestedOptionalFilter
+return true if node is a mandatory child or a requested optional", "classes/MdnsDiscoveryConfiguration", "classes/MessageBuilder", "classes/MessageBuilderBase", "classes/MessageChunker", "classes/ModelChangeStructure", "classes/ModificationInfo", "classes/ModifyMonitoredItemsRequest", "classes/ModifyMonitoredItemsResponse", "classes/ModifySubscriptionRequest", "classes/ModifySubscriptionResponse", "classes/MonitoredItem", "classes/MonitoredItemCreateRequest", "classes/MonitoredItemCreateResult", "classes/MonitoredItemModifyRequest", "classes/MonitoredItemModifyResult", "classes/MonitoredItemNotification", "classes/MonitoringFilter", "classes/MonitoringParameters", "classes/NodeCrawler", "classes/NodeId", "classes/NodeIdType", "classes/NodeTypeDescription", "classes/NotificationMessage", "classes/opcua", "classes/OPCUABaseServer", "classes/OPCUAClient", "classes/OPCUAClientBase", "classes/OPCUASecureObject", "classes/OPCUAServer", "classes/OPCUAServerEndPoint
+
+A sever end point is listening to one port", "classes/OpenSecureChannelRequest", "classes/OpenSecureChannelResponse", "classes/OperationLimits", "classes/PacketAssembler", "classes/ParsingResult", "classes/PublishRequest", "classes/PublishResponse", "classes/QualifiedName", "classes/QueryDataDescription", "classes/QueryDataSet", "classes/QueryFirstRequest", "classes/QueryFirstResponse", "classes/QueryNextRequest", "classes/QueryNextResponse", "classes/Range", "classes/ReadAtTimeDetails", "classes/ReaderState", "classes/ReadEventDetails", "classes/ReadProcessedDetails", "classes/ReadRawModifiedDetails", "classes/ReadRequest", "classes/ReadResponse", "classes/ReadValueId", "classes/RedundantServer", "classes/Reference", "classes/ReferenceDescription", "classes/ReferenceType", "classes/RegisteredServer", "classes/RegisterNodesRequest", "classes/RegisterNodesResponse", "classes/RegisterServer2Request", "classes/RegisterServer2Response", "classes/RegisterServerRequest", "classes/RegisterServerResponse", "classes/RelativePath", "classes/RelativePathElement", "classes/RepublishRequest", "classes/RepublishResponse", "classes/RequestHeader", "classes/ResponseHeader", "classes/SamplingIntervalDiagnostics", "classes/SecureMessageChunkManager", "classes/SecurityPolicy", "classes/SemanticChangeStructure", "classes/SequenceHeader", "classes/SequenceNumberGenerator", "classes/ServerCapabilities", "classes/ServerDiagnosticsSummary", "classes/ServerEngine", "classes/ServerOnNetwork", "classes/ServerSecureChannelLayer", "classes/ServerSession", "classes/ServerSidePublishEngine
+ a Publish Engine for a given session", "classes/ServerStatus", "classes/ServerTCP_transport", "classes/ServiceCounter", "classes/ServiceFault", "classes/SessionContext", "classes/SessionDiagnostics", "classes/SessionSecurityDiagnostics", "classes/SetMonitoringModeRequest", "classes/SetMonitoringModeResponse", "classes/SetPublishingModeRequest", "classes/SetPublishingModeResponse", "classes/SetTriggeringRequest", "classes/SetTriggeringResponse", "classes/SignatureData", "classes/SignedSoftwareCertificate", "classes/SimpleAttributeOperand", "classes/Simulator", "classes/StatusChangeNotification", "classes/StatusCode", "classes/Subscription", "classes/SubscriptionAcknowledgement", "classes/SubscriptionDiagnostics", "classes/SymmetricAlgorithmSecurityHeader", "classes/TCP_transport", "classes/TCPErrorMessage", "classes/TimestampsToReturn", "classes/TimeZone", "classes/ToolBrowsePath", "classes/TransferResult", "classes/TransferSubscriptionsRequest", "classes/TransferSubscriptionsResponse", "classes/TranslateBrowsePathsToNodeIdsRequest", "classes/TranslateBrowsePathsToNodeIdsResponse", "classes/TypeSchema", "classes/UAAcknowledgeableConditionBase", "classes/UAAlarmConditionBase", "classes/UACertificateExpirationAlarm
+
+This SystemOffNormalAlarmType is raised by the Server when the Server’s Certificate is within the ExpirationLimit
+of expiration. This alarm automatically returns to normal when the certificate is updated.", "classes/UAConditionBase", "classes/UADataType", "classes/UADiscreteAlarm
+
+The DiscreteAlarmType is used to classify Types into Alarm Conditions where the input for the
+Alarm may take on only a certain number of possible values (e.g. true/false,
+running/stopped/terminating).", "classes/UAExclusiveDeviationAlarm", "classes/UAExclusiveLevelAlarm", "classes/UAExclusiveLimitAlarm", "classes/UAExclusiveRateOfChangeAlarm", "classes/UALimitAlarm", "classes/UAMultiStateDiscreteType", "classes/UANonExclusiveDeviationAlarm", "classes/UANonExclusiveLimitAlarm", "classes/UAObject", "classes/UAObjectType", "classes/UAOffNormalAlarm", "classes/UAProxyManager", "classes/UASystemOffNormalAlarm", "classes/UATripAlarm
+
+The TripAlarmType is a specialization of the OffNormalAlarmType intended to represent an equipment trip Condition.
+The Alarm becomes active when the monitored piece of equipment experiences some abnormal fault such as a motor
+shutting down due to an overload Condition. This Type is mainly used for categorization.", "classes/UATwoStateVariable", "classes/UAVariable", "classes/UAVariableType", "classes/UnregisterNodesRequest", "classes/UnregisterNodesResponse", "classes/UserNameIdentityToken", "classes/UserTokenPolicy", "classes/Variant", "classes/View", "classes/ViewDescription", "classes/WriteRequest", "classes/WriteResponse", "classes/WriteValue", "classes/X509IdentityToken", "classes/Xml2Json", "modules/opcua.address_space", "modules/opcua.address_space.AlarmsAndConditions", "modules/opcua.address_space.types", "modules/opcua.client", "modules/opcua.data-value", "modules/opcua.datamodel", "modules/opcua.miscellaneous", "modules/opcua.server", "modules/opcua.server.simulation", "modules/opcua.status-code", "modules/opcua.transport", "modules/opcua.utils", "modules/opcua.variant", "modules/service.filter.tools", "modules/services.browse", "modules/services.call", "modules/services.discovery", "modules/services.endpoints", "modules/services.filter", "modules/services.history", "modules/services.node_management", "modules/services.query", "modules/services.read", "modules/services.register-server", "modules/services.register_node", "modules/services.secure-channel", "modules/services.session", "modules/services.subscription", "modules/services.translate-browse-path", "modules/services.write", "modules/StatusCodes", "modules/xml2json
+
+node -> see if https://github.com/isaacs/sax-js could be used instead"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+
+<div class="row">
+<script type="text/javascript" src="http://www.google.com/cse/query_renderer.js"></script>
+<div id="queries"></div>
+<script src="http://www.google.com/cse/api/partner-pub-8886208393040088/cse/1374394727/queries/js?oe=UTF-8&amp;callback=(new+PopularQueryRenderer(document.getElementById(%22queries%22))).render"></script>
+
+</div>
+
+    <div class="row">
+        <div class="span3">
+
+            <!-- Ad by Google -->
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-format="fluid"
+                 data-ad-layout-key="-8h+1u-de+eo+dy"
+                 data-ad-client="ca-pub-8886208393040088"
+                 data-ad-slot="9362364253"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <!-- -->
+
+	         <div>
+	             <h3>APIs</h3>
+	             <div id="sidebar">
+	                 <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
+	                     <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
+	                     <li><a href="#modules" data-toggle="tab">Modules</a></li>
+	                 </ul>
+	         
+	                 <div id="api-tabview-filter">
+	                     <input type="search" placeholder="Type to filter APIs">
+	                 </div>
+	         
+	                 <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
+	                     <div class="tab-pane active" id="classes">
+	                         <ul id="api-classes" class="nav nav-list">
+	                                 <li><a href="../classes/AcknowledgeMessage.html">AcknowledgeMessage</a></li>
+	                                 <li><a href="../classes/ActivateSessionRequest.html">ActivateSessionRequest</a></li>
+	                                 <li><a href="../classes/ActivateSessionResponse.html">ActivateSessionResponse</a></li>
+	                                 <li><a href="../classes/AddNodesItem.html">AddNodesItem</a></li>
+	                                 <li><a href="../classes/AddNodesRequest.html">AddNodesRequest</a></li>
+	                                 <li><a href="../classes/AddNodesResponse.html">AddNodesResponse</a></li>
+	                                 <li><a href="../classes/AddNodesResult.html">AddNodesResult</a></li>
+	                                 <li><a href="../classes/AddReferencesItem.html">AddReferencesItem</a></li>
+	                                 <li><a href="../classes/AddReferencesRequest.html">AddReferencesRequest</a></li>
+	                                 <li><a href="../classes/AddReferencesResponse.html">AddReferencesResponse</a></li>
+	                                 <li><a href="../classes/AddressSpace.html">AddressSpace</a></li>
+	                                 <li><a href="../classes/AggregateConfiguration.html">AggregateConfiguration</a></li>
+	                                 <li><a href="../classes/AggregateFilter.html">AggregateFilter</a></li>
+	                                 <li><a href="../classes/AnonymousIdentityToken.html">AnonymousIdentityToken</a></li>
+	                                 <li><a href="../classes/ApplicationDescription.html">ApplicationDescription</a></li>
+	                                 <li><a href="../classes/ApplicationInstanceCertificate.html">ApplicationInstanceCertificate</a></li>
+	                                 <li><a href="../classes/Argument.html">Argument</a></li>
+	                                 <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
+	                                 <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+	                                 <li><a href="../classes/AttributeNameById.html">AttributeNameById</a></li>
+	                                 <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
+	                                 <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
+	                                 <li><a href="../classes/BaseEventType.html">BaseEventType</a></li>
+	                                 <li><a href="../classes/BaseNode
+	         
+	         BaseNode is the base class for all the OPCUA objects in the address space
+	         It provides attributes and a set of references to other nodes.
+	         see:
+	         {{#crossLink &quot;UAObject&quot;}}{{/crossLink}},
+	         {{#crossLink &quot;UAVariable&quot;}}{{/crossLink}},
+	         {{#crossLink &quot;Reference&quot;}}{{/crossLink}},
+	         {{#crossLink &quot;UAMethod&quot;}}{{/crossLink}},
+	         {{#crossLink &quot;UAView&quot;}}{{/crossLink}},
+	         {{#crossLink &quot;UAObjecType&quot;}}{{/crossLink}},
+	         {{#crossLink &quot;UADataType&quot;}}{{/crossLink}},
+	         {{#crossLink &quot;UAVariableType&quot;}}{{/crossLink}},.html">BaseNode
+	         
+	         BaseNode is the base class for all the OPCUA objects in the address space
+	         It provides attributes and a set of references to other nodes.
+	         see:
+	         {{#crossLink &quot;UAObject&quot;}}{{/crossLink}},
+	         {{#crossLink &quot;UAVariable&quot;}}{{/crossLink}},
+	         {{#crossLink &quot;Reference&quot;}}{{/crossLink}},
+	         {{#crossLink &quot;UAMethod&quot;}}{{/crossLink}},
+	         {{#crossLink &quot;UAView&quot;}}{{/crossLink}},
+	         {{#crossLink &quot;UAObjecType&quot;}}{{/crossLink}},
+	         {{#crossLink &quot;UADataType&quot;}}{{/crossLink}},
+	         {{#crossLink &quot;UAVariableType&quot;}}{{/crossLink}},</a></li>
+	                                 <li><a href="../classes/BaseUAObject.html">BaseUAObject</a></li>
+	                                 <li><a href="../classes/BinaryStream.html">BinaryStream</a></li>
+	                                 <li><a href="../classes/BinaryStreamSizeCalculator.html">BinaryStreamSizeCalculator</a></li>
+	                                 <li><a href="../classes/BrowseDescription.html">BrowseDescription</a></li>
+	                                 <li><a href="../classes/BrowseDirection.html">BrowseDirection</a></li>
+	                                 <li><a href="../classes/BrowseNextRequest.html">BrowseNextRequest</a></li>
+	                                 <li><a href="../classes/BrowseNextResponse.html">BrowseNextResponse</a></li>
+	                                 <li><a href="../classes/BrowsePath.html">BrowsePath</a></li>
+	                                 <li><a href="../classes/BrowsePathResult.html">BrowsePathResult</a></li>
+	                                 <li><a href="../classes/BrowsePathTarget.html">BrowsePathTarget</a></li>
+	                                 <li><a href="../classes/BrowseRequest.html">BrowseRequest</a></li>
+	                                 <li><a href="../classes/BrowseResponse.html">BrowseResponse</a></li>
+	                                 <li><a href="../classes/BrowseResult.html">BrowseResult</a></li>
+	                                 <li><a href="../classes/BuildInfo.html">BuildInfo</a></li>
+	                                 <li><a href="../classes/CallMethodRequest.html">CallMethodRequest</a></li>
+	                                 <li><a href="../classes/CallMethodResult.html">CallMethodResult</a></li>
+	                                 <li><a href="../classes/CallRequest.html">CallRequest</a></li>
+	                                 <li><a href="../classes/CallResponse.html">CallResponse</a></li>
+	                                 <li><a href="../classes/CancelRequest.html">CancelRequest</a></li>
+	                                 <li><a href="../classes/CancelResponse.html">CancelResponse</a></li>
+	                                 <li><a href="../classes/ChannelSecurityToken.html">ChannelSecurityToken</a></li>
+	                                 <li><a href="../classes/ChunkManager.html">ChunkManager</a></li>
+	                                 <li><a href="../classes/ClientMonitoredItem.html">ClientMonitoredItem</a></li>
+	                                 <li><a href="../classes/ClientMonitoredItemGroup.html">ClientMonitoredItemGroup</a></li>
+	                                 <li><a href="../classes/ClientSecureChannelLayer.html">ClientSecureChannelLayer</a></li>
+	                                 <li><a href="../classes/ClientSession.html">ClientSession</a></li>
+	                                 <li><a href="../classes/ClientSidePublishEngine
+	         
+	         The ClientSidePublishEngine encapsulates the mechanism to
+	         deal with a OPCUA Server and constantly sending PublishRequest
+	         The ClientSidePublishEngine also performs  notification acknowledgements.
+	         Finally, ClientSidePublishEngine dispatch PublishResponse to the correct
+	         Subscription id callback.html">ClientSidePublishEngine
+	         
+	         The ClientSidePublishEngine encapsulates the mechanism to
+	         deal with a OPCUA Server and constantly sending PublishRequest
+	         The ClientSidePublishEngine also performs  notification acknowledgements.
+	         Finally, ClientSidePublishEngine dispatch PublishResponse to the correct
+	         Subscription id callback</a></li>
+	                                 <li><a href="../classes/ClientSubscription.html">ClientSubscription</a></li>
+	                                 <li><a href="../classes/ClientTCP_transport.html">ClientTCP_transport</a></li>
+	                                 <li><a href="../classes/CloseSecureChannelRequest.html">CloseSecureChannelRequest</a></li>
+	                                 <li><a href="../classes/CloseSecureChannelResponse.html">CloseSecureChannelResponse</a></li>
+	                                 <li><a href="../classes/CloseSessionRequest.html">CloseSessionRequest</a></li>
+	                                 <li><a href="../classes/CloseSessionResponse.html">CloseSessionResponse</a></li>
+	                                 <li><a href="../classes/ConditionInfo.html">ConditionInfo</a></li>
+	                                 <li><a href="../classes/ContentFilter.html">ContentFilter</a></li>
+	                                 <li><a href="../classes/ContentFilterElement.html">ContentFilterElement</a></li>
+	                                 <li><a href="../classes/ContentFilterElementResult.html">ContentFilterElementResult</a></li>
+	                                 <li><a href="../classes/ContentFilterResult.html">ContentFilterResult</a></li>
+	                                 <li><a href="../classes/CreateMonitoredItemsRequest.html">CreateMonitoredItemsRequest</a></li>
+	                                 <li><a href="../classes/CreateMonitoredItemsResponse.html">CreateMonitoredItemsResponse</a></li>
+	                                 <li><a href="../classes/CreateSessionRequest.html">CreateSessionRequest</a></li>
+	                                 <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
+	                                 <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
+	                                 <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
+	                                 <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
+	                                 <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
+	                                 <li><a href="../classes/DataValue.html">DataValue</a></li>
+	                                 <li><a href="../classes/DeleteMonitoredItemsRequest.html">DeleteMonitoredItemsRequest</a></li>
+	                                 <li><a href="../classes/DeleteMonitoredItemsResponse.html">DeleteMonitoredItemsResponse</a></li>
+	                                 <li><a href="../classes/DeleteNodesItem.html">DeleteNodesItem</a></li>
+	                                 <li><a href="../classes/DeleteNodesRequest.html">DeleteNodesRequest</a></li>
+	                                 <li><a href="../classes/DeleteNodesResponse.html">DeleteNodesResponse</a></li>
+	                                 <li><a href="../classes/DeleteReferencesItem.html">DeleteReferencesItem</a></li>
+	                                 <li><a href="../classes/DeleteReferencesRequest.html">DeleteReferencesRequest</a></li>
+	                                 <li><a href="../classes/DeleteReferencesResponse.html">DeleteReferencesResponse</a></li>
+	                                 <li><a href="../classes/DeleteSubscriptionsRequest.html">DeleteSubscriptionsRequest</a></li>
+	                                 <li><a href="../classes/DeleteSubscriptionsResponse.html">DeleteSubscriptionsResponse</a></li>
+	                                 <li><a href="../classes/DiagnosticInfo.html">DiagnosticInfo</a></li>
+	                                 <li><a href="../classes/ElementOperand.html">ElementOperand</a></li>
+	                                 <li><a href="../classes/EndpointDescription.html">EndpointDescription</a></li>
+	                                 <li><a href="../classes/Enum.html">Enum</a></li>
+	                                 <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
+	                                 <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
+	                                 <li><a href="../classes/EUInformation.html">EUInformation</a></li>
+	                                 <li><a href="../classes/EventData.html">EventData</a></li>
+	                                 <li><a href="../classes/EventFieldList.html">EventFieldList</a></li>
+	                                 <li><a href="../classes/EventFilter.html">EventFilter</a></li>
+	                                 <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
+	                                 <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
+	                                 <li><a href="../classes/ExpandedNodeId.html">ExpandedNodeId</a></li>
+	                                 <li><a href="../classes/Factory.html">Factory</a></li>
+	                                 <li><a href="../classes/FilterOperand.html">FilterOperand</a></li>
+	                                 <li><a href="../classes/FindServersOnNetworkRequest.html">FindServersOnNetworkRequest</a></li>
+	                                 <li><a href="../classes/FindServersOnNetworkResponse.html">FindServersOnNetworkResponse</a></li>
+	                                 <li><a href="../classes/FindServersRequest.html">FindServersRequest</a></li>
+	                                 <li><a href="../classes/FindServersResponse.html">FindServersResponse</a></li>
+	                                 <li><a href="../classes/GetEndpointsRequest.html">GetEndpointsRequest</a></li>
+	                                 <li><a href="../classes/GetEndpointsResponse.html">GetEndpointsResponse</a></li>
+	                                 <li><a href="../classes/HelloMessage.html">HelloMessage</a></li>
+	                                 <li><a href="../classes/HistoryData.html">HistoryData</a></li>
+	                                 <li><a href="../classes/HistoryModifiedData.html">HistoryModifiedData</a></li>
+	                                 <li><a href="../classes/HistoryReadDetails.html">HistoryReadDetails</a></li>
+	                                 <li><a href="../classes/HistoryReadRequest.html">HistoryReadRequest</a></li>
+	                                 <li><a href="../classes/HistoryReadResponse.html">HistoryReadResponse</a></li>
+	                                 <li><a href="../classes/HistoryReadResult.html">HistoryReadResult</a></li>
+	                                 <li><a href="../classes/HistoryReadValueId.html">HistoryReadValueId</a></li>
+	                                 <li><a href="../classes/HistoryServerCapabilities.html">HistoryServerCapabilities</a></li>
+	                                 <li><a href="../classes/HistoryUpdateRequest.html">HistoryUpdateRequest</a></li>
+	                                 <li><a href="../classes/HistoryUpdateResponse.html">HistoryUpdateResponse</a></li>
+	                                 <li><a href="../classes/HistoryUpdateResult.html">HistoryUpdateResult</a></li>
+	                                 <li><a href="../classes/IssuedIdentityToken.html">IssuedIdentityToken</a></li>
+	                                 <li><a href="../classes/LiteralOperand.html">LiteralOperand</a></li>
+	                                 <li><a href="../classes/LocalizedText.html">LocalizedText</a></li>
+	                                 <li><a href="../classes/MandatoryChildOrRequestedOptionalFilter
+	         return true if node is a mandatory child or a requested optional.html">MandatoryChildOrRequestedOptionalFilter
+	         return true if node is a mandatory child or a requested optional</a></li>
+	                                 <li><a href="../classes/MdnsDiscoveryConfiguration.html">MdnsDiscoveryConfiguration</a></li>
+	                                 <li><a href="../classes/MessageBuilder.html">MessageBuilder</a></li>
+	                                 <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
+	                                 <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
+	                                 <li><a href="../classes/ModelChangeStructure.html">ModelChangeStructure</a></li>
+	                                 <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
+	                                 <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
+	                                 <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
+	                                 <li><a href="../classes/ModifySubscriptionRequest.html">ModifySubscriptionRequest</a></li>
+	                                 <li><a href="../classes/ModifySubscriptionResponse.html">ModifySubscriptionResponse</a></li>
+	                                 <li><a href="../classes/MonitoredItem.html">MonitoredItem</a></li>
+	                                 <li><a href="../classes/MonitoredItemCreateRequest.html">MonitoredItemCreateRequest</a></li>
+	                                 <li><a href="../classes/MonitoredItemCreateResult.html">MonitoredItemCreateResult</a></li>
+	                                 <li><a href="../classes/MonitoredItemModifyRequest.html">MonitoredItemModifyRequest</a></li>
+	                                 <li><a href="../classes/MonitoredItemModifyResult.html">MonitoredItemModifyResult</a></li>
+	                                 <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
+	                                 <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
+	                                 <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+	                                 <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
+	                                 <li><a href="../classes/NodeId.html">NodeId</a></li>
+	                                 <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
+	                                 <li><a href="../classes/NodeTypeDescription.html">NodeTypeDescription</a></li>
+	                                 <li><a href="../classes/NotificationMessage.html">NotificationMessage</a></li>
+	                                 <li><a href="../classes/opcua.html">opcua</a></li>
+	                                 <li><a href="../classes/OPCUABaseServer.html">OPCUABaseServer</a></li>
+	                                 <li><a href="../classes/OPCUAClient.html">OPCUAClient</a></li>
+	                                 <li><a href="../classes/OPCUAClientBase.html">OPCUAClientBase</a></li>
+	                                 <li><a href="../classes/OPCUASecureObject.html">OPCUASecureObject</a></li>
+	                                 <li><a href="../classes/OPCUAServer.html">OPCUAServer</a></li>
+	                                 <li><a href="../classes/OPCUAServerEndPoint
+	         
+	         A sever end point is listening to one port.html">OPCUAServerEndPoint
+	         
+	         A sever end point is listening to one port</a></li>
+	                                 <li><a href="../classes/OpenSecureChannelRequest.html">OpenSecureChannelRequest</a></li>
+	                                 <li><a href="../classes/OpenSecureChannelResponse.html">OpenSecureChannelResponse</a></li>
+	                                 <li><a href="../classes/OperationLimits.html">OperationLimits</a></li>
+	                                 <li><a href="../classes/PacketAssembler.html">PacketAssembler</a></li>
+	                                 <li><a href="../classes/ParsingResult.html">ParsingResult</a></li>
+	                                 <li><a href="../classes/PublishRequest.html">PublishRequest</a></li>
+	                                 <li><a href="../classes/PublishResponse.html">PublishResponse</a></li>
+	                                 <li><a href="../classes/QualifiedName.html">QualifiedName</a></li>
+	                                 <li><a href="../classes/QueryDataDescription.html">QueryDataDescription</a></li>
+	                                 <li><a href="../classes/QueryDataSet.html">QueryDataSet</a></li>
+	                                 <li><a href="../classes/QueryFirstRequest.html">QueryFirstRequest</a></li>
+	                                 <li><a href="../classes/QueryFirstResponse.html">QueryFirstResponse</a></li>
+	                                 <li><a href="../classes/QueryNextRequest.html">QueryNextRequest</a></li>
+	                                 <li><a href="../classes/QueryNextResponse.html">QueryNextResponse</a></li>
+	                                 <li><a href="../classes/Range.html">Range</a></li>
+	                                 <li><a href="../classes/ReadAtTimeDetails.html">ReadAtTimeDetails</a></li>
+	                                 <li><a href="../classes/ReadEventDetails.html">ReadEventDetails</a></li>
+	                                 <li><a href="../classes/ReadProcessedDetails.html">ReadProcessedDetails</a></li>
+	                                 <li><a href="../classes/ReadRawModifiedDetails.html">ReadRawModifiedDetails</a></li>
+	                                 <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
+	                                 <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
+	                                 <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+	                                 <li><a href="../classes/RedundantServer.html">RedundantServer</a></li>
+	                                 <li><a href="../classes/Reference.html">Reference</a></li>
+	                                 <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
+	                                 <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
+	                                 <li><a href="../classes/RegisteredServer.html">RegisteredServer</a></li>
+	                                 <li><a href="../classes/RegisterNodesRequest.html">RegisterNodesRequest</a></li>
+	                                 <li><a href="../classes/RegisterNodesResponse.html">RegisterNodesResponse</a></li>
+	                                 <li><a href="../classes/RegisterServer2Request.html">RegisterServer2Request</a></li>
+	                                 <li><a href="../classes/RegisterServer2Response.html">RegisterServer2Response</a></li>
+	                                 <li><a href="../classes/RegisterServerRequest.html">RegisterServerRequest</a></li>
+	                                 <li><a href="../classes/RegisterServerResponse.html">RegisterServerResponse</a></li>
+	                                 <li><a href="../classes/RelativePath.html">RelativePath</a></li>
+	                                 <li><a href="../classes/RelativePathElement.html">RelativePathElement</a></li>
+	                                 <li><a href="../classes/RepublishRequest.html">RepublishRequest</a></li>
+	                                 <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
+	                                 <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
+	                                 <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+	                                 <li><a href="../classes/SamplingIntervalDiagnostics.html">SamplingIntervalDiagnostics</a></li>
+	                                 <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
+	                                 <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
+	                                 <li><a href="../classes/SemanticChangeStructure.html">SemanticChangeStructure</a></li>
+	                                 <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
+	                                 <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
+	                                 <li><a href="../classes/ServerCapabilities.html">ServerCapabilities</a></li>
+	                                 <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
+	                                 <li><a href="../classes/ServerEngine.html">ServerEngine</a></li>
+	                                 <li><a href="../classes/ServerOnNetwork.html">ServerOnNetwork</a></li>
+	                                 <li><a href="../classes/ServerSecureChannelLayer.html">ServerSecureChannelLayer</a></li>
+	                                 <li><a href="../classes/ServerSidePublishEngine
+	          a Publish Engine for a given session.html">ServerSidePublishEngine
+	          a Publish Engine for a given session</a></li>
+	                                 <li><a href="../classes/ServerStatus.html">ServerStatus</a></li>
+	                                 <li><a href="../classes/ServerTCP_transport.html">ServerTCP_transport</a></li>
+	                                 <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
+	                                 <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
+	                                 <li><a href="../classes/SessionContext.html">SessionContext</a></li>
+	                                 <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+	                                 <li><a href="../classes/SessionSecurityDiagnostics.html">SessionSecurityDiagnostics</a></li>
+	                                 <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
+	                                 <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
+	                                 <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
+	                                 <li><a href="../classes/SetPublishingModeResponse.html">SetPublishingModeResponse</a></li>
+	                                 <li><a href="../classes/SetTriggeringRequest.html">SetTriggeringRequest</a></li>
+	                                 <li><a href="../classes/SetTriggeringResponse.html">SetTriggeringResponse</a></li>
+	                                 <li><a href="../classes/SignatureData.html">SignatureData</a></li>
+	                                 <li><a href="../classes/SignedSoftwareCertificate.html">SignedSoftwareCertificate</a></li>
+	                                 <li><a href="../classes/SimpleAttributeOperand.html">SimpleAttributeOperand</a></li>
+	                                 <li><a href="../classes/Simulator.html">Simulator</a></li>
+	                                 <li><a href="../classes/StatusChangeNotification.html">StatusChangeNotification</a></li>
+	                                 <li><a href="../classes/StatusCode.html">StatusCode</a></li>
+	                                 <li><a href="../classes/Subscription.html">Subscription</a></li>
+	                                 <li><a href="../classes/SubscriptionAcknowledgement.html">SubscriptionAcknowledgement</a></li>
+	                                 <li><a href="../classes/SubscriptionDiagnostics.html">SubscriptionDiagnostics</a></li>
+	                                 <li><a href="../classes/SymmetricAlgorithmSecurityHeader.html">SymmetricAlgorithmSecurityHeader</a></li>
+	                                 <li><a href="../classes/TCP_transport.html">TCP_transport</a></li>
+	                                 <li><a href="../classes/TCPErrorMessage.html">TCPErrorMessage</a></li>
+	                                 <li><a href="../classes/TimestampsToReturn.html">TimestampsToReturn</a></li>
+	                                 <li><a href="../classes/TimeZone.html">TimeZone</a></li>
+	                                 <li><a href="../classes/ToolBrowsePath.html">ToolBrowsePath</a></li>
+	                                 <li><a href="../classes/TransferResult.html">TransferResult</a></li>
+	                                 <li><a href="../classes/TransferSubscriptionsRequest.html">TransferSubscriptionsRequest</a></li>
+	                                 <li><a href="../classes/TransferSubscriptionsResponse.html">TransferSubscriptionsResponse</a></li>
+	                                 <li><a href="../classes/TranslateBrowsePathsToNodeIdsRequest.html">TranslateBrowsePathsToNodeIdsRequest</a></li>
+	                                 <li><a href="../classes/TranslateBrowsePathsToNodeIdsResponse.html">TranslateBrowsePathsToNodeIdsResponse</a></li>
+	                                 <li><a href="../classes/TypeSchema.html">TypeSchema</a></li>
+	                                 <li><a href="../classes/UAAcknowledgeableConditionBase.html">UAAcknowledgeableConditionBase</a></li>
+	                                 <li><a href="../classes/UAAlarmConditionBase.html">UAAlarmConditionBase</a></li>
+	                                 <li><a href="../classes/UACertificateExpirationAlarm
+	         
+	         This SystemOffNormalAlarmType is raised by the Server when the Server’s Certificate is within the ExpirationLimit
+	         of expiration. This alarm automatically returns to normal when the certificate is updated..html">UACertificateExpirationAlarm
+	         
+	         This SystemOffNormalAlarmType is raised by the Server when the Server’s Certificate is within the ExpirationLimit
+	         of expiration. This alarm automatically returns to normal when the certificate is updated.</a></li>
+	                                 <li><a href="../classes/UAConditionBase.html">UAConditionBase</a></li>
+	                                 <li><a href="../classes/UADataType.html">UADataType</a></li>
+	                                 <li><a href="../classes/UADiscreteAlarm
+	         
+	         The DiscreteAlarmType is used to classify Types into Alarm Conditions where the input for the
+	         Alarm may take on only a certain number of possible values (e.g. true/false,
+	         running/stopped/terminating)..html">UADiscreteAlarm
+	         
+	         The DiscreteAlarmType is used to classify Types into Alarm Conditions where the input for the
+	         Alarm may take on only a certain number of possible values (e.g. true/false,
+	         running/stopped/terminating).</a></li>
+	                                 <li><a href="../classes/UAExclusiveDeviationAlarm.html">UAExclusiveDeviationAlarm</a></li>
+	                                 <li><a href="../classes/UAExclusiveLevelAlarm.html">UAExclusiveLevelAlarm</a></li>
+	                                 <li><a href="../classes/UAExclusiveLimitAlarm.html">UAExclusiveLimitAlarm</a></li>
+	                                 <li><a href="../classes/UAExclusiveRateOfChangeAlarm.html">UAExclusiveRateOfChangeAlarm</a></li>
+	                                 <li><a href="../classes/UALimitAlarm.html">UALimitAlarm</a></li>
+	                                 <li><a href="../classes/UAMultiStateDiscreteType.html">UAMultiStateDiscreteType</a></li>
+	                                 <li><a href="../classes/UANonExclusiveDeviationAlarm.html">UANonExclusiveDeviationAlarm</a></li>
+	                                 <li><a href="../classes/UANonExclusiveLimitAlarm.html">UANonExclusiveLimitAlarm</a></li>
+	                                 <li><a href="../classes/UAObject.html">UAObject</a></li>
+	                                 <li><a href="../classes/UAObjectType.html">UAObjectType</a></li>
+	                                 <li><a href="../classes/UAOffNormalAlarm.html">UAOffNormalAlarm</a></li>
+	                                 <li><a href="../classes/UAProxyManager.html">UAProxyManager</a></li>
+	                                 <li><a href="../classes/UASystemOffNormalAlarm.html">UASystemOffNormalAlarm</a></li>
+	                                 <li><a href="../classes/UATripAlarm
+	         
+	         The TripAlarmType is a specialization of the OffNormalAlarmType intended to represent an equipment trip Condition.
+	         The Alarm becomes active when the monitored piece of equipment experiences some abnormal fault such as a motor
+	         shutting down due to an overload Condition. This Type is mainly used for categorization..html">UATripAlarm
+	         
+	         The TripAlarmType is a specialization of the OffNormalAlarmType intended to represent an equipment trip Condition.
+	         The Alarm becomes active when the monitored piece of equipment experiences some abnormal fault such as a motor
+	         shutting down due to an overload Condition. This Type is mainly used for categorization.</a></li>
+	                                 <li><a href="../classes/UATwoStateVariable.html">UATwoStateVariable</a></li>
+	                                 <li><a href="../classes/UAVariable.html">UAVariable</a></li>
+	                                 <li><a href="../classes/UAVariableType.html">UAVariableType</a></li>
+	                                 <li><a href="../classes/UnregisterNodesRequest.html">UnregisterNodesRequest</a></li>
+	                                 <li><a href="../classes/UnregisterNodesResponse.html">UnregisterNodesResponse</a></li>
+	                                 <li><a href="../classes/UserNameIdentityToken.html">UserNameIdentityToken</a></li>
+	                                 <li><a href="../classes/UserTokenPolicy.html">UserTokenPolicy</a></li>
+	                                 <li><a href="../classes/Variant.html">Variant</a></li>
+	                                 <li><a href="../classes/View.html">View</a></li>
+	                                 <li><a href="../classes/ViewDescription.html">ViewDescription</a></li>
+	                                 <li><a href="../classes/WriteRequest.html">WriteRequest</a></li>
+	                                 <li><a href="../classes/WriteResponse.html">WriteResponse</a></li>
+	                                 <li><a href="../classes/WriteValue.html">WriteValue</a></li>
+	                                 <li><a href="../classes/X509IdentityToken.html">X509IdentityToken</a></li>
+	                                 <li><a href="../classes/Xml2Json.html">Xml2Json</a></li>
+	                         </ul>
+	                     </div>
+	         
+	                     <div class="tab-pane" id="modules">
+	                         <ul id="api-modules" class="nav nav-list">
+	                                 <li><a href="../modules/opcua.address_space.html">opcua.address_space</a></li>
+	                                 <li><a href="../modules/opcua.address_space.AlarmsAndConditions.html">opcua.address_space.AlarmsAndConditions</a></li>
+	                                 <li><a href="../modules/opcua.address_space.types.html">opcua.address_space.types</a></li>
+	                                 <li><a href="../modules/opcua.client.html">opcua.client</a></li>
+	                                 <li><a href="../modules/opcua.data-value.html">opcua.data-value</a></li>
+	                                 <li><a href="../modules/opcua.datamodel.html">opcua.datamodel</a></li>
+	                                 <li><a href="../modules/opcua.miscellaneous.html">opcua.miscellaneous</a></li>
+	                                 <li><a href="../modules/opcua.server.html">opcua.server</a></li>
+	                                 <li><a href="../modules/opcua.server.simulation.html">opcua.server.simulation</a></li>
+	                                 <li><a href="../modules/opcua.status-code.html">opcua.status-code</a></li>
+	                                 <li><a href="../modules/opcua.transport.html">opcua.transport</a></li>
+	                                 <li><a href="../modules/opcua.utils.html">opcua.utils</a></li>
+	                                 <li><a href="../modules/opcua.variant.html">opcua.variant</a></li>
+	                                 <li><a href="../modules/service.filter.tools.html">service.filter.tools</a></li>
+	                                 <li><a href="../modules/services.browse.html">services.browse</a></li>
+	                                 <li><a href="../modules/services.call.html">services.call</a></li>
+	                                 <li><a href="../modules/services.discovery.html">services.discovery</a></li>
+	                                 <li><a href="../modules/services.endpoints.html">services.endpoints</a></li>
+	                                 <li><a href="../modules/services.filter.html">services.filter</a></li>
+	                                 <li><a href="../modules/services.history.html">services.history</a></li>
+	                                 <li><a href="../modules/services.node_management.html">services.node_management</a></li>
+	                                 <li><a href="../modules/services.query.html">services.query</a></li>
+	                                 <li><a href="../modules/services.read.html">services.read</a></li>
+	                                 <li><a href="../modules/services.register-server.html">services.register-server</a></li>
+	                                 <li><a href="../modules/services.register_node.html">services.register_node</a></li>
+	                                 <li><a href="../modules/services.secure-channel.html">services.secure-channel</a></li>
+	                                 <li><a href="../modules/services.session.html">services.session</a></li>
+	                                 <li><a href="../modules/services.subscription.html">services.subscription</a></li>
+	                                 <li><a href="../modules/services.translate-browse-path.html">services.translate-browse-path</a></li>
+	                                 <li><a href="../modules/services.write.html">services.write</a></li>
+	                                 <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
+	                                 <li><a href="../modules/xml2json
+	         
+	         node -&gt; see if https:__github.com_isaacs_sax-js could be used instead.html">xml2json
+	         
+	         node -&gt; see if https://github.com/isaacs/sax-js could be used instead</a></li>
+	                         </ul>
+	                     </div>
+	                 </div>
+	             </div>
+	         </div>
+	    
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+                    Show:
+                    <label for="api-show-inherited" class="checkbox">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected" class="checkbox">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private" class="checkbox">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated" class="checkbox">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </form>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<div class="page-header">
+    <h1>packages\node-opcua-server\src\server_engine.js <small>File</small></h1>
+</div>
+
+<div class="file">
+    <pre class="prettyprint linenums">
+/* global require */
+&quot;use strict&quot;;
+/**
+ * @module opcua.server
+ */
+
+
+const _ = require(&quot;underscore&quot;);
+const assert = require(&quot;node-opcua-assert&quot;).assert;
+const async = require(&quot;async&quot;);
+const util = require(&quot;util&quot;);
+const EventEmitter = require(&quot;events&quot;).EventEmitter;
+
+const SessionContext = require(&quot;node-opcua-address-space&quot;).SessionContext;
+
+const NodeId = require(&quot;node-opcua-nodeid&quot;).NodeId;
+const resolveNodeId = require(&quot;node-opcua-nodeid&quot;).resolveNodeId;
+const makeNodeId = require(&quot;node-opcua-nodeid&quot;).makeNodeId;
+const NodeIdType = require(&quot;node-opcua-nodeid&quot;).NodeIdType;
+const NumericRange = require(&quot;node-opcua-numeric-range&quot;).NumericRange;
+const BrowseDirection = require(&quot;node-opcua-data-model&quot;).BrowseDirection;
+const BrowseResult = require(&quot;node-opcua-service-browse&quot;).BrowseResult;
+
+const ReadRequest = require(&quot;node-opcua-service-read&quot;).ReadRequest;
+
+require(&quot;node-opcua-common&quot;);
+
+const read_service = require(&quot;node-opcua-service-read&quot;);
+const AttributeIds = require(&quot;node-opcua-data-model&quot;).AttributeIds;
+const TimestampsToReturn = read_service.TimestampsToReturn;
+
+const UAVariable = require(&quot;node-opcua-address-space&quot;).UAVariable;
+const ServerSidePublishEngine = require(&quot;./server_publish_engine&quot;).ServerSidePublishEngine;
+
+const historizing_service = require(&quot;node-opcua-service-history&quot;);
+const HistoryReadRequest = historizing_service.HistoryReadRequest;
+const HistoryReadDetails = historizing_service.HistoryReadDetails;
+const HistoryReadResult = historizing_service.HistoryReadResult;
+
+const DataValue = require(&quot;node-opcua-data-value&quot;).DataValue;
+const Variant = require(&quot;node-opcua-variant&quot;).Variant;
+const DataType = require(&quot;node-opcua-variant&quot;).DataType;
+const VariantArrayType = require(&quot;node-opcua-variant&quot;).VariantArrayType;
+const isValidVariant = require(&quot;node-opcua-variant&quot;).isValidVariant;
+
+
+const StatusCodes = require(&quot;node-opcua-status-code&quot;).StatusCodes;
+const StatusCode = require(&quot;node-opcua-status-code&quot;).StatusCode;
+
+
+require(&quot;node-opcua-common&quot;);
+
+const address_space = require(&quot;node-opcua-address-space&quot;);
+const AddressSpace = address_space.AddressSpace;
+
+const generate_address_space = require(&quot;node-opcua-address-space&quot;).generate_address_space;
+
+const ServerSession = require(&quot;./server_session&quot;).ServerSession;
+
+const VariableIds = require(&quot;node-opcua-constants&quot;).VariableIds;
+const MethodIds = require(&quot;node-opcua-constants&quot;).MethodIds;
+
+const ReferenceType = require(&quot;node-opcua-address-space&quot;).ReferenceType;
+
+
+const ServerState = require(&quot;node-opcua-common&quot;).ServerState;
+const ServerStatus = require(&quot;node-opcua-common&quot;).ServerStatus;
+const ServerDiagnosticsSummary = require(&quot;node-opcua-common&quot;).ServerDiagnosticsSummary;
+
+const endpoints_service = require(&quot;node-opcua-service-endpoints&quot;);
+const ApplicationDescription = endpoints_service.ApplicationDescription;
+
+const nodesets = require(&quot;node-opcua-nodesets&quot;);
+exports.standard_nodeset_file = nodesets.standard_nodeset_file;
+exports.di_nodeset_filename = nodesets.di_nodeset_filename;
+exports.adi_nodeset_filename = nodesets.adi_nodeset_filename;
+const mini_nodeset_filename = require(&quot;node-opcua-address-space/test_helpers/get_mini_address_space&quot;).mini_nodeset_filename;
+exports.mini_nodeset_filename = mini_nodeset_filename;
+
+
+const debugLog = require(&quot;node-opcua-debug&quot;).make_debugLog(__filename);
+const doDebug = require(&quot;node-opcua-debug&quot;).checkDebugFlag(__filename);
+
+const ServerCapabilities = require(&quot;./server_capabilities&quot;).ServerCapabilities;
+const HistoryServerCapabilities = require(&quot;./history_server_capabilities&quot;).HistoryServerCapabilities;
+
+const eoan = require(&quot;node-opcua-address-space&quot;);
+
+
+/**
+ * @class ServerEngine
+ * @extends EventEmitter
+ * @uses ServerSidePublishEngine
+ * @param options {Object}
+ * @param options.buildInfo
+ * @param [options.isAuditing = false ] {Boolean}
+ * @param [options.serverCapabilities]
+ * @param [options.serverCapabilities.serverProfileArray]
+ * @param [options.serverCapabilities.localeIdArray]
+ * @param options.applicationUri {String} the application URI.
+ * @param [options.historyServerCapabilities]
+ * @param [options.serverDiagnosticsEnabled = true] set to true to enable serverDiagnostics
+ *
+ * @constructor
+ */
+function ServerEngine(options) {
+
+    options = options || {};
+    options.buildInfo = options.buildInfo || {};
+
+    EventEmitter.apply(this, arguments);
+    const engine = this;
+    ServerEngine.registry.register(engine);
+
+    engine._sessions = {};
+    engine._closedSessions = {};
+    engine._orphanPublishEngine = null; // will be constructed on demand
+
+    engine.isAuditing = _.isBoolean(options.isAuditing) ? options.isAuditing : false;
+
+    options.buildInfo.buildDate = options.buildInfo.buildDate || new Date();
+    // ---------------------------------------------------- ServerStatus
+    engine.serverStatus = new ServerStatus({
+        startTime: new Date(),
+        currentTime: new Date(),
+        state: ServerState.NoConfiguration,
+        buildInfo: options.buildInfo,
+        secondsTillShutdown: 0,
+        shutdownReason: {text: &quot;&quot;}
+    });
+
+
+    // --------------------------------------------------- ServerCapabilities
+    options.serverCapabilities = options.serverCapabilities || {};
+    options.serverCapabilities.serverProfileArray = options.serverCapabilities.serverProfileArray || [
+        &quot;Standard UA Server Profile&quot;,
+        &quot;Embedded UA Server Profile&quot;,
+        &quot;Micro Embedded Device Server Profile&quot;,
+        &quot;Nano Embedded Device Server Profile&quot;
+    ];
+    options.serverCapabilities.localeIdArray = options.serverCapabilities.localeIdArray || [&quot;en-EN&quot;, &quot;fr-FR&quot;];
+
+    engine.serverCapabilities = new ServerCapabilities(options.serverCapabilities);
+    engine.historyServerCapabilities = new HistoryServerCapabilities(options.historyServerCapabilities);
+
+    // --------------------------------------------------- serverDiagnosticsSummary extension Object
+    engine.serverDiagnosticsSummary = new ServerDiagnosticsSummary({});
+    assert(engine.serverDiagnosticsSummary.hasOwnProperty(&quot;currentSessionCount&quot;));
+
+    // note spelling is different for serverDiagnosticsSummary.currentSubscriptionCount
+    //      and sessionDiagnostics.currentSubscriptionsCount ( with an s)
+    assert(engine.serverDiagnosticsSummary.hasOwnProperty(&quot;currentSubscriptionCount&quot;));
+
+    engine.serverDiagnosticsSummary.__defineGetter__(&quot;currentSubscriptionCount&quot;, function () {
+        // currentSubscriptionCount returns the total number of subscriptions
+        // that are currently active on all sessions
+        let counter = 0;
+        _.values(engine._sessions).forEach(function (session) {
+            counter += session.currentSubscriptionCount;
+        });
+        return counter;
+    });
+
+    engine.status = &quot;creating&quot;;
+
+    engine.setServerState(ServerState.NoConfiguration);
+
+    engine.addressSpace = null;
+
+    engine._shutdownTask = [];
+
+    engine._applicationUri = options.applicationUri || &quot;&lt;unset _applicationUri&gt;&quot;;
+
+    options.serverDiagnosticsEnabled = options.hasOwnProperty(&quot;serverDiagnosticsEnable&quot;)
+                                            ? options.serverDiagnosticsEnabled : true;
+    engine.serverDiagnosticsEnabled = options.serverDiagnosticsEnabled;
+
+}
+
+util.inherits(ServerEngine, EventEmitter);
+const ObjectRegistry = require(&quot;node-opcua-object-registry&quot;).ObjectRegistry;
+ServerEngine.registry = new ObjectRegistry();
+
+ServerEngine.prototype.dispose = function () {
+
+    const engine = this;
+    engine.addresSpaec = null;
+
+    assert(Object.keys(engine._sessions).length === 0, &quot;ServerEngine#_sessions not empty&quot;);
+    engine._sessions = {};
+
+    // todo fix me
+    engine._closedSessions = {};
+    assert(Object.keys(engine._closedSessions).length === 0, &quot;ServerEngine#_closedSessions not empty&quot;);
+    engine._closedSessions = {};
+
+    if (engine._orphanPublishEngine) {
+        engine._orphanPublishEngine.dispose();
+        engine._orphanPublishEngine = null;
+    }
+
+    engine._shutdownTask = null;
+    engine.serverStatus = null;
+    engine.status = &quot;disposed&quot;;
+
+    engine.removeAllListeners();
+
+    ServerEngine.registry.unregister(engine);
+};
+ServerEngine.prototype.__defineGetter__(&quot;startTime&quot;, function () {
+    const engine = this;
+    return engine.serverStatus.startTime;
+});
+
+ServerEngine.prototype.__defineGetter__(&quot;currentTime&quot;, function () {
+    const engine = this;
+    return engine.serverStatus.currentTime;
+});
+
+ServerEngine.prototype.__defineGetter__(&quot;buildInfo&quot;, function () {
+    const engine = this;
+    return engine.serverStatus.buildInfo;
+});
+/**
+ * register a function that will be called when the server will perform its shut down.
+ * @method registerShutdownTask
+ */
+ServerEngine.prototype.registerShutdownTask = function (task) {
+    const engine = this;
+    assert(_.isFunction(task));
+    engine._shutdownTask.push(task);
+
+};
+
+function shutdownAndDisposeAddressSpace() {
+    /* jshint validthis:true */
+    const engine = this;
+    if (engine.addressSpace) {
+        assert(engine.addressSpace instanceof AddressSpace);
+        engine.addressSpace.shutdown();
+        engine.addressSpace.dispose();
+        delete engine.addressSpace;
+    }
+}
+
+/**
+ * @method shutdown
+ */
+ServerEngine.prototype.shutdown = function () {
+
+
+    debugLog(&quot;ServerEngine#shutdown&quot;);
+
+    const engine = this;
+
+    engine.status = &quot;shutdown&quot;;
+    engine.setServerState(ServerState.Shutdown);
+
+    // delete any existing sessions
+    const tokens = Object.keys(engine._sessions).map(function (key) {
+        const session = engine._sessions[key];
+        return session.authenticationToken;
+    });
+
+    // delete and close any orphan subscription
+    if (engine._orphanPublishEngine) {
+        engine._orphanPublishEngine.shutdown();
+    }
+
+
+    //xx console.log(&quot;xxxxxxxxx ServerEngine.shutdown must terminate &quot;+ tokens.length,&quot; sessions&quot;);
+
+    tokens.forEach(function (token) {
+        engine.closeSession(token, true, &quot;Terminated&quot;);
+    });
+
+    // all sessions must have been terminated
+    assert(engine.currentSessionCount === 0);
+
+
+    // all subscriptions must have been terminated
+    assert(engine.currentSubscriptionCount === 0, &quot;all subscriptions must have been terminated&quot;);
+
+    engine._shutdownTask.push(shutdownAndDisposeAddressSpace);
+
+    // perform registerShutdownTask
+    engine._shutdownTask.forEach(function (task) {
+        task.call(engine);
+    });
+
+    engine.dispose();
+};
+
+/**
+ * the number of active sessions
+ * @property currentSessionCount
+ * @type {Number}
+ */
+ServerEngine.prototype.__defineGetter__(&quot;currentSessionCount&quot;, function () {
+    const engine = this;
+    return engine.serverDiagnosticsSummary.currentSessionCount;
+});
+
+/**
+ * the cumulated number of sessions that have been opened since this object exists
+ * @property cumulatedSessionCount
+ * @type {Number}
+ */
+ServerEngine.prototype.__defineGetter__(&quot;cumulatedSessionCount&quot;, function () {
+    const engine = this;
+    return engine.serverDiagnosticsSummary.cumulatedSessionCount;
+});
+
+/**
+ * the number of active subscriptions.
+ * @property currentSubscriptionCount
+ * @type {Number}
+ */
+ServerEngine.prototype.__defineGetter__(&quot;currentSubscriptionCount&quot;, function () {
+    const engine = this;
+    return engine.serverDiagnosticsSummary.currentSubscriptionCount;
+});
+/**
+ * the cumulated number of subscriptions that have been created since this object exists
+ * @property cumulatedSubscriptionCount
+ * @type {Number}
+ */
+ServerEngine.prototype.__defineGetter__(&quot;cumulatedSubscriptionCount&quot;, function () {
+    const engine = this;
+    return engine.serverDiagnosticsSummary.cumulatedSubscriptionCount;
+});
+
+ServerEngine.prototype.__defineGetter__(&quot;rejectedSessionCount&quot;, function () {
+    const engine = this;
+    return engine.serverDiagnosticsSummary.rejectedSessionCount;
+});
+
+ServerEngine.prototype.__defineGetter__(&quot;rejectedRequestsCount&quot;, function () {
+    const engine = this;
+    return engine.serverDiagnosticsSummary.rejectedRequestsCount;
+});
+
+ServerEngine.prototype.__defineGetter__(&quot;sessionAbortCount&quot;, function () {
+    const engine = this;
+    return engine.serverDiagnosticsSummary.sessionAbortCount;
+});
+ServerEngine.prototype.__defineGetter__(&quot;sessionTimeoutCount&quot;, function () {
+    const engine = this;
+    return engine.serverDiagnosticsSummary.sessionTimeoutCount;
+});
+
+ServerEngine.prototype.__defineGetter__(&quot;publishingIntervalCount&quot;, function () {
+    const engine = this;
+    return engine.serverDiagnosticsSummary.publishingIntervalCount;
+});
+
+
+/**
+ * @method secondsTillShutdown
+ * @return {UInt32} the approximate number of seconds until the server will be shut down. The
+ * value is only relevant once the state changes into SHUTDOWN.
+ */
+ServerEngine.prototype.secondsTillShutdown = function () {
+    // ToDo: implement a correct solution here
+    return 0;
+};
+
+
+const CallMethodResult = require(&quot;node-opcua-service-call&quot;).CallMethodResult;
+
+// binding methods
+function getMonitoredItemsId(inputArguments, context, callback) {
+
+
+    const engine = this; // ServerEngine
+
+    assert(_.isArray(inputArguments));
+    assert(_.isFunction(callback));
+
+    assert(context.hasOwnProperty(&quot;session&quot;), &quot; expecting a session id in the context object&quot;);
+
+    const session = context.session;
+    if (!session) {
+        return callback(null, {statusCode: StatusCodes.BadInternalError});
+    }
+
+    const subscriptionId = inputArguments[0].value;
+    const subscription = session.getSubscription(subscriptionId);
+    if (!subscription) {
+        // subscription may belongs to a different session  that ours
+        if (engine.findSubscription(subscriptionId)) {
+            // if yes, then access to  Subscription data should be denied
+            return callback(null, {statusCode: StatusCodes.BadUserAccessDenied});
+        }
+
+        return callback(null, {statusCode: StatusCodes.BadSubscriptionIdInvalid});
+    }
+    const result = subscription.getMonitoredItems();
+    assert(result.statusCode);
+    assert(_.isArray(result.serverHandles));
+    assert(_.isArray(result.clientHandles));
+    assert(result.serverHandles.length === result.clientHandles.length);
+    const callMethodResult = new CallMethodResult({
+        statusCode: result.statusCode,
+        outputArguments: [
+            {dataType: DataType.UInt32, arrayType: VariantArrayType.Array, value: result.serverHandles},
+            {dataType: DataType.UInt32, arrayType: VariantArrayType.Array, value: result.clientHandles}
+        ]
+    });
+    callback(null, callMethodResult);
+
+}
+
+/**
+ * the name of the server
+ * @property serverName
+ * @type String
+ */
+ServerEngine.prototype.__defineGetter__(&quot;serverName&quot;, function () {
+    const engine = this;
+    return engine.serverStatus.buildInfo.productName;
+});
+
+/**
+ * the server urn
+ * @property serverNameUrn
+ * @type String
+ */
+ServerEngine.prototype.__defineGetter__(&quot;serverNameUrn&quot;, function () {
+    const engine = this;
+    return engine._applicationUri;
+});
+
+/**
+ * the urn of the server namespace
+ * @property serverNamespaceName
+ * @type String
+ */
+ServerEngine.prototype.__defineGetter__(&quot;serverNamespaceUrn&quot;, function () {
+    const engine = this;
+    return engine._applicationUri; // &quot;urn:&quot; + engine.serverName;
+});
+
+
+ServerEngine.prototype.setServerState = function (serverState) {
+    const engine = this;
+    assert(serverState !== null &amp;&amp; serverState !== undefined);
+    engine.serverStatus.state = serverState;
+};
+
+ServerEngine.prototype.getServerDiagnosticsEnabledFlag = function () {
+    const engine = this;
+    const serverDiagnostics = engine.server.getComponentByName(&quot;ServerDiagnostics&quot;);
+    if (!serverDiagnostics) {
+        return false;
+    }
+    return serverDiagnostics.readValue().value.value;
+};
+
+ServerEngine.prototype.getServerDiagnosticsEnabledFlag = function () {
+    const engine = this;
+    const serverDiagnostics = engine.getComponentByName(&quot;ServerDiagnostics&quot;);
+    if (!serverDiagnostics) {
+        return false;
+    }
+    return serverDiagnostics.readValue().value.value;
+};
+
+/**
+ * @method initialize
+ * @async
+ *
+ * @param options {Object}
+ * @param options.nodeset_filename {String} - [option](default : &#x27;mini.Node.Set2.xml&#x27; )
+ * @param callback
+ */
+ServerEngine.prototype.initialize = function (options, callback) {
+
+    const engine = this;
+    assert(!engine.addressSpace); // check that &#x27;initialize&#x27; has not been already called
+
+    engine.status = &quot;initializing&quot;;
+
+    options = options || {};
+    assert(_.isFunction(callback));
+
+    options.nodeset_filename = options.nodeset_filename || nodesets.standard_nodeset_file;
+
+    const startTime = new Date();
+
+    debugLog(&quot;Loading &quot;, options.nodeset_filename, &quot;...&quot;);
+
+    engine.addressSpace = new AddressSpace();
+
+    // register namespace 1 (our namespace);
+    const serverNamespace = engine.addressSpace.registerNamespace(engine.serverNamespaceUrn);
+    assert(serverNamespace.index === 1);
+
+    generate_address_space(engine.addressSpace, options.nodeset_filename, function () {
+
+        const endTime = new Date();
+        debugLog(&quot;Loading &quot;, options.nodeset_filename, &quot; done : &quot;, endTime - startTime, &quot; ms&quot;);
+
+        function findObjectNodeId(name) {
+            const obj = engine.addressSpace.findNode(name);
+            return obj ? obj.nodeId : null;
+        }
+
+        engine.FolderTypeId = findObjectNodeId(&quot;FolderType&quot;);
+        engine.BaseObjectTypeId = findObjectNodeId(&quot;BaseObjectType&quot;);
+        engine.BaseDataVariableTypeId = findObjectNodeId(&quot;BaseDataVariableType&quot;);
+
+        engine.rootFolder = engine.addressSpace.findNode(&quot;RootFolder&quot;);
+        assert(engine.rootFolder &amp;&amp; engine.rootFolder.readAttribute, &quot; must provide a root folder and expose a readAttribute method&quot;);
+
+        engine.setServerState(ServerState.Running);
+
+        function bindVariableIfPresent(nodeId, opts) {
+            assert(nodeId instanceof NodeId);
+            assert(!nodeId.isEmpty());
+            const obj = engine.addressSpace.findNode(nodeId);
+            if (obj) {
+                __bindVariable(engine, nodeId, opts);
+            }
+            return obj;
+        }
+
+
+        // -------------------------------------------- install default get/put handler
+        const server_NamespaceArray_Id = makeNodeId(VariableIds.Server_NamespaceArray); // ns=0;i=2255
+        bindVariableIfPresent(server_NamespaceArray_Id, {
+            get: function () {
+                return new Variant({
+                    dataType: DataType.String,
+                    arrayType: VariantArrayType.Array,
+                    value: engine.addressSpace.getNamespaceArray().map(x=&gt;x.namespaceUri)
+                });
+            },
+            set: null // read only
+        });
+
+        const server_NameUrn_var = new Variant({
+            dataType: DataType.String,
+            arrayType: VariantArrayType.Array,
+            value: [
+                engine.serverNameUrn // this is us !
+            ]
+        });
+        const server_ServerArray_Id = makeNodeId(VariableIds.Server_ServerArray); // ns=0;i=2254
+
+        bindVariableIfPresent(server_ServerArray_Id, {
+            get: function () {
+                return server_NameUrn_var;
+            },
+            set: null // read only
+        });
+
+        function bindStandardScalar(id, dataType, func, setter_func) {
+
+            assert(_.isNumber(id), &quot;expecting id to be a number&quot;);
+            assert(_.isFunction(func));
+            assert(_.isFunction(setter_func) || !setter_func);
+            assert(dataType !== null); // check invalid dataType
+
+            let setter_func2 = null;
+            if (setter_func) {
+                setter_func2 = function (variant) {
+                    const variable2 = !!variant.value;
+                    setter_func(variable2);
+                    return StatusCodes.Good;
+                };
+            }
+
+            const nodeId = makeNodeId(id);
+
+            // make sur the provided function returns a valid value for the variant type
+            // This test may not be exhaustive but it will detect obvious mistakes.
+            assert(isValidVariant(VariantArrayType.Scalar, dataType, func()));
+            return bindVariableIfPresent(nodeId, {
+                get: function () {
+                    return new Variant({
+                        dataType: dataType,
+                        arrayType: VariantArrayType.Scalar,
+                        value: func()
+                    });
+                },
+                set: setter_func2
+
+            });
+        }
+
+        function bindStandardArray(id, variantDataType, dataType, func) {
+
+            assert(_.isFunction(func));
+            assert(variantDataType !== null); // check invalid dataType
+
+            const nodeId = makeNodeId(id);
+
+            // make sur the provided function returns a valid value for the variant type
+            // This test may not be exhaustive but it will detect obvious mistakes.
+            assert(isValidVariant(VariantArrayType.Array, dataType, func()));
+
+            bindVariableIfPresent(nodeId, {
+                get: function () {
+                    const value = func();
+                    assert(_.isArray(value));
+                    return new Variant({
+                        dataType: variantDataType,
+                        arrayType: VariantArrayType.Array,
+                        value: value
+                    });
+                },
+                set: null // read only
+            });
+        }
+
+        bindStandardScalar(VariableIds.Server_ServiceLevel,
+            DataType.Byte, function () {
+                return 255;
+            });
+
+        bindStandardScalar(VariableIds.Server_Auditing,
+            DataType.Boolean, function () {
+                return engine.isAuditing;
+            });
+
+
+        function bindServerDiagnostics() {
+
+            bindStandardScalar(VariableIds.Server_ServerDiagnostics_EnabledFlag,
+                DataType.Boolean, function () {
+                    return engine.serverDiagnosticsEnabled;
+                }, function (newFlag) {
+                    engine.serverDiagnosticsEnabled = newFlag;
+                });
+
+            const serverDiagnosticsSummary = engine.addressSpace.findNode(makeNodeId(VariableIds.Server_ServerDiagnostics_ServerDiagnosticsSummary));
+            if (serverDiagnosticsSummary) {
+                serverDiagnosticsSummary.bindExtensionObject(engine.serverDiagnosticsSummary);
+                engine.serverDiagnosticsSummary = serverDiagnosticsSummary.$extensionObject;
+            }
+
+        }
+
+        function bindServerStatus() {
+
+            const serverStatusNode = engine.addressSpace.findNode(makeNodeId(VariableIds.Server_ServerStatus));
+            if (!serverStatusNode) {
+                return;
+            }
+            if (serverStatusNode) {
+                serverStatusNode.bindExtensionObject(engine.serverStatus);
+                //xx serverStatusNode.updateExtensionObjectPartial(self.serverStatus);
+                //xx self.serverStatus = serverStatusNode.$extensionObject;
+                serverStatusNode.minimumSamplingInterval = 1000;
+            }
+
+            const currentTimeNode = engine.addressSpace.findNode(makeNodeId(VariableIds.Server_ServerStatus_CurrentTime));
+            if (currentTimeNode) {
+                currentTimeNode.minimumSamplingInterval = 1000;
+            }
+            const secondsTillShutdown = engine.addressSpace.findNode(makeNodeId(VariableIds.Server_ServerStatus_SecondsTillShutdown));
+            if (secondsTillShutdown) {
+                secondsTillShutdown.minimumSamplingInterval = 1000;
+            }
+
+            assert(serverStatusNode.$extensionObject);
+
+            serverStatusNode.$extensionObject = new Proxy(serverStatusNode.$extensionObject, {
+                get: function (target, prop) {
+                    if (prop === &quot;currentTime&quot;) {
+                        serverStatusNode.currentTime.touchValue();
+                        return new Date();
+                    } else if (prop === &quot;secondsTillShutdown&quot;) {
+                        serverStatusNode.secondsTillShutdown.touchValue();
+                        return engine.secondsTillShutdown();
+                    }
+                    return target[prop];
+                }
+            });
+
+        }
+
+        function bindServerCapabilities() {
+
+            bindStandardArray(VariableIds.Server_ServerCapabilities_ServerProfileArray,
+                DataType.String, &quot;String&quot;, function () {
+                    return engine.serverCapabilities.serverProfileArray;
+                });
+
+            bindStandardArray(VariableIds.Server_ServerCapabilities_LocaleIdArray,
+                DataType.String, &quot;LocaleId&quot;, function () {
+                    return engine.serverCapabilities.localeIdArray;
+                });
+
+            bindStandardScalar(VariableIds.Server_ServerCapabilities_MinSupportedSampleRate,
+                DataType.Double, function () {
+                    return engine.serverCapabilities.minSupportedSampleRate;
+                });
+
+            bindStandardScalar(VariableIds.Server_ServerCapabilities_MaxBrowseContinuationPoints,
+                DataType.UInt16, function () {
+                    return engine.serverCapabilities.maxBrowseContinuationPoints;
+                });
+
+            bindStandardScalar(VariableIds.Server_ServerCapabilities_MaxQueryContinuationPoints,
+                DataType.UInt16, function () {
+                    return engine.serverCapabilities.maxQueryContinuationPoints;
+                });
+
+            bindStandardScalar(VariableIds.Server_ServerCapabilities_MaxHistoryContinuationPoints,
+                DataType.UInt16, function () {
+                    return engine.serverCapabilities.maxHistoryContinuationPoints;
+                });
+
+
+            // added by DI : Server-specific period of time in milliseconds until the Server will revoke a lock.
+            //TODO bindStandardScalar(VariableIds.Server_ServerCapabilities_MaxInactiveLockTime,
+            //TODO     DataType.UInt16, function () {
+            //TODO         return self.serverCapabilities.maxInactiveLockTime;
+            //TODO });
+
+
+            bindStandardArray(VariableIds.Server_ServerCapabilities_SoftwareCertificates,
+                DataType.ByteString, &quot;SoftwareCertificates&quot;, function () {
+                    return engine.serverCapabilities.softwareCertificates;
+                });
+
+            bindStandardScalar(VariableIds.Server_ServerCapabilities_MaxArrayLength,
+                DataType.UInt32, function () {
+                    return engine.serverCapabilities.maxArrayLength;
+                });
+
+            bindStandardScalar(VariableIds.Server_ServerCapabilities_MaxStringLength,
+                DataType.UInt32, function () {
+                    return engine.serverCapabilities.maxStringLength;
+                });
+
+            bindStandardScalar(VariableIds.Server_ServerCapabilities_MaxByteStringLength,
+                DataType.UInt32, function () {
+                    return engine.serverCapabilities.maxByteStringLength;
+                });
+
+            function bindOperationLimits(operationLimits) {
+
+                assert(_.isObject(operationLimits));
+
+                function upperCaseFirst(str) {
+                    return str.slice(0, 1).toUpperCase() + str.slice(1);
+                }
+
+                //Xx bindStandardArray(VariableIds.Server_ServerCapabilities_OperationLimits_MaxNodesPerWrite,
+                //Xx     DataType.UInt32, &quot;UInt32&quot;, function () {  return operationLimits.maxNodesPerWrite;  });
+                const keys = Object.keys(operationLimits);
+
+                keys.forEach(function (key) {
+
+                    const uid = &quot;Server_ServerCapabilities_OperationLimits_&quot; + upperCaseFirst(key);
+                    const nodeId = makeNodeId(VariableIds[uid]);
+                    //xx console.log(&quot;xxx Binding &quot;.bgCyan,uid,nodeId.toString());
+                    assert(!nodeId.isEmpty());
+
+                    bindStandardScalar(VariableIds[uid],
+                        DataType.UInt32, function () {
+                            return operationLimits[key];
+                        });
+                });
+            }
+
+            bindOperationLimits(engine.serverCapabilities.operationLimits);
+
+        }
+
+        function bindHistoryServerCapabilities() {
+
+            bindStandardScalar(VariableIds.HistoryServerCapabilities_MaxReturnDataValues,
+                DataType.UInt32, function () {
+                    return engine.historyServerCapabilities.maxReturnDataValues;
+                });
+
+            bindStandardScalar(VariableIds.HistoryServerCapabilities_MaxReturnEventValues,
+                DataType.UInt32, function () {
+                    return engine.historyServerCapabilities.maxReturnEventValues;
+                });
+
+            bindStandardScalar(VariableIds.HistoryServerCapabilities_AccessHistoryDataCapability,
+                DataType.Boolean, function () {
+                    return engine.historyServerCapabilities.accessHistoryDataCapability;
+                });
+            bindStandardScalar(VariableIds.HistoryServerCapabilities_AccessHistoryEventsCapability,
+                DataType.Boolean, function () {
+                    return engine.historyServerCapabilities.accessHistoryEventsCapability;
+                });
+            bindStandardScalar(VariableIds.HistoryServerCapabilities_InsertDataCapability,
+                DataType.Boolean, function () {
+                    return engine.historyServerCapabilities.insertDataCapability;
+                });
+            bindStandardScalar(VariableIds.HistoryServerCapabilities_ReplaceDataCapability,
+                DataType.Boolean, function () {
+                    return engine.historyServerCapabilities.replaceDataCapability;
+                });
+            bindStandardScalar(VariableIds.HistoryServerCapabilities_UpdateDataCapability,
+                DataType.Boolean, function () {
+                    return engine.historyServerCapabilities.updateDataCapability;
+                });
+
+            bindStandardScalar(VariableIds.HistoryServerCapabilities_InsertEventCapability,
+                DataType.Boolean, function () {
+                    return engine.historyServerCapabilities.insertEventCapability;
+                });
+
+            bindStandardScalar(VariableIds.HistoryServerCapabilities_ReplaceEventCapability,
+                DataType.Boolean, function () {
+                    return engine.historyServerCapabilities.replaceEventCapability;
+                });
+
+            bindStandardScalar(VariableIds.HistoryServerCapabilities_UpdateEventCapability,
+                DataType.Boolean, function () {
+                    return engine.historyServerCapabilities.updateEventCapability;
+                });
+
+            bindStandardScalar(VariableIds.HistoryServerCapabilities_DeleteEventCapability,
+                DataType.Boolean, function () {
+                    return engine.historyServerCapabilities.deleteEventCapability;
+                });
+
+
+            bindStandardScalar(VariableIds.HistoryServerCapabilities_DeleteRawCapability,
+                DataType.Boolean, function () {
+                    return engine.historyServerCapabilities.deleteRawCapability;
+                });
+
+            bindStandardScalar(VariableIds.HistoryServerCapabilities_DeleteAtTimeCapability,
+                DataType.Boolean, function () {
+                    return engine.historyServerCapabilities.deleteAtTimeCapability;
+                });
+
+            bindStandardScalar(VariableIds.HistoryServerCapabilities_InsertAnnotationCapability,
+                DataType.Boolean, function () {
+                    return engine.historyServerCapabilities.insertAnnotationCapability;
+                });
+
+
+        }
+
+        bindServerDiagnostics();
+
+        bindServerStatus();
+
+        bindServerCapabilities();
+
+        bindHistoryServerCapabilities();
+
+        function bindExtraStuff() {
+            // mainly for compliance
+
+            //The version number for the data type description. i=104
+            bindStandardScalar(VariableIds.DataTypeDescriptionType_DataTypeVersion,
+                DataType.UInt16, function () {
+                    return 0.0;
+                });
+
+            // i=111
+            bindStandardScalar(VariableIds.ModellingRuleType_NamingRule,
+                DataType.UInt16, function () {
+                    return 0.0;
+                });
+
+            // i=112
+            bindStandardScalar(VariableIds.ModellingRule_Mandatory_NamingRule,
+                DataType.UInt16, function () {
+                    return 0.0;
+                });
+
+            // i=113
+            bindStandardScalar(VariableIds.ModellingRule_Optional_NamingRule,
+                DataType.UInt16, function () {
+                    return 0.0;
+                });
+        }
+
+        bindExtraStuff();
+
+        engine.__internal_bindMethod(makeNodeId(MethodIds.Server_GetMonitoredItems), getMonitoredItemsId.bind(engine));
+
+        // fix getMonitoredItems.outputArguments arrayDimensions
+        (function fixGetMonitoredItemArgs() {
+            const objects = engine.addressSpace.rootFolder.objects;
+            if (!objects || objects.server || objects.server.getMonitoredItems) {
+                return;
+            }
+            const outputArguments = objects.server.getMonitoredItems.outputArguments;
+            const dataValue = outputArguments.readValue();
+            assert(dataValue.value.value[0].arrayDimensions.length === 1 &amp;&amp; dataValue.value.value[0].arrayDimensions[0] === 0);
+            assert(dataValue.value.value[1].arrayDimensions.length === 1 &amp;&amp; dataValue.value.value[1].arrayDimensions[0] === 0);
+        })();
+
+        function prepareServerDiagnostics() {
+
+            const addressSpace = engine.addressSpace;
+
+            if (!addressSpace.rootFolder.objects) {
+                return;
+            }
+            const server = addressSpace.rootFolder.objects.server;
+
+            if (!server) {
+                return;
+            }
+
+            // create SessionsDiagnosticsSummary
+            const serverDiagnostics = server.getComponentByName(&quot;ServerDiagnostics&quot;);
+            if (!serverDiagnostics) {
+                return;
+            }
+
+            const subscriptionDiagnosticsArray = serverDiagnostics.getComponentByName(&quot;SubscriptionDiagnosticsArray&quot;);
+            assert(subscriptionDiagnosticsArray instanceof UAVariable);
+            eoan.bindExtObjArrayNode(subscriptionDiagnosticsArray, &quot;SubscriptionDiagnosticsType&quot;, &quot;subscriptionId&quot;);
+
+            const sessionDiagnosticsArray = serverDiagnostics.getComponentByName(&quot;SessionsDiagnosticsSummary&quot;).getComponentByName(&quot;SessionDiagnosticsArray&quot;);
+            assert(sessionDiagnosticsArray instanceof UAVariable);
+            eoan.bindExtObjArrayNode(sessionDiagnosticsArray, &quot;SessionDiagnosticsVariableType&quot;, &quot;sessionId&quot;);
+        }
+
+        prepareServerDiagnostics();
+
+
+        engine.status = &quot;initialized&quot;;
+        setImmediate(callback);
+    });
+};
+
+require(&quot;node-opcua-address-space&quot;);
+
+ServerEngine.prototype.__findObject = function (nodeId) {
+    const engine = this;
+    nodeId = resolveNodeId(nodeId);
+    assert(nodeId instanceof NodeId);
+    return engine.addressSpace.findNode(nodeId);
+};
+
+/**
+ *
+ * @method browseSingleNode
+ * @param nodeId {NodeId|String} : the nodeid of the element to browse
+ * @param browseDescription
+ * @param browseDescription.browseDirection {BrowseDirection} :
+ * @param browseDescription.referenceTypeId {String|NodeId}
+ * @param [session] {ServerSession}
+ * @return {BrowseResult}
+ */
+ServerEngine.prototype.browseSingleNode = function (nodeId, browseDescription, session) {
+    const engine = this;
+    assert(engine.addressSpace instanceof AddressSpace); // initialize not called
+    const addressSpace = engine.addressSpace;
+    return addressSpace.browseSingleNode(nodeId, browseDescription, session);
+};
+
+/**
+ *
+ * @method browse
+ * @param nodesToBrowse {BrowseDescription[]}
+ * @param [session] {ServerSession}
+ * @return {BrowseResult[]}
+ */
+ServerEngine.prototype.browse = function (nodesToBrowse, session) {
+    const engine = this;
+    assert(engine.addressSpace instanceof AddressSpace); // initialize not called
+    assert(_.isArray(nodesToBrowse));
+
+    const results = [];
+    nodesToBrowse.forEach(function (browseDescription) {
+
+
+        const nodeId = resolveNodeId(browseDescription.nodeId);
+
+        const r = engine.browseSingleNode(nodeId, browseDescription, session);
+        results.push(r);
+    });
+    return results;
+};
+const apply_timestamps = require(&quot;node-opcua-data-value&quot;).apply_timestamps;
+
+/**
+ *
+ * @method readSingleNode
+ * @param context {SessionContext}
+ * @param nodeId
+ * @param attributeId {AttributeId}
+ * @param [timestampsToReturn=TimestampsToReturn.Neither]
+ * @return {DataValue}
+ */
+ServerEngine.prototype.readSingleNode = function (context, nodeId, attributeId, timestampsToReturn) {
+    const engine = this;
+
+    return engine._readSingleNode(context,
+        {
+            nodeId: nodeId,
+            attributeId: attributeId
+        },
+        timestampsToReturn);
+};
+
+ServerEngine.prototype._readSingleNode = function (context, nodeToRead, timestampsToReturn) {
+
+    assert(context instanceof SessionContext);
+    const engine = this;
+    const nodeId = nodeToRead.nodeId;
+    const attributeId = nodeToRead.attributeId;
+    const indexRange = nodeToRead.indexRange;
+    const dataEncoding = nodeToRead.dataEncoding;
+    assert(engine.addressSpace instanceof AddressSpace); // initialize not called
+
+    if (timestampsToReturn === TimestampsToReturn.Invalid) {
+        return new DataValue({statusCode: StatusCodes.BadTimestampsToReturnInvalid});
+    }
+
+    timestampsToReturn = (_.isObject(timestampsToReturn)) ? timestampsToReturn : TimestampsToReturn.Neither;
+
+    const obj = engine.__findObject(nodeId);
+
+    let dataValue;
+    if (!obj) {
+        // may be return BadNodeIdUnknown in dataValue instead ?
+        // Object Not Found
+        return new DataValue({statusCode: StatusCodes.BadNodeIdUnknown});
+    } else {
+
+        // check access
+        //    BadUserAccessDenied
+        //    BadNotReadable
+        //    invalid attributes : BadNodeAttributesInvalid
+        //    invalid range      : BadIndexRangeInvalid
+        try {
+            dataValue = obj.readAttribute(context, attributeId, indexRange, dataEncoding);
+            assert(dataValue.statusCode instanceof StatusCode);
+            if(!dataValue.isValid()) {
+                console.log(&quot;Invalid value for node &quot;,obj.nodeId.toString(),obj.browseName.toString());
+            }
+
+        }
+        catch (err) {
+            console.log(&quot; Internal error reading  NodeId       &quot;, obj.nodeId.toString());
+            console.log(&quot;                         AttributeId  &quot;, attributeId.toString());
+            console.log(&quot;                        &quot;, err.message);
+            console.log(&quot;                        &quot;, err.stack);
+            return new DataValue({statusCode: StatusCodes.BadInternalError});
+        }
+
+        //Xx console.log(dataValue.toString());
+
+        dataValue = apply_timestamps(dataValue, timestampsToReturn, attributeId);
+
+        return dataValue;
+    }
+};
+
+/**
+ *
+ *  @method read
+ *  @param readRequest {ReadRequest}
+ *  @param readRequest.timestampsToReturn  {TimestampsToReturn}
+ *  @param readRequest.nodesToRead
+ *  @param readRequest.maxAge {Number} maxAge - must be greater or equal than zero.
+ *
+ *    Maximum age of the value to be read in milliseconds. The age of the value is based on the difference between the
+ *    ServerTimestamp and the time when the  Server starts processing the request. For example if the Client specifies a
+ *    maxAge of 500 milliseconds and it takes 100 milliseconds until the Server starts  processing the request, the age
+ *    of the returned value could be 600 milliseconds  prior to the time it was requested.
+ *    If the Server has one or more values of an Attribute that are within the maximum age, it can return any one of the
+ *    values or it can read a new value from the data  source. The number of values of an Attribute that a Server has
+ *    depends on the  number of MonitoredItems that are defined for the Attribute. In any case, the Client can make no
+ *    assumption about which copy of the data will be returned.
+ *    If the Server does not have a value that is within the maximum age, it shall attempt to read a new value from the
+ *    data source.
+ *    If the Server cannot meet the requested maxAge, it returns its &#x27;best effort&#x27; value rather than rejecting the
+ *    request.
+ *    This may occur when the time it takes the Server to process and return the new data value after it has been
+ *    accessed is greater than the specified maximum age.
+ *    If maxAge is set to 0, the Server shall attempt to read a new value from the data source.
+ *    If maxAge is set to the max Int32 value or greater, the Server shall attempt to geta cached value. Negative values
+ *    are invalid for maxAge.
+ *
+ *  @return {DataValue[]}
+ */
+ServerEngine.prototype.read = function (context, readRequest) {
+
+    assert(context instanceof SessionContext);
+    assert(readRequest instanceof ReadRequest);
+    assert(readRequest.maxAge &gt;= 0);
+
+    const engine = this;
+    const timestampsToReturn = readRequest.timestampsToReturn;
+
+    const nodesToRead = readRequest.nodesToRead;
+
+    assert(engine.addressSpace instanceof AddressSpace); // initialize not called
+    assert(_.isArray(nodesToRead));
+
+    context.currentTime = new Date();
+
+    const dataValues = [];
+    for (let i = 0; i &lt; nodesToRead.length; i++) {
+        const readValueId = nodesToRead[i];
+        dataValues[i] = engine._readSingleNode(context, readValueId, timestampsToReturn);
+    }
+    return dataValues;
+};
+
+/**
+ *
+ * @method writeSingleNode
+ * @param context  {Context}
+ * @param writeValue {DataValue}
+ * @param callback {Function}
+ * @param callback.err {Error|null}
+ * @param callback.statusCode {StatusCode}
+ * @async
+ */
+ServerEngine.prototype.writeSingleNode = function (context, writeValue, callback) {
+
+    const engine = this;
+    assert(context instanceof SessionContext);
+    assert(_.isFunction(callback));
+    assert(writeValue._schema.name === &quot;WriteValue&quot;);
+    assert(writeValue.value instanceof DataValue);
+
+    if (writeValue.value.value === null) {
+        return callback(null, StatusCodes.BadTypeMismatch);
+    }
+
+    assert(writeValue.value.value instanceof Variant);
+    assert(engine.addressSpace instanceof AddressSpace); // initialize not called
+
+    const nodeId = writeValue.nodeId;
+
+    const obj = engine.__findObject(nodeId);
+    if (!obj) {
+        return callback(null, StatusCodes.BadNodeIdUnknown);
+    } else {
+        obj.writeAttribute(context, writeValue, callback);
+    }
+};
+
+
+const WriteValue = require(&quot;node-opcua-service-write&quot;).WriteValue;
+
+/**
+ * write a collection of nodes
+ * @method write
+ * @param context {Object}
+ * @param nodesToWrite {Object[]}
+ * @param callback {Function}
+ * @param callback.err
+ * @param callback.results {StatusCode[]}
+ * @async
+ */
+ServerEngine.prototype.write = function (context, nodesToWrite, callback) {
+
+    assert(context instanceof SessionContext);
+    assert(_.isFunction(callback));
+
+    const engine = this;
+
+    assert(engine.addressSpace instanceof AddressSpace); // initialize not called
+
+    context.currentTime = new Date();
+
+    function performWrite(writeValue, inner_callback) {
+        assert(writeValue instanceof WriteValue);
+        engine.writeSingleNode(context, writeValue, inner_callback);
+    }
+
+    async.map(nodesToWrite, performWrite, function (err, statusCodes) {
+
+        assert(_.isArray(statusCodes));
+        callback(err, statusCodes);
+
+    });
+
+};
+
+/**
+ *
+ * @method historyReadSingleNode
+ * @param context {SessionContext}
+ * @param nodeId  {NodeId}
+ * @param attributeId {AttributeId}
+ * @param historyReadDetails {HistoryReadDetails}
+ * @param [timestampsToReturn=TimestampsToReturn.Neither]
+ * @param callback {Function}
+ * @param callback.err
+ * @param callback.results {HistoryReadResult}
+ */
+ServerEngine.prototype.historyReadSingleNode = function (context, nodeId, attributeId, historyReadDetails, timestampsToReturn, callback) {
+    const engine = this;
+
+    assert(context instanceof SessionContext);
+    engine._historyReadSingleNode(context,
+        {
+            nodeId: nodeId,
+            attributeId: attributeId
+        }, historyReadDetails, timestampsToReturn, callback);
+};
+
+ServerEngine.prototype._historyReadSingleNode = function (context, nodeToRead, historyReadDetails, timestampsToReturn, callback) {
+
+    assert(context instanceof SessionContext);
+    assert(callback instanceof Function);
+
+    const engine = this;
+    const nodeId = nodeToRead.nodeId;
+    const indexRange = nodeToRead.indexRange;
+    const dataEncoding = nodeToRead.dataEncoding;
+    const continuationPoint = nodeToRead.continuationPoint;
+    assert(engine.addressSpace instanceof AddressSpace); // initialize not called
+
+    if (timestampsToReturn === TimestampsToReturn.Invalid) {
+        return new DataValue({statusCode: StatusCodes.BadTimestampsToReturnInvalid});
+    }
+
+    timestampsToReturn = (_.isObject(timestampsToReturn)) ? timestampsToReturn : TimestampsToReturn.Neither;
+
+    const obj = engine.__findObject(nodeId);
+
+    if (!obj) {
+        // may be return BadNodeIdUnknown in dataValue instead ?
+        // Object Not Found
+        callback(null, new HistoryReadResult({statusCode: StatusCodes.BadNodeIdUnknown}));
+    } else {
+
+        if (!obj.historyRead) {
+            // note : Object and View may also support historyRead to provide Event historical data
+            //        todo implement historyRead for Object and View
+            const msg = &quot; this node doesn&#x27;t provide historyRead! probably not a UAVariable\n &quot;
+                + obj.nodeId.toString() + &quot; &quot; + obj.browseName.toString() + &quot;\n&quot;
+                + &quot;with &quot; + nodeToRead.toString() + &quot;\n&quot;
+                + &quot;HistoryReadDetails &quot; + historyReadDetails.toString();
+            if (doDebug) {
+                console.log(&quot;ServerEngine#_historyReadSingleNode &quot;.cyan, msg.white.bold);
+            }
+            const err = new Error(msg);
+            // object has no historyRead method
+            return setImmediate(callback.bind(null, err));
+        }
+        // check access
+        //    BadUserAccessDenied
+        //    BadNotReadable
+        //    invalid attributes : BadNodeAttributesInvalid
+        //    invalid range      : BadIndexRangeInvalid
+        obj.historyRead(context, historyReadDetails, indexRange, dataEncoding, continuationPoint, function (err, result) {
+            assert(result.statusCode instanceof StatusCode);
+            assert(result.isValid());
+            //result = apply_timestamps(result, timestampsToReturn, attributeId);
+            callback(err, result);
+        });
+    }
+};
+
+/**
+ *
+ *  @method historyRead
+ *  @param context {SessionContext}
+ *  @param historyReadRequest {HistoryReadRequest}
+ *  @param historyReadRequest.requestHeader  {RequestHeader}
+ *  @param historyReadRequest.historyReadDetails  {HistoryReadDetails}
+ *  @param historyReadRequest.timestampsToReturn  {TimestampsToReturn}
+ *  @param historyReadRequest.releaseContinuationPoints  {Boolean}
+ *  @param historyReadRequest.nodesToRead {HistoryReadValueId[]}
+ *  @param callback {Function}
+ *  @param callback.err
+ *  @param callback.results {HistoryReadResult[]}
+ */
+ServerEngine.prototype.historyRead = function (context, historyReadRequest, callback) {
+
+    assert(context instanceof SessionContext);
+    assert(historyReadRequest instanceof HistoryReadRequest);
+    assert(_.isFunction(callback));
+
+    const engine = this;
+    const timestampsToReturn = historyReadRequest.timestampsToReturn;
+    const historyReadDetails = historyReadRequest.historyReadDetails;
+
+    const nodesToRead = historyReadRequest.nodesToRead;
+
+    assert(historyReadDetails instanceof HistoryReadDetails);
+    assert(engine.addressSpace instanceof AddressSpace); // initialize not called
+    assert(_.isArray(nodesToRead));
+
+    const historyData = [];
+    async.eachSeries(nodesToRead, function (readValueId, cbNode) {
+        engine._historyReadSingleNode(context, readValueId, historyReadDetails, timestampsToReturn, function (err, result) {
+
+            if (err &amp;&amp; !result) {
+                result = new HistoryReadResult({statusCode: StatusCodes.BadInternalError});
+            }
+            historyData.push(result);
+            async.setImmediate(cbNode); //it&#x27;s not guaranteed that the historical read process is really asynchronous
+        });
+    }, function (err) {
+        assert(historyData.length === nodesToRead.length);
+        callback(err, historyData);
+    });
+};
+
+function __bindVariable(self, nodeId, options) {
+    options = options || {};
+    // must have a get and a set property
+    assert(_.difference([&quot;get&quot;, &quot;set&quot;], _.keys(options)).length === 0);
+
+    const obj = self.addressSpace.findNode(nodeId);
+    if (obj &amp;&amp; obj.bindVariable) {
+        obj.bindVariable(options);
+        assert(_.isFunction(obj.asyncRefresh));
+        assert(_.isFunction(obj.refreshFunc));
+    } else {
+        //xx console.log((new Error()).stack);
+        console.log(&quot;Warning: cannot bind object with id &quot;, nodeId.toString(), &quot; please check your nodeset.xml file or add this node programmatically&quot;);
+    }
+}
+
+
+/**
+ * @method bindMethod
+ * @param nodeId {NodeId} the node id of the method
+ * @param func
+ * @param func.inputArguments               {Array&lt;Variant&gt;}
+ * @param func.context                      {Object}
+ * @param func.callback                     {Function}
+ * @param func.callback.err                 {Error}
+ * @param func.callback.callMethodResult    {CallMethodResult}
+ */
+ServerEngine.prototype.__internal_bindMethod = function (nodeId, func) {
+
+    const engine = this;
+    assert(_.isFunction(func));
+    assert(nodeId instanceof NodeId);
+
+    const methodNode = engine.addressSpace.findNode(nodeId);
+    if (!methodNode) {
+        return;
+    }
+    if (methodNode &amp;&amp; methodNode.bindMethod) {
+        methodNode.bindMethod(func);
+    } else {
+        //xx console.log((new Error()).stack);
+        console.log(&quot;WARNING:  cannot bind a method with id &quot;.yellow + nodeId.toString().cyan + &quot;. please check your nodeset.xml file or add this node programmatically&quot;.yellow);
+        console.log(require(&quot;node-opcua-debug&quot;).trace_from_this_projet_only(new Error()))
+    }
+};
+
+ServerEngine.prototype.getOldestUnactivatedSession = function () {
+
+    const engine = this;
+    const tmp = _.filter(engine._sessions, function (session) {
+        return session.status === &quot;new&quot;;
+    });
+    if (tmp.length === 0) {
+        return null;
+    }
+    let session = tmp[0];
+    for (let i = 1; i &lt; session.length; i++) {
+        const c = tmp[i];
+        if (session.creationDate.getTime() &lt; c.creationDate.getTime()) {
+            session = c;
+        }
+    }
+    return session;
+};
+
+
+// note OPCUA 1.03 part 4 page 76
+// The Server-assigned identifier for the Subscription (see 7.14 for IntegerId definition). This identifier shall
+// be unique for the entire Server, not just for the Session, in order to allow the Subscription to be transferred
+// to another Session using the TransferSubscriptions service.
+// After Server start-up the generation of subscriptionIds should start from a random IntegerId or continue from
+// the point before the restart.
+let next_subscriptionId = Math.ceil(Math.random() * 1000000);
+
+function _get_next_subscriptionId() {
+    debugLog(&quot; next_subscriptionId = &quot;, next_subscriptionId);
+    return next_subscriptionId++;
+}
+
+const Subscription = require(&quot;./server_subscription&quot;).Subscription;
+
+ServerEngine.prototype._getServerSubscriptionDiagnosticsArray = function () {
+
+    const engine = this;
+    if (!engine.addressSpace) {
+        if (doDebug) {
+            console.warn(&quot;ServerEngine#_getServerSubscriptionDiagnosticsArray : no addressSpace&quot;);
+        }
+        return null; // no addressSpace
+    }
+    const subscriptionDiagnosticsType = engine.addressSpace.findVariableType(&quot;SubscriptionDiagnosticsType&quot;);
+    if (!subscriptionDiagnosticsType) {
+        if (doDebug) {
+            console.warn(&quot;ServerEngine#_getServerSubscriptionDiagnosticsArray : cannot find SubscriptionDiagnosticsType&quot;);
+        }
+    }
+
+    // SubscriptionDiagnosticsArray = i=2290
+    const subscriptionDiagnosticsArray = engine.addressSpace.findNode(makeNodeId(VariableIds.Server_ServerDiagnostics_SubscriptionDiagnosticsArray));
+
+    return subscriptionDiagnosticsArray;
+};
+const SubscriptionDiagnostics = require(&quot;node-opcua-common&quot;).SubscriptionDiagnostics;
+
+ServerEngine.prototype._exposeSubscriptionDiagnostics = function (subscription) {
+
+    debugLog(&quot;ServerEngine#_exposeSubscriptionDiagnostics&quot;);
+    const engine = this;
+    const subscriptionDiagnosticsArray = engine._getServerSubscriptionDiagnosticsArray();
+    const subscriptionDiagnostics = subscription.subscriptionDiagnostics;
+    assert(subscriptionDiagnostics.$subscription == subscription);
+
+    if (subscriptionDiagnostics &amp;&amp; subscriptionDiagnosticsArray) {
+        //xx console.log(&quot;GGGGGGGGGGGGGGGG ServerEngine =&gt; Exposing subscription diagnostics =&gt;&quot;,subscription.id);
+        eoan.addElement(subscriptionDiagnostics, subscriptionDiagnosticsArray);
+    }
+};
+ServerEngine.prototype._unexposeSubscriptionDiagnostics = function (subscription) {
+
+    const engine = this;
+    const subscriptionDiagnosticsArray = engine._getServerSubscriptionDiagnosticsArray();
+    const subscriptionDiagnostics = subscription.subscriptionDiagnostics;
+    assert(subscriptionDiagnostics instanceof SubscriptionDiagnostics);
+    if (subscriptionDiagnostics &amp;&amp; subscriptionDiagnosticsArray) {
+
+        const node = subscriptionDiagnosticsArray[subscription.id];
+        /// console.log(&quot;GGGGGGGGGGGGGGGG ServerEngine =&gt; **Unexposing** subscription diagnostics =&gt;&quot;,subscription.id);
+        eoan.removeElement(subscriptionDiagnosticsArray, subscriptionDiagnostics);
+        assert(!subscriptionDiagnosticsArray[subscription.id],&quot; subscription node must have been removed from subscriptionDiagnosticsArray&quot;);
+    }
+    debugLog(&quot;ServerEngine#_unexposeSubscriptionDiagnostics&quot;);
+};
+/**
+ * create a new subscription
+ * @method _createSubscriptionOnSession
+ * @param request
+ * @param request.requestedPublishingInterval {Duration}
+ * @param request.requestedLifetimeCount {Counter}
+ * @param request.requestedMaxKeepAliveCount {Counter}
+ * @param request.maxNotificationsPerPublish {Counter}
+ * @param request.publishingEnabled {Boolean}
+ * @param request.priority {Byte}
+ * @return {Subscription}
+ */
+ServerEngine.prototype._createSubscriptionOnSession = function (session,request) {
+
+    const engine = this;
+
+    assert(request.hasOwnProperty(&quot;requestedPublishingInterval&quot;)); // Duration
+    assert(request.hasOwnProperty(&quot;requestedLifetimeCount&quot;));      // Counter
+    assert(request.hasOwnProperty(&quot;requestedMaxKeepAliveCount&quot;));  // Counter
+    assert(request.hasOwnProperty(&quot;maxNotificationsPerPublish&quot;));  // Counter
+    assert(request.hasOwnProperty(&quot;publishingEnabled&quot;));           // Boolean
+    assert(request.hasOwnProperty(&quot;priority&quot;));                    // Byte
+
+    const subscription = new Subscription({
+        publishingInterval: request.requestedPublishingInterval,
+        lifeTimeCount: request.requestedLifetimeCount,
+        maxKeepAliveCount: request.requestedMaxKeepAliveCount,
+        maxNotificationsPerPublish: request.maxNotificationsPerPublish,
+        publishingEnabled: request.publishingEnabled,
+        priority: request.priority,
+        id: _get_next_subscriptionId(),
+        // -------------------
+        publishEngine: session.publishEngine, //
+        sessionId: NodeId.NullNodeId
+    });
+
+    // add subscriptionDiagnostics
+    engine._exposeSubscriptionDiagnostics(subscription);
+
+    assert(subscription.publishEngine === session.publishEngine);
+    session.publishEngine.add_subscription(subscription);
+
+    subscription.once(&quot;terminated&quot;,function() {
+        const subscription = this;
+        engine._unexposeSubscriptionDiagnostics(subscription);
+    });
+
+    return subscription;
+};
+
+/**
+ * create a new server session object.
+ * @class ServerEngine
+ * @method createSession
+ * @param  [options] {Object}
+ * @param  [options.sessionTimeout = 1000] {Number} sessionTimeout
+ * @param  [options.clientDescription] {ApplicationDescription}
+ * @return {ServerSession}
+ */
+ServerEngine.prototype.createSession = function (options) {
+
+    options = options || {};
+
+    const engine = this;
+
+    engine.serverDiagnosticsSummary.cumulatedSessionCount += 1;
+    engine.serverDiagnosticsSummary.currentSessionCount += 1;
+
+    engine.clientDescription = options.clientDescription || new ApplicationDescription({});
+
+    const sessionTimeout = options.sessionTimeout || 1000;
+
+    assert(_.isNumber(sessionTimeout));
+
+    const session = new ServerSession(engine, sessionTimeout);
+
+    const key = session.authenticationToken.toString();
+
+    engine._sessions[key] = session;
+
+    // see spec OPC Unified Architecture,  Part 2 page 26 Release 1.02
+    // TODO : When a Session is created, the Server adds an entry for the Client
+    //        in its SessionDiagnosticsArray Variable
+
+    session.on(&quot;new_subscription&quot;, function (subscription) {
+        engine.serverDiagnosticsSummary.cumulatedSubscriptionCount += 1;
+        // add the subscription diagnostics in our subscriptions diagnostics array
+    });
+
+    session.on(&quot;subscription_terminated&quot;, function (subscription) {
+        // remove the subscription diagnostics in our subscriptions diagnostics array
+    });
+
+    // OPC Unified Architecture, Part 4 23 Release 1.03
+    // Sessions are terminated by the Server automatically if the Client fails to issue a Service request on the Session
+    // within the timeout period negotiated by the Server in the CreateSession Service response. This protects the
+    // Server against Client failures and against situations where a failed underlying connection cannot be
+    // re-established. Clients shall be prepared to submit requests in a timely manner to prevent the Session from
+    // closing automatically. Clients may explicitly terminate sessions using the CloseSession Service.
+    session.on(&quot;timeout&quot;, function () {
+        // the session hasn&#x27;t been active for a while , probably because the client has disconnected abruptly
+        // it is now time to close the session completely
+        engine.serverDiagnosticsSummary.sessionTimeoutCount += 1;
+        session.sessionName = session.sessionName || &quot;&quot;;
+
+        console.log(&quot;Server: closing SESSION &quot;.cyan, session.status, session.sessionName.yellow, &quot; because of timeout = &quot;.cyan, session.sessionTimeout, &quot; has expired without a keep alive&quot;.cyan);
+        const channel = session.channel;
+        if (channel) {
+            console.log(&quot;channel = &quot;.bgCyan, channel.remoteAddress, &quot; port = &quot;, channel.remotePort);
+        }
+
+        // If a Server terminates a Session for any other reason, Subscriptions  associated with the Session,
+        // are not deleted. =&gt; deleteSubscription= false
+        engine.closeSession(session.authenticationToken, /*deleteSubscription=*/false, /* reason =*/&quot;Timeout&quot;);
+    });
+
+    return session;
+};
+
+
+/**
+ * the ServerSidePublishEngineForOrphanSubscription is keeping track of
+ * live subscription that have been detached from timed out session.
+ * It takes care of providing back those subscription to any session that
+ * will claim them again with transferSubscription  service
+ * It also make sure that subscription are properly disposed when  they expire.
+ *
+ * @constructor
+ */
+function ServerSidePublishEngineForOrphanSubscription() {
+    ServerSidePublishEngine.apply(this, arguments);
+}
+
+util.inherits(ServerSidePublishEngineForOrphanSubscription, ServerSidePublishEngine);
+
+ServerSidePublishEngineForOrphanSubscription.prototype.add_subscription = function (subscription) {
+    debugLog(&quot; adding live subscription with id=&quot;.bgCyan.yellow.bold, subscription.id, &quot; to orphan&quot;);
+    const publish_engine = this;
+    ServerSidePublishEngine.prototype.add_subscription.apply(this, arguments);
+    // also add an event handler to detected when the subscription has ended
+    // so we can automatically remove it from the orphan table
+    subscription._expired_func = function () {
+        const subscription = this;
+        debugLog(&quot; Removing expired subscription with id=&quot;.bgCyan.yellow, subscription.id, &quot; from orphan&quot;);
+        // make sure all monitored item have been deleted
+        //Xx subscription.terminate();
+        //xx publish_engine.detach_subscription(subscription);
+        //Xx subscription.dispose();
+    };
+    subscription.on(&quot;expired&quot;, subscription._expired_func);
+};
+
+ServerSidePublishEngineForOrphanSubscription.prototype.detach_subscription = function (subscription) {
+    // un set the event handler
+    ServerSidePublishEngine.prototype.detach_subscription.apply(this, arguments);
+    subscription.removeListener(&quot;expired&quot;, subscription._expired_func);
+    subscription._expired_func = null;
+    return subscription;
+};
+
+
+/**
+ * @method closeSession
+ * @param authenticationToken
+ * @param deleteSubscriptions {Boolean} : true if sessions&#x27;s subscription shall be deleted
+ * @param {String} [reason = &quot;CloseSession&quot;] the reason for closing the session (shall be &quot;Timeout&quot;, &quot;Terminated&quot; or &quot;CloseSession&quot;)
+ *
+ *
+ * what the specs say:
+ * -------------------
+ *
+ * If a Client invokes the CloseSession Service then all Subscriptions associated with the Session are also deleted
+ * if the deleteSubscriptions flag is set to TRUE. If a Server terminates a Session for any other reason, Subscriptions
+ * associated with the Session, are not deleted. Each Subscription has its own lifetime to protect against data loss
+ * in the case of a Session termination. In these cases, the Subscription can be reassigned to another Client before
+ * its lifetime expires.
+ */
+ServerEngine.prototype.closeSession = function (authenticationToken, deleteSubscriptions, reason) {
+
+    const engine = this;
+
+    reason = reason || &quot;CloseSession&quot;;
+    assert(_.isString(reason));
+    assert(reason === &quot;Timeout&quot; || reason === &quot;Terminated&quot; || reason === &quot;CloseSession&quot; || reason === &quot;Forcing&quot;);
+
+    debugLog(&quot;ServerEngine.closeSession &quot;, authenticationToken.toString(), deleteSubscriptions);
+
+    const key = authenticationToken.toString();
+    const session = engine.getSession(key);
+    assert(session);
+
+    if (!deleteSubscriptions) {
+
+        // Live Subscriptions will not be deleted, but transferred to the orphanPublishEngine
+        // until they time out or until a other session transfer them back to it.
+        if (!engine._orphanPublishEngine) {
+            engine._orphanPublishEngine = new ServerSidePublishEngineForOrphanSubscription({maxPublishRequestInQueue: 0});
+
+        }
+
+        debugLog(&quot;transferring remaining live subscription to orphanPublishEngine !&quot;);
+        ServerSidePublishEngine.transferSubscriptionsToOrphan(session.publishEngine, engine._orphanPublishEngine);
+    }
+
+    session.close(deleteSubscriptions, reason);
+
+    assert(session.status === &quot;closed&quot;);
+
+    engine.serverDiagnosticsSummary.currentSessionCount -= 1;
+
+    //xx //TODO make sure _closedSessions gets cleaned at some point
+    //xx self._closedSessions[key] = session;
+
+    // remove sessionDiagnostics from server.ServerDiagnostics.SessionsDiagnosticsSummary.SessionDiagnosticsSummary
+    delete engine._sessions[key];
+    session.dispose();
+
+};
+
+ServerEngine.prototype.findSubscription = function (subscriptionId) {
+
+    const engine = this;
+
+    const subscriptions = [];
+    _.map(engine._sessions, function (session) {
+        if (subscriptions.length) return;
+        const subscription = session.publishEngine.getSubscriptionById(subscriptionId);
+        if (subscription) {
+            //xx console.log(&quot;foundSubscription  &quot;, subscriptionId, &quot; in session&quot;, session.sessionName);
+            subscriptions.push(subscription)
+        }
+    });
+    if (subscriptions.length) {
+        assert(subscriptions.length === 1);
+        return subscriptions[0];
+    }
+    return engine.findOrphanSubscription(subscriptionId);
+};
+
+ServerEngine.prototype.findOrphanSubscription = function (subscriptionId) {
+
+    const engine = this;
+
+    if (!engine._orphanPublishEngine) {
+        return null;
+    }
+    return engine._orphanPublishEngine.getSubscriptionById(subscriptionId);
+};
+
+ServerEngine.prototype.deleteOrphanSubscription = function (subscription) {
+    const engine = this;
+    assert(engine.findSubscription(subscription.id));
+
+    const c = engine._orphanPublishEngine.subscriptionCount;
+    subscription.terminate();
+    subscription.dispose();
+    assert(engine._orphanPublishEngine.subscriptionCount === c - 1);
+    return StatusCodes.Good;
+};
+
+const TransferResult = require(&quot;node-opcua-service-subscription&quot;).TransferResult;
+
+/**
+ * @method transferSubscription
+ * @param session           {ServerSession}  - the new session that will own the subscription
+ * @param subscriptionId    {IntegerId}      - the subscription Id to transfer
+ * @param sendInitialValues {Boolean}        - true if initial values will be resent.
+ * @return                  {TransferResult}
+ */
+ServerEngine.prototype.transferSubscription = function (session, subscriptionId, sendInitialValues){
+
+    const engine = this;
+    assert(session instanceof ServerSession);
+    assert(_.isNumber(subscriptionId));
+    assert(_.isBoolean(sendInitialValues));
+
+    if (subscriptionId &lt;= 0) {
+        return new TransferResult({statusCode: StatusCodes.BadSubscriptionIdInvalid});
+    }
+
+    const subscription = engine.findSubscription(subscriptionId);
+    if (!subscription) {
+        return new TransferResult({statusCode: StatusCodes.BadSubscriptionIdInvalid});
+    }
+    // // now check that new session has sufficient right
+    // if (session.authenticationToken.toString() !== subscription.authenticationToken.toString()) {
+    //     console.log(&quot;ServerEngine#transferSubscription =&gt; BadUserAccessDenied&quot;);
+    //     return new TransferResult({ statusCode: StatusCodes.BadUserAccessDenied });
+    // }
+    if (session.publishEngine === subscription.publishEngine) {
+        // subscription is already in this session !!
+        return new TransferResult({statusCode: StatusCodes.BadNothingToDo});
+    }
+    if (session === subscription.$session) {
+        // subscription is already in this session !!
+        return new TransferResult({statusCode: StatusCodes.BadNothingToDo});
+    }
+
+    const nbSubscriptionBefore = session.publishEngine.subscriptionCount;
+
+    subscription.$session._unexposeSubscriptionDiagnostics(subscription);
+    ServerSidePublishEngine.transferSubscription(subscription, session.publishEngine, sendInitialValues);
+    subscription.$session = session;
+
+    session._exposeSubscriptionDiagnostics(subscription);
+
+    assert(subscription.publishEngine === session.publishEngine);
+    assert(session.publishEngine.subscriptionCount === nbSubscriptionBefore + 1);
+
+    // TODO: If the Server transfers the Subscription to the new Session, the Server shall issue a
+    //       StatusChangeNotification notificationMessage with the status code Good_SubscriptionTransferred
+    //       to the old Session.
+
+    const result = new TransferResult({
+        statusCode: StatusCodes.Good,
+        availableSequenceNumbers: subscription.getAvailableSequenceNumbers()
+    });
+
+    // istanbul ignore next
+    if (doDebug) {
+        debugLog(&quot;TransferResult&quot;, result.toString());
+    }
+
+    return result;
+
+};
+
+/**
+ * retrieve a session by its authenticationToken.
+ *
+ * @method getSession
+ * @param authenticationToken
+ * @param activeOnly
+ * @return {ServerSession}
+ */
+ServerEngine.prototype.getSession = function (authenticationToken, activeOnly) {
+
+    const engine = this;
+    if (!authenticationToken || (authenticationToken.identifierType &amp;&amp; (authenticationToken.identifierType.value !== NodeIdType.BYTESTRING.value))) {
+        return null;     // wrong type !
+    }
+    const key = authenticationToken.toString();
+    let session = engine._sessions[key];
+    if (!activeOnly &amp;&amp; !session) {
+        session = engine._closedSessions[key];
+    }
+    return session;
+};
+
+
+/**
+ * @method browsePath
+ * @param browsePath
+ * @return {BrowsePathResult}
+ */
+ServerEngine.prototype.browsePath = function (browsePath) {
+    const engine = this;
+    return engine.addressSpace.browsePath(browsePath);
+};
+
+
+/**
+ *
+ * performs a call to &#x60;&#x60;&#x60;asyncRefresh&#x60;&#x60;&#x60; on all variable nodes that provide an async refresh func.
+ *
+ * @method refreshValues
+ * @param nodesToRefresh {Array&lt;Object&gt;}  an array containing the node to consider
+ * Each element of the array shall be of the form { nodeId: &lt;xxx&gt;, attributeIds: &lt;value&gt; }.
+ *
+ * @param callback {Function}
+ * @param callback.err {null|Error}
+ * @param callback.data {Array} : an array containing value read
+ * The array length matches the number of  nodeIds that are candidate for an async refresh (i.e: nodes that are of type
+ * Variable with asyncRefresh func }
+ *
+ * @async
+ */
+ServerEngine.prototype.refreshValues = function (nodesToRefresh, callback) {
+
+    assert(callback instanceof Function);
+    const engine = this;
+
+    const objs = {};
+    for (let i = 0; i &lt; nodesToRefresh.length; i++) {
+        const nodeToRefresh = nodesToRefresh[i];
+        // only consider node  for which the caller wants to read the Value attribute
+        // assuming that Value is requested if attributeId is missing,
+        if (nodeToRefresh.attributeId &amp;&amp; nodeToRefresh.attributeId !== AttributeIds.Value) {
+            continue;
+        }
+        // ... and that are valid object and instances of Variables ...
+        const obj = engine.addressSpace.findNode(nodeToRefresh.nodeId);
+        if (!obj || !(obj instanceof UAVariable)) {
+            continue;
+        }
+        // ... and that have been declared as asynchronously updating
+        if (!_.isFunction(obj.refreshFunc)) {
+            continue;
+        }
+        const key = obj.nodeId.toString();
+        if (objs[key]) {
+            continue;
+        }
+
+        objs[key] = obj;
+    }
+    if (Object.keys(objs).length === 0) {
+        // nothing to do
+        return callback(null, []);
+    }
+    // perform all asyncRefresh in parallel
+    async.map(objs, function (obj, inner_callback) {
+        obj.asyncRefresh(inner_callback);
+    }, function (err, arrResult) {
+        callback(err, arrResult);
+    });
+
+};
+
+exports.ServerEngine = ServerEngine;
+
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Ad by Google -->
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-format="fluid"
+                 data-ad-layout-key="-8h+1u-de+eo+dy"
+                 data-ad-client="ca-pub-8886208393040088"
+                 data-ad-slot="9362364253"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <!-- -->
+
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>
