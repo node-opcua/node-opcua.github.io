@@ -13803,29 +13803,51 @@
         {
             "file": "packages\\node-opcua-address-space\\src\\address_space.js",
             "line": 112,
-            "class": "AddressSpace",
-            "module": "opcua.address_space"
-        },
-        {
-            "file": "packages\\node-opcua-address-space\\src\\address_space.js",
-            "line": 129,
+            "itemtype": "method",
+            "name": "getNamespace",
+            "params": [
+                {
+                    "name": "namespace",
+                    "description": "index or namespace uri.",
+                    "type": "String|number"
+                }
+            ],
             "return": {
-                "description": "the  default namespace (standard OPCUA namespace)"
+                "description": "the namespace",
+                "type": "NameSpace"
             },
             "class": "AddressSpace",
             "module": "opcua.address_space"
         },
         {
             "file": "packages\\node-opcua-address-space\\src\\address_space.js",
-            "line": 136,
-            "description": "return address space own namespace/\nObjects instances managed by the server will be created in this namespace.",
+            "line": 131,
+            "itemtype": "method",
+            "name": "getDefaultNamespace",
+            "return": {
+                "description": "the  default namespace (standard OPCUA namespace)",
+                "type": "NameSpace"
+            },
             "class": "AddressSpace",
             "module": "opcua.address_space"
         },
         {
             "file": "packages\\node-opcua-address-space\\src\\address_space.js",
-            "line": 153,
-            "description": "register a new namespace",
+            "line": 139,
+            "itemtype": "method",
+            "name": "getOwnNamespace\nobjects instances managed by the server will be created in this namespace.",
+            "return": {
+                "description": "address space own namespace",
+                "type": "NameSpace"
+            },
+            "class": "AddressSpace",
+            "module": "opcua.address_space"
+        },
+        {
+            "file": "packages\\node-opcua-address-space\\src\\address_space.js",
+            "line": 158,
+            "itemtype": "method",
+            "name": "registerNamespace\nregister a new namespace",
             "params": [
                 {
                     "name": "namespaceUri",
@@ -13842,8 +13864,9 @@
         },
         {
             "file": "packages\\node-opcua-address-space\\src\\address_space.js",
-            "line": 179,
-            "description": "returns the namespace index of a namespace given by its namespace uri",
+            "line": 185,
+            "itemtype": "method",
+            "name": "getNamespaceIndex",
             "params": [
                 {
                     "name": "namespaceUri",
@@ -13851,21 +13874,28 @@
                     "type": "Strings"
                 }
             ],
-            "class": "AddressSpace",
-            "module": "opcua.address_space"
-        },
-        {
-            "file": "packages\\node-opcua-address-space\\src\\address_space.js",
-            "line": 189,
             "return": {
-                "description": "a namespace array"
+                "description": "the namespace index of a namespace given by its namespace uri",
+                "type": "Number"
             },
             "class": "AddressSpace",
             "module": "opcua.address_space"
         },
         {
             "file": "packages\\node-opcua-address-space\\src\\address_space.js",
-            "line": 196,
+            "line": 197,
+            "itemtype": "method",
+            "name": "getNamespaceArray",
+            "return": {
+                "description": "the namespace array",
+                "type": "Namespace[]"
+            },
+            "class": "AddressSpace",
+            "module": "opcua.address_space"
+        },
+        {
+            "file": "packages\\node-opcua-address-space\\src\\address_space.js",
+            "line": 205,
             "itemtype": "method",
             "name": "addAlias",
             "params": [
@@ -13885,7 +13915,7 @@
         },
         {
             "file": "packages\\node-opcua-address-space\\src\\address_space.js",
-            "line": 208,
+            "line": 217,
             "description": "find an node by node Id",
             "itemtype": "method",
             "name": "findNode",
@@ -13905,7 +13935,7 @@
         },
         {
             "file": "packages\\node-opcua-address-space\\src\\address_space.js",
-            "line": 233,
+            "line": 242,
             "itemtype": "property",
             "name": "rootFolder",
             "type": "{BaseNode}",
@@ -13914,7 +13944,7 @@
         },
         {
             "file": "packages\\node-opcua-address-space\\src\\address_space.js",
-            "line": 267,
+            "line": 276,
             "description": "resolved a string or a nodeId to a nodeID",
             "itemtype": "method",
             "name": "resolveNodeId",
@@ -13934,7 +13964,7 @@
         },
         {
             "file": "packages\\node-opcua-address-space\\src\\address_space.js",
-            "line": 302,
+            "line": 311,
             "description": "Find the DataType node from a NodeId or a browseName",
             "itemtype": "method",
             "name": "findDataType",
@@ -13964,7 +13994,7 @@
         },
         {
             "file": "packages\\node-opcua-address-space\\src\\address_space.js",
-            "line": 339,
+            "line": 348,
             "itemtype": "method",
             "name": "findCorrespondingBasicDataType",
             "params": [
@@ -13981,7 +14011,7 @@
         },
         {
             "file": "packages\\node-opcua-address-space\\src\\address_space.js",
-            "line": 385,
+            "line": 394,
             "itemtype": "method",
             "name": "findObjectType",
             "params": [
@@ -14010,7 +14040,7 @@
         },
         {
             "file": "packages\\node-opcua-address-space\\src\\address_space.js",
-            "line": 419,
+            "line": 428,
             "itemtype": "method",
             "name": "findVariableType",
             "params": [
@@ -14039,7 +14069,7 @@
         },
         {
             "file": "packages\\node-opcua-address-space\\src\\address_space.js",
-            "line": 446,
+            "line": 455,
             "description": "returns true if str matches a nodeID, e.g i=123 or ns=...",
             "itemtype": "method",
             "name": "isNodeIdString",
@@ -14055,7 +14085,7 @@
         },
         {
             "file": "packages\\node-opcua-address-space\\src\\address_space.js",
-            "line": 469,
+            "line": 478,
             "itemtype": "method",
             "name": "findReferenceType",
             "params": [
@@ -14081,7 +14111,7 @@
         },
         {
             "file": "packages\\node-opcua-address-space\\src\\address_space.js",
-            "line": 515,
+            "line": 524,
             "description": "find a ReferenceType by its inverse name.",
             "itemtype": "method",
             "name": "findReferenceTypeFromInverseName",
@@ -14101,7 +14131,7 @@
         },
         {
             "file": "packages\\node-opcua-address-space\\src\\address_space.js",
-            "line": 525,
+            "line": 534,
             "itemtype": "method",
             "name": "normalizeReferenceType",
             "params": [
@@ -14125,7 +14155,7 @@
         },
         {
             "file": "packages\\node-opcua-address-space\\src\\address_space.js",
-            "line": 625,
+            "line": 634,
             "description": "returns the inverse name of the referenceType.",
             "itemtype": "method",
             "name": "inverseReferenceType",
@@ -14148,7 +14178,7 @@
         },
         {
             "file": "packages\\node-opcua-address-space\\src\\address_space.js",
-            "line": 778,
+            "line": 787,
             "description": "return true if nodeId is a Folder",
             "itemtype": "method",
             "name": "_isFolder",
@@ -14173,7 +14203,7 @@
         },
         {
             "file": "packages\\node-opcua-address-space\\src\\address_space.js",
-            "line": 795,
+            "line": 804,
             "itemtype": "method",
             "name": "_coerceNode",
             "params": [
@@ -14193,7 +14223,7 @@
         },
         {
             "file": "packages\\node-opcua-address-space\\src\\address_space.js",
-            "line": 845,
+            "line": 854,
             "description": "walk up the hierarchy of objects until a view is found\n objects may belong to multiples views.\n Note: this method doesn't return the main view => Server object.",
             "itemtype": "method",
             "name": "extractRootViews",
@@ -14213,7 +14243,7 @@
         },
         {
             "file": "packages\\node-opcua-address-space\\src\\address_space.js",
-            "line": 1006,
+            "line": 1015,
             "itemtype": "method",
             "name": "addFolder",
             "params": [
@@ -14249,7 +14279,7 @@
         },
         {
             "file": "packages\\node-opcua-address-space\\src\\address_space.js",
-            "line": 1022,
+            "line": 1031,
             "description": "cleanup all resources maintained by this addressSpace.",
             "itemtype": "method",
             "name": "dispose",
@@ -14258,7 +14288,7 @@
         },
         {
             "file": "packages\\node-opcua-address-space\\src\\address_space.js",
-            "line": 1040,
+            "line": 1049,
             "description": "register a function that will be called when the server will perform its shut down.",
             "itemtype": "method",
             "name": "registerShutdownTask",
@@ -14267,7 +14297,7 @@
         },
         {
             "file": "packages\\node-opcua-address-space\\src\\address_space.js",
-            "line": 1064,
+            "line": 1073,
             "itemtype": "method",
             "name": "browseSingleNode",
             "params": [
@@ -40189,7 +40219,7 @@
     "warnings": [
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " packages\\node-opcua-address-space\\src\\address_space.js:153"
+            "line": " packages\\node-opcua-address-space\\src\\address_space.js:158"
         },
         {
             "message": "replacing incorrect tag: returns with return",
@@ -40278,30 +40308,6 @@
         {
             "message": "Missing item type",
             "line": " packages\\node-opcua-address-space\\src\\loader\\load_nodeset2.js:80"
-        },
-        {
-            "message": "Missing item type",
-            "line": " packages\\node-opcua-address-space\\src\\address_space.js:112"
-        },
-        {
-            "message": "Missing item type",
-            "line": " packages\\node-opcua-address-space\\src\\address_space.js:129"
-        },
-        {
-            "message": "Missing item type\nreturn address space own namespace/\nObjects instances managed by the server will be created in this namespace.",
-            "line": " packages\\node-opcua-address-space\\src\\address_space.js:136"
-        },
-        {
-            "message": "Missing item type\nregister a new namespace",
-            "line": " packages\\node-opcua-address-space\\src\\address_space.js:153"
-        },
-        {
-            "message": "Missing item type\nreturns the namespace index of a namespace given by its namespace uri",
-            "line": " packages\\node-opcua-address-space\\src\\address_space.js:179"
-        },
-        {
-            "message": "Missing item type",
-            "line": " packages\\node-opcua-address-space\\src\\address_space.js:189"
         },
         {
             "message": "Missing item type",
