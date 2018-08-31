@@ -667,6 +667,9 @@ AddressSpace.prototype.getNamespaceUri = function (namespaceIndex) {
     return this._namespaceArray[namespaceIndex].namespaceUri;
 };
 
+/***
+ * 
+ */
 AddressSpace.prototype.getNamespace = function (namespaceIndexOrName) {
    const self = this;
    if (typeof namespaceIndexOrName ===&quot;number&quot;) {
@@ -681,9 +684,17 @@ AddressSpace.prototype.getNamespace = function (namespaceIndexOrName) {
     }
 };
 
+/***
+ * @return the  default namespace (standard OPCUA namespace)
+ */
 AddressSpace.prototype.getDefaultNamespace= function() {
     return this.getNamespace(0);
 };
+
+/***
+ * return address space own namespace/
+ * Objects instances managed by the server will be created in this namespace.
+ */
 AddressSpace.prototype.getOwnNamespace= function() {
 
     const self = this;
@@ -698,7 +709,7 @@ AddressSpace.prototype.getOwnNamespace= function() {
 const Namespace = require(&quot;./namespace&quot;).Namespace;
 
 /**
- *
+ * register a new namespace
  * @param namespaceUri {string}
  * @returns {Namespace}
  */
@@ -723,12 +734,19 @@ AddressSpace.prototype.registerNamespace = function (namespaceUri) {
     return self._namespaceArray[index];
 };
 
+/**
+ * returns the namespace index of a namespace given by its namespace uri
+ * @param {strings} namespaceUri 
+ */
 AddressSpace.prototype.getNamespaceIndex = function (namespaceUri) {
     assert(typeof namespaceUri === &quot;string&quot;);
     const self = this;
     return  self._namespaceArray.findIndex(ns=&gt; ns.namespaceUri === namespaceUri);
 };
 
+/***
+ * @return a namespace array 
+ */
 AddressSpace.prototype.getNamespaceArray = function () {
     return this._namespaceArray;
 };
