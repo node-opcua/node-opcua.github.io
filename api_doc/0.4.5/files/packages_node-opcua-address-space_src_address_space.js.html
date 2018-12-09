@@ -668,7 +668,9 @@ AddressSpace.prototype.getNamespaceUri = function (namespaceIndex) {
 };
 
 /***
- * 
+ * @method getNamespace
+ * @param {string|number} namespace index or namespace uri.
+ * @return {NameSpace} the namespace
  */
 AddressSpace.prototype.getNamespace = function (namespaceIndexOrName) {
    const self = this;
@@ -685,15 +687,18 @@ AddressSpace.prototype.getNamespace = function (namespaceIndexOrName) {
 };
 
 /***
- * @return the  default namespace (standard OPCUA namespace)
+ * @method getDefaultNamespace
+ * @return  {NameSpace} the  default namespace (standard OPCUA namespace)
  */
 AddressSpace.prototype.getDefaultNamespace= function() {
     return this.getNamespace(0);
 };
 
 /***
- * return address space own namespace/
- * Objects instances managed by the server will be created in this namespace.
+ * @method getOwnNamespace
+ * objects instances managed by the server will be created in this namespace.
+ * 
+ * @return  {NameSpace} address space own namespace
  */
 AddressSpace.prototype.getOwnNamespace= function() {
 
@@ -709,6 +714,7 @@ AddressSpace.prototype.getOwnNamespace= function() {
 const Namespace = require(&quot;./namespace&quot;).Namespace;
 
 /**
+ * @method registerNamespace
  * register a new namespace
  * @param namespaceUri {string}
  * @returns {Namespace}
@@ -735,8 +741,10 @@ AddressSpace.prototype.registerNamespace = function (namespaceUri) {
 };
 
 /**
- * returns the namespace index of a namespace given by its namespace uri
+ * @method getNamespaceIndex
  * @param {strings} namespaceUri 
+ * @return {number} the namespace index of a namespace given by its namespace uri
+ * 
  */
 AddressSpace.prototype.getNamespaceIndex = function (namespaceUri) {
     assert(typeof namespaceUri === &quot;string&quot;);
@@ -745,7 +753,8 @@ AddressSpace.prototype.getNamespaceIndex = function (namespaceUri) {
 };
 
 /***
- * @return a namespace array 
+ * @method getNamespaceArray
+ * @return {Namespace[]} the namespace array 
  */
 AddressSpace.prototype.getNamespaceArray = function () {
     return this._namespaceArray;

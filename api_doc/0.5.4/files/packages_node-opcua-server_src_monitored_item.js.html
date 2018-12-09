@@ -1,0 +1,1583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="flattr:id" content="me93y1">
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-25438821-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-25438821-3');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N63SL9Q');</script>
+    <!-- End Google Tag Manager -->
+
+    <title>packages\node-opcua-server\src\monitored_item.js - The NodeOPCUA API</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-8886208393040088",
+            enable_page_level_ads: true
+        });
+    </script>
+
+</head>
+<body class="yui3-skin-sam">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N63SL9Q"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+	    <img alt="The NodeOPCUA API" src="../assets/css/logo.png" style="max-height: 65%;" title="The NodeOPCUA API">
+            The NodeOPCUA API
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>0.5.4</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/AcknowledgeMessage", "classes/ActivateSessionRequest", "classes/ActivateSessionResponse", "classes/AddNodesItem", "classes/AddNodesRequest", "classes/AddNodesResponse", "classes/AddNodesResult", "classes/AddReferencesItem", "classes/AddReferencesRequest", "classes/AddReferencesResponse", "classes/AddressSpace", "classes/AggregateConfiguration", "classes/AggregateFilter", "classes/AnonymousIdentityToken", "classes/ApplicationDescription", "classes/ApplicationInstanceCertificate", "classes/Argument", "classes/AsymmetricAlgorithmSecurityHeader", "classes/AttributeIds", "classes/AttributeNameById", "classes/AttributeOperand", "classes/AxisInformation", "classes/BaseEventType", "classes/BaseNode", "classes/BaseUAObject", "classes/BinaryStream", "classes/BinaryStreamSizeCalculator", "classes/BrowseDescription", "classes/BrowseDirection", "classes/BrowseNextRequest", "classes/BrowseNextResponse", "classes/BrowsePath", "classes/BrowsePathResult", "classes/BrowsePathTarget", "classes/BrowseRequest", "classes/BrowseResponse", "classes/BrowseResult", "classes/BuildInfo", "classes/CallMethodRequest", "classes/CallMethodResult", "classes/CallRequest", "classes/CallResponse", "classes/CancelRequest", "classes/CancelResponse", "classes/ChannelSecurityToken", "classes/ChunkManager", "classes/ClientMonitoredItem", "classes/ClientMonitoredItemGroup", "classes/ClientSecureChannelLayer", "classes/ClientSession", "classes/ClientSidePublishEngine", "classes/ClientSubscription", "classes/ClientTCP_transport", "classes/CloseSecureChannelRequest", "classes/CloseSecureChannelResponse", "classes/CloseSessionRequest", "classes/CloseSessionResponse", "classes/ConditionInfo", "classes/ConditionSnapshot", "classes/ContentFilter", "classes/ContentFilterElement", "classes/ContentFilterElementResult", "classes/ContentFilterResult", "classes/CreateMonitoredItemsRequest", "classes/CreateMonitoredItemsResponse", "classes/CreateSessionRequest", "classes/CreateSessionResponse", "classes/CreateSubscriptionRequest", "classes/CreateSubscriptionResponse", "classes/DataChangeFilter", "classes/DataChangeNotification", "classes/DataValue", "classes/DeleteMonitoredItemsRequest", "classes/DeleteMonitoredItemsResponse", "classes/DeleteNodesItem", "classes/DeleteNodesRequest", "classes/DeleteNodesResponse", "classes/DeleteReferencesItem", "classes/DeleteReferencesRequest", "classes/DeleteReferencesResponse", "classes/DeleteSubscriptionsRequest", "classes/DeleteSubscriptionsResponse", "classes/DiagnosticInfo", "classes/ElementOperand", "classes/EndpointDescription", "classes/Enum", "classes/EnumValueType", "classes/ErrorMessage", "classes/EUInformation", "classes/EventData", "classes/EventFieldList", "classes/EventFilter", "classes/EventFilterResult", "classes/EventNotificationList", "classes/ExpandedNodeId", "classes/Factory", "classes/FilterOperand", "classes/FindServersOnNetworkRequest", "classes/FindServersOnNetworkResponse", "classes/FindServersRequest", "classes/FindServersResponse", "classes/GetEndpointsRequest", "classes/GetEndpointsResponse", "classes/HelloMessage", "classes/HistoryData", "classes/HistoryModifiedData", "classes/HistoryReadDetails", "classes/HistoryReadRequest", "classes/HistoryReadResponse", "classes/HistoryReadResult", "classes/HistoryReadValueId", "classes/HistoryServerCapabilities", "classes/HistoryUpdateRequest", "classes/HistoryUpdateResponse", "classes/HistoryUpdateResult", "classes/IssuedIdentityToken", "classes/LiteralOperand", "classes/LocalizedText", "classes/MandatoryChildOrRequestedOptionalFilter", "classes/MdnsDiscoveryConfiguration", "classes/MessageBuilder", "classes/MessageBuilderBase", "classes/MessageChunker", "classes/ModelChangeStructure", "classes/ModificationInfo", "classes/ModifyMonitoredItemsRequest", "classes/ModifyMonitoredItemsResponse", "classes/ModifySubscriptionRequest", "classes/ModifySubscriptionResponse", "classes/MonitoredItem", "classes/MonitoredItemCreateRequest", "classes/MonitoredItemCreateResult", "classes/MonitoredItemModifyRequest", "classes/MonitoredItemModifyResult", "classes/MonitoredItemNotification", "classes/MonitoringFilter", "classes/MonitoringParameters", "classes/NodeCrawler", "classes/NodeId", "classes/NodeIdType", "classes/NodeTypeDescription", "classes/NotificationMessage", "classes/opcua", "classes/OPCUABaseServer", "classes/OPCUAClient", "classes/OPCUAClientBase", "classes/OPCUASecureObject", "classes/OPCUAServer", "classes/OPCUAServerEndPoint", "classes/OpenSecureChannelRequest", "classes/OpenSecureChannelResponse", "classes/OperationLimits", "classes/PacketAssembler", "classes/ParsingResult", "classes/PublishRequest", "classes/PublishResponse", "classes/QualifiedName", "classes/QueryDataDescription", "classes/QueryDataSet", "classes/QueryFirstRequest", "classes/QueryFirstResponse", "classes/QueryNextRequest", "classes/QueryNextResponse", "classes/Range", "classes/ReadAtTimeDetails", "classes/ReaderState", "classes/ReadEventDetails", "classes/ReadProcessedDetails", "classes/ReadRawModifiedDetails", "classes/ReadRequest", "classes/ReadResponse", "classes/ReadValueId", "classes/RedundantServer", "classes/Reference", "classes/ReferenceDescription", "classes/ReferenceType", "classes/RegisteredServer", "classes/RegisterNodesRequest", "classes/RegisterNodesResponse", "classes/RegisterServer2Request", "classes/RegisterServer2Response", "classes/RegisterServerRequest", "classes/RegisterServerResponse", "classes/RelativePath", "classes/RelativePathElement", "classes/RepublishRequest", "classes/RepublishResponse", "classes/RequestHeader", "classes/ResponseHeader", "classes/SamplingIntervalDiagnostics", "classes/SecureMessageChunkManager", "classes/SecurityPolicy", "classes/SemanticChangeStructure", "classes/SequenceHeader", "classes/SequenceNumberGenerator", "classes/ServerCapabilities", "classes/ServerDiagnosticsSummary", "classes/ServerEngine", "classes/ServerOnNetwork", "classes/ServerSecureChannelLayer", "classes/ServerSession", "classes/ServerSidePublishEngine", "classes/ServerStatus", "classes/ServerTCP_transport", "classes/ServiceCounter", "classes/ServiceFault", "classes/SessionContext", "classes/SessionDiagnostics", "classes/SessionSecurityDiagnostics", "classes/SetMonitoringModeRequest", "classes/SetMonitoringModeResponse", "classes/SetPublishingModeRequest", "classes/SetPublishingModeResponse", "classes/SetTriggeringRequest", "classes/SetTriggeringResponse", "classes/SignatureData", "classes/SignedSoftwareCertificate", "classes/SimpleAttributeOperand", "classes/Simulator", "classes/StatusChangeNotification", "classes/StatusCode", "classes/Subscription", "classes/SubscriptionAcknowledgement", "classes/SubscriptionDiagnostics", "classes/SymmetricAlgorithmSecurityHeader", "classes/TCP_transport", "classes/TCPErrorMessage", "classes/TimestampsToReturn", "classes/TimeZone", "classes/ToolBrowsePath", "classes/TransferResult", "classes/TransferSubscriptionsRequest", "classes/TransferSubscriptionsResponse", "classes/TranslateBrowsePathsToNodeIdsRequest", "classes/TranslateBrowsePathsToNodeIdsResponse", "classes/TypeSchema", "classes/UAAcknowledgeableConditionBase", "classes/UAAlarmConditionBase", "classes/UACertificateExpirationAlarm", "classes/UAConditionBase", "classes/UADataType", "classes/UADiscreteAlarm", "classes/UAExclusiveDeviationAlarm", "classes/UAExclusiveLevelAlarm", "classes/UAExclusiveLimitAlarm", "classes/UAExclusiveRateOfChangeAlarm", "classes/UALimitAlarm", "classes/UAMultiStateDiscreteType", "classes/UANonExclusiveDeviationAlarm", "classes/UANonExclusiveLimitAlarm", "classes/UAObject", "classes/UAObjectType", "classes/UAOffNormalAlarm", "classes/UAProxyManager", "classes/UASystemOffNormalAlarm", "classes/UATripAlarm", "classes/UATwoStateVariable", "classes/UAVariable", "classes/UAVariableType", "classes/UnregisterNodesRequest", "classes/UnregisterNodesResponse", "classes/UserNameIdentityToken", "classes/UserTokenPolicy", "classes/Variant", "classes/View", "classes/ViewDescription", "classes/WriteRequest", "classes/WriteResponse", "classes/WriteValue", "classes/X509IdentityToken", "classes/Xml2Json", "modules/opcua.address_space", "modules/opcua.address_space.AlarmsAndConditions", "modules/opcua.address_space.types", "modules/opcua.client", "modules/opcua.data-value", "modules/opcua.datamodel", "modules/opcua.miscellaneous", "modules/opcua.server", "modules/opcua.server.simulation", "modules/opcua.status-code", "modules/opcua.transport", "modules/opcua.utils", "modules/opcua.variant", "modules/service.filter.tools", "modules/services.browse", "modules/services.call", "modules/services.discovery", "modules/services.endpoints", "modules/services.filter", "modules/services.history", "modules/services.node_management", "modules/services.query", "modules/services.read", "modules/services.register-server", "modules/services.register_node", "modules/services.secure-channel", "modules/services.session", "modules/services.subscription", "modules/services.translate-browse-path", "modules/services.write", "modules/StatusCodes", "modules/xml2json"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+
+<div class="row">
+<script type="text/javascript" src="http://www.google.com/cse/query_renderer.js"></script>
+<div id="queries"></div>
+<script src="http://www.google.com/cse/api/partner-pub-8886208393040088/cse/1374394727/queries/js?oe=UTF-8&amp;callback=(new+PopularQueryRenderer(document.getElementById(%22queries%22))).render"></script>
+
+</div>
+
+    <div class="row">
+        <div class="span3">
+
+            <!-- Ad by Google -->
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-format="fluid"
+                 data-ad-layout-key="-8h+1u-de+eo+dy"
+                 data-ad-client="ca-pub-8886208393040088"
+                 data-ad-slot="9362364253"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <!-- -->
+
+	         <div>
+	             <h3>APIs</h3>
+	             <div id="sidebar">
+	                 <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
+	                     <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
+	                     <li><a href="#modules" data-toggle="tab">Modules</a></li>
+	                 </ul>
+	         
+	                 <div id="api-tabview-filter">
+	                     <input type="search" placeholder="Type to filter APIs">
+	                 </div>
+	         
+	                 <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
+	                     <div class="tab-pane active" id="classes">
+	                         <ul id="api-classes" class="nav nav-list">
+	                                 <li><a href="../classes/AcknowledgeMessage.html">AcknowledgeMessage</a></li>
+	                                 <li><a href="../classes/ActivateSessionRequest.html">ActivateSessionRequest</a></li>
+	                                 <li><a href="../classes/ActivateSessionResponse.html">ActivateSessionResponse</a></li>
+	                                 <li><a href="../classes/AddNodesItem.html">AddNodesItem</a></li>
+	                                 <li><a href="../classes/AddNodesRequest.html">AddNodesRequest</a></li>
+	                                 <li><a href="../classes/AddNodesResponse.html">AddNodesResponse</a></li>
+	                                 <li><a href="../classes/AddNodesResult.html">AddNodesResult</a></li>
+	                                 <li><a href="../classes/AddReferencesItem.html">AddReferencesItem</a></li>
+	                                 <li><a href="../classes/AddReferencesRequest.html">AddReferencesRequest</a></li>
+	                                 <li><a href="../classes/AddReferencesResponse.html">AddReferencesResponse</a></li>
+	                                 <li><a href="../classes/AddressSpace.html">AddressSpace</a></li>
+	                                 <li><a href="../classes/AggregateConfiguration.html">AggregateConfiguration</a></li>
+	                                 <li><a href="../classes/AggregateFilter.html">AggregateFilter</a></li>
+	                                 <li><a href="../classes/AnonymousIdentityToken.html">AnonymousIdentityToken</a></li>
+	                                 <li><a href="../classes/ApplicationDescription.html">ApplicationDescription</a></li>
+	                                 <li><a href="../classes/ApplicationInstanceCertificate.html">ApplicationInstanceCertificate</a></li>
+	                                 <li><a href="../classes/Argument.html">Argument</a></li>
+	                                 <li><a href="../classes/AsymmetricAlgorithmSecurityHeader.html">AsymmetricAlgorithmSecurityHeader</a></li>
+	                                 <li><a href="../classes/AttributeIds.html">AttributeIds</a></li>
+	                                 <li><a href="../classes/AttributeNameById.html">AttributeNameById</a></li>
+	                                 <li><a href="../classes/AttributeOperand.html">AttributeOperand</a></li>
+	                                 <li><a href="../classes/AxisInformation.html">AxisInformation</a></li>
+	                                 <li><a href="../classes/BaseEventType.html">BaseEventType</a></li>
+	                                 <li><a href="../classes/BaseNode.html">BaseNode</a></li>
+	                                 <li><a href="../classes/BaseUAObject.html">BaseUAObject</a></li>
+	                                 <li><a href="../classes/BinaryStream.html">BinaryStream</a></li>
+	                                 <li><a href="../classes/BinaryStreamSizeCalculator.html">BinaryStreamSizeCalculator</a></li>
+	                                 <li><a href="../classes/BrowseDescription.html">BrowseDescription</a></li>
+	                                 <li><a href="../classes/BrowseDirection.html">BrowseDirection</a></li>
+	                                 <li><a href="../classes/BrowseNextRequest.html">BrowseNextRequest</a></li>
+	                                 <li><a href="../classes/BrowseNextResponse.html">BrowseNextResponse</a></li>
+	                                 <li><a href="../classes/BrowsePath.html">BrowsePath</a></li>
+	                                 <li><a href="../classes/BrowsePathResult.html">BrowsePathResult</a></li>
+	                                 <li><a href="../classes/BrowsePathTarget.html">BrowsePathTarget</a></li>
+	                                 <li><a href="../classes/BrowseRequest.html">BrowseRequest</a></li>
+	                                 <li><a href="../classes/BrowseResponse.html">BrowseResponse</a></li>
+	                                 <li><a href="../classes/BrowseResult.html">BrowseResult</a></li>
+	                                 <li><a href="../classes/BuildInfo.html">BuildInfo</a></li>
+	                                 <li><a href="../classes/CallMethodRequest.html">CallMethodRequest</a></li>
+	                                 <li><a href="../classes/CallMethodResult.html">CallMethodResult</a></li>
+	                                 <li><a href="../classes/CallRequest.html">CallRequest</a></li>
+	                                 <li><a href="../classes/CallResponse.html">CallResponse</a></li>
+	                                 <li><a href="../classes/CancelRequest.html">CancelRequest</a></li>
+	                                 <li><a href="../classes/CancelResponse.html">CancelResponse</a></li>
+	                                 <li><a href="../classes/ChannelSecurityToken.html">ChannelSecurityToken</a></li>
+	                                 <li><a href="../classes/ChunkManager.html">ChunkManager</a></li>
+	                                 <li><a href="../classes/ClientMonitoredItem.html">ClientMonitoredItem</a></li>
+	                                 <li><a href="../classes/ClientMonitoredItemGroup.html">ClientMonitoredItemGroup</a></li>
+	                                 <li><a href="../classes/ClientSecureChannelLayer.html">ClientSecureChannelLayer</a></li>
+	                                 <li><a href="../classes/ClientSession.html">ClientSession</a></li>
+	                                 <li><a href="../classes/ClientSidePublishEngine.html">ClientSidePublishEngine</a></li>
+	                                 <li><a href="../classes/ClientSubscription.html">ClientSubscription</a></li>
+	                                 <li><a href="../classes/ClientTCP_transport.html">ClientTCP_transport</a></li>
+	                                 <li><a href="../classes/CloseSecureChannelRequest.html">CloseSecureChannelRequest</a></li>
+	                                 <li><a href="../classes/CloseSecureChannelResponse.html">CloseSecureChannelResponse</a></li>
+	                                 <li><a href="../classes/CloseSessionRequest.html">CloseSessionRequest</a></li>
+	                                 <li><a href="../classes/CloseSessionResponse.html">CloseSessionResponse</a></li>
+	                                 <li><a href="../classes/ConditionInfo.html">ConditionInfo</a></li>
+	                                 <li><a href="../classes/ContentFilter.html">ContentFilter</a></li>
+	                                 <li><a href="../classes/ContentFilterElement.html">ContentFilterElement</a></li>
+	                                 <li><a href="../classes/ContentFilterElementResult.html">ContentFilterElementResult</a></li>
+	                                 <li><a href="../classes/ContentFilterResult.html">ContentFilterResult</a></li>
+	                                 <li><a href="../classes/CreateMonitoredItemsRequest.html">CreateMonitoredItemsRequest</a></li>
+	                                 <li><a href="../classes/CreateMonitoredItemsResponse.html">CreateMonitoredItemsResponse</a></li>
+	                                 <li><a href="../classes/CreateSessionRequest.html">CreateSessionRequest</a></li>
+	                                 <li><a href="../classes/CreateSessionResponse.html">CreateSessionResponse</a></li>
+	                                 <li><a href="../classes/CreateSubscriptionRequest.html">CreateSubscriptionRequest</a></li>
+	                                 <li><a href="../classes/CreateSubscriptionResponse.html">CreateSubscriptionResponse</a></li>
+	                                 <li><a href="../classes/DataChangeFilter.html">DataChangeFilter</a></li>
+	                                 <li><a href="../classes/DataChangeNotification.html">DataChangeNotification</a></li>
+	                                 <li><a href="../classes/DataValue.html">DataValue</a></li>
+	                                 <li><a href="../classes/DeleteMonitoredItemsRequest.html">DeleteMonitoredItemsRequest</a></li>
+	                                 <li><a href="../classes/DeleteMonitoredItemsResponse.html">DeleteMonitoredItemsResponse</a></li>
+	                                 <li><a href="../classes/DeleteNodesItem.html">DeleteNodesItem</a></li>
+	                                 <li><a href="../classes/DeleteNodesRequest.html">DeleteNodesRequest</a></li>
+	                                 <li><a href="../classes/DeleteNodesResponse.html">DeleteNodesResponse</a></li>
+	                                 <li><a href="../classes/DeleteReferencesItem.html">DeleteReferencesItem</a></li>
+	                                 <li><a href="../classes/DeleteReferencesRequest.html">DeleteReferencesRequest</a></li>
+	                                 <li><a href="../classes/DeleteReferencesResponse.html">DeleteReferencesResponse</a></li>
+	                                 <li><a href="../classes/DeleteSubscriptionsRequest.html">DeleteSubscriptionsRequest</a></li>
+	                                 <li><a href="../classes/DeleteSubscriptionsResponse.html">DeleteSubscriptionsResponse</a></li>
+	                                 <li><a href="../classes/DiagnosticInfo.html">DiagnosticInfo</a></li>
+	                                 <li><a href="../classes/ElementOperand.html">ElementOperand</a></li>
+	                                 <li><a href="../classes/EndpointDescription.html">EndpointDescription</a></li>
+	                                 <li><a href="../classes/Enum.html">Enum</a></li>
+	                                 <li><a href="../classes/EnumValueType.html">EnumValueType</a></li>
+	                                 <li><a href="../classes/ErrorMessage.html">ErrorMessage</a></li>
+	                                 <li><a href="../classes/EUInformation.html">EUInformation</a></li>
+	                                 <li><a href="../classes/EventData.html">EventData</a></li>
+	                                 <li><a href="../classes/EventFieldList.html">EventFieldList</a></li>
+	                                 <li><a href="../classes/EventFilter.html">EventFilter</a></li>
+	                                 <li><a href="../classes/EventFilterResult.html">EventFilterResult</a></li>
+	                                 <li><a href="../classes/EventNotificationList.html">EventNotificationList</a></li>
+	                                 <li><a href="../classes/ExpandedNodeId.html">ExpandedNodeId</a></li>
+	                                 <li><a href="../classes/Factory.html">Factory</a></li>
+	                                 <li><a href="../classes/FilterOperand.html">FilterOperand</a></li>
+	                                 <li><a href="../classes/FindServersOnNetworkRequest.html">FindServersOnNetworkRequest</a></li>
+	                                 <li><a href="../classes/FindServersOnNetworkResponse.html">FindServersOnNetworkResponse</a></li>
+	                                 <li><a href="../classes/FindServersRequest.html">FindServersRequest</a></li>
+	                                 <li><a href="../classes/FindServersResponse.html">FindServersResponse</a></li>
+	                                 <li><a href="../classes/GetEndpointsRequest.html">GetEndpointsRequest</a></li>
+	                                 <li><a href="../classes/GetEndpointsResponse.html">GetEndpointsResponse</a></li>
+	                                 <li><a href="../classes/HelloMessage.html">HelloMessage</a></li>
+	                                 <li><a href="../classes/HistoryData.html">HistoryData</a></li>
+	                                 <li><a href="../classes/HistoryModifiedData.html">HistoryModifiedData</a></li>
+	                                 <li><a href="../classes/HistoryReadDetails.html">HistoryReadDetails</a></li>
+	                                 <li><a href="../classes/HistoryReadRequest.html">HistoryReadRequest</a></li>
+	                                 <li><a href="../classes/HistoryReadResponse.html">HistoryReadResponse</a></li>
+	                                 <li><a href="../classes/HistoryReadResult.html">HistoryReadResult</a></li>
+	                                 <li><a href="../classes/HistoryReadValueId.html">HistoryReadValueId</a></li>
+	                                 <li><a href="../classes/HistoryServerCapabilities.html">HistoryServerCapabilities</a></li>
+	                                 <li><a href="../classes/HistoryUpdateRequest.html">HistoryUpdateRequest</a></li>
+	                                 <li><a href="../classes/HistoryUpdateResponse.html">HistoryUpdateResponse</a></li>
+	                                 <li><a href="../classes/HistoryUpdateResult.html">HistoryUpdateResult</a></li>
+	                                 <li><a href="../classes/IssuedIdentityToken.html">IssuedIdentityToken</a></li>
+	                                 <li><a href="../classes/LiteralOperand.html">LiteralOperand</a></li>
+	                                 <li><a href="../classes/LocalizedText.html">LocalizedText</a></li>
+	                                 <li><a href="../classes/MdnsDiscoveryConfiguration.html">MdnsDiscoveryConfiguration</a></li>
+	                                 <li><a href="../classes/MessageBuilder.html">MessageBuilder</a></li>
+	                                 <li><a href="../classes/MessageBuilderBase.html">MessageBuilderBase</a></li>
+	                                 <li><a href="../classes/MessageChunker.html">MessageChunker</a></li>
+	                                 <li><a href="../classes/ModelChangeStructure.html">ModelChangeStructure</a></li>
+	                                 <li><a href="../classes/ModificationInfo.html">ModificationInfo</a></li>
+	                                 <li><a href="../classes/ModifyMonitoredItemsRequest.html">ModifyMonitoredItemsRequest</a></li>
+	                                 <li><a href="../classes/ModifyMonitoredItemsResponse.html">ModifyMonitoredItemsResponse</a></li>
+	                                 <li><a href="../classes/ModifySubscriptionRequest.html">ModifySubscriptionRequest</a></li>
+	                                 <li><a href="../classes/ModifySubscriptionResponse.html">ModifySubscriptionResponse</a></li>
+	                                 <li><a href="../classes/MonitoredItem.html">MonitoredItem</a></li>
+	                                 <li><a href="../classes/MonitoredItemCreateRequest.html">MonitoredItemCreateRequest</a></li>
+	                                 <li><a href="../classes/MonitoredItemCreateResult.html">MonitoredItemCreateResult</a></li>
+	                                 <li><a href="../classes/MonitoredItemModifyRequest.html">MonitoredItemModifyRequest</a></li>
+	                                 <li><a href="../classes/MonitoredItemModifyResult.html">MonitoredItemModifyResult</a></li>
+	                                 <li><a href="../classes/MonitoredItemNotification.html">MonitoredItemNotification</a></li>
+	                                 <li><a href="../classes/MonitoringFilter.html">MonitoringFilter</a></li>
+	                                 <li><a href="../classes/MonitoringParameters.html">MonitoringParameters</a></li>
+	                                 <li><a href="../classes/NodeCrawler.html">NodeCrawler</a></li>
+	                                 <li><a href="../classes/NodeId.html">NodeId</a></li>
+	                                 <li><a href="../classes/NodeIdType.html">NodeIdType</a></li>
+	                                 <li><a href="../classes/NodeTypeDescription.html">NodeTypeDescription</a></li>
+	                                 <li><a href="../classes/NotificationMessage.html">NotificationMessage</a></li>
+	                                 <li><a href="../classes/opcua.html">opcua</a></li>
+	                                 <li><a href="../classes/OPCUABaseServer.html">OPCUABaseServer</a></li>
+	                                 <li><a href="../classes/OPCUAClient.html">OPCUAClient</a></li>
+	                                 <li><a href="../classes/OPCUAClientBase.html">OPCUAClientBase</a></li>
+	                                 <li><a href="../classes/OPCUASecureObject.html">OPCUASecureObject</a></li>
+	                                 <li><a href="../classes/OPCUAServer.html">OPCUAServer</a></li>
+	                                 <li><a href="../classes/OPCUAServerEndPoint.html">OPCUAServerEndPoint</a></li>
+	                                 <li><a href="../classes/OpenSecureChannelRequest.html">OpenSecureChannelRequest</a></li>
+	                                 <li><a href="../classes/OpenSecureChannelResponse.html">OpenSecureChannelResponse</a></li>
+	                                 <li><a href="../classes/OperationLimits.html">OperationLimits</a></li>
+	                                 <li><a href="../classes/PacketAssembler.html">PacketAssembler</a></li>
+	                                 <li><a href="../classes/ParsingResult.html">ParsingResult</a></li>
+	                                 <li><a href="../classes/PublishRequest.html">PublishRequest</a></li>
+	                                 <li><a href="../classes/PublishResponse.html">PublishResponse</a></li>
+	                                 <li><a href="../classes/QualifiedName.html">QualifiedName</a></li>
+	                                 <li><a href="../classes/QueryDataDescription.html">QueryDataDescription</a></li>
+	                                 <li><a href="../classes/QueryDataSet.html">QueryDataSet</a></li>
+	                                 <li><a href="../classes/QueryFirstRequest.html">QueryFirstRequest</a></li>
+	                                 <li><a href="../classes/QueryFirstResponse.html">QueryFirstResponse</a></li>
+	                                 <li><a href="../classes/QueryNextRequest.html">QueryNextRequest</a></li>
+	                                 <li><a href="../classes/QueryNextResponse.html">QueryNextResponse</a></li>
+	                                 <li><a href="../classes/Range.html">Range</a></li>
+	                                 <li><a href="../classes/ReadAtTimeDetails.html">ReadAtTimeDetails</a></li>
+	                                 <li><a href="../classes/ReadEventDetails.html">ReadEventDetails</a></li>
+	                                 <li><a href="../classes/ReadProcessedDetails.html">ReadProcessedDetails</a></li>
+	                                 <li><a href="../classes/ReadRawModifiedDetails.html">ReadRawModifiedDetails</a></li>
+	                                 <li><a href="../classes/ReadRequest.html">ReadRequest</a></li>
+	                                 <li><a href="../classes/ReadResponse.html">ReadResponse</a></li>
+	                                 <li><a href="../classes/ReadValueId.html">ReadValueId</a></li>
+	                                 <li><a href="../classes/RedundantServer.html">RedundantServer</a></li>
+	                                 <li><a href="../classes/Reference.html">Reference</a></li>
+	                                 <li><a href="../classes/ReferenceDescription.html">ReferenceDescription</a></li>
+	                                 <li><a href="../classes/ReferenceType.html">ReferenceType</a></li>
+	                                 <li><a href="../classes/RegisteredServer.html">RegisteredServer</a></li>
+	                                 <li><a href="../classes/RegisterNodesRequest.html">RegisterNodesRequest</a></li>
+	                                 <li><a href="../classes/RegisterNodesResponse.html">RegisterNodesResponse</a></li>
+	                                 <li><a href="../classes/RegisterServer2Request.html">RegisterServer2Request</a></li>
+	                                 <li><a href="../classes/RegisterServer2Response.html">RegisterServer2Response</a></li>
+	                                 <li><a href="../classes/RegisterServerRequest.html">RegisterServerRequest</a></li>
+	                                 <li><a href="../classes/RegisterServerResponse.html">RegisterServerResponse</a></li>
+	                                 <li><a href="../classes/RelativePath.html">RelativePath</a></li>
+	                                 <li><a href="../classes/RelativePathElement.html">RelativePathElement</a></li>
+	                                 <li><a href="../classes/RepublishRequest.html">RepublishRequest</a></li>
+	                                 <li><a href="../classes/RepublishResponse.html">RepublishResponse</a></li>
+	                                 <li><a href="../classes/RequestHeader.html">RequestHeader</a></li>
+	                                 <li><a href="../classes/ResponseHeader.html">ResponseHeader</a></li>
+	                                 <li><a href="../classes/SamplingIntervalDiagnostics.html">SamplingIntervalDiagnostics</a></li>
+	                                 <li><a href="../classes/SecureMessageChunkManager.html">SecureMessageChunkManager</a></li>
+	                                 <li><a href="../classes/SecurityPolicy.html">SecurityPolicy</a></li>
+	                                 <li><a href="../classes/SemanticChangeStructure.html">SemanticChangeStructure</a></li>
+	                                 <li><a href="../classes/SequenceHeader.html">SequenceHeader</a></li>
+	                                 <li><a href="../classes/SequenceNumberGenerator.html">SequenceNumberGenerator</a></li>
+	                                 <li><a href="../classes/ServerCapabilities.html">ServerCapabilities</a></li>
+	                                 <li><a href="../classes/ServerDiagnosticsSummary.html">ServerDiagnosticsSummary</a></li>
+	                                 <li><a href="../classes/ServerEngine.html">ServerEngine</a></li>
+	                                 <li><a href="../classes/ServerOnNetwork.html">ServerOnNetwork</a></li>
+	                                 <li><a href="../classes/ServerSecureChannelLayer.html">ServerSecureChannelLayer</a></li>
+	                                 <li><a href="../classes/ServerSidePublishEngine.html">ServerSidePublishEngine</a></li>
+	                                 <li><a href="../classes/ServerStatus.html">ServerStatus</a></li>
+	                                 <li><a href="../classes/ServerTCP_transport.html">ServerTCP_transport</a></li>
+	                                 <li><a href="../classes/ServiceCounter.html">ServiceCounter</a></li>
+	                                 <li><a href="../classes/ServiceFault.html">ServiceFault</a></li>
+	                                 <li><a href="../classes/SessionContext.html">SessionContext</a></li>
+	                                 <li><a href="../classes/SessionDiagnostics.html">SessionDiagnostics</a></li>
+	                                 <li><a href="../classes/SessionSecurityDiagnostics.html">SessionSecurityDiagnostics</a></li>
+	                                 <li><a href="../classes/SetMonitoringModeRequest.html">SetMonitoringModeRequest</a></li>
+	                                 <li><a href="../classes/SetMonitoringModeResponse.html">SetMonitoringModeResponse</a></li>
+	                                 <li><a href="../classes/SetPublishingModeRequest.html">SetPublishingModeRequest</a></li>
+	                                 <li><a href="../classes/SetPublishingModeResponse.html">SetPublishingModeResponse</a></li>
+	                                 <li><a href="../classes/SetTriggeringRequest.html">SetTriggeringRequest</a></li>
+	                                 <li><a href="../classes/SetTriggeringResponse.html">SetTriggeringResponse</a></li>
+	                                 <li><a href="../classes/SignatureData.html">SignatureData</a></li>
+	                                 <li><a href="../classes/SignedSoftwareCertificate.html">SignedSoftwareCertificate</a></li>
+	                                 <li><a href="../classes/SimpleAttributeOperand.html">SimpleAttributeOperand</a></li>
+	                                 <li><a href="../classes/Simulator.html">Simulator</a></li>
+	                                 <li><a href="../classes/StatusChangeNotification.html">StatusChangeNotification</a></li>
+	                                 <li><a href="../classes/StatusCode.html">StatusCode</a></li>
+	                                 <li><a href="../classes/Subscription.html">Subscription</a></li>
+	                                 <li><a href="../classes/SubscriptionAcknowledgement.html">SubscriptionAcknowledgement</a></li>
+	                                 <li><a href="../classes/SubscriptionDiagnostics.html">SubscriptionDiagnostics</a></li>
+	                                 <li><a href="../classes/SymmetricAlgorithmSecurityHeader.html">SymmetricAlgorithmSecurityHeader</a></li>
+	                                 <li><a href="../classes/TCP_transport.html">TCP_transport</a></li>
+	                                 <li><a href="../classes/TCPErrorMessage.html">TCPErrorMessage</a></li>
+	                                 <li><a href="../classes/TimestampsToReturn.html">TimestampsToReturn</a></li>
+	                                 <li><a href="../classes/TimeZone.html">TimeZone</a></li>
+	                                 <li><a href="../classes/ToolBrowsePath.html">ToolBrowsePath</a></li>
+	                                 <li><a href="../classes/TransferResult.html">TransferResult</a></li>
+	                                 <li><a href="../classes/TransferSubscriptionsRequest.html">TransferSubscriptionsRequest</a></li>
+	                                 <li><a href="../classes/TransferSubscriptionsResponse.html">TransferSubscriptionsResponse</a></li>
+	                                 <li><a href="../classes/TranslateBrowsePathsToNodeIdsRequest.html">TranslateBrowsePathsToNodeIdsRequest</a></li>
+	                                 <li><a href="../classes/TranslateBrowsePathsToNodeIdsResponse.html">TranslateBrowsePathsToNodeIdsResponse</a></li>
+	                                 <li><a href="../classes/TypeSchema.html">TypeSchema</a></li>
+	                                 <li><a href="../classes/UAAcknowledgeableConditionBase.html">UAAcknowledgeableConditionBase</a></li>
+	                                 <li><a href="../classes/UAAlarmConditionBase.html">UAAlarmConditionBase</a></li>
+	                                 <li><a href="../classes/UACertificateExpirationAlarm.html">UACertificateExpirationAlarm</a></li>
+	                                 <li><a href="../classes/UAConditionBase.html">UAConditionBase</a></li>
+	                                 <li><a href="../classes/UADataType.html">UADataType</a></li>
+	                                 <li><a href="../classes/UADiscreteAlarm.html">UADiscreteAlarm</a></li>
+	                                 <li><a href="../classes/UAExclusiveDeviationAlarm.html">UAExclusiveDeviationAlarm</a></li>
+	                                 <li><a href="../classes/UAExclusiveLevelAlarm.html">UAExclusiveLevelAlarm</a></li>
+	                                 <li><a href="../classes/UAExclusiveLimitAlarm.html">UAExclusiveLimitAlarm</a></li>
+	                                 <li><a href="../classes/UAExclusiveRateOfChangeAlarm.html">UAExclusiveRateOfChangeAlarm</a></li>
+	                                 <li><a href="../classes/UALimitAlarm.html">UALimitAlarm</a></li>
+	                                 <li><a href="../classes/UAMultiStateDiscreteType.html">UAMultiStateDiscreteType</a></li>
+	                                 <li><a href="../classes/UANonExclusiveDeviationAlarm.html">UANonExclusiveDeviationAlarm</a></li>
+	                                 <li><a href="../classes/UANonExclusiveLimitAlarm.html">UANonExclusiveLimitAlarm</a></li>
+	                                 <li><a href="../classes/UAObject.html">UAObject</a></li>
+	                                 <li><a href="../classes/UAObjectType.html">UAObjectType</a></li>
+	                                 <li><a href="../classes/UAOffNormalAlarm.html">UAOffNormalAlarm</a></li>
+	                                 <li><a href="../classes/UAProxyManager.html">UAProxyManager</a></li>
+	                                 <li><a href="../classes/UASystemOffNormalAlarm.html">UASystemOffNormalAlarm</a></li>
+	                                 <li><a href="../classes/UATripAlarm.html">UATripAlarm</a></li>
+	                                 <li><a href="../classes/UATwoStateVariable.html">UATwoStateVariable</a></li>
+	                                 <li><a href="../classes/UAVariable.html">UAVariable</a></li>
+	                                 <li><a href="../classes/UAVariableType.html">UAVariableType</a></li>
+	                                 <li><a href="../classes/UnregisterNodesRequest.html">UnregisterNodesRequest</a></li>
+	                                 <li><a href="../classes/UnregisterNodesResponse.html">UnregisterNodesResponse</a></li>
+	                                 <li><a href="../classes/UserNameIdentityToken.html">UserNameIdentityToken</a></li>
+	                                 <li><a href="../classes/UserTokenPolicy.html">UserTokenPolicy</a></li>
+	                                 <li><a href="../classes/Variant.html">Variant</a></li>
+	                                 <li><a href="../classes/View.html">View</a></li>
+	                                 <li><a href="../classes/ViewDescription.html">ViewDescription</a></li>
+	                                 <li><a href="../classes/WriteRequest.html">WriteRequest</a></li>
+	                                 <li><a href="../classes/WriteResponse.html">WriteResponse</a></li>
+	                                 <li><a href="../classes/WriteValue.html">WriteValue</a></li>
+	                                 <li><a href="../classes/X509IdentityToken.html">X509IdentityToken</a></li>
+	                                 <li><a href="../classes/Xml2Json.html">Xml2Json</a></li>
+	                         </ul>
+	                     </div>
+	         
+	                     <div class="tab-pane" id="modules">
+	                         <ul id="api-modules" class="nav nav-list">
+	                                 <li><a href="../modules/opcua.address_space.html">opcua.address_space</a></li>
+	                                 <li><a href="../modules/opcua.address_space.AlarmsAndConditions.html">opcua.address_space.AlarmsAndConditions</a></li>
+	                                 <li><a href="../modules/opcua.address_space.types.html">opcua.address_space.types</a></li>
+	                                 <li><a href="../modules/opcua.client.html">opcua.client</a></li>
+	                                 <li><a href="../modules/opcua.data-value.html">opcua.data-value</a></li>
+	                                 <li><a href="../modules/opcua.datamodel.html">opcua.datamodel</a></li>
+	                                 <li><a href="../modules/opcua.miscellaneous.html">opcua.miscellaneous</a></li>
+	                                 <li><a href="../modules/opcua.server.html">opcua.server</a></li>
+	                                 <li><a href="../modules/opcua.server.simulation.html">opcua.server.simulation</a></li>
+	                                 <li><a href="../modules/opcua.status-code.html">opcua.status-code</a></li>
+	                                 <li><a href="../modules/opcua.transport.html">opcua.transport</a></li>
+	                                 <li><a href="../modules/opcua.utils.html">opcua.utils</a></li>
+	                                 <li><a href="../modules/opcua.variant.html">opcua.variant</a></li>
+	                                 <li><a href="../modules/service.filter.tools.html">service.filter.tools</a></li>
+	                                 <li><a href="../modules/services.browse.html">services.browse</a></li>
+	                                 <li><a href="../modules/services.call.html">services.call</a></li>
+	                                 <li><a href="../modules/services.discovery.html">services.discovery</a></li>
+	                                 <li><a href="../modules/services.endpoints.html">services.endpoints</a></li>
+	                                 <li><a href="../modules/services.filter.html">services.filter</a></li>
+	                                 <li><a href="../modules/services.history.html">services.history</a></li>
+	                                 <li><a href="../modules/services.node_management.html">services.node_management</a></li>
+	                                 <li><a href="../modules/services.query.html">services.query</a></li>
+	                                 <li><a href="../modules/services.read.html">services.read</a></li>
+	                                 <li><a href="../modules/services.register-server.html">services.register-server</a></li>
+	                                 <li><a href="../modules/services.register_node.html">services.register_node</a></li>
+	                                 <li><a href="../modules/services.secure-channel.html">services.secure-channel</a></li>
+	                                 <li><a href="../modules/services.session.html">services.session</a></li>
+	                                 <li><a href="../modules/services.subscription.html">services.subscription</a></li>
+	                                 <li><a href="../modules/services.translate-browse-path.html">services.translate-browse-path</a></li>
+	                                 <li><a href="../modules/services.write.html">services.write</a></li>
+	                                 <li><a href="../modules/StatusCodes.html">StatusCodes</a></li>
+	                                 <li><a href="../modules/xml2json.html">xml2json</a></li>
+	                         </ul>
+	                     </div>
+	                 </div>
+	             </div>
+	         </div>
+	    
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+                    Show:
+                    <label for="api-show-inherited" class="checkbox">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected" class="checkbox">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private" class="checkbox">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated" class="checkbox">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </form>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<div class="page-header">
+    <h1>packages\node-opcua-server\src\monitored_item.js <small>File</small></h1>
+</div>
+
+<div class="file">
+    <pre class="prettyprint linenums">
+&quot;use strict&quot;;
+/**
+ * @module opcua.server
+ *
+ */
+
+
+const assert = require(&quot;node-opcua-assert&quot;).assert;
+const _ = require(&quot;underscore&quot;);
+
+const EventEmitter = require(&quot;events&quot;).EventEmitter;
+const util = require(&quot;util&quot;);
+
+const subscription_service = require(&quot;node-opcua-service-subscription&quot;);
+const read_service = require(&quot;node-opcua-service-read&quot;);
+
+const DataValue = require(&quot;node-opcua-data-value&quot;).DataValue;
+const Variant = require(&quot;node-opcua-variant&quot;).Variant;
+const StatusCodes = require(&quot;node-opcua-status-code&quot;).StatusCodes;
+
+const AttributeIds = require(&quot;node-opcua-data-model&quot;).AttributeIds;
+const BaseNode = require(&quot;node-opcua-address-space&quot;).BaseNode;
+
+const sameDataValue = require(&quot;node-opcua-data-value&quot;).sameDataValue;
+const sameVariant = require(&quot;node-opcua-variant/src/variant_tools&quot;).sameVariant;
+const isValidVariant = require(&quot;node-opcua-variant&quot;).isValidVariant;
+
+const MonitoringMode = subscription_service.MonitoringMode;
+const MonitoringParameters = subscription_service.MonitoringParameters;
+const MonitoredItemModifyResult = subscription_service.MonitoredItemModifyResult;
+const TimestampsToReturn = read_service.TimestampsToReturn;
+const EventFilter = require(&quot;node-opcua-service-filter&quot;).EventFilter;
+const apply_timestamps = require(&quot;node-opcua-data-value&quot;).apply_timestamps;
+
+const UAVariable = require(&quot;node-opcua-address-space&quot;).UAVariable;
+
+const defaultItemToMonitor = {indexRange: null, attributeId: read_service.AttributeIds.Value};
+
+const SessionContext = require(&quot;node-opcua-address-space&quot;).SessionContext;
+const NumericRange = require(&quot;node-opcua-numeric-range&quot;).NumericRange;
+
+
+
+const debugLog = require(&quot;node-opcua-debug&quot;).make_debugLog(__filename);
+const doDebug = require(&quot;node-opcua-debug&quot;).checkDebugFlag(__filename);
+
+function _adjust_sampling_interval(samplingInterval,node_minimumSamplingInterval) {
+
+    assert(_.isNumber(node_minimumSamplingInterval,&quot;expecting a number&quot;));
+
+    if (samplingInterval === 0) {
+        return (node_minimumSamplingInterval === 0) ? samplingInterval : Math.max(MonitoredItem.minimumSamplingInterval,node_minimumSamplingInterval);
+    }
+    assert(samplingInterval &gt;= 0, &quot; this case should have been prevented outside&quot;);
+    samplingInterval = samplingInterval || MonitoredItem.defaultSamplingInterval;
+    samplingInterval = Math.max(samplingInterval, MonitoredItem.minimumSamplingInterval);
+    samplingInterval = Math.min(samplingInterval, MonitoredItem.maximumSamplingInterval);
+    samplingInterval = node_minimumSamplingInterval === 0 ? samplingInterval : Math.max(samplingInterval, node_minimumSamplingInterval);
+
+    return samplingInterval;
+}
+
+
+const maxQueueSize = 5000;
+
+function _adjust_queue_size(queueSize) {
+    queueSize = Math.min(queueSize, maxQueueSize);
+    queueSize = Math.max(1, queueSize);
+    return queueSize;
+}
+
+
+/**
+ * a server side monitored item
+ *
+ * - Once created, the MonitoredItem will raised an &quot;samplingEvent&quot; event every &quot;samplingInterval&quot; millisecond
+ *   until {{#crossLink &quot;MonitoredItem/terminate:method&quot;}}{{/crossLink}} is called.
+ *
+ * - It is up to the  event receiver to call {{#crossLink &quot;MonitoredItem/recordValue:method&quot;}}{{/crossLink}}.
+ *
+ * @class MonitoredItem
+ * @param options  the options
+ * @param options.clientHandle     {Number}  - the client handle
+ * @param options.samplingInterval {Number}  - the sampling Interval
+ * @param options.filter           {ExtensionObject}
+ * @param options.discardOldest    {boolean} - if discardOldest === true, older items are removed from the queue
+ *                                             when
+ * @param options.queueSize        {Number} - the size of the queue.
+ * @param options.monitoredItemId  {Number} the monitoredItem Id assigned by the server to this monitoredItem.
+ * @param options.itemToMonitor
+ * @param options.monitoringMode
+ * @param options.timestampsToReturn
+ * @constructor
+ */
+function MonitoredItem(options) {
+
+    assert(options.hasOwnProperty(&quot;monitoredItemId&quot;));
+    assert(!options.monitoringMode, &quot;use setMonitoring mode explicitly to activate the monitored item&quot;);
+
+    EventEmitter.apply(this, arguments);
+    options.itemToMonitor = options.itemToMonitor || defaultItemToMonitor;
+
+    const self = this;
+    self._samplingId = null;
+
+    self._set_parameters(options);
+
+    self.monitoredItemId = options.monitoredItemId; //( known as serverHandle)
+
+    self.queue = [];
+    self.overflow = false;
+
+    self.oldDataValue = new DataValue({statusCode: StatusCodes.BadDataUnavailable}); // unset initially
+
+    // user has to call setMonitoringMode
+    self.monitoringMode = MonitoringMode.Invalid;
+
+    self.timestampsToReturn = options.timestampsToReturn || TimestampsToReturn.Neither;
+
+    self.itemToMonitor = options.itemToMonitor;
+
+    self.filter = options.filter || null;
+
+    /**
+     * @property node the associated node object in the address space
+     * @type {BaseNode|null}
+     */
+    self._node = null;
+    self._semantic_version = 0;
+
+    if (doDebug) {
+        debugLog(&quot;Monitoring &quot;, options.itemToMonitor.toString());
+    }
+
+    self._on_node_disposed = null;
+
+    MonitoredItem.registry.register(self);
+}
+
+util.inherits(MonitoredItem, EventEmitter);
+
+const ObjectRegistry = require(&quot;node-opcua-object-registry&quot;).ObjectRegistry;
+MonitoredItem.registry = new ObjectRegistry();
+
+MonitoredItem.minimumSamplingInterval = 50;              // 50 ms as a minimum sampling interval
+MonitoredItem.defaultSamplingInterval = 1500;            // 1500 ms as a default sampling interval
+MonitoredItem.maximumSamplingInterval = 1000 * 60 * 60;  // 1 hour !
+
+function _validate_parameters(monitoringParameters) {
+    //xx assert(options instanceof MonitoringParameters);
+    assert(monitoringParameters.hasOwnProperty(&quot;clientHandle&quot;));
+    assert(monitoringParameters.hasOwnProperty(&quot;samplingInterval&quot;));
+    assert(_.isFinite(monitoringParameters.clientHandle));
+    assert(_.isFinite(monitoringParameters.samplingInterval));
+    assert(_.isBoolean(monitoringParameters.discardOldest));
+    assert(_.isFinite(monitoringParameters.queueSize));
+    assert(monitoringParameters.queueSize &gt;= 0);
+}
+
+MonitoredItem.prototype.__defineGetter__(&quot;node&quot;, function () {
+    return this._node;
+});
+
+MonitoredItem.prototype.__defineSetter__(&quot;node&quot;, function () {
+    throw new Error(&quot;Unexpected way to set node&quot;);
+});
+
+
+
+function _on_node_disposed(monitoredItem) {
+    const node = this;
+    monitoredItem._on_value_changed(new DataValue({sourceTimestamp: new Date(),statusCode: StatusCodes.BadNodeIdInvalid}));
+    monitoredItem._stop_sampling();
+
+}
+
+MonitoredItem.prototype.setNode = function (node) {
+    const self = this;
+    assert(!self.node || self.node === node, &quot;node already set&quot;);
+    self._node = node;
+    self._semantic_version = node.semantic_version;
+
+
+    assert( self._on_node_disposed ===null,&quot;setNode has been called already ???&quot;);
+    self._on_node_disposed = _on_node_disposed.bind(null,self);
+    self._node.on(&quot;dispose&quot;,self._on_node_disposed);
+
+};
+
+MonitoredItem.prototype._stop_sampling = function () {
+
+    const self = this;
+    debugLog(&quot;MonitoredItem#_stop_sampling&quot;);
+
+    if (self._on_opcua_event_received_callback) {
+        assert(_.isFunction(self._on_opcua_event_received_callback));
+        self.node.removeListener(&quot;event&quot;, self._on_opcua_event_received_callback);
+        self._on_opcua_event_received_callback = null;
+    }
+
+    if (self._attribute_changed_callback) {
+        assert(_.isFunction(self._attribute_changed_callback));
+
+        const event_name = BaseNode.makeAttributeEventName(self.itemToMonitor.attributeId);
+        self.node.removeListener(event_name, self._attribute_changed_callback);
+        self._attribute_changed_callback = null;
+    }
+
+    if (self._value_changed_callback) {
+        // samplingInterval was 0 for a exception-based data Item
+        // we setup a event listener that we need to unwind here
+        assert(_.isFunction(self._value_changed_callback));
+        assert(!self._samplingId);
+
+        self.node.removeListener(&quot;value_changed&quot;, self._value_changed_callback);
+        self._value_changed_callback = null;
+    }
+
+    if (self._semantic_changed_callback) {
+        assert(_.isFunction(self._semantic_changed_callback));
+        assert(!self._samplingId);
+        self.node.removeListener(&quot;semantic_changed&quot;, self._semantic_changed_callback);
+        self._semantic_changed_callback = null;
+
+    }
+    if (self._samplingId) {
+        self._clear_timer();
+    }
+
+    assert(!self._samplingId);
+    assert(!self._value_changed_callback);
+    assert(!self._semantic_changed_callback);
+    assert(!self._attribute_changed_callback);
+    assert(!self._on_opcua_event_received_callback);
+
+};
+
+MonitoredItem.prototype._on_value_changed = function (dataValue,indexRange) {
+    const self = this;
+    assert(dataValue instanceof DataValue);
+    self.recordValue(dataValue, false, indexRange);
+};
+
+MonitoredItem.prototype._on_semantic_changed = function () {
+    const self = this;
+    const dataValue = self.node.readValue();
+    self._on_value_changed(dataValue);
+};
+
+const extractEventFields = require(&quot;node-opcua-service-filter&quot;).extractEventFields;
+
+MonitoredItem.prototype._on_opcua_event = function (eventData) {
+
+    const self = this;
+
+    assert(!self.filter || self.filter instanceof EventFilter);
+
+    const selectClauses = self.filter ? self.filter.selectClauses : [];
+    const eventFields = extractEventFields(selectClauses, eventData);
+
+    // istanbul ignore next
+    if (doDebug) {
+        console.log(&quot; RECEIVED INTERNAL EVENT THAT WE ARE MONITORING&quot;);
+        console.log(self.filter ? self.filter.toString() : &quot;no filter&quot;);
+        eventFields.forEach(function (e) {
+            console.log(e.toString());
+        });
+    }
+
+    self._enqueue_event(eventFields);
+};
+
+MonitoredItem.prototype._getSession = function () {
+    const self = this;
+    if (!self.$subscription) {
+        return null;
+    }
+    if (!self.$subscription.$session) {
+        return null;
+    }
+    return self.$subscription.$session;
+};
+
+MonitoredItem.prototype._start_sampling = function (recordInitialValue) {
+
+    const self = this;
+
+    // make sure oldDataValue is scrapped so first data recording can happen
+    self.oldDataValue = new DataValue({statusCode: StatusCodes.BadDataUnavailable}); // unset initially
+
+    self._stop_sampling();
+
+
+    const context = new SessionContext({session: self._getSession(),server: self.server});
+
+    if (self.itemToMonitor.attributeId === AttributeIds.EventNotifier) {
+
+        // istanbul ignore next
+        if (doDebug) {
+            debugLog(&quot;xxxxxx monitoring EventNotifier on&quot;, self.node.nodeId.toString(), self.node.browseName.toString());
+        }
+        // we are monitoring OPCUA Event
+        self._on_opcua_event_received_callback = self._on_opcua_event.bind(self);
+        self.node.on(&quot;event&quot;, self._on_opcua_event_received_callback);
+
+        return;
+    }
+    if (self.itemToMonitor.attributeId !== AttributeIds.Value) {
+
+        // sampling interval only applies to Value Attributes.
+        self.samplingInterval = 0; // turned to exception-based regardless of requested sampling interval
+
+        // non value attribute only react on value change
+        self._attribute_changed_callback = self._on_value_changed.bind(this);
+        const event_name = BaseNode.makeAttributeEventName(self.itemToMonitor.attributeId);
+
+        self.node.on(event_name, self._attribute_changed_callback);
+
+        if (recordInitialValue) {
+            // read initial value
+            const dataValue = self.node.readAttribute(context, self.itemToMonitor.attributeId);
+            self.recordValue(dataValue, true, null);
+
+        }
+        return;
+    }
+
+    if (self.samplingInterval === 0) {
+
+        // we have a exception-based dataItem : event based model, so we do not need a timer
+        // rather , we setup the &quot;value_changed_event&quot;;
+        self._value_changed_callback = self._on_value_changed.bind(this);
+        self._semantic_changed_callback = self._on_semantic_changed.bind(this);
+
+        self.node.on(&quot;value_changed&quot;, self._value_changed_callback);
+        self.node.on(&quot;semantic_changed&quot;, self._semantic_changed_callback);
+
+        // initiate first read
+        if (recordInitialValue) {
+//xx            setImmediate(function() {
+            self.node.readValueAsync(context, function (err, dataValue) {
+                self.recordValue(dataValue, true);
+            });
+//xx            });
+        }
+    } else {
+
+        self._set_timer();
+        if (recordInitialValue) {
+            setImmediate(function () {
+                //xx console.log(&quot;Record Initial Value &quot;,self.node.nodeId.toString());
+                // initiate first read (this requires self._samplingId to be set)
+                self._on_sampling_timer();
+            });
+        }
+    }
+
+};
+
+MonitoredItem.prototype.setMonitoringMode = function (monitoringMode) {
+
+    const self = this;
+
+    assert(monitoringMode !== MonitoringMode.Invalid);
+
+    if (monitoringMode === self.monitoringMode) {
+        // nothing to do
+        return;
+    }
+
+    const old_monitoringMode = self.monitoringMode;
+
+
+    self.monitoringMode = monitoringMode;
+
+    if (self.monitoringMode === MonitoringMode.Disabled) {
+
+        self._stop_sampling();
+
+        // OPCUA 1.03 part 4 : $5.12.4
+        // setting the mode to DISABLED causes all queued Notifications to be deleted
+        self.queue = [];
+        self.overflow = false;
+    } else {
+        assert(self.monitoringMode === MonitoringMode.Sampling || self.monitoringMode === MonitoringMode.Reporting);
+
+        // OPCUA 1.03 part 4 : $5.12.1.3
+        // When a MonitoredItem is enabled (i.e. when the MonitoringMode is changed from DISABLED to
+        // SAMPLING or REPORTING) or it is created in the enabled state, the Server shall report the first
+        // sample as soon as possible and the time of this sample becomes the starting point for the next
+        // sampling interval.
+        const recordInitialValue = (old_monitoringMode === MonitoringMode.Invalid || old_monitoringMode === MonitoringMode.Disabled);
+
+        self._start_sampling(recordInitialValue);
+
+    }
+};
+
+MonitoredItem.prototype._set_parameters = function (monitoredParameters) {
+    const self = this;
+    _validate_parameters(monitoredParameters);
+    self.clientHandle = monitoredParameters.clientHandle;
+
+    // The Server may support data that is collected based on a sampling model or generated based on an
+    // exception-based model. The fastest supported sampling interval may be equal to 0, which indicates
+    // that the data item is exception-based rather than being sampled at some period. An exception-based
+    // model means that the underlying system does not require sampling and reports data changes.
+    if (self.node &amp;&amp; self.node instanceof UAVariable) {
+        self.samplingInterval = _adjust_sampling_interval(monitoredParameters.samplingInterval, self.node ? self.node.minimumSamplingInterval : 0);
+    } else {
+        self.samplingInterval = _adjust_sampling_interval(monitoredParameters.samplingInterval, 0);
+    }
+    self.discardOldest = monitoredParameters.discardOldest;
+    self.queueSize = _adjust_queue_size(monitoredParameters.queueSize);
+};
+
+/**
+ * Terminate the  MonitoredItem.
+ * @method terminate
+ *
+ * This will stop the internal sampling timer.
+ */
+MonitoredItem.prototype.terminate = function () {
+    const self = this;
+    self._stop_sampling();
+};
+
+MonitoredItem.prototype.dispose = function() {
+    const self = this;
+
+    if (doDebug) {
+        debugLog(&quot;DISPOSING MONITORED ITEM&quot; , self._node.nodeId.toString());
+    }
+
+    self._stop_sampling();
+
+    MonitoredItem.registry.unregister(self);
+
+    if (self._on_node_disposed) {
+        self._node.removeListener(&quot;dispose&quot;,self._on_node_disposed);
+        self._on_node_disposed = null;
+    }
+
+    //x assert(self._samplingId === null,&quot;Sampling Id must be null&quot;);
+    self.oldDataValue = null;
+    self.queue = null;
+    self.itemToMonitor = null;
+    self.filter = null;
+    self.monitoredItemId = null;
+    self._node = null;
+    self._semantic_version = 0;
+
+    self.$subscription = null;
+
+    self.removeAllListeners();
+
+    assert(!self._samplingId);
+    assert(!self._value_changed_callback);
+    assert(!self._semantic_changed_callback);
+    assert(!self._attribute_changed_callback);
+    assert(!self._on_opcua_event_received_callback);
+    self._on_opcua_event_received_callback = null;
+    self._attribute_changed_callback = null;
+    self._semantic_changed_callback = null;
+    self._on_opcua_event_received_callback = null;
+
+};
+
+/**
+ * @method _on_sampling_timer
+ * @private
+ * request
+ *
+ */
+MonitoredItem.prototype._on_sampling_timer = function () {
+
+    const self = this;
+
+    // istanbul ignore next
+    if (doDebug) {
+        debugLog(&quot;MonitoredItem#_on_sampling_timer&quot;, self.node ? self.node.nodeId.toString() : &quot;null&quot;, &quot; isSampling?=&quot;, self._is_sampling);
+    }
+
+    if (self._samplingId) {
+
+        assert(self.monitoringMode === MonitoringMode.Sampling || self.monitoringMode === MonitoringMode.Reporting);
+
+        if (self._is_sampling) {
+            // previous sampling call is not yet completed..
+            // there is nothing we can do about it except waiting until next tick.
+            // note : see also issue #156 on github
+            return;
+        }
+        //xx console.log(&quot;xxxx ON SAMPLING&quot;);
+        assert(!self._is_sampling, &quot;sampling func shall not be re-entrant !! fix it&quot;);
+
+        assert(_.isFunction(self.samplingFunc));
+
+        self._is_sampling = true;
+
+        self.samplingFunc.call(self, self.oldDataValue, function (err, newDataValue) {
+
+            if(!self._samplingId) {
+                // item has been dispose .... the monitored item has been disposed while the async sampling func
+                // was taking place ... just ignore this
+                return;
+            }
+            if (err) {
+                console.log(&quot; SAMPLING ERROR =&gt;&quot;, err);
+            } else {
+                // only record value if source timestamp is newer
+                //xx if (newDataValue.sourceTimestamp &gt; self.oldDataValue.sourceTimestamp) {
+                self._on_value_changed(newDataValue);
+                //xx }
+            }
+            self._is_sampling = false;
+        });
+
+    } else {
+        /* istanbul ignore next */
+        debugLog(&quot;_on_sampling_timer call but MonitoredItem has been terminated !!! &quot;);
+    }
+};
+
+const extractRange = require(&quot;node-opcua-data-value&quot;).extractRange;
+
+const DataChangeFilter = subscription_service.DataChangeFilter;
+const DataChangeTrigger = subscription_service.DataChangeTrigger;
+const DeadbandType = subscription_service.DeadbandType;
+
+function statusCodeHasChanged(newDataValue, oldDataValue) {
+    assert(newDataValue instanceof DataValue);
+    assert(oldDataValue instanceof DataValue);
+    return newDataValue.statusCode !== oldDataValue.statusCode;
+}
+
+const check_deadband = require(&quot;node-opcua-service-subscription&quot;).check_deadband;
+
+
+function valueHasChanged(self, newDataValue, oldDataValue, deadbandType, deadbandValue) {
+
+    assert(newDataValue instanceof DataValue);
+    assert(oldDataValue instanceof DataValue);
+    switch (deadbandType) {
+        case DeadbandType.None:
+            assert(newDataValue.value instanceof Variant);
+            assert(newDataValue.value instanceof Variant);
+            // No Deadband calculation should be applied.
+            return check_deadband(oldDataValue.value, newDataValue.value, DeadbandType.None);
+        case DeadbandType.Absolute:
+            // AbsoluteDeadband
+            return check_deadband(oldDataValue.value, newDataValue.value, DeadbandType.Absolute, deadbandValue);
+        default:
+            // Percent_2    PercentDeadband (This type is specified in Part 8).
+            assert(deadbandType === DeadbandType.Percent);
+
+            // The range of the deadbandValue is from 0.0 to 100.0 Percent.
+            assert(deadbandValue &gt;= 0 &amp;&amp; deadbandValue &lt;= 100);
+
+            // DeadbandType = PercentDeadband
+            // For this type of deadband the deadbandValue is defined as the percentage of the EURange. That is,
+            // it applies only to AnalogItems with an EURange Property that defines the typical value range for the
+            // item. This range shall be multiplied with the deadbandValue and then compared to the actual value change
+            // to determine the need for a data change notification. The following pseudo code shows how the deadband
+            // is calculated:
+            //      DataChange if (absolute value of (last cached value - current value) &gt;
+            //                                          (deadbandValue/100.0) * ((high-low) of EURange)))
+            //
+            // Specifying a deadbandValue outside of this range will be rejected and reported with the
+            // StatusCode Bad_DeadbandFilterInvalid (see Table 27).
+            // If the Value of the MonitoredItem is an array, then the deadband calculation logic shall be applied to
+            // each element of the array. If an element that requires a DataChange is found, then no further
+            // deadband checking is necessary and the entire array shall be returned.
+            assert(self.node !== null, &quot;expecting a valid address_space object here to get access the the EURange&quot;);
+
+            if (self.node.euRange) {
+                // double,double
+                const rangeVariant = self.node.euRange.readValue().value;
+                const range = rangeVariant.value.high - rangeVariant.value.high;
+                assert(_.isFinite(range));
+                return check_deadband(oldDataValue.value, newDataValue.value, DeadbandType.Percent, deadbandValue, range);
+
+            }
+            return true;
+    }
+}
+
+function timestampHasChanged(t1, t2) {
+    if ((t1 || !t2) || (t2 || !t1)) {
+        return true;
+    }
+    if (!t1 || !t2) {
+        return false;
+    }
+    return t1.getTime() !== t2.getTime();
+}
+
+function apply_datachange_filter(self, newDataValue, oldDataValue) {
+
+    assert(self.filter);
+    assert(self.filter instanceof DataChangeFilter);
+    assert(newDataValue instanceof DataValue);
+    assert(oldDataValue instanceof DataValue);
+
+    const trigger = self.filter.trigger;
+
+    switch (trigger.value) {
+        case DataChangeTrigger.Status.value: // Status
+            //              Report a notification ONLY if the StatusCode associated with
+            //              the value changes. See Table 166 for StatusCodes defined in
+            //              this standard. Part 8 specifies additional StatusCodes that are
+            //              valid in particular for device data.
+            return statusCodeHasChanged(newDataValue, oldDataValue);
+
+        case DataChangeTrigger.StatusValue.value: // StatusValue
+            //              Report a notification if either the StatusCode or the value
+            //              change. The Deadband filter can be used in addition for
+            //              filtering value changes.
+            //              This is the default setting if no filter is set.
+            return statusCodeHasChanged(newDataValue, oldDataValue) ||
+                valueHasChanged(self, newDataValue, oldDataValue, self.filter.deadbandType, self.filter.deadbandValue);
+
+        default: // StatusValueTimestamp
+            //              Report a notification if either StatusCode, value or the
+            //              SourceTimestamp change.
+            //
+            //              If a Deadband filter is specified,this trigger has the same behaviour as STATUS_VALUE_1.
+            //
+            //              If the DataChangeFilter is not applied to the monitored item, STATUS_VALUE_1
+            //              is the default reporting behaviour
+            assert(trigger === DataChangeTrigger.StatusValueTimestamp);
+            return timestampHasChanged(newDataValue.sourceTimestamp, oldDataValue.sourceTimestamp) ||
+                statusCodeHasChanged(newDataValue, oldDataValue) ||
+                valueHasChanged(self, newDataValue, oldDataValue, self.filter.deadbandType, self.filter.deadbandValue);
+    }
+    return false;
+}
+
+function apply_filter(self, newDataValue) {
+
+    if (!self.oldDataValue) {
+        return true; // keep
+    }
+    if (self.filter instanceof DataChangeFilter) {
+        return apply_datachange_filter(self, newDataValue, self.oldDataValue);
+    }
+    return true; // keep
+    // else {
+    //      // if filter not set, by default report changes to Status or Value only
+    //      return !sameDataValue(newDataValue, self.oldDataValue, TimestampsToReturn.Neither);
+    // }
+    // return true; // keep
+}
+
+
+/**
+ * @property isSampling
+ * @type boolean
+ */
+MonitoredItem.prototype.__defineGetter__(&quot;isSampling&quot;, function () {
+    const self = this;
+    return !!self._samplingId || _.isFunction(self._value_changed_callback) ||
+        _.isFunction(self._attribute_changed_callback);
+});
+
+/**
+ * @method recordValue
+ * @param dataValue {DataValue}     the whole dataValue
+ * @param skipChangeTest {Boolean}  indicates whether recordValue should  not check that dataValue is really different
+ *                                  from previous one, ( by checking timestamps but also variant value)
+ * @private
+ *
+ * Notes:
+ *  - recordValue can only be called within timer event
+ *  - for performance reason, dataValue may be a shared value with the underlying node,
+ *    therefore recordValue must clone the dataValue to make sure it retains a snapshot
+ *    of the contain at the time recordValue was called.
+ *
+ */
+MonitoredItem.prototype.recordValue = function (dataValue, skipChangeTest , indexRange) {
+
+    const self = this;
+
+    assert(dataValue instanceof DataValue);
+    assert(dataValue !== self.oldDataValue,               &quot;recordValue expects different dataValue to be provided&quot;);
+    assert(!dataValue.value || dataValue.value !== self.oldDataValue.value,   &quot;recordValue expects different dataValue.value to be provided&quot;);
+    assert(!dataValue.value  || dataValue.value.isValid(),&quot;expecting a valid variant value&quot;);
+
+    const hasSemanticChanged = self.node &amp;&amp; (self.node.semantic_version !== self._semantic_version);
+
+    //xx   console.log(&quot;&#x60;\n----------------------------&quot;,skipChangeTest,self.clientHandle,
+    //             self.node.listenerCount(&quot;value_changed&quot;),self.node.nodeId.toString());
+    //xx   console.log(&quot;events ---- &quot;,self.node.eventNames().join(&quot;-&quot;));
+    //xx    console.log((new Error()).stack);
+    //xx    console.log(&quot;indexRange = &quot;,indexRange ? indexRange.toString() :&quot;&quot;);
+    //xx    console.log(&quot;self.itemToMonitor.indexRange = &quot;,self.itemToMonitor.indexRange.toString());
+
+    if (!hasSemanticChanged &amp;&amp; indexRange &amp;&amp; self.itemToMonitor.indexRange) {
+        // we just ignore changes that do not fall within our range
+        // ( unless semantic bit has changed )
+        if (!NumericRange.overlap(indexRange,self.itemToMonitor.indexRange)) {
+            return; // no overlap !
+        }
+    }
+
+    assert( self.itemToMonitor,&quot;must have a valid itemToMonitor(have this monitoredItem been disposed already ?&quot;);
+    // extract the range that we are interested with
+    dataValue = extractRange(dataValue, self.itemToMonitor.indexRange);
+
+    // istanbul ignore next
+    if (doDebug) {
+        debugLog(&quot;MonitoredItem#recordValue&quot;, self.node.nodeId.toString(), self.node.browseName.toString(), &quot; has Changed = &quot;, !sameDataValue(dataValue, self.oldDataValue));
+    }
+
+    // if semantic has changed, value need to be enqueued regardless of other assumptions
+    if (hasSemanticChanged) {
+        return self._enqueue_value(dataValue);
+    }
+
+    const useIndexRange = self.itemToMonitor.indexRange &amp;&amp; !self.itemToMonitor.indexRange.isEmpty();
+
+    if (!skipChangeTest) {
+        const hasChanged = !sameDataValue(dataValue, self.oldDataValue);
+        if (!hasChanged) {
+            return;
+        }
+    }
+
+    if (!apply_filter(self, dataValue)) {
+        return;
+    }
+
+    if (useIndexRange) {
+        // when an indexRange is provided , make sure that no record happens unless
+        // extracted variant in the selected range  has really changed.
+
+        // istanbul ignore next
+        if (doDebug) {
+            debugLog(&quot;Current : &quot;,self.oldDataValue.toString());
+            debugLog(&quot;New : &quot;,dataValue.toString());
+            debugLog(&quot;indexRange=&quot;,indexRange);
+        }
+
+        if (sameVariant(dataValue.value, self.oldDataValue.value)) {
+            return;
+        }
+    }
+    // store last value
+    self._enqueue_value(dataValue);
+
+};
+
+MonitoredItem.prototype._setOverflowBit = function (notification) {
+
+    if (notification.hasOwnProperty(&quot;value&quot;)) {
+        assert(notification.value.statusCode.equals(StatusCodes.Good));
+        notification.value.statusCode = StatusCodes.makeStatusCode(notification.value.statusCode, &quot;Overflow | InfoTypeDataValue&quot;);
+        assert(_.isEqual(notification.value.statusCode, StatusCodes.GoodWithOverflowBit));
+        assert(notification.value.statusCode.hasOverflowBit);
+    }
+};
+
+function setSemanticChangeBit(notification) {
+    if (notification &amp;&amp; notification.hasOwnProperty(&quot;value&quot;)) {
+        notification.value.statusCode = StatusCodes.makeStatusCode(notification.value.statusCode, &quot;SemanticChanged&quot;);
+    }
+}
+
+MonitoredItem.prototype._enqueue_notification = function (notification) {
+
+    const self = this;
+
+    if (self.queueSize === 1) {
+        // ensure queuesize
+        if (!self.queue || self.queue.length !== 1) {
+            self.queue = [null];
+        }
+        self.queue[0] = notification;
+        assert(self.queue.length === 1);
+
+    } else {
+        if (self.discardOldest) {
+
+            // push new value to queue
+            self.queue.push(notification);
+
+            if (self.queue.length &gt; self.queueSize) {
+
+                self.overflow = true;
+
+                self.queue.shift(); // remove front element
+
+                // set overflow bit
+                self._setOverflowBit(self.queue[0]);
+            }
+
+        } else {
+            if (self.queue.length &lt; self.queueSize) {
+
+                self.queue.push(notification);
+            } else {
+
+                self.overflow = true;
+
+                self._setOverflowBit(notification);
+
+                self.queue[self.queue.length - 1] = notification;
+            }
+        }
+    }
+    assert(self.queue.length &gt;= 1);
+};
+
+
+MonitoredItem.prototype._makeDataChangeNotification = function (dataValue) {
+    const self = this;
+    const attributeId = self.itemToMonitor.attributeId;
+    dataValue = apply_timestamps(dataValue, self.timestampsToReturn, attributeId);
+    return new subscription_service.MonitoredItemNotification({clientHandle: self.clientHandle, value: dataValue});
+};
+
+function isGoodish(statusCode) {
+    return statusCode.value &lt; 0x10000000;
+}
+
+
+/**
+ * @method _enqueue_value
+ * @param dataValue {DataValue} the dataValue to enquue
+ * @private
+ */
+MonitoredItem.prototype._enqueue_value = function (dataValue) {
+
+    const self = this;
+
+    // preconditions:
+
+    assert(dataValue instanceof DataValue);
+    // lets verify that, if status code is good then we have a valid Variant in the dataValue
+    assert(!isGoodish(dataValue.statusCode) || dataValue.value instanceof Variant);
+    //xx assert(isGoodish(dataValue.statusCode) || util.isNullOrUndefined(dataValue.value) );
+    // let&#x27;s check that data Value is really a different object
+    // we may end up with corrupted queue if dataValue are recycled and stored as is in notifications
+    assert(dataValue !== self.oldDataValue, &quot;dataValue cannot be the same object twice!&quot;);
+
+
+    //Xx // todo ERN !!!! PLEASE CHECK THIS !!!
+    //Xx // let make a clone, so we have a snapshot
+    //Xx dataValue = dataValue.clone();
+
+
+    // let&#x27;s check that data Value is really a different object
+    // we may end up with corrupted queue if dataValue are recycled and stored as is in notifications
+    assert(!self.oldDataValue || !dataValue.value || (dataValue.value !== self.oldDataValue.value), &quot;dataValue cannot be the same object twice!&quot;);
+    if (!(!self.oldDataValue || !self.oldDataValue.value
+            || !dataValue.value || !(dataValue.value.value instanceof Object)
+            || (dataValue.value.value !== self.oldDataValue.value.value)) &amp;&amp; !(dataValue.value.value instanceof Date)) {
+        throw new Error(&quot;dataValue.value.value cannot be the same object twice! &quot; + self.node.browseName.toString() + &quot; &quot; + dataValue.toString()  + &quot;  &quot; + self.oldDataValue.toString().cyan);
+    }
+
+    // istanbul ignore next
+    if (doDebug) {
+        debugLog(&quot;MonitoredItem#_enqueue_value&quot;, self.node.nodeId.toString());
+    }
+
+    self.oldDataValue = dataValue;
+    const notification = self._makeDataChangeNotification(dataValue);
+    self._enqueue_notification(notification);
+};
+
+MonitoredItem.prototype._makeEventFieldList = function (eventFields) {
+    const self = this;
+    assert(_.isArray(eventFields));
+    return new subscription_service.EventFieldList({clientHandle: self.clientHandle, eventFields: eventFields});
+};
+
+MonitoredItem.prototype._enqueue_event = function (eventFields) {
+    const self = this;
+    debugLog(&quot; MonitoredItem#_enqueue_event&quot;);
+    const notification = self._makeEventFieldList(eventFields);
+    self._enqueue_notification(notification);
+};
+
+
+MonitoredItem.prototype._empty_queue = function () {
+    const self = this;
+    // empty queue
+    self.queue = [];
+    self.overflow = false;
+
+};
+
+
+
+MonitoredItem.prototype.__defineGetter__(&quot;hasMonitoredItemNotifications&quot;, function () {
+    const self = this;
+    return self.queue.length &gt; 0;
+});
+
+/**
+ * @method  extractMonitoredItemNotifications
+ * @return {Array.&lt;*&gt;}
+ */
+MonitoredItem.prototype.extractMonitoredItemNotifications = function () {
+
+    const self = this;
+
+    if (self.monitoringMode !== MonitoringMode.Reporting) {
+        return [];
+    }
+    const notifications = self.queue;
+    self._empty_queue();
+
+    // apply semantic changed bit if necessary
+    if (notifications.length &gt; 0 &amp;&amp; self.node &amp;&amp; self._semantic_version &lt; self.node.semantic_version) {
+
+        const dataValue = notifications[notifications.length - 1];
+        setSemanticChangeBit(dataValue);
+        self._semantic_version = self.node.semantic_version;
+    }
+
+    return notifications;
+};
+
+
+const timers = {};
+
+function appendToTimer(monitoredItem) {
+
+    const samplingInterval = monitoredItem.samplingInterval;
+    const key = samplingInterval.toString();
+    assert(samplingInterval &gt; 0);
+    let _t = timers[key];
+    if (!_t) {
+
+        _t = {
+            monitoredItems: {},
+            monitoredItemsCount: 0,
+            _samplingId: false
+        };
+
+        _t._samplingId = setInterval(function () {
+
+            _.forEach(_t.monitoredItems, function (m) {
+                setImmediate(function () {
+                    m._on_sampling_timer();
+                });
+            });
+
+        }, samplingInterval);
+        timers[key] = _t;
+    }
+    assert(!_t.monitoredItems[monitoredItem.monitoredItemId]);
+    _t.monitoredItems[monitoredItem.monitoredItemId] = monitoredItem;
+    _t.monitoredItemsCount++;
+    return key;
+}
+
+function removeFromTimer(monitoredItem) {
+
+    const samplingInterval = monitoredItem.samplingInterval;
+    assert(samplingInterval &gt; 0);
+    const key = monitoredItem._samplingId;
+    const _t = timers[key];
+    if (!_t) {
+        console.log(&quot;cannot find common timer for samplingInterval&quot;, key);
+        return;
+    }
+    assert(_t);
+    assert(_t.monitoredItems[monitoredItem.monitoredItemId]);
+    delete _t.monitoredItems[monitoredItem.monitoredItemId];
+    _t.monitoredItemsCount--;
+    assert(_t.monitoredItemsCount &gt;= 0);
+    if (_t.monitoredItemsCount === 0) {
+        clearInterval(_t._samplingId);
+        delete timers[key];
+    }
+}
+
+const useCommonTimer = true;
+MonitoredItem.prototype._clear_timer = function () {
+
+    const self = this;
+
+    //xx console.log(&quot;MonitoredItem#_clear_timer&quot;,self._samplingId);
+    if (self._samplingId) {
+        if (useCommonTimer) {
+            removeFromTimer(self);
+        } else {
+            clearInterval(self._samplingId);
+        }
+        self._samplingId = null;
+    }
+};
+
+MonitoredItem.prototype._set_timer = function () {
+
+    const self = this;
+    assert(self.samplingInterval &gt;= MonitoredItem.minimumSamplingInterval);
+    assert(!self._samplingId);
+
+    if (useCommonTimer) {
+        self._samplingId = appendToTimer(self);
+    } else {
+        // settle periodic sampling
+        self._samplingId = setInterval(function () {
+            self._on_sampling_timer();
+        }, self.samplingInterval);
+    }
+    //xx console.log(&quot;MonitoredItem#_set_timer&quot;,self._samplingId);
+
+};
+
+
+MonitoredItem.prototype._adjust_queue_to_match_new_queue_size = function () {
+
+    const self = this;
+
+    // adjust queue size if necessary
+    if (self.queueSize &lt; self.queue.length) {
+
+        if (self.discardOldest) {
+
+            self.queue.splice(0, self.queue.length - self.queueSize);
+
+        } else {
+
+            const lastElement = self.queue[self.queue.length - 1];
+            // only keep queueSize first element, discard others
+            self.queue.splice(self.queueSize);
+            self.queue[self.queue.length - 1] = lastElement;
+        }
+    }
+    if (self.queueSize &lt;= 1) {
+        self.overflow = false;
+        // unset OverFlowBit
+        if (self.queue.length === 1) {
+            if (self.queue[0].value) {
+                if (self.queue[0].value.statusCode.hasOverflowBit) {
+                    self.queue[0].value.statusCode.unset(&quot;Overflow | InfoTypeDataValue&quot;);
+                }
+            }
+        }
+    }
+    assert(self.queue.length &lt;= self.queueSize);
+};
+
+MonitoredItem.prototype._adjust_sampling = function (old_samplingInterval) {
+
+    const self = this;
+    if (old_samplingInterval !== self.samplingInterval) {
+        self._start_sampling();
+        //xx self._clear_timer(true);
+        //xx self._set_timer();
+    }
+};
+
+const validateFilter = require(&quot;./validate_filter&quot;).validateFilter;
+
+MonitoredItem.prototype.modify = function (timestampsToReturn, monitoredParameters) {
+
+    assert(monitoredParameters instanceof MonitoringParameters);
+
+    const self = this;
+
+    const old_samplingInterval = self.samplingInterval;
+
+    self.timestampsToReturn = timestampsToReturn || self.timestampsToReturn;
+
+    if (old_samplingInterval !== 0 &amp;&amp; monitoredParameters.samplingInterval === 0) {
+        monitoredParameters.samplingInterval = MonitoredItem.minimumSamplingInterval; // fastest possible
+    }
+
+    self._set_parameters(monitoredParameters);
+
+    self._adjust_queue_to_match_new_queue_size();
+
+    self._adjust_sampling(old_samplingInterval);
+
+
+    if (monitoredParameters.filter) {
+        const statusCodeFilter = validateFilter(monitoredParameters.filter, self.itemToMonitor, self.node);
+        if (statusCodeFilter.isNot(StatusCodes.Good)) {
+            return new MonitoredItemModifyResult({
+                statusCode: statusCodeFilter
+            });
+        }
+    }
+
+    // validate filter
+    // note : The DataChangeFilter does not have an associated result structure.
+    const filterResult = null; // new subscription_service.DataChangeFilter
+
+    return new MonitoredItemModifyResult({
+        statusCode: StatusCodes.Good,
+        revisedSamplingInterval: self.samplingInterval,
+        revisedQueueSize: self.queueSize,
+        filterResult: filterResult
+    });
+};
+
+exports.MonitoredItem = MonitoredItem;
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Ad by Google -->
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-format="fluid"
+                 data-ad-layout-key="-8h+1u-de+eo+dy"
+                 data-ad-client="ca-pub-8886208393040088"
+                 data-ad-slot="9362364253"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <!-- -->
+
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>
