@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "wheater station in node-opcua"
+title: "weather station in node-opcua"
 date:   2015-07-05 12:00:00  +0100
 comments: true
 categories: tutorial
