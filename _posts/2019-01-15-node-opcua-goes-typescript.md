@@ -83,7 +83,7 @@ $ ts-node sample.ts
 ```
 
 
-To dot forget the ```await``` keyword!  as you may have unexpected behavior at runtime.
+Do not forget the ```await``` keyword!  as you may have unexpected behavior at runtime.
 However, your IDE should warn you if you forget to do something with the Promised returned by an async function.
 
 All asynchronous API are available either with a Promise or Callback version, you can therefore using in either context.
