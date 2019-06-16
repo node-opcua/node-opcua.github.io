@@ -85,6 +85,7 @@
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="node_opcua_client_crawler.nodecrawlerclientsession.html#browse" class="tsd-kind-icon">browse</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="node_opcua_client_crawler.nodecrawlerclientsession.html#browsenext" class="tsd-kind-icon">browse<wbr>Next</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="node_opcua_client_crawler.nodecrawlerclientsession.html#read" class="tsd-kind-icon">read</a></li>
 							</ul>
 						</section>
@@ -97,19 +98,48 @@
 					<a name="browse" class="tsd-anchor"></a>
 					<h3>browse</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">browse<span class="tsd-signature-symbol">(</span>nodesToBrowse<span class="tsd-signature-symbol">: </span><a href="../modules/node_opcua_client.html#browsedescriptionlike" class="tsd-signature-type">BrowseDescriptionLike</a><span class="tsd-signature-symbol">[]</span>, callback<span class="tsd-signature-symbol">: </span><a href="../modules/node_opcua_client.html#responsecallback" class="tsd-signature-type">ResponseCallback</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">BrowseResult</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">browse<span class="tsd-signature-symbol">(</span>nodesToBrowse<span class="tsd-signature-symbol">: </span><a href="../modules/node_opcua_client.html#browsedescriptionlike-1" class="tsd-signature-type">BrowseDescriptionLike</a><span class="tsd-signature-symbol">[]</span>, callback<span class="tsd-signature-symbol">: </span><a href="../modules/node_opcua_client.html#responsecallback" class="tsd-signature-type">ResponseCallback</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">BrowseResult</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-client-crawler/source/node_crawler.ts#L301">node-opcua-client-crawler/source/node_crawler.ts:301</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-client-crawler/source/node_crawler.ts#L309">node-opcua-client-crawler/source/node_crawler.ts:309</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>nodesToBrowse: <a href="../modules/node_opcua_client.html#browsedescriptionlike" class="tsd-signature-type">BrowseDescriptionLike</a><span class="tsd-signature-symbol">[]</span></h5>
+									<h5>nodesToBrowse: <a href="../modules/node_opcua_client.html#browsedescriptionlike-1" class="tsd-signature-type">BrowseDescriptionLike</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5>callback: <a href="../modules/node_opcua_client.html#responsecallback" class="tsd-signature-type">ResponseCallback</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">BrowseResult</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+					<a name="browsenext" class="tsd-anchor"></a>
+					<h3>browse<wbr>Next</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">browse<wbr>Next<span class="tsd-signature-symbol">(</span>continuationPoints<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">[]</span>, releaseContinuationPoints<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>, callback<span class="tsd-signature-symbol">: </span><a href="../modules/node_opcua_client.html#responsecallback" class="tsd-signature-type">ResponseCallback</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">BrowseResult</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-client-crawler/source/node_crawler.ts#L311">node-opcua-client-crawler/source/node_crawler.ts:311</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>continuationPoints: <span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5>releaseContinuationPoints: <span class="tsd-signature-type">boolean</span></h5>
 								</li>
 								<li>
 									<h5>callback: <a href="../modules/node_opcua_client.html#responsecallback" class="tsd-signature-type">ResponseCallback</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">BrowseResult</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h5>
@@ -129,7 +159,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-client-crawler/source/node_crawler.ts#L299">node-opcua-client-crawler/source/node_crawler.ts:299</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-client-crawler/source/node_crawler.ts#L307">node-opcua-client-crawler/source/node_crawler.ts:307</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -190,6 +220,9 @@
 								<a href="node_opcua_client_crawler.nodecrawlerclientsession.html#browse" class="tsd-kind-icon">browse</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+								<a href="node_opcua_client_crawler.nodecrawlerclientsession.html#browsenext" class="tsd-kind-icon">browse<wbr>Next</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external">
 								<a href="node_opcua_client_crawler.nodecrawlerclientsession.html#read" class="tsd-kind-icon">read</a>
 							</li>
 						</ul>
@@ -204,6 +237,9 @@
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
 						<a href="node_opcua_client_crawler.taskbase.html" class="tsd-kind-icon">Task<wbr>Base</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+						<a href="node_opcua_client_crawler.taskbrowsenext.html" class="tsd-kind-icon">Task<wbr>Browse<wbr>Next</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
 						<a href="node_opcua_client_crawler.taskbrowsenode.html" class="tsd-kind-icon">Task<wbr>Browse<wbr>Node</a>

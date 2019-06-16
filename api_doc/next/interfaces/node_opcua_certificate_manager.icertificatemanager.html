@@ -80,47 +80,228 @@
 			<section class="tsd-panel">
 				<h3>Implemented by</h3>
 				<ul class="tsd-hierarchy">
-					<li><a href="../classes/node_opcua_certificate_manager.certificatemanager.html" class="tsd-signature-type">CertificateManager</a></li>
+					<li><a href="../classes/node_opcua_certificate_manager.opcuacertificatemanager.html" class="tsd-signature-type">OPCUACertificateManager</a></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section tsd-is-external tsd-is-not-exported">
+						<section class="tsd-index-section tsd-is-external">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="node_opcua_certificate_manager.icertificatemanager.html#iscertificatetrusted" class="tsd-kind-icon">is<wbr>Certificate<wbr>Trusted</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="node_opcua_certificate_manager.icertificatemanager.html#checkcertificate" class="tsd-kind-icon">check<wbr>Certificate</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="node_opcua_certificate_manager.icertificatemanager.html#gettruststatus" class="tsd-kind-icon">get<wbr>Trust<wbr>Status</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="node_opcua_certificate_manager.icertificatemanager.html#rejectcertificate" class="tsd-kind-icon">reject<wbr>Certificate</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="node_opcua_certificate_manager.icertificatemanager.html#trustcertificate" class="tsd-kind-icon">trust<wbr>Certificate</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-external tsd-is-not-exported">
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
-					<a name="iscertificatetrusted" class="tsd-anchor"></a>
-					<h3>is<wbr>Certificate<wbr>Trusted</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">is<wbr>Certificate<wbr>Trusted<span class="tsd-signature-symbol">(</span>serverCertificate<span class="tsd-signature-symbol">: </span><a href="../enums/node_opcua_types.usertokentype.html#certificate" class="tsd-signature-type">Certificate</a>, callback<span class="tsd-signature-symbol">: </span><a href="../modules/node_opcua_certificate_manager.html#errorcallback" class="tsd-signature-type">ErrorCallback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+					<a name="checkcertificate" class="tsd-anchor"></a>
+					<h3>check<wbr>Certificate</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">check<wbr>Certificate<span class="tsd-signature-symbol">(</span>certificate<span class="tsd-signature-symbol">: </span><a href="../enums/node_opcua_types.usertokentype.html#certificate" class="tsd-signature-type">Certificate</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">StatusCode</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">check<wbr>Certificate<span class="tsd-signature-symbol">(</span>certificate<span class="tsd-signature-symbol">: </span><a href="../enums/node_opcua_types.usertokentype.html#certificate" class="tsd-signature-type">Certificate</a>, callback<span class="tsd-signature-symbol">: </span><a href="../modules/node_opcua_certificate_manager.html#statuscodecallback" class="tsd-signature-type">StatusCodeCallback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-certificate-manager/source/certificate_manager.ts#L22">node-opcua-certificate-manager/source/certificate_manager.ts:22</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-certificate-manager/source/certificate_manager.ts#L49">node-opcua-certificate-manager/source/certificate_manager.ts:49</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>serverCertificate: <a href="../enums/node_opcua_types.usertokentype.html#certificate" class="tsd-signature-type">Certificate</a></h5>
+									<h5>certificate: <a href="../enums/node_opcua_types.usertokentype.html#certificate" class="tsd-signature-type">Certificate</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">StatusCode</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-certificate-manager/source/certificate_manager.ts#L53">node-opcua-certificate-manager/source/certificate_manager.ts:53</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>certificate: <a href="../enums/node_opcua_types.usertokentype.html#certificate" class="tsd-signature-type">Certificate</a></h5>
 								</li>
 								<li>
-									<h5>callback: <a href="../modules/node_opcua_certificate_manager.html#errorcallback" class="tsd-signature-type">ErrorCallback</a></h5>
+									<h5>callback: <a href="../modules/node_opcua_certificate_manager.html#statuscodecallback" class="tsd-signature-type">StatusCodeCallback</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+					<a name="gettruststatus" class="tsd-anchor"></a>
+					<h3>get<wbr>Trust<wbr>Status</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Trust<wbr>Status<span class="tsd-signature-symbol">(</span>certificate<span class="tsd-signature-symbol">: </span><a href="../enums/node_opcua_types.usertokentype.html#certificate" class="tsd-signature-type">Certificate</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">StatusCode</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Trust<wbr>Status<span class="tsd-signature-symbol">(</span>certificate<span class="tsd-signature-symbol">: </span><a href="../enums/node_opcua_types.usertokentype.html#certificate" class="tsd-signature-type">Certificate</a>, callback<span class="tsd-signature-symbol">: </span><a href="../modules/node_opcua_certificate_manager.html#statuscodecallback" class="tsd-signature-type">StatusCodeCallback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-certificate-manager/source/certificate_manager.ts#L40">node-opcua-certificate-manager/source/certificate_manager.ts:40</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>certificate: <a href="../enums/node_opcua_types.usertokentype.html#certificate" class="tsd-signature-type">Certificate</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">StatusCode</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-certificate-manager/source/certificate_manager.ts#L44">node-opcua-certificate-manager/source/certificate_manager.ts:44</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>certificate: <a href="../enums/node_opcua_types.usertokentype.html#certificate" class="tsd-signature-type">Certificate</a></h5>
+								</li>
+								<li>
+									<h5>callback: <a href="../modules/node_opcua_certificate_manager.html#statuscodecallback" class="tsd-signature-type">StatusCodeCallback</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+					<a name="rejectcertificate" class="tsd-anchor"></a>
+					<h3>reject<wbr>Certificate</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">reject<wbr>Certificate<span class="tsd-signature-symbol">(</span>certificate<span class="tsd-signature-symbol">: </span><a href="../enums/node_opcua_types.usertokentype.html#certificate" class="tsd-signature-type">Certificate</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">reject<wbr>Certificate<span class="tsd-signature-symbol">(</span>certificate<span class="tsd-signature-symbol">: </span><a href="../enums/node_opcua_types.usertokentype.html#certificate" class="tsd-signature-type">Certificate</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-certificate-manager/source/certificate_manager.ts#L69">node-opcua-certificate-manager/source/certificate_manager.ts:69</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>certificate: <a href="../enums/node_opcua_types.usertokentype.html#certificate" class="tsd-signature-type">Certificate</a></h5>
+								</li>
+								<li>
+									<h5>callback: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>err<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Error</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5><span class="tsd-flag ts-flagOptional">Optional</span> err: <span class="tsd-signature-type">Error</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-certificate-manager/source/certificate_manager.ts#L74">node-opcua-certificate-manager/source/certificate_manager.ts:74</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>certificate: <a href="../enums/node_opcua_types.usertokentype.html#certificate" class="tsd-signature-type">Certificate</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+					<a name="trustcertificate" class="tsd-anchor"></a>
+					<h3>trust<wbr>Certificate</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">trust<wbr>Certificate<span class="tsd-signature-symbol">(</span>certificate<span class="tsd-signature-symbol">: </span><a href="../enums/node_opcua_types.usertokentype.html#certificate" class="tsd-signature-type">Certificate</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">trust<wbr>Certificate<span class="tsd-signature-symbol">(</span>certificate<span class="tsd-signature-symbol">: </span><a href="../enums/node_opcua_types.usertokentype.html#certificate" class="tsd-signature-type">Certificate</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-certificate-manager/source/certificate_manager.ts#L62">node-opcua-certificate-manager/source/certificate_manager.ts:62</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>certificate: <a href="../enums/node_opcua_types.usertokentype.html#certificate" class="tsd-signature-type">Certificate</a></h5>
+								</li>
+								<li>
+									<h5>callback: <span class="tsd-signature-type">function</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>err<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Error</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5><span class="tsd-flag ts-flagOptional">Optional</span> err: <span class="tsd-signature-type">Error</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-certificate-manager/source/certificate_manager.ts#L67">node-opcua-certificate-manager/source/certificate_manager.ts:67</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>certificate: <a href="../enums/node_opcua_types.usertokentype.html#certificate" class="tsd-signature-type">Certificate</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -140,23 +321,35 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-class tsd-parent-kind-external-module tsd-is-external">
-						<a href="../classes/node_opcua_certificate_manager.certificatemanager.html" class="tsd-kind-icon">Certificate<wbr>Manager</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
-						<a href="node_opcua_certificate_manager.certificatemanageroptions.html" class="tsd-kind-icon">Certificate<wbr>Manager<wbr>Options</a>
+						<a href="../classes/node_opcua_certificate_manager.opcuacertificatemanager.html" class="tsd-kind-icon">OPCUACertificate<wbr>Manager</a>
 					</li>
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+					<li class="current tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
 						<a href="node_opcua_certificate_manager.icertificatemanager.html" class="tsd-kind-icon">ICertificate<wbr>Manager</a>
 						<ul>
-							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
-								<a href="node_opcua_certificate_manager.icertificatemanager.html#iscertificatetrusted" class="tsd-kind-icon">is<wbr>Certificate<wbr>Trusted</a>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+								<a href="node_opcua_certificate_manager.icertificatemanager.html#checkcertificate" class="tsd-kind-icon">check<wbr>Certificate</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+								<a href="node_opcua_certificate_manager.icertificatemanager.html#gettruststatus" class="tsd-kind-icon">get<wbr>Trust<wbr>Status</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+								<a href="node_opcua_certificate_manager.icertificatemanager.html#rejectcertificate" class="tsd-kind-icon">reject<wbr>Certificate</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+								<a href="node_opcua_certificate_manager.icertificatemanager.html#trustcertificate" class="tsd-kind-icon">trust<wbr>Certificate</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
+						<a href="node_opcua_certificate_manager.opcuacertificatemanageroptions.html" class="tsd-kind-icon">OPCUACertificate<wbr>Manager<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-external tsd-is-not-exported">
+						<a href="../modules/node_opcua_certificate_manager.html#callbackt" class="tsd-kind-icon">CallbackT</a>
+					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
 						<a href="../modules/node_opcua_certificate_manager.html#errorcallback" class="tsd-kind-icon">Error<wbr>Callback</a>
 					</li>
@@ -167,22 +360,25 @@
 						<a href="../modules/node_opcua_certificate_manager.html#statuscodecallback" class="tsd-kind-icon">Status<wbr>Code<wbr>Callback</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
-						<a href="../modules/node_opcua_certificate_manager.html#fsfileexists" class="tsd-kind-icon">fs<wbr>File<wbr>Exists</a>
+						<a href="../modules/node_opcua_certificate_manager.html#debuglog" class="tsd-kind-icon">debug<wbr>Log</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
-						<a href="../modules/node_opcua_certificate_manager.html#fsreadfile" class="tsd-kind-icon">fs<wbr>Read<wbr>File</a>
+						<a href="../modules/node_opcua_certificate_manager.html#dodebug" class="tsd-kind-icon">do<wbr>Debug</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
-						<a href="../modules/node_opcua_certificate_manager.html#fsremovefile" class="tsd-kind-icon">fs<wbr>Remove<wbr>File</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
-						<a href="../modules/node_opcua_certificate_manager.html#fswritefile" class="tsd-kind-icon">fs<wbr>Write<wbr>File</a>
+						<a href="../modules/node_opcua_certificate_manager.html#errorlog" class="tsd-kind-icon">error<wbr>Log</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
 						<a href="../modules/node_opcua_certificate_manager.html#paths" class="tsd-kind-icon">paths</a>
 					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+						<a href="../modules/node_opcua_certificate_manager.html#thenify" class="tsd-kind-icon">thenify</a>
+					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-external">
 						<a href="../modules/node_opcua_certificate_manager.html#checkcertificatevalidity" class="tsd-kind-icon">check<wbr>Certificate<wbr>Validity</a>
+					</li>
+					<li class=" tsd-kind-object-literal tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+						<a href="../modules/node_opcua_certificate_manager.html#opts" class="tsd-kind-icon">opts</a>
 					</li>
 				</ul>
 			</nav>

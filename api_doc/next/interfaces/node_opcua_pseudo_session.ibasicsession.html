@@ -85,7 +85,11 @@
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="node_opcua_pseudo_session.ibasicsession.html#browse" class="tsd-kind-icon">browse</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="node_opcua_pseudo_session.ibasicsession.html#browsenext" class="tsd-kind-icon">browse<wbr>Next</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="node_opcua_pseudo_session.ibasicsession.html#call" class="tsd-kind-icon">call</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="node_opcua_pseudo_session.ibasicsession.html#getargumentdefinition" class="tsd-kind-icon">get<wbr>Argument<wbr>Definition</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="node_opcua_pseudo_session.ibasicsession.html#read" class="tsd-kind-icon">read</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="node_opcua_pseudo_session.ibasicsession.html#translatebrowsepath" class="tsd-kind-icon">translate<wbr>Browse<wbr>Path</a></li>
 							</ul>
 						</section>
 					</div>
@@ -106,7 +110,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-pseudo-session/source/basic_session_interface.ts#L24">node-opcua-pseudo-session/source/basic_session_interface.ts:24</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-pseudo-session/source/basic_session_interface.ts#L41">node-opcua-pseudo-session/source/basic_session_interface.ts:41</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -123,7 +127,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-pseudo-session/source/basic_session_interface.ts#L25">node-opcua-pseudo-session/source/basic_session_interface.ts:25</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-pseudo-session/source/basic_session_interface.ts#L43">node-opcua-pseudo-session/source/basic_session_interface.ts:43</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -140,7 +144,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-pseudo-session/source/basic_session_interface.ts#L26">node-opcua-pseudo-session/source/basic_session_interface.ts:26</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-pseudo-session/source/basic_session_interface.ts#L45">node-opcua-pseudo-session/source/basic_session_interface.ts:45</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -154,7 +158,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-pseudo-session/source/basic_session_interface.ts#L27">node-opcua-pseudo-session/source/basic_session_interface.ts:27</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-pseudo-session/source/basic_session_interface.ts#L47">node-opcua-pseudo-session/source/basic_session_interface.ts:47</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -164,6 +168,286 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">BrowseResult</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+					<a name="browsenext" class="tsd-anchor"></a>
+					<h3>browse<wbr>Next</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">browse<wbr>Next<span class="tsd-signature-symbol">(</span>continuationPoint<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span>, releaseContinuationPoints<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>, callback<span class="tsd-signature-symbol">: </span><a href="../modules/node_opcua_pseudo_session.html#responsecallback" class="tsd-signature-type">ResponseCallback</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">BrowseResult</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">browse<wbr>Next<span class="tsd-signature-symbol">(</span>continuationPoints<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">[]</span>, releaseContinuationPoints<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>, callback<span class="tsd-signature-symbol">: </span><a href="../modules/node_opcua_pseudo_session.html#responsecallback" class="tsd-signature-type">ResponseCallback</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">BrowseResult</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">browse<wbr>Next<span class="tsd-signature-symbol">(</span>continuationPoint<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span>, releaseContinuationPoints<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">BrowseResult</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">browse<wbr>Next<span class="tsd-signature-symbol">(</span>continuationPoints<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">[]</span>, releaseContinuationPoints<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">BrowseResult</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-pseudo-session/source/basic_session_interface.ts#L66">node-opcua-pseudo-session/source/basic_session_interface.ts:66</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>continuationPoint: <span class="tsd-signature-type">Buffer</span></h5>
+								</li>
+								<li>
+									<h5>releaseContinuationPoints: <span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>a Boolean parameter with the following values:
+											TRUE passed continuationPoints shall be reset to free resources in
+											the Server. The continuation points are released and the results
+											and diagnosticInfos arrays are empty.
+											FALSE passed continuationPoints shall be used to get the next set of
+											browse information.
+											A Client shall always use the continuation point returned by a Browse or
+											BrowseNext response to free the resources for the continuation point in the
+											Server. If the Client does not want to get the next set of browse information,
+										BrowseNext shall be called with this parameter set to TRUE.</p>
+									</div>
+								</li>
+								<li>
+									<h5>callback: <a href="../modules/node_opcua_pseudo_session.html#responsecallback" class="tsd-signature-type">ResponseCallback</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">BrowseResult</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-pseudo-session/source/basic_session_interface.ts#L71">node-opcua-pseudo-session/source/basic_session_interface.ts:71</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>continuationPoints: <span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5>releaseContinuationPoints: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+								<li>
+									<h5>callback: <a href="../modules/node_opcua_pseudo_session.html#responsecallback" class="tsd-signature-type">ResponseCallback</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">BrowseResult</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-pseudo-session/source/basic_session_interface.ts#L76">node-opcua-pseudo-session/source/basic_session_interface.ts:76</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>continuationPoint: <span class="tsd-signature-type">Buffer</span></h5>
+								</li>
+								<li>
+									<h5>releaseContinuationPoints: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">BrowseResult</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-pseudo-session/source/basic_session_interface.ts#L81">node-opcua-pseudo-session/source/basic_session_interface.ts:81</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>continuationPoints: <span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5>releaseContinuationPoints: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">BrowseResult</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+					<a name="call" class="tsd-anchor"></a>
+					<h3>call</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">call<span class="tsd-signature-symbol">(</span>methodToCall<span class="tsd-signature-symbol">: </span><a href="../modules/node_opcua_pseudo_session.html#callmethodrequestlike" class="tsd-signature-type">CallMethodRequestLike</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">call<span class="tsd-signature-symbol">(</span>methodsToCall<span class="tsd-signature-symbol">: </span><a href="../modules/node_opcua_pseudo_session.html#callmethodrequestlike" class="tsd-signature-type">CallMethodRequestLike</a><span class="tsd-signature-symbol">[]</span>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">call<span class="tsd-signature-symbol">(</span>methodToCall<span class="tsd-signature-symbol">: </span><a href="../modules/node_opcua_pseudo_session.html#callmethodrequestlike" class="tsd-signature-type">CallMethodRequestLike</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">CallMethodResult</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">call<span class="tsd-signature-symbol">(</span>methodsToCall<span class="tsd-signature-symbol">: </span><a href="../modules/node_opcua_pseudo_session.html#callmethodrequestlike" class="tsd-signature-type">CallMethodRequestLike</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">CallMethodResult</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-pseudo-session/source/basic_session_interface.ts#L107">node-opcua-pseudo-session/source/basic_session_interface.ts:107</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>methodToCall: <a href="../modules/node_opcua_pseudo_session.html#callmethodrequestlike" class="tsd-signature-type">CallMethodRequestLike</a></h5>
+								</li>
+								<li>
+									<h5>callback: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>err<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Error</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span>, result<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">CallMethodResult</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>err: <span class="tsd-signature-type">Error</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+														</li>
+														<li>
+															<h5><span class="tsd-flag ts-flagOptional">Optional</span> result: <span class="tsd-signature-type">CallMethodResult</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-pseudo-session/source/basic_session_interface.ts#L111">node-opcua-pseudo-session/source/basic_session_interface.ts:111</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>methodsToCall: <a href="../modules/node_opcua_pseudo_session.html#callmethodrequestlike" class="tsd-signature-type">CallMethodRequestLike</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5>callback: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>err<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Error</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span>, results<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">CallMethodResult</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>err: <span class="tsd-signature-type">Error</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+														</li>
+														<li>
+															<h5><span class="tsd-flag ts-flagOptional">Optional</span> results: <span class="tsd-signature-type">CallMethodResult</span><span class="tsd-signature-symbol">[]</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-pseudo-session/source/basic_session_interface.ts#L115">node-opcua-pseudo-session/source/basic_session_interface.ts:115</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>methodToCall: <a href="../modules/node_opcua_pseudo_session.html#callmethodrequestlike" class="tsd-signature-type">CallMethodRequestLike</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">CallMethodResult</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-pseudo-session/source/basic_session_interface.ts#L118">node-opcua-pseudo-session/source/basic_session_interface.ts:118</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>methodsToCall: <a href="../modules/node_opcua_pseudo_session.html#callmethodrequestlike" class="tsd-signature-type">CallMethodRequestLike</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">CallMethodResult</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+					<a name="getargumentdefinition" class="tsd-anchor"></a>
+					<h3>get<wbr>Argument<wbr>Definition</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Argument<wbr>Definition<span class="tsd-signature-symbol">(</span>methodId<span class="tsd-signature-symbol">: </span><a href="../modules/node_opcua_pseudo_session.html#methodid" class="tsd-signature-type">MethodId</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="node_opcua_pseudo_session.argumentdefinition.html" class="tsd-signature-type">ArgumentDefinition</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Argument<wbr>Definition<span class="tsd-signature-symbol">(</span>methodId<span class="tsd-signature-symbol">: </span><a href="../modules/node_opcua_pseudo_session.html#methodid" class="tsd-signature-type">MethodId</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-pseudo-session/source/basic_session_interface.ts#L121">node-opcua-pseudo-session/source/basic_session_interface.ts:121</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>methodId: <a href="../modules/node_opcua_pseudo_session.html#methodid" class="tsd-signature-type">MethodId</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="node_opcua_pseudo_session.argumentdefinition.html" class="tsd-signature-type">ArgumentDefinition</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-pseudo-session/source/basic_session_interface.ts#L123">node-opcua-pseudo-session/source/basic_session_interface.ts:123</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>methodId: <a href="../modules/node_opcua_pseudo_session.html#methodid" class="tsd-signature-type">MethodId</a></h5>
+								</li>
+								<li>
+									<h5>callback: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>err<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Error</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span>, args<span class="tsd-signature-symbol">?: </span><a href="node_opcua_pseudo_session.argumentdefinition.html" class="tsd-signature-type">ArgumentDefinition</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>err: <span class="tsd-signature-type">Error</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+														</li>
+														<li>
+															<h5><span class="tsd-flag ts-flagOptional">Optional</span> args: <a href="node_opcua_pseudo_session.argumentdefinition.html" class="tsd-signature-type">ArgumentDefinition</a></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -180,7 +464,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-pseudo-session/source/basic_session_interface.ts#L29">node-opcua-pseudo-session/source/basic_session_interface.ts:29</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-pseudo-session/source/basic_session_interface.ts#L88">node-opcua-pseudo-session/source/basic_session_interface.ts:88</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -197,7 +481,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-pseudo-session/source/basic_session_interface.ts#L30">node-opcua-pseudo-session/source/basic_session_interface.ts:30</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-pseudo-session/source/basic_session_interface.ts#L90">node-opcua-pseudo-session/source/basic_session_interface.ts:90</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -214,7 +498,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-pseudo-session/source/basic_session_interface.ts#L31">node-opcua-pseudo-session/source/basic_session_interface.ts:31</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-pseudo-session/source/basic_session_interface.ts#L92">node-opcua-pseudo-session/source/basic_session_interface.ts:92</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -228,7 +512,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-pseudo-session/source/basic_session_interface.ts#L32">node-opcua-pseudo-session/source/basic_session_interface.ts:32</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-pseudo-session/source/basic_session_interface.ts#L94">node-opcua-pseudo-session/source/basic_session_interface.ts:94</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -238,6 +522,80 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">DataValue</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+					<a name="translatebrowsepath" class="tsd-anchor"></a>
+					<h3>translate<wbr>Browse<wbr>Path</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">translate<wbr>Browse<wbr>Path<span class="tsd-signature-symbol">(</span>browsesPath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">BrowsePath</span><span class="tsd-signature-symbol">[]</span>, callback<span class="tsd-signature-symbol">: </span><a href="../modules/node_opcua_pseudo_session.html#responsecallback" class="tsd-signature-type">ResponseCallback</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">BrowsePathResult</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">translate<wbr>Browse<wbr>Path<span class="tsd-signature-symbol">(</span>browsePath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">BrowsePath</span>, callback<span class="tsd-signature-symbol">: </span><a href="../modules/node_opcua_pseudo_session.html#responsecallback" class="tsd-signature-type">ResponseCallback</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">BrowsePathResult</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">translate<wbr>Browse<wbr>Path<span class="tsd-signature-symbol">(</span>browsePath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">BrowsePath</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">BrowsePathResult</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">translate<wbr>Browse<wbr>Path<span class="tsd-signature-symbol">(</span>browsePaths<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">BrowsePath</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">BrowsePathResult</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-pseudo-session/source/basic_session_interface.ts#L129">node-opcua-pseudo-session/source/basic_session_interface.ts:129</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>browsesPath: <span class="tsd-signature-type">BrowsePath</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5>callback: <a href="../modules/node_opcua_pseudo_session.html#responsecallback" class="tsd-signature-type">ResponseCallback</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">BrowsePathResult</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-pseudo-session/source/basic_session_interface.ts#L131">node-opcua-pseudo-session/source/basic_session_interface.ts:131</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>browsePath: <span class="tsd-signature-type">BrowsePath</span></h5>
+								</li>
+								<li>
+									<h5>callback: <a href="../modules/node_opcua_pseudo_session.html#responsecallback" class="tsd-signature-type">ResponseCallback</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">BrowsePathResult</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-pseudo-session/source/basic_session_interface.ts#L133">node-opcua-pseudo-session/source/basic_session_interface.ts:133</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>browsePath: <span class="tsd-signature-type">BrowsePath</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">BrowsePathResult</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-pseudo-session/source/basic_session_interface.ts#L135">node-opcua-pseudo-session/source/basic_session_interface.ts:135</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>browsePaths: <span class="tsd-signature-type">BrowsePath</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">BrowsePathResult</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -256,6 +614,9 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
+						<a href="node_opcua_pseudo_session.argumentdefinition.html" class="tsd-kind-icon">Argument<wbr>Definition</a>
+					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
@@ -265,7 +626,19 @@
 								<a href="node_opcua_pseudo_session.ibasicsession.html#browse" class="tsd-kind-icon">browse</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+								<a href="node_opcua_pseudo_session.ibasicsession.html#browsenext" class="tsd-kind-icon">browse<wbr>Next</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+								<a href="node_opcua_pseudo_session.ibasicsession.html#call" class="tsd-kind-icon">call</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+								<a href="node_opcua_pseudo_session.ibasicsession.html#getargumentdefinition" class="tsd-kind-icon">get<wbr>Argument<wbr>Definition</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external">
 								<a href="node_opcua_pseudo_session.ibasicsession.html#read" class="tsd-kind-icon">read</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+								<a href="node_opcua_pseudo_session.ibasicsession.html#translatebrowsepath" class="tsd-kind-icon">translate<wbr>Browse<wbr>Path</a>
 							</li>
 						</ul>
 					</li>
@@ -275,10 +648,19 @@
 						<a href="../modules/node_opcua_pseudo_session.html#browsedescriptionlike" class="tsd-kind-icon">Browse<wbr>Description<wbr>Like</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-external">
+						<a href="../modules/node_opcua_pseudo_session.html#callmethodrequestlike" class="tsd-kind-icon">Call<wbr>Method<wbr>Request<wbr>Like</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-external">
+						<a href="../modules/node_opcua_pseudo_session.html#methodid" class="tsd-kind-icon">Method<wbr>Id</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-external">
 						<a href="../modules/node_opcua_pseudo_session.html#readvalueidlike" class="tsd-kind-icon">Read<wbr>Value<wbr>IdLike</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-external">
 						<a href="../modules/node_opcua_pseudo_session.html#responsecallback" class="tsd-kind-icon">Response<wbr>Callback</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-external">
+						<a href="../modules/node_opcua_pseudo_session.html#getargumentdefinitionhelper" class="tsd-kind-icon">get<wbr>Argument<wbr>Definition<wbr>Helper</a>
 					</li>
 				</ul>
 			</nav>

@@ -88,7 +88,7 @@
 						</li>
 						<li><p>Clients may explicitly terminate Sessions using the CloseSession Service.</p>
 						</li>
-						<li><p>When a Session is terminated, all outstanding requests on the Session are aborted and Bad_SessionClosed StatusCodes
+						<li><p>When a Session is terminated, all outstanding requests on the Session are aborted and BadSessionClosed StatusCodes
 								are returned to the Client. In addition, the Server deletes the entry for the Client from its
 							SessionDiagnosticsArray Variable and notifies any other Clients who were subscribed to this entry.</p>
 						</li>
@@ -112,6 +112,7 @@
 				<h3>Implements</h3>
 				<ul class="tsd-hierarchy">
 					<li><span class="tsd-signature-type">ISubscriber</span></li>
+					<li><span class="tsd-signature-type">ISessionBase</span></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -231,7 +232,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L118">node-opcua-server/source/server_session.ts:118</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L118">node-opcua-server/source/server_session.ts:118</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -256,7 +257,7 @@
 					<div class="tsd-signature tsd-kind-icon">__status<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L90">node-opcua-server/source/server_session.ts:90</a></li>
+							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L90">node-opcua-server/source/server_session.ts:90</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -266,7 +267,7 @@
 					<div class="tsd-signature tsd-kind-icon">_cumulated<wbr>Subscription<wbr>Count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L116">node-opcua-server/source/server_session.ts:116</a></li>
+							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L116">node-opcua-server/source/server_session.ts:116</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -276,7 +277,7 @@
 					<div class="tsd-signature tsd-kind-icon">_registered<wbr>Nodes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L114">node-opcua-server/source/server_session.ts:114</a></li>
+							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L114">node-opcua-server/source/server_session.ts:114</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -286,7 +287,7 @@
 					<div class="tsd-signature tsd-kind-icon">_registered<wbr>Nodes<wbr>Counter<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L113">node-opcua-server/source/server_session.ts:113</a></li>
+							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L113">node-opcua-server/source/server_session.ts:113</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -296,7 +297,7 @@
 					<div class="tsd-signature tsd-kind-icon">_registered<wbr>Nodes<wbr>Inv<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L115">node-opcua-server/source/server_session.ts:115</a></li>
+							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L115">node-opcua-server/source/server_session.ts:115</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -306,7 +307,7 @@
 					<div class="tsd-signature tsd-kind-icon">_session<wbr>Diagnostics<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L117">node-opcua-server/source/server_session.ts:117</a></li>
+							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L117">node-opcua-server/source/server_session.ts:117</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -316,7 +317,7 @@
 					<div class="tsd-signature tsd-kind-icon">_watch<wbr>Dog<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">WatchDog</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L110">node-opcua-server/source/server_session.ts:110</a></li>
+							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L110">node-opcua-server/source/server_session.ts:110</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -326,7 +327,7 @@
 					<div class="tsd-signature tsd-kind-icon">_watch<wbr>Dog<wbr>Data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">IWatchdogData2</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L111">node-opcua-server/source/server_session.ts:111</a></li>
+							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L111">node-opcua-server/source/server_session.ts:111</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -336,7 +337,7 @@
 					<div class="tsd-signature tsd-kind-icon">authentication<wbr>Token<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">NodeId</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L92">node-opcua-server/source/server_session.ts:92</a></li>
+							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L92">node-opcua-server/source/server_session.ts:92</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -346,7 +347,7 @@
 					<div class="tsd-signature tsd-kind-icon">channel<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ServerSecureChannelLayer</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L102">node-opcua-server/source/server_session.ts:102</a></li>
+							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L102">node-opcua-server/source/server_session.ts:102</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -356,7 +357,7 @@
 					<div class="tsd-signature tsd-kind-icon">channel<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L106">node-opcua-server/source/server_session.ts:106</a></li>
+							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L106">node-opcua-server/source/server_session.ts:106</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -366,7 +367,7 @@
 					<div class="tsd-signature tsd-kind-icon">channel_<wbr>abort_<wbr>event_<wbr>handler<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L118">node-opcua-server/source/server_session.ts:118</a></li>
+							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L118">node-opcua-server/source/server_session.ts:118</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -376,7 +377,7 @@
 					<div class="tsd-signature tsd-kind-icon">client<wbr>Description<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ApplicationDescription</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L105">node-opcua-server/source/server_session.ts:105</a></li>
+							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L105">node-opcua-server/source/server_session.ts:105</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -386,7 +387,7 @@
 					<div class="tsd-signature tsd-kind-icon">continuation<wbr>Point<wbr>Manager<span class="tsd-signature-symbol">:</span> <a href="node_opcua_server.continuationpointmanager.html" class="tsd-signature-type">ContinuationPointManager</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L107">node-opcua-server/source/server_session.ts:107</a></li>
+							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L107">node-opcua-server/source/server_session.ts:107</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -396,7 +397,7 @@
 					<div class="tsd-signature tsd-kind-icon">creation<wbr>Date<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L98">node-opcua-server/source/server_session.ts:98</a></li>
+							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L98">node-opcua-server/source/server_session.ts:98</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -406,7 +407,7 @@
 					<div class="tsd-signature tsd-kind-icon">node<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">NodeId</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L93">node-opcua-server/source/server_session.ts:93</a></li>
+							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L93">node-opcua-server/source/server_session.ts:93</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -416,7 +417,7 @@
 					<div class="tsd-signature tsd-kind-icon">nonce<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Buffer</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L103">node-opcua-server/source/server_session.ts:103</a></li>
+							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L103">node-opcua-server/source/server_session.ts:103</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -426,7 +427,7 @@
 					<div class="tsd-signature tsd-kind-icon">parent<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L91">node-opcua-server/source/server_session.ts:91</a></li>
+							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L91">node-opcua-server/source/server_session.ts:91</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -436,7 +437,7 @@
 					<div class="tsd-signature tsd-kind-icon">publish<wbr>Engine<span class="tsd-signature-symbol">:</span> <a href="node_opcua_server.serversidepublishengine.html" class="tsd-signature-type">ServerSidePublishEngine</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L96">node-opcua-server/source/server_session.ts:96</a></li>
+							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L96">node-opcua-server/source/server_session.ts:96</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -446,7 +447,7 @@
 					<div class="tsd-signature tsd-kind-icon">session<wbr>Diagnostics<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">UASessionDiagnostics</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L100">node-opcua-server/source/server_session.ts:100</a></li>
+							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L100">node-opcua-server/source/server_session.ts:100</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -456,7 +457,7 @@
 					<div class="tsd-signature tsd-kind-icon">session<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L94">node-opcua-server/source/server_session.ts:94</a></li>
+							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L94">node-opcua-server/source/server_session.ts:94</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -466,7 +467,7 @@
 					<div class="tsd-signature tsd-kind-icon">session<wbr>Object<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L97">node-opcua-server/source/server_session.ts:97</a></li>
+							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L97">node-opcua-server/source/server_session.ts:97</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -476,7 +477,7 @@
 					<div class="tsd-signature tsd-kind-icon">session<wbr>Timeout<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L99">node-opcua-server/source/server_session.ts:99</a></li>
+							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L99">node-opcua-server/source/server_session.ts:99</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -486,7 +487,7 @@
 					<div class="tsd-signature tsd-kind-icon">subscription<wbr>Diagnostics<wbr>Array<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">UADynamicVariableArray</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">SubscriptionDiagnosticsDataType</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L101">node-opcua-server/source/server_session.ts:101</a></li>
+							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L101">node-opcua-server/source/server_session.ts:101</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -496,7 +497,7 @@
 					<div class="tsd-signature tsd-kind-icon">user<wbr>Identity<wbr>Token<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">UserIdentityToken</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L104">node-opcua-server/source/server_session.ts:104</a></li>
+							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L104">node-opcua-server/source/server_session.ts:104</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -507,7 +508,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from EventEmitter.defaultMaxListeners</p>
 						<ul>
-							<li>Defined in C:/sterfive/NodeOPCUA/node-opcua/node_modules/@types/node/events.d.ts:8</li>
+							<li>Defined in C:/sterfive/NodeOPCUA/node-opcua-2/node_modules/@types/node/events.d.ts:9</li>
 						</ul>
 					</aside>
 				</section>
@@ -517,7 +518,7 @@
 					<div class="tsd-signature tsd-kind-icon">max<wbr>Publish<wbr>Request<wbr>InQueue<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;100</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L88">node-opcua-server/source/server_session.ts:88</a></li>
+							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L88">node-opcua-server/source/server_session.ts:88</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -527,7 +528,7 @@
 					<div class="tsd-signature tsd-kind-icon">registry<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ObjectRegistry</span><span class="tsd-signature-symbol"> =&nbsp;new ObjectRegistry()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L87">node-opcua-server/source/server_session.ts:87</a></li>
+							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L87">node-opcua-server/source/server_session.ts:87</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -544,7 +545,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L493">node-opcua-server/source/server_session.ts:493</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L493">node-opcua-server/source/server_session.ts:493</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -566,7 +567,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L218">node-opcua-server/source/server_session.ts:218</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L218">node-opcua-server/source/server_session.ts:218</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AddressSpace</span></h4>
@@ -583,7 +584,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L199">node-opcua-server/source/server_session.ts:199</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L199">node-opcua-server/source/server_session.ts:199</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4>
@@ -600,7 +601,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L203">node-opcua-server/source/server_session.ts:203</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L203">node-opcua-server/source/server_session.ts:203</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -617,7 +618,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L312">node-opcua-server/source/server_session.ts:312</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L311">node-opcua-server/source/server_session.ts:311</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -639,7 +640,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L319">node-opcua-server/source/server_session.ts:319</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L318">node-opcua-server/source/server_session.ts:318</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -661,7 +662,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L222">node-opcua-server/source/server_session.ts:222</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L222">node-opcua-server/source/server_session.ts:222</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -678,7 +679,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L305">node-opcua-server/source/server_session.ts:305</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L304">node-opcua-server/source/server_session.ts:304</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -701,7 +702,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L207">node-opcua-server/source/server_session.ts:207</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L207">node-opcua-server/source/server_session.ts:207</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -709,7 +710,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L211">node-opcua-server/source/server_session.ts:211</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L211">node-opcua-server/source/server_session.ts:211</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -735,7 +736,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L509">node-opcua-server/source/server_session.ts:509</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L509">node-opcua-server/source/server_session.ts:509</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -758,7 +759,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L579">node-opcua-server/source/server_session.ts:579</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L579">node-opcua-server/source/server_session.ts:579</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
@@ -775,7 +776,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L785">node-opcua-server/source/server_session.ts:785</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L785">node-opcua-server/source/server_session.ts:785</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -792,7 +793,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L524">node-opcua-server/source/server_session.ts:524</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L524">node-opcua-server/source/server_session.ts:524</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -809,7 +810,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L542">node-opcua-server/source/server_session.ts:542</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L542">node-opcua-server/source/server_session.ts:542</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -832,7 +833,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L740">node-opcua-server/source/server_session.ts:740</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L740">node-opcua-server/source/server_session.ts:740</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -851,7 +852,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L709">node-opcua-server/source/server_session.ts:709</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L709">node-opcua-server/source/server_session.ts:709</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -870,7 +871,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L556">node-opcua-server/source/server_session.ts:556</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L556">node-opcua-server/source/server_session.ts:556</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -895,7 +896,7 @@
 								<p>Inherited from EventEmitter.addListener</p>
 								<p>Overrides EventEmitter.addListener</p>
 								<ul>
-									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua/node_modules/@types/node/events.d.ts:10</li>
+									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua-2/node_modules/@types/node/events.d.ts:11</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -939,7 +940,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L757">node-opcua-server/source/server_session.ts:757</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L757">node-opcua-server/source/server_session.ts:757</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -962,7 +963,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L383">node-opcua-server/source/server_session.ts:383</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L382">node-opcua-server/source/server_session.ts:382</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1007,7 +1008,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L500">node-opcua-server/source/server_session.ts:500</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L500">node-opcua-server/source/server_session.ts:500</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1030,7 +1031,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L347">node-opcua-server/source/server_session.ts:347</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L346">node-opcua-server/source/server_session.ts:346</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1060,7 +1061,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L172">node-opcua-server/source/server_session.ts:172</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L172">node-opcua-server/source/server_session.ts:172</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -1079,7 +1080,7 @@
 								<p>Inherited from EventEmitter.emit</p>
 								<p>Overrides EventEmitter.emit</p>
 								<ul>
-									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua/node_modules/@types/node/events.d.ts:22</li>
+									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua-2/node_modules/@types/node/events.d.ts:23</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1107,7 +1108,7 @@
 								<p>Inherited from EventEmitter.eventNames</p>
 								<p>Overrides EventEmitter.eventNames</p>
 								<ul>
-									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua/node_modules/@types/node/events.d.ts:23</li>
+									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua-2/node_modules/@types/node/events.d.ts:24</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -1126,7 +1127,7 @@
 								<p>Inherited from EventEmitter.getMaxListeners</p>
 								<p>Overrides EventEmitter.getMaxListeners</p>
 								<ul>
-									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua/node_modules/@types/node/events.d.ts:19</li>
+									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua-2/node_modules/@types/node/events.d.ts:20</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -1143,7 +1144,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L296">node-opcua-server/source/server_session.ts:296</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L296">node-opcua-server/source/server_session.ts:296</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1165,7 +1166,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L330">node-opcua-server/source/server_session.ts:330</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L329">node-opcua-server/source/server_session.ts:329</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1201,7 +1202,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L282">node-opcua-server/source/server_session.ts:282</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L282">node-opcua-server/source/server_session.ts:282</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1224,7 +1225,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L270">node-opcua-server/source/server_session.ts:270</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L270">node-opcua-server/source/server_session.ts:270</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1247,7 +1248,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L263">node-opcua-server/source/server_session.ts:263</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L263">node-opcua-server/source/server_session.ts:263</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -1266,7 +1267,7 @@
 								<p>Inherited from EventEmitter.listenerCount</p>
 								<p>Overrides EventEmitter.listenerCount</p>
 								<ul>
-									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua/node_modules/@types/node/events.d.ts:24</li>
+									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua-2/node_modules/@types/node/events.d.ts:25</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1291,7 +1292,7 @@
 								<p>Inherited from EventEmitter.listeners</p>
 								<p>Overrides EventEmitter.listeners</p>
 								<ul>
-									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua/node_modules/@types/node/events.d.ts:20</li>
+									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua-2/node_modules/@types/node/events.d.ts:21</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1316,7 +1317,7 @@
 								<p>Inherited from EventEmitter.off</p>
 								<p>Overrides EventEmitter.off</p>
 								<ul>
-									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua/node_modules/@types/node/events.d.ts:16</li>
+									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua-2/node_modules/@types/node/events.d.ts:17</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1362,7 +1363,7 @@
 								<p>Inherited from EventEmitter.on</p>
 								<p>Overrides EventEmitter.on</p>
 								<ul>
-									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua/node_modules/@types/node/events.d.ts:11</li>
+									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua-2/node_modules/@types/node/events.d.ts:12</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1406,7 +1407,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L244">node-opcua-server/source/server_session.ts:244</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L244">node-opcua-server/source/server_session.ts:244</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1439,7 +1440,7 @@
 								<p>Inherited from EventEmitter.once</p>
 								<p>Overrides EventEmitter.once</p>
 								<ul>
-									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua/node_modules/@types/node/events.d.ts:12</li>
+									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua-2/node_modules/@types/node/events.d.ts:13</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1485,7 +1486,7 @@
 								<p>Inherited from EventEmitter.prependListener</p>
 								<p>Overrides EventEmitter.prependListener</p>
 								<ul>
-									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua/node_modules/@types/node/events.d.ts:13</li>
+									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua-2/node_modules/@types/node/events.d.ts:14</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1531,7 +1532,7 @@
 								<p>Inherited from EventEmitter.prependOnceListener</p>
 								<p>Overrides EventEmitter.prependOnceListener</p>
 								<ul>
-									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua/node_modules/@types/node/events.d.ts:14</li>
+									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua-2/node_modules/@types/node/events.d.ts:15</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1577,7 +1578,7 @@
 								<p>Inherited from EventEmitter.rawListeners</p>
 								<p>Overrides EventEmitter.rawListeners</p>
 								<ul>
-									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua/node_modules/@types/node/events.d.ts:21</li>
+									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua-2/node_modules/@types/node/events.d.ts:22</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1600,7 +1601,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L433">node-opcua-server/source/server_session.ts:433</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L433">node-opcua-server/source/server_session.ts:433</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1625,7 +1626,7 @@
 								<p>Inherited from EventEmitter.removeAllListeners</p>
 								<p>Overrides EventEmitter.removeAllListeners</p>
 								<ul>
-									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua/node_modules/@types/node/events.d.ts:17</li>
+									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua-2/node_modules/@types/node/events.d.ts:18</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1650,7 +1651,7 @@
 								<p>Inherited from EventEmitter.removeListener</p>
 								<p>Overrides EventEmitter.removeListener</p>
 								<ul>
-									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua/node_modules/@types/node/events.d.ts:15</li>
+									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua-2/node_modules/@types/node/events.d.ts:16</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1694,7 +1695,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L478">node-opcua-server/source/server_session.ts:478</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L478">node-opcua-server/source/server_session.ts:478</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1719,7 +1720,7 @@
 								<p>Inherited from EventEmitter.setMaxListeners</p>
 								<p>Overrides EventEmitter.setMaxListeners</p>
 								<ul>
-									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua/node_modules/@types/node/events.d.ts:18</li>
+									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua-2/node_modules/@types/node/events.d.ts:19</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1742,7 +1743,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L462">node-opcua-server/source/server_session.ts:462</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L462">node-opcua-server/source/server_session.ts:462</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1765,7 +1766,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L227">node-opcua-server/source/server_session.ts:227</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L227">node-opcua-server/source/server_session.ts:227</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1788,7 +1789,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7ed0ff7a/packages/node-opcua-server/source/server_session.ts#L573">node-opcua-server/source/server_session.ts:573</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/62d6e05a/packages/node-opcua-server/source/server_session.ts#L573">node-opcua-server/source/server_session.ts:573</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1814,7 +1815,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from EventEmitter.listenerCount</p>
 								<ul>
-									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua/node_modules/@types/node/events.d.ts:7</li>
+									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua-2/node_modules/@types/node/events.d.ts:8</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
