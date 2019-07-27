@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>node-opcua-client</title>
+	<title>node-opcua-server</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">node-opcua-client</a>
+					<a href="index.html" class="title">node-opcua-server</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -56,7 +56,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1> node-opcua-client</h1>
+			<h1> node-opcua-server</h1>
 		</div>
 	</div>
 </header>
@@ -64,9 +64,171 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<h1 id="node-opcua-client">node-opcua-client</h1>
+				<h1 id="node-opcua">node-opcua</h1>
 				<p>an implementation of a OPC UA stack fully written in javascript and nodejs</p>
-				<p>see <a href="http://node-opcua.github.io/">http://node-opcua.github.io/</a></p>
+				<p><a href="http://www.npm-stats.com/~packages/node-opcua"><img src="https://img.shields.io/npm/dm/node-opcua.svg" alt="NPM download"></a>
+					<a href="http://badge.fury.io/js/node-opcua"><img src="https://badge.fury.io/js/node-opcua.png" alt="NPM version"></a>
+					<a href="https://travis-ci.org/node-opcua/node-opcua"><img src="https://travis-ci.org/node-opcua/node-opcua.png?branch=master" alt="Build Status"></a>
+					<a href="https://ci.appveyor.com/project/erossignon/node-opcua/branch/master"><img src="https://ci.appveyor.com/api/projects/status/8sgtm3n15aii98oc/branch/master?svg=true" alt="Build status"></a>
+					<a href="http://hits.dwyl.io/node-opcua/node-opcua"><img src="http://hits.dwyl.io/node-opcua/node-opcua.svg" alt="HitCount"></a>
+				<a href="https://lernajs.io/"><img src="https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg" alt="lerna"></a></p>
+				<!-- [![Dependency Status](https://gemnasium.com/node-opcua/node-opcua.png)](https://gemnasium.com/node-opcua/node-opcua) -->
+				<p><a href="https://coveralls.io/r/node-opcua/node-opcua"><img src="https://coveralls.io/repos/node-opcua/node-opcua/badge.png" alt="Coverage Status"></a>
+				<a href="https://codeclimate.com/github/node-opcua/node-opcua"><img src="https://codeclimate.com/github/node-opcua/node-opcua.png" alt="Code Climate"></a></p>
+				<p><a href="http://opcfoundation.org/"><img src="http://b.repl.ca/v1/OPC-UA-blue.png" alt="OPC UA"></a>
+				<a href="https://gitter.im/node-opcua/node-opcua"><img src="https://badges.gitter.im/node-opcua/node-opcua.png" alt="Gitter chat"></a></p>
+				<p><a href="http://node-opcua.github.io/">Node-opcua</a> is an full OPC-UA stack written in NodeJS.</p>
+				<p><a href="https://flattr.com/@gadz_er"><img src="https://api.flattr.com/button/flattr-badge-large.png" alt="Flattr us"></a>.</p>
+				<p>Why NodeJS ?</p>
+				<p>Because nodeJs is a great framework to design asynchronous application.</p>
+				<h2 id="getting-started">Getting started</h2>
+				<h3 id="installing-node-opcua-as-a-node-package">installing node-opcua as a node package</h3>
+				<pre><code>$ npm install <span class="hljs-keyword">node</span><span class="hljs-title">-opcua</span></code></pre><h3 id="installing-node-opcua-samples-as-a-node-package">installing node-opcua samples as a node package</h3>
+				<pre><code class="language-shell">    $ npm install node-opcua-samples
+    $ ./node_modules/.bin/simple_server</code></pre>
+				<p>   or</p>
+				<pre><code class="language-shell">    $ ./node_modules/.bin/simple_client  -e &quot;opc.tcp://opcserver.mAutomation.net:4841&quot; -n=&quot;ns=1;s=EVR2.system.RTC_SEC&quot;</code></pre>
+				<h3 id="installing-node-opcua-from-source">installing node-opcua from source</h3>
+				<h4 id="running-the-demo-server-from-source">running the demo server from source</h4>
+				<pre><code> $ git <span class="hljs-keyword">clone</span> <span class="hljs-title">https</span>://github.com/<span class="hljs-keyword">node</span><span class="hljs-title">-opcua</span>/<span class="hljs-keyword">node</span><span class="hljs-title">-opcua</span>.git
+ $ cd <span class="hljs-keyword">node</span><span class="hljs-title">-opcua</span>
+ $ npm install
+ $ <span class="hljs-keyword">node</span> <span class="hljs-title">packages</span>/<span class="hljs-keyword">node</span><span class="hljs-title">-opcua-samples</span>/bin/simple_server</code></pre><h4 id="running-the-demo-client-from-source">running the demo client from source</h4>
+				<pre><code> $ git <span class="hljs-keyword">clone</span> <span class="hljs-title">https</span>://github.com/<span class="hljs-keyword">node</span><span class="hljs-title">-opcua</span>/<span class="hljs-keyword">node</span><span class="hljs-title">-opcua</span>.git
+ $ cd <span class="hljs-keyword">node</span><span class="hljs-title">-opcua</span>
+ $ npm install
+ $ <span class="hljs-keyword">node</span> <span class="hljs-title">packages</span>/<span class="hljs-keyword">node</span><span class="hljs-title">-opcua-samples</span>/bin/simple_client.js -e <span class="hljs-string">"opc.tcp://opcserver.mAutomation.net:4841"</span> -n=<span class="hljs-string">"ns=1;s=EVR2.system.RTC_SEC"</span></code></pre><h3 id="tutorials">Tutorials</h3>
+				<ul>
+					<li><p><a href="https://github.com/node-opcua/node-opcua/blob/master/documentation/creating_a_server.md">create a server</a></p>
+					</li>
+					<li><p><a href="https://github.com/node-opcua/node-opcua/blob/master/documentation/creating_a_client.md">create a client</a></p>
+					</li>
+				</ul>
+				<h3 id="api-documentation">API Documentation</h3>
+				<ul>
+					<li>check out the <a href="http://node-opcua.github.io/api_doc/index.html">API documentation</a></li>
+				</ul>
+				<h2 id="minimum-nodejs-requirement">Minimum nodejs requirement</h2>
+				<ul>
+					<li>nodejs version 6.10 or above</li>
+				</ul>
+				<h2 id="contributing">Contributing</h2>
+				<pre><code>$ git <span class="hljs-keyword">clone</span> <span class="hljs-title">git</span>://github.com/<span class="hljs-keyword">node</span><span class="hljs-title">-opcua</span>/<span class="hljs-keyword">node</span><span class="hljs-title">-opcua</span>.git
+$ cd <span class="hljs-keyword">node</span><span class="hljs-title">-opcua</span>
+$ npm install
+$ npm test</code></pre><h2 id="supporting-the-project">Supporting the project</h2>
+				<p>If you like the project, please
+					<a href="https://flattr.com/@gadz_er"><img src="https://api.flattr.com/button/flattr-badge-large.png" alt="Flattr us"></a>.
+				This will give us full of motivation to carry on and keep working on the roadmap.</p>
+				<p><a href="https://nodei.co/npm/node-opcua/"><img src="https://nodei.co/npm/node-opcua.png?downloads=true&stars=true" alt="NPM"></a></p>
+				<p><a href="https://www.ohloh.net/p/node-opcua"><img src="https://www.ohloh.net/p/713850/widgets/project_thin_badge.gif" alt="Project Stats"></a></p>
+				<h2 id="getting-commercial-support">Getting commercial support</h2>
+				<p>To get commercial support,  please contact <a href="https://www.sterfive.com">sterfive</a></p>
+				<h2 id="supported-features">Supported Features</h2>
+				<p>| <strong><strong>Service</strong></strong>             |                          |                    |
+					|-----------------------------|-----------------------|---------------------------|
+					|  Discovery Service Set     |                        |         |
+					|                            |FindServers()           |  :white_check_mark:       |
+					|                            |GetEndpoints()          |  :white_check_mark:       |
+					|                            |RegisterServer()        |  :white_check_mark:       |
+					|                            |RegisterServer2()       |  :white_check_mark:       |
+					|                            |FindServersOnNetwork()  |  :white_check_mark:       |
+					| Secure Channel Service Set |                        |         |
+					|                            |OpenSecureChannel()     |  :white_check_mark:       |
+					|                            |CloseSecureChannel()    |  :white_check_mark:       |
+					| Session Service Set        |                        |         |
+					|                            |CreateSession()         |  :white_check_mark:       |
+					|                            |CloseSession()          |  :white_check_mark:       |
+					|                            |ActivateSession()       |  :white_check_mark:       |
+					|                            |Cancel()                |         |
+					| View Service Set           |                        |         |
+					|                            |Browse()                |  :white_check_mark:       |
+					|                            |BrowseNext()            |  :white_check_mark:       |
+					|                            |TranslateBrowsePathsToNodeIds() | :white_check_mark:|
+					|                            |RegisterNodes()                 | :white_check_mark:|
+					|                            |UnregisterNodes()      |:white_check_mark:|
+					| Attribute Service Set      |                       ||
+					|                            |Read()                 |:white_check_mark:|
+					|                            |Write()                |:white_check_mark:|
+					|                            |HistoryRead()          |:waxing_crescent_moon:|
+					|                            |HistoryUpdate()        |:waxing_crescent_moon:|
+					|MonitoredItems Service Set  |                       ||
+					|                            |CreateMonitoredItems() |:white_check_mark:|
+					|                            |ModifyMonitoredItems() |:white_check_mark:|
+					|                            |SetMonitoringMode()    |:white_check_mark:|
+					|                            |SetTriggering()        |:new_moon:|
+					|                            |DeleteMonitoredItems() |:white_check_mark:|
+					|Subscription Service Set    |                       ||
+					|                            |CreateSubscription()   |:white_check_mark:|
+					|                            |ModifySubscription()   |:white_check_mark:|
+					|                            |DeleteSubscriptions()  |:white_check_mark:|
+					|                            |Publish()              |:white_check_mark:|
+					|                            |Republish()            |:white_check_mark:|
+					|                            |TransferSubscriptions()|:white_check_mark:|
+					|Node Management Service Set |                       ||
+					|                            |AddNodes()             |:new_moon:|
+					|                            |AddReferences()        |:new_moon:|
+					|                            |DeleteNodes()          |:new_moon:|
+					|                            |DeleteReferences()     |:new_moon:|
+					|Query Service Set           |                       ||
+					|                            |QueryFirst()           |:new_moon:|
+				|                            |QueryNext()            |:new_moon:|</p>
+				<p>|                                        |                          |                    |
+					|----------------------------------------|:------------------------:|--------------------|
+					| <strong><strong>Transport Protocol</strong></strong>             |                          |                    |
+					| <strong>Transport</strong>                          | <strong>Status</strong>               | <strong>Comment</strong>        |
+					| UA-TCP UA-SC UA Binary                 |  :white_check_mark:      | OPC.TCP - Binary   |<br>| SOAP-HTTP WS-SC UA Binary              |  :new_moon:              | HTTP/HTTPS - Binary|<br>| SOAP-HTTP WS-SC UA XML                 |  :new_moon:              |                    |<br>| SOAP-HTTP WS-SC UA XML-UA Binary       |  :new_moon:              |                    |<br>| <strong><strong>Security Policies</strong></strong>              |                          |                    |
+					| <strong>Policy</strong>                             | <strong>Status</strong>               | <strong>Comment</strong>        |
+					| None                                   | :white_check_mark:       |                    |<br>| Basic128Rsa15                          | :white_check_mark:       |                    |<br>| Basic256                               | :white_check_mark:       |                    |<br>| Basic256Sha256                         | :white_check_mark:       |                    |<br>| <strong>Authentication</strong>                     | <strong>Status</strong>               | <strong>Comment</strong>        |
+					| Anonymous                              |:white_check_mark:        |                    |
+					| User Name Password                     |:white_check_mark:        |                    |
+					| X509 Certificate                       |:white_check_mark:        | in version 2.0.x (sponsored)  |
+					| <strong><strong>client facets</strong></strong>                  |                          |                    |
+					| Base Client Behaviour                  |:white_check_mark:       | |
+					| AddressSpace Lookup                    |:white_check_mark:       | |
+					| Attribute Read                         |:white_check_mark:       | |
+					| DataChange Subscription                |:white_check_mark:       | |
+					| DataAccess                             |:white_check_mark:       | |
+					| Discovery                              |:white_check_mark:       | |
+					| Event Subscription                     |:white_check_mark:       | |
+					| Method call                            |:white_check_mark:       | |
+					| Historical Access                      |:first_quarter_moon:     | |
+					| Advanced Type                          |:white_check_mark:       | |
+					| Programming                            |:new_moon:               | |
+					| Auditing                               |:first_quarter_moon:               | |
+					| Redundancy                             |:new_moon:               |Sponsors wanted |
+					| <strong><strong>server profiles</strong></strong>                |                         | |
+					| Core Server                            | :white_check_mark:      | |
+					| Data Access Server                     | :white_check_mark:      | |
+					| Embedded Server                        | :white_check_mark:      | |
+					| Nano Embedded Device Server            | :white_check_mark:      | |
+					| Micro Embedded Device Server           | :white_check_mark:      | |
+					| Standard DataChange Subscription Server| :white_check_mark:                         | |
+					| Standard Event Subscription Server     | :white_check_mark:                         | |
+					| Standard UA Server                     | :white_check_mark:                         | |
+					| Redundancy Transparent Server          | :new_moon:              |Sponsors wanted |
+					| Redundancy Visible Server              | :new_moon:              |Sponsors wanted |
+					| Node Management Server                 | :new_moon:              |Sponsors wanted |
+					| Auditing Server                        | :first_quarter_moon:   | |
+					| Complex Type Server                    | :first_quarter_moon:                        |Sponsors wanted |
+					| Session Diagnostics                    |  :white_check_mark:                         | (sponsored)|
+					| Subscription Diagnostics               |  :white_check_mark:                         | (sponsored)|
+					| Alarms &amp; Conditions                    |  :white_check_mark:                         | (sponsored)|
+				| Pub &amp; Sub                              |  :new_moon:                         |Sponsors wanted |</p>
+				<h2 id="road-map">Road-map</h2>
+				<p>This are the item we would like to achieve in the next version of the API.</p>
+				<ul>
+					<li>improved documentation </li>
+					<li>Compliance testing and certification (CTT) </li>
+					<li>more tutorials</li>
+				</ul>
+				<h2 id="feedback">Feedback</h2>
+				<ul>
+					<li><p>if you&#39;re using node-opcua in one of your project, please feel free to leave a comment and a quick description in the <a href="https://github.com/node-opcua/node-opcua/wiki">wiki</a></p>
+					</li>
+					<li><p>if you have a particular wish or found a issue, let us known and <a href="https://github.com/node-opcua/node-opcua/issues?state=open">create an issue</a></p>
+					</li>
+				</ul>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -75,166 +237,553 @@
 					<li class="globals  ">
 						<a href="globals.html"><em>Globals</em></a>
 					</li>
-					<li class="label tsd-is-external">
-						<span>Internals</span>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/node_opcua_assert.html">node-<wbr>opcua-<wbr>assert</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/node_opcua_nodesets.html">node-<wbr>opcua-<wbr>nodesets</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/node_opcua_service_browse.html">node-<wbr>opcua-<wbr>service-<wbr>browse</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/node_opcua_service_endpoints.html">node-<wbr>opcua-<wbr>service-<wbr>endpoints</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/node_opcua_service_node_management.html">node-<wbr>opcua-<wbr>service-<wbr>node-<wbr>management</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/node_opcua_service_read.html">node-<wbr>opcua-<wbr>service-<wbr>read</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/node_opcua_service_write.html">node-<wbr>opcua-<wbr>service-<wbr>write</a>
-					</li>
-					<li class="label tsd-is-external">
-						<span>Externals</span>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/node_opca_aggregates.html">node-<wbr>opca-<wbr>aggregates</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/node_opcua.html">node-<wbr>opcua</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/node_opcua_address_space.html">node-<wbr>opcua-<wbr>address-<wbr>space</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/node_opcua_basic_types.html">node-<wbr>opcua-<wbr>basic-<wbr>types</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/node_opcua_benchmarker.html">node-<wbr>opcua-<wbr>benchmarker</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/node_opcua_binary_stream.html">node-<wbr>opcua-<wbr>binary-<wbr>stream</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/node_opcua_buffer_utils.html">node-<wbr>opcua-<wbr>buffer-<wbr>utils</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/node_opcua_certificate_manager.html">node-<wbr>opcua-<wbr>certificate-<wbr>manager</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/node_opcua_client.html">node-<wbr>opcua-<wbr>client</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/node_opcua_client_crawler.html">node-<wbr>opcua-<wbr>client-<wbr>crawler</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/node_opcua_client_private.html">node-<wbr>opcua-<wbr>client-<wbr>private</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/node_opcua_client_proxy.html">node-<wbr>opcua-<wbr>client-<wbr>proxy</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/node_opcua_common.html">node-<wbr>opcua-<wbr>common</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/node_opcua_constants.html">node-<wbr>opcua-<wbr>constants</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/node_opcua_data_access.html">node-<wbr>opcua-<wbr>data-<wbr>access</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/node_opcua_data_model.html">node-<wbr>opcua-<wbr>data-<wbr>model</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/node_opcua_data_value.html">node-<wbr>opcua-<wbr>data-<wbr>value</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/node_opcua_date_time.html">node-<wbr>opcua-<wbr>date-<wbr>time</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/node_opcua_debug.html">node-<wbr>opcua-<wbr>debug</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/node_opcua_enum.html">node-<wbr>opcua-<wbr>enum</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/node_opcua_extension_object.html">node-<wbr>opcua-<wbr>extension-<wbr>object</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/node_opcua_factory.html">node-<wbr>opcua-<wbr>factory</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/node_opcua_file_transfer.html">node-<wbr>opcua-<wbr>file-<wbr>transfer</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/node_opcua_file_transfer_client.html">node-<wbr>opcua-<wbr>file-<wbr>transfer-<wbr>client</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/node_opcua_file_transfer_server.html">node-<wbr>opcua-<wbr>file-<wbr>transfer-<wbr>server</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/node_opcua_generator.html">node-<wbr>opcua-<wbr>generator</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/node_opcua_guid.html">node-<wbr>opcua-<wbr>guid</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/node_opcua_hostname.html">node-<wbr>opcua-<wbr>hostname</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/node_opcua_nodeid.html">node-<wbr>opcua-<wbr>nodeid</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/node_opcua_numeric_range.html">node-<wbr>opcua-<wbr>numeric-<wbr>range</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/node_opcua_object_registry.html">node-<wbr>opcua-<wbr>object-<wbr>registry</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/node_opcua_pseudo_session.html">node-<wbr>opcua-<wbr>pseudo-<wbr>session</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/node_opcua_secure_channel.html">node-<wbr>opcua-<wbr>secure-<wbr>channel</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/node_opcua_server.html">node-<wbr>opcua-<wbr>server</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/node_opcua_server_configuration.html">node-<wbr>opcua-<wbr>server-<wbr>configuration</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/node_opcua_server_configuration_clent.html">node-<wbr>opcua-<wbr>server-<wbr>configuration-<wbr>clent</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/node_opcua_server_configuration_server.html">node-<wbr>opcua-<wbr>server-<wbr>configuration-<wbr>server</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/node_opcua_service_discovery.html">node-<wbr>opcua-<wbr>service-<wbr>discovery</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/node_opcua_service_filter.html">node-<wbr>opcua-<wbr>service-<wbr>filter</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/node_opcua_service_history.html">node-<wbr>opcua-<wbr>service-<wbr>history</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/node_opcua_service_subscription.html">node-<wbr>opcua-<wbr>service-<wbr>subscription</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/node_opcua_types.html">node-<wbr>opcua-<wbr>types</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/node_opcua_variant.html">node-<wbr>opcua-<wbr>variant</a>
-					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-enum tsd-is-external">
+						<a href="enums/registerservermanagerstatus.html" class="tsd-kind-icon">Register<wbr>Server<wbr>Manager<wbr>Status</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-is-external">
+						<a href="enums/registerservermethod.html" class="tsd-kind-icon">Register<wbr>Server<wbr>Method</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-is-external">
+						<a href="enums/subscriptionstate.html" class="tsd-kind-icon">Subscription<wbr>State</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="classes/continuationpointmanager.html" class="tsd-kind-icon">Continuation<wbr>Point<wbr>Manager</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="classes/factory.html" class="tsd-kind-icon">Factory</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="classes/historyservercapabilities.html" class="tsd-kind-icon">History<wbr>Server<wbr>Capabilities</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="classes/monitoreditem.html" class="tsd-kind-icon">Monitored<wbr>Item</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="classes/opcuabaseserver.html" class="tsd-kind-icon">OPCUABase<wbr>Server</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="classes/opcuaserver.html" class="tsd-kind-icon">OPCUAServer</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="classes/opcuaserverendpoint.html" class="tsd-kind-icon">OPCUAServer<wbr>End<wbr>Point</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="classes/operationlimits.html" class="tsd-kind-icon">Operation<wbr>Limits</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="classes/registerservermanagerhidden.html" class="tsd-kind-icon">Register<wbr>Server<wbr>Manager<wbr>Hidden</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="classes/registerservermanagermdnsonly.html" class="tsd-kind-icon">Register<wbr>Server<wbr>ManagerMDNSONLY</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="classes/servercapabilities.html" class="tsd-kind-icon">Server<wbr>Capabilities</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="classes/serverengine.html" class="tsd-kind-icon">Server<wbr>Engine</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="classes/serversession.html" class="tsd-kind-icon">Server<wbr>Session</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="classes/serversidepublishengine.html" class="tsd-kind-icon">Server<wbr>Side<wbr>Publish<wbr>Engine</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="classes/serversidepublishenginefororphansubscription.html" class="tsd-kind-icon">Server<wbr>Side<wbr>Publish<wbr>Engine<wbr>For<wbr>Orphan<wbr>Subscription</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="classes/subscription.html" class="tsd-kind-icon">Subscription</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/addstandardendpointdescriptionsparam.html" class="tsd-kind-icon">Add<wbr>Standard<wbr>Endpoint<wbr>Descriptions<wbr>Param</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/basenode2.html" class="tsd-kind-icon">Base<wbr>Node2</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/continuationpointinfo.html" class="tsd-kind-icon">Continuation<wbr>Point<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external tsd-is-not-exported">
+						<a href="interfaces/endpointdescriptionex.html" class="tsd-kind-icon">Endpoint<wbr>Description<wbr>Ex</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/endpointdescriptionparams.html" class="tsd-kind-icon">Endpoint<wbr>Description<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/getmonitoreditemsresult.html" class="tsd-kind-icon">Get<wbr>Monitored<wbr>Items<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/historyservercapabilitiesoptions.html" class="tsd-kind-icon">History<wbr>Server<wbr>Capabilities<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/iregisterservermanager.html" class="tsd-kind-icon">IRegister<wbr>Server<wbr>Manager</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external tsd-is-not-exported">
+						<a href="interfaces/internalnotification.html" class="tsd-kind-icon">Internal<wbr>Notification</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external tsd-is-not-exported">
+						<a href="interfaces/makeendpointdescriptionoptions.html" class="tsd-kind-icon">Make<wbr>Endpoint<wbr>Description<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/modifysubscriptionparameters.html" class="tsd-kind-icon">Modify<wbr>Subscription<wbr>Parameters</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/monitoreditemoptions.html" class="tsd-kind-icon">Monitored<wbr>Item<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/opcuabaseserveroptions.html" class="tsd-kind-icon">OPCUABase<wbr>Server<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/opcuaserverendpointoptions.html" class="tsd-kind-icon">OPCUAServer<wbr>End<wbr>Point<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/opcuaserverendpointoptions.html" class="tsd-kind-icon">OPCUAServer<wbr>Endpoint<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/opcuaserveroptions.html" class="tsd-kind-icon">OPCUAServer<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/operationlimitsoptions.html" class="tsd-kind-icon">Operation<wbr>Limits<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external tsd-is-not-exported">
+						<a href="interfaces/publishdata.html" class="tsd-kind-icon">Publish<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/raiseeventauditactivatesessioneventdata.html" class="tsd-kind-icon">Raise<wbr>Event<wbr>Audit<wbr>Activate<wbr>Session<wbr>Event<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/raiseeventauditconditioncommenteventdata.html" class="tsd-kind-icon">Raise<wbr>Event<wbr>Audit<wbr>Condition<wbr>Comment<wbr>Event<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/raiseeventauditcreatesessioneventdata.html" class="tsd-kind-icon">Raise<wbr>Event<wbr>Audit<wbr>Create<wbr>Session<wbr>Event<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/raiseeventauditeventdata.html" class="tsd-kind-icon">Raise<wbr>Event<wbr>Audit<wbr>Event<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/raiseeventauditsessioneventdata.html" class="tsd-kind-icon">Raise<wbr>Event<wbr>Audit<wbr>Session<wbr>Event<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/raiseeventauditupdatemethodeventdata.html" class="tsd-kind-icon">Raise<wbr>Event<wbr>Audit<wbr>Update<wbr>Method<wbr>Event<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/raiseeventtransitioneventdata.html" class="tsd-kind-icon">Raise<wbr>Event<wbr>Transition<wbr>Event<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/servercapabilitiesoptions.html" class="tsd-kind-icon">Server<wbr>Capabilities<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/serverengineoptions.html" class="tsd-kind-icon">Server<wbr>Engine<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/serversidepublishengineoptions.html" class="tsd-kind-icon">Server<wbr>Side<wbr>Publish<wbr>Engine<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/subscriptiondiagnosticsdatatypepriv.html" class="tsd-kind-icon">Subscription<wbr>Diagnostics<wbr>Data<wbr>Type<wbr>Priv</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/subscriptionoptions.html" class="tsd-kind-icon">Subscription<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/usermanageroptions.html" class="tsd-kind-icon">User<wbr>Manager<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#counter" class="tsd-kind-icon">Counter</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#emptycallback" class="tsd-kind-icon">Empty<wbr>Callback</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#getuserrolefunc" class="tsd-kind-icon">Get<wbr>User<wbr>Role<wbr>Func</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#iserverpublishengine" class="tsd-kind-icon">IServer<wbr>Publish<wbr>Engine</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#notification" class="tsd-kind-icon">Notification</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#queueitem" class="tsd-kind-icon">Queue<wbr>Item</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#responsecallback" class="tsd-kind-icon">Response<wbr>Callback</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#stringgetter" class="tsd-kind-icon">String<wbr>Getter</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#timerkey" class="tsd-kind-icon">Timer<wbr>Key</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#validuserasyncfunc" class="tsd-kind-icon">Valid<wbr>User<wbr>Async<wbr>Func</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#validuserfunc" class="tsd-kind-icon">Valid<wbr>User<wbr>Func</a>
+					</li>
+					<li class=" tsd-kind-event tsd-is-external">
+						<a href="globals.html#registerservermanager" class="tsd-kind-icon">Register<wbr>Server<wbr>Manager</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#dequeue" class="tsd-kind-icon">Dequeue</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#invalid_id" class="tsd-kind-icon">INVALID_<wbr>ID</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#ns_per_sec" class="tsd-kind-icon">NS_<wbr>PER_<wbr>SEC</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#opcuaserverendpointcounter" class="tsd-kind-icon">OPCUAServer<wbr>End<wbr>Point<wbr>Counter</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#counter" class="tsd-kind-icon">counter</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#debuglog" class="tsd-kind-icon">debug<wbr>Log</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#defaultitemtomonitor" class="tsd-kind-icon">default<wbr>Item<wbr>ToMonitor</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#defaultsecuritymodes" class="tsd-kind-icon">default<wbr>Security<wbr>Modes</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#defaultsecuritypolicies" class="tsd-kind-icon">default<wbr>Security<wbr>Policies</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#defaultsessiontimeout" class="tsd-kind-icon">default<wbr>Session<wbr>Timeout</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#default_maxallowedsessionnumber" class="tsd-kind-icon">default_<wbr>max<wbr>Allowed<wbr>Session<wbr>Number</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#default_maxconnectionsperendpoint" class="tsd-kind-icon">default_<wbr>max<wbr>Connections<wbr>Per<wbr>Endpoint</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#default_transportprofileuri" class="tsd-kind-icon">default_<wbr>transport<wbr>Profile<wbr>Uri</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#dodebug" class="tsd-kind-icon">do<wbr>Debug</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#emptycertificate" class="tsd-kind-icon">empty<wbr>Certificate</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#emptyprivatekeypem" class="tsd-kind-icon">empty<wbr>Private<wbr>KeyPEM</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#errorlog" class="tsd-kind-icon">error<wbr>Log</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#g_defaultregistrationservertimeout" class="tsd-kind-icon">g_<wbr><wbr>Default<wbr>Registration<wbr>Server<wbr>Timeout</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#g_monitoreditemid" class="tsd-kind-icon">g_<wbr>monitored<wbr>Item<wbr>Id</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#maxnotificationmessagesinqueue" class="tsd-kind-icon">max<wbr>Notification<wbr>Messages<wbr>InQueue</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#maxqueuesize" class="tsd-kind-icon">max<wbr>Queue<wbr>Size</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#maxsessiontimeout" class="tsd-kind-icon">max<wbr>Session<wbr>Timeout</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#maximummaxkeepalivecount" class="tsd-kind-icon">maximum<wbr>Max<wbr>Keep<wbr>Alive<wbr>Count</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#minsessiontimeout" class="tsd-kind-icon">min<wbr>Session<wbr>Timeout</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#minimummaxkeepalivecount" class="tsd-kind-icon">minimum<wbr>Max<wbr>Keep<wbr>Alive<wbr>Count</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#next_subscriptionid" class="tsd-kind-icon">next_<wbr>subscription<wbr>Id</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#package_info" class="tsd-kind-icon">package_<wbr>info</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#registerednodenamespace" class="tsd-kind-icon">registered<wbr>Node<wbr>Name<wbr>Space</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#thewatchdog" class="tsd-kind-icon">the<wbr>Watch<wbr>Dog</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#thenify" class="tsd-kind-icon">thenify</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#timers" class="tsd-kind-icon">timers</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#usecommontimer" class="tsd-kind-icon">use<wbr>Common<wbr>Timer</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#warninglog" class="tsd-kind-icon">warning<wbr>Log</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#__bindvariable" class="tsd-kind-icon">__bind<wbr>Variable</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#__validatedatachangefilter" class="tsd-kind-icon">__validate<wbr>Data<wbr>Change<wbr>Filter</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#_adjust_lifetimecount" class="tsd-kind-icon">_adjust_<wbr>life<wbr>Time<wbr>Count</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#_adjust_maxkeepalivecount" class="tsd-kind-icon">_adjust_<wbr>max<wbr>Keep<wbr>Alive<wbr>Count</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#_adjust_maxnotificationsperpublish" class="tsd-kind-icon">_adjust_<wbr>max<wbr>Notifications<wbr>Per<wbr>Publish</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#_adjust_publishinenable" class="tsd-kind-icon">_adjust_<wbr>publishin<wbr>Enable</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#_adjust_publishing_interval" class="tsd-kind-icon">_adjust_<wbr>publishing_<wbr>interval</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#_adjust_queue_size" class="tsd-kind-icon">_adjust_<wbr>queue_<wbr>size</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#_adjust_sampling_interval" class="tsd-kind-icon">_adjust_<wbr>sampling_<wbr>interval</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#_adjust_session_timeout" class="tsd-kind-icon">_adjust_<wbr>session_<wbr>timeout</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#_assertvalidpublishdata" class="tsd-kind-icon">_assert<wbr>Valid<wbr>Publish<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#_assert_valid_publish_engine" class="tsd-kind-icon">_assert_<wbr>valid_<wbr>publish_<wbr>engine</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#_attempt_to_close_some_old_unactivated_session" class="tsd-kind-icon">_attempt_<wbr>to_<wbr>close_<wbr>some_<wbr>old_<wbr>unactivated_<wbr>session</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#_get_next_subscriptionid" class="tsd-kind-icon">_get_<wbr>next_<wbr>subscription<wbr>Id</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#_installregisterservermanager" class="tsd-kind-icon">_install<wbr>Register<wbr>Server<wbr>Manager</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-private tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#_makeendpointdescription" class="tsd-kind-icon">_make<wbr>Endpoint<wbr>Description</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#_process_filter" class="tsd-kind-icon">_process_<wbr>filter</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#_registerserver" class="tsd-kind-icon">_register<wbr>Server</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#_serverendpointsforcreatesessionresponse" class="tsd-kind-icon">_server<wbr>Endpoints<wbr>For<wbr>Create<wbr>Session<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#_validate_parameters" class="tsd-kind-icon">_validate_<wbr>parameters</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#adddate" class="tsd-kind-icon">add<wbr>Date</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#add_all_in" class="tsd-kind-icon">add_<wbr>all_<wbr>in</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#adjustsecuritypolicy" class="tsd-kind-icon">adjust<wbr>Security<wbr>Policy</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#analyseaggregatefilterresult" class="tsd-kind-icon">analyse<wbr>Aggregate<wbr>Filter<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#analysedatachangefilterresult" class="tsd-kind-icon">analyse<wbr>Data<wbr>Change<wbr>Filter<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#analyseeventfilterresult" class="tsd-kind-icon">analyse<wbr>Event<wbr>Filter<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#appendtotimer" class="tsd-kind-icon">append<wbr>ToTimer</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#apply_datachange_filter" class="tsd-kind-icon">apply_<wbr>datachange_<wbr>filter</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#apply_filter" class="tsd-kind-icon">apply_<wbr>filter</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#assert_validnotificationdata" class="tsd-kind-icon">assert_<wbr>valid<wbr>Notification<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#build_scanning_node_function" class="tsd-kind-icon">build_<wbr>scanning_<wbr>node_<wbr>function</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#channel_has_session" class="tsd-kind-icon">channel_<wbr>has_<wbr>session</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#cleanupendpoint" class="tsd-kind-icon">cleanup<wbr>Endpoint</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#comparesessionid" class="tsd-kind-icon">compare<wbr>Session<wbr>Id</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#compare_subscriptions" class="tsd-kind-icon">compare_<wbr>subscriptions</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#constructfilename" class="tsd-kind-icon">construct<wbr>Filename</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#constructregisterserver2request" class="tsd-kind-icon">construct<wbr>Register<wbr>Server2<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#constructregisterserverrequest" class="tsd-kind-icon">construct<wbr>Register<wbr>Server<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#createanonymousidentitytoken" class="tsd-kind-icon">create<wbr>Anonymous<wbr>Identity<wbr>Token</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-private tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#createsubscriptiondiagnostics" class="tsd-kind-icon">create<wbr>Subscription<wbr>Diagnostics</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#dummy_function" class="tsd-kind-icon">dummy_<wbr>function</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#dumpchannelinfo" class="tsd-kind-icon">dump<wbr>Channel<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#emptycallback" class="tsd-kind-icon">empty<wbr>Callback</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-private tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#extract_notifications_chunk" class="tsd-kind-icon">extract_<wbr>notifications_<wbr>chunk</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#filter_instanceof" class="tsd-kind-icon">filter_<wbr>instanceof</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#findsecureendpoint" class="tsd-kind-icon">find<wbr>Secure<wbr>Endpoint</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#findusertokenbypolicy" class="tsd-kind-icon">find<wbr>User<wbr>Token<wbr>ByPolicy</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#findusertokenpolicy" class="tsd-kind-icon">find<wbr>User<wbr>Token<wbr>Policy</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#g_senderror" class="tsd-kind-icon">g_<wbr>send<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#getmonitoreditemsid" class="tsd-kind-icon">get<wbr>Monitored<wbr>Items<wbr>Id</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#getnextmonitoreditemid" class="tsd-kind-icon">get<wbr>Next<wbr>Monitored<wbr>Item<wbr>Id</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#getrequiredendpointinfo" class="tsd-kind-icon">get<wbr>Required<wbr>Endpoint<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#getsequencenumbers" class="tsd-kind-icon">get<wbr>Sequence<wbr>Numbers</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#isgoodish" class="tsd-kind-icon">is<wbr>Goodish</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#ismonitoringmodevalid" class="tsd-kind-icon">is<wbr>Monitoring<wbr>Mode<wbr>Valid</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#makeservicefault" class="tsd-kind-icon">make<wbr>Service<wbr>Fault</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#make_key" class="tsd-kind-icon">make_<wbr>key</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#matching_endpoint" class="tsd-kind-icon">matching_<wbr>endpoint</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#monitoreditem_read_and_record_value" class="tsd-kind-icon">monitored<wbr>Item_<wbr>read_<wbr>and_<wbr>record_<wbr>value</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#monitoreditem_read_and_record_value_async" class="tsd-kind-icon">monitored<wbr>Item_<wbr>read_<wbr>and_<wbr>record_<wbr>value_<wbr>async</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#movesessiontochannel" class="tsd-kind-icon">move<wbr>Session<wbr>ToChannel</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#on_channel_abort" class="tsd-kind-icon">on_<wbr>channel_<wbr>abort</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#preparemonitoreditem" class="tsd-kind-icon">prepare<wbr>Monitored<wbr>Item</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#prepare_timeout_info" class="tsd-kind-icon">prepare_<wbr>timeout_<wbr>info</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#removefromtimer" class="tsd-kind-icon">remove<wbr>From<wbr>Timer</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#sameidentitytoken" class="tsd-kind-icon">same<wbr>Identity<wbr>Token</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#samplemonitoreditem" class="tsd-kind-icon">sample<wbr>Monitored<wbr>Item</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#securitypolicylevel" class="tsd-kind-icon">security<wbr>Policy<wbr>Level</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#sendregisterserverrequest" class="tsd-kind-icon">send<wbr>Register<wbr>Server<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#setsemanticchangebit" class="tsd-kind-icon">set<wbr>Semantic<wbr>Change<wbr>Bit</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#shutdownanddisposeaddressspace" class="tsd-kind-icon">shutdown<wbr>And<wbr>Dispose<wbr>Address<wbr>Space</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#sortendpointbysecuritylevel" class="tsd-kind-icon">sort<wbr>Endpoint<wbr>BySecurity<wbr>Level</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#statuscodehaschanged" class="tsd-kind-icon">status<wbr>Code<wbr>Has<wbr>Changed</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#t" class="tsd-kind-icon">t</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#thumbprint" class="tsd-kind-icon">thumbprint</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#timeout_filter" class="tsd-kind-icon">timeout_<wbr>filter</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#timestamphaschanged" class="tsd-kind-icon">timestamp<wbr>Has<wbr>Changed</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#tracelog" class="tsd-kind-icon">trace<wbr>Log</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#validatefilter" class="tsd-kind-icon">validate<wbr>Filter</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#valuehaschanged" class="tsd-kind-icon">value<wbr>Has<wbr>Changed</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#w" class="tsd-kind-icon">w</a>
+					</li>
+					<li class=" tsd-kind-object-literal tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#default_build_info" class="tsd-kind-icon">default_<wbr>build_<wbr>info</a>
+					</li>
+					<li class=" tsd-kind-object-literal tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#default_server_info" class="tsd-kind-icon">default_<wbr>server_<wbr>info</a>
+					</li>
+					<li class=" tsd-kind-object-literal tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#infinite_connectivity_strategy" class="tsd-kind-icon">infinite_<wbr>connectivity_<wbr>strategy</a>
+					</li>
+					<li class=" tsd-kind-object-literal tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#no_reconnect_connectivity_strategy" class="tsd-kind-icon">no_<wbr>reconnect_<wbr>connectivity_<wbr>strategy</a>
+					</li>
+					<li class=" tsd-kind-object-literal tsd-is-external tsd-is-not-exported">
+						<a href="globals.html#opts" class="tsd-kind-icon">opts</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
