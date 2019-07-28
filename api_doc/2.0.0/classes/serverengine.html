@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ServerEngine | node-opcua-server</title>
+	<title>ServerEngine | node-opcua-client</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">node-opcua-server</a>
+					<a href="../index.html" class="title">node-opcua-client</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -38,10 +38,6 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-							<input type="checkbox" id="tsd-filter-externals" checked />
-							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
-							<input type="checkbox" id="tsd-filter-only-exported" />
-							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -83,124 +79,110 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section tsd-is-external">
+						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="serverengine.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section tsd-is-external">
+						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external"><a href="serverengine.html#_applicationuri" class="tsd-kind-icon">_application<wbr>Uri</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external"><a href="serverengine.html#_closedsessions" class="tsd-kind-icon">_closed<wbr>Sessions</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external"><a href="serverengine.html#_orphanpublishengine" class="tsd-kind-icon">_orphan<wbr>Publish<wbr>Engine</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#_rejectedsessioncount" class="tsd-kind-icon">_rejected<wbr>Session<wbr>Count</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external"><a href="serverengine.html#_sessions" class="tsd-kind-icon">_sessions</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external"><a href="serverengine.html#_shutdowntask" class="tsd-kind-icon">_shutdown<wbr>Task</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#addressspace" class="tsd-kind-icon">address<wbr>Space</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#clientdescription" class="tsd-kind-icon">client<wbr>Description</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#historyservercapabilities" class="tsd-kind-icon">history<wbr>Server<wbr>Capabilities</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#isauditing" class="tsd-kind-icon">is<wbr>Auditing</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#servercapabilities" class="tsd-kind-icon">server<wbr>Capabilities</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#serverdiagnosticsenabled" class="tsd-kind-icon">server<wbr>Diagnostics<wbr>Enabled</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#serverdiagnosticssummary" class="tsd-kind-icon">server<wbr>Diagnostics<wbr>Summary</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#serverstatus" class="tsd-kind-icon">server<wbr>Status</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external"><a href="serverengine.html#status" class="tsd-kind-icon">status</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external"><a href="serverengine.html#defaultmaxlisteners" class="tsd-kind-icon">default<wbr>Max<wbr>Listeners</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="serverengine.html#registry" class="tsd-kind-icon">registry</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="serverengine.html#_rejectedsessioncount" class="tsd-kind-icon">_rejected<wbr>Session<wbr>Count</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="serverengine.html#addressspace" class="tsd-kind-icon">address<wbr>Space</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="serverengine.html#clientdescription" class="tsd-kind-icon">client<wbr>Description</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="serverengine.html#historyservercapabilities" class="tsd-kind-icon">history<wbr>Server<wbr>Capabilities</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="serverengine.html#isauditing" class="tsd-kind-icon">is<wbr>Auditing</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="serverengine.html#servercapabilities" class="tsd-kind-icon">server<wbr>Capabilities</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="serverengine.html#serverdiagnosticsenabled" class="tsd-kind-icon">server<wbr>Diagnostics<wbr>Enabled</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="serverengine.html#serverdiagnosticssummary" class="tsd-kind-icon">server<wbr>Diagnostics<wbr>Summary</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="serverengine.html#serverstatus" class="tsd-kind-icon">server<wbr>Status</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="serverengine.html#defaultmaxlisteners" class="tsd-kind-icon">default<wbr>Max<wbr>Listeners</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="serverengine.html#registry" class="tsd-kind-icon">registry</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section tsd-is-external">
+						<section class="tsd-index-section ">
 							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#buildinfo" class="tsd-kind-icon">build<wbr>Info</a></li>
-								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#cumulatedsessioncount" class="tsd-kind-icon">cumulated<wbr>Session<wbr>Count</a></li>
-								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#cumulatedsubscriptioncount" class="tsd-kind-icon">cumulated<wbr>Subscription<wbr>Count</a></li>
-								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#currentsessioncount" class="tsd-kind-icon">current<wbr>Session<wbr>Count</a></li>
-								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#currentsubscriptioncount" class="tsd-kind-icon">current<wbr>Subscription<wbr>Count</a></li>
-								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#currenttime" class="tsd-kind-icon">current<wbr>Time</a></li>
-								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#publishingintervalcount" class="tsd-kind-icon">publishing<wbr>Interval<wbr>Count</a></li>
-								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#rejectedrequestscount" class="tsd-kind-icon">rejected<wbr>Requests<wbr>Count</a></li>
-								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#rejectedsessioncount" class="tsd-kind-icon">rejected<wbr>Session<wbr>Count</a></li>
-								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#servername" class="tsd-kind-icon">server<wbr>Name</a></li>
-								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#servernameurn" class="tsd-kind-icon">server<wbr>Name<wbr>Urn</a></li>
-								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#servernamespaceurn" class="tsd-kind-icon">server<wbr>Namespace<wbr>Urn</a></li>
-								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#sessionabortcount" class="tsd-kind-icon">session<wbr>Abort<wbr>Count</a></li>
-								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#sessiontimeoutcount" class="tsd-kind-icon">session<wbr>Timeout<wbr>Count</a></li>
-								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#starttime" class="tsd-kind-icon">start<wbr>Time</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="serverengine.html#buildinfo" class="tsd-kind-icon">build<wbr>Info</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="serverengine.html#cumulatedsessioncount" class="tsd-kind-icon">cumulated<wbr>Session<wbr>Count</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="serverengine.html#cumulatedsubscriptioncount" class="tsd-kind-icon">cumulated<wbr>Subscription<wbr>Count</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="serverengine.html#currentsessioncount" class="tsd-kind-icon">current<wbr>Session<wbr>Count</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="serverengine.html#currentsubscriptioncount" class="tsd-kind-icon">current<wbr>Subscription<wbr>Count</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="serverengine.html#currenttime" class="tsd-kind-icon">current<wbr>Time</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="serverengine.html#publishingintervalcount" class="tsd-kind-icon">publishing<wbr>Interval<wbr>Count</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="serverengine.html#rejectedrequestscount" class="tsd-kind-icon">rejected<wbr>Requests<wbr>Count</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="serverengine.html#rejectedsessioncount" class="tsd-kind-icon">rejected<wbr>Session<wbr>Count</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="serverengine.html#servername" class="tsd-kind-icon">server<wbr>Name</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="serverengine.html#servernameurn" class="tsd-kind-icon">server<wbr>Name<wbr>Urn</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="serverengine.html#servernamespaceurn" class="tsd-kind-icon">server<wbr>Namespace<wbr>Urn</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="serverengine.html#sessionabortcount" class="tsd-kind-icon">session<wbr>Abort<wbr>Count</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="serverengine.html#sessiontimeoutcount" class="tsd-kind-icon">session<wbr>Timeout<wbr>Count</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="serverengine.html#starttime" class="tsd-kind-icon">start<wbr>Time</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section tsd-is-external">
+						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-external"><a href="serverengine.html#__findobject" class="tsd-kind-icon">__find<wbr>Object</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-external"><a href="serverengine.html#__internal_bindmethod" class="tsd-kind-icon">__internal_<wbr>bind<wbr>Method</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-external"><a href="serverengine.html#_createsubscriptiononsession" class="tsd-kind-icon">_create<wbr>Subscription<wbr>OnSession</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-external"><a href="serverengine.html#_exposesubscriptiondiagnostics" class="tsd-kind-icon">_expose<wbr>Subscription<wbr>Diagnostics</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-external"><a href="serverengine.html#_getserversubscriptiondiagnosticsarray" class="tsd-kind-icon">_get<wbr>Server<wbr>Subscription<wbr>Diagnostics<wbr>Array</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-external"><a href="serverengine.html#_historyreadsinglenode" class="tsd-kind-icon">_history<wbr>Read<wbr>Single<wbr>Node</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-external"><a href="serverengine.html#_readsinglenode" class="tsd-kind-icon">_read<wbr>Single<wbr>Node</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-external"><a href="serverengine.html#_unexposesubscriptiondiagnostics" class="tsd-kind-icon">_unexpose<wbr>Subscription<wbr>Diagnostics</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external"><a href="serverengine.html#addlistener" class="tsd-kind-icon">add<wbr>Listener</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#browse" class="tsd-kind-icon">browse</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#browsepath" class="tsd-kind-icon">browse<wbr>Path</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#browsesinglenode" class="tsd-kind-icon">browse<wbr>Single<wbr>Node</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#closesession" class="tsd-kind-icon">close<wbr>Session</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#createsession" class="tsd-kind-icon">create<wbr>Session</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#deleteorphansubscription" class="tsd-kind-icon">delete<wbr>Orphan<wbr>Subscription</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#dispose" class="tsd-kind-icon">dispose</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external"><a href="serverengine.html#emit" class="tsd-kind-icon">emit</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external"><a href="serverengine.html#eventnames" class="tsd-kind-icon">event<wbr>Names</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#findorphansubscription" class="tsd-kind-icon">find<wbr>Orphan<wbr>Subscription</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#findsubscription" class="tsd-kind-icon">find<wbr>Subscription</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external"><a href="serverengine.html#getmaxlisteners" class="tsd-kind-icon">get<wbr>Max<wbr>Listeners</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#getoldestunactivatedsession" class="tsd-kind-icon">get<wbr>Oldest<wbr>Unactivated<wbr>Session</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#getserverdiagnosticsenabledflag" class="tsd-kind-icon">get<wbr>Server<wbr>Diagnostics<wbr>Enabled<wbr>Flag</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#getsession" class="tsd-kind-icon">get<wbr>Session</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#historyread" class="tsd-kind-icon">history<wbr>Read</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#historyreadsinglenode" class="tsd-kind-icon">history<wbr>Read<wbr>Single<wbr>Node</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#initialize" class="tsd-kind-icon">initialize</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external"><a href="serverengine.html#listenercount" class="tsd-kind-icon">listener<wbr>Count</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external"><a href="serverengine.html#listeners" class="tsd-kind-icon">listeners</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external"><a href="serverengine.html#off" class="tsd-kind-icon">off</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external"><a href="serverengine.html#on" class="tsd-kind-icon">on</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external"><a href="serverengine.html#once" class="tsd-kind-icon">once</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external"><a href="serverengine.html#prependlistener" class="tsd-kind-icon">prepend<wbr>Listener</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external"><a href="serverengine.html#prependoncelistener" class="tsd-kind-icon">prepend<wbr>Once<wbr>Listener</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external"><a href="serverengine.html#rawlisteners" class="tsd-kind-icon">raw<wbr>Listeners</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#read" class="tsd-kind-icon">read</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#readsinglenode" class="tsd-kind-icon">read<wbr>Single<wbr>Node</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#refreshvalues" class="tsd-kind-icon">refresh<wbr>Values</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#registershutdowntask" class="tsd-kind-icon">register<wbr>Shutdown<wbr>Task</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external"><a href="serverengine.html#removealllisteners" class="tsd-kind-icon">remove<wbr>All<wbr>Listeners</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external"><a href="serverengine.html#removelistener" class="tsd-kind-icon">remove<wbr>Listener</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#secondstillshutdown" class="tsd-kind-icon">seconds<wbr>Till<wbr>Shutdown</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external"><a href="serverengine.html#setmaxlisteners" class="tsd-kind-icon">set<wbr>Max<wbr>Listeners</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#setserverstate" class="tsd-kind-icon">set<wbr>Server<wbr>State</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#shutdown" class="tsd-kind-icon">shutdown</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#transfersubscription" class="tsd-kind-icon">transfer<wbr>Subscription</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#write" class="tsd-kind-icon">write</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="serverengine.html#writesinglenode" class="tsd-kind-icon">write<wbr>Single<wbr>Node</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external"><a href="serverengine.html#listenercount-1" class="tsd-kind-icon">listener<wbr>Count</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="serverengine.html#addlistener" class="tsd-kind-icon">add<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="serverengine.html#browse" class="tsd-kind-icon">browse</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="serverengine.html#browsepath" class="tsd-kind-icon">browse<wbr>Path</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="serverengine.html#browsesinglenode" class="tsd-kind-icon">browse<wbr>Single<wbr>Node</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="serverengine.html#closesession" class="tsd-kind-icon">close<wbr>Session</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="serverengine.html#createsession" class="tsd-kind-icon">create<wbr>Session</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="serverengine.html#deleteorphansubscription" class="tsd-kind-icon">delete<wbr>Orphan<wbr>Subscription</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="serverengine.html#dispose" class="tsd-kind-icon">dispose</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="serverengine.html#emit" class="tsd-kind-icon">emit</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="serverengine.html#eventnames" class="tsd-kind-icon">event<wbr>Names</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="serverengine.html#findorphansubscription" class="tsd-kind-icon">find<wbr>Orphan<wbr>Subscription</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="serverengine.html#findsubscription" class="tsd-kind-icon">find<wbr>Subscription</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="serverengine.html#getmaxlisteners" class="tsd-kind-icon">get<wbr>Max<wbr>Listeners</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="serverengine.html#getoldestunactivatedsession" class="tsd-kind-icon">get<wbr>Oldest<wbr>Unactivated<wbr>Session</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="serverengine.html#getserverdiagnosticsenabledflag" class="tsd-kind-icon">get<wbr>Server<wbr>Diagnostics<wbr>Enabled<wbr>Flag</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="serverengine.html#getsession" class="tsd-kind-icon">get<wbr>Session</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="serverengine.html#historyread" class="tsd-kind-icon">history<wbr>Read</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="serverengine.html#historyreadsinglenode" class="tsd-kind-icon">history<wbr>Read<wbr>Single<wbr>Node</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="serverengine.html#initialize" class="tsd-kind-icon">initialize</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="serverengine.html#listenercount" class="tsd-kind-icon">listener<wbr>Count</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="serverengine.html#listeners" class="tsd-kind-icon">listeners</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="serverengine.html#off" class="tsd-kind-icon">off</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="serverengine.html#on" class="tsd-kind-icon">on</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="serverengine.html#once" class="tsd-kind-icon">once</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="serverengine.html#prependlistener" class="tsd-kind-icon">prepend<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="serverengine.html#prependoncelistener" class="tsd-kind-icon">prepend<wbr>Once<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="serverengine.html#rawlisteners" class="tsd-kind-icon">raw<wbr>Listeners</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="serverengine.html#read" class="tsd-kind-icon">read</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="serverengine.html#readsinglenode" class="tsd-kind-icon">read<wbr>Single<wbr>Node</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="serverengine.html#refreshvalues" class="tsd-kind-icon">refresh<wbr>Values</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="serverengine.html#registershutdowntask" class="tsd-kind-icon">register<wbr>Shutdown<wbr>Task</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="serverengine.html#removealllisteners" class="tsd-kind-icon">remove<wbr>All<wbr>Listeners</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="serverengine.html#removelistener" class="tsd-kind-icon">remove<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="serverengine.html#secondstillshutdown" class="tsd-kind-icon">seconds<wbr>Till<wbr>Shutdown</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="serverengine.html#setmaxlisteners" class="tsd-kind-icon">set<wbr>Max<wbr>Listeners</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="serverengine.html#setserverstate" class="tsd-kind-icon">set<wbr>Server<wbr>State</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="serverengine.html#shutdown" class="tsd-kind-icon">shutdown</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="serverengine.html#transfersubscription" class="tsd-kind-icon">transfer<wbr>Subscription</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="serverengine.html#write" class="tsd-kind-icon">write</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="serverengine.html#writesinglenode" class="tsd-kind-icon">write<wbr>Single<wbr>Node</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="serverengine.html#listenercount-1" class="tsd-kind-icon">listener<wbr>Count</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-external">
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">new <wbr>Server<wbr>Engine<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><a href="../interfaces/serverengineoptions.html" class="tsd-signature-type">ServerEngineOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="serverengine.html" class="tsd-signature-type">ServerEngine</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L216">server_engine.ts:216</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L218">node-opcua-server/source/server_engine.ts:218</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -214,226 +196,150 @@
 					</ul>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-external">
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external">
-					<a name="_applicationuri" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _application<wbr>Uri</h3>
-					<div class="tsd-signature tsd-kind-icon">_application<wbr>Uri<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L216">server_engine.ts:216</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external">
-					<a name="_closedsessions" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _closed<wbr>Sessions</h3>
-					<div class="tsd-signature tsd-kind-icon">_closed<wbr>Sessions<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L212">server_engine.ts:212</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter-index-signature">
-								<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><a href="serversession.html" class="tsd-signature-type">ServerSession</a></h5>
-							</li>
-						</ul>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external">
-					<a name="_orphanpublishengine" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> <span class="tsd-flag ts-flagOptional">Optional</span> _orphan<wbr>Publish<wbr>Engine</h3>
-					<div class="tsd-signature tsd-kind-icon">_orphan<wbr>Publish<wbr>Engine<span class="tsd-signature-symbol">:</span> <a href="serversidepublishenginefororphansubscription.html" class="tsd-signature-type">ServerSidePublishEngineForOrphanSubscription</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L213">server_engine.ts:213</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="_rejectedsessioncount" class="tsd-anchor"></a>
 					<h3>_rejected<wbr>Session<wbr>Count</h3>
 					<div class="tsd-signature tsd-kind-icon">_rejected<wbr>Session<wbr>Count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;0</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L209">server_engine.ts:209</a></li>
+							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L211">node-opcua-server/source/server_engine.ts:211</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external">
-					<a name="_sessions" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _sessions</h3>
-					<div class="tsd-signature tsd-kind-icon">_sessions<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L211">server_engine.ts:211</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter-index-signature">
-								<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><a href="serversession.html" class="tsd-signature-type">ServerSession</a></h5>
-							</li>
-						</ul>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external">
-					<a name="_shutdowntask" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _shutdown<wbr>Task</h3>
-					<div class="tsd-signature tsd-kind-icon">_shutdown<wbr>Task<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L215">server_engine.ts:215</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="addressspace" class="tsd-anchor"></a>
 					<h3>address<wbr>Space</h3>
 					<div class="tsd-signature tsd-kind-icon">address<wbr>Space<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">AddressSpace</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L206">server_engine.ts:206</a></li>
+							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L208">node-opcua-server/source/server_engine.ts:208</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="clientdescription" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> client<wbr>Description</h3>
 					<div class="tsd-signature tsd-kind-icon">client<wbr>Description<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ApplicationDescription</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L204">server_engine.ts:204</a></li>
+							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L206">node-opcua-server/source/server_engine.ts:206</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="historyservercapabilities" class="tsd-anchor"></a>
 					<h3>history<wbr>Server<wbr>Capabilities</h3>
-					<div class="tsd-signature tsd-kind-icon">history<wbr>Server<wbr>Capabilities<span class="tsd-signature-symbol">:</span> <a href="historyservercapabilities.html" class="tsd-signature-type">HistoryServerCapabilities</a></div>
+					<div class="tsd-signature tsd-kind-icon">history<wbr>Server<wbr>Capabilities<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">HistoryServerCapabilities</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L203">server_engine.ts:203</a></li>
+							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L205">node-opcua-server/source/server_engine.ts:205</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="isauditing" class="tsd-anchor"></a>
 					<h3>is<wbr>Auditing</h3>
 					<div class="tsd-signature tsd-kind-icon">is<wbr>Auditing<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L199">server_engine.ts:199</a></li>
+							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L201">node-opcua-server/source/server_engine.ts:201</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="servercapabilities" class="tsd-anchor"></a>
 					<h3>server<wbr>Capabilities</h3>
 					<div class="tsd-signature tsd-kind-icon">server<wbr>Capabilities<span class="tsd-signature-symbol">:</span> <a href="servercapabilities.html" class="tsd-signature-type">ServerCapabilities</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L202">server_engine.ts:202</a></li>
+							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L204">node-opcua-server/source/server_engine.ts:204</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="serverdiagnosticsenabled" class="tsd-anchor"></a>
 					<h3>server<wbr>Diagnostics<wbr>Enabled</h3>
 					<div class="tsd-signature tsd-kind-icon">server<wbr>Diagnostics<wbr>Enabled<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L201">server_engine.ts:201</a></li>
+							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L203">node-opcua-server/source/server_engine.ts:203</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="serverdiagnosticssummary" class="tsd-anchor"></a>
 					<h3>server<wbr>Diagnostics<wbr>Summary</h3>
 					<div class="tsd-signature tsd-kind-icon">server<wbr>Diagnostics<wbr>Summary<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ServerDiagnosticsSummaryDataType</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L200">server_engine.ts:200</a></li>
+							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L202">node-opcua-server/source/server_engine.ts:202</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="serverstatus" class="tsd-anchor"></a>
 					<h3>server<wbr>Status</h3>
 					<div class="tsd-signature tsd-kind-icon">server<wbr>Status<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ServerStatusDataType</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L207">server_engine.ts:207</a></li>
+							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L209">node-opcua-server/source/server_engine.ts:209</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external">
-					<a name="status" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> status</h3>
-					<div class="tsd-signature tsd-kind-icon">status<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L214">server_engine.ts:214</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
 					<a name="defaultmaxlisteners" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> default<wbr>Max<wbr>Listeners</h3>
 					<div class="tsd-signature tsd-kind-icon">default<wbr>Max<wbr>Listeners<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<p>Inherited from EventEmitter.defaultMaxListeners</p>
 						<ul>
-							<li>Defined in C:/sterfive/NodeOPCUA/node-opcua/node_modules/@types/node/events.d.ts:9</li>
+							<li>Defined in /home/etienne/projects/node-opcua/node_modules/@types/node/events.d.ts:9</li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
 					<a name="registry" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> registry</h3>
 					<div class="tsd-signature tsd-kind-icon">registry<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ObjectRegistry</span><span class="tsd-signature-symbol"> =&nbsp;new ObjectRegistry()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L197">server_engine.ts:197</a></li>
+							<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L199">node-opcua-server/source/server_engine.ts:199</a></li>
 						</ul>
 					</aside>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-external">
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Accessors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="buildinfo" class="tsd-anchor"></a>
 					<h3>build<wbr>Info</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> buildInfo<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">BuildInfo</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L343">server_engine.ts:343</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L345">node-opcua-server/source/server_engine.ts:345</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">BuildInfo</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="cumulatedsessioncount" class="tsd-anchor"></a>
 					<h3>cumulated<wbr>Session<wbr>Count</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> cumulatedSessionCount<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L410">server_engine.ts:410</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L412">node-opcua-server/source/server_engine.ts:412</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -445,17 +351,17 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="cumulatedsubscriptioncount" class="tsd-anchor"></a>
 					<h3>cumulated<wbr>Subscription<wbr>Count</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> cumulatedSubscriptionCount<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L424">server_engine.ts:424</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L426">node-opcua-server/source/server_engine.ts:426</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -467,17 +373,17 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="currentsessioncount" class="tsd-anchor"></a>
 					<h3>current<wbr>Session<wbr>Count</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> currentSessionCount<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L403">server_engine.ts:403</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L405">node-opcua-server/source/server_engine.ts:405</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -489,17 +395,17 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="currentsubscriptioncount" class="tsd-anchor"></a>
 					<h3>current<wbr>Subscription<wbr>Count</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> currentSubscriptionCount<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L417">server_engine.ts:417</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L419">node-opcua-server/source/server_engine.ts:419</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -511,85 +417,85 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="currenttime" class="tsd-anchor"></a>
 					<h3>current<wbr>Time</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> currentTime<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Date</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L339">server_engine.ts:339</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L341">node-opcua-server/source/server_engine.ts:341</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="publishingintervalcount" class="tsd-anchor"></a>
 					<h3>publishing<wbr>Interval<wbr>Count</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> publishingIntervalCount<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L444">server_engine.ts:444</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L446">node-opcua-server/source/server_engine.ts:446</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="rejectedrequestscount" class="tsd-anchor"></a>
 					<h3>rejected<wbr>Requests<wbr>Count</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> rejectedRequestsCount<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L432">server_engine.ts:432</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L434">node-opcua-server/source/server_engine.ts:434</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="rejectedsessioncount" class="tsd-anchor"></a>
 					<h3>rejected<wbr>Session<wbr>Count</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> rejectedSessionCount<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L428">server_engine.ts:428</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L430">node-opcua-server/source/server_engine.ts:430</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="servername" class="tsd-anchor"></a>
 					<h3>server<wbr>Name</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> serverName<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L461">server_engine.ts:461</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L463">node-opcua-server/source/server_engine.ts:463</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -601,17 +507,17 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="servernameurn" class="tsd-anchor"></a>
 					<h3>server<wbr>Name<wbr>Urn</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> serverNameUrn<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L468">server_engine.ts:468</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L470">node-opcua-server/source/server_engine.ts:470</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -623,17 +529,17 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="servernamespaceurn" class="tsd-anchor"></a>
 					<h3>server<wbr>Namespace<wbr>Urn</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> serverNamespaceUrn<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L475">server_engine.ts:475</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L477">node-opcua-server/source/server_engine.ts:477</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -645,51 +551,51 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="sessionabortcount" class="tsd-anchor"></a>
 					<h3>session<wbr>Abort<wbr>Count</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> sessionAbortCount<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L436">server_engine.ts:436</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L438">node-opcua-server/source/server_engine.ts:438</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="sessiontimeoutcount" class="tsd-anchor"></a>
 					<h3>session<wbr>Timeout<wbr>Count</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> sessionTimeoutCount<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L440">server_engine.ts:440</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L442">node-opcua-server/source/server_engine.ts:442</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="starttime" class="tsd-anchor"></a>
 					<h3>start<wbr>Time</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> startTime<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Date</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L335">server_engine.ts:335</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L337">node-opcua-server/source/server_engine.ts:337</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4>
@@ -697,222 +603,12 @@
 					</ul>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-external">
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-external">
-					<a name="__findobject" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> __find<wbr>Object</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">__find<wbr>Object<span class="tsd-signature-symbol">(</span>nodeId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">NodeIdLike</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">BaseNode</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L1733">server_engine.ts:1733</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>nodeId: <span class="tsd-signature-type">NodeIdLike</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">BaseNode</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-external">
-					<a name="__internal_bindmethod" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> __internal_<wbr>bind<wbr>Method</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">__internal_<wbr>bind<wbr>Method<span class="tsd-signature-symbol">(</span>nodeId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">NodeId</span>, func<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MethodFunctor</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L1865">server_engine.ts:1865</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>nodeId: <span class="tsd-signature-type">NodeId</span></h5>
-								</li>
-								<li>
-									<h5>func: <span class="tsd-signature-type">MethodFunctor</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-external">
-					<a name="_createsubscriptiononsession" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _create<wbr>Subscription<wbr>OnSession</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">_create<wbr>Subscription<wbr>OnSession<span class="tsd-signature-symbol">(</span>session<span class="tsd-signature-symbol">: </span><a href="serversession.html" class="tsd-signature-type">ServerSession</a>, request<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CreateSubscriptionRequestLike</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="subscription.html" class="tsd-signature-type">Subscription</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L1694">server_engine.ts:1694</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>create a new subscription</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>session: <a href="serversession.html" class="tsd-signature-type">ServerSession</a></h5>
-								</li>
-								<li>
-									<h5>request: <span class="tsd-signature-type">CreateSubscriptionRequestLike</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="subscription.html" class="tsd-signature-type">Subscription</a></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-external">
-					<a name="_exposesubscriptiondiagnostics" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _expose<wbr>Subscription<wbr>Diagnostics</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">_expose<wbr>Subscription<wbr>Diagnostics<span class="tsd-signature-symbol">(</span>subscription<span class="tsd-signature-symbol">: </span><a href="subscription.html" class="tsd-signature-type">Subscription</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L1662">server_engine.ts:1662</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>subscription: <a href="subscription.html" class="tsd-signature-type">Subscription</a></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-external">
-					<a name="_getserversubscriptiondiagnosticsarray" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _get<wbr>Server<wbr>Subscription<wbr>Diagnostics<wbr>Array</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">_get<wbr>Server<wbr>Subscription<wbr>Diagnostics<wbr>Array<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">UADynamicVariableArray</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">SubscriptionDiagnosticsDataType</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L1890">server_engine.ts:1890</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">UADynamicVariableArray</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">SubscriptionDiagnosticsDataType</span><span class="tsd-signature-symbol">&gt;</span>
-								<span class="tsd-signature-symbol"> | </span>
-								<span class="tsd-signature-type">null</span>
-							</h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-external">
-					<a name="_historyreadsinglenode" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _history<wbr>Read<wbr>Single<wbr>Node</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">_history<wbr>Read<wbr>Single<wbr>Node<span class="tsd-signature-symbol">(</span>context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">SessionContext</span>, nodeToRead<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HistoryReadValueId</span>, historyReadDetails<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HistoryReadDetails</span>, timestampsToReturn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TimestampsToReturn</span>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Callback</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">HistoryReadResult</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L1796">server_engine.ts:1796</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>context: <span class="tsd-signature-type">SessionContext</span></h5>
-								</li>
-								<li>
-									<h5>nodeToRead: <span class="tsd-signature-type">HistoryReadValueId</span></h5>
-								</li>
-								<li>
-									<h5>historyReadDetails: <span class="tsd-signature-type">HistoryReadDetails</span></h5>
-								</li>
-								<li>
-									<h5>timestampsToReturn: <span class="tsd-signature-type">TimestampsToReturn</span></h5>
-								</li>
-								<li>
-									<h5>callback: <span class="tsd-signature-type">Callback</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">HistoryReadResult</span><span class="tsd-signature-symbol">&gt;</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-external">
-					<a name="_readsinglenode" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _read<wbr>Single<wbr>Node</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">_read<wbr>Single<wbr>Node<span class="tsd-signature-symbol">(</span>context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">SessionContext</span>, nodeToRead<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ReadValueIdOptions</span>, timestampsToReturn<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">TimestampsToReturn</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">DataValue</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L1740">server_engine.ts:1740</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>context: <span class="tsd-signature-type">SessionContext</span></h5>
-								</li>
-								<li>
-									<h5>nodeToRead: <span class="tsd-signature-type">ReadValueIdOptions</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> timestampsToReturn: <span class="tsd-signature-type">TimestampsToReturn</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">DataValue</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-external">
-					<a name="_unexposesubscriptiondiagnostics" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _unexpose<wbr>Subscription<wbr>Diagnostics</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">_unexpose<wbr>Subscription<wbr>Diagnostics<span class="tsd-signature-symbol">(</span>subscription<span class="tsd-signature-symbol">: </span><a href="subscription.html" class="tsd-signature-type">Subscription</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L1675">server_engine.ts:1675</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>subscription: <a href="subscription.html" class="tsd-signature-type">Subscription</a></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 					<a name="addlistener" class="tsd-anchor"></a>
 					<h3>add<wbr>Listener</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">add<wbr>Listener<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -921,7 +617,7 @@
 								<p>Inherited from EventEmitter.addListener</p>
 								<p>Overrides EventEmitter.addListener</p>
 								<ul>
-									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua/node_modules/@types/node/events.d.ts:11</li>
+									<li>Defined in /home/etienne/projects/node-opcua/node_modules/@types/node/events.d.ts:11</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -955,17 +651,17 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="browse" class="tsd-anchor"></a>
 					<h3>browse</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">browse<span class="tsd-signature-symbol">(</span>nodesToBrowse<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">BrowseDescription</span><span class="tsd-signature-symbol">[]</span>, context<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">SessionContext</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">BrowseResult</span><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L1039">server_engine.ts:1039</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L1041">node-opcua-server/source/server_engine.ts:1041</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -981,17 +677,17 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="browsepath" class="tsd-anchor"></a>
 					<h3>browse<wbr>Path</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">browse<wbr>Path<span class="tsd-signature-symbol">(</span>browsePath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">BrowsePath</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">BrowsePathResult</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L1591">server_engine.ts:1591</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L1602">node-opcua-server/source/server_engine.ts:1602</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1004,17 +700,17 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="browsesinglenode" class="tsd-anchor"></a>
 					<h3>browse<wbr>Single<wbr>Node</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">browse<wbr>Single<wbr>Node<span class="tsd-signature-symbol">(</span>nodeId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">NodeIdLike</span>, browseDescription<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">BrowseDescription</span>, context<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">SessionContext</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">BrowseResult</span></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">browse<wbr>Single<wbr>Node<span class="tsd-signature-symbol">(</span>nodeId<span class="tsd-signature-symbol">: </span><a href="../globals.html#nodeidlike" class="tsd-signature-type">NodeIdLike</a>, browseDescription<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">BrowseDescription</span>, context<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">SessionContext</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">BrowseResult</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L1026">server_engine.ts:1026</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L1028">node-opcua-server/source/server_engine.ts:1028</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1027,7 +723,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>nodeId: <span class="tsd-signature-type">NodeIdLike</span></h5>
+									<h5>nodeId: <a href="../globals.html#nodeidlike" class="tsd-signature-type">NodeIdLike</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>: the nodeid of the element to browse</p>
 									</div>
@@ -1044,17 +740,17 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="closesession" class="tsd-anchor"></a>
 					<h3>close<wbr>Session</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">close<wbr>Session<span class="tsd-signature-symbol">(</span>authenticationToken<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">NodeId</span>, deleteSubscriptions<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>, reason<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L1399">server_engine.ts:1399</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L1410">node-opcua-server/source/server_engine.ts:1410</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1083,17 +779,17 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="createsession" class="tsd-anchor"></a>
 					<h3>create<wbr>Session</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">create<wbr>Session<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="serversession.html" class="tsd-signature-type">ServerSession</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L1316">server_engine.ts:1316</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L1327">node-opcua-server/source/server_engine.ts:1327</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1119,17 +815,17 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="deleteorphansubscription" class="tsd-anchor"></a>
 					<h3>delete<wbr>Orphan<wbr>Subscription</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">delete<wbr>Orphan<wbr>Subscription<span class="tsd-signature-symbol">(</span>subscription<span class="tsd-signature-symbol">: </span><a href="subscription.html" class="tsd-signature-type">Subscription</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">StatusCode</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L1478">server_engine.ts:1478</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L1489">node-opcua-server/source/server_engine.ts:1489</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1142,27 +838,27 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="dispose" class="tsd-anchor"></a>
 					<h3>dispose</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">dispose<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L309">server_engine.ts:309</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L311">node-opcua-server/source/server_engine.ts:311</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 					<a name="emit" class="tsd-anchor"></a>
 					<h3>emit</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">emit<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span>, <span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -1171,7 +867,7 @@
 								<p>Inherited from EventEmitter.emit</p>
 								<p>Overrides EventEmitter.emit</p>
 								<ul>
-									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua/node_modules/@types/node/events.d.ts:23</li>
+									<li>Defined in /home/etienne/projects/node-opcua/node_modules/@types/node/events.d.ts:23</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1187,10 +883,10 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 					<a name="eventnames" class="tsd-anchor"></a>
 					<h3>event<wbr>Names</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">event<wbr>Names<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -1199,24 +895,24 @@
 								<p>Inherited from EventEmitter.eventNames</p>
 								<p>Overrides EventEmitter.eventNames</p>
 								<ul>
-									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua/node_modules/@types/node/events.d.ts:24</li>
+									<li>Defined in /home/etienne/projects/node-opcua/node_modules/@types/node/events.d.ts:24</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="findorphansubscription" class="tsd-anchor"></a>
 					<h3>find<wbr>Orphan<wbr>Subscription</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">find<wbr>Orphan<wbr>Subscription<span class="tsd-signature-symbol">(</span>subscriptionId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="subscription.html" class="tsd-signature-type">Subscription</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L1470">server_engine.ts:1470</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L1481">node-opcua-server/source/server_engine.ts:1481</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1232,17 +928,17 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="findsubscription" class="tsd-anchor"></a>
 					<h3>find<wbr>Subscription</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">find<wbr>Subscription<span class="tsd-signature-symbol">(</span>subscriptionId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="subscription.html" class="tsd-signature-type">Subscription</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L1448">server_engine.ts:1448</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L1459">node-opcua-server/source/server_engine.ts:1459</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1258,10 +954,10 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 					<a name="getmaxlisteners" class="tsd-anchor"></a>
 					<h3>get<wbr>Max<wbr>Listeners</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">get<wbr>Max<wbr>Listeners<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -1270,24 +966,24 @@
 								<p>Inherited from EventEmitter.getMaxListeners</p>
 								<p>Overrides EventEmitter.getMaxListeners</p>
 								<ul>
-									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua/node_modules/@types/node/events.d.ts:20</li>
+									<li>Defined in /home/etienne/projects/node-opcua/node_modules/@types/node/events.d.ts:20</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="getoldestunactivatedsession" class="tsd-anchor"></a>
 					<h3>get<wbr>Oldest<wbr>Unactivated<wbr>Session</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">get<wbr>Oldest<wbr>Unactivated<wbr>Session<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="serversession.html" class="tsd-signature-type">ServerSession</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L1289">server_engine.ts:1289</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L1300">node-opcua-server/source/server_engine.ts:1300</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="serversession.html" class="tsd-signature-type">ServerSession</a>
@@ -1297,34 +993,34 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="getserverdiagnosticsenabledflag" class="tsd-anchor"></a>
 					<h3>get<wbr>Server<wbr>Diagnostics<wbr>Enabled<wbr>Flag</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">get<wbr>Server<wbr>Diagnostics<wbr>Enabled<wbr>Flag<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L484">server_engine.ts:484</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L486">node-opcua-server/source/server_engine.ts:486</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="getsession" class="tsd-anchor"></a>
 					<h3>get<wbr>Session</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">get<wbr>Session<span class="tsd-signature-symbol">(</span>authenticationToken<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">NodeId</span>, activeOnly<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="serversession.html" class="tsd-signature-type">ServerSession</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L1570">server_engine.ts:1570</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L1581">node-opcua-server/source/server_engine.ts:1581</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1353,17 +1049,17 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="historyread" class="tsd-anchor"></a>
 					<h3>history<wbr>Read</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">history<wbr>Read<span class="tsd-signature-symbol">(</span>context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">SessionContext</span>, historyReadRequest<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HistoryReadRequest</span>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L1246">server_engine.ts:1246</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L1257">node-opcua-server/source/server_engine.ts:1257</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1418,17 +1114,17 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="historyreadsinglenode" class="tsd-anchor"></a>
 					<h3>history<wbr>Read<wbr>Single<wbr>Node</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">history<wbr>Read<wbr>Single<wbr>Node<span class="tsd-signature-symbol">(</span>context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">SessionContext</span>, nodeId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">NodeId</span>, attributeId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AttributeIds</span>, historyReadDetails<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ReadRawModifiedDetails</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">ReadEventDetails</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">ReadProcessedDetails</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">ReadAtTimeDetails</span>, timestampsToReturn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TimestampsToReturn</span>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L1208">server_engine.ts:1208</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L1219">node-opcua-server/source/server_engine.ts:1219</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1477,17 +1173,17 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="initialize" class="tsd-anchor"></a>
 					<h3>initialize</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">initialize<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L501">server_engine.ts:501</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L503">node-opcua-server/source/server_engine.ts:503</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1514,10 +1210,10 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 					<a name="listenercount" class="tsd-anchor"></a>
 					<h3>listener<wbr>Count</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">listener<wbr>Count<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -1526,7 +1222,7 @@
 								<p>Inherited from EventEmitter.listenerCount</p>
 								<p>Overrides EventEmitter.listenerCount</p>
 								<ul>
-									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua/node_modules/@types/node/events.d.ts:25</li>
+									<li>Defined in /home/etienne/projects/node-opcua/node_modules/@types/node/events.d.ts:25</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1539,10 +1235,10 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 					<a name="listeners" class="tsd-anchor"></a>
 					<h3>listeners</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">listeners<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -1551,7 +1247,7 @@
 								<p>Inherited from EventEmitter.listeners</p>
 								<p>Overrides EventEmitter.listeners</p>
 								<ul>
-									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua/node_modules/@types/node/events.d.ts:21</li>
+									<li>Defined in /home/etienne/projects/node-opcua/node_modules/@types/node/events.d.ts:21</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1564,10 +1260,10 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 					<a name="off" class="tsd-anchor"></a>
 					<h3>off</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">off<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -1576,7 +1272,7 @@
 								<p>Inherited from EventEmitter.off</p>
 								<p>Overrides EventEmitter.off</p>
 								<ul>
-									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua/node_modules/@types/node/events.d.ts:17</li>
+									<li>Defined in /home/etienne/projects/node-opcua/node_modules/@types/node/events.d.ts:17</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1610,10 +1306,10 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 					<a name="on" class="tsd-anchor"></a>
 					<h3>on</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -1622,7 +1318,7 @@
 								<p>Inherited from EventEmitter.on</p>
 								<p>Overrides EventEmitter.on</p>
 								<ul>
-									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua/node_modules/@types/node/events.d.ts:12</li>
+									<li>Defined in /home/etienne/projects/node-opcua/node_modules/@types/node/events.d.ts:12</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1656,10 +1352,10 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 					<a name="once" class="tsd-anchor"></a>
 					<h3>once</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">once<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -1668,7 +1364,7 @@
 								<p>Inherited from EventEmitter.once</p>
 								<p>Overrides EventEmitter.once</p>
 								<ul>
-									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua/node_modules/@types/node/events.d.ts:13</li>
+									<li>Defined in /home/etienne/projects/node-opcua/node_modules/@types/node/events.d.ts:13</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1702,10 +1398,10 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 					<a name="prependlistener" class="tsd-anchor"></a>
 					<h3>prepend<wbr>Listener</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">prepend<wbr>Listener<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -1714,7 +1410,7 @@
 								<p>Inherited from EventEmitter.prependListener</p>
 								<p>Overrides EventEmitter.prependListener</p>
 								<ul>
-									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua/node_modules/@types/node/events.d.ts:14</li>
+									<li>Defined in /home/etienne/projects/node-opcua/node_modules/@types/node/events.d.ts:14</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1748,10 +1444,10 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 					<a name="prependoncelistener" class="tsd-anchor"></a>
 					<h3>prepend<wbr>Once<wbr>Listener</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">prepend<wbr>Once<wbr>Listener<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -1760,7 +1456,7 @@
 								<p>Inherited from EventEmitter.prependOnceListener</p>
 								<p>Overrides EventEmitter.prependOnceListener</p>
 								<ul>
-									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua/node_modules/@types/node/events.d.ts:15</li>
+									<li>Defined in /home/etienne/projects/node-opcua/node_modules/@types/node/events.d.ts:15</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1794,10 +1490,10 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 					<a name="rawlisteners" class="tsd-anchor"></a>
 					<h3>raw<wbr>Listeners</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">raw<wbr>Listeners<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -1806,7 +1502,7 @@
 								<p>Inherited from EventEmitter.rawListeners</p>
 								<p>Overrides EventEmitter.rawListeners</p>
 								<ul>
-									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua/node_modules/@types/node/events.d.ts:22</li>
+									<li>Defined in /home/etienne/projects/node-opcua/node_modules/@types/node/events.d.ts:22</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1819,17 +1515,17 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="read" class="tsd-anchor"></a>
 					<h3>read</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">read<span class="tsd-signature-symbol">(</span>context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">SessionContext</span>, readRequest<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ReadRequest</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">DataValue</span><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L1105">server_engine.ts:1105</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L1107">node-opcua-server/source/server_engine.ts:1107</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1867,17 +1563,17 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="readsinglenode" class="tsd-anchor"></a>
 					<h3>read<wbr>Single<wbr>Node</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">read<wbr>Single<wbr>Node<span class="tsd-signature-symbol">(</span>context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">SessionContext</span>, nodeId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">NodeId</span>, attributeId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AttributeIds</span>, timestampsToReturn<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">TimestampsToReturn</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">DataValue</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L1066">server_engine.ts:1066</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L1068">node-opcua-server/source/server_engine.ts:1068</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1907,17 +1603,17 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="refreshvalues" class="tsd-anchor"></a>
 					<h3>refresh<wbr>Values</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">refresh<wbr>Values<span class="tsd-signature-symbol">(</span>nodesToRefresh<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L1610">server_engine.ts:1610</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L1621">node-opcua-server/source/server_engine.ts:1621</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1970,17 +1666,17 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="registershutdowntask" class="tsd-anchor"></a>
 					<h3>register<wbr>Shutdown<wbr>Task</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">register<wbr>Shutdown<wbr>Task<span class="tsd-signature-symbol">(</span>task<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L351">server_engine.ts:351</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L353">node-opcua-server/source/server_engine.ts:353</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2003,10 +1699,10 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 					<a name="removealllisteners" class="tsd-anchor"></a>
 					<h3>remove<wbr>All<wbr>Listeners</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">remove<wbr>All<wbr>Listeners<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -2015,7 +1711,7 @@
 								<p>Inherited from EventEmitter.removeAllListeners</p>
 								<p>Overrides EventEmitter.removeAllListeners</p>
 								<ul>
-									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua/node_modules/@types/node/events.d.ts:18</li>
+									<li>Defined in /home/etienne/projects/node-opcua/node_modules/@types/node/events.d.ts:18</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2028,10 +1724,10 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 					<a name="removelistener" class="tsd-anchor"></a>
 					<h3>remove<wbr>Listener</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">remove<wbr>Listener<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -2040,7 +1736,7 @@
 								<p>Inherited from EventEmitter.removeListener</p>
 								<p>Overrides EventEmitter.removeListener</p>
 								<ul>
-									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua/node_modules/@types/node/events.d.ts:16</li>
+									<li>Defined in /home/etienne/projects/node-opcua/node_modules/@types/node/events.d.ts:16</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2074,17 +1770,17 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="secondstillshutdown" class="tsd-anchor"></a>
 					<h3>seconds<wbr>Till<wbr>Shutdown</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">seconds<wbr>Till<wbr>Shutdown<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L453">server_engine.ts:453</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L455">node-opcua-server/source/server_engine.ts:455</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2100,10 +1796,10 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 					<a name="setmaxlisteners" class="tsd-anchor"></a>
 					<h3>set<wbr>Max<wbr>Listeners</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">set<wbr>Max<wbr>Listeners<span class="tsd-signature-symbol">(</span>n<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -2112,7 +1808,7 @@
 								<p>Inherited from EventEmitter.setMaxListeners</p>
 								<p>Overrides EventEmitter.setMaxListeners</p>
 								<ul>
-									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua/node_modules/@types/node/events.d.ts:19</li>
+									<li>Defined in /home/etienne/projects/node-opcua/node_modules/@types/node/events.d.ts:19</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2125,17 +1821,17 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="setserverstate" class="tsd-anchor"></a>
 					<h3>set<wbr>Server<wbr>State</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">set<wbr>Server<wbr>State<span class="tsd-signature-symbol">(</span>serverState<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ServerState</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L479">server_engine.ts:479</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L481">node-opcua-server/source/server_engine.ts:481</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2148,17 +1844,17 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="shutdown" class="tsd-anchor"></a>
 					<h3>shutdown</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">shutdown<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L360">server_engine.ts:360</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L362">node-opcua-server/source/server_engine.ts:362</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2172,17 +1868,17 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="transfersubscription" class="tsd-anchor"></a>
 					<h3>transfer<wbr>Subscription</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">transfer<wbr>Subscription<span class="tsd-signature-symbol">(</span>session<span class="tsd-signature-symbol">: </span><a href="serversession.html" class="tsd-signature-type">ServerSession</a>, subscriptionId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, sendInitialValues<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TransferResult</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L1498">server_engine.ts:1498</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L1509">node-opcua-server/source/server_engine.ts:1509</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2217,17 +1913,17 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="write" class="tsd-anchor"></a>
 					<h3>write</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">write<span class="tsd-signature-symbol">(</span>context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">SessionContext</span>, nodesToWrite<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">WriteValue</span><span class="tsd-signature-symbol">[]</span>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L1175">server_engine.ts:1175</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L1177">node-opcua-server/source/server_engine.ts:1177</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2279,17 +1975,17 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="writesinglenode" class="tsd-anchor"></a>
 					<h3>write<wbr>Single<wbr>Node</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">write<wbr>Single<wbr>Node<span class="tsd-signature-symbol">(</span>context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">SessionContext</span>, writeValue<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">WriteValue</span>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/374513dd/packages/node-opcua-server/source/server_engine.ts#L1137">server_engine.ts:1137</a></li>
+									<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/eeade1b9/packages/node-opcua-server/source/server_engine.ts#L1139">node-opcua-server/source/server_engine.ts:1139</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2338,10 +2034,10 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
 					<a name="listenercount-1" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> listener<wbr>Count</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
 						<li class="tsd-signature tsd-kind-icon">listener<wbr>Count<span class="tsd-signature-symbol">(</span>emitter<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EventEmitter</span>, event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -2349,7 +2045,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from EventEmitter.listenerCount</p>
 								<ul>
-									<li>Defined in C:/sterfive/NodeOPCUA/node-opcua/node_modules/@types/node/events.d.ts:8</li>
+									<li>Defined in /home/etienne/projects/node-opcua/node_modules/@types/node/events.d.ts:8</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2386,253 +2082,211 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-class tsd-is-external">
+					<li class="current tsd-kind-class">
 						<a href="serverengine.html" class="tsd-kind-icon">Server<wbr>Engine</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
 								<a href="serverengine.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external">
-								<a href="serverengine.html#_applicationuri" class="tsd-kind-icon">_application<wbr>Uri</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external">
-								<a href="serverengine.html#_closedsessions" class="tsd-kind-icon">_closed<wbr>Sessions</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external">
-								<a href="serverengine.html#_orphanpublishengine" class="tsd-kind-icon">_orphan<wbr>Publish<wbr>Engine</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="serverengine.html#_rejectedsessioncount" class="tsd-kind-icon">_rejected<wbr>Session<wbr>Count</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external">
-								<a href="serverengine.html#_sessions" class="tsd-kind-icon">_sessions</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external">
-								<a href="serverengine.html#_shutdowntask" class="tsd-kind-icon">_shutdown<wbr>Task</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="serverengine.html#addressspace" class="tsd-kind-icon">address<wbr>Space</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="serverengine.html#clientdescription" class="tsd-kind-icon">client<wbr>Description</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="serverengine.html#historyservercapabilities" class="tsd-kind-icon">history<wbr>Server<wbr>Capabilities</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="serverengine.html#isauditing" class="tsd-kind-icon">is<wbr>Auditing</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="serverengine.html#servercapabilities" class="tsd-kind-icon">server<wbr>Capabilities</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="serverengine.html#serverdiagnosticsenabled" class="tsd-kind-icon">server<wbr>Diagnostics<wbr>Enabled</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="serverengine.html#serverdiagnosticssummary" class="tsd-kind-icon">server<wbr>Diagnostics<wbr>Summary</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="serverengine.html#serverstatus" class="tsd-kind-icon">server<wbr>Status</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external">
-								<a href="serverengine.html#status" class="tsd-kind-icon">status</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
 								<a href="serverengine.html#defaultmaxlisteners" class="tsd-kind-icon">default<wbr>Max<wbr>Listeners</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
 								<a href="serverengine.html#registry" class="tsd-kind-icon">registry</a>
 							</li>
-							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="serverengine.html#buildinfo" class="tsd-kind-icon">build<wbr>Info</a>
 							</li>
-							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="serverengine.html#cumulatedsessioncount" class="tsd-kind-icon">cumulated<wbr>Session<wbr>Count</a>
 							</li>
-							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="serverengine.html#cumulatedsubscriptioncount" class="tsd-kind-icon">cumulated<wbr>Subscription<wbr>Count</a>
 							</li>
-							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="serverengine.html#currentsessioncount" class="tsd-kind-icon">current<wbr>Session<wbr>Count</a>
 							</li>
-							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="serverengine.html#currentsubscriptioncount" class="tsd-kind-icon">current<wbr>Subscription<wbr>Count</a>
 							</li>
-							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="serverengine.html#currenttime" class="tsd-kind-icon">current<wbr>Time</a>
 							</li>
-							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="serverengine.html#publishingintervalcount" class="tsd-kind-icon">publishing<wbr>Interval<wbr>Count</a>
 							</li>
-							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="serverengine.html#rejectedrequestscount" class="tsd-kind-icon">rejected<wbr>Requests<wbr>Count</a>
 							</li>
-							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="serverengine.html#rejectedsessioncount" class="tsd-kind-icon">rejected<wbr>Session<wbr>Count</a>
 							</li>
-							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="serverengine.html#servername" class="tsd-kind-icon">server<wbr>Name</a>
 							</li>
-							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="serverengine.html#servernameurn" class="tsd-kind-icon">server<wbr>Name<wbr>Urn</a>
 							</li>
-							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="serverengine.html#servernamespaceurn" class="tsd-kind-icon">server<wbr>Namespace<wbr>Urn</a>
 							</li>
-							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="serverengine.html#sessionabortcount" class="tsd-kind-icon">session<wbr>Abort<wbr>Count</a>
 							</li>
-							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="serverengine.html#sessiontimeoutcount" class="tsd-kind-icon">session<wbr>Timeout<wbr>Count</a>
 							</li>
-							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="serverengine.html#starttime" class="tsd-kind-icon">start<wbr>Time</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-external">
-								<a href="serverengine.html#__findobject" class="tsd-kind-icon">__find<wbr>Object</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-external">
-								<a href="serverengine.html#__internal_bindmethod" class="tsd-kind-icon">__internal_<wbr>bind<wbr>Method</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-external">
-								<a href="serverengine.html#_createsubscriptiononsession" class="tsd-kind-icon">_create<wbr>Subscription<wbr>OnSession</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-external">
-								<a href="serverengine.html#_exposesubscriptiondiagnostics" class="tsd-kind-icon">_expose<wbr>Subscription<wbr>Diagnostics</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-external">
-								<a href="serverengine.html#_getserversubscriptiondiagnosticsarray" class="tsd-kind-icon">_get<wbr>Server<wbr>Subscription<wbr>Diagnostics<wbr>Array</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-external">
-								<a href="serverengine.html#_historyreadsinglenode" class="tsd-kind-icon">_history<wbr>Read<wbr>Single<wbr>Node</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-external">
-								<a href="serverengine.html#_readsinglenode" class="tsd-kind-icon">_read<wbr>Single<wbr>Node</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-external">
-								<a href="serverengine.html#_unexposesubscriptiondiagnostics" class="tsd-kind-icon">_unexpose<wbr>Subscription<wbr>Diagnostics</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 								<a href="serverengine.html#addlistener" class="tsd-kind-icon">add<wbr>Listener</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="serverengine.html#browse" class="tsd-kind-icon">browse</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="serverengine.html#browsepath" class="tsd-kind-icon">browse<wbr>Path</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="serverengine.html#browsesinglenode" class="tsd-kind-icon">browse<wbr>Single<wbr>Node</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="serverengine.html#closesession" class="tsd-kind-icon">close<wbr>Session</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="serverengine.html#createsession" class="tsd-kind-icon">create<wbr>Session</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="serverengine.html#deleteorphansubscription" class="tsd-kind-icon">delete<wbr>Orphan<wbr>Subscription</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="serverengine.html#dispose" class="tsd-kind-icon">dispose</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 								<a href="serverengine.html#emit" class="tsd-kind-icon">emit</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 								<a href="serverengine.html#eventnames" class="tsd-kind-icon">event<wbr>Names</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="serverengine.html#findorphansubscription" class="tsd-kind-icon">find<wbr>Orphan<wbr>Subscription</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="serverengine.html#findsubscription" class="tsd-kind-icon">find<wbr>Subscription</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 								<a href="serverengine.html#getmaxlisteners" class="tsd-kind-icon">get<wbr>Max<wbr>Listeners</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="serverengine.html#getoldestunactivatedsession" class="tsd-kind-icon">get<wbr>Oldest<wbr>Unactivated<wbr>Session</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="serverengine.html#getserverdiagnosticsenabledflag" class="tsd-kind-icon">get<wbr>Server<wbr>Diagnostics<wbr>Enabled<wbr>Flag</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="serverengine.html#getsession" class="tsd-kind-icon">get<wbr>Session</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="serverengine.html#historyread" class="tsd-kind-icon">history<wbr>Read</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="serverengine.html#historyreadsinglenode" class="tsd-kind-icon">history<wbr>Read<wbr>Single<wbr>Node</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="serverengine.html#initialize" class="tsd-kind-icon">initialize</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 								<a href="serverengine.html#listenercount" class="tsd-kind-icon">listener<wbr>Count</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 								<a href="serverengine.html#listeners" class="tsd-kind-icon">listeners</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 								<a href="serverengine.html#off" class="tsd-kind-icon">off</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 								<a href="serverengine.html#on" class="tsd-kind-icon">on</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 								<a href="serverengine.html#once" class="tsd-kind-icon">once</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 								<a href="serverengine.html#prependlistener" class="tsd-kind-icon">prepend<wbr>Listener</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 								<a href="serverengine.html#prependoncelistener" class="tsd-kind-icon">prepend<wbr>Once<wbr>Listener</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 								<a href="serverengine.html#rawlisteners" class="tsd-kind-icon">raw<wbr>Listeners</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="serverengine.html#read" class="tsd-kind-icon">read</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="serverengine.html#readsinglenode" class="tsd-kind-icon">read<wbr>Single<wbr>Node</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="serverengine.html#refreshvalues" class="tsd-kind-icon">refresh<wbr>Values</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="serverengine.html#registershutdowntask" class="tsd-kind-icon">register<wbr>Shutdown<wbr>Task</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 								<a href="serverengine.html#removealllisteners" class="tsd-kind-icon">remove<wbr>All<wbr>Listeners</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 								<a href="serverengine.html#removelistener" class="tsd-kind-icon">remove<wbr>Listener</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="serverengine.html#secondstillshutdown" class="tsd-kind-icon">seconds<wbr>Till<wbr>Shutdown</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 								<a href="serverengine.html#setmaxlisteners" class="tsd-kind-icon">set<wbr>Max<wbr>Listeners</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="serverengine.html#setserverstate" class="tsd-kind-icon">set<wbr>Server<wbr>State</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="serverengine.html#shutdown" class="tsd-kind-icon">shutdown</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="serverengine.html#transfersubscription" class="tsd-kind-icon">transfer<wbr>Subscription</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="serverengine.html#write" class="tsd-kind-icon">write</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="serverengine.html#writesinglenode" class="tsd-kind-icon">write<wbr>Single<wbr>Node</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
 								<a href="serverengine.html#listenercount-1" class="tsd-kind-icon">listener<wbr>Count</a>
 							</li>
 						</ul>
@@ -2656,6 +2310,7 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
@@ -2704,19 +2359,10 @@
 	</div>
 </footer>
 <div class="container tsd-generator">
-	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
 <script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
-<script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-25438821-3', 'node-opcua.github.io');
-        ga('send', 'pageview');
-    </script>
 </body>
 </html>
