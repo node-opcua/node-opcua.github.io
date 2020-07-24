@@ -1,76 +1,136 @@
 {% include socialbuttons.html %}
 
 <section id="why" class="feature-list">
-<div class="row">
+    <div class="row">
+        <div class="vignette col-lg-6 col-md-6 col-sm-12 shadow bg-white rounded">
 
-
-        <div class="col-md-4 col-sm-6">
-            <h4><i class="fa fa-rocket"></i>100% Asynchronous</h4>
-            NodeOPCUA takes advantage of the asynchronous nature of node.js, creating highly responsive applications.
-<div class="small">
+            <div class="vignette-content-big">
+                <h4><i class="fa fa-rocket">&nbsp;</i>100% Asynchronous</h4>
+                <p>NodeOPCUA takes advantage of the asynchronous nature of node.js, creating highly responsive
+                applications.
+                </p>
+<p>
 {% highlight javascript %}
-const opcua = require("node-opcua");
-const server = new opcua.Server({});
-server.listen(function(){
-   ...
-});
+const { OPCUAServer } = require("node-opcua");
+(async () => {
+    const server = new OPCUAServer({});
+    await server.initialize();
+    await server.start();
+})();
 {% endhighlight  %}
-</div>
+</p>
+            </div>
         </div>
 
-        <div class="col-md-4 col-sm-6">
-            <h4><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> High Quality</h4>
-            NodeOPCUA has been developed using <a href="http://en.wikipedia.org/wiki/Test_Driven_Development">TDD</a> and
-            benefits from more than <a href="https://travis-ci.org/node-opcua/node-opcua">2500 unit tests</a> and 90% code coverage. NodeOPCUA uses
-            <a href="https://travis-ci.org/node-opcua/node-opcua">Travis</a> as a continuous integration service.
-
-            <img src="https://travis-ci.org/node-opcua/node-opcua.svg?branch=master"></img>
-            <a href='https://coveralls.io/r/node-opcua/node-opcua?branch=master'><img src='https://coveralls.io/repos/node-opcua/node-opcua/badge.png?branch=master' alt='Coverage Status' /></a>
+        <div class="vignette col-lg-6 col-md-6 col-sm-12 shadow bg-white rounded">
+            <div class="vignette-content-big">
+                <h4><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>&nbsp; High Quality
+                </h4>
+                <p>
+                    NodeOPCUA has been developed using <a
+                        href="http://en.wikipedia.org/wiki/Test_Driven_Development">TDD</a> and
+                    benefits from more than <a href="https://travis-ci.org/node-opcua/node-opcua">2500 unit tests</a>
+                    and 90% code coverage.
+                </p>
+                <p> NodeOPCUA uses
+                    <a href="https://travis-ci.org/node-opcua/node-opcua">Travis</a> as a continuous integration
+                    service.
+                </p>
+                <p>
+                    <img src="https://travis-ci.org/node-opcua/node-opcua.svg?branch=master"></img>
+                    <a href='https://coveralls.io/r/node-opcua/node-opcua?branch=master'>
+                        &nbsp;
+                        <img src='https://coveralls.io/repos/node-opcua/node-opcua/badge.png?branch=master'
+                            alt='Coverage Status' />
+                    </a>
+                </p>
+            <p><img style="max-width: 100%" src="https://nodei.co/npm/node-opcua.png?downloads=true&stars=true"></img></p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="vignette col-lg-4 col-md-6 col-sm-12 shadow bg-white rounded">
+            <div class="vignette-content">
+                <h4><i class="fab fa-node-js">&nbsp;</i>Available on Typescript </h4>
+                <p>
+                    NodeOPCUA can be use in Javascript as well as in Typescript.
+                </p>
+            </div>
         </div>
 
-        <div class="col-md-4 col-sm-6">
-            <h4><i class="fab fa-node-js"></i>Available on Typescript </h4>
-            NodeOPCUA can be use in Javascript as well as in Typescript.
+        <div class="vignette col-lg-4 col-md-6 col-sm-12 shadow bg-white rounded">
+            <div class="vignette-content">
+                <h4><i class="fa fa-microphone">&nbsp;</i> Free, as in Speech</h4>
+                <p>
+                    NodeOPCUA is free for commercial use. Check out the <a
+                        href="https://raw.githubusercontent.com/node-opcua/node-opcua/master/LICENSE">license</a>.
+                </p>
+                
+            </div>
         </div>
 
-        <div class="col-md-4 col-sm-6">
-            <h4><i class="fa fa-microphone"></i> Free, as in Speech</h4>
-            NodeOPCUA is  free for commercial use. Check out the <a href="https://raw.githubusercontent.com/node-opcua/node-opcua/master/LICENSE">license</a>.
+        <div class="vignette col-lg-4 col-md-6 col-sm-6 shadow bg-white rounded">
+            <div class="vignette-content">
+            <h4><i class="fab fa-github">&nbsp;</i> Fork my source code </h4>
+            <p>
+                NodeOPCUA is available on GitHub . Check out the <a
+                    href="http://github.com/node-opcua/node-opcua">source code </a>.
+            </p>
+        </div>
         </div>
 
-        <div class="col-md-4 col-sm-6">
-            <h4><i class="fab fa-github"></i>  Fork my source code <i class="fas fa-code-branch"></i></h4>
-            NodeOPCUA is available on GitHub . Check out the <a href="http://github.com/node-opcua/node-opcua">source code </a>.
+        <div class="vignette col-lg-4 col-md-6 col-sm-6 shadow bg-white rounded">
+            <div class="vignette-content">
+                <h4><i class="fas fa-pencil-alt">&nbsp;</i>Create your own server</h4>
+                <p>Easily create your own OPCUA Server in less than 100 lines of code.</p>
+            </div>
         </div>
 
-        <div class="col-md-4 col-sm-6">
-            <h4><i class="fas fa-pencil-alt"></i>Create your own server</h4>
-            Easily create your own OPCUA Server in less than 100 lines of code.
+        <div class="vignette col-lg-4 col-md-6 col-sm-12 shadow bg-white rounded">
+            <div class="vignette-content">
+                <h4><i class="fa fa-desktop"></i> Runs under Linux , Mac and Windows</h4>
+                <p>NodeOPCUA runs on all the platforms that nodeJS supports.</p>
+            </div>
         </div>
 
-        <div class="col-md-4 col-sm-6">
-            <h4><i class="fa fa-desktop"></i> Runs under Linux , Mac and Windows</h4>
-            NodeOPCUA runs on all the platforms that nodeJS supports.
+        <div class="vignette col-lg-4 col-md-6 col-sm-12  shadow bg-white rounded">
+            <div class="vignette-content">
+                <h4><img width="16px" src="images/raspberry.jpg"><img> &nbsp;Perfect on RaspberryPI</h4>
+                <p>
+                    Create your own OPCUA Server on a RaspberryPI with your preferred I/O sensors. More to come on this
+                    very soon, stay in touch.
+                </p>
+            </div>
         </div>
 
-        <div class="col-md-4 col-sm-6">
-            <h4><img width="16px" src="images/raspberry.jpg"><img> Perfect on RaspberryPI</h4>
-            Create your own OPCUA Server on a RaspberryPI with your preferred I/O sensors. More to come on this very soon, stay in touch.
-
+        <div class="vignette col-lg-4 col-md-6 col-sm-12 shadow bg-white rounded">
+            <div class="vignette-content">
+                <h4><i class="fa fa-search">&nbsp;</i>Live documentation</h4>
+                <p>NodeOPCUA will benefit from a <a href="api_doc/index.html">comprehensive SDK API documentation</a> ,
+                numerous end-to-end functional tests, and a set of practical examples to help you
+                learn how to use it.
+            </p>
+            </div>
         </div>
 
-        <div class="col-md-4 col-sm-6">
-            <h4><i class="fa fa-search"></i>Live documentation</h4>
-            NodeOPCUA will benefit from a <a href="api_doc/index.html" >comprehensive SDK API documentation</a> , numerous end-to-end functional tests, and a set of practical examples to help you
-            learn how to use it.
+        <div class="vignette col-lg-4 col-md-6 col-sm-12 shadow bg-white rounded">
+            <div class="vignette-content">
+                <h4><i class="fa fa-book">&nbsp;</i>Learn by the Book</h4>
+
+                <p>
+                    <a href="https://leanpub.com/node-opcuabyexample">NodeOPCUA by example</a> is the best start to place
+                    and learn how to write stunning applications.
+                </p>
+            </div>
         </div>
 
-        <div class="col-md-4 col-sm-6">
-            <h4><i class="fa fa-hand-point-right"></i>Node OPCUA needs you </h4>
-            Node OPCUA is welcoming volunteers to help improving the code, the documentation.
-            Contact us
+        <div class="vignette col-lg-4 col-md-6 col-sm-6 shadow bg-white rounded">
+            <div class="vignette-content">
+                <h4><i class="fa fa-hand-point-right">&nbsp;</i>Node OPCUA needs you </h4>
+                <p>Node OPCUA is welcoming funding sponsors & volunteers to help improving the code & the documentation.
+                    Contact us
+                </p>
+            </div>
         </div>
-
-</div>
+    </div>
 </section>
-
