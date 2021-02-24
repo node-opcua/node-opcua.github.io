@@ -1,0 +1,881 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>ProgramFiniteStateMachineB | NodeOPCUA reference documentation - public API
+	</title>
+	<meta name="description" content="Documentation for NodeOPCUA reference documentation - public API">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+	<script data-ad-client="ca-pub-8886208393040088" async
+	src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">NodeOPCUA reference documentation - public API</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../modules.html">NodeOPCUA reference documentation - public API</a>
+				</li>
+				<li>
+					<a href="../modules/node_opcua.html">node-opcua</a>
+				</li>
+				<li>
+					<a href="node_opcua.programfinitestatemachineb.html">ProgramFiniteStateMachineB</a>
+				</li>
+			</ul>
+			<h1>Interface ProgramFiniteStateMachineB</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<h4><img src="../assets/images/sterfive.png" style="height: 2em;"></img><a
+		href="https://support.sterfive.com">&nbsp subscribe now with sterfive to access the online-user
+	manual</a></h4>
+	<div class=" row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Program Finite State Machine</p>
+					</div>
+					<p>as per part 10 : Program Specification</p>
+					<p>A standard set of base states is defined for Programs as part of the Program Finite State
+						Machine. These states represent the stages in which a Program can exist at an instance in
+						time as viewed by a Client. This state is the Program’s current state. All Programs shall
+						support this base set. A Program may or may not require a Client action to cause the state to
+					change. The states are formally defined in Table 2.</p>
+					<p>Table 2 – Program states
+						| State     | Description
+						|-----------|-------------------------------------------------------------------------------------|
+						| Ready     | The Program is properly initialized and may be started.                             |
+						| Running   | The Program is executing making progress towards completion.                        |
+						| Suspended | The Program has been stopped prior to reaching a terminal state but may be resumed. |
+					| Halted    | The Program is in a terminal or failed state, and it cannot be started or resumed without being reset|</p>
+					<p> The set of states defined to describe a Program can be expanded. Program sub states can be
+						defined for the base states to provide more resolution of a process and to describe the cause
+						and effect(s) of additional stimuli and transitions.
+						Standards bodies and industry groups may extend the base Program Finite State Model to conform to
+						various industry models. For example, the Halted state can include the sub states “Aborted” and “Completed”
+					to indicate if the function achieved a successful conclusion prior to the transition to Halted.</p>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<a href="node_opcua.finitestatemachineb.html" class="tsd-signature-type" data-tsd-kind="Interface">FiniteStateMachineB</a>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">ProgramFiniteStateMachineB</span>
+								<ul class="tsd-hierarchy">
+									<li>
+										<a href="node_opcua.programfinitestatemachinetype.html" class="tsd-signature-type" data-tsd-kind="Interface">ProgramFiniteStateMachineType</a>
+									</li>
+									<li>
+										<a href="node_opcua.programfinitestatemachine.html" class="tsd-signature-type" data-tsd-kind="Interface">ProgramFiniteStateMachine</a>
+									</li>
+									<li>
+										<a href="node_opcua_address_space.programfinitestatemachinetype.html" class="tsd-signature-type" data-tsd-kind="Interface">ProgramFiniteStateMachineType</a>
+									</li>
+									<li>
+										<a href="node_opcua_address_space.programfinitestatemachine.html" class="tsd-signature-type" data-tsd-kind="Interface">ProgramFiniteStateMachine</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="node_opcua.programfinitestatemachineb.html#currentstate" class="tsd-kind-icon">current<wbr>State</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="node_opcua.programfinitestatemachineb.html#currentstatenode" class="tsd-kind-icon">current<wbr>State<wbr>Node</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="node_opcua.programfinitestatemachineb.html#halt" class="tsd-kind-icon">halt</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="node_opcua.programfinitestatemachineb.html#halted" class="tsd-kind-icon">halted</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="node_opcua.programfinitestatemachineb.html#haltedtoready" class="tsd-kind-icon">halted<wbr>ToReady</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="node_opcua.programfinitestatemachineb.html#initialstate" class="tsd-kind-icon">initial<wbr>State</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="node_opcua.programfinitestatemachineb.html#lasttransition" class="tsd-kind-icon">last<wbr>Transition</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="node_opcua.programfinitestatemachineb.html#ready" class="tsd-kind-icon">ready</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="node_opcua.programfinitestatemachineb.html#readytohalted" class="tsd-kind-icon">ready<wbr>ToHalted</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="node_opcua.programfinitestatemachineb.html#readytorunning" class="tsd-kind-icon">ready<wbr>ToRunning</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="node_opcua.programfinitestatemachineb.html#reset" class="tsd-kind-icon">reset</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="node_opcua.programfinitestatemachineb.html#resume" class="tsd-kind-icon">resume</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="node_opcua.programfinitestatemachineb.html#running" class="tsd-kind-icon">running</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="node_opcua.programfinitestatemachineb.html#runningtohalted" class="tsd-kind-icon">running<wbr>ToHalted</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="node_opcua.programfinitestatemachineb.html#runningtoready" class="tsd-kind-icon">running<wbr>ToReady</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="node_opcua.programfinitestatemachineb.html#runningtosuspended" class="tsd-kind-icon">running<wbr>ToSuspended</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="node_opcua.programfinitestatemachineb.html#start" class="tsd-kind-icon">start</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="node_opcua.programfinitestatemachineb.html#states" class="tsd-kind-icon">states</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="node_opcua.programfinitestatemachineb.html#suspend" class="tsd-kind-icon">suspend</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="node_opcua.programfinitestatemachineb.html#suspended" class="tsd-kind-icon">suspended</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="node_opcua.programfinitestatemachineb.html#suspendedtohalted" class="tsd-kind-icon">suspended<wbr>ToHalted</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="node_opcua.programfinitestatemachineb.html#suspendedtoready" class="tsd-kind-icon">suspended<wbr>ToReady</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="node_opcua.programfinitestatemachineb.html#suspendedtorunning" class="tsd-kind-icon">suspended<wbr>ToRunning</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="node_opcua.programfinitestatemachineb.html#transitions" class="tsd-kind-icon">transitions</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="node_opcua.programfinitestatemachineb.html#findtransitionnode" class="tsd-kind-icon">find<wbr>Transition<wbr>Node</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="node_opcua.programfinitestatemachineb.html#getcurrentstate" class="tsd-kind-icon">get<wbr>Current<wbr>State</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="node_opcua.programfinitestatemachineb.html#getstatebyname" class="tsd-kind-icon">get<wbr>State<wbr>ByName</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="node_opcua.programfinitestatemachineb.html#getstates" class="tsd-kind-icon">get<wbr>States</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="node_opcua.programfinitestatemachineb.html#gettransitions" class="tsd-kind-icon">get<wbr>Transitions</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="node_opcua.programfinitestatemachineb.html#isvalidtransition" class="tsd-kind-icon">is<wbr>Valid<wbr>Transition</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="node_opcua.programfinitestatemachineb.html#setstate" class="tsd-kind-icon">set<wbr>State</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="currentstate" class="tsd-anchor"></a>
+					<h3>current<wbr>State</h3>
+					<div class="tsd-signature tsd-kind-icon">current<wbr>State<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">FiniteStateVariable</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="node_opcua.finitestatemachineb.html">FiniteStateMachineB</a>.<a href="node_opcua.finitestatemachineb.html#currentstate">currentState</a></p>
+						<ul>
+							<li>Defined in packages/node-opcua-address-space/dist/source/interfaces/state_machine/finite_state_machine.d.ts:52</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Current state
+								CurrentState stores the current state of an instance of the StateMachineType. CurrentState
+								provides a human readable name for the current state which may not be suitable for use in
+								application control logic. Applications should use the Id Property of CurrentState if they need a
+							nique identifier for the state.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="currentstatenode" class="tsd-anchor"></a>
+					<h3>current<wbr>State<wbr>Node</h3>
+					<div class="tsd-signature tsd-kind-icon">current<wbr>State<wbr>Node<span class="tsd-signature-symbol">:</span> <a href="node_opcua.state.html" class="tsd-signature-type" data-tsd-kind="Interface">State</a></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="node_opcua.finitestatemachineb.html">FiniteStateMachineB</a>.<a href="node_opcua.finitestatemachineb.html#currentstatenode">currentStateNode</a></p>
+						<ul>
+							<li>Defined in packages/node-opcua-address-space/dist/source/interfaces/state_machine/finite_state_machine.d.ts:54</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="halt" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> halt</h3>
+					<div class="tsd-signature tsd-kind-icon">halt<span class="tsd-signature-symbol">:</span> <a href="../classes/node_opcua.uamethod.html" class="tsd-signature-type" data-tsd-kind="Class">UAMethod</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in packages/node-opcua-address-space/dist/source/interfaces/state_machine/program_finite_state_machine.d.ts:64</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Halt Causes the Program to transition from the Ready, Running or Suspended state to the Halted state.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="halted" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> halted</h3>
+					<div class="tsd-signature tsd-kind-icon">halted<span class="tsd-signature-symbol">:</span> <a href="node_opcua.state.html" class="tsd-signature-type" data-tsd-kind="Interface">State</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in packages/node-opcua-address-space/dist/source/interfaces/state_machine/program_finite_state_machine.d.ts:36</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="haltedtoready" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> halted<wbr>ToReady</h3>
+					<div class="tsd-signature tsd-kind-icon">halted<wbr>ToReady<span class="tsd-signature-symbol">:</span> <a href="node_opcua.transition.html" class="tsd-signature-type" data-tsd-kind="Interface">Transition</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in packages/node-opcua-address-space/dist/source/interfaces/state_machine/program_finite_state_machine.d.ts:40</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="initialstate" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> initial<wbr>State</h3>
+					<div class="tsd-signature tsd-kind-icon">initial<wbr>State<span class="tsd-signature-symbol">:</span> <a href="node_opcua.initialstate.html" class="tsd-signature-type" data-tsd-kind="Interface">InitialState</a></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="node_opcua.finitestatemachineb.html">FiniteStateMachineB</a>.<a href="node_opcua.finitestatemachineb.html#initialstate">initialState</a></p>
+						<ul>
+							<li>Defined in packages/node-opcua-address-space/dist/source/interfaces/state_machine/state_machine.d.ts:282</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="lasttransition" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> last<wbr>Transition</h3>
+					<div class="tsd-signature tsd-kind-icon">last<wbr>Transition<span class="tsd-signature-symbol">:</span> <a href="node_opcua.finitetransitionvariable.html" class="tsd-signature-type" data-tsd-kind="Interface">FiniteTransitionVariable</a></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="node_opcua.finitestatemachineb.html">FiniteStateMachineB</a>.<a href="node_opcua.finitestatemachineb.html#lasttransition">lastTransition</a></p>
+						<ul>
+							<li>Defined in packages/node-opcua-address-space/dist/source/interfaces/state_machine/finite_state_machine.d.ts:53</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Last transition</p>
+						</div>
+						<p>LastTransition stores the last transition which occurred in an instance of the StateMachineType.
+						LastTransition provides a human readable name.</p>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="ready" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> ready</h3>
+					<div class="tsd-signature tsd-kind-icon">ready<span class="tsd-signature-symbol">:</span> <a href="node_opcua.state.html" class="tsd-signature-type" data-tsd-kind="Interface">State</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in packages/node-opcua-address-space/dist/source/interfaces/state_machine/program_finite_state_machine.d.ts:37</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="readytohalted" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> ready<wbr>ToHalted</h3>
+					<div class="tsd-signature tsd-kind-icon">ready<wbr>ToHalted<span class="tsd-signature-symbol">:</span> <a href="node_opcua.transition.html" class="tsd-signature-type" data-tsd-kind="Interface">Transition</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in packages/node-opcua-address-space/dist/source/interfaces/state_machine/program_finite_state_machine.d.ts:48</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="readytorunning" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> ready<wbr>ToRunning</h3>
+					<div class="tsd-signature tsd-kind-icon">ready<wbr>ToRunning<span class="tsd-signature-symbol">:</span> <a href="node_opcua.transition.html" class="tsd-signature-type" data-tsd-kind="Interface">Transition</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in packages/node-opcua-address-space/dist/source/interfaces/state_machine/program_finite_state_machine.d.ts:41</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="reset" class="tsd-anchor"></a>
+					<h3>reset</h3>
+					<div class="tsd-signature tsd-kind-icon">reset<span class="tsd-signature-symbol">:</span> <a href="../classes/node_opcua.uamethod.html" class="tsd-signature-type" data-tsd-kind="Class">UAMethod</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in packages/node-opcua-address-space/dist/source/interfaces/state_machine/program_finite_state_machine.d.ts:68</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Reset Causes the Program to transition from the Halted state to the Ready state</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="resume" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> resume</h3>
+					<div class="tsd-signature tsd-kind-icon">resume<span class="tsd-signature-symbol">:</span> <a href="../classes/node_opcua.uamethod.html" class="tsd-signature-type" data-tsd-kind="Class">UAMethod</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in packages/node-opcua-address-space/dist/source/interfaces/state_machine/program_finite_state_machine.d.ts:60</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Resume Causes the Program to transition from the Suspended state to the Running state.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="running" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> running</h3>
+					<div class="tsd-signature tsd-kind-icon">running<span class="tsd-signature-symbol">:</span> <a href="node_opcua.state.html" class="tsd-signature-type" data-tsd-kind="Interface">State</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in packages/node-opcua-address-space/dist/source/interfaces/state_machine/program_finite_state_machine.d.ts:38</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="runningtohalted" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> running<wbr>ToHalted</h3>
+					<div class="tsd-signature tsd-kind-icon">running<wbr>ToHalted<span class="tsd-signature-symbol">:</span> <a href="node_opcua.transition.html" class="tsd-signature-type" data-tsd-kind="Interface">Transition</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in packages/node-opcua-address-space/dist/source/interfaces/state_machine/program_finite_state_machine.d.ts:42</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="runningtoready" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> running<wbr>ToReady</h3>
+					<div class="tsd-signature tsd-kind-icon">running<wbr>ToReady<span class="tsd-signature-symbol">:</span> <a href="node_opcua.transition.html" class="tsd-signature-type" data-tsd-kind="Interface">Transition</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in packages/node-opcua-address-space/dist/source/interfaces/state_machine/program_finite_state_machine.d.ts:43</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="runningtosuspended" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> running<wbr>ToSuspended</h3>
+					<div class="tsd-signature tsd-kind-icon">running<wbr>ToSuspended<span class="tsd-signature-symbol">:</span> <a href="node_opcua.transition.html" class="tsd-signature-type" data-tsd-kind="Interface">Transition</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in packages/node-opcua-address-space/dist/source/interfaces/state_machine/program_finite_state_machine.d.ts:44</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="start" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> start</h3>
+					<div class="tsd-signature tsd-kind-icon">start<span class="tsd-signature-symbol">:</span> <a href="../classes/node_opcua.uamethod.html" class="tsd-signature-type" data-tsd-kind="Class">UAMethod</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in packages/node-opcua-address-space/dist/source/interfaces/state_machine/program_finite_state_machine.d.ts:52</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Start Causes the Program to transition from the Ready state to the Running state.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="states" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> states</h3>
+					<div class="tsd-signature tsd-kind-icon">states<span class="tsd-signature-symbol">:</span> <a href="node_opcua.state.html" class="tsd-signature-type" data-tsd-kind="Interface">State</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="node_opcua.finitestatemachineb.html">FiniteStateMachineB</a>.<a href="node_opcua.finitestatemachineb.html#states">states</a></p>
+						<ul>
+							<li>Defined in packages/node-opcua-address-space/dist/source/interfaces/state_machine/state_machine.d.ts:283</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="suspend" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> suspend</h3>
+					<div class="tsd-signature tsd-kind-icon">suspend<span class="tsd-signature-symbol">:</span> <a href="../classes/node_opcua.uamethod.html" class="tsd-signature-type" data-tsd-kind="Class">UAMethod</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in packages/node-opcua-address-space/dist/source/interfaces/state_machine/program_finite_state_machine.d.ts:56</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Suspend Causes the Program to transition from the Running state to the Suspended state.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="suspended" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> suspended</h3>
+					<div class="tsd-signature tsd-kind-icon">suspended<span class="tsd-signature-symbol">:</span> <a href="node_opcua.state.html" class="tsd-signature-type" data-tsd-kind="Interface">State</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in packages/node-opcua-address-space/dist/source/interfaces/state_machine/program_finite_state_machine.d.ts:39</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="suspendedtohalted" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> suspended<wbr>ToHalted</h3>
+					<div class="tsd-signature tsd-kind-icon">suspended<wbr>ToHalted<span class="tsd-signature-symbol">:</span> <a href="node_opcua.transition.html" class="tsd-signature-type" data-tsd-kind="Interface">Transition</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in packages/node-opcua-address-space/dist/source/interfaces/state_machine/program_finite_state_machine.d.ts:46</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="suspendedtoready" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> suspended<wbr>ToReady</h3>
+					<div class="tsd-signature tsd-kind-icon">suspended<wbr>ToReady<span class="tsd-signature-symbol">:</span> <a href="node_opcua.transition.html" class="tsd-signature-type" data-tsd-kind="Interface">Transition</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in packages/node-opcua-address-space/dist/source/interfaces/state_machine/program_finite_state_machine.d.ts:47</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="suspendedtorunning" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> suspended<wbr>ToRunning</h3>
+					<div class="tsd-signature tsd-kind-icon">suspended<wbr>ToRunning<span class="tsd-signature-symbol">:</span> <a href="node_opcua.transition.html" class="tsd-signature-type" data-tsd-kind="Interface">Transition</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in packages/node-opcua-address-space/dist/source/interfaces/state_machine/program_finite_state_machine.d.ts:45</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="transitions" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> transitions</h3>
+					<div class="tsd-signature tsd-kind-icon">transitions<span class="tsd-signature-symbol">:</span> <a href="node_opcua.transition.html" class="tsd-signature-type" data-tsd-kind="Interface">Transition</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="node_opcua.finitestatemachineb.html">FiniteStateMachineB</a>.<a href="node_opcua.finitestatemachineb.html#transitions">transitions</a></p>
+						<ul>
+							<li>Defined in packages/node-opcua-address-space/dist/source/interfaces/state_machine/state_machine.d.ts:284</li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+					<a name="findtransitionnode" class="tsd-anchor"></a>
+					<h3>find<wbr>Transition<wbr>Node</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">find<wbr>Transition<wbr>Node<span class="tsd-signature-symbol">(</span>fromStateNode<span class="tsd-signature-symbol">: </span><a href="node_opcua.state.html" class="tsd-signature-type" data-tsd-kind="Interface">State</a>, toStateNode<span class="tsd-signature-symbol">: </span><a href="node_opcua.state.html" class="tsd-signature-type" data-tsd-kind="Interface">State</a>, predicate<span class="tsd-signature-symbol">?: </span><a href="../modules/node_opcua.html#transitionselector" class="tsd-signature-type" data-tsd-kind="Type alias">TransitionSelector</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="node_opcua.transition.html" class="tsd-signature-type" data-tsd-kind="Interface">Transition</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="node_opcua.finitestatemachineb.html">FiniteStateMachineB</a>.<a href="node_opcua.finitestatemachineb.html#findtransitionnode">findTransitionNode</a></p>
+								<ul>
+									<li>Defined in packages/node-opcua-address-space/dist/source/interfaces/state_machine/state_machine.d.ts:308</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>try to find the valid transition between fromState Node to toState Node</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>fromStateNode: <a href="node_opcua.state.html" class="tsd-signature-type" data-tsd-kind="Interface">State</a></h5>
+								</li>
+								<li>
+									<h5>toStateNode: <a href="node_opcua.state.html" class="tsd-signature-type" data-tsd-kind="Interface">State</a></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> predicate: <a href="../modules/node_opcua.html#transitionselector" class="tsd-signature-type" data-tsd-kind="Type alias">TransitionSelector</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="node_opcua.transition.html" class="tsd-signature-type" data-tsd-kind="Interface">Transition</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+					<a name="getcurrentstate" class="tsd-anchor"></a>
+					<h3>get<wbr>Current<wbr>State</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Current<wbr>State<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="node_opcua.finitestatemachineb.html">FiniteStateMachineB</a>.<a href="node_opcua.finitestatemachineb.html#getcurrentstate">getCurrentState</a></p>
+								<ul>
+									<li>Defined in packages/node-opcua-address-space/dist/source/interfaces/state_machine/state_machine.d.ts:312</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>return the current state as string</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+					<a name="getstatebyname" class="tsd-anchor"></a>
+					<h3>get<wbr>State<wbr>ByName</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>State<wbr>ByName<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="node_opcua.state.html" class="tsd-signature-type" data-tsd-kind="Interface">State</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="node_opcua.finitestatemachineb.html">FiniteStateMachineB</a>.<a href="node_opcua.finitestatemachineb.html#getstatebyname">getStateByName</a></p>
+								<ul>
+									<li>Defined in packages/node-opcua-address-space/dist/source/interfaces/state_machine/state_machine.d.ts:297</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>return the state Node by Name</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="node_opcua.state.html" class="tsd-signature-type" data-tsd-kind="Interface">State</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+					<a name="getstates" class="tsd-anchor"></a>
+					<h3>get<wbr>States</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>States<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="node_opcua.state.html" class="tsd-signature-type" data-tsd-kind="Interface">State</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="node_opcua.finitestatemachineb.html">FiniteStateMachineB</a>.<a href="node_opcua.finitestatemachineb.html#getstates">getStates</a></p>
+								<ul>
+									<li>Defined in packages/node-opcua-address-space/dist/source/interfaces/state_machine/state_machine.d.ts:288</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>return all state nodes associated with this state machine</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="node_opcua.state.html" class="tsd-signature-type" data-tsd-kind="Interface">State</a><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+					<a name="gettransitions" class="tsd-anchor"></a>
+					<h3>get<wbr>Transitions</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Transitions<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="node_opcua.transition.html" class="tsd-signature-type" data-tsd-kind="Interface">Transition</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="node_opcua.finitestatemachineb.html">FiniteStateMachineB</a>.<a href="node_opcua.finitestatemachineb.html#gettransitions">getTransitions</a></p>
+								<ul>
+									<li>Defined in packages/node-opcua-address-space/dist/source/interfaces/state_machine/state_machine.d.ts:292</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>return all state to state transition node associated with this state machine</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="node_opcua.transition.html" class="tsd-signature-type" data-tsd-kind="Interface">Transition</a><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+					<a name="isvalidtransition" class="tsd-anchor"></a>
+					<h3>is<wbr>Valid<wbr>Transition</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Valid<wbr>Transition<span class="tsd-signature-symbol">(</span>toStateNode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><a href="node_opcua.state.html" class="tsd-signature-type" data-tsd-kind="Interface">State</a>, predicate<span class="tsd-signature-symbol">?: </span><a href="../modules/node_opcua.html#transitionselector" class="tsd-signature-type" data-tsd-kind="Type alias">TransitionSelector</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="node_opcua.finitestatemachineb.html">FiniteStateMachineB</a>.<a href="node_opcua.finitestatemachineb.html#isvalidtransition">isValidTransition</a></p>
+								<ul>
+									<li>Defined in packages/node-opcua-address-space/dist/source/interfaces/state_machine/state_machine.d.ts:302</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>returns true if there is a valid transition from currentStateNode to toStateNode</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>toStateNode: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><a href="node_opcua.state.html" class="tsd-signature-type" data-tsd-kind="Interface">State</a></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> predicate: <a href="../modules/node_opcua.html#transitionselector" class="tsd-signature-type" data-tsd-kind="Type alias">TransitionSelector</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+					<a name="setstate" class="tsd-anchor"></a>
+					<h3>set<wbr>State</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>State<span class="tsd-signature-symbol">(</span>toStateNode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><a href="node_opcua.state.html" class="tsd-signature-type" data-tsd-kind="Interface">State</a>, predicate<span class="tsd-signature-symbol">?: </span><a href="../modules/node_opcua.html#transitionselector" class="tsd-signature-type" data-tsd-kind="Type alias">TransitionSelector</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="node_opcua.finitestatemachineb.html">FiniteStateMachineB</a>.<a href="node_opcua.finitestatemachineb.html#setstate">setState</a></p>
+								<ul>
+									<li>Defined in packages/node-opcua-address-space/dist/source/interfaces/state_machine/state_machine.d.ts:321</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>change the current state</p>
+								</div>
+								<p>note:</p>
+								<ul>
+									<li>a transition from currentState to toState node must exists</li>
+									<li>a TransitionEventType event will be raised</li>
+								</ul>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>toStateNode: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><a href="node_opcua.state.html" class="tsd-signature-type" data-tsd-kind="Interface">State</a></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> predicate: <a href="../modules/node_opcua.html#transitionselector" class="tsd-signature-type" data-tsd-kind="Type alias">TransitionSelector</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="../modules.html">Modules</a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="../modules/node_opcua.html">node-<wbr>opcua</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/node_opcua_address_space.html">node-<wbr>opcua-<wbr>address-<wbr>space</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/node_opcua_basic_types.html">node-<wbr>opcua-<wbr>basic-<wbr>types</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/node_opcua_certificate_manager.html">node-<wbr>opcua-<wbr>certificate-<wbr>manager</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/node_opcua_client.html">node-<wbr>opcua-<wbr>client</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/node_opcua_data_access.html">node-<wbr>opcua-<wbr>data-<wbr>access</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/node_opcua_data_model.html">node-<wbr>opcua-<wbr>data-<wbr>model</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/node_opcua_data_value.html">node-<wbr>opcua-<wbr>data-<wbr>value</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/node_opcua_guid.html">node-<wbr>opcua-<wbr>guid</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/node_opcua_nodeid.html">node-<wbr>opcua-<wbr>nodeid</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/node_opcua_server.html">node-<wbr>opcua-<wbr>server</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/node_opcua_status_codes.html">node-<wbr>opcua-<wbr>status-<wbr>codes</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/node_opcua_types.html">node-<wbr>opcua-<wbr>types</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/node_opcua_variant.html">node-<wbr>opcua-<wbr>variant</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-module">
+						<a href="node_opcua.programfinitestatemachineb.html" class="tsd-kind-icon">Program<wbr>Finite<wbr>State<wbr>MachineB</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="node_opcua.programfinitestatemachineb.html#currentstate" class="tsd-kind-icon">current<wbr>State</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="node_opcua.programfinitestatemachineb.html#currentstatenode" class="tsd-kind-icon">current<wbr>State<wbr>Node</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="node_opcua.programfinitestatemachineb.html#halt" class="tsd-kind-icon">halt</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="node_opcua.programfinitestatemachineb.html#halted" class="tsd-kind-icon">halted</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="node_opcua.programfinitestatemachineb.html#haltedtoready" class="tsd-kind-icon">halted<wbr>ToReady</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="node_opcua.programfinitestatemachineb.html#initialstate" class="tsd-kind-icon">initial<wbr>State</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="node_opcua.programfinitestatemachineb.html#lasttransition" class="tsd-kind-icon">last<wbr>Transition</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="node_opcua.programfinitestatemachineb.html#ready" class="tsd-kind-icon">ready</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="node_opcua.programfinitestatemachineb.html#readytohalted" class="tsd-kind-icon">ready<wbr>ToHalted</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="node_opcua.programfinitestatemachineb.html#readytorunning" class="tsd-kind-icon">ready<wbr>ToRunning</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="node_opcua.programfinitestatemachineb.html#reset" class="tsd-kind-icon">reset</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="node_opcua.programfinitestatemachineb.html#resume" class="tsd-kind-icon">resume</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="node_opcua.programfinitestatemachineb.html#running" class="tsd-kind-icon">running</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="node_opcua.programfinitestatemachineb.html#runningtohalted" class="tsd-kind-icon">running<wbr>ToHalted</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="node_opcua.programfinitestatemachineb.html#runningtoready" class="tsd-kind-icon">running<wbr>ToReady</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="node_opcua.programfinitestatemachineb.html#runningtosuspended" class="tsd-kind-icon">running<wbr>ToSuspended</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="node_opcua.programfinitestatemachineb.html#start" class="tsd-kind-icon">start</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="node_opcua.programfinitestatemachineb.html#states" class="tsd-kind-icon">states</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="node_opcua.programfinitestatemachineb.html#suspend" class="tsd-kind-icon">suspend</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="node_opcua.programfinitestatemachineb.html#suspended" class="tsd-kind-icon">suspended</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="node_opcua.programfinitestatemachineb.html#suspendedtohalted" class="tsd-kind-icon">suspended<wbr>ToHalted</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="node_opcua.programfinitestatemachineb.html#suspendedtoready" class="tsd-kind-icon">suspended<wbr>ToReady</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="node_opcua.programfinitestatemachineb.html#suspendedtorunning" class="tsd-kind-icon">suspended<wbr>ToRunning</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="node_opcua.programfinitestatemachineb.html#transitions" class="tsd-kind-icon">transitions</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+								<a href="node_opcua.programfinitestatemachineb.html#findtransitionnode" class="tsd-kind-icon">find<wbr>Transition<wbr>Node</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+								<a href="node_opcua.programfinitestatemachineb.html#getcurrentstate" class="tsd-kind-icon">get<wbr>Current<wbr>State</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+								<a href="node_opcua.programfinitestatemachineb.html#getstatebyname" class="tsd-kind-icon">get<wbr>State<wbr>ByName</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+								<a href="node_opcua.programfinitestatemachineb.html#getstates" class="tsd-kind-icon">get<wbr>States</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+								<a href="node_opcua.programfinitestatemachineb.html#gettransitions" class="tsd-kind-icon">get<wbr>Transitions</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+								<a href="node_opcua.programfinitestatemachineb.html#isvalidtransition" class="tsd-kind-icon">is<wbr>Valid<wbr>Transition</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+								<a href="node_opcua.programfinitestatemachineb.html#setstate" class="tsd-kind-icon">set<wbr>State</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-25438821-3', 'node-opcua.github.io');
+        ga('send', 'pageview');
+    </script>
+</body>
+</html>
