@@ -73,7 +73,7 @@ Let's create a sensor with its temperature variables.
 
 Here is the OPCUA model diagram that represents the sensor option.
 
-![](/images/2022-02-16/ea94ba4b1156f12d17d85fc4daad377c6ec15567.png){:width="100%"}
+![](/images/2022-02-16/ea94ba4b1156f12d17d85fc4daad377c6ec15567.png){:width="33%"}
 
 The javascript code to create the sensor instance is straightforward.
 
