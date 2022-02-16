@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "weather station in node-opcua"
+title: "a weather station server in Node-OPCUA"
 date:   2015-07-05 12:00:00  +0100
 comments: true
 categories: tutorial
 ---
 
-# Creating an OPC/UA server for a virtual weather station.
+# Creating an OPC-UA server for a virtual weather station.
 
 update on 26/06/2016 for node-opcua 0.0.55.
 update on 26/07/2019 for node-opcua 2.1.0.

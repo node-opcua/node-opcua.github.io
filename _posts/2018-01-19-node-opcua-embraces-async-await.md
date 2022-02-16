@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "node-opcua 0.2.0 will make it easier than ever to write OPCUA Client code"
+title: "Node-Opcua 0.2.0 will make it easier than ever to write OPC-UA Client code"
 date:   2018-01-22 12:00:00  +0100
 comments: true
 categories: tutorial

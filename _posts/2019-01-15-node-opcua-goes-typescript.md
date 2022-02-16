@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "node-opcua goes typescript"
+title: "Node-OPCUA goes typescript"
 date:   2019-01-15 12:00:00  +0100
 comments: true
 categories: info

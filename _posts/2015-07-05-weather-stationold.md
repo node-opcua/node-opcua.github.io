@@ -6,7 +6,7 @@ comments: true
 categories: tutorial
 ---
 
-# Creating a OPC/UA server for a virtual weather station.
+# Creating a OPC-UA server for a virtual weather station.
 
 update on 26/06/2016 for node-opcua 0.0.55.
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "NodeOPCUA goes PubSub - Episode 1"
+title: "Node-OPCUA goes PubSub - Episode 1"
 date:   2022-02-16 19:00:00  +0100
 comments: true
 categories: tutorial
@@ -39,7 +39,7 @@ Now let's edit our `server.js` javascript file:
 the server
 ----------
 
-``` {.javascript}
+``` javascript
 const { OPCUAServer } = require("node-opcua");
 _"some additionnal imports"
 
@@ -77,7 +77,7 @@ Here is the OPCUA model diagram that represents the sensor option.
 
 The javascript code to create the sensor instance is straightforward.
 
-``` {.javascript}
+``` javascript
 const namespace = server.engine.addressSpace.getOwnNamespace();
 
 const sensor = namespace.addObject({
@@ -105,7 +105,7 @@ We do not have a physical sensor connected here. Instead, we can
 simulate a temperature variation by continuously changing the
 temperature with a sine wave.
 
-``` {.javascript}
+``` javascript
 setInterval(() => {
     const value = 19 + 5 * Math.sin(Date.now() / 10000) + Math.random()*0.2;
     temperature.setValueFromSource({ dataType: "Double", value });
@@ -172,7 +172,7 @@ and services.
 Let's add this after the `await server.initialize();` of our server
 code.
 
-``` {.javascript}
+```javascript
 const configuration = getPubSubConfiguration();
 console.log(configuration.toString());
 //
@@ -194,7 +194,7 @@ It returns a `PubSubConfigurationDataType` object containing the PubSub
 configuration. The configufation describes the connection and the
 published data set.
 
-``` {.javascript}
+``` javascript
 function getPubSubConfiguration()
 {
   _"create the connection"
@@ -232,7 +232,7 @@ The `PubSubConnection` contains the address of the MQTT broker we want
 to publish to. For our demo, we will use the public demo broker offered
 by [Hivemq](https://www.hivemq.com/) at `"mqtt:broker.hivemq.com:1883"`.
 
-``` {.javascript}
+``` javascript
 function createConnection() {
 
     const mqttEndpoint = "mqtt:broker.hivemq.com:1883";
@@ -265,7 +265,7 @@ group. It also contains information about the publishing interval. The
 `publishingInterval` indicates the rate at which the JSON message will
 be published to the broker.
 
-``` {.javascript}
+``` javascript
 _"create the dataset writer"
 
 const writerGroup = {
@@ -292,7 +292,7 @@ that produces the data to be sent.
 The `queueName` parameters contains the mqtt topic we want to publish
 to: `stervfive-opcua-demo/json/data/temperature-sensor1` .
 
-``` {.javascript}
+``` javascript
 const dataSetWriter = {
     dataSetFieldContentMask: DataSetFieldContentMask.None,
     dataSetName: "PublishedDataSet1",
@@ -339,7 +339,7 @@ It also indicates the suggested sampling interval in the
 In our case, the nodeId of the varaible to monitor is
 `"ns=1;s=Temperature"`
 
-``` {.javascript}
+``` javascript
 function createPublishedDataSet() {
     const publishedDataSet = {
         name: "PublishedDataSet1",
