@@ -6,7 +6,7 @@ comments: true
 categories: tutorial
 ---
 
-# Creating a OPC/UA server for a virtual weather station.
+# Creating an OPC/UA server for a virtual weather station.
 
 update on 26/06/2016 for node-opcua 0.0.55.
 update on 26/07/2019 for node-opcua 2.1.0.
@@ -14,35 +14,35 @@ update on 26/07/2019 for node-opcua 2.1.0.
 ## Purpose
 
 In my quest of exploring the ["Internet of Things"](http://en.wikipedia.org/wiki/Internet_of_Things) world,
-I decided to create a simple weather station with 3 sensors mounted on my Raspberry computer.
-I needed to buy some equipment to build the prototype. After studying different type of sensors (1-Wire,Analog,I2C),
+I decided to create a simple weather station with three sensors mounted on my Raspberry computer.
+I needed to buy some equipment to build the prototype. After studying different types of sensors (1-Wire ,Analog,I2C),
 I finally opted for I2C sensors. (I used I2C chips a long time ago, in a Junior Enterprise Project). 
 I ordered a [breadboard](https://www.cl.cam.ac.uk/projects/raspberrypi/tutorials/robot/breadboard)
 and [I2C temperature and humidity sensor](http://www.ebay.com/itm/BMP085-IIC-I2C-Barometric-Pressure-module-for-AVR-Arduino-/121233041012?ssPageName=ADME:L:OU:FR:3160).
 
-While waiting for the equipment to be delivered, I though it was time to start coding the Server Application.
+While waiting for the equipment to be delivered, I thought it was time to start coding the Server Application.
 
-I got the idea of using a free Web-Service to get some realtime temperature and pressure information that I need to simulate the data.
+I got the idea of using a free Web-Service to get some real-time temperature and pressure information that I need to simulate the data.
 
 The server is written in TypeScript, using [NodeJS](http://www.nodejs.org).
 
 ## retrieving Weather data using a REST API.
 
-The virtual weather station need to extract the weather data from a web service.
+The virtual weather station needs to extract the weather data from a web service.
 [OpenWeatherMAP](https://rapidapi.com/community/api/open-weather-map) provides a free API.
 
 
 ### getting a key at open-weather-map
 
 You will need to register to  [RapidAPI.com](https://rapidapi.com) to obtain
- your API key. Store you API key in a file name ```open-weather-map.key```, in your project folder.
+ your API key. Store your API key in a file name ```open-weather-map.key```, in your project folder.
 
 
 ### testing the API
 
 The API is documented [here](https://rapidapi.com/community/api/open-weather-map).
 
-For example, typing the following URL in the address bar of your web browser.
+For example, type    the following URL in the address bar of your web browser.
 
 ```
 curl --get --include 'https://community-open-weather-map.p.rapidapi.com/weather?callback=test&id=2172797&units=%22metric%22+or+%22imperial%22&mode=xml%2C+html&q=London%2Cuk' \
