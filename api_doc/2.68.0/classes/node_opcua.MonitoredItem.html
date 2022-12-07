@@ -1,0 +1,959 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>MonitoredItem | NodeOPCUA reference documentation - public API
+	</title>
+	<meta name="description" content="Documentation for NodeOPCUA reference documentation - public API">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+	<script data-ad-client="ca-pub-8886208393040088" async
+	src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">NodeOPCUA reference documentation - public API</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../modules.html">NodeOPCUA reference documentation - public API</a>
+				</li>
+				<li>
+					<a href="../modules/node_opcua.html">node-opcua</a>
+				</li>
+				<li>
+					<a href="node_opcua.MonitoredItem.html">MonitoredItem</a>
+				</li>
+			</ul>
+			<h1>Class MonitoredItem</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class=" row">
+		<h4><img src="../assets/images/sterfive.png" style="height: 2em;"></img><a
+			href="https://support.sterfive.com">&nbsp subscribe now with sterfive to access the online-user
+		manual</a></h4>
+	</div>
+	<div class=" row">
+		<script async src="https://cse.google.com/cse.js?cx=4dc3c50c98e410649"></script>
+		<div class="gcse-search"></div>
+	</div>
+	<div class=" row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>a server side monitored item</p>
+					</div>
+					<ul>
+						<li><p>Once created, the MonitoredItem will raised an &quot;samplingEvent&quot; event every &quot;samplingInterval&quot; millisecond
+							until {{#crossLink &quot;MonitoredItem/terminate:method&quot;}}{{/crossLink}} is called.</p>
+						</li>
+						<li><p>It is up to the  event receiver to call {{#crossLink &quot;MonitoredItem/recordValue:method&quot;}}{{/crossLink}}.</p>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="tsd-signature-type">EventEmitter</span>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">MonitoredItem</span>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="node_opcua.MonitoredItem.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="node_opcua.MonitoredItem.html#_subscription" class="tsd-kind-icon">$subscription</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="node_opcua.MonitoredItem.html#_samplingId" class="tsd-kind-icon">_sampling<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="node_opcua.MonitoredItem.html#clientHandle" class="tsd-kind-icon">client<wbr>Handle</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="node_opcua.MonitoredItem.html#discardOldest" class="tsd-kind-icon">discard<wbr>Oldest</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="node_opcua.MonitoredItem.html#filter" class="tsd-kind-icon">filter</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="node_opcua.MonitoredItem.html#itemToMonitor" class="tsd-kind-icon">item<wbr>ToMonitor</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="node_opcua.MonitoredItem.html#monitoredItemId" class="tsd-kind-icon">monitored<wbr>Item<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="node_opcua.MonitoredItem.html#monitoringMode" class="tsd-kind-icon">monitoring<wbr>Mode</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="node_opcua.MonitoredItem.html#oldDataValue" class="tsd-kind-icon">old<wbr>Data<wbr>Value</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="node_opcua.MonitoredItem.html#overflow" class="tsd-kind-icon">overflow</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="node_opcua.MonitoredItem.html#queueSize" class="tsd-kind-icon">queue<wbr>Size</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="node_opcua.MonitoredItem.html#samplingFunc" class="tsd-kind-icon">sampling<wbr>Func</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="node_opcua.MonitoredItem.html#samplingInterval" class="tsd-kind-icon">sampling<wbr>Interval</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="node_opcua.MonitoredItem.html#timestampsToReturn" class="tsd-kind-icon">timestamps<wbr>ToReturn</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="node_opcua.MonitoredItem.html#defaultSamplingInterval" class="tsd-kind-icon">default<wbr>Sampling<wbr>Interval</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="node_opcua.MonitoredItem.html#maximumSamplingInterval" class="tsd-kind-icon">maximum<wbr>Sampling<wbr>Interval</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="node_opcua.MonitoredItem.html#minimumSamplingInterval" class="tsd-kind-icon">minimum<wbr>Sampling<wbr>Interval</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="node_opcua.MonitoredItem.html#registry" class="tsd-kind-icon">registry</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Accessors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="node_opcua.MonitoredItem.html#hasMonitoredItemNotifications" class="tsd-kind-icon">has<wbr>Monitored<wbr>Item<wbr>Notifications</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="node_opcua.MonitoredItem.html#isSampling" class="tsd-kind-icon">is<wbr>Sampling</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="node_opcua.MonitoredItem.html#node" class="tsd-kind-icon">node</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="node_opcua.MonitoredItem.html#addLinkItem" class="tsd-kind-icon">add<wbr>Link<wbr>Item</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="node_opcua.MonitoredItem.html#dispose" class="tsd-kind-icon">dispose</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="node_opcua.MonitoredItem.html#extractMonitoredItemNotifications" class="tsd-kind-icon">extract<wbr>Monitored<wbr>Item<wbr>Notifications</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="node_opcua.MonitoredItem.html#hasLinkItem" class="tsd-kind-icon">has<wbr>Link<wbr>Item</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="node_opcua.MonitoredItem.html#modify" class="tsd-kind-icon">modify</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="node_opcua.MonitoredItem.html#removeLinkItem" class="tsd-kind-icon">remove<wbr>Link<wbr>Item</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="node_opcua.MonitoredItem.html#resendInitialValues" class="tsd-kind-icon">resend<wbr>Initial<wbr>Values</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="node_opcua.MonitoredItem.html#setMonitoringMode" class="tsd-kind-icon">set<wbr>Monitoring<wbr>Mode</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="node_opcua.MonitoredItem.html#setNode" class="tsd-kind-icon">set<wbr>Node</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="node_opcua.MonitoredItem.html#terminate" class="tsd-kind-icon">terminate</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="node_opcua.MonitoredItem.html#toString" class="tsd-kind-icon">to<wbr>String</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Monitored<wbr>Item<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><a href="../interfaces/node_opcua.MonitoredItemOptions.html" class="tsd-signature-type" data-tsd-kind="Interface">MonitoredItemOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="node_opcua.MonitoredItem.html" class="tsd-signature-type" data-tsd-kind="Class">MonitoredItem</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides EventEmitter.constructor</p>
+								<ul>
+									<li>Defined in node-opcua-server/dist/monitored_item.d.ts:101</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>options: <a href="../interfaces/node_opcua.MonitoredItemOptions.html" class="tsd-signature-type" data-tsd-kind="Interface">MonitoredItemOptions</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="node_opcua.MonitoredItem.html" class="tsd-signature-type" data-tsd-kind="Class">MonitoredItem</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="_subscription" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> $subscription</h3>
+					<div class="tsd-signature tsd-kind-icon">$subscription<span class="tsd-signature-symbol">:</span> <a href="../interfaces/node_opcua.ISubscription.html" class="tsd-signature-type" data-tsd-kind="Interface">ISubscription</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node-opcua-server/dist/monitored_item.d.ts:87</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="_samplingId" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> _sampling<wbr>Id</h3>
+					<div class="tsd-signature tsd-kind-icon">_sampling<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Timer</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node-opcua-server/dist/monitored_item.d.ts:88</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="clientHandle" class="tsd-anchor"></a>
+					<h3>client<wbr>Handle</h3>
+					<div class="tsd-signature tsd-kind-icon">client<wbr>Handle<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node-opcua-server/dist/monitored_item.d.ts:86</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="discardOldest" class="tsd-anchor"></a>
+					<h3>discard<wbr>Oldest</h3>
+					<div class="tsd-signature tsd-kind-icon">discard<wbr>Oldest<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node-opcua-server/dist/monitored_item.d.ts:84</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="filter" class="tsd-anchor"></a>
+					<h3>filter</h3>
+					<div class="tsd-signature tsd-kind-icon">filter<span class="tsd-signature-symbol">:</span> <a href="node_opcua.MonitoringFilter.html" class="tsd-signature-type" data-tsd-kind="Class">MonitoringFilter</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node-opcua-server/dist/monitored_item.d.ts:83</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="itemToMonitor" class="tsd-anchor"></a>
+					<h3>item<wbr>ToMonitor</h3>
+					<div class="tsd-signature tsd-kind-icon">item<wbr>ToMonitor<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node-opcua-server/dist/monitored_item.d.ts:82</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="monitoredItemId" class="tsd-anchor"></a>
+					<h3>monitored<wbr>Item<wbr>Id</h3>
+					<div class="tsd-signature tsd-kind-icon">monitored<wbr>Item<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node-opcua-server/dist/monitored_item.d.ts:77</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="monitoringMode" class="tsd-anchor"></a>
+					<h3>monitoring<wbr>Mode</h3>
+					<div class="tsd-signature tsd-kind-icon">monitoring<wbr>Mode<span class="tsd-signature-symbol">:</span> <a href="../enums/node_opcua.MonitoringMode.html" class="tsd-signature-type" data-tsd-kind="Enumeration">MonitoringMode</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node-opcua-server/dist/monitored_item.d.ts:80</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="oldDataValue" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> old<wbr>Data<wbr>Value</h3>
+					<div class="tsd-signature tsd-kind-icon">old<wbr>Data<wbr>Value<span class="tsd-signature-symbol">:</span> <a href="node_opcua.DataValue.html" class="tsd-signature-type" data-tsd-kind="Class">DataValue</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node-opcua-server/dist/monitored_item.d.ts:79</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="overflow" class="tsd-anchor"></a>
+					<h3>overflow</h3>
+					<div class="tsd-signature tsd-kind-icon">overflow<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node-opcua-server/dist/monitored_item.d.ts:78</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="queueSize" class="tsd-anchor"></a>
+					<h3>queue<wbr>Size</h3>
+					<div class="tsd-signature tsd-kind-icon">queue<wbr>Size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node-opcua-server/dist/monitored_item.d.ts:85</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="samplingFunc" class="tsd-anchor"></a>
+					<h3>sampling<wbr>Func</h3>
+					<div class="tsd-signature tsd-kind-icon">sampling<wbr>Func<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><a href="node_opcua.DataValue.html" class="tsd-signature-type" data-tsd-kind="Class">DataValue</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>err<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Error</span>, dataValue<span class="tsd-signature-symbol">?: </span><a href="node_opcua.DataValue.html" class="tsd-signature-type" data-tsd-kind="Class">DataValue</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node-opcua-server/dist/monitored_item.d.ts:89</li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-signature">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-class">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><a href="node_opcua.DataValue.html" class="tsd-signature-type" data-tsd-kind="Class">DataValue</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>err<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Error</span>, dataValue<span class="tsd-signature-symbol">?: </span><a href="node_opcua.DataValue.html" class="tsd-signature-type" data-tsd-kind="Class">DataValue</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>value: <a href="node_opcua.DataValue.html" class="tsd-signature-type" data-tsd-kind="Class">DataValue</a></h5>
+											</li>
+											<li>
+												<h5>callback: <span class="tsd-signature-symbol">(</span>err<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Error</span>, dataValue<span class="tsd-signature-symbol">?: </span><a href="node_opcua.DataValue.html" class="tsd-signature-type" data-tsd-kind="Class">DataValue</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
+												<ul class="tsd-parameters">
+													<li class="tsd-parameter-signature">
+														<ul class="tsd-signatures tsd-kind-type-literal">
+															<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>err<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Error</span>, dataValue<span class="tsd-signature-symbol">?: </span><a href="node_opcua.DataValue.html" class="tsd-signature-type" data-tsd-kind="Class">DataValue</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+														</ul>
+														<ul class="tsd-descriptions">
+															<li class="tsd-description">
+																<h4 class="tsd-parameters-title">Parameters</h4>
+																<ul class="tsd-parameters">
+																	<li>
+																		<h5>err: <span class="tsd-signature-type">Error</span></h5>
+																	</li>
+																	<li>
+																		<h5><span class="tsd-flag ts-flagOptional">Optional</span> dataValue: <a href="node_opcua.DataValue.html" class="tsd-signature-type" data-tsd-kind="Class">DataValue</a></h5>
+																	</li>
+																</ul>
+																<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+															</li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="samplingInterval" class="tsd-anchor"></a>
+					<h3>sampling<wbr>Interval</h3>
+					<div class="tsd-signature tsd-kind-icon">sampling<wbr>Interval<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node-opcua-server/dist/monitored_item.d.ts:76</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="timestampsToReturn" class="tsd-anchor"></a>
+					<h3>timestamps<wbr>ToReturn</h3>
+					<div class="tsd-signature tsd-kind-icon">timestamps<wbr>ToReturn<span class="tsd-signature-symbol">:</span> <a href="../enums/node_opcua.TimestampsToReturn.html" class="tsd-signature-type" data-tsd-kind="Enumeration">TimestampsToReturn</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node-opcua-server/dist/monitored_item.d.ts:81</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="defaultSamplingInterval" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> default<wbr>Sampling<wbr>Interval</h3>
+					<div class="tsd-signature tsd-kind-icon">default<wbr>Sampling<wbr>Interval<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node-opcua-server/dist/monitored_item.d.ts:74</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="maximumSamplingInterval" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> maximum<wbr>Sampling<wbr>Interval</h3>
+					<div class="tsd-signature tsd-kind-icon">maximum<wbr>Sampling<wbr>Interval<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node-opcua-server/dist/monitored_item.d.ts:75</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="minimumSamplingInterval" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> minimum<wbr>Sampling<wbr>Interval</h3>
+					<div class="tsd-signature tsd-kind-icon">minimum<wbr>Sampling<wbr>Interval<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node-opcua-server/dist/monitored_item.d.ts:73</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="registry" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> registry</h3>
+					<div class="tsd-signature tsd-kind-icon">registry<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ObjectRegistry</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node-opcua-server/dist/monitored_item.d.ts:72</li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Accessors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="hasMonitoredItemNotifications" class="tsd-anchor"></a>
+					<h3>has<wbr>Monitored<wbr>Item<wbr>Notifications</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> hasMonitoredItemNotifications<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node-opcua-server/dist/monitored_item.d.ts:135</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="isSampling" class="tsd-anchor"></a>
+					<h3>is<wbr>Sampling</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> isSampling<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node-opcua-server/dist/monitored_item.d.ts:112</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
+					<a name="node" class="tsd-anchor"></a>
+					<h3>node</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> node<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="node_opcua.BaseNode.html" class="tsd-signature-type" data-tsd-kind="Class">BaseNode</a></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> node<span class="tsd-signature-symbol">(</span>someNode<span class="tsd-signature-symbol">: </span><a href="node_opcua.BaseNode.html" class="tsd-signature-type" data-tsd-kind="Class">BaseNode</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node-opcua-server/dist/monitored_item.d.ts:70</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="node_opcua.BaseNode.html" class="tsd-signature-type" data-tsd-kind="Class">BaseNode</a></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node-opcua-server/dist/monitored_item.d.ts:71</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>someNode: <a href="node_opcua.BaseNode.html" class="tsd-signature-type" data-tsd-kind="Class">BaseNode</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addLinkItem" class="tsd-anchor"></a>
+					<h3>add<wbr>Link<wbr>Item</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Link<wbr>Item<span class="tsd-signature-symbol">(</span>linkedMonitoredItemId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="node_opcua.StatusCode.html" class="tsd-signature-type" data-tsd-kind="Class">StatusCode</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node-opcua-server/dist/monitored_item.d.ts:129</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>linkedMonitoredItemId: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="node_opcua.StatusCode.html" class="tsd-signature-type" data-tsd-kind="Class">StatusCode</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="dispose" class="tsd-anchor"></a>
+					<h3>dispose</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">dispose<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node-opcua-server/dist/monitored_item.d.ts:111</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="extractMonitoredItemNotifications" class="tsd-anchor"></a>
+					<h3>extract<wbr>Monitored<wbr>Item<wbr>Notifications</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">extract<wbr>Monitored<wbr>Item<wbr>Notifications<span class="tsd-signature-symbol">(</span>bForce<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/node_opcua.html#QueueItem" class="tsd-signature-type" data-tsd-kind="Type alias">QueueItem</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node-opcua-server/dist/monitored_item.d.ts:140</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> bForce: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/node_opcua.html#QueueItem" class="tsd-signature-type" data-tsd-kind="Type alias">QueueItem</a><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="hasLinkItem" class="tsd-anchor"></a>
+					<h3>has<wbr>Link<wbr>Item</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">has<wbr>Link<wbr>Item<span class="tsd-signature-symbol">(</span>linkedMonitoredItemId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node-opcua-server/dist/monitored_item.d.ts:128</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>linkedMonitoredItemId: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="modify" class="tsd-anchor"></a>
+					<h3>modify</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">modify<span class="tsd-signature-symbol">(</span>timestampsToReturn<span class="tsd-signature-symbol">: </span><a href="../enums/node_opcua.TimestampsToReturn.html" class="tsd-signature-type" data-tsd-kind="Enumeration">TimestampsToReturn</a>, monitoringParameters<span class="tsd-signature-symbol">: </span><a href="node_opcua.MonitoringParameters.html" class="tsd-signature-type" data-tsd-kind="Class">MonitoringParameters</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="node_opcua.MonitoredItemModifyResult.html" class="tsd-signature-type" data-tsd-kind="Class">MonitoredItemModifyResult</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node-opcua-server/dist/monitored_item.d.ts:141</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>timestampsToReturn: <a href="../enums/node_opcua.TimestampsToReturn.html" class="tsd-signature-type" data-tsd-kind="Enumeration">TimestampsToReturn</a></h5>
+								</li>
+								<li>
+									<h5>monitoringParameters: <a href="node_opcua.MonitoringParameters.html" class="tsd-signature-type" data-tsd-kind="Class">MonitoringParameters</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="node_opcua.MonitoredItemModifyResult.html" class="tsd-signature-type" data-tsd-kind="Class">MonitoredItemModifyResult</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="removeLinkItem" class="tsd-anchor"></a>
+					<h3>remove<wbr>Link<wbr>Item</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">remove<wbr>Link<wbr>Item<span class="tsd-signature-symbol">(</span>linkedMonitoredItemId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="node_opcua.StatusCode.html" class="tsd-signature-type" data-tsd-kind="Class">StatusCode</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node-opcua-server/dist/monitored_item.d.ts:130</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>linkedMonitoredItemId: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="node_opcua.StatusCode.html" class="tsd-signature-type" data-tsd-kind="Class">StatusCode</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="resendInitialValues" class="tsd-anchor"></a>
+					<h3>resend<wbr>Initial<wbr>Values</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">resend<wbr>Initial<wbr>Values<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node-opcua-server/dist/monitored_item.d.ts:142</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setMonitoringMode" class="tsd-anchor"></a>
+					<h3>set<wbr>Monitoring<wbr>Mode</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Monitoring<wbr>Mode<span class="tsd-signature-symbol">(</span>monitoringMode<span class="tsd-signature-symbol">: </span><a href="../enums/node_opcua.MonitoringMode.html" class="tsd-signature-type" data-tsd-kind="Enumeration">MonitoringMode</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node-opcua-server/dist/monitored_item.d.ts:103</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>monitoringMode: <a href="../enums/node_opcua.MonitoringMode.html" class="tsd-signature-type" data-tsd-kind="Enumeration">MonitoringMode</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setNode" class="tsd-anchor"></a>
+					<h3>set<wbr>Node</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Node<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><a href="node_opcua.BaseNode.html" class="tsd-signature-type" data-tsd-kind="Class">BaseNode</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node-opcua-server/dist/monitored_item.d.ts:102</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>node: <a href="node_opcua.BaseNode.html" class="tsd-signature-type" data-tsd-kind="Class">BaseNode</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="terminate" class="tsd-anchor"></a>
+					<h3>terminate</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">terminate<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node-opcua-server/dist/monitored_item.d.ts:110</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Terminate the  MonitoredItem.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>method</dt>
+									<dd><p>terminate</p>
+										<p>This will stop the internal sampling timer.</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="toString" class="tsd-anchor"></a>
+					<h3>to<wbr>String</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>String<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node-opcua-server/dist/monitored_item.d.ts:113</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="../modules.html">Modules</a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="../modules/node_opcua.html">node-<wbr>opcua</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/node_opcua_address_space.html">node-<wbr>opcua-<wbr>address-<wbr>space</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/node_opcua_basic_types.html">node-<wbr>opcua-<wbr>basic-<wbr>types</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/node_opcua_certificate_manager.html">node-<wbr>opcua-<wbr>certificate-<wbr>manager</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/node_opcua_client.html">node-<wbr>opcua-<wbr>client</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/node_opcua_data_access.html">node-<wbr>opcua-<wbr>data-<wbr>access</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/node_opcua_data_model.html">node-<wbr>opcua-<wbr>data-<wbr>model</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/node_opcua_data_value.html">node-<wbr>opcua-<wbr>data-<wbr>value</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/node_opcua_guid.html">node-<wbr>opcua-<wbr>guid</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/node_opcua_nodeid.html">node-<wbr>opcua-<wbr>nodeid</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/node_opcua_server.html">node-<wbr>opcua-<wbr>server</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/node_opcua_status_codes.html">node-<wbr>opcua-<wbr>status-<wbr>codes</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/node_opcua_types.html">node-<wbr>opcua-<wbr>types</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/node_opcua_variant.html">node-<wbr>opcua-<wbr>variant</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-parent-kind-module">
+						<a href="node_opcua.MonitoredItem.html" class="tsd-kind-icon">Monitored<wbr>Item</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+								<a href="node_opcua.MonitoredItem.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="node_opcua.MonitoredItem.html#_subscription" class="tsd-kind-icon">$subscription</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="node_opcua.MonitoredItem.html#_samplingId" class="tsd-kind-icon">_sampling<wbr>Id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="node_opcua.MonitoredItem.html#clientHandle" class="tsd-kind-icon">client<wbr>Handle</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="node_opcua.MonitoredItem.html#discardOldest" class="tsd-kind-icon">discard<wbr>Oldest</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="node_opcua.MonitoredItem.html#filter" class="tsd-kind-icon">filter</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="node_opcua.MonitoredItem.html#itemToMonitor" class="tsd-kind-icon">item<wbr>ToMonitor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="node_opcua.MonitoredItem.html#monitoredItemId" class="tsd-kind-icon">monitored<wbr>Item<wbr>Id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="node_opcua.MonitoredItem.html#monitoringMode" class="tsd-kind-icon">monitoring<wbr>Mode</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="node_opcua.MonitoredItem.html#oldDataValue" class="tsd-kind-icon">old<wbr>Data<wbr>Value</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="node_opcua.MonitoredItem.html#overflow" class="tsd-kind-icon">overflow</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="node_opcua.MonitoredItem.html#queueSize" class="tsd-kind-icon">queue<wbr>Size</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="node_opcua.MonitoredItem.html#samplingFunc" class="tsd-kind-icon">sampling<wbr>Func</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="node_opcua.MonitoredItem.html#samplingInterval" class="tsd-kind-icon">sampling<wbr>Interval</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="node_opcua.MonitoredItem.html#timestampsToReturn" class="tsd-kind-icon">timestamps<wbr>ToReturn</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="node_opcua.MonitoredItem.html#defaultSamplingInterval" class="tsd-kind-icon">default<wbr>Sampling<wbr>Interval</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="node_opcua.MonitoredItem.html#maximumSamplingInterval" class="tsd-kind-icon">maximum<wbr>Sampling<wbr>Interval</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="node_opcua.MonitoredItem.html#minimumSamplingInterval" class="tsd-kind-icon">minimum<wbr>Sampling<wbr>Interval</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="node_opcua.MonitoredItem.html#registry" class="tsd-kind-icon">registry</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="node_opcua.MonitoredItem.html#hasMonitoredItemNotifications" class="tsd-kind-icon">has<wbr>Monitored<wbr>Item<wbr>Notifications</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="node_opcua.MonitoredItem.html#isSampling" class="tsd-kind-icon">is<wbr>Sampling</a>
+							</li>
+							<li class=" tsd-kind-accessor tsd-parent-kind-class">
+								<a href="node_opcua.MonitoredItem.html#node" class="tsd-kind-icon">node</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="node_opcua.MonitoredItem.html#addLinkItem" class="tsd-kind-icon">add<wbr>Link<wbr>Item</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="node_opcua.MonitoredItem.html#dispose" class="tsd-kind-icon">dispose</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="node_opcua.MonitoredItem.html#extractMonitoredItemNotifications" class="tsd-kind-icon">extract<wbr>Monitored<wbr>Item<wbr>Notifications</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="node_opcua.MonitoredItem.html#hasLinkItem" class="tsd-kind-icon">has<wbr>Link<wbr>Item</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="node_opcua.MonitoredItem.html#modify" class="tsd-kind-icon">modify</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="node_opcua.MonitoredItem.html#removeLinkItem" class="tsd-kind-icon">remove<wbr>Link<wbr>Item</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="node_opcua.MonitoredItem.html#resendInitialValues" class="tsd-kind-icon">resend<wbr>Initial<wbr>Values</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="node_opcua.MonitoredItem.html#setMonitoringMode" class="tsd-kind-icon">set<wbr>Monitoring<wbr>Mode</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="node_opcua.MonitoredItem.html#setNode" class="tsd-kind-icon">set<wbr>Node</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="node_opcua.MonitoredItem.html#terminate" class="tsd-kind-icon">terminate</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="node_opcua.MonitoredItem.html#toString" class="tsd-kind-icon">to<wbr>String</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+	<div class=" row">
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-6t+ed+2i-1n-4w"
+		data-ad-client="ca-pub-8886208393040088" data-ad-slot="9362364253"></ins>
+		<script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-25438821-3', 'node-opcua.github.io');
+        ga('send', 'pageview');
+    </script>
+</body>
+</html>

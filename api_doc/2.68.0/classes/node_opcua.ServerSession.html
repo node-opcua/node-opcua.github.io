@@ -1,0 +1,1458 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>ServerSession | NodeOPCUA reference documentation - public API
+	</title>
+	<meta name="description" content="Documentation for NodeOPCUA reference documentation - public API">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+	<script data-ad-client="ca-pub-8886208393040088" async
+	src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">NodeOPCUA reference documentation - public API</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../modules.html">NodeOPCUA reference documentation - public API</a>
+				</li>
+				<li>
+					<a href="../modules/node_opcua.html">node-opcua</a>
+				</li>
+				<li>
+					<a href="node_opcua.ServerSession.html">ServerSession</a>
+				</li>
+			</ul>
+			<h1>Class ServerSession</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class=" row">
+		<h4><img src="../assets/images/sterfive.png" style="height: 2em;"></img><a
+			href="https://support.sterfive.com">&nbsp subscribe now with sterfive to access the online-user
+		manual</a></h4>
+	</div>
+	<div class=" row">
+		<script async src="https://cse.google.com/cse.js?cx=4dc3c50c98e410649"></script>
+		<div class="gcse-search"></div>
+	</div>
+	<div class=" row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>A Server session object.</p>
+					</div>
+					<p><strong>from OPCUA Spec 1.02:</strong></p>
+					<ul>
+						<li><p>Sessions are created to be independent of the underlying communications connection. Therefore, if a communication
+								connection fails, the Session is not immediately affected. The exact mechanism to recover from an underlying
+							communication connection error depends on the SecureChannel mapping as described in Part 6.</p>
+						</li>
+						<li><p>Sessions are terminated by the Server automatically if the Client fails to issue a Service request on the Session
+								within the timeout period negotiated by the Server in the CreateSession Service response. This protects the Server
+							against Client failures and against situations where a failed underlying connection cannot be re-established.</p>
+						</li>
+						<li><p>Clients shall be prepared to submit requests in a timely manner to prevent the Session from closing automatically.</p>
+						</li>
+						<li><p>Clients may explicitly terminate Sessions using the CloseSession Service.</p>
+						</li>
+						<li><p>When a Session is terminated, all outstanding requests on the Session are aborted and BadSessionClosed StatusCodes
+								are returned to the Client. In addition, the Server deletes the entry for the Client from its
+							SessionDiagnosticsArray Variable and notifies any other Clients who were subscribed to this entry.</p>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="tsd-signature-type">EventEmitter</span>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">ServerSession</span>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel">
+				<h3>Implements</h3>
+				<ul class="tsd-hierarchy">
+					<li><a href="../interfaces/node_opcua.ISubscriber.html" class="tsd-signature-type" data-tsd-kind="Interface">ISubscriber</a></li>
+					<li><a href="../interfaces/node_opcua.ISessionBase.html" class="tsd-signature-type" data-tsd-kind="Interface">ISessionBase</a></li>
+					<li><a href="../interfaces/node_opcua.IServerSession.html" class="tsd-signature-type" data-tsd-kind="Interface">IServerSession</a></li>
+					<li><a href="../interfaces/node_opcua.IServerSessionBase.html" class="tsd-signature-type" data-tsd-kind="Interface">IServerSessionBase</a></li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="node_opcua.ServerSession.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#__status" class="tsd-kind-icon">__status</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#_watchDog" class="tsd-kind-icon">_watch<wbr>Dog</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#_watchDogData" class="tsd-kind-icon">_watch<wbr>Dog<wbr>Data</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#authenticationToken" class="tsd-kind-icon">authentication<wbr>Token</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#channel" class="tsd-kind-icon">channel</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#channelId" class="tsd-kind-icon">channel<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#clientDescription" class="tsd-kind-icon">client<wbr>Description</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#continuationPointManager" class="tsd-kind-icon">continuation<wbr>Point<wbr>Manager</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#creationDate" class="tsd-kind-icon">creation<wbr>Date</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#endpoint" class="tsd-kind-icon">endpoint</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#keepAlive" class="tsd-kind-icon">keep<wbr>Alive</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#nodeId" class="tsd-kind-icon">node<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#nonce" class="tsd-kind-icon">nonce</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#parent" class="tsd-kind-icon">parent</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#publishEngine" class="tsd-kind-icon">publish<wbr>Engine</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#sessionDiagnostics" class="tsd-kind-icon">session<wbr>Diagnostics</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#sessionName" class="tsd-kind-icon">session<wbr>Name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#sessionObject" class="tsd-kind-icon">session<wbr>Object</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#sessionSecurityDiagnostics" class="tsd-kind-icon">session<wbr>Security<wbr>Diagnostics</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#sessionTimeout" class="tsd-kind-icon">session<wbr>Timeout</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#subscriptionDiagnosticsArray" class="tsd-kind-icon">subscription<wbr>Diagnostics<wbr>Array</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#userIdentityToken" class="tsd-kind-icon">user<wbr>Identity<wbr>Token</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="node_opcua.ServerSession.html#maxPublishRequestInQueue" class="tsd-kind-icon">max<wbr>Publish<wbr>Request<wbr>InQueue</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="node_opcua.ServerSession.html#registry" class="tsd-kind-icon">registry</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Accessors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#aborted" class="tsd-kind-icon">aborted</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#addressSpace" class="tsd-kind-icon">address<wbr>Space</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#clientConnectionTime" class="tsd-kind-icon">client<wbr>Connection<wbr>Time</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#clientLastContactTime" class="tsd-kind-icon">client<wbr>Last<wbr>Contact<wbr>Time</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#cumulatedSubscriptionCount" class="tsd-kind-icon">cumulated<wbr>Subscription<wbr>Count</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#currentMonitoredItemCount" class="tsd-kind-icon">current<wbr>Monitored<wbr>Item<wbr>Count</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#currentPublishRequestInQueue" class="tsd-kind-icon">current<wbr>Publish<wbr>Request<wbr>InQueue</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#currentSubscriptionCount" class="tsd-kind-icon">current<wbr>Subscription<wbr>Count</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#status" class="tsd-kind-icon">status</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#_attach_channel" class="tsd-kind-icon">_attach_<wbr>channel</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#_detach_channel" class="tsd-kind-icon">_detach_<wbr>channel</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#_exposeSubscriptionDiagnostics" class="tsd-kind-icon">_expose<wbr>Subscription<wbr>Diagnostics</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#_unexposeSubscriptionDiagnostics" class="tsd-kind-icon">_unexpose<wbr>Subscription<wbr>Diagnostics</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#close" class="tsd-kind-icon">close</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#createSubscription" class="tsd-kind-icon">create<wbr>Subscription</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#deleteSubscription" class="tsd-kind-icon">delete<wbr>Subscription</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#dispose" class="tsd-kind-icon">dispose</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#getEndpointDescription" class="tsd-kind-icon">get<wbr>Endpoint<wbr>Description</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#getSessionDiagnosticsArray" class="tsd-kind-icon">get<wbr>Session<wbr>Diagnostics<wbr>Array</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#getSessionId" class="tsd-kind-icon">get<wbr>Session<wbr>Id</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#getSessionSecurityDiagnosticsArray" class="tsd-kind-icon">get<wbr>Session<wbr>Security<wbr>Diagnostics<wbr>Array</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#getSubscription" class="tsd-kind-icon">get<wbr>Subscription</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#incrementRequestErrorCounter" class="tsd-kind-icon">increment<wbr>Request<wbr>Error<wbr>Counter</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#incrementRequestTotalCounter" class="tsd-kind-icon">increment<wbr>Request<wbr>Total<wbr>Counter</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#incrementTotalRequestCount" class="tsd-kind-icon">increment<wbr>Total<wbr>Request<wbr>Count</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#registerNode" class="tsd-kind-icon">register<wbr>Node</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#resolveRegisteredNode" class="tsd-kind-icon">resolve<wbr>Registered<wbr>Node</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#unRegisterNode" class="tsd-kind-icon">un<wbr>Register<wbr>Node</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="node_opcua.ServerSession.html#updateClientLastContactTime" class="tsd-kind-icon">update<wbr>Client<wbr>Last<wbr>Contact<wbr>Time</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Server<wbr>Session<span class="tsd-signature-symbol">(</span>parent<span class="tsd-signature-symbol">: </span><a href="node_opcua.ServerEngine.html" class="tsd-signature-type" data-tsd-kind="Class">ServerEngine</a>, sessionTimeout<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="node_opcua.ServerSession.html" class="tsd-signature-type" data-tsd-kind="Class">ServerSession</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides EventEmitter.constructor</p>
+								<ul>
+									<li>Defined in node-opcua-server/dist/server_session.d.ts:72</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>parent: <a href="node_opcua.ServerEngine.html" class="tsd-signature-type" data-tsd-kind="Class">ServerEngine</a></h5>
+								</li>
+								<li>
+									<h5>sessionTimeout: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="node_opcua.ServerSession.html" class="tsd-signature-type" data-tsd-kind="Class">ServerSession</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="__status" class="tsd-anchor"></a>
+					<h3>__status</h3>
+					<div class="tsd-signature tsd-kind-icon">__status<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node-opcua-server/dist/server_session.d.ts:44</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="_watchDog" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> _watch<wbr>Dog</h3>
+					<div class="tsd-signature tsd-kind-icon">_watch<wbr>Dog<span class="tsd-signature-symbol">:</span> <a href="node_opcua.WatchDog.html" class="tsd-signature-type" data-tsd-kind="Class">WatchDog</a></div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/node_opcua.ISubscriber.html">ISubscriber</a>.<a href="../interfaces/node_opcua.ISubscriber.html#_watchDog">_watchDog</a></p>
+						<ul>
+							<li>Defined in node-opcua-server/dist/server_session.d.ts:62</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="_watchDogData" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> _watch<wbr>Dog<wbr>Data</h3>
+					<div class="tsd-signature tsd-kind-icon">_watch<wbr>Dog<wbr>Data<span class="tsd-signature-symbol">:</span> <a href="../interfaces/node_opcua.IWatchdogData2.html" class="tsd-signature-type" data-tsd-kind="Interface">IWatchdogData2</a></div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/node_opcua.ISubscriber.html">ISubscriber</a>.<a href="../interfaces/node_opcua.ISubscriber.html#_watchDogData">_watchDogData</a></p>
+						<ul>
+							<li>Defined in node-opcua-server/dist/server_session.d.ts:63</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="authenticationToken" class="tsd-anchor"></a>
+					<h3>authentication<wbr>Token</h3>
+					<div class="tsd-signature tsd-kind-icon">authentication<wbr>Token<span class="tsd-signature-symbol">:</span> <a href="node_opcua.NodeId.html" class="tsd-signature-type" data-tsd-kind="Class">NodeId</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node-opcua-server/dist/server_session.d.ts:46</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="channel" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> channel</h3>
+					<div class="tsd-signature tsd-kind-icon">channel<span class="tsd-signature-symbol">:</span> <a href="node_opcua.ServerSecureChannelLayer.html" class="tsd-signature-type" data-tsd-kind="Class">ServerSecureChannelLayer</a></div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/node_opcua.ISessionBase.html">ISessionBase</a>.<a href="../interfaces/node_opcua.ISessionBase.html#channel">channel</a></p>
+						<ul>
+							<li>Defined in node-opcua-server/dist/server_session.d.ts:56</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="channelId" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> channel<wbr>Id</h3>
+					<div class="tsd-signature tsd-kind-icon">channel<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node-opcua-server/dist/server_session.d.ts:60</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="clientDescription" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> client<wbr>Description</h3>
+					<div class="tsd-signature tsd-kind-icon">client<wbr>Description<span class="tsd-signature-symbol">:</span> <a href="node_opcua.ApplicationDescription.html" class="tsd-signature-type" data-tsd-kind="Class">ApplicationDescription</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node-opcua-server/dist/server_session.d.ts:59</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="continuationPointManager" class="tsd-anchor"></a>
+					<h3>continuation<wbr>Point<wbr>Manager</h3>
+					<div class="tsd-signature tsd-kind-icon">continuation<wbr>Point<wbr>Manager<span class="tsd-signature-symbol">:</span> <a href="node_opcua.ContinuationPointManager.html" class="tsd-signature-type" data-tsd-kind="Class">ContinuationPointManager</a></div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/node_opcua.ISessionBase.html">ISessionBase</a>.<a href="../interfaces/node_opcua.ISessionBase.html#continuationPointManager">continuationPointManager</a></p>
+						<ul>
+							<li>Defined in node-opcua-server/dist/server_session.d.ts:61</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="creationDate" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> creation<wbr>Date</h3>
+					<div class="tsd-signature tsd-kind-icon">creation<wbr>Date<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node-opcua-server/dist/server_session.d.ts:51</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="endpoint" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> endpoint</h3>
+					<div class="tsd-signature tsd-kind-icon">endpoint<span class="tsd-signature-symbol">:</span> <a href="node_opcua.EndpointDescription.html" class="tsd-signature-type" data-tsd-kind="Class">EndpointDescription</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node-opcua-server/dist/server_session.d.ts:74</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="keepAlive" class="tsd-anchor"></a>
+					<h3>keep<wbr>Alive</h3>
+					<div class="tsd-signature tsd-kind-icon">keep<wbr>Alive<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/node_opcua.IServerSession.html">IServerSession</a>.<a href="../interfaces/node_opcua.IServerSession.html#keepAlive">keepAlive</a></p>
+						<ul>
+							<li>Defined in node-opcua-server/dist/server_session.d.ts:64</li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-signature">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-class">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="nodeId" class="tsd-anchor"></a>
+					<h3>node<wbr>Id</h3>
+					<div class="tsd-signature tsd-kind-icon">node<wbr>Id<span class="tsd-signature-symbol">:</span> <a href="node_opcua.NodeId.html" class="tsd-signature-type" data-tsd-kind="Class">NodeId</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node-opcua-server/dist/server_session.d.ts:47</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="nonce" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> nonce</h3>
+					<div class="tsd-signature tsd-kind-icon">nonce<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Buffer</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node-opcua-server/dist/server_session.d.ts:57</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="parent" class="tsd-anchor"></a>
+					<h3>parent</h3>
+					<div class="tsd-signature tsd-kind-icon">parent<span class="tsd-signature-symbol">:</span> <a href="node_opcua.ServerEngine.html" class="tsd-signature-type" data-tsd-kind="Class">ServerEngine</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node-opcua-server/dist/server_session.d.ts:45</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="publishEngine" class="tsd-anchor"></a>
+					<h3>publish<wbr>Engine</h3>
+					<div class="tsd-signature tsd-kind-icon">publish<wbr>Engine<span class="tsd-signature-symbol">:</span> <a href="node_opcua.ServerSidePublishEngine.html" class="tsd-signature-type" data-tsd-kind="Class">ServerSidePublishEngine</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node-opcua-server/dist/server_session.d.ts:49</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="sessionDiagnostics" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> session<wbr>Diagnostics</h3>
+					<div class="tsd-signature tsd-kind-icon">session<wbr>Diagnostics<span class="tsd-signature-symbol">:</span> <a href="../interfaces/node_opcua.UASessionDiagnosticsVariable.html" class="tsd-signature-type" data-tsd-kind="Interface">UASessionDiagnosticsVariable</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/node_opcua.DTSessionDiagnostics.html" class="tsd-signature-type" data-tsd-kind="Interface">DTSessionDiagnostics</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node-opcua-server/dist/server_session.d.ts:53</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="sessionName" class="tsd-anchor"></a>
+					<h3>session<wbr>Name</h3>
+					<div class="tsd-signature tsd-kind-icon">session<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/node_opcua.IServerSessionBase.html">IServerSessionBase</a>.<a href="../interfaces/node_opcua.IServerSessionBase.html#sessionName">sessionName</a></p>
+						<ul>
+							<li>Defined in node-opcua-server/dist/server_session.d.ts:48</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="sessionObject" class="tsd-anchor"></a>
+					<h3>session<wbr>Object</h3>
+					<div class="tsd-signature tsd-kind-icon">session<wbr>Object<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node-opcua-server/dist/server_session.d.ts:50</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="sessionSecurityDiagnostics" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> session<wbr>Security<wbr>Diagnostics</h3>
+					<div class="tsd-signature tsd-kind-icon">session<wbr>Security<wbr>Diagnostics<span class="tsd-signature-symbol">:</span> <a href="../interfaces/node_opcua.UASessionSecurityDiagnostics.html" class="tsd-signature-type" data-tsd-kind="Interface">UASessionSecurityDiagnostics</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/node_opcua.DTSessionSecurityDiagnostics.html" class="tsd-signature-type" data-tsd-kind="Interface">DTSessionSecurityDiagnostics</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node-opcua-server/dist/server_session.d.ts:54</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="sessionTimeout" class="tsd-anchor"></a>
+					<h3>session<wbr>Timeout</h3>
+					<div class="tsd-signature tsd-kind-icon">session<wbr>Timeout<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/node_opcua.IServerSessionBase.html">IServerSessionBase</a>.<a href="../interfaces/node_opcua.IServerSessionBase.html#sessionTimeout">sessionTimeout</a></p>
+						<ul>
+							<li>Defined in node-opcua-server/dist/server_session.d.ts:52</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="subscriptionDiagnosticsArray" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> subscription<wbr>Diagnostics<wbr>Array</h3>
+					<div class="tsd-signature tsd-kind-icon">subscription<wbr>Diagnostics<wbr>Array<span class="tsd-signature-symbol">:</span> <a href="../interfaces/node_opcua.UADynamicVariableArray.html" class="tsd-signature-type" data-tsd-kind="Interface">UADynamicVariableArray</a><span class="tsd-signature-symbol">&lt;</span><a href="node_opcua.SubscriptionDiagnosticsDataType.html" class="tsd-signature-type" data-tsd-kind="Class">SubscriptionDiagnosticsDataType</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node-opcua-server/dist/server_session.d.ts:55</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="userIdentityToken" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> user<wbr>Identity<wbr>Token</h3>
+					<div class="tsd-signature tsd-kind-icon">user<wbr>Identity<wbr>Token<span class="tsd-signature-symbol">:</span> <a href="node_opcua.UserIdentityToken.html" class="tsd-signature-type" data-tsd-kind="Class">UserIdentityToken</a></div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/node_opcua.ISessionBase.html">ISessionBase</a>.<a href="../interfaces/node_opcua.ISessionBase.html#userIdentityToken">userIdentityToken</a></p>
+						<ul>
+							<li>Defined in node-opcua-server/dist/server_session.d.ts:58</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="maxPublishRequestInQueue" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> max<wbr>Publish<wbr>Request<wbr>InQueue</h3>
+					<div class="tsd-signature tsd-kind-icon">max<wbr>Publish<wbr>Request<wbr>InQueue<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node-opcua-server/dist/server_session.d.ts:43</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="registry" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> registry</h3>
+					<div class="tsd-signature tsd-kind-icon">registry<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ObjectRegistry</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node-opcua-server/dist/server_session.d.ts:42</li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Accessors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="aborted" class="tsd-anchor"></a>
+					<h3>aborted</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> aborted<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node-opcua-server/dist/server_session.d.ts:155</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>true if the underlying channel has been closed or aborted...</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="addressSpace" class="tsd-anchor"></a>
+					<h3>address<wbr>Space</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> addressSpace<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="node_opcua.AddressSpace.html" class="tsd-signature-type" data-tsd-kind="Class">AddressSpace</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node-opcua-server/dist/server_session.d.ts:85</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="node_opcua.AddressSpace.html" class="tsd-signature-type" data-tsd-kind="Class">AddressSpace</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="clientConnectionTime" class="tsd-anchor"></a>
+					<h3>client<wbr>Connection<wbr>Time</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> clientConnectionTime<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Date</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node-opcua-server/dist/server_session.d.ts:77</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="clientLastContactTime" class="tsd-anchor"></a>
+					<h3>client<wbr>Last<wbr>Contact<wbr>Time</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> clientLastContactTime<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/node_opcua.IServerSessionBase.html">IServerSessionBase</a>.<a href="../interfaces/node_opcua.IServerSessionBase.html#clientLastContactTime">clientLastContactTime</a></p>
+								<ul>
+									<li>Defined in node-opcua-server/dist/server_session.d.ts:82</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>return the number of milisecond since last session transaction occurs from client
+									the first transaction is the creation of the session</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="cumulatedSubscriptionCount" class="tsd-anchor"></a>
+					<h3>cumulated<wbr>Subscription<wbr>Count</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> cumulatedSubscriptionCount<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node-opcua-server/dist/server_session.d.ts:113</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>number of subscriptions ever created since this object is live</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="currentMonitoredItemCount" class="tsd-anchor"></a>
+					<h3>current<wbr>Monitored<wbr>Item<wbr>Count</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> currentMonitoredItemCount<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node-opcua-server/dist/server_session.d.ts:117</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>number of monitored items</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="currentPublishRequestInQueue" class="tsd-anchor"></a>
+					<h3>current<wbr>Publish<wbr>Request<wbr>InQueue</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> currentPublishRequestInQueue<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node-opcua-server/dist/server_session.d.ts:86</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="currentSubscriptionCount" class="tsd-anchor"></a>
+					<h3>current<wbr>Subscription<wbr>Count</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> currentSubscriptionCount<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node-opcua-server/dist/server_session.d.ts:109</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>number of active subscriptions</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
+					<a name="status" class="tsd-anchor"></a>
+					<h3>status</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> status<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> status<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/node_opcua.IServerSessionBase.html">IServerSessionBase</a>.<a href="../interfaces/node_opcua.IServerSessionBase.html#status">status</a></p>
+								<ul>
+									<li>Defined in node-opcua-server/dist/server_session.d.ts:83</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/node_opcua.IServerSessionBase.html">IServerSessionBase</a>.<a href="../interfaces/node_opcua.IServerSessionBase.html#status">status</a></p>
+								<ul>
+									<li>Defined in node-opcua-server/dist/server_session.d.ts:84</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="_attach_channel" class="tsd-anchor"></a>
+					<h3>_attach_<wbr>channel</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">_attach_<wbr>channel<span class="tsd-signature-symbol">(</span>channel<span class="tsd-signature-symbol">: </span><a href="node_opcua.ServerSecureChannelLayer.html" class="tsd-signature-type" data-tsd-kind="Class">ServerSecureChannelLayer</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node-opcua-server/dist/server_session.d.ts:157</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>channel: <a href="node_opcua.ServerSecureChannelLayer.html" class="tsd-signature-type" data-tsd-kind="Class">ServerSecureChannelLayer</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="_detach_channel" class="tsd-anchor"></a>
+					<h3>_detach_<wbr>channel</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">_detach_<wbr>channel<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node-opcua-server/dist/server_session.d.ts:158</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="_exposeSubscriptionDiagnostics" class="tsd-anchor"></a>
+					<h3>_expose<wbr>Subscription<wbr>Diagnostics</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">_expose<wbr>Subscription<wbr>Diagnostics<span class="tsd-signature-symbol">(</span>subscription<span class="tsd-signature-symbol">: </span><a href="node_opcua.Subscription.html" class="tsd-signature-type" data-tsd-kind="Class">Subscription</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node-opcua-server/dist/server_session.d.ts:159</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>subscription: <a href="node_opcua.Subscription.html" class="tsd-signature-type" data-tsd-kind="Class">Subscription</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="_unexposeSubscriptionDiagnostics" class="tsd-anchor"></a>
+					<h3>_unexpose<wbr>Subscription<wbr>Diagnostics</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">_unexpose<wbr>Subscription<wbr>Diagnostics<span class="tsd-signature-symbol">(</span>subscription<span class="tsd-signature-symbol">: </span><a href="node_opcua.Subscription.html" class="tsd-signature-type" data-tsd-kind="Class">Subscription</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node-opcua-server/dist/server_session.d.ts:160</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>subscription: <a href="node_opcua.Subscription.html" class="tsd-signature-type" data-tsd-kind="Class">Subscription</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="close" class="tsd-anchor"></a>
+					<h3>close</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">close<span class="tsd-signature-symbol">(</span>deleteSubscriptions<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>, reason<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node-opcua-server/dist/server_session.d.ts:148</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>close a ServerSession, this will also delete the subscriptions if the flag is set.</p>
+								</div>
+								<p>Spec extract:</p>
+								<p>If a Client invokes the CloseSession Service then all Subscriptions associated with the Session are also deleted
+									if the deleteSubscriptions flag is set to TRUE. If a Server terminates a Session for any other reason,
+									Subscriptions associated with the Session, are not deleted. Each Subscription has its own lifetime to protect
+									against data loss in the case of a Session termination. In these cases, the Subscription can be reassigned to
+								another Client before its lifetime expires.</p>
+								<dl class="tsd-comment-tags">
+									<dt>method</dt>
+									<dd><p>close</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>deleteSubscriptions: <span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>: should we delete subscription ?</p>
+									</div>
+								</li>
+								<li>
+									<h5>reason: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="createSubscription" class="tsd-anchor"></a>
+					<h3>create<wbr>Subscription</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Subscription<span class="tsd-signature-symbol">(</span>parameters<span class="tsd-signature-symbol">: </span><a href="../interfaces/node_opcua.CreateSubscriptionRequestOptions.html" class="tsd-signature-type" data-tsd-kind="Interface">CreateSubscriptionRequestOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="node_opcua.Subscription.html" class="tsd-signature-type" data-tsd-kind="Class">Subscription</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node-opcua-server/dist/server_session.d.ts:156</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>parameters: <a href="../interfaces/node_opcua.CreateSubscriptionRequestOptions.html" class="tsd-signature-type" data-tsd-kind="Interface">CreateSubscriptionRequestOptions</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="node_opcua.Subscription.html" class="tsd-signature-type" data-tsd-kind="Class">Subscription</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="deleteSubscription" class="tsd-anchor"></a>
+					<h3>delete<wbr>Subscription</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">delete<wbr>Subscription<span class="tsd-signature-symbol">(</span>subscriptionId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="node_opcua.StatusCode.html" class="tsd-signature-type" data-tsd-kind="Class">StatusCode</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node-opcua-server/dist/server_session.d.ts:130</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>method</dt>
+									<dd><p>deleteSubscription</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>subscriptionId: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="node_opcua.StatusCode.html" class="tsd-signature-type" data-tsd-kind="Class">StatusCode</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="dispose" class="tsd-anchor"></a>
+					<h3>dispose</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">dispose<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node-opcua-server/dist/server_session.d.ts:76</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getEndpointDescription" class="tsd-anchor"></a>
+					<h3>get<wbr>Endpoint<wbr>Description</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Endpoint<wbr>Description<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="node_opcua.EndpointDescription.html" class="tsd-signature-type" data-tsd-kind="Class">EndpointDescription</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node-opcua-server/dist/server_session.d.ts:75</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="node_opcua.EndpointDescription.html" class="tsd-signature-type" data-tsd-kind="Class">EndpointDescription</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getSessionDiagnosticsArray" class="tsd-anchor"></a>
+					<h3>get<wbr>Session<wbr>Diagnostics<wbr>Array</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Session<wbr>Diagnostics<wbr>Array<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/node_opcua.UADynamicVariableArray.html" class="tsd-signature-type" data-tsd-kind="Interface">UADynamicVariableArray</a><span class="tsd-signature-symbol">&lt;</span><a href="node_opcua.SessionDiagnosticsDataType.html" class="tsd-signature-type" data-tsd-kind="Class">SessionDiagnosticsDataType</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node-opcua-server/dist/server_session.d.ts:101</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>returns rootFolder.objects.server.serverDiagnostics.sessionsDiagnosticsSummary.sessionDiagnosticsArray</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/node_opcua.UADynamicVariableArray.html" class="tsd-signature-type" data-tsd-kind="Interface">UADynamicVariableArray</a><span class="tsd-signature-symbol">&lt;</span><a href="node_opcua.SessionDiagnosticsDataType.html" class="tsd-signature-type" data-tsd-kind="Class">SessionDiagnosticsDataType</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getSessionId" class="tsd-anchor"></a>
+					<h3>get<wbr>Session<wbr>Id</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Session<wbr>Id<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="node_opcua.NodeId.html" class="tsd-signature-type" data-tsd-kind="Class">NodeId</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/node_opcua.ISessionBase.html">ISessionBase</a>.<a href="../interfaces/node_opcua.ISessionBase.html#getSessionId">getSessionId</a></p>
+								<ul>
+									<li>Defined in node-opcua-server/dist/server_session.d.ts:73</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="node_opcua.NodeId.html" class="tsd-signature-type" data-tsd-kind="Class">NodeId</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getSessionSecurityDiagnosticsArray" class="tsd-anchor"></a>
+					<h3>get<wbr>Session<wbr>Security<wbr>Diagnostics<wbr>Array</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Session<wbr>Security<wbr>Diagnostics<wbr>Array<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/node_opcua.UADynamicVariableArray.html" class="tsd-signature-type" data-tsd-kind="Interface">UADynamicVariableArray</a><span class="tsd-signature-symbol">&lt;</span><a href="node_opcua.SessionSecurityDiagnosticsDataType.html" class="tsd-signature-type" data-tsd-kind="Class">SessionSecurityDiagnosticsDataType</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node-opcua-server/dist/server_session.d.ts:105</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>returns rootFolder.objects.server.serverDiagnostics.sessionsDiagnosticsSummary.sessionSecurityDiagnosticsArray</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/node_opcua.UADynamicVariableArray.html" class="tsd-signature-type" data-tsd-kind="Interface">UADynamicVariableArray</a><span class="tsd-signature-symbol">&lt;</span><a href="node_opcua.SessionSecurityDiagnosticsDataType.html" class="tsd-signature-type" data-tsd-kind="Class">SessionSecurityDiagnosticsDataType</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getSubscription" class="tsd-anchor"></a>
+					<h3>get<wbr>Subscription</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Subscription<span class="tsd-signature-symbol">(</span>subscriptionId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="node_opcua.Subscription.html" class="tsd-signature-type" data-tsd-kind="Class">Subscription</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node-opcua-server/dist/server_session.d.ts:124</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>retrieve an existing subscription by subscriptionId</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>method</dt>
+									<dd><p>getSubscription</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>subscriptionId: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="node_opcua.Subscription.html" class="tsd-signature-type" data-tsd-kind="Class">Subscription</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="incrementRequestErrorCounter" class="tsd-anchor"></a>
+					<h3>increment<wbr>Request<wbr>Error<wbr>Counter</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">increment<wbr>Request<wbr>Error<wbr>Counter<span class="tsd-signature-symbol">(</span>counterName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/node_opcua.IServerSession.html">IServerSession</a>.<a href="../interfaces/node_opcua.IServerSession.html#incrementRequestErrorCounter">incrementRequestErrorCounter</a></p>
+								<ul>
+									<li>Defined in node-opcua-server/dist/server_session.d.ts:97</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>counterName: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="incrementRequestTotalCounter" class="tsd-anchor"></a>
+					<h3>increment<wbr>Request<wbr>Total<wbr>Counter</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">increment<wbr>Request<wbr>Total<wbr>Counter<span class="tsd-signature-symbol">(</span>counterName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/node_opcua.IServerSession.html">IServerSession</a>.<a href="../interfaces/node_opcua.IServerSession.html#incrementRequestTotalCounter">incrementRequestTotalCounter</a></p>
+								<ul>
+									<li>Defined in node-opcua-server/dist/server_session.d.ts:96</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>counterName: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="incrementTotalRequestCount" class="tsd-anchor"></a>
+					<h3>increment<wbr>Total<wbr>Request<wbr>Count</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">increment<wbr>Total<wbr>Request<wbr>Count<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/node_opcua.IServerSession.html">IServerSession</a>.<a href="../interfaces/node_opcua.IServerSession.html#incrementTotalRequestCount">incrementTotalRequestCount</a></p>
+								<ul>
+									<li>Defined in node-opcua-server/dist/server_session.d.ts:95</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="registerNode" class="tsd-anchor"></a>
+					<h3>register<wbr>Node</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">register<wbr>Node<span class="tsd-signature-symbol">(</span>nodeId<span class="tsd-signature-symbol">: </span><a href="node_opcua.NodeId.html" class="tsd-signature-type" data-tsd-kind="Class">NodeId</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="node_opcua.NodeId.html" class="tsd-signature-type" data-tsd-kind="Class">NodeId</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node-opcua-server/dist/server_session.d.ts:149</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>nodeId: <a href="node_opcua.NodeId.html" class="tsd-signature-type" data-tsd-kind="Class">NodeId</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="node_opcua.NodeId.html" class="tsd-signature-type" data-tsd-kind="Class">NodeId</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="resolveRegisteredNode" class="tsd-anchor"></a>
+					<h3>resolve<wbr>Registered<wbr>Node</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">resolve<wbr>Registered<wbr>Node<span class="tsd-signature-symbol">(</span>aliasNodeId<span class="tsd-signature-symbol">: </span><a href="node_opcua.NodeId.html" class="tsd-signature-type" data-tsd-kind="Class">NodeId</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="node_opcua.NodeId.html" class="tsd-signature-type" data-tsd-kind="Class">NodeId</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node-opcua-server/dist/server_session.d.ts:151</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>aliasNodeId: <a href="node_opcua.NodeId.html" class="tsd-signature-type" data-tsd-kind="Class">NodeId</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="node_opcua.NodeId.html" class="tsd-signature-type" data-tsd-kind="Class">NodeId</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="unRegisterNode" class="tsd-anchor"></a>
+					<h3>un<wbr>Register<wbr>Node</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">un<wbr>Register<wbr>Node<span class="tsd-signature-symbol">(</span>aliasNodeId<span class="tsd-signature-symbol">: </span><a href="node_opcua.NodeId.html" class="tsd-signature-type" data-tsd-kind="Class">NodeId</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node-opcua-server/dist/server_session.d.ts:150</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>aliasNodeId: <a href="node_opcua.NodeId.html" class="tsd-signature-type" data-tsd-kind="Class">NodeId</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="updateClientLastContactTime" class="tsd-anchor"></a>
+					<h3>update<wbr>Client<wbr>Last<wbr>Contact<wbr>Time</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">update<wbr>Client<wbr>Last<wbr>Contact<wbr>Time<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node-opcua-server/dist/server_session.d.ts:87</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="../modules.html">Modules</a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="../modules/node_opcua.html">node-<wbr>opcua</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/node_opcua_address_space.html">node-<wbr>opcua-<wbr>address-<wbr>space</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/node_opcua_basic_types.html">node-<wbr>opcua-<wbr>basic-<wbr>types</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/node_opcua_certificate_manager.html">node-<wbr>opcua-<wbr>certificate-<wbr>manager</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/node_opcua_client.html">node-<wbr>opcua-<wbr>client</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/node_opcua_data_access.html">node-<wbr>opcua-<wbr>data-<wbr>access</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/node_opcua_data_model.html">node-<wbr>opcua-<wbr>data-<wbr>model</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/node_opcua_data_value.html">node-<wbr>opcua-<wbr>data-<wbr>value</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/node_opcua_guid.html">node-<wbr>opcua-<wbr>guid</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/node_opcua_nodeid.html">node-<wbr>opcua-<wbr>nodeid</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/node_opcua_server.html">node-<wbr>opcua-<wbr>server</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/node_opcua_status_codes.html">node-<wbr>opcua-<wbr>status-<wbr>codes</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/node_opcua_types.html">node-<wbr>opcua-<wbr>types</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/node_opcua_variant.html">node-<wbr>opcua-<wbr>variant</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-parent-kind-module">
+						<a href="node_opcua.ServerSession.html" class="tsd-kind-icon">Server<wbr>Session</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+								<a href="node_opcua.ServerSession.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#__status" class="tsd-kind-icon">__status</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#_watchDog" class="tsd-kind-icon">_watch<wbr>Dog</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#_watchDogData" class="tsd-kind-icon">_watch<wbr>Dog<wbr>Data</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#authenticationToken" class="tsd-kind-icon">authentication<wbr>Token</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#channel" class="tsd-kind-icon">channel</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#channelId" class="tsd-kind-icon">channel<wbr>Id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#clientDescription" class="tsd-kind-icon">client<wbr>Description</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#continuationPointManager" class="tsd-kind-icon">continuation<wbr>Point<wbr>Manager</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#creationDate" class="tsd-kind-icon">creation<wbr>Date</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#endpoint" class="tsd-kind-icon">endpoint</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#keepAlive" class="tsd-kind-icon">keep<wbr>Alive</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#nodeId" class="tsd-kind-icon">node<wbr>Id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#nonce" class="tsd-kind-icon">nonce</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#parent" class="tsd-kind-icon">parent</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#publishEngine" class="tsd-kind-icon">publish<wbr>Engine</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#sessionDiagnostics" class="tsd-kind-icon">session<wbr>Diagnostics</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#sessionName" class="tsd-kind-icon">session<wbr>Name</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#sessionObject" class="tsd-kind-icon">session<wbr>Object</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#sessionSecurityDiagnostics" class="tsd-kind-icon">session<wbr>Security<wbr>Diagnostics</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#sessionTimeout" class="tsd-kind-icon">session<wbr>Timeout</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#subscriptionDiagnosticsArray" class="tsd-kind-icon">subscription<wbr>Diagnostics<wbr>Array</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#userIdentityToken" class="tsd-kind-icon">user<wbr>Identity<wbr>Token</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="node_opcua.ServerSession.html#maxPublishRequestInQueue" class="tsd-kind-icon">max<wbr>Publish<wbr>Request<wbr>InQueue</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="node_opcua.ServerSession.html#registry" class="tsd-kind-icon">registry</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#aborted" class="tsd-kind-icon">aborted</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#addressSpace" class="tsd-kind-icon">address<wbr>Space</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#clientConnectionTime" class="tsd-kind-icon">client<wbr>Connection<wbr>Time</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#clientLastContactTime" class="tsd-kind-icon">client<wbr>Last<wbr>Contact<wbr>Time</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#cumulatedSubscriptionCount" class="tsd-kind-icon">cumulated<wbr>Subscription<wbr>Count</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#currentMonitoredItemCount" class="tsd-kind-icon">current<wbr>Monitored<wbr>Item<wbr>Count</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#currentPublishRequestInQueue" class="tsd-kind-icon">current<wbr>Publish<wbr>Request<wbr>InQueue</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#currentSubscriptionCount" class="tsd-kind-icon">current<wbr>Subscription<wbr>Count</a>
+							</li>
+							<li class=" tsd-kind-accessor tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#status" class="tsd-kind-icon">status</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#_attach_channel" class="tsd-kind-icon">_attach_<wbr>channel</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#_detach_channel" class="tsd-kind-icon">_detach_<wbr>channel</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#_exposeSubscriptionDiagnostics" class="tsd-kind-icon">_expose<wbr>Subscription<wbr>Diagnostics</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#_unexposeSubscriptionDiagnostics" class="tsd-kind-icon">_unexpose<wbr>Subscription<wbr>Diagnostics</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#close" class="tsd-kind-icon">close</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#createSubscription" class="tsd-kind-icon">create<wbr>Subscription</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#deleteSubscription" class="tsd-kind-icon">delete<wbr>Subscription</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#dispose" class="tsd-kind-icon">dispose</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#getEndpointDescription" class="tsd-kind-icon">get<wbr>Endpoint<wbr>Description</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#getSessionDiagnosticsArray" class="tsd-kind-icon">get<wbr>Session<wbr>Diagnostics<wbr>Array</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#getSessionId" class="tsd-kind-icon">get<wbr>Session<wbr>Id</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#getSessionSecurityDiagnosticsArray" class="tsd-kind-icon">get<wbr>Session<wbr>Security<wbr>Diagnostics<wbr>Array</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#getSubscription" class="tsd-kind-icon">get<wbr>Subscription</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#incrementRequestErrorCounter" class="tsd-kind-icon">increment<wbr>Request<wbr>Error<wbr>Counter</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#incrementRequestTotalCounter" class="tsd-kind-icon">increment<wbr>Request<wbr>Total<wbr>Counter</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#incrementTotalRequestCount" class="tsd-kind-icon">increment<wbr>Total<wbr>Request<wbr>Count</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#registerNode" class="tsd-kind-icon">register<wbr>Node</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#resolveRegisteredNode" class="tsd-kind-icon">resolve<wbr>Registered<wbr>Node</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#unRegisterNode" class="tsd-kind-icon">un<wbr>Register<wbr>Node</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="node_opcua.ServerSession.html#updateClientLastContactTime" class="tsd-kind-icon">update<wbr>Client<wbr>Last<wbr>Contact<wbr>Time</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+	<div class=" row">
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-6t+ed+2i-1n-4w"
+		data-ad-client="ca-pub-8886208393040088" data-ad-slot="9362364253"></ins>
+		<script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-25438821-3', 'node-opcua.github.io');
+        ga('send', 'pageview');
+    </script>
+</body>
+</html>
