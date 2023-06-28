@@ -1,24 +1,45 @@
 {% include socialbuttons.html %}
 
 <section id="why" class="feature-list">
+
+    <div class="row">
+        <div class="vignette col-lg-6 col-md-6 col-sm-12 shadow bg-white rounded">
+
+            <div class="vignette-content-big">
+                <h4><i class="fa fa-user-tie">&nbsp;</i>Professional Technology</h4>
+                <p>
+                </p>
+
+            </div>
+        </div>
+        <div class="vignette col-lg-6 col-md-6 col-sm-12 shadow bg-white rounded">
+
+            <div class="vignette-content-big">
+                <h4><i class="fa fa-osi">&nbsp;</i>Open-source Core</h4>
+                <p>
+                </p>
+
+            </div>
+        </div>
+    </div>
     <div class="row">
         <div class="vignette col-lg-6 col-md-6 col-sm-12 shadow bg-white rounded">
 
             <div class="vignette-content-big">
                 <h4><i class="fa fa-rocket">&nbsp;</i>100% Asynchronous</h4>
                 <p>NodeOPCUA takes advantage of the asynchronous nature of node.js, creating highly responsive
-                applications.
+                    applications.
                 </p>
-<p>
-{% highlight javascript %}
-const { OPCUAServer } = require("node-opcua");
-(async () => {
-    const server = new OPCUAServer({});
-    await server.initialize();
-    await server.start();
-})();
-{% endhighlight  %}
-</p>
+                <p>
+                    {% highlight javascript %}
+                    const { OPCUAServer } = require("node-opcua");
+                    (async () => {
+                    const server = new OPCUAServer({});
+                    await server.initialize();
+                    await server.start();
+                    })();
+                    {% endhighlight %}
+                </p>
             </div>
         </div>
 
@@ -33,14 +54,16 @@ const { OPCUAServer } = require("node-opcua");
                     and 90% code coverage.
                 </p>
                 <p> NodeOPCUA uses
-                    <a href="https://github.com/node-opcua/node-opcua/actions/workflows/workflow.yml">GitHub Actions</a> as a continuous integration
+                    <a href="https://github.com/node-opcua/node-opcua/actions/workflows/workflow.yml">GitHub Actions</a>
+                    as a continuous integration
                     service.
                 </p>
                 <p>
-                   
-                    
+
+
                     <a href="https://github.com/node-opcua/node-opcua/actions/workflows/workflow.yml">
-                        <img src=" https://github.com/node-opcua/node-opcua/actions/workflows/workflow.yml/badge.svg"></img>
+                        <img
+                            src=" https://github.com/node-opcua/node-opcua/actions/workflows/workflow.yml/badge.svg"></img>
                     </a>
                     <a href='https://coveralls.io/r/node-opcua/node-opcua?branch=master'>
                         &nbsp;
@@ -48,7 +71,8 @@ const { OPCUAServer } = require("node-opcua");
                             alt='Coverage Status' />
                     </a>
                 </p>
-            <p><img style="max-width: 100%" src="https://nodei.co/npm/node-opcua.png?downloads=true&stars=true"></img></p>
+                <p><img style="max-width: 100%"
+                        src="https://nodei.co/npm/node-opcua.png?downloads=true&stars=true"></img></p>
             </div>
         </div>
     </div>
@@ -64,23 +88,22 @@ const { OPCUAServer } = require("node-opcua");
 
         <div class="vignette col-lg-4 col-md-6 col-sm-12 shadow bg-white rounded">
             <div class="vignette-content">
-                <h4><i class="fa fa-microphone">&nbsp;</i> Free, as in Speech</h4>
+                <h4><i class="fa fa-microphone">&nbsp;</i> open-source core</h4>
                 <p>
-                    NodeOPCUA is free for commercial use. Check out the <a
-                        href="https://raw.githubusercontent.com/node-opcua/node-opcua/master/LICENSE">license</a>.
-                </p>
-                
+                    NodeOPCUA core is open-source licence, and can be super-charged by
+                    extended professionnal modules, 
+
             </div>
         </div>
 
         <div class="vignette col-lg-4 col-md-6 col-sm-6 shadow bg-white rounded">
             <div class="vignette-content">
-            <h4><i class="fab fa-github">&nbsp;</i> Fork my source code </h4>
-            <p>
-                NodeOPCUA is available on GitHub . Check out the <a
-                    href="https://github.com/node-opcua/node-opcua">source code </a>.
-            </p>
-        </div>
+                <h4><i class="fab fa-github">&nbsp;</i> Fork my source code </h4>
+                <p>
+                    NodeOPCUA is available on GitHub . Check out the <a
+                        href="https://github.com/node-opcua/node-opcua">source code </a>.
+                </p>
+            </div>
         </div>
 
         <div class="vignette col-lg-4 col-md-6 col-sm-6 shadow bg-white rounded">
@@ -101,7 +124,7 @@ const { OPCUAServer } = require("node-opcua");
             <div class="vignette-content">
                 <h4><img width="16px" src="images/raspberry.jpg"><img> &nbsp;Perfect on RaspberryPI</h4>
                 <p>
-                    Create your own OPCUA Server on a RaspberryPI with your preferred I/O sensors. 
+                    Create your own OPCUA Server on a RaspberryPI with your preferred I/O sensors.
                 </p>
             </div>
         </div>
@@ -110,9 +133,9 @@ const { OPCUAServer } = require("node-opcua");
             <div class="vignette-content">
                 <h4><i class="fa fa-search">&nbsp;</i>Live documentation</h4>
                 <p>NodeOPCUA will benefit from a <a href="api_doc/index.html">comprehensive SDK API documentation</a> ,
-                numerous end-to-end functional tests, and a set of practical examples to help you
-                learn how to use it.
-            </p>
+                    numerous end-to-end functional tests, and a set of practical examples to help you
+                    learn how to use it.
+                </p>
             </div>
         </div>
 
@@ -120,7 +143,8 @@ const { OPCUAServer } = require("node-opcua");
             <div class="vignette-content">
                 <h4><i class="fa fa-book">&nbsp;</i>Learn by the Book</h4>
                 <p>
-                    <a href="https://leanpub.com/node-opcuabyexample">NodeOPCUA by example</a> is the best start to place
+                    <a href="https://leanpub.com/node-opcuabyexample">NodeOPCUA by example</a> is the best start to
+                    place
                     and learn how to write stunning applications.
                 </p>
             </div>
@@ -134,4 +158,5 @@ const { OPCUAServer } = require("node-opcua");
             </div>
         </div>
     </div>
+
 </section>
