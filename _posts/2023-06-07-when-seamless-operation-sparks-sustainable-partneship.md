@@ -1,6 +1,7 @@
 # NodeOPCUA: When Seamless Operation Sparks a Sustainable Partnership
 
 
+
 ### Great software
 
 > Great software is like a best friend - always there, never causing any drama, and making life so much easier.
@@ -19,6 +20,8 @@ Your backing is not only about ensuring the continuity and enhancement of a prod
 
 
 ### Let's make it long lasting, for your own benefit
+
+![receive & give](https://st2.depositphotos.com/20602302/43235/i/450/depositphotos_432352308-stock-photo-hand-turns-dice-changes-word.jpg)
 
 We are offering several ways for you to partner with us:
 
