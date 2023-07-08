@@ -41,7 +41,7 @@ the server
 
 ``` javascript
 const { OPCUAServer } = require("node-opcua");
-_"some additionnal imports"
+_"some additional imports"
 
 (async()=>{
     try {
@@ -367,7 +367,7 @@ function createPublishedDataSet() {
 ```
 
 <!--
-###### some additionnal imports
+###### some additional imports
 
 ```javascript
 const { resolveNodeId, DataType, AttributeIds } = require("node-opcua");

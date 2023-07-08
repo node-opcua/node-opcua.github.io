@@ -1,3 +1,8 @@
+---
+layout: post
+comments: true
+categories: news
+---
 ## Ride the Open-Source Wave with NodeOPCUA: It's Smooth Sailing Ahead! 😎
 
 ![image](https://www.wallpaperflare.com/static/871/715/715/surfing-man-sports-ocean-wallpaper-preview.jpg)
@@ -32,8 +37,8 @@ So, why not jump on this bandwagon and join us in this open-source quest? Let's 
 
 ### How to engage together
 
-  - choose a support plan on [support.stefive.com](https://support.stefive.com)
-  - join our open collective [opencollective.com/node-opcua](https://opencollective.com/node-opcua) and choose to sponsor a project that matters for your company.
-  - Contact us or give us a call to discuss your needs and how we can help you.
-- 
+- choose a support plan on [support.stefive.com](https://support.stefive.com)
+- join our open collective [opencollective.com/node-opcua](https://opencollective.com/node-opcua) and choose to sponsor a project that matters for your company.
+- Contact us or give us a call to discuss your needs and how we can help you.
+ 
 

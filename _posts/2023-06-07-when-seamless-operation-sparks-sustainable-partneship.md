@@ -1,3 +1,9 @@
+---
+layout: post
+comments: true
+categories: news
+---
+
 # NodeOPCUA: When Seamless Operation Sparks a Sustainable Partnership
 
 
