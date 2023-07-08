@@ -1,6 +1,6 @@
 ## Ride the Open-Source Wave with NodeOPCUA: It's Smooth Sailing Ahead! 😎
 
-![image](https://www.wallpaperflare.com/man-on-surfboard-riding-wave-under-blue-and-white-sky-during-daytime-wallpaper-157446)
+![image](https://www.wallpaperflare.com/static/871/715/715/surfing-man-sports-ocean-wallpaper-preview.jpg)
 
 Hey there, NodeOPCUA enthusiast! Let's start with a big virtual high-five 🙌 if you're already using our software and making the most of its seamless operation, user-friendliness, and jaw-dropping performance. (If you're not, stick around, we've got reasons for you to join the NodeOPCUA family!)
 
@@ -9,14 +9,14 @@ Remember the last time you had to call for support because something went wrong 
 Yet, behind this chillaxed user experience, there's a bustling team working round the clock. They're like the unseen elves from the fairy tales, continuously enhancing the technology, streamlining the code, ramping up performance, and staying glued to every new thing that NodeJS and TypeScript have to offer. All of this to ensure you get a swanky new incremental release every two weeks on average. That's our version of 'New Year, New Me' but way more frequent!
 
 
-## the magic continue
+### the magic continue
 
 However, for this magic to continue, we need some fairy dust, or as we call it in the corporate world - your support.
 
 So, here's the deal. You're not just ensuring your favorite software keeps being awesome; you're forging a partnership of innovation and excellence. It's like joining the Avengers, but in the open-source world.
 
 
-## Let's make it long lasting, for your own benefit
+### Let's make it long lasting, for your own benefit
 
 To make this adventure more exciting, we've got a few options for you:
 
@@ -30,9 +30,10 @@ Supporting NodeOPCUA is more than just financial backing. It's about becoming pa
 
 So, why not jump on this bandwagon and join us in this open-source quest? Let's redefine the world of high-quality, open-source software, one line of code at a time! 💪💻
 
-## How to support us
+### How to engage togheer
 
   - choose a support plan on [stefive](https://support.stefive.com)
   - join our open collective [opencollective](https://opencollective.com/node-opcua) and choose to sponsor a project that matters for your company.
-  - Contact us and engage us 
+  - Contact us or give us a call to discuss your needs and how we can help you.
+- 
 
