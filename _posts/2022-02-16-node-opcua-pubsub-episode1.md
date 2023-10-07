@@ -3,7 +3,7 @@ layout: post
 title: "Node-OPCUA goes PubSub - Episode 1"
 date:   2022-02-16 19:00:00  +0100
 comments: true
-categories: tutorial
+categories: concepts
 ---
 
 
