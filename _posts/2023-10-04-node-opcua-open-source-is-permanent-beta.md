@@ -58,36 +58,36 @@ Join our open-collective [opencollective.com/node-opcua](https://opencollective.
 > Perpetual beta is a software development model in which the software is continuously released in new versions, with new features and bug fixes being added on a regular basis.
 Perpetual beta is often used by open-source software projects, as it allows the developers to get feedback from users early and often, and to make changes to the software based on that feedback.
 
-#### Advantages: 
+**Advantages:** 
 
-**Faster innovation**: Perpetual beta allows developers to release new features and bug fixes more quickly, as they do not have to wait for a major release cycle.
-**Better quality**: Perpetual beta allows developers to get feedback from users early and often, and to make changes to the software based on that feedback. This can help to improve the overall quality of the software.
-**More engaged users**: Perpetual beta can help to keep users more engaged with the software, as they are constantly seeing new features and improvements.
+* **Faster innovation**: Perpetual beta allows developers to release new features and bug fixes more quickly, as they do not have to wait for a major release cycle.
 
-#### Drawbacks:
+* **Better quality**: Perpetual beta allows developers to get feedback from users early and often, and to make changes to the software based on that feedback. This can help to improve the overall quality of the software.
 
-**Potential for bugs**: Perpetual beta software may contain more bugs than software that is released on a traditional release cycle.
+* **More engaged users**: Perpetual beta can help to keep users more engaged with the software, as they are constantly seeing new features and improvements.
 
-**User confusion**: Users may be confused by the fact that the software is constantly changing.
+**Drawbacks:**
 
-**Lack of support**:  may be less likely to provide support for perpetual beta software on community forums.
+* **Potential for bugs**: Perpetual beta software may contain more bugs than software that is released on a traditional release cycle.
 
-### Mitigation:
+* **User confusion**: Users may be confused by the fact that the software is constantly changing.
 
-Combined with a professional support plan, perpetual beta can be a great way to get new features and bug fixes more quickly, while still maintaining a high level of quality and support.
+* **Lack of support**:  may be less likely to provide support for perpetual beta software on community forums.
+
+
+**Mitigation**
+
+Combined with a [**professional support plan**](https://support.sterfive.com), perpetual beta can be a great way to get new features and bug fixes more quickly, while still maintaining a high level of quality and support.
 
 
 ### references:
 
-* "Perpetual Beta" and Open Source Software by David A. Wheeler (2002): https://en.wikipedia.org/wiki/Perpetual_beta
+* ["Perpetual Beta"](https://en.wikipedia.org/wiki/Perpetual_beta) and Open Source Software by David A. Wheeler (2002): 
 
-* "The Release Early, Release Often Manifesto" by Eric S. Raymond (2000): https://en.wikipedia.org/wiki/Release_early,_release_often
+* ["The Release Early, Release Often Manifesto"](https://en.wikipedia.org/wiki/Release_early,_release_often
+) by Eric S. Raymond (2000)
 
-* "Always Beta: Perpetual Beta in Open-Source Software" by Matt Mullenweg (2009): https://alwaysbeta.co/
-
-* "The Benefits of Open-Source Software" by The Open Source Initiative (2023): https://www.openlogic.com/blog/top-5-benefits-open-source-software
-
-"* The Perpetual Beta Model: A New Approach to Software Development" by Michael O. Church (2014): https://en.wikipedia.org/wiki/Perpetual_beta
+* ["Always Beta: Perpetual Beta in Open-Source Software](https://www.linkedin.com/pulse/perpetual-beta-great-leaders-learners-first-megan-lambert/)" by Megan Lambert
 
 Some examples of popular perpetual beta open-source software include:
 

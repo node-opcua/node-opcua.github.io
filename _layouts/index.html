@@ -16,25 +16,26 @@ layout: default
             <div class="col-12" style="display:flex;justify-content: center;">
 
                 <h3 style="font-style: italic;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-                    Unlocking the Full Potential of <a href="https://opcfoundation.org/about/what-is-opc/">OPC UA</a> with <a href="https://www.typescriptlang.org/"> TypeScript</a>  and <a href="http://nodejs.org/">NodeJS</a>.
+                    Unlocking the Full Potential of <a href="https://opcfoundation.org/about/what-is-opc/">OPC UA</a>
+                    with <a href="https://www.typescriptlang.org/"> TypeScript</a> and <a
+                        href="http://nodejs.org/">NodeJS</a>.
                 </h3>
-      
+
             </div>
         </div>
     </div>
 </div>
 
 <div class="container">
-    <div class="hidden-print">
-        {% include featurelist.html %}
-    </div>
+    {% include featurelist.html %}
 </div>
 
+<div class="container">
+    {% include profession_modules.html %}
+</div>
 
-<div class="container container-users">
-    <div class="hidden-print">
-        {% include users.html %}
-    </div>
+<div class="container container-users hidden-print">
+    {% include users.html %}
 </div>
 
 <!-- BODY PAGE CONTENT -->
@@ -51,22 +52,21 @@ layout: default
 
 <div class="container">
 
-        <div class="page-header">
-            <h1>Material</h1>
+    <div class="page-header">
+        <h1>Material</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h4>The project repositories</h4>
+            {% include github.html %}
         </div>
-        <div class="row">
-            <div class="col-md-6">
-                <h4>The project repositories</h4>
-                {% include github.html %}
-            </div>
 
-            <div class="col-md-6">
-                <h4>Follow us</h4>
-                <a class="twitter-timeline" href="https://twitter.com/NodeOPCUA" data-widget-id="463419792737579008">Tweets
-                    de @NodeOPCUA</a>
-                <script>!function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
-            </div>
-
+        <div class="col-md-6">
+            <h4>Follow us</h4>
+            <a class="twitter-timeline" href="https://twitter.com/NodeOPCUA" data-widget-id="463419792737579008">Tweets
+                de @NodeOPCUA</a>
+            <script>!function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
         </div>
+
+    </div>
 </div>
-

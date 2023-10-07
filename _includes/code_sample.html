@@ -1,0 +1,14 @@
+<p>
+{% highlight javascript %}
+import OPCUAServer from "node-opcua";
+
+const server = new OPCUAServer({});
+await server.start();
+
+console.log("Server is now listening ... ( press CTRL+C to stop) ");
+await new Promise((resolve) => process.once("SIGINT",resolve));
+
+await server.shutdown();
+
+{% endhighlight %}
+</p>

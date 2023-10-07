@@ -1,27 +1,6 @@
 {% include socialbuttons.html %}
 
 <section id="why" class="feature-list">
-
-    <!-- <div class="row">
-        <div class="vignette col-lg-6 col-md-6 col-sm-12 shadow bg-white rounded">
-
-            <div class="vignette-content-big">
-                <h4><i class="fa fa-user-tie">&nbsp;</i>Professional Technology</h4>
-                <p>
-                </p>
-
-            </div>
-        </div>
-        <div class="vignette col-lg-6 col-md-6 col-sm-12 shadow bg-white rounded">
-
-            <div class="vignette-content-big">
-                <h4><i class="fa fa-osi">&nbsp;</i>Open-source Core</h4>
-                <p>
-                </p>
-
-            </div>
-        </div>
-    </div> -->
     <div class="row">
         <div class="vignette col-lg-6 col-md-6 col-sm-12 shadow bg-white rounded">
 
@@ -30,16 +9,7 @@
                 <p>NodeOPCUA takes advantage of the asynchronous nature of node.js, creating highly responsive
                     applications.
                 </p>
-                <p>
-{% highlight javascript %}
-const { OPCUAServer } = require("node-opcua");
-(async () => {
-  const server = new OPCUAServer({});
-  await server.initialize();
-  await server.start();
-})();
-{% endhighlight %}
-                </p>
+                {% include code_sample.html %}
             </div>
         </div>
 
@@ -50,8 +20,8 @@ const { OPCUAServer } = require("node-opcua");
                 <p>
                     NodeOPCUA has been developed using <a
                         href="https://en.wikipedia.org/wiki/Test_Driven_Development">TDD</a> and
-                    benefits from more than <a href="https://travis-ci.org/node-opcua/node-opcua">2500 unit tests</a>
-                    and 90% code coverage.
+                    benefits from more than <a href="https://travis-ci.org/node-opcua/node-opcua">3500 unit tests</a>
+                    and 93% code coverage.
                 </p>
                 <p> NodeOPCUA uses
                     <a href="https://github.com/node-opcua/node-opcua/actions/workflows/workflow.yml">GitHub Actions</a>
@@ -59,8 +29,6 @@ const { OPCUAServer } = require("node-opcua");
                     service.
                 </p>
                 <p>
-
-
                     <a href="https://github.com/node-opcua/node-opcua/actions/workflows/workflow.yml">
                         <img
                             src=" https://github.com/node-opcua/node-opcua/actions/workflows/workflow.yml/badge.svg"></img>
@@ -71,68 +39,80 @@ const { OPCUAServer } = require("node-opcua");
                             alt='Coverage Status' />
                     </a>
                 </p>
-                <p><img style="max-width: 100%"
-                        src="https://nodei.co/npm/node-opcua.png?downloads=true&stars=true"></img></p>
+                <p dir="auto"><a href="https://img.shields.io/npm/v/node-opcua" rel="nofollow"><img
+                            src="https://camo.githubusercontent.com/acfaba4c689fb9407437d5ac57e63df60ed73efa3eb810bfd8fe9ed652f92a69/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f762f6e6f64652d6f70637561"
+                            alt="NPM version" data-canonical-src="https://img.shields.io/npm/v/node-opcua"
+                            style="max-width: 100%;"></a>
+                </p>
             </div>
         </div>
     </div>
     <div class="row">
-        <div class="vignette col-lg-4 col-md-6 col-sm-12 shadow bg-white rounded">
-            <div class="vignette-content">
-                <h4><i class="fab fa-node-js">&nbsp;</i>Available on Typescript </h4>
-                <p>
-                    NodeOPCUA can be use in Javascript as well as in Typescript.
+        <div class="vignette col-lg-6 col-md-6 col-sm-12 shadow bg-white rounded">
+            <div class="vignette-content-big">
+                <h4><i class="fa fa-osi"></i>&nbsp;Open-Source Constantly Evolving </h4>
+                <p><strong>With the Perpetual Beta model, innovation never stops.</strong></p>
+                <p>We use <a
+                        href="https://node-opcua.github.io/news/2023/10/04/node-opcua-open-source-is-permanent-beta.html">Perpetual
+                        Beta</a> model to ensure that the core model of NodeOPCUA is constantly improving and tested by
+                    the community.
+                    We release an new enhanced version every 2 weeks in average.</p>
+                <p dir="auto"><a href="https://www.npmtrends.com/node-opcua-server" rel="nofollow"><img
+                            src="https://camo.githubusercontent.com/18901830a2c06bda719e123cbfc9a8934ac835fb655441539173fb60aeff3c07/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f646d2f6e6f64652d6f706375612e7376673f6c6f676f3d6e706d266c6162656c3d6e6f64652d6f706375612d736572766572"
+                            alt="NPM download - server"
+                            data-canonical-src="https://img.shields.io/npm/dm/node-opcua.svg?logo=npm&amp;label=node-opcua-server"
+                            style="max-width: 100%;"></a>
+                    <a href="https://www.npmtrends.com/node-opcua-server" rel="nofollow"><img
+                            src="https://camo.githubusercontent.com/375e0c73645dba8a395b508e0073f4bd3419fd6181165dfd2cfdb40356a56e58/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f64742f6e6f64652d6f706375612e7376673f6c6162656c3d746f74616c"
+                            alt="NPM download - server -total"
+                            data-canonical-src="https://img.shields.io/npm/dt/node-opcua.svg?label=total"
+                            style="max-width: 100%;"></a>
+                </p>
+                <p dir="auto"><a href="https://www.npmtrends.com/node-opcua-client" rel="nofollow"><img
+                            src="https://camo.githubusercontent.com/f9acc9761ed22976cfd9f5964d5aeea36645cf66aa5a0f30e91f7f0320eb25e4/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f646d2f6e6f64652d6f706375612d636c69656e742e7376673f6c6f676f3d6e706d266c6162656c3d6e6f64652d6f706375612d636c69656e74"
+                            alt="NPM download - client"
+                            data-canonical-src="https://img.shields.io/npm/dm/node-opcua-client.svg?logo=npm&amp;label=node-opcua-client"
+                            style="max-width: 100%;"></a>
+                    <a href="https://www.npmtrends.com/node-opcua-client" rel="nofollow"><img
+                            src="https://camo.githubusercontent.com/f346b45268f8b334148d51ef0981d4e60b21245ef65490eec5035c4014e7dda0/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f64742f6e6f64652d6f706375612d636c69656e742e7376673f6c6162656c3d746f74616c"
+                            alt="NPM download - client -total"
+                            data-canonical-src="https://img.shields.io/npm/dt/node-opcua-client.svg?label=total"
+                            style="max-width: 100%;"></a>
+                </p>
+                <p style="text-align: center;">
+                    <a href="https://www.opencollective.com/node-opcua" class="btn btn-default">Sponsor our &nbsp;
+                        <img src="/images/sterfive3.png" style="max-width: 4em;"></img>&nbsp;Open Collective initiative
+                    </a>
+                </p>
+
+            </div>
+        </div>
+        <div class="vignette col-lg-6 col-md-6 col-sm-12 shadow bg-white rounded">
+            <div class="vignette-content-big">
+                <h4><i class="fa  fa-shield-alt"></i>&nbsp; Stability &
+                    Support with Pro Membership
+                </h4>
+                <p><strong>When industry demands reliability, the Professional Edition delivers.</strong></p>
+                <p>Are you using NodeOPCUA for your commercial business ? The Professional Edition offers superior
+                    uptime, dedicated support, and robust updates.
+                    Switch to the <a href="https:support.sterfive.com"> NodeOPCUA Membership Subscription</a> for
+                    strategic reliability and advanced NodeOPCUA capabilities in your commercial
+                    product.</p>
+                <p style="text-align: center;">
+                    <a href="https://www.sterfive.com" class="btn btn-default">Subscribe to &nbsp;
+                        <img src="/images/sterfive3.png" style="max-width: 4em;"></img>&nbsp;Professional Membership
+                    </a>
                 </p>
             </div>
         </div>
-
-        <div class="vignette col-lg-4 col-md-6 col-sm-12 shadow bg-white rounded">
-            <div class="vignette-content">
-                <h4><i class="fa fa-microphone">&nbsp;</i> open-source core</h4>
-                <p>
-                    NodeOPCUA core is open-source licence, and can be super-charged by
-                    extended professionnal modules, 
-
-            </div>
-        </div>
-
-        <div class="vignette col-lg-4 col-md-6 col-sm-6 shadow bg-white rounded">
-            <div class="vignette-content">
-                <h4><i class="fab fa-github">&nbsp;</i> Fork my source code </h4>
-                <p>
-                    NodeOPCUA is available on GitHub . Check out the <a
-                        href="https://github.com/node-opcua/node-opcua">source code </a>.
-                </p>
-            </div>
-        </div>
-
-        <div class="vignette col-lg-4 col-md-6 col-sm-6 shadow bg-white rounded">
-            <div class="vignette-content">
-                <h4><i class="fas fa-pencil-alt">&nbsp;</i>Create your own server</h4>
-                <p>Easily create your own OPCUA Server in less than 100 lines of code.</p>
-            </div>
-        </div>
-
-        <div class="vignette col-lg-4 col-md-6 col-sm-12 shadow bg-white rounded">
-            <div class="vignette-content">
-                <h4><i class="fa fa-desktop"></i> Runs under Linux , Mac and Windows</h4>
-                <p>NodeOPCUA runs on all the platforms that nodeJS supports.</p>
-            </div>
-        </div>
-
-        <div class="vignette col-lg-4 col-md-6 col-sm-12  shadow bg-white rounded">
-            <div class="vignette-content">
-                <h4><img width="16px" src="images/raspberry.jpg"><img> &nbsp;Perfect on RaspberryPI</h4>
-                <p>
-                    Create your own OPCUA Server on a RaspberryPI with your preferred I/O sensors.
-                </p>
-            </div>
-        </div>
+    </div>
+    <div class="row">
 
         <div class="vignette col-lg-4 col-md-6 col-sm-12 shadow bg-white rounded">
             <div class="vignette-content">
                 <h4><i class="fa fa-search">&nbsp;</i>Live documentation</h4>
-                <p>NodeOPCUA will benefit from a <a href="api_doc/index.html">comprehensive SDK API documentation</a> ,
+                <p>NodeOPCUA will benefit from a <a href="api_doc/index.html">comprehensive SDK API
+                        documentation</a> ,
                     numerous end-to-end functional tests, and a set of practical examples to help you
                     learn how to use it.
                 </p>
@@ -143,7 +123,8 @@ const { OPCUAServer } = require("node-opcua");
             <div class="vignette-content">
                 <h4><i class="fa fa-book">&nbsp;</i>Learn by the Book</h4>
                 <p>
-                    <a href="https://leanpub.com/node-opcuabyexample">NodeOPCUA by example</a> is the best start to
+                    <a href="https://leanpub.com/node-opcuabyexample-edition2022">NodeOPCUA by example - Edition 2022</a> is the best start
+                    to
                     place
                     and learn how to write stunning applications.
                 </p>
