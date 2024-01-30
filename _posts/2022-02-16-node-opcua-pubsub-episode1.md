@@ -428,7 +428,7 @@ support. It is suitable for industrial grade applications.
 [contact us for more information](https://www.sterfive.com/#/contact)
 
 references: 
-- [the "Node-OPCUA by example" book](https://leanpub.com/node-opcuabyexample) 
+- [the "Node-OPCUA by example" book](https://leanpub.com/node-opcuabyexample-edition2024) 
 - [the Node-OPCUA membership subscription](https://support.sterfive.com) 
 - [HiveMQ's public demo MQTT broker](https://www.hivemq.com/public-mqtt-broker/) 
 - [HiveMQ public WebCient](http://www.hivemq.com/demos/websocket-client/)
