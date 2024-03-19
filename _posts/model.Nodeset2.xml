@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<UANodeSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uax="http://opcfoundation.org/UA/2008/02/Types.xsd" xmlns="http://opcfoundation.org/UA/2011/03/UANodeSet.xsd" xmlns:ns1="http://sterfive.com/Type.xsd">
+    <NamespaceUris>
+        <Uri>http://sterfive.com</Uri>
+    </NamespaceUris>
+    <Models>
+        <Model ModelUri="http://sterfive.com" Version="0.0.0" PublicationDate="2024-03-19T20:40:43.560Z">
+            <RequiredModel ModelUri="http://opcfoundation.org/UA/" Version="1.05.02" PublicationDate="2022-11-01T00:00:00.000Z"/>
+        </Model>
+    </Models>
+    <Aliases>
+        <Alias Alias="Boolean">i=1</Alias>
+        <Alias Alias="Float">i=10</Alias>
+        <Alias Alias="HasComponent">i=47</Alias>
+        <Alias Alias="HasModellingRule">i=37</Alias>
+        <Alias Alias="HasSubtype">i=45</Alias>
+        <Alias Alias="HasTypeDefinition">i=40</Alias>
+    </Aliases>
+<!--ReferenceTypes-->
+<!--ObjectTypes-->
+<!--ObjectType - 1:RoboticEquipment {{{{ -->
+    <UAObjectType NodeId="ns=1;i=1000" BrowseName="1:RoboticEquipment">
+        <DisplayName>RoboticEquipment</DisplayName>
+        <References>
+            <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=1001</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=1005</Reference>
+        </References>
+    </UAObjectType>
+<!--Object - 1:Motor1 {{{{ -->
+    <UAObject NodeId="ns=1;i=1001" BrowseName="1:Motor1" ParentNodeId="ns=1;i=1000">
+        <DisplayName>Motor1</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">i=58</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=1002</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=1003</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=1004</Reference>
+        </References>
+    </UAObject>
+    <UAVariable NodeId="ns=1;i=1002" BrowseName="1:IsRunning" ParentNodeId="ns=1;i=1001" AccessLevel="3" DataType="Boolean">
+        <DisplayName>IsRunning</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+        </References>
+    </UAVariable>
+    <UAVariable NodeId="ns=1;i=1003" BrowseName="1:Speed" ParentNodeId="ns=1;i=1001" AccessLevel="3" DataType="Float">
+        <DisplayName>Speed</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+        </References>
+    </UAVariable>
+    <UAVariable NodeId="ns=1;i=1004" BrowseName="1:Torque" ParentNodeId="ns=1;i=1001" AccessLevel="3" DataType="Float">
+        <DisplayName>Torque</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+        </References>
+    </UAVariable>
+<!--Object - 1:Motor1 }}}} -->
+<!--Object - 1:Sensor {{{{ -->
+    <UAObject NodeId="ns=1;i=1005" BrowseName="1:Sensor" ParentNodeId="ns=1;i=1000">
+        <DisplayName>Sensor</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">i=58</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=1006</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=1007</Reference>
+        </References>
+    </UAObject>
+    <UAVariable NodeId="ns=1;i=1006" BrowseName="1:Temperature" ParentNodeId="ns=1;i=1005" AccessLevel="3" DataType="Float">
+        <DisplayName>Temperature</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+        </References>
+    </UAVariable>
+    <UAVariable NodeId="ns=1;i=1007" BrowseName="1:Pressure" ParentNodeId="ns=1;i=1005" AccessLevel="3" DataType="Float">
+        <DisplayName>Pressure</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+        </References>
+    </UAVariable>
+<!--Object - 1:Sensor }}}} -->
+<!--ObjectType - 1:RoboticEquipment }}}}-->
+<!--VariableTypes-->
+<!--Other Nodes-->
+</UANodeSet>

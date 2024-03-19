@@ -1,0 +1,24 @@
+
+namespaceUri: http://sterfive.com
+objectTypes:
+  - browseName: RoboticEquipment
+    components: 
+      - browseName: Motor1
+        nodeClass: Object
+        components:
+          - browseName: IsRunning
+            dataType: ua:Boolean
+          - browseName: Speed
+            dataType: ua:Float
+            engineeringUnits: RPM
+          - browseName: Torque
+            dataType: ua:Float
+            engineeringUnits: newton_meter
+      - browseName: Sensor
+        nodeClass: Object
+        components:   
+          - browseName: Temperature
+            dataType: ua:Float
+          - browseName: Pressure
+            dataType: ua:Float
+        
