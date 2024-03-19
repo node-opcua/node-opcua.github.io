@@ -7,10 +7,12 @@ categories: news
 # Enhancing Industrial Automation with OPC UA Modeling and Object-Oriented Process Modeling
 
 
-![alt text](image-1.png)
-Introduction:
+![alt text](/images/2024-03-19/image-1.png)
 
-The traditional PLC tag naming convention has been the standard for industrial automation for decades. However, it has its limitations, such as the lack of clarity due to compressed names, limited length, and the need to include variable types in the names. This article will explain how OPC UA modeling and Object-Oriented Process Modeling provide a more intuitive, self-descriptive, expressive, and interoperable alternative that will help you scale and facilitate data organization and logical reasoning.
+
+The traditional PLC tag naming convention has been the standard for industrial automation for decades. However, it has its limitations, such as the lack of clarity due to compressed names, limited length, and the need to include variable types in the names. 
+
+This article will explain how OPC UA modeling and Object-Oriented Process Modeling provide a more intuitive, self-descriptive, expressive, and interoperable alternative that will help you scale and facilitate data organization and logical reasoning.
 
 ## The Shortcomings of Traditional PLC Tag Naming
 
@@ -27,15 +29,15 @@ PLCs traditionally work with registers and linear tables, and tags identify thes
 
 When wrapping a PLC with an OPC UA server to enhance interoperability, the following principles should apply:
 
-* Rethink the Exposed Variables: Take this opportunity to create meaningful or long descriptive names that provide clarity and improve understanding.
-* Avoid Data Type Decoration: In traditional PLC tag naming, variable types are included in the names. In OPC UA, use the DataType attribute for this purpose.
+* __Rethink the Exposed Variables:__ Take this opportunity to create meaningful or long descriptive names that provide clarity and improve understanding.
+* __Avoid Data Type Decoration__: In traditional PLC tag naming, variable types are included in the names. In OPC UA, use the DataType attribute for this purpose.
 µ Use Clear Naming for Booleans: For boolean variables, use names like "IsMotorRunning" or "HasSensorTriggered" to improve readability.
-* Use Verbs for Actions and Methods: For actions and methods, use names like "StartMotor" or "SetActiveRecipe" to indicate the intended function.
-* Hide PLC Internals: Your PLC exposes many data points, but not all are necessary. Select the few meaningful and important process variables that are useful and hide the implementation details.
-* Collaborate with the Appropriate Team: Involve the right people in the process, including automation engineers, software developers, and other stakeholders.
-* Leverage Companion Specifications: Bind your ObjectType with companion specifications as much as possible and leverage the models that have already been built by the community and working groups.
-* Grow Your Model on Demand: Keep your model extendable by adding new modules as needed, ensuring backward compatibility.
-* Enrich your model with meta data (EngineeringUnits, Description, DisplayName, etc.) to ensure intuitive and error-prone usage, hence avoiding the need for documentation and misinterpretation.
+* __Use Verbs for Actions and Methods__: For actions and methods, use names like "StartMotor" or "SetActiveRecipe" to indicate the intended function.
+* __Hide PLC Internals__: Your PLC exposes many data points, but not all are necessary. Select the few meaningful and important process variables that are useful and hide the implementation details.
+* __Collaborate with the Appropriate Team__: Involve the right people in the process, including automation engineers, software developers, and other stakeholders.
+* __Leverage Companion Specifications__: Bind your ObjectType with companion specifications as much as possible and leverage the models that have already been built by the community and working groups.
+* __Grow Your Model on Demand__: Keep your model extendable by adding new modules as needed, ensuring backward compatibility.
+* __Enrich your model__ with meta data (EngineeringUnits, Description, DisplayName, etc.) to ensure intuitive and error-prone usage, hence avoiding the need for documentation and misinterpretation.
 
 
 ## Real-world Example:
@@ -54,6 +56,7 @@ In the traditional PLC tag naming convention, these might be represented as foll
 
 In OPC UA and Object-Oriented Process Modeling, following the recommendations above, these would be represented as follows:
 
+<!--
 ```plantuml 
 @startsalt
 {
@@ -74,12 +77,11 @@ In OPC UA and Object-Oriented Process Modeling, following the recommendations ab
         ++++ EURange | 0, 2000 
     }
 }
-
-
 @endsalt
 ```
+-->
 
-![alt text](image-2.png)
+![alt text](/images/2024-03-19/image-2.png)
 
 # Conclusion:
 
