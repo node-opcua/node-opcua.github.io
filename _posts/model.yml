@@ -1,5 +1,12 @@
 
 namespaceUri: http://sterfive.com
+
+dataTypes:
+  - browseName: MotorStateEnum
+    enum:
+       - Stopped
+       - Running
+       - Fault
 objectTypes:
   - browseName: RoboticEquipment
     components: 
@@ -7,18 +14,29 @@ objectTypes:
         nodeClass: Object
         components:
           - browseName: IsRunning
+            typeDefinition: ua:AnalogItemType
             dataType: ua:Boolean
           - browseName: Speed
+            typeDefinition: ua:AnalogItemType
             dataType: ua:Float
-            engineeringUnits: RPM
+            engineeringUnits: revolution per minute
           - browseName: Torque
+            typeDefinition: ua:AnalogItemType
             dataType: ua:Float
-            engineeringUnits: newton_meter
+            engineeringUnits: newton metre
+          - browseName: State
+            dataType: MotorStateEnum
       - browseName: Sensor
         nodeClass: Object
         components:   
           - browseName: Temperature
+            typeDefinition: ua:AnalogItemType
             dataType: ua:Float
+            engineeringUnits: degree Celsius
+            euRange: [-45, 200]
           - browseName: Pressure
+            typeDefinition: ua:AnalogItemType
             dataType: ua:Float
+            engineeringUnits: bar
+            euRange: [ 0, 10]
         

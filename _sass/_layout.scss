@@ -239,15 +239,15 @@ article {
 
     h1 {
         font-size: 1.3em;
-        margin-top: 1.0 em;
-        margin-bottom: 1em;
+        margin-top: 2.0 em;
+        margin-bottom: 1.5em;
     }
 
     h2 {
         font-size: 1.3em;
         font-weight: 400;
-        margin-top: 0.8 em;
-        margin-bottom: 0.5em;
+        margin-top: 2.0 em;
+        margin-bottom: 0.8em;
 
         @include media-query($on-laptop) {
             font-size: 28px;
@@ -259,17 +259,144 @@ article {
         font-weight: 400;
         padding-top: 2em;
         padding-bottom: 1em;
-
+        margin-top: 2.0 em;
+        margin-bottom: 0.8em;
         @include media-query($on-laptop) {
             font-size: 15px;
         }
     }
 
     img {
-        max-width: 50%;
+        max-width: 80%;
         margin: 0.2em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        text-align: center;
     }
 
+$gl-ms : "screen and (max-width: 23.5em)"; // up to 360px
+$gl-xs : "screen and (max-width: 35.5em)"; // up to 568px
+$gl-sm : "screen and (max-width: 48em)"; // max 768px
+$gl-md : "screen and (max-width: 64em)"; // max 1024px
+$gl-lg : "screen and (max-width: 80em)"; // max 1280px
+
+// table style
+
+table {
+    border-spacing: 1;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+    * {
+        position: relative
+    }
+
+    td,
+    th {
+        padding-left: 8px
+    }
+
+    thead tr {
+        height: 60px;
+        background: #86c4ff;
+        font-size: 16px;
+    }
+
+    tbody tr {
+        height: 48px;
+        border-bottom: 1px solid #E3F1D5;
+
+        &:last-child {
+            border: 0;
+        }
+    }
+
+    td,
+    th {
+        text-align: left;
+
+        &.l {
+            text-align: right
+        }
+
+        &.c {
+            text-align: center
+        }
+
+        &.r {
+            text-align: center
+        }
+    }
+}
+
+
+@media #{$gl-xs} {
+
+    table {
+        display: block;
+
+        >*,
+        tr,
+        td,
+        th {
+            display: block
+        }
+
+        thead {
+            display: none
+        }
+
+        tbody tr {
+            height: auto;
+            padding: 8px 0;
+
+            td {
+                padding-left: 45%;
+                margin-bottom: 12px;
+
+                &:last-child {
+                    margin-bottom: 0
+                }
+
+                &:before {
+                    position: absolute;
+                    font-weight: 700;
+                    width: 40%;
+                    left: 10px;
+                    top: 0
+                }
+
+                &:nth-child(1):before {
+                    content: "Code";
+                }
+
+                &:nth-child(2):before {
+                    content: "Stock";
+                }
+
+                &:nth-child(3):before {
+                    content: "Cap";
+                }
+
+                &:nth-child(4):before {
+                    content: "Inch";
+                }
+
+                &:nth-child(5):before {
+                    content: "Box Type";
+                }
+            }
+        }
+    }
+}
 
 
 }
@@ -277,6 +404,11 @@ article {
 .post-content {
     margin-bottom: $spacing-unit;
 
+    h1,h2,h3,h4 {
+        margin-left: 3em;
+        margin-top: 3em;
+        margin-bottom: 1em;
+    }
 
     h4 {
         font-size: 2em;
@@ -286,12 +418,21 @@ article {
         }
     }
 
+    >p, >ul, >ol {
+        margin-left: 6em;
+    }
+    >ul li {
+        margin-left: 1em;
+    }
     >p {
         font-size: 1.5 em;
+        
         margin-right: 6em;
         margin-bottom: 10px;
+
         text-align: justify;
         line-height: 2;
+
 
         @include media-query($on-laptop) {
             font-size: 11px;

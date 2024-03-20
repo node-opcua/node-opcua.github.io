@@ -4,56 +4,218 @@
         <Uri>http://sterfive.com</Uri>
     </NamespaceUris>
     <Models>
-        <Model ModelUri="http://sterfive.com" Version="0.0.0" PublicationDate="2024-03-19T20:40:43.560Z">
+        <Model ModelUri="http://sterfive.com" Version="0.0.0" PublicationDate="2024-03-20T07:47:53.383Z">
             <RequiredModel ModelUri="http://opcfoundation.org/UA/" Version="1.05.02" PublicationDate="2022-11-01T00:00:00.000Z"/>
         </Model>
     </Models>
     <Aliases>
+        <Alias Alias="1:MotorStateEnum">ns=1;i=1000</Alias>
         <Alias Alias="Boolean">i=1</Alias>
+        <Alias Alias="EUInformation">i=887</Alias>
         <Alias Alias="Float">i=10</Alias>
         <Alias Alias="HasComponent">i=47</Alias>
         <Alias Alias="HasModellingRule">i=37</Alias>
+        <Alias Alias="HasProperty">i=46</Alias>
         <Alias Alias="HasSubtype">i=45</Alias>
         <Alias Alias="HasTypeDefinition">i=40</Alias>
+        <Alias Alias="LocalizedText">i=21</Alias>
+        <Alias Alias="Range">i=884</Alias>
     </Aliases>
 <!--ReferenceTypes-->
+<!--DataTypes-->
+    <UADataType NodeId="ns=1;i=1000" BrowseName="1:MotorStateEnum">
+        <DisplayName>MotorStateEnum</DisplayName>
+        <References>
+            <Reference ReferenceType="HasSubtype" IsForward="false">i=29</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=1001</Reference>
+        </References>
+        <Definition Name="1:MotorStateEnum">
+            <Field Name="Stopped" Value="0"/>
+            <Field Name="Running" Value="1"/>
+            <Field Name="Fault" Value="2"/>
+        </Definition>
+    </UADataType>
+    <UAVariable NodeId="ns=1;i=1001" BrowseName="EnumStrings" ParentNodeId="ns=1;i=1000" AccessLevel="3" ValueRank="1" ArrayDimensions="3" DataType="LocalizedText">
+        <DisplayName>EnumStrings</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+        <Value>
+            <ListOfLocalizedText xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">
+                <LocalizedText>
+                    <Text>Stopped</Text>
+                </LocalizedText>
+                <LocalizedText>
+                    <Text>Running</Text>
+                </LocalizedText>
+                <LocalizedText>
+                    <Text>Fault</Text>
+                </LocalizedText>
+            </ListOfLocalizedText>
+        </Value>
+    </UAVariable>
 <!--ObjectTypes-->
 <!--ObjectType - 1:RoboticEquipment {{{{ -->
-    <UAObjectType NodeId="ns=1;i=1000" BrowseName="1:RoboticEquipment">
+    <UAObjectType NodeId="ns=1;i=1002" BrowseName="1:RoboticEquipment">
         <DisplayName>RoboticEquipment</DisplayName>
         <References>
             <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
-            <Reference ReferenceType="HasComponent">ns=1;i=1001</Reference>
-            <Reference ReferenceType="HasComponent">ns=1;i=1005</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=1003</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=1013</Reference>
         </References>
     </UAObjectType>
 <!--Object - 1:Motor1 {{{{ -->
-    <UAObject NodeId="ns=1;i=1001" BrowseName="1:Motor1" ParentNodeId="ns=1;i=1000">
+    <UAObject NodeId="ns=1;i=1003" BrowseName="1:Motor1" ParentNodeId="ns=1;i=1002">
         <DisplayName>Motor1</DisplayName>
         <References>
             <Reference ReferenceType="HasTypeDefinition">i=58</Reference>
             <Reference ReferenceType="HasModellingRule">i=78</Reference>
-            <Reference ReferenceType="HasComponent">ns=1;i=1002</Reference>
-            <Reference ReferenceType="HasComponent">ns=1;i=1003</Reference>
             <Reference ReferenceType="HasComponent">ns=1;i=1004</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=1006</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=1009</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=1012</Reference>
         </References>
     </UAObject>
-    <UAVariable NodeId="ns=1;i=1002" BrowseName="1:IsRunning" ParentNodeId="ns=1;i=1001" AccessLevel="3" DataType="Boolean">
+    <UAVariable NodeId="ns=1;i=1004" BrowseName="1:IsRunning" ParentNodeId="ns=1;i=1003" AccessLevel="3" DataType="Boolean">
         <DisplayName>IsRunning</DisplayName>
         <References>
-            <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=2368</Reference>
             <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=1005</Reference>
         </References>
     </UAVariable>
-    <UAVariable NodeId="ns=1;i=1003" BrowseName="1:Speed" ParentNodeId="ns=1;i=1001" AccessLevel="3" DataType="Float">
+    <UAVariable NodeId="ns=1;i=1005" BrowseName="EURange" ParentNodeId="ns=1;i=1004" AccessLevel="3" DataType="Range">
+        <DisplayName>EURange</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+        </References>
+        <Value>
+            <ExtensionObject xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">
+                <TypeId>
+                    <Identifier>i=885</Identifier>
+                </TypeId>
+                <Body>
+                    <Range>
+                        <Low>-1</Low>
+                        <High>1</High>
+                    </Range>
+                </Body>
+            </ExtensionObject>
+        </Value>
+    </UAVariable>
+    <UAVariable NodeId="ns=1;i=1006" BrowseName="1:Speed" ParentNodeId="ns=1;i=1003" AccessLevel="3" DataType="Float">
         <DisplayName>Speed</DisplayName>
         <References>
-            <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=2368</Reference>
             <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=1007</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=1008</Reference>
         </References>
     </UAVariable>
-    <UAVariable NodeId="ns=1;i=1004" BrowseName="1:Torque" ParentNodeId="ns=1;i=1001" AccessLevel="3" DataType="Float">
+    <UAVariable NodeId="ns=1;i=1007" BrowseName="EURange" ParentNodeId="ns=1;i=1006" AccessLevel="3" DataType="Range">
+        <DisplayName>EURange</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+        </References>
+        <Value>
+            <ExtensionObject xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">
+                <TypeId>
+                    <Identifier>i=885</Identifier>
+                </TypeId>
+                <Body>
+                    <Range>
+                        <Low>-1</Low>
+                        <High>1</High>
+                    </Range>
+                </Body>
+            </ExtensionObject>
+        </Value>
+    </UAVariable>
+    <UAVariable NodeId="ns=1;i=1008" BrowseName="EngineeringUnits" ParentNodeId="ns=1;i=1006" DataType="EUInformation">
+        <DisplayName>EngineeringUnits</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+        </References>
+        <Value>
+            <ExtensionObject xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">
+                <TypeId>
+                    <Identifier>i=888</Identifier>
+                </TypeId>
+                <Body>
+                    <EUInformation>
+                        <NamespaceUri>http://www.opcfoundation.org/UA/units/un/cefact</NamespaceUri>
+                        <UnitId>5059638</UnitId>
+                        <DisplayName>
+                            <Text>r/min</Text>
+                        </DisplayName>
+                        <Description>
+                            <Text>revolution per minute - Unit of the angular velocity. (0,104 719 8 rad/s)</Text>
+                        </Description>
+                    </EUInformation>
+                </Body>
+            </ExtensionObject>
+        </Value>
+    </UAVariable>
+    <UAVariable NodeId="ns=1;i=1009" BrowseName="1:Torque" ParentNodeId="ns=1;i=1003" AccessLevel="3" DataType="Float">
         <DisplayName>Torque</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">i=2368</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=1010</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=1011</Reference>
+        </References>
+    </UAVariable>
+    <UAVariable NodeId="ns=1;i=1010" BrowseName="EURange" ParentNodeId="ns=1;i=1009" AccessLevel="3" DataType="Range">
+        <DisplayName>EURange</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+        </References>
+        <Value>
+            <ExtensionObject xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">
+                <TypeId>
+                    <Identifier>i=885</Identifier>
+                </TypeId>
+                <Body>
+                    <Range>
+                        <Low>-1</Low>
+                        <High>1</High>
+                    </Range>
+                </Body>
+            </ExtensionObject>
+        </Value>
+    </UAVariable>
+    <UAVariable NodeId="ns=1;i=1011" BrowseName="EngineeringUnits" ParentNodeId="ns=1;i=1009" DataType="EUInformation">
+        <DisplayName>EngineeringUnits</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+        </References>
+        <Value>
+            <ExtensionObject xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">
+                <TypeId>
+                    <Identifier>i=888</Identifier>
+                </TypeId>
+                <Body>
+                    <EUInformation>
+                        <NamespaceUri>http://www.opcfoundation.org/UA/units/un/cefact</NamespaceUri>
+                        <UnitId>20053</UnitId>
+                        <DisplayName>
+                            <Text>N·m</Text>
+                        </DisplayName>
+                        <Description>
+                            <Text>newton metre (N x m)</Text>
+                        </Description>
+                    </EUInformation>
+                </Body>
+            </ExtensionObject>
+        </Value>
+    </UAVariable>
+    <UAVariable NodeId="ns=1;i=1012" BrowseName="1:State" ParentNodeId="ns=1;i=1003" AccessLevel="3" DataType="1:MotorStateEnum">
+        <DisplayName>State</DisplayName>
         <References>
             <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
             <Reference ReferenceType="HasModellingRule">i=78</Reference>
@@ -61,28 +223,124 @@
     </UAVariable>
 <!--Object - 1:Motor1 }}}} -->
 <!--Object - 1:Sensor {{{{ -->
-    <UAObject NodeId="ns=1;i=1005" BrowseName="1:Sensor" ParentNodeId="ns=1;i=1000">
+    <UAObject NodeId="ns=1;i=1013" BrowseName="1:Sensor" ParentNodeId="ns=1;i=1002">
         <DisplayName>Sensor</DisplayName>
         <References>
             <Reference ReferenceType="HasTypeDefinition">i=58</Reference>
             <Reference ReferenceType="HasModellingRule">i=78</Reference>
-            <Reference ReferenceType="HasComponent">ns=1;i=1006</Reference>
-            <Reference ReferenceType="HasComponent">ns=1;i=1007</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=1014</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=1017</Reference>
         </References>
     </UAObject>
-    <UAVariable NodeId="ns=1;i=1006" BrowseName="1:Temperature" ParentNodeId="ns=1;i=1005" AccessLevel="3" DataType="Float">
+    <UAVariable NodeId="ns=1;i=1014" BrowseName="1:Temperature" ParentNodeId="ns=1;i=1013" AccessLevel="3" DataType="Float">
         <DisplayName>Temperature</DisplayName>
         <References>
-            <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=2368</Reference>
             <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=1015</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=1016</Reference>
         </References>
     </UAVariable>
-    <UAVariable NodeId="ns=1;i=1007" BrowseName="1:Pressure" ParentNodeId="ns=1;i=1005" AccessLevel="3" DataType="Float">
-        <DisplayName>Pressure</DisplayName>
+    <UAVariable NodeId="ns=1;i=1015" BrowseName="EURange" ParentNodeId="ns=1;i=1014" AccessLevel="3" DataType="Range">
+        <DisplayName>EURange</DisplayName>
         <References>
-            <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
             <Reference ReferenceType="HasModellingRule">i=78</Reference>
         </References>
+        <Value>
+            <ExtensionObject xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">
+                <TypeId>
+                    <Identifier>i=885</Identifier>
+                </TypeId>
+                <Body>
+                    <Range>
+                        <Low>-45</Low>
+                        <High>200</High>
+                    </Range>
+                </Body>
+            </ExtensionObject>
+        </Value>
+    </UAVariable>
+    <UAVariable NodeId="ns=1;i=1016" BrowseName="EngineeringUnits" ParentNodeId="ns=1;i=1014" DataType="EUInformation">
+        <DisplayName>EngineeringUnits</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+        </References>
+        <Value>
+            <ExtensionObject xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">
+                <TypeId>
+                    <Identifier>i=888</Identifier>
+                </TypeId>
+                <Body>
+                    <EUInformation>
+                        <NamespaceUri>http://www.opcfoundation.org/UA/units/un/cefact</NamespaceUri>
+                        <UnitId>4408652</UnitId>
+                        <DisplayName>
+                            <Text>°C</Text>
+                        </DisplayName>
+                        <Description>
+                            <Text>degree Celsius - Refer ISO 80000-5 (Quantities and units — Part 5: Thermodynamics) (1 x K)</Text>
+                        </Description>
+                    </EUInformation>
+                </Body>
+            </ExtensionObject>
+        </Value>
+    </UAVariable>
+    <UAVariable NodeId="ns=1;i=1017" BrowseName="1:Pressure" ParentNodeId="ns=1;i=1013" AccessLevel="3" DataType="Float">
+        <DisplayName>Pressure</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">i=2368</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=1018</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=1019</Reference>
+        </References>
+    </UAVariable>
+    <UAVariable NodeId="ns=1;i=1018" BrowseName="EURange" ParentNodeId="ns=1;i=1017" AccessLevel="3" DataType="Range">
+        <DisplayName>EURange</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+        </References>
+        <Value>
+            <ExtensionObject xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">
+                <TypeId>
+                    <Identifier>i=885</Identifier>
+                </TypeId>
+                <Body>
+                    <Range>
+                        <Low>0</Low>
+                        <High>10</High>
+                    </Range>
+                </Body>
+            </ExtensionObject>
+        </Value>
+    </UAVariable>
+    <UAVariable NodeId="ns=1;i=1019" BrowseName="EngineeringUnits" ParentNodeId="ns=1;i=1017" DataType="EUInformation">
+        <DisplayName>EngineeringUnits</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+        </References>
+        <Value>
+            <ExtensionObject xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">
+                <TypeId>
+                    <Identifier>i=888</Identifier>
+                </TypeId>
+                <Body>
+                    <EUInformation>
+                        <NamespaceUri>http://www.opcfoundation.org/UA/units/un/cefact</NamespaceUri>
+                        <UnitId>4342098</UnitId>
+                        <DisplayName>
+                            <Text>bar</Text>
+                        </DisplayName>
+                        <Description>
+                            <Text>bar [unit of pressure] (10⁵ Pa)</Text>
+                        </Description>
+                    </EUInformation>
+                </Body>
+            </ExtensionObject>
+        </Value>
     </UAVariable>
 <!--Object - 1:Sensor }}}} -->
 <!--ObjectType - 1:RoboticEquipment }}}}-->
