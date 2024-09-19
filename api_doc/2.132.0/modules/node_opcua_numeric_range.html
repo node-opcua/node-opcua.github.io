@@ -1,0 +1,651 @@
+<!DOCTYPE html><html class="default" lang="en"><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>node-opcua-numeric-range | NodeOPCUA reference documentation - public API</title><meta name="description" content="Documentation for NodeOPCUA reference documentation - public API"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><script defer src="../assets/main.js"></script><script async src="../assets/icons.js" id="tsd-icons-script"></script><script async src="../assets/search.js" id="tsd-search-script"></script><script async src="../assets/navigation.js" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar"><div class="tsd-toolbar-contents container"><div class="table-cell" id="tsd-search" data-base=".."><div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="../assets/icons.svg#icon-search"></use></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div><div class="field"><div id="tsd-toolbar-links"></div></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="../index.html" class="title">NodeOPCUA reference documentation - public API</a></div><div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget tsd-toolbar-icon menu no-caption" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="../assets/icons.svg#icon-menu"></use></svg></a></div></div></header><div class="container container-main"><div class="col-content"><div class="tsd-page-title"><ul class="tsd-breadcrumb"><li><a href="../index.html">NodeOPCUA reference documentation - public API</a></li><li><a href="node_opcua_numeric_range.html">node-opcua-numeric-range</a></li></ul><h1>Module node-opcua-numeric-range</h1></div><section class="tsd-panel tsd-typography"><a id="md:node-opcua" class="tsd-anchor"></a><h1 class="tsd-anchor-link">node-opcua<a href="#md:node-opcua" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h1><p>node-opcua is a full OPC UA stack for NodeJS and the Browser written in Typescript.</p>
+<p><a href="https://img.shields.io/npm/v/node-opcua" target="_blank" class="external"><img src="https://img.shields.io/npm/v/node-opcua" alt="NPM version"></a>
+<a href="https://github.com/node-opcua/node-opcua/actions/workflows/workflow.yml" target="_blank" class="external"><img src="https://github.com/node-opcua/node-opcua/actions/workflows/workflow.yml/badge.svg" alt="Node.js CI"></a>
+<a href="https://lernajs.io/" target="_blank" class="external"><img src="https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg" alt="lerna"></a>
+<a href="https://coveralls.io/r/node-opcua/node-opcua" target="_blank" class="external"><img src="https://img.shields.io/coverallsCoverage/github/node-opcua/node-opcua" alt="Coverage Status"></a>
+<a href="https://gitter.im/node-opcua/node-opcua" target="_blank" class="external"><img src="https://img.shields.io/gitter/room/node-opcua/node-opcua" alt="Gitter chat"></a>
+<a href="https://leanpub.com/node-opcuabyexample-edition2024" target="_blank" class="external"><img src="https://img.shields.io/static/v1?label=the%20book&amp;message=NodeOPCUA%20by%20example&amp;color=blueviolet&amp;logo=leanpub" alt="The Book"></a></p>
+<p><a href="https://www.npmtrends.com/node-opcua-server" target="_blank" class="external"><img src="https://img.shields.io/npm/dm/node-opcua.svg?logo=npm&amp;label=node-opcua-server" alt="NPM download - server"></a>
+<a href="https://www.npmtrends.com/node-opcua-server" target="_blank" class="external"><img src="https://img.shields.io/npm/dt/node-opcua.svg?label=total" alt="NPM download - server -total"></a></p>
+<p><a href="https://www.npmtrends.com/node-opcua-client" target="_blank" class="external"><img src="https://img.shields.io/npm/dm/node-opcua-client.svg?logo=npm&amp;label=node-opcua-client" alt="NPM download - client"></a>
+<a href="https://www.npmtrends.com/node-opcua-client" target="_blank" class="external"><img src="https://img.shields.io/npm/dt/node-opcua-client.svg?label=total" alt="NPM download - client -total"></a></p>
+<!-- [![open collective badge](https://opencollective.com/node-opcua/tiers/sponsor/badge.svg?label=sponsor<!--&color=brightgreen")](https://opencollective.com/node-opcua#support)
+-->
+<p><a href="https://opencollective.com/node-opcua#support" target="_blank" class="external"><img src="https://opencollective.com/node-opcua/tiers/badge.svg" alt="Financial contributors"></a></p>
+<p><a href="https://opencollective.com/node-opcua/contribute/sponsor-23291/checkout?interval=month&amp;amount=500&amp;contributeAs=me" target="_blank" class="external"><img src="https://opencollective.com/node-opcua/tiers/sponsor.svg?avatarHeight=36&amp;width=600%22" alt="Become a sponsor"></a></p>
+<p><a href="https://node-opcua.github.io/" target="_blank" class="external">Node-opcua</a> is the OPC-UA stack running on NodeJS.</p>
+<p>Why NodeJS ?</p>
+<p>Because NodeJs is a great framework for designing high-performing asynchronous applications.</p>
+<a id="md:getting-started" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Getting started<a href="#md:getting-started" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2><a id="md:installing-node-opcua-as-a-node-package" class="tsd-anchor"></a><h3 class="tsd-anchor-link">installing node-opcua as a node package<a href="#md:installing-node-opcua-as-a-node-package" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3><pre><code>$ mkdir mytest
+$ cd mytest
+$ npm init 
+$ npm install node-opcua --unsafe-perms
+$ # Create your first app.js file!
+</code></pre>
+<a id="md:installing-node-opcua-samples-as-a-node-package" class="tsd-anchor"></a><h3 class="tsd-anchor-link">installing node-opcua samples as a node package<a href="#md:installing-node-opcua-samples-as-a-node-package" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3><pre><code class="shell"><span class="hl-0">$</span><span class="hl-1"> </span><span class="hl-2">mkdir</span><span class="hl-1"> </span><span class="hl-2">myserver</span><br/><span class="hl-0">$</span><span class="hl-1"> </span><span class="hl-2">cd</span><span class="hl-1"> </span><span class="hl-2">myserver</span><br/><span class="hl-0">$</span><span class="hl-1"> </span><span class="hl-2">npm</span><span class="hl-1"> </span><span class="hl-2">init</span><br/><span class="hl-0">$</span><span class="hl-1"> </span><span class="hl-2">npm</span><span class="hl-1"> </span><span class="hl-2">install</span><span class="hl-1"> </span><span class="hl-2">node-opcua-samples</span><span class="hl-1"> </span><span class="hl-3">--unsafe-perms</span><br/><span class="hl-0">$</span><span class="hl-1"> </span><span class="hl-2">./node_modules/.bin/simple_server</span>
+</code><button type="button">Copy</button></pre>
+
+<p>or</p>
+<pre><code class="shell"><span class="hl-0">$</span><span class="hl-1"> </span><span class="hl-2">./node_modules/.bin/simple_client</span><span class="hl-1">  </span><span class="hl-3">-e</span><span class="hl-1"> </span><span class="hl-2">&quot;opc.tcp://opcserver.mAutomation.net:4841&quot;</span><span class="hl-1"> </span><span class="hl-3">-n=</span><span class="hl-2">&quot;ns=1;s=EVR2.system.RTC_SEC&quot;</span>
+</code><button type="button">Copy</button></pre>
+
+<p>or</p>
+<pre><code class="shell"><span class="hl-0">$</span><span class="hl-1"> </span><span class="hl-2">./node_modules/.bin/simple_client</span><span class="hl-1">  </span><span class="hl-3">-e</span><span class="hl-1"> </span><span class="hl-2">&quot;opc.tcp://opcuademo.sterfive.com:26543&quot;</span><span class="hl-1"> </span>
+</code><button type="button">Copy</button></pre>
+
+<a id="md:minimum-nodejs-requirement" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Minimum Nodejs requirement<a href="#md:minimum-nodejs-requirement" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2><ul>
+<li>Nodejs version 18 or above</li>
+</ul>
+<a id="md:tutorials-and-guided-examples" class="tsd-anchor"></a><h2 class="tsd-anchor-link">tutorials and guided examples<a href="#md:tutorials-and-guided-examples" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2><p><a href="https://leanpub.com/node-opcuabyexample-edition2024" target="_blank" class="external"><img src="https://img.shields.io/static/v1?label=the%20book&amp;message=NodeOPCUA%20by%20example&amp;color=blueviolet&amp;logo=leanpub" alt="The Book"></a>.  This book provides a large number of practical and ready-to-use and fully documented examples. It's the best starting point to learn about node-opcua.</p>
+<a id="md:sponsors--backers" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Sponsors &amp; Backers<a href="#md:sponsors--backers" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2><p>The funding of node-opcua entirely relies on its users.<br>
+We appreciate that, once you have evaluated the software and you have decided to use it in one of your applications, you consider supporting our effort by either financially contributing to one of our sponsor programs:</p>
+<ul>
+<li><a href="https://github.com/sponsors/node-opcua" target="_blank" class="external">https://github.com/sponsors/node-opcua</a></li>
+<li><a href="https://opencollective.com/node-opcua" target="_blank" class="external">https://opencollective.com/node-opcua</a></li>
+</ul>
+<p>Grants ensure the following:</p>
+<ul>
+<li>🔨 Long-term maintenance of the project</li>
+<li>⚙️ maintain the website and continuous integration platform</li>
+<li>🛣  Progress on the road map</li>
+<li>🐛 Quick responses to bug reports</li>
+<li>🚀 New features &amp; enhancements</li>
+<li>⚖️ representing the node-opcua user community at the OPC Foundation</li>
+</ul>
+<a id="md:sponsors" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Sponsors<a href="#md:sponsors" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2><a href="https://opencollective.com/node-opcua/donate" target="_blank">
+  <img src="https://opencollective.com/node-opcua/donate/button@2x.png?color=blue" width=300 />
+</a>
+<p><a href="https://opencollective.com/node-opcua/sponsor/0/website" target="_blank"><img src="https://opencollective.com/node-opcua/sponsor/0/avatar.svg"></a>
+<a href="https://opencollective.com/node-opcua/sponsor/1/website" target="_blank"><img src="https://opencollective.com/node-opcua/sponsor/1/avatar.svg"></a>
+<a href="https://opencollective.com/node-opcua/sponsor/2/website" target="_blank"><img src="https://opencollective.com/node-opcua/sponsor/2/avatar.svg"></a>
+<a href="https://opencollective.com/node-opcua/sponsor/3/website" target="_blank"><img src="https://opencollective.com/node-opcua/sponsor/3/avatar.svg"></a>
+<a href="https://opencollective.com/node-opcua/sponsor/4/website" target="_blank"><img src="https://opencollective.com/node-opcua/sponsor/4/avatar.svg"></a>
+<a href="https://opencollective.com/node-opcua/sponsor/5/website" target="_blank"><img src="https://opencollective.com/node-opcua/sponsor/5/avatar.svg"></a>
+<a href="https://opencollective.com/node-opcua/sponsor/6/website" target="_blank"><img src="https://opencollective.com/node-opcua/sponsor/6/avatar.svg"></a>
+<a href="https://opencollective.com/node-opcua/sponsor/7/website" target="_blank"><img src="https://opencollective.com/node-opcua/sponsor/7/avatar.svg"></a>
+<a href="https://opencollective.com/node-opcua/sponsor/8/website" target="_blank"><img src="https://opencollective.com/node-opcua/sponsor/8/avatar.svg"></a>
+<a href="https://opencollective.com/node-opcua/sponsor/9/website" target="_blank"><img src="https://opencollective.com/node-opcua/sponsor/9/avatar.svg"></a></p>
+<a id="md:backers" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Backers<a href="#md:backers" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2><p>Thank you to all our backers! <a href="https://opencollective.com/node-opcua#backer" target="_blank" class="external">Become a backer</a></p>
+<img src=https://opencollective.com/node-opcua/tiers/badge.svg>
+<p><a href="https://opencollective.com/node-opcua#backers" target="_blank"><img src="https://opencollective.com/node-opcua/tiers/backer.svg?width=890"></a></p>
+<a id="md:contributors" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Contributors<a href="#md:contributors" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2><p>This project exists thanks to all the people who contribute.
+<img src="https://opencollective.com/node-opcua/contributors.svg?width=890&button=true" /></a></p>
+<a id="md:getting-professional-support" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Getting professional support<a href="#md:getting-professional-support" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2><p>To get professional support, consider subscribing to the node-opcua membership community:</p>
+<p><a href="https://support.sterfive.com" target="_blank" class="external"><img src="https://img.shields.io/static/v1?style=for-the-badge&amp;label=Professional&amp;message=Support&amp;labelColor=blue&amp;color=green&amp;logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5MS41MiA0OTEuNTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5MS41MiA0OTEuNTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxnPg0KCQk8cGF0aCBkPSJNNDg3Ljk4OSwzODkuNzU1bC05My4xMDktOTIuOTc2Yy00LjgxMy00LjgwNi0xMi42NDItNC42NzQtMTcuMjczLDAuMzA3Yy03LjE0OCw3LjY4OS0xNC42NCwxNS41NTQtMjEuNzMsMjIuNjM0ICAgIGMtMC4yNzEsMC4yNy0wLjUwMSwwLjQ5My0wLjc2MywwLjc1NUw0NjcuMyw0MzIuNTA0YzguOTEtMTAuNjE0LDE2LjY1Ny0yMC40MSwyMS43My0yNi45NyAgICBDNDkyLjcyLDQwMC43NjIsNDkyLjI1NywzOTQuMDE5LDQ4Ny45ODksMzg5Ljc1NXoiLz4NCgk8L2c+DQo8L2c+DQo8Zz4NCgk8Zz4NCgkJPHBhdGggZD0iTTMzNC4zLDMzNy42NjFjLTM0LjMwNCwxMS4zNzktNzcuNTYsMC40MTMtMTE0LjU1NC0yOS41NDJjLTQ5LjAyMS0zOS42OTMtNzUuOTcyLTEwMi42NDItNjUuODM4LTE1MC41OTNMMzcuNjM0LDQxLjQxOCAgICBDMTcuNjUzLDU5LjQyNCwwLDc4LjU0NSwwLDkwYzAsMTQxLjc1MSwyNjAuMzQ0LDQxNS44OTYsNDAxLjUwMyw0MDAuOTMxYzExLjI5Ni0xLjE5OCwzMC4xNzYtMTguNjUxLDQ4LjA2Mi0zOC4xNjdMMzM0LjMsMzM3LjY2MSAgICB6Ii8+DQoJPC9nPg0KPC9nPg0KPGc+DQoJPGc+DQoJCTxwYXRoIGQ9Ik0xOTMuODU0LDk2LjA0MUwxMDEuMjEzLDMuNTNjLTQuMjI1LTQuMjItMTAuODgyLTQuNzI0LTE1LjY2NC0xLjE0NWMtNi42NTQsNC45ODMtMTYuNjQ4LDEyLjY1MS0yNy40NTMsMjEuNDk4ICAgIGwxMTEuOTQ1LDExMS43ODVjMC4wNjEtMC4wNiwwLjExMS0wLjExMywwLjE3Mi0wLjE3NGM3LjIzOC03LjIyOCwxNS4zNTUtMTQuODg1LDIzLjI5MS0yMi4xNjcgICAgQzE5OC41MzQsMTA4LjcxMywxOTguNjg0LDEwMC44NjMsMTkzLjg1NCw5Ni4wNDF6Ii8+DQoJPC9nPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+" alt="Professional Support"></a></p>
+<p>Registered members have access to an extended set of online documentation.</p>
+<p>Registered members can post and query Sterfive for any question related to NodeOPCUA in a private chat room.</p>
+<p>or contact <a href="https://www.sterfive.com" target="_blank" class="external">sterfive</a> for dedicated consulting and more advanced support or for a certified version of node-opcua. (<a href="mailto:contact@sterfive.com">contact@sterfive.com</a>).</p>
+<a id="md:road-map" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Road-map<a href="#md:road-map" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2><p>If your company would like to participate and influence the development of future versions of node-opcua please contact <a href="mailto:contact@sterfive.com">sterfive</a>.</p>
+<p>Those are the items we would like to achieve in the next version of the API.</p>
+<ul>
+<li>improved documentation</li>
+<li>Compliance testing and certification (CTT)</li>
+<li>Pub-sub support</li>
+<li>support for redundancy</li>
+<li>session-less transactions</li>
+<li>WebSocket transport</li>
+<li>JTokens and OAuth</li>
+<li>reversed connection</li>
+<li>more tutorials</li>
+</ul>
+<a id="md:advanced-topics" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Advanced topics<a href="#md:advanced-topics" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2><a id="md:installing-node-opcua-from-source" class="tsd-anchor"></a><h3 class="tsd-anchor-link">installing node-opcua from source<a href="#md:installing-node-opcua-from-source" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3><a id="md:running-the-demo-server-from-source" class="tsd-anchor"></a><h4 class="tsd-anchor-link">running the demo server from source<a href="#md:running-the-demo-server-from-source" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code> $ git clone https://github.com/node-opcua/node-opcua.git
+ $ cd node-opcua
+ $ npm install -g pnpm 
+ $ pnpm recursive install
+ $ pnpm build
+ $ node packages/node-opcua-samples/bin/simple_server
+</code></pre>
+<a id="md:running-the-demo-client-from-source" class="tsd-anchor"></a><h4 class="tsd-anchor-link">running the demo client from source<a href="#md:running-the-demo-client-from-source" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code> $ git clone https://github.com/node-opcua/node-opcua.git
+ $ cd node-opcua
+ $ npm install -g pnpm 
+ $ pnpm recursive install
+ $ pnpm build
+ $ node packages/node-opcua-samples/bin/simple_client.js -e &quot;opc.tcp://opcserver.mAutomation.net:4841&quot; -n=&quot;ns=1;s=EVR2.system.RTC_SEC&quot;
+</code></pre>
+<a id="md:tutorials" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Tutorials<a href="#md:tutorials" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3><ul>
+<li>
+<p><a href="https://github.com/node-opcua/node-opcua/blob/master/documentation/creating_a_server.md" target="_blank" class="external">create a server</a></p>
+</li>
+<li>
+<p><a href="https://github.com/node-opcua/node-opcua/blob/master/documentation/creating_a_client_typescript.md" target="_blank" class="external">create a client in typescript</a></p>
+</li>
+<li>
+<p>more tutorials are available in the book (<a href="https://leanpub.com/node-opcuabyexample-edition2024" target="_blank" class="external">https://leanpub.com/node-opcuabyexample-edition2024</a>)</p>
+</li>
+<li>
+<p>more advanced examples and training material are available for the NodeOPCUA Subscription members at (<a href="https://support.sterfive.com" target="_blank" class="external">https://support.sterfive.com</a>)</p>
+</li>
+</ul>
+<a id="md:api-reference" class="tsd-anchor"></a><h3 class="tsd-anchor-link">API reference<a href="#md:api-reference" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3><ul>
+<li>check out the <a href="https://node-opcua.github.io/api_doc/index.html" target="_blank" class="external">API documentation</a></li>
+</ul>
+<a id="md:contributing" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Contributing<a href="#md:contributing" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2><pre><code>$ git clone git://github.com/node-opcua/node-opcua.git
+$ cd node-opcua
+$ npm install -g pnpm 
+$ pnpm install
+$ pnpm recursive install
+$ pnpm build
+</code></pre>
+<p><a href="https://nodei.co/npm/node-opcua/" target="_blank" class="external"><img src="https://nodei.co/npm/node-opcua.png?downloads=true&amp;stars=true" alt="NPM"></a></p>
+<p><a href="https://www.openhub.net/p/node-opcua" target="_blank" class="external"><img src="https://www.openhub.net/p/713850/widgets/project_thin_badge.gif" alt="Project Stats"></a></p>
+<a id="md:supported-features" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Supported Features<a href="#md:supported-features" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2><table>
+<thead>
+<tr>
+<th><strong><strong>Service</strong></strong></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Discovery Service Set</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>FindServers()</td>
+<td>:white_check_mark:</td>
+</tr>
+<tr>
+<td></td>
+<td>GetEndpoints()</td>
+<td>:white_check_mark:</td>
+</tr>
+<tr>
+<td></td>
+<td>RegisterServer()</td>
+<td>:white_check_mark:</td>
+</tr>
+<tr>
+<td></td>
+<td>RegisterServer2()</td>
+<td>:white_check_mark:</td>
+</tr>
+<tr>
+<td></td>
+<td>FindServersOnNetwork()</td>
+<td>:white_check_mark:</td>
+</tr>
+<tr>
+<td>Secure Channel Service Set</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>OpenSecureChannel()</td>
+<td>:white_check_mark:</td>
+</tr>
+<tr>
+<td></td>
+<td>CloseSecureChannel()</td>
+<td>:white_check_mark:</td>
+</tr>
+<tr>
+<td>Session Service Set</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>CreateSession()</td>
+<td>:white_check_mark:</td>
+</tr>
+<tr>
+<td></td>
+<td>CloseSession()</td>
+<td>:white_check_mark:</td>
+</tr>
+<tr>
+<td></td>
+<td>ActivateSession()</td>
+<td>:white_check_mark:</td>
+</tr>
+<tr>
+<td></td>
+<td>Cancel()</td>
+<td></td>
+</tr>
+<tr>
+<td>View Service Set</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Browse()</td>
+<td>:white_check_mark:</td>
+</tr>
+<tr>
+<td></td>
+<td>BrowseNext()</td>
+<td>:white_check_mark:</td>
+</tr>
+<tr>
+<td></td>
+<td>TranslateBrowsePathsToNodeIds()</td>
+<td>:white_check_mark:</td>
+</tr>
+<tr>
+<td></td>
+<td>RegisterNodes()</td>
+<td>:white_check_mark:</td>
+</tr>
+<tr>
+<td></td>
+<td>UnregisterNodes()</td>
+<td>:white_check_mark:</td>
+</tr>
+<tr>
+<td>Attribute Service Set</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Read()</td>
+<td>:white_check_mark:</td>
+</tr>
+<tr>
+<td></td>
+<td>Write()</td>
+<td>:white_check_mark:</td>
+</tr>
+<tr>
+<td></td>
+<td>HistoryRead()</td>
+<td>:waxing_crescent_moon:</td>
+</tr>
+<tr>
+<td></td>
+<td>HistoryUpdate()</td>
+<td>:waxing_crescent_moon:</td>
+</tr>
+<tr>
+<td>MonitoredItems Service Set</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>CreateMonitoredItems()</td>
+<td>:white_check_mark:</td>
+</tr>
+<tr>
+<td></td>
+<td>ModifyMonitoredItems()</td>
+<td>:white_check_mark:</td>
+</tr>
+<tr>
+<td></td>
+<td>SetMonitoringMode()</td>
+<td>:white_check_mark:</td>
+</tr>
+<tr>
+<td></td>
+<td>SetTriggering()</td>
+<td>:new_moon:</td>
+</tr>
+<tr>
+<td></td>
+<td>DeleteMonitoredItems()</td>
+<td>:white_check_mark:</td>
+</tr>
+<tr>
+<td>Subscription Service Set</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>CreateSubscription()</td>
+<td>:white_check_mark:</td>
+</tr>
+<tr>
+<td></td>
+<td>ModifySubscription()</td>
+<td>:white_check_mark:</td>
+</tr>
+<tr>
+<td></td>
+<td>DeleteSubscriptions()</td>
+<td>:white_check_mark:</td>
+</tr>
+<tr>
+<td></td>
+<td>Publish()</td>
+<td>:white_check_mark:</td>
+</tr>
+<tr>
+<td></td>
+<td>Republish()</td>
+<td>:white_check_mark:</td>
+</tr>
+<tr>
+<td></td>
+<td>TransferSubscriptions()</td>
+<td>:white_check_mark:</td>
+</tr>
+<tr>
+<td>Node Management Service Set</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>AddNodes()</td>
+<td>:new_moon:</td>
+</tr>
+<tr>
+<td></td>
+<td>AddReferences()</td>
+<td>:new_moon:</td>
+</tr>
+<tr>
+<td></td>
+<td>DeleteNodes()</td>
+<td>:new_moon:</td>
+</tr>
+<tr>
+<td></td>
+<td>DeleteReferences()</td>
+<td>:new_moon:</td>
+</tr>
+<tr>
+<td>Query Service Set</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>QueryFirst()</td>
+<td>:new_moon:</td>
+</tr>
+<tr>
+<td></td>
+<td>QueryNext()</td>
+<td>:new_moon:</td>
+</tr>
+<tr>
+<td>PubSUB</td>
+<td>as a commercial module</td>
+<td>:white_check_mark:</td>
+</tr>
+<tr>
+<td>GDS</td>
+<td>as a commercial module</td>
+<td>:white_check_mark:</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center"></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><strong>Transport Protocol</strong></strong></td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Transport</strong></td>
+<td style="text-align:center"><strong>Status</strong></td>
+<td><strong>Comment</strong></td>
+</tr>
+<tr>
+<td>UA-TCP UA-SC UA Binary</td>
+<td style="text-align:center">:white_check_mark:</td>
+<td>OPC.TCP - Binary</td>
+</tr>
+<tr>
+<td>SOAP-HTTP WS-SC UA Binary</td>
+<td style="text-align:center">:new_moon:</td>
+<td>HTTP/HTTPS - Binary</td>
+</tr>
+<tr>
+<td>SOAP-HTTP WS-SC UA XML</td>
+<td style="text-align:center">:new_moon:</td>
+<td></td>
+</tr>
+<tr>
+<td>SOAP-HTTP WS-SC UA XML-UA Binary</td>
+<td style="text-align:center">:new_moon:</td>
+<td></td>
+</tr>
+<tr>
+<td><strong><strong>Security Policies</strong></strong></td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Policy</strong></td>
+<td style="text-align:center"><strong>Status</strong></td>
+<td><strong>Comment</strong></td>
+</tr>
+<tr>
+<td>None</td>
+<td style="text-align:center">:white_check_mark:</td>
+<td></td>
+</tr>
+<tr>
+<td>Basic128Rsa15</td>
+<td style="text-align:center">:white_check_mark:</td>
+<td>deprecated in 1.04</td>
+</tr>
+<tr>
+<td>Basic256</td>
+<td style="text-align:center">:white_check_mark:</td>
+<td>deprecated in 1.04</td>
+</tr>
+<tr>
+<td>Basic256Sha256</td>
+<td style="text-align:center">:white_check_mark:</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Authentication</strong></td>
+<td style="text-align:center"><strong>Status</strong></td>
+<td><strong>Comment</strong></td>
+</tr>
+<tr>
+<td>Anonymous</td>
+<td style="text-align:center">:white_check_mark:</td>
+<td></td>
+</tr>
+<tr>
+<td>User Name Password</td>
+<td style="text-align:center">:white_check_mark:</td>
+<td></td>
+</tr>
+<tr>
+<td>X509 Certificate</td>
+<td style="text-align:center">:white_check_mark:</td>
+<td></td>
+</tr>
+<tr>
+<td><strong><strong>client facets</strong></strong></td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td>Base Client Behaviour</td>
+<td style="text-align:center">:white_check_mark:</td>
+<td></td>
+</tr>
+<tr>
+<td>AddressSpace Lookup</td>
+<td style="text-align:center">:white_check_mark:</td>
+<td></td>
+</tr>
+<tr>
+<td>Attribute Read</td>
+<td style="text-align:center">:white_check_mark:</td>
+<td></td>
+</tr>
+<tr>
+<td>DataChange Subscription</td>
+<td style="text-align:center">:white_check_mark:</td>
+<td></td>
+</tr>
+<tr>
+<td>DataAccess</td>
+<td style="text-align:center">:white_check_mark:</td>
+<td></td>
+</tr>
+<tr>
+<td>Discovery</td>
+<td style="text-align:center">:white_check_mark:</td>
+<td></td>
+</tr>
+<tr>
+<td>Event Subscription</td>
+<td style="text-align:center">:white_check_mark:</td>
+<td></td>
+</tr>
+<tr>
+<td>Method call</td>
+<td style="text-align:center">:white_check_mark:</td>
+<td></td>
+</tr>
+<tr>
+<td>Historical Access</td>
+<td style="text-align:center">:first_quarter_moon:</td>
+<td></td>
+</tr>
+<tr>
+<td>Advanced Type</td>
+<td style="text-align:center">:white_check_mark:</td>
+<td></td>
+</tr>
+<tr>
+<td>Programming</td>
+<td style="text-align:center">:new_moon:</td>
+<td></td>
+</tr>
+<tr>
+<td>Auditing</td>
+<td style="text-align:center">:first_quarter_moon:</td>
+<td></td>
+</tr>
+<tr>
+<td>Redundancy</td>
+<td style="text-align:center">:new_moon:</td>
+<td>Sponsors wanted</td>
+</tr>
+<tr>
+<td><strong><strong>server profiles</strong></strong></td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td>Core Server</td>
+<td style="text-align:center">:white_check_mark:</td>
+<td></td>
+</tr>
+<tr>
+<td>Data Access Server</td>
+<td style="text-align:center">:white_check_mark:</td>
+<td></td>
+</tr>
+<tr>
+<td>Embedded Server</td>
+<td style="text-align:center">:white_check_mark:</td>
+<td></td>
+</tr>
+<tr>
+<td>Nano Embedded Device Server</td>
+<td style="text-align:center">:white_check_mark:</td>
+<td></td>
+</tr>
+<tr>
+<td>Micro Embedded Device Server</td>
+<td style="text-align:center">:white_check_mark:</td>
+<td></td>
+</tr>
+<tr>
+<td>Standard DataChange Subscription Server</td>
+<td style="text-align:center">:white_check_mark:</td>
+<td></td>
+</tr>
+<tr>
+<td>Standard Event Subscription Server</td>
+<td style="text-align:center">:white_check_mark:</td>
+<td></td>
+</tr>
+<tr>
+<td>Standard UA Server</td>
+<td style="text-align:center">:white_check_mark:</td>
+<td></td>
+</tr>
+<tr>
+<td>Redundancy Transparent Server</td>
+<td style="text-align:center">:new_moon:</td>
+<td>Sponsors wanted</td>
+</tr>
+<tr>
+<td>Redundancy Visible Server</td>
+<td style="text-align:center">:new_moon:</td>
+<td>Sponsors wanted</td>
+</tr>
+<tr>
+<td>Node Management Server</td>
+<td style="text-align:center">:new_moon:</td>
+<td>Sponsors wanted</td>
+</tr>
+<tr>
+<td>Auditing Server</td>
+<td style="text-align:center">:first_quarter_moon:</td>
+<td></td>
+</tr>
+<tr>
+<td>Complex Type Server</td>
+<td style="text-align:center">:white_check_mark:</td>
+<td>(sponsored)</td>
+</tr>
+<tr>
+<td>Session Diagnostics</td>
+<td style="text-align:center">:white_check_mark:</td>
+<td>(sponsored)</td>
+</tr>
+<tr>
+<td>Subscription Diagnostics</td>
+<td style="text-align:center">:white_check_mark:</td>
+<td>(sponsored)</td>
+</tr>
+<tr>
+<td>Alarms &amp; Conditions</td>
+<td style="text-align:center">:white_check_mark:</td>
+<td>(sponsored)</td>
+</tr>
+<tr>
+<td>Pub &amp; Sub</td>
+<td style="text-align:center">:new_moon:</td>
+<td>Sponsors wanted</td>
+</tr>
+</tbody>
+</table>
+<a id="md:feedback" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Feedback<a href="#md:feedback" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2><ul>
+<li>
+<p>if you're using node-opcua in one of your project, please feel free to leave a comment and a quick description in the <a href="https://github.com/node-opcua/node-opcua/wiki" target="_blank" class="external">wiki</a></p>
+</li>
+<li>
+<p>if you have a particular wish or found a issue, let us known and <a href="https://github.com/node-opcua/node-opcua/issues?state=open" target="_blank" class="external">create an issue</a></p>
+</li>
+</ul>
+<a id="md:about-licensing" class="tsd-anchor"></a><h2 class="tsd-anchor-link">About licensing<a href="#md:about-licensing" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2><p>The node-opcua core module is <a href="../media/LICENSE">copyrighted and licencsd under the term of the &quot;The MIT License&quot;</a>.</p>
+<p>This means that :</p>
+<ul>
+<li>node-opcua comes without any warranty of any kind.</li>
+<li>you can freely re-use in an open-source application or a commercial application</li>
+<li>you have to include the software copyright notice in all copies or substantial portions of the software.</li>
+</ul>
+<p>You are strongly encouraged to apply to our <a href="https://support.sterfive.com" target="_blank" class="external">NodeOPCUA Membership</a> to get additional benefits and support.</p>
+<a id="md:copyright" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Copyright<a href="#md:copyright" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2><p>Copyright (c) 2022-2024 Sterfive SAS - 833264583 RCS ORLEANS - France (<a href="https://www.sterfive.com" target="_blank" class="external">https://www.sterfive.com</a>)
+Copyright (c) 2014-2022 Etienne Rossignon</p>
+</section></div><div class="col-sidebar"><div class="page-menu"><div class="tsd-navigation settings"><details class="tsd-accordion"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Settings</h3></summary><div class="tsd-accordion-details"><div class="tsd-filter-visibility"><span class="settings-label">Member Visibility</span><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-private" name="private"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Private</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li></ul></div><div class="tsd-theme-toggle"><label class="settings-label" for="tsd-theme">Theme</label><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open class="tsd-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>On This Page</h3></summary><div class="tsd-accordion-details"><a href="#md:node-opcua"><span>node-<wbr/>opcua</span></a><ul><li><a href="#md:getting-started"><span>Getting started</span></a></li><li><ul><li><a href="#md:installing-node-opcua-as-a-node-package"><span>installing node-<wbr/>opcua as a node package</span></a></li><li><a href="#md:installing-node-opcua-samples-as-a-node-package"><span>installing node-<wbr/>opcua samples as a node package</span></a></li></ul></li><li><a href="#md:minimum-nodejs-requirement"><span>Minimum <wbr/>Nodejs requirement</span></a></li><li><a href="#md:tutorials-and-guided-examples"><span>tutorials and guided examples</span></a></li><li><a href="#md:sponsors--backers"><span>Sponsors &amp; <wbr/>Backers</span></a></li><li><a href="#md:sponsors"><span>Sponsors</span></a></li><li><a href="#md:backers"><span>Backers</span></a></li><li><a href="#md:contributors"><span>Contributors</span></a></li><li><a href="#md:getting-professional-support"><span>Getting professional support</span></a></li><li><a href="#md:road-map"><span>Road-<wbr/>map</span></a></li><li><a href="#md:advanced-topics"><span>Advanced topics</span></a></li><li><ul><li><a href="#md:installing-node-opcua-from-source"><span>installing node-<wbr/>opcua from source</span></a></li><li><ul><li><a href="#md:running-the-demo-server-from-source"><span>running the demo server from source</span></a></li><li><a href="#md:running-the-demo-client-from-source"><span>running the demo client from source</span></a></li></ul></li><li><a href="#md:tutorials"><span>Tutorials</span></a></li><li><a href="#md:api-reference"><span>API reference</span></a></li></ul></li><li><a href="#md:contributing"><span>Contributing</span></a></li><li><a href="#md:supported-features"><span>Supported <wbr/>Features</span></a></li><li><a href="#md:feedback"><span>Feedback</span></a></li><li><a href="#md:about-licensing"><span>About licensing</span></a></li><li><a href="#md:copyright"><span>Copyright</span></a></li></ul></div></details></div><div class="site-menu"><nav class="tsd-navigation"><a href="../index.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-1"></use></svg><span>NodeOPCUA reference documentation - public API</span></a><ul class="tsd-small-nested-navigation" id="tsd-nav-container" data-base=".."><li>Loading...</li></ul></nav></div></div></div><footer><p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></footer><div class="overlay"></div></body></html>
