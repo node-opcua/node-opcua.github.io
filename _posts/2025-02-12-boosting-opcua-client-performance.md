@@ -140,17 +140,8 @@ Results:
 
 In summary, the optimized client not only simplifies your development process but also significantly boosts performance, which can be crucial in industrial applications where every millisecond counts.
 
-## Sterfive’s Broader Ecosystem
+## Get Started
 
-This isn’t a standalone benefit. All Sterfive products, including [@OPCUA for NodeRed](https://flows.nodered.org/node/@opcua/for-node-red) and other specialized tools like [Sterfive OPCUA Aggregator](https://www.sterfive.com/product/aggregator/), leverage the performance improvements provided by the optimized client. 
-Our industrial projects and software solutions for clients are consistently enhanced by the efficiency of @sterfive/opcua-optimized-client.
-
-For members of the NodeOPCUA Support community (visit https://support.sterfive.com), this professional module offers a seamless upgrade path to complement and boost your existing node-opcua setups.
-
-## Ready to Optimize Your OPCUA Communication?
-
-If you’re looking to streamline your OPCUA communication and maximize performance, it’s time to see what @sterfive/opcua-optimized-client can do for you. Visit [www.sterfive.com](https://www.sterfive.com) and get in touch with us to learn more about our solutions and how we can help boost your projects.
-
-Take the leap towards a more efficient OPCUA communication – let Sterfive be your partner in industrial innovation.
+The `@sterfive/opcua-optimized-client` module is a professional add-on available from [Sterfive](https://www.sterfive.com).
 
 Happy coding!
