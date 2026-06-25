@@ -2,6 +2,7 @@
 layout: post
 comments: true
 categories: news
+noindex: true
 ---
 
 
