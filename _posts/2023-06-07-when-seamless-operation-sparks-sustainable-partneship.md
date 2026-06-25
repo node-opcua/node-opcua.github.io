@@ -25,28 +25,10 @@ But for this to continue, we need your support.
 Your backing is not only about ensuring the continuity and enhancement of a product that you use. It is about joining hands with us in a partnership that aims for innovation and excellence. We want to engage with you in a stronger business relationship where you, too, have a stake in shaping the future of NodeOPCUA.
 
 
-### Let's make it long lasting, for your own benefit
+### Support the project
 
-![receive & give](https://st2.depositphotos.com/20602302/43235/i/450/depositphotos_432352308-stock-photo-hand-turns-dice-changes-word.jpg)
+Companies using NodeOPCUA in production are encouraged to support the project:
 
-We are offering several ways for you to partner with us:
-
-Support Membership Program: With this, we provide you with quick support and assistance during your development phase. Plus, you support our R&D and continuous improvement activities, continuing to benefit from regular releases.
-
-Sponsorship Program: Here, you can sponsor the development of new features. We have several projects pending sponsorship, and we commit to allocate our R&D resources to move them forward once we've secured 75% of the cost estimate.
-
-Consultation and Training: We are available for OPCUA Expertise and Training, along with Process Modeling and companion specification consulting.
-
-### The choice is yours
-
-Ultimately, the choice to support NodeOPCUA is not just about buying a support contract for a technology that works seamlessly. It is about recognizing the effort that goes into maintaining that seamlessness, the hard work that makes sure the technology remains cutting-edge, and the diligence that keeps the innovation going.
-
-Supporting NodeOPCUA is about sustainability. It's about protecting your investment, your applications, and ensuring their stability for the future. It's about creating a symbiotic relationship that ensures we can keep providing you with the service you've come to rely on.
-
-Join us in this venture to shape the future of open-source technology. Together, let's continue to redefine what it means to offer - and use - high-quality, open-source software.
-
-### How to get there ?
-
-  - choose a support plan on [stefive](https://support.stefive.com)
-  - join our open collective [opencollective](https://opencollective.com/node-opcua) and choose to sponsor a project that matters for your company.
-  - Contact us and engage us 
+- [Become a GitHub Sponsor](https://github.com/sponsors/node-opcua)
+- [Join our Open Collective](https://opencollective.com/node-opcua)
+- For commercial support, visit [sterfive.com](https://www.sterfive.com)
