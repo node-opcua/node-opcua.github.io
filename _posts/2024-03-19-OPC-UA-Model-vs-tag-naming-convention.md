@@ -2,6 +2,7 @@
 layout: post
 comments: true
 categories: news
+canonical_url: https://www.sterfive.com/product/modeler
 ---
 
 # Enhancing Industrial Automation with OPC UA Modeling and Object-Oriented Process Modeling
