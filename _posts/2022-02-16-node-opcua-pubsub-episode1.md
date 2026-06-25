@@ -419,18 +419,8 @@ server address space. This object exposes the PubSub configuration of
 the OPC-UA server. It's used to modify the connection parameters or the
 payload shape; dynamically, while the server is running.
 
-The `node-opcua-pubsub-*` modules demonstrated here are developed by
-sterfive. They are published under a dual-license. The public version is
-suitable for evaluation in your proof of concept. The professional
-edition can be subscribed to from www.sterfive.com and comes with
-complete source code, unit tests, an extended license, professional
-support. It is suitable for industrial grade applications. 
-[contact us for more information](https://www.sterfive.com/#/contact)
+The `node-opcua-pubsub-*` modules are available from [Sterfive](https://www.sterfive.com).
 
 references: 
 - [the "Node-OPCUA by example" book](https://leanpub.com/node-opcuabyexample-edition2024) 
-- [the Node-OPCUA membership subscription](https://support.sterfive.com) 
-- [HiveMQ's public demo MQTT broker](https://www.hivemq.com/public-mqtt-broker/) 
-- [HiveMQ public WebCient](http://www.hivemq.com/demos/websocket-client/)
-- [Eclipse Mosquitto](https://mosquitto.org/) 
 - [Gyphy](https://giphy.com/gifs/n6mEMqAuYOQ8l8qcEE)
