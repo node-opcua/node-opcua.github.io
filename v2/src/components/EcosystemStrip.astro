@@ -6,7 +6,7 @@
     <a href="https://nodejs.org" target="_blank" rel="noopener noreferrer" class="ecosystem-item">
       <span class="eyebrow">Built on</span>
       <div class="logo-wrapper">
-        <svg viewBox="0 0 24 24" class="eco-icon nodejs-icon" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2L2 7.75v11.5L12 22l10-5.75V7.75L12 2Z"/></svg>
+        <img src="/v2/logos/nodejs-logo.png" alt="" class="eco-icon nodejs-logo-img" />
         <span class="logo-text">Node.js</span>
       </div>
     </a>
@@ -24,7 +24,7 @@
     <a href="https://opcfoundation.org" target="_blank" rel="noopener noreferrer" class="ecosystem-item">
       <span class="eyebrow">Implements</span>
       <div class="logo-wrapper">
-        <svg viewBox="0 0 40 24" class="eco-icon opc-icon" fill="currentColor" aria-hidden="true" focusable="false"><text x="0" y="18" font-family="var(--font-mono)" font-weight="800" font-size="18" letter-spacing="-0.05em">OPC</text></svg>
+        <img src="/v2/logos/opcua-logo.png" alt="" class="eco-icon opcua-logo-img" />
         <span class="logo-text">OPC Foundation</span>
       </div>
     </a>
@@ -82,11 +82,14 @@
     flex-shrink: 0;
     opacity: 0.55;
     fill: currentColor;
-    transition: opacity 0.2s ease, fill 0.2s ease, transform 0.2s ease;
+    filter: grayscale(100%);
+    object-fit: contain;
+    transition: opacity 0.2s ease, fill 0.2s ease, transform 0.2s ease, filter 0.2s ease;
   }
   .ecosystem-item:hover .eco-icon {
     opacity: 1;
     transform: scale(1.05);
+    filter: grayscale(0%);
   }
   
   /* Brand-color pop on hover */
