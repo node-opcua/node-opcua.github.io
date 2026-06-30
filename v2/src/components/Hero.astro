@@ -3,7 +3,7 @@
 <section class="hero-section">
   <div class="container hero-container">
     <div class="hero-content">
-      <h1 class="hero-title">The OPC UA stack for Node.js</h1>
+      <h1 class="hero-title">The OPC UA stack for <span class="accent-word">Node.js</span></h1>
       <h2 class="hero-subtitle">Production-grade. Open source since 2014.</h2>
       <p class="hero-description">
         Used in production at Mercedes-Benz, Renault, Siemens, and industrial deployments across automotive, energy, and IoT.
@@ -15,7 +15,7 @@
         <a href="/v2/commercial-use/" class="btn btn-secondary">
           For commercial use <span class="arrow">&rarr;</span>
         </a>
-        <a href="https://github.com/sponsors/node-opcua" target="_blank" rel="noopener noreferrer" class="btn btn-tertiary-button">
+        <a href="https://github.com/sponsors/node-opcua" target="_blank" rel="noopener noreferrer" class="btn btn-tertiary">
           Sustain the project <span class="arrow">&rarr;</span>
         </a>
       </div>
@@ -25,61 +25,66 @@
 
 <style>
   .hero-section {
-    padding: 6rem 0 4.5rem 0;
+    padding: 7rem 0 5rem 0;
     text-align: center;
+    background-color: var(--bg);
   }
   .hero-container {
     display: flex;
     justify-content: center;
   }
   .hero-content {
-    max-width: 850px;
+    max-width: 800px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
   }
   .hero-title {
-    font-size: clamp(2.5rem, 5.5vw, 4rem);
+    font-size: clamp(2.5rem, 5.5vw, 3.75rem);
     font-weight: 800;
     letter-spacing: -0.03em;
     line-height: 1.15;
-    background: linear-gradient(to right, #ffffff, #cbd5e1);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--ink);
+  }
+  .accent-word {
+    color: var(--accent);
   }
   .hero-subtitle {
-    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
-    font-weight: 600;
-    color: var(--text-color);
-    margin-top: -0.25rem;
+    font-size: clamp(1.15rem, 2vw, 1.4rem);
+    font-weight: 500;
+    color: var(--ink-soft);
+    letter-spacing: -0.01em;
   }
   .hero-description {
-    font-size: clamp(1.05rem, 2vw, 1.25rem);
-    color: var(--text-muted);
+    font-size: clamp(1rem, 1.75vw, 1.15rem);
+    color: var(--ink-soft);
+    max-width: 700px;
     line-height: 1.6;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
   }
   .hero-ctas {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1.25rem;
+    gap: 1.5rem;
     flex-wrap: wrap;
   }
-  .btn-tertiary-button {
-    background-color: rgba(255, 255, 255, 0.02);
-    border: 1px dashed var(--border-color);
-    color: var(--text-color);
+  .btn-tertiary {
+    background-color: transparent;
+    border: none;
+    color: var(--ink-soft);
+    padding: 0.75rem 0.5rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
   }
-  .btn-tertiary-button:hover {
-    border-style: solid;
-    border-color: var(--text-muted);
-    background-color: rgba(255, 255, 255, 0.07);
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.03);
+  .btn-tertiary:hover {
+    color: var(--accent);
   }
   .arrow {
-    margin-left: 0.5rem;
+    margin-left: 0.35rem;
     transition: transform 0.2s ease;
   }
   .btn:hover .arrow {

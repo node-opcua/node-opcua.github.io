@@ -39,10 +39,10 @@ import { customers } from '../data/customers';
 
 <style>
   .social-proof-section {
-    padding: 3rem 0;
-    background-color: rgba(17, 24, 39, 0.3);
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
+    padding: 4.5rem 0;
+    background-color: var(--bg);
+    border-top: 1px solid var(--divider);
+    border-bottom: 1px solid var(--divider);
   }
   .social-proof-grid {
     display: flex;
@@ -50,33 +50,41 @@ import { customers } from '../data/customers';
     align-items: center;
     flex-wrap: wrap;
     gap: 3.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.25rem;
   }
   .customer-slot {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 140px;
-    height: 4rem;
+    height: 3rem;
     text-align: center;
   }
   .customer-img {
-    max-height: 2.25rem;
-    max-width: 130px;
+    max-height: 2rem;
+    max-width: 120px;
     object-fit: contain;
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    opacity: 0.75;
+    transition: opacity 0.2s ease, filter 0.2s ease;
+  }
+  .customer-img:hover {
+    filter: grayscale(0%);
+    -webkit-filter: grayscale(0%);
+    opacity: 0.95;
   }
   .customer-text {
-    font-size: 1.1rem;
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
     font-weight: 600;
-    color: var(--text-muted);
-    letter-spacing: -0.01em;
+    color: var(--ink-soft);
   }
   .customer-generic {
-    font-size: 0.85rem;
-    font-style: italic;
-    color: var(--text-muted);
-    max-width: 160px;
-    line-height: 1.35;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--muted);
+    max-width: 180px;
+    line-height: 1.4;
   }
   .stats-row {
     display: flex;
@@ -84,19 +92,20 @@ import { customers } from '../data/customers';
     align-items: center;
     gap: 1.25rem;
     flex-wrap: wrap;
-    color: var(--text-muted);
-    font-size: 0.95rem;
+    color: var(--ink-soft);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
     font-weight: 500;
   }
   .divider {
-    color: var(--accent-color);
+    color: var(--accent);
     font-weight: bold;
-    font-size: 1.25rem;
+    font-size: 1.15rem;
   }
   
   @media (max-width: 768px) {
     .social-proof-grid {
-      gap: 2rem;
+      gap: 2.25rem;
     }
     .stats-row {
       flex-direction: column;

@@ -3,13 +3,13 @@
 <header class="navbar">
   <div class="container navbar-container">
     <a href="/v2/" class="logo">
-      <span class="logo-text">node-opcua</span>
+      <span class="logo-dot"></span><span class="logo-text">node-opcua</span>
     </a>
     <nav class="nav-links">
       <a href="/api_doc/latest/" class="nav-link">API reference</a>
       <a href="/news/" class="nav-link">News</a>
       <a href="https://github.com/node-opcua/node-opcua" target="_blank" rel="noopener noreferrer" class="nav-link">GitHub</a>
-      <a href="https://github.com/sponsors/node-opcua" target="_blank" rel="noopener noreferrer" class="nav-link sponsor-btn">Sponsor</a>
+      <a href="https://github.com/sponsors/node-opcua" target="_blank" rel="noopener noreferrer" class="nav-link">Sponsor</a>
     </nav>
   </div>
 </header>
@@ -19,29 +19,33 @@
     position: sticky;
     top: 0;
     z-index: 100;
-    background-color: rgba(11, 15, 25, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border-color);
+    background-color: var(--bg);
+    border-bottom: 1px solid var(--divider);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
   .navbar-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 4.5rem;
+    height: 4rem;
   }
   .logo {
-    display: flex;
+    display: inline-flex;
     align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
     font-weight: 700;
-    font-size: 1.25rem;
-    color: #fff;
-    letter-spacing: -0.025em;
+    font-size: 1.15rem;
+    color: var(--ink);
+    letter-spacing: -0.02em;
   }
-  .logo-text {
-    background: linear-gradient(135deg, #fff 60%, var(--accent-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  .logo-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent);
+    flex-shrink: 0;
   }
   .nav-links {
     display: flex;
@@ -49,26 +53,13 @@
     gap: 2rem;
   }
   .nav-link {
-    font-size: 0.875rem;
+    font-size: 0.9rem;
     font-weight: 500;
-    color: var(--text-muted);
+    color: var(--ink-soft);
+    transition: color 0.15s ease;
   }
   .nav-link:hover {
-    color: #fff;
-  }
-  .sponsor-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.4rem 0.9rem;
-    border-radius: 4px;
-    border: 1px solid var(--accent-color);
-    color: var(--accent-color) !important;
-    transition: all 0.2s ease;
-  }
-  .sponsor-btn:hover {
-    background-color: var(--accent-muted);
-    color: var(--accent-hover) !important;
+    color: var(--accent);
   }
   
   @media (max-width: 768px) {
