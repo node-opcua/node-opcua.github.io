@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { projectGroups } from '../data/projects';
+---
+
+<BaseLayout title="Projects">
+  <div class="projects-container">
+    <section class="projects-intro">
+      <h1>The node-opcua ecosystem</h1>
+      <p class="lede">
+        Beyond the main SDK, node-opcua is part of a family of
+        open-source modules and tools, all MIT-licensed and
+        maintained by Sterfive.
+      </p>
+    </section>
+
+    {projectGroups.map((group) => (
+      <section class="projects-group">
+        <h2>{group.title}</h2>
+        <ul class="repo-list">
+          {group.repos.map((repo) => (
+            <li class="repo-item">
+              <a href={repo.url} target="_blank" rel="noopener noreferrer" class="repo-link">
+                {repo.name}
+              </a>
+              <span class="repo-separator">&mdash;</span>
+              <span class="repo-description">{repo.description}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+
+    <section class="projects-footer">
+      <p>
+        See the complete list of repositories on
+        <a href="https://github.com/node-opcua" target="_blank" rel="noopener noreferrer">GitHub</a>.
+      </p>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .projects-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+  .projects-intro {
+    padding: 0 0 3rem 0;
+    border-bottom: 1px solid var(--divider);
+  }
+  .projects-intro h1 {
+    font-size: clamp(2.5rem, 5.5vw, 3.75rem);
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+    line-height: 1.15;
+  }
+  .lede {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+  .projects-group {
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--ink);
+  }
+  .projects-group h2 {
+    font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 2rem;
+  }
+  .repo-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .repo-item {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    line-height: 1.6;
+    flex-wrap: wrap;
+  }
+  .repo-link {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: underline;
+  }
+  .repo-link:hover {
+    color: var(--ink);
+  }
+  .repo-separator {
+    color: var(--muted);
+    font-weight: normal;
+  }
+  .repo-description {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    color: var(--ink-soft);
+  }
+  .projects-footer {
+    padding: 3rem 0 0 0;
+    font-size: 1.1rem;
+    color: var(--ink-soft);
+  }
+  .projects-footer a {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+  .projects-footer a:hover {
+    color: var(--ink);
+  }
+</style>

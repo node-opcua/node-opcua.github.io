@@ -1,30 +1,65 @@
 ---
 import { customers } from '../data/customers';
+
+const primaryCustomers = customers.filter(c => c.tier === 'primary');
+const secondaryCustomers = customers.filter(c => c.tier === 'secondary');
 ---
 <section class="social-proof-section">
-  <div class="container">
-    <div class="social-proof-grid">
-      {customers.map((c) => {
-        if (c.display === "logo") {
-          return (
-            <div class="customer-slot logo-slot" id={`customer-${c.id}`}>
-              <img src={c.logo} alt={c.name} class="grayscale-logo customer-img" />
-            </div>
-          );
-        } else if (c.display === "name") {
-          return (
-            <div class="customer-slot text-slot" id={`customer-${c.id}`}>
-              <span class="customer-text">{c.fallbackText}</span>
-            </div>
-          );
-        } else {
-          return (
-            <div class="customer-slot generic-slot" id={`customer-${c.id}`}>
-              <span class="customer-generic">{c.genericText}</span>
-            </div>
-          );
-        }
-      })}
+  <div class="container proof-container">
+    <!-- Primary Tier -->
+    <div class="proof-row">
+      <h4 class="row-eyebrow">IN PRODUCTION AT</h4>
+      <div class="social-proof-grid primary-grid">
+        {primaryCustomers.map((c) => {
+          if (c.display === "logo") {
+            return (
+              <div class="customer-slot logo-slot" id={`customer-${c.id}`}>
+                <img src={c.logo} alt={c.name} class="grayscale-logo customer-img primary-img" />
+              </div>
+            );
+          } else if (c.display === "name") {
+            return (
+              <div class="customer-slot text-slot" id={`customer-${c.id}`}>
+                <span class="customer-text">{c.fallbackText}</span>
+              </div>
+            );
+          } else {
+            return (
+              <div class="customer-slot generic-slot" id={`customer-${c.id}`}>
+                <span class="customer-generic">{c.genericText}</span>
+              </div>
+            );
+          }
+        })}
+      </div>
+    </div>
+
+    <!-- Secondary Tier -->
+    <div class="proof-row">
+      <h4 class="row-eyebrow">ALSO USED BY</h4>
+      <div class="social-proof-grid secondary-grid">
+        {secondaryCustomers.map((c) => {
+          if (c.display === "logo") {
+            return (
+              <div class="customer-slot logo-slot secondary-slot" id={`customer-${c.id}`}>
+                <img src={c.logo} alt={c.name} class="grayscale-logo customer-img secondary-img" />
+              </div>
+            );
+          } else if (c.display === "name") {
+            return (
+              <div class="customer-slot text-slot secondary-slot" id={`customer-${c.id}`}>
+                <span class="customer-text secondary-text">{c.fallbackText}</span>
+              </div>
+            );
+          } else {
+            return (
+              <div class="customer-slot generic-slot secondary-slot" id={`customer-${c.id}`}>
+                <span class="customer-generic secondary-generic">{c.genericText}</span>
+              </div>
+            );
+          }
+        })}
+      </div>
     </div>
     
     <div class="stats-row">
@@ -39,10 +74,31 @@ import { customers } from '../data/customers';
 
 <style>
   .social-proof-section {
-    padding: 4.5rem 0;
+    padding: 5rem 0;
     background-color: var(--bg);
     border-top: 1px solid var(--divider);
     border-bottom: 1px solid var(--divider);
+  }
+  .proof-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+  .proof-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .row-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin: 0;
+    text-align: center;
   }
   .social-proof-grid {
     display: flex;
@@ -50,7 +106,9 @@ import { customers } from '../data/customers';
     align-items: center;
     flex-wrap: wrap;
     gap: 3.5rem;
-    margin-bottom: 2.25rem;
+  }
+  .secondary-grid {
+    gap: 2.5rem;
   }
   .customer-slot {
     display: flex;
@@ -58,6 +116,9 @@ import { customers } from '../data/customers';
     justify-content: center;
     height: 3rem;
     text-align: center;
+  }
+  .secondary-slot {
+    height: 2.25rem;
   }
   .customer-img {
     max-height: 2rem;
@@ -73,11 +134,25 @@ import { customers } from '../data/customers';
     -webkit-filter: grayscale(0%);
     opacity: 0.95;
   }
+  .secondary-img {
+    max-height: 1.4rem; /* ~70% of 2rem */
+    max-width: 84px;    /* ~70% of 120px */
+    opacity: 0.55;
+  }
+  .secondary-img:hover {
+    filter: grayscale(0%);
+    -webkit-filter: grayscale(0%);
+    opacity: 0.85;
+  }
   .customer-text {
     font-family: var(--font-mono);
     font-size: 0.95rem;
     font-weight: 600;
     color: var(--ink-soft);
+  }
+  .secondary-text {
+    font-size: 0.75rem;
+    opacity: 0.7;
   }
   .customer-generic {
     font-family: var(--font-mono);
@@ -85,6 +160,10 @@ import { customers } from '../data/customers';
     color: var(--muted);
     max-width: 180px;
     line-height: 1.4;
+  }
+  .secondary-generic {
+    font-size: 0.65rem;
+    max-width: 140px;
   }
   .stats-row {
     display: flex;
@@ -96,6 +175,8 @@ import { customers } from '../data/customers';
     font-family: var(--font-mono);
     font-size: 0.875rem;
     font-weight: 500;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--divider);
   }
   .divider {
     color: var(--accent);
@@ -106,6 +187,9 @@ import { customers } from '../data/customers';
   @media (max-width: 768px) {
     .social-proof-grid {
       gap: 2.25rem;
+    }
+    .secondary-grid {
+      gap: 1.75rem;
     }
     .stats-row {
       flex-direction: column;
