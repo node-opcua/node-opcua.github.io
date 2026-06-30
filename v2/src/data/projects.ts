@@ -2,6 +2,7 @@ export interface Repo {
   name: string;
   url: string;
   description: string;
+  highlighted?: boolean;
 }
 
 export interface RepoGroup {
@@ -13,6 +14,9 @@ export const projectGroups: RepoGroup[] = [
   {
     title: "Core libraries",
     repos: [
+      { name: "node-i3x", url: "https://github.com/node-opcua/node-i3x",
+        description: "An implementation of the CESMII Industrial Information Interoperability eXchange (i3X) API for Node.js, bridging OPC UA address spaces to i3X context models.",
+        highlighted: true },
       { name: "node-opcua", url: "https://github.com/node-opcua/node-opcua",
         description: "The main client and server SDK." },
       { name: "node-opcua-pki", url: "https://github.com/node-opcua/node-opcua-pki",
