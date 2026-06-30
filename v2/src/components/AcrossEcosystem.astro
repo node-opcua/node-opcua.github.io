@@ -1,0 +1,151 @@
+---
+---
+<section class="across-ecosystem-section">
+  <div class="container ecosystem-container">
+    <div class="section-header">
+      <span class="section-eyebrow">Ecosystem</span>
+      <h2 class="section-title">Across the OPC UA ecosystem</h2>
+    </div>
+
+    <div class="ecosystem-content">
+      <p class="body-p">
+        Downloads have grown more than 20&times; since 2020 &mdash; from a few
+        thousand a month to over 500,000 &mdash; and have grown every year
+        since the project's first stable release. After 12 years of
+        continuous development, node-opcua has become the
+        production-grade OPC UA implementation for the Node.js,
+        JavaScript, and TypeScript ecosystem.
+      </p>
+
+      <p class="body-p">
+        It sits alongside the mature implementations the OPC UA
+        community maintains in other languages:
+      </p>
+
+      <ul class="peer-list">
+        <li class="peer-item">
+          <span class="peer-lang">C / C++</span>
+          <span class="peer-arrow">&rarr;</span>
+          <a href="https://www.open62541.org" target="_blank" rel="noopener noreferrer" class="peer-link">open62541</a>
+        </li>
+        <li class="peer-item">
+          <span class="peer-lang">Java</span>
+          <span class="peer-arrow">&rarr;</span>
+          <a href="https://github.com/eclipse-milo/milo" target="_blank" rel="noopener noreferrer" class="peer-link">Eclipse Milo</a>
+        </li>
+        <li class="peer-item">
+          <span class="peer-lang">.NET / C#</span>
+          <span class="peer-arrow">&rarr;</span>
+          <a href="https://github.com/OPCFoundation/UA-.NETStandard" target="_blank" rel="noopener noreferrer" class="peer-link">OPC Foundation UA-.NETStandard</a>
+        </li>
+        <li class="peer-item">
+          <span class="peer-lang">Python</span>
+          <span class="peer-arrow">&rarr;</span>
+          <a href="https://github.com/FreeOpcUa/opcua-asyncio" target="_blank" rel="noopener noreferrer" class="peer-link">asyncua</a>
+        </li>
+        <li class="peer-item">
+          <span class="peer-lang">Rust</span>
+          <span class="peer-arrow">&rarr;</span>
+          <a href="https://github.com/locka99/opcua" target="_blank" rel="noopener noreferrer" class="peer-link">rust-opcua</a>
+          <span class="peer-note">(community project)</span>
+        </li>
+      </ul>
+
+      <p class="body-p">
+        For the application and integration layer of industrial systems
+        &mdash; gateways, MES, IIoT bridges, cloud connectors &mdash; Node.js and
+        TypeScript bring typed APIs, async-first concurrency, full LSP
+        tooling, and the npm ecosystem. Built on V8 and libuv, the async
+        event loop fits OPC UA's subscription and notification model
+        naturally &mdash; many concurrent sessions per process, no thread
+        management. That is where node-opcua earns its place.
+      </p>
+
+      <p class="body-p">
+        Sterfive participates in the OPC Foundation alongside the
+        maintainers of these projects.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .across-ecosystem-section {
+    padding: 6rem 0;
+    background-color: var(--bg);
+    border-bottom: 1px solid var(--divider);
+  }
+  .ecosystem-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .section-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 2.5rem;
+  }
+  .section-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+  }
+  .section-title {
+    font-size: clamp(1.8rem, 4vw, 2.25rem);
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.025em;
+  }
+  .ecosystem-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 56ch;
+  }
+  .body-p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+  .peer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .peer-item {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    font-size: 0.95rem;
+  }
+  .peer-lang {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    color: var(--ink);
+    min-width: 6.5rem;
+  }
+  .peer-arrow {
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  .peer-link {
+    font-family: var(--font-sans);
+    color: var(--accent);
+    text-decoration: underline;
+    font-weight: 600;
+  }
+  .peer-link:hover {
+    color: var(--ink);
+  }
+  .peer-note {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+  }
+</style>
