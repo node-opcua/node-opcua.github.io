@@ -1,0 +1,234 @@
+---
+import { Code } from 'astro:components';
+
+const clientCode = `import { OPCUAClient, AttributeIds } from "node-opcua";
+
+const endpointUrl = "opc.tcp://opcuademo.sterfive.com:26543";
+
+const client = OPCUAClient.create({ endpointMustExist: false });
+await client.connect(endpointUrl);
+
+const session = await client.createSession();
+
+const dataValue = await session.read({
+  nodeId: "ns=0;i=2258", // CurrentTime
+  attributeId: AttributeIds.Value,
+});
+
+console.log("Server time:", dataValue.value.value);
+
+await session.close();
+await client.disconnect();`;
+
+const serverCode = `import { OPCUAServer, Variant, DataType } from "node-opcua";
+
+const server = new OPCUAServer({
+  port: 4334,
+  resourcePath: "/UA/MyServer",
+  buildInfo: { productName: "MyServer", buildNumber: "1" },
+});
+
+await server.initialize();
+
+const namespace = server.engine.addressSpace.getOwnNamespace();
+const device = namespace.addObject({
+  organizedBy: server.engine.addressSpace.rootFolder.objects,
+  browseName: "Device",
+});
+
+let temperature = 19.5;
+namespace.addVariable({
+  componentOf: device,
+  browseName: "Temperature",
+  dataType: "Double",
+  value: { get: () => new Variant({ dataType: DataType.Double, value: temperature }) },
+});
+
+await server.start();
+console.log("Server listening on", server.endpoints[0].endpointDescriptions()[0].endpointUrl);`;
+---
+<section class="code-example-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Developer-First API</h2>
+      <p class="section-subtitle">Simple, modern APIs for TypeScript and JavaScript. Zero complex configuration needed.</p>
+    </div>
+
+    <div class="tabs-container">
+      <div class="tab-list" role="tablist" aria-label="OPC UA Code Examples">
+        <button id="tab-client" class="tab-btn active" role="tab" aria-selected="true" aria-controls="panel-client" tabindex="0">
+          Client
+        </button>
+        <button id="tab-server" class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-server" tabindex="-1">
+          Server
+        </button>
+      </div>
+
+      <div class="panels-container">
+        <!-- Client panel -->
+        <div id="panel-client" class="tab-panel active" role="tabpanel" aria-labelledby="tab-client" tabindex="0">
+          <div class="code-wrapper">
+            <Code code={clientCode} lang="typescript" theme="one-dark-pro" />
+          </div>
+          <p class="code-caption">Connect to an OPC UA server, read the server's current time. 13 lines.</p>
+        </div>
+
+        <!-- Server panel -->
+        <div id="panel-server" class="tab-panel" role="tabpanel" aria-labelledby="tab-server" tabindex="0" hidden>
+          <div class="code-wrapper">
+            <Code code={serverCode} lang="typescript" theme="one-dark-pro" />
+          </div>
+          <p class="code-caption">Expose a device with a Temperature variable. About 20 lines.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Accessible Keyboard Navigable Tab System
+  const tabs = document.querySelectorAll('.tab-btn');
+  const panels = document.querySelectorAll('.tab-panel');
+  
+  tabs.forEach((tab, index) => {
+    // Click behavior
+    tab.addEventListener('click', () => {
+      activateTab(index);
+    });
+
+    // Keyboard navigation
+    tab.addEventListener('keydown', (e) => {
+      const keyboardEvent = e as KeyboardEvent;
+      let targetIndex = null;
+      if (keyboardEvent.key === 'ArrowRight' || keyboardEvent.key === 'ArrowDown') {
+        targetIndex = (index + 1) % tabs.length;
+      } else if (keyboardEvent.key === 'ArrowLeft' || keyboardEvent.key === 'ArrowUp') {
+        targetIndex = (index - 1 + tabs.length) % tabs.length;
+      } else if (keyboardEvent.key === 'Home') {
+        targetIndex = 0;
+      } else if (keyboardEvent.key === 'End') {
+        targetIndex = tabs.length - 1;
+      }
+
+      if (targetIndex !== null) {
+        e.preventDefault();
+        (tabs[targetIndex] as HTMLButtonElement).focus();
+        activateTab(targetIndex);
+      }
+    });
+  });
+
+  function activateTab(index: number) {
+    tabs.forEach((tab, i) => {
+      if (i === index) {
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+        tab.setAttribute('tabindex', '0');
+        panels[i].classList.add('active');
+        panels[i].removeAttribute('hidden');
+      } else {
+        tab.classList.remove('active');
+        tab.setAttribute('aria-selected', 'false');
+        tab.setAttribute('tabindex', '-1');
+        panels[i].classList.remove('active');
+        panels[i].setAttribute('hidden', '');
+      }
+    });
+  }
+</script>
+
+<style>
+  .code-example-section {
+    padding: 5rem 0;
+  }
+  .section-header {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 3rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  .section-subtitle {
+    font-size: 1rem;
+    color: var(--text-muted);
+  }
+  .tabs-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--surface-card);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .tab-list {
+    display: flex;
+    background-color: #0c101b;
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.5rem 0.5rem 0 0.5rem;
+    gap: 0.25rem;
+  }
+  .tab-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+  }
+  .tab-btn:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.03);
+  }
+  .tab-btn.active {
+    color: var(--accent-color);
+    background-color: var(--surface-card);
+    border-bottom-color: var(--accent-color);
+  }
+  
+  .panels-container {
+    padding: 1.5rem;
+  }
+  
+  .tab-panel {
+    display: none;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .tab-panel.active {
+    display: flex;
+  }
+  
+  .code-wrapper {
+    background-color: #090d16;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    padding: 1.25rem;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    overflow-x: auto;
+  }
+  
+  .code-wrapper :global(pre) {
+    background-color: transparent !important;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .code-caption {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    font-style: italic;
+    border-left: 2px solid var(--accent-color);
+    padding-left: 0.75rem;
+  }
+</style>

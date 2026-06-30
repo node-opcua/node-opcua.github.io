@@ -1,0 +1,109 @@
+---
+import { customers } from '../data/customers';
+---
+<section class="social-proof-section">
+  <div class="container">
+    <div class="social-proof-grid">
+      {customers.map((c) => {
+        if (c.display === "logo") {
+          return (
+            <div class="customer-slot logo-slot" id={`customer-${c.id}`}>
+              <img src={c.logo} alt={c.name} class="grayscale-logo customer-img" />
+            </div>
+          );
+        } else if (c.display === "name") {
+          return (
+            <div class="customer-slot text-slot" id={`customer-${c.id}`}>
+              <span class="customer-text">{c.fallbackText}</span>
+            </div>
+          );
+        } else {
+          return (
+            <div class="customer-slot generic-slot" id={`customer-${c.id}`}>
+              <span class="customer-generic">{c.genericText}</span>
+            </div>
+          );
+        }
+      })}
+    </div>
+    
+    <div class="stats-row">
+      <span class="stat-item">3.5M+ npm downloads</span>
+      <span class="divider">&middot;</span>
+      <span class="stat-item">1,600+ GitHub stars</span>
+      <span class="divider">&middot;</span>
+      <span class="stat-item">12 years of continuous development</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  .social-proof-section {
+    padding: 3rem 0;
+    background-color: rgba(17, 24, 39, 0.3);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+  }
+  .social-proof-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3.5rem;
+    margin-bottom: 2rem;
+  }
+  .customer-slot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 140px;
+    height: 4rem;
+    text-align: center;
+  }
+  .customer-img {
+    max-height: 2.25rem;
+    max-width: 130px;
+    object-fit: contain;
+  }
+  .customer-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: -0.01em;
+  }
+  .customer-generic {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--text-muted);
+    max-width: 160px;
+    line-height: 1.35;
+  }
+  .stats-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+  .divider {
+    color: var(--accent-color);
+    font-weight: bold;
+    font-size: 1.25rem;
+  }
+  
+  @media (max-width: 768px) {
+    .social-proof-grid {
+      gap: 2rem;
+    }
+    .stats-row {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .divider {
+      display: none;
+    }
+  }
+</style>

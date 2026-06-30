@@ -1,0 +1,44 @@
+name: Deploy v2 Landing Page Rebuild
+
+on:
+  push:
+    branches:
+      - v2-rebuild
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: v2/package-lock.json
+
+      - name: Install dependencies
+        run: |
+          cd v2
+          npm ci
+
+      - name: Build static site
+        run: |
+          cd v2
+          npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./v2/dist
+          destination_dir: v2
+          publish_branch: master
+          keep_files: true
+          enable_jekyll: true

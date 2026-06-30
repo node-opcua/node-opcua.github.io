@@ -1,0 +1,34 @@
+---
+import '../styles/global.css';
+import NavBar from '../components/NavBar.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "node-opcua: The open-source OPC UA stack for Node.js. Production-grade since 2014." } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/v2/favicon.ico" />
+    
+    <!-- Layer 1 SEO Containment: Strict noindex, nofollow on all v2 pages -->
+    <meta name="robots" content="noindex,nofollow" />
+    
+    <title>{title} | node-opcua</title>
+    <meta name="description" content={description} />
+  </head>
+  <body>
+    <NavBar />
+    <main style="flex: 1;">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

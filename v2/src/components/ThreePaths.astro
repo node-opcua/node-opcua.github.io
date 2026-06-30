@@ -1,0 +1,110 @@
+---
+---
+<section class="paths-section">
+  <div class="container paths-grid">
+    <!-- Path 1: Learn -->
+    <div class="path-card">
+      <div class="path-icon-container">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="path-icon"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
+      </div>
+      <h3 class="path-title">Build with it</h3>
+      <p class="path-body">Get from npm install to a working client or server in minutes. The README walks through it; the API reference covers everything.</p>
+      <a href="/api_doc/latest/" class="path-cta">Read the docs <span class="arrow">&rarr;</span></a>
+    </div>
+
+    <!-- Path 2: Use -->
+    <div class="path-card">
+      <div class="path-icon-container">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="path-icon"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+      </div>
+      <h3 class="path-title">Use it in production</h3>
+      <p class="path-body">For SLA-backed support, certified builds, consulting, and the commercial module ecosystem maintained by Sterfive, see the company that builds and maintains node-opcua.</p>
+      <a href="/v2/commercial-use/" class="path-cta">Commercial support <span class="arrow">&rarr;</span></a>
+    </div>
+
+    <!-- Path 3: Sustain -->
+    <div class="path-card">
+      <div class="path-icon-container">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="path-icon"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+      </div>
+      <h3 class="path-title">Sustain the project</h3>
+      <p class="path-body">node-opcua is maintained primarily by one engineer at Sterfive. Sponsorship from companies that depend on the stack keeps the open project healthy and roadmap-driven. Founding Sponsor positions are open through Q1 2026 with permanent recognition.</p>
+      <a href="https://github.com/sponsors/node-opcua" target="_blank" rel="noopener noreferrer" class="path-cta">Become a sponsor <span class="arrow">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .paths-section {
+    padding: 5rem 0;
+  }
+  .paths-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+  .path-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--surface-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2.5rem 2rem;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .path-card:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 4px 30px rgba(14, 165, 233, 0.08);
+    transform: translateY(-2px);
+  }
+  .path-icon-container {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 6px;
+    background-color: var(--accent-muted);
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+  }
+  .path-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: #fff;
+  }
+  .path-body {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    flex-grow: 1;
+  }
+  .path-cta {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    align-self: flex-start;
+    transition: color 0.2s ease;
+  }
+  .path-cta:hover {
+    color: var(--accent-hover);
+  }
+  .arrow {
+    transition: transform 0.2s ease;
+  }
+  .path-cta:hover .arrow {
+    transform: translateX(3px);
+  }
+  
+  @media (max-width: 968px) {
+    .paths-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+</style>

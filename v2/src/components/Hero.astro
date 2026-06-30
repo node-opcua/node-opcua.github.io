@@ -1,0 +1,99 @@
+---
+---
+<section class="hero-section">
+  <div class="container hero-container">
+    <div class="hero-content">
+      <h1 class="hero-title">The OPC UA stack for Node.js</h1>
+      <h2 class="hero-subtitle">Production-grade. Open source since 2014.</h2>
+      <p class="hero-description">
+        Used in production at Mercedes-Benz, Renault, Siemens, and industrial deployments across automotive, energy, and IoT.
+      </p>
+      <div class="hero-ctas">
+        <a href="https://github.com/node-opcua/node-opcua#getting-started" class="btn btn-primary">
+          Get started <span class="arrow">&rarr;</span>
+        </a>
+        <a href="/v2/commercial-use/" class="btn btn-secondary">
+          For commercial use <span class="arrow">&rarr;</span>
+        </a>
+        <a href="https://github.com/sponsors/node-opcua" target="_blank" rel="noopener noreferrer" class="btn btn-tertiary-button">
+          Sustain the project <span class="arrow">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    padding: 6rem 0 4.5rem 0;
+    text-align: center;
+  }
+  .hero-container {
+    display: flex;
+    justify-content: center;
+  }
+  .hero-content {
+    max-width: 850px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .hero-title {
+    font-size: clamp(2.5rem, 5.5vw, 4rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    background: linear-gradient(to right, #ffffff, #cbd5e1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero-subtitle {
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    font-weight: 600;
+    color: var(--text-color);
+    margin-top: -0.25rem;
+  }
+  .hero-description {
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+  .hero-ctas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+  }
+  .btn-tertiary-button {
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px dashed var(--border-color);
+    color: var(--text-color);
+  }
+  .btn-tertiary-button:hover {
+    border-style: solid;
+    border-color: var(--text-muted);
+    background-color: rgba(255, 255, 255, 0.07);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.03);
+  }
+  .arrow {
+    margin-left: 0.5rem;
+    transition: transform 0.2s ease;
+  }
+  .btn:hover .arrow {
+    transform: translateX(3px);
+  }
+  
+  @media (max-width: 640px) {
+    .hero-ctas {
+      flex-direction: column;
+      width: 100%;
+      gap: 1rem;
+    }
+    .btn {
+      width: 100%;
+    }
+  }
+</style>
