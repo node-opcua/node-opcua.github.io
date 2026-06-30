@@ -3,12 +3,24 @@ export interface Repo {
   url: string;
   description: string;
   highlighted?: boolean;
+  featured?: boolean;
+  extendedDescription?: string;
 }
 
 export interface RepoGroup {
   title: string;
   repos: Repo[];
 }
+
+export const featuredRepos: Repo[] = [
+  {
+    name: "node-opcua-modeler-mcp-server",
+    url: "https://github.com/node-opcua/node-opcua-modeler-mcp-server",
+    description: "MCP server for OPC UA information modeling, designed for AI agents building industrial automation models.",
+    featured: true,
+    extendedDescription: "Lets AI agents (Claude, Cursor, and other MCP-compatible tooling) query, validate, and build OPC UA information models — discover companion specification types, resolve namespace dependencies, look up engineering units. The first Model Context Protocol server for industrial automation.",
+  },
+];
 
 export const projectGroups: RepoGroup[] = [
   {
@@ -43,14 +55,6 @@ export const projectGroups: RepoGroup[] = [
         description: "A simple reference OPC UA server based on node-opcua." },
       { name: "node-opcua-htmlpanel", url: "https://github.com/node-opcua/node-opcua-htmlpanel",
         description: "Small HTML panel for displaying monitored variables." },
-    ],
-  },
-  {
-    title: "AI and integrations",
-    repos: [
-      { name: "node-opcua-modeler-mcp-server",
-        url: "https://github.com/node-opcua/node-opcua-modeler-mcp-server",
-        description: "MCP server for OPC UA information modeling, designed for AI agents building industrial automation models." },
     ],
   },
   {
