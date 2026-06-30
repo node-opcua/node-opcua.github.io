@@ -44,7 +44,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <p class="sustain-text">
             Looking to sustain the open project instead of buying commercial support? See the GitHub Sponsors page.
           </p>
-          <a href="https://github.com/sponsors/node-opcua" target="_blank" rel="noopener noreferrer" class="btn btn-tertiary-button">
+          <a href="https://github.com/sponsors/node-opcua" target="_blank" rel="noopener noreferrer" class="btn btn-tertiary sustain-btn">
             Sponsor node-opcua <span class="arrow">&rarr;</span>
           </a>
         </div>
@@ -55,7 +55,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <style>
   .commercial-section {
-    padding: 6rem 0;
+    padding: var(--space-section) 0;
     min-height: 70vh;
     display: flex;
     align-items: center;
@@ -66,13 +66,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
   .commercial-title {
     font-size: clamp(2rem, 4vw, 2.75rem);
-    font-weight: 800;
+    font-weight: 700;
     margin-bottom: 2.5rem;
     letter-spacing: -0.025em;
     line-height: 1.2;
-    background: linear-gradient(to right, #ffffff, #cbd5e1);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--ink);
   }
   .commercial-content {
     display: flex;
@@ -81,17 +79,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
   .intro-text {
     font-size: 1.15rem;
-    color: #fff;
+    color: var(--ink);
     line-height: 1.6;
   }
   .highlight-box {
-    background-color: var(--surface-card);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
+    background-color: var(--bg-elevated);
+    border: 1px solid var(--divider);
+    border-radius: 6px;
     padding: 2rem;
   }
   .highlight-title {
-    color: #fff;
+    color: var(--ink);
     font-weight: 600;
     font-size: 1.05rem;
     margin-bottom: 1.25rem;
@@ -105,7 +103,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .commercial-services li {
     position: relative;
     padding-left: 1.5rem;
-    color: var(--text-muted);
+    color: var(--ink-soft);
     font-size: 1rem;
     line-height: 1.5;
   }
@@ -113,14 +111,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     content: "·";
     position: absolute;
     left: 0;
-    color: var(--accent-color);
+    color: var(--accent);
     font-size: 1.75rem;
     line-height: 0.75;
     top: 0.15rem;
   }
   .routing-text {
     font-size: 1rem;
-    color: var(--text-muted);
+    color: var(--ink-soft);
     line-height: 1.6;
   }
   .commercial-ctas {
@@ -131,7 +129,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .separator {
     border: 0;
     height: 1px;
-    background-color: var(--border-color);
+    background-color: var(--divider);
     margin: 1.5rem 0;
   }
   .sustain-section {
@@ -142,17 +140,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
   .sustain-text {
     font-size: 0.95rem;
-    color: var(--text-muted);
+    color: var(--ink-soft);
   }
-  .btn-tertiary-button {
-    background-color: rgba(255, 255, 255, 0.02);
-    border: 1px dashed var(--border-color);
-    color: var(--text-color);
+  .sustain-btn {
+    background-color: transparent;
+    border: 1px dashed var(--divider);
+    color: var(--ink);
+    border-radius: 6px;
   }
-  .btn-tertiary-button:hover {
+  .sustain-btn:hover {
     border-style: solid;
-    border-color: var(--text-muted);
-    background-color: rgba(255, 255, 255, 0.07);
+    border-color: var(--muted);
+    background-color: var(--accent-soft);
   }
   .arrow {
     margin-left: 0.5rem;

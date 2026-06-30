@@ -9,10 +9,10 @@
 
     <div class="ecosystem-content">
       <p class="body-p">
-        Downloads have grown more than 20&times; since 2020 &mdash; from a few
-        thousand a month to over 500,000 &mdash; and have grown every year
-        since the project's first stable release. After 12 years of
-        continuous development, node-opcua has become the
+        Downloads have grown <span class="figure-emphasis">more than 20&times;</span> since 2020 &mdash; from a few
+        thousand a month to <span class="figure-emphasis">over 500,000</span> &mdash; and have grown every year
+        since the project's first stable release. After <span class="figure-emphasis">12 years of
+        continuous development</span>, node-opcua has become the
         production-grade OPC UA implementation for the Node.js,
         JavaScript, and TypeScript ecosystem.
       </p>
@@ -26,28 +26,38 @@
         <li class="peer-item">
           <span class="peer-lang">C / C++</span>
           <span class="peer-arrow">&rarr;</span>
-          <a href="https://www.open62541.org" target="_blank" rel="noopener noreferrer" class="peer-link">open62541</a>
+          <span class="peer-link-wrapper">
+            <a href="https://www.open62541.org" target="_blank" rel="noopener noreferrer" class="peer-link">open62541</a>
+          </span>
         </li>
         <li class="peer-item">
           <span class="peer-lang">Java</span>
           <span class="peer-arrow">&rarr;</span>
-          <a href="https://github.com/eclipse-milo/milo" target="_blank" rel="noopener noreferrer" class="peer-link">Eclipse Milo</a>
+          <span class="peer-link-wrapper">
+            <a href="https://github.com/eclipse-milo/milo" target="_blank" rel="noopener noreferrer" class="peer-link">Eclipse Milo</a>
+          </span>
         </li>
         <li class="peer-item">
           <span class="peer-lang">.NET / C#</span>
           <span class="peer-arrow">&rarr;</span>
-          <a href="https://github.com/OPCFoundation/UA-.NETStandard" target="_blank" rel="noopener noreferrer" class="peer-link">OPC Foundation UA-.NETStandard</a>
+          <span class="peer-link-wrapper">
+            <a href="https://github.com/OPCFoundation/UA-.NETStandard" target="_blank" rel="noopener noreferrer" class="peer-link">OPC Foundation UA-.NETStandard</a>
+          </span>
         </li>
         <li class="peer-item">
           <span class="peer-lang">Python</span>
           <span class="peer-arrow">&rarr;</span>
-          <a href="https://github.com/FreeOpcUa/opcua-asyncio" target="_blank" rel="noopener noreferrer" class="peer-link">asyncua</a>
+          <span class="peer-link-wrapper">
+            <a href="https://github.com/FreeOpcUa/opcua-asyncio" target="_blank" rel="noopener noreferrer" class="peer-link">asyncua</a>
+          </span>
         </li>
         <li class="peer-item">
           <span class="peer-lang">Rust</span>
           <span class="peer-arrow">&rarr;</span>
-          <a href="https://github.com/locka99/opcua" target="_blank" rel="noopener noreferrer" class="peer-link">rust-opcua</a>
-          <span class="peer-note">(community project)</span>
+          <span class="peer-link-wrapper">
+            <a href="https://github.com/locka99/opcua" target="_blank" rel="noopener noreferrer" class="peer-link">rust-opcua</a>
+            <span class="peer-note">(community project)</span>
+          </span>
         </li>
       </ul>
 
@@ -71,7 +81,7 @@
 
 <style>
   .across-ecosystem-section {
-    padding: 6rem 0;
+    padding: var(--space-section-lg) 0;
     background-color: var(--bg);
     border-bottom: 1px solid var(--divider);
   }
@@ -82,15 +92,8 @@
   .section-header {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    margin-bottom: 2.5rem;
-  }
-  .section-eyebrow {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    text-transform: uppercase;
-    color: var(--accent);
-    letter-spacing: 0.05em;
+    gap: var(--space-stack-xs);
+    margin-bottom: var(--space-stack-xl);
   }
   .section-title {
     font-size: clamp(1.8rem, 4vw, 2.25rem);
@@ -101,7 +104,7 @@
   .ecosystem-content {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: var(--space-stack-md);
     max-width: 56ch;
   }
   .body-p {
@@ -109,30 +112,39 @@
     line-height: 1.6;
     color: var(--ink-soft);
   }
+  .figure-emphasis {
+    font-weight: 600;
+    color: var(--ink);
+  }
   .peer-list {
     list-style: none;
     padding: 0;
-    margin: 0.5rem 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
+    margin: var(--space-stack-xs) 0;
+    display: grid;
+    grid-template-columns: max-content 1.5rem 1fr;
+    row-gap: 0.5rem;
+    column-gap: 0.5rem;
+    align-items: baseline;
   }
   .peer-item {
-    display: flex;
-    align-items: baseline;
-    gap: 0.5rem;
-    flex-wrap: wrap;
+    display: contents;
     font-size: 0.95rem;
   }
   .peer-lang {
     font-family: var(--font-mono);
     font-weight: 500;
     color: var(--ink);
-    min-width: 6.5rem;
   }
   .peer-arrow {
     color: var(--muted);
     font-size: 0.9rem;
+    text-align: center;
+  }
+  .peer-link-wrapper {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    flex-wrap: wrap;
   }
   .peer-link {
     font-family: var(--font-sans);
@@ -147,5 +159,12 @@
     font-family: var(--font-sans);
     font-size: 0.85rem;
     color: var(--ink-soft);
+  }
+  
+  @media (max-width: 767px) {
+    .body-p {
+      font-size: 1.0625rem;
+      line-height: 1.65;
+    }
   }
 </style>

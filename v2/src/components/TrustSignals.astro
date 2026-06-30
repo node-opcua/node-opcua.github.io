@@ -2,6 +2,10 @@
 ---
 <section class="trust-signals-section">
   <div class="container">
+    <div class="section-header">
+      <p class="section-eyebrow">What you're getting</p>
+      <h2 class="section-heading">Built to industrial standards.</h2>
+    </div>
     <div class="trust-grid">
       <div class="trust-column">
         <h4 class="trust-column-title">Engineering</h4>
@@ -22,7 +26,7 @@
       </div>
       
       <div class="trust-column">
-        <h4 class="trust-column-title">Standards & licensing</h4>
+        <h4 class="trust-column-title">Standards &amp; licensing</h4>
         <ul class="trust-list">
           <li class="trust-item">
             <span class="bullet-dot"></span>
@@ -44,14 +48,23 @@
 
 <style>
   .trust-signals-section {
-    padding: 5rem 0;
+    padding: var(--space-section) 0;
     background-color: var(--bg);
     border-top: 1px solid var(--divider);
   }
+  .section-header {
+    margin-bottom: var(--space-stack-xl);
+  }
+  .section-heading {
+    font-size: clamp(1.8rem, 4vw, 2.25rem);
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.025em;
+  }
   .trust-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    grid-template-columns: 1fr;
+    gap: var(--space-stack-xl);
     max-width: 900px;
     margin: 0 auto;
   }
@@ -61,11 +74,11 @@
   }
   .trust-column-title {
     font-family: var(--font-mono);
-    font-size: 12px;
+    font-size: 0.6875rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: var(--muted);
-    margin-bottom: 16px;
+    margin-bottom: 1rem;
     font-weight: 600;
   }
   .trust-list {
@@ -91,10 +104,9 @@
     flex-shrink: 0;
   }
   
-  @media (max-width: 768px) {
+  @media (min-width: 768px) {
     .trust-grid {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
+      grid-template-columns: 1fr 1fr;
     }
   }
 </style>

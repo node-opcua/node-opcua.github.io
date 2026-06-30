@@ -1,69 +1,89 @@
 ---
 ---
 <section class="paths-section">
-  <div class="container paths-grid">
-    <!-- Path 1: Learn -->
-    <div class="path-card">
-      <div class="path-marker">01 / Developer</div>
-      <h3 class="path-title">Build with it</h3>
-      <p class="path-body">Get from npm install to a working client or server in minutes. The README walks through it; the API reference covers everything. Browse the broader ecosystem on the <a href="/v2/projects/">Projects page</a>.</p>
-      <a href="/api_doc/latest/" class="path-cta">Read the docs <span class="arrow">&rarr;</span></a>
-    </div>
+  <div class="container">
+    <h2 class="section-heading">Three ways in.</h2>
+    <div class="paths-grid">
+      <!-- Path 1: Learn -->
+      <div class="path-card">
+        <div class="path-marker">01 / Developer</div>
+        <h3 class="path-title">Build with it</h3>
+        <p class="path-body">Get from npm install to a working client or server in minutes. The README walks through it; the API reference covers everything. Browse the broader ecosystem on the <a href="/v2/projects/">Projects page</a>.</p>
+        <a href="/api_doc/latest/" class="path-cta">Read the docs <span class="arrow">&rarr;</span></a>
+      </div>
 
-    <!-- Path 2: Use -->
-    <div class="path-card">
-      <div class="path-marker">02 / Industrial buyer</div>
-      <h3 class="path-title">Use it in production</h3>
-      <p class="path-body">For SLA-backed support, certified builds, consulting, and the commercial module ecosystem maintained by Sterfive, see the company that builds and maintains node-opcua.</p>
-      <a href="/v2/commercial-use/" class="path-cta">Commercial support <span class="arrow">&rarr;</span></a>
-    </div>
+      <!-- Path 2: Use -->
+      <div class="path-card">
+        <div class="path-marker">02 / Industrial buyer</div>
+        <h3 class="path-title">Use it in production</h3>
+        <p class="path-body">For SLA-backed support, certified builds, consulting, and the commercial module ecosystem maintained by Sterfive, see the company that builds and maintains node-opcua.</p>
+        <a href="/v2/commercial-use/" class="path-cta">Commercial support <span class="arrow">&rarr;</span></a>
+      </div>
 
-    <!-- Path 3: Sustain -->
-    <div class="path-card">
-      <div class="path-marker">03 / Sponsor</div>
-      <h3 class="path-title">Sustain the project</h3>
-      <p class="path-body">node-opcua is maintained primarily by one engineer at Sterfive. Sponsorship from companies that depend on the stack keeps the open project healthy and roadmap-driven. Founding Sponsor positions are open through Q1 2026 with permanent recognition.</p>
-      <a href="https://github.com/sponsors/node-opcua" target="_blank" rel="noopener noreferrer" class="path-cta">Become a sponsor <span class="arrow">&rarr;</span></a>
+      <!-- Path 3: Sustain -->
+      <div class="path-card">
+        <div class="path-marker">03 / Sponsor</div>
+        <h3 class="path-title">Sustain the project</h3>
+        <p class="path-body">node-opcua is maintained primarily by one engineer at Sterfive. Sponsorship from companies that depend on the stack keeps the open project healthy and roadmap-driven. Founding Sponsor positions remain open through 2026.</p>
+        <a href="https://github.com/sponsors/node-opcua" target="_blank" rel="noopener noreferrer" class="path-cta">Become a sponsor <span class="arrow">&rarr;</span></a>
+      </div>
     </div>
   </div>
 </section>
 
 <style>
   .paths-section {
-    padding: 6rem 0;
+    padding: var(--space-section) 0;
     background-color: var(--bg);
+  }
+  .section-heading {
+    font-size: clamp(1.8rem, 4vw, 2.25rem);
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.025em;
+    margin-bottom: var(--space-stack-xl);
   }
   .paths-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
+    grid-template-columns: 1fr;
+    gap: var(--space-stack-xl);
   }
   .path-card {
     display: flex;
     flex-direction: column;
     border-top: 2px solid var(--ink);
-    padding-top: 1.5rem;
+    padding-top: var(--space-stack-md);
     background-color: transparent;
     border-radius: 0;
+    position: relative;
+  }
+  .path-card::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: 0;
+    width: 32px;
+    height: 2px;
+    background: var(--accent);
   }
   .path-marker {
     font-family: var(--font-mono);
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 500;
-    color: var(--accent);
+    color: var(--muted);
     margin-bottom: 0.75rem;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.1em;
   }
   .path-title {
     font-size: 1.35rem;
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-bottom: var(--space-stack-sm);
     color: var(--ink);
     letter-spacing: -0.02em;
   }
   .path-body {
-    font-size: 0.95rem;
+    font-size: 1rem;
     line-height: 1.6;
     color: var(--ink-soft);
     margin-bottom: 1.75rem;
@@ -95,10 +115,10 @@
     transform: translateX(3px);
   }
   
-  @media (max-width: 968px) {
+  @media (min-width: 1024px) {
     .paths-grid {
-      grid-template-columns: 1fr;
-      gap: 3rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-stack-xl);
     }
   }
 </style>

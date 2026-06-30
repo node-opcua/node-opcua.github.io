@@ -6,9 +6,18 @@ import Footer from '../components/Footer.astro';
 interface Props {
   title: string;
   description?: string;
+  ogImage?: string;
 }
 
-const { title, description = "node-opcua: The open-source OPC UA stack for Node.js. Production-grade since 2014." } = Astro.props;
+const { 
+  title, 
+  description = "node-opcua: The open-source OPC UA stack for Node.js. Production-grade since 2014.",
+  ogImage = "/v2/og-default.png"
+} = Astro.props;
+
+const canonicalUrl = new URL(Astro.url.pathname, "https://node-opcua.github.io").href;
+const fullTitle = `${title} | node-opcua`;
+const ogImageUrl = new URL(ogImage, "https://node-opcua.github.io").href;
 ---
 
 <!DOCTYPE html>
@@ -21,12 +30,25 @@ const { title, description = "node-opcua: The open-source OPC UA stack for Node.
     <!-- Layer 1 SEO Containment: Strict noindex, nofollow on all v2 pages -->
     <meta name="robots" content="noindex,nofollow" />
     
-    <title>{title} | node-opcua</title>
+    <title>{fullTitle}</title>
     <meta name="description" content={description} />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
   </head>
   <body>
     <NavBar />
-    <main style="flex: 1;">
+    <main>
       <slot />
     </main>
     <Footer />

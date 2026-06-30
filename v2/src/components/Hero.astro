@@ -6,16 +6,19 @@
       <h1 class="hero-title">The OPC UA stack for <span class="accent-word">Node.js</span></h1>
       <h2 class="hero-subtitle">Production-grade. Open source since 2014.</h2>
       <p class="hero-description">
-        Used in production at Mercedes-Benz, Renault, Siemens, and industrial deployments across automotive, energy, and IoT.
+        Used in production at <span class="customer-inline">Mercedes-Benz</span>,
+        <span class="customer-inline">Renault</span>,
+        <span class="customer-inline">Siemens</span>, and industrial
+        deployments across automotive, energy, and IoT.
       </p>
       <div class="hero-ctas">
-        <a href="https://github.com/node-opcua/node-opcua#getting-started" class="btn btn-primary">
+        <a href="https://github.com/node-opcua/node-opcua#getting-started" class="btn btn-primary hero-btn-primary">
           Get started <span class="arrow">&rarr;</span>
         </a>
         <a href="/v2/commercial-use/" class="btn btn-secondary">
           For commercial use <span class="arrow">&rarr;</span>
         </a>
-        <a href="https://github.com/sponsors/node-opcua" target="_blank" rel="noopener noreferrer" class="btn btn-tertiary">
+        <a href="https://github.com/sponsors/node-opcua" target="_blank" rel="noopener noreferrer" class="btn btn-tertiary hero-btn-tertiary">
           Sustain the project <span class="arrow">&rarr;</span>
         </a>
       </div>
@@ -25,9 +28,11 @@
 
 <style>
   .hero-section {
-    padding: 7rem 0 5rem 0;
+    padding-top: clamp(96px, 18vh, 180px);
+    padding-bottom: clamp(64px, 12vh, 120px);
     text-align: center;
     background-color: var(--bg);
+    border-bottom: none;
   }
   .hero-container {
     display: flex;
@@ -38,13 +43,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
+    gap: var(--space-stack-md);
   }
   .hero-title {
     font-size: clamp(2.5rem, 5.5vw, 3.75rem);
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1.0;
     color: var(--ink);
   }
   .accent-word {
@@ -61,27 +66,28 @@
     color: var(--ink-soft);
     max-width: 700px;
     line-height: 1.6;
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--space-stack-md);
+  }
+  .customer-inline {
+    font-family: var(--font-mono);
+    font-size: 0.95em;
+    font-weight: 500;
+    color: var(--ink);
   }
   .hero-ctas {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1.5rem;
+    gap: var(--space-stack-md);
     flex-wrap: wrap;
   }
-  .btn-tertiary {
-    background-color: transparent;
-    border: none;
-    color: var(--ink-soft);
-    padding: 0.75rem 0.5rem;
+  .hero-btn-primary {
     font-weight: 600;
-    font-size: 0.95rem;
-    display: inline-flex;
-    align-items: center;
+    padding: 0.875rem 1.5rem;
   }
-  .btn-tertiary:hover {
-    color: var(--accent);
+  .hero-btn-tertiary {
+    font-size: 0.95em;
+    margin-left: var(--space-stack-xs);
   }
   .arrow {
     margin-left: 0.35rem;
@@ -95,7 +101,10 @@
     .hero-ctas {
       flex-direction: column;
       width: 100%;
-      gap: 1rem;
+      gap: var(--space-stack-sm);
+    }
+    .hero-btn-tertiary {
+      margin-left: 0;
     }
     .btn {
       width: 100%;

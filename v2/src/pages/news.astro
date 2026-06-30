@@ -1,6 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { posts } from '../data/posts';
+
+function formatDate(dateStr: string): string {
+  return new Date(dateStr).toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+  });
+}
 ---
 
 <BaseLayout title="News & writing">
@@ -17,7 +25,7 @@ import { posts } from '../data/posts';
     <div class="news-list">
       {posts.map((post) => (
         <article class="post-card">
-          <time class="post-date">{post.date}</time>
+          <time class="post-date">{formatDate(post.date)}</time>
           <h2 class="post-title">
             <a href={post.url}>{post.title}</a>
           </h2>
@@ -38,22 +46,14 @@ import { posts } from '../data/posts';
     padding: 4rem 2rem;
   }
   .news-intro {
-    padding: 0 0 3rem 0;
+    padding: 0 0 var(--space-stack-xl) 0;
     border-bottom: 1px solid var(--divider);
-  }
-  .section-eyebrow {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    text-transform: uppercase;
-    color: var(--accent);
-    letter-spacing: 0.05em;
-    margin-bottom: 0.5rem;
   }
   .news-intro h1 {
     font-size: clamp(2.5rem, 5.5vw, 3.75rem);
     font-weight: 700;
     color: var(--ink);
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--space-stack-md);
     line-height: 1.15;
   }
   .lede {
@@ -65,11 +65,11 @@ import { posts } from '../data/posts';
     display: flex;
     flex-direction: column;
     gap: 3.5rem;
-    padding: 3rem 0;
+    padding: var(--space-stack-xl) 0;
   }
   .post-card {
     border-top: 2px solid var(--ink);
-    padding-top: 1.5rem;
+    padding-top: var(--space-stack-md);
     display: flex;
     flex-direction: column;
     gap: 0.75rem;

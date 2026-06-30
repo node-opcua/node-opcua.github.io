@@ -8,7 +8,7 @@ const secondaryCustomers = customers.filter(c => c.tier === 'secondary');
   <div class="container proof-container">
     <!-- Primary Tier -->
     <div class="proof-row">
-      <h4 class="row-eyebrow">IN PRODUCTION AT</h4>
+      <p class="row-eyebrow">IN PRODUCTION AT</p>
       <div class="social-proof-grid primary-grid">
         {primaryCustomers.map((c) => {
           if (c.display === "logo") {
@@ -36,7 +36,7 @@ const secondaryCustomers = customers.filter(c => c.tier === 'secondary');
 
     <!-- Secondary Tier -->
     <div class="proof-row">
-      <h4 class="row-eyebrow">ALSO USED BY</h4>
+      <p class="row-eyebrow">ALSO USED BY</p>
       <div class="social-proof-grid secondary-grid">
         {secondaryCustomers.map((c) => {
           if (c.display === "logo") {
@@ -61,20 +61,12 @@ const secondaryCustomers = customers.filter(c => c.tier === 'secondary');
         })}
       </div>
     </div>
-    
-    <div class="stats-row">
-      <span class="stat-item">3.5M+ npm downloads</span>
-      <span class="divider">&middot;</span>
-      <span class="stat-item">1,600+ GitHub stars</span>
-      <span class="divider">&middot;</span>
-      <span class="stat-item">12 years of continuous development</span>
-    </div>
   </div>
 </section>
 
 <style>
   .social-proof-section {
-    padding: 5rem 0;
+    padding: var(--space-section) 0;
     background-color: var(--bg);
     border-top: 1px solid var(--divider);
     border-bottom: 1px solid var(--divider);
@@ -82,21 +74,21 @@ const secondaryCustomers = customers.filter(c => c.tier === 'secondary');
   .proof-container {
     display: flex;
     flex-direction: column;
-    gap: 3.5rem;
+    gap: var(--space-stack-xl);
   }
   .proof-row {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
+    gap: var(--space-stack-md);
   }
   .row-eyebrow {
     font-family: var(--font-mono);
-    font-size: 12px;
-    font-weight: 500;
+    font-size: 0.6875rem;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: var(--muted);
+    color: var(--ink-soft);
     margin: 0;
     text-align: center;
   }
@@ -135,8 +127,8 @@ const secondaryCustomers = customers.filter(c => c.tier === 'secondary');
     opacity: 0.95;
   }
   .secondary-img {
-    max-height: 1.4rem; /* ~70% of 2rem */
-    max-width: 84px;    /* ~70% of 120px */
+    max-height: 1.5rem;
+    max-width: 84px;
     opacity: 0.55;
   }
   .secondary-img:hover {
@@ -165,38 +157,13 @@ const secondaryCustomers = customers.filter(c => c.tier === 'secondary');
     font-size: 0.65rem;
     max-width: 140px;
   }
-  .stats-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1.25rem;
-    flex-wrap: wrap;
-    color: var(--ink-soft);
-    font-family: var(--font-mono);
-    font-size: 0.875rem;
-    font-weight: 500;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--divider);
-  }
-  .divider {
-    color: var(--accent);
-    font-weight: bold;
-    font-size: 1.15rem;
-  }
   
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     .social-proof-grid {
       gap: 2.25rem;
     }
     .secondary-grid {
       gap: 1.75rem;
-    }
-    .stats-row {
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    .divider {
-      display: none;
     }
   }
 </style>
