@@ -42,30 +42,32 @@
 
 <style>
   .ecosystem-section {
-    padding: 2.5rem 0;
+    padding: 2rem 0;
     background-color: var(--bg);
     border-bottom: 1px solid var(--divider);
   }
   .ecosystem-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
   .ecosystem-item {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     color: var(--ink-soft);
-    transition: color 0.2s ease;
+    text-decoration: none;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease;
   }
   .ecosystem-item:hover {
     color: var(--accent);
+    transform: translateY(-2px);
   }
   .eyebrow {
     font-family: var(--font-mono);
     font-size: 11px;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.08em;
     color: var(--muted);
   }
   .logo-wrapper {
@@ -78,28 +80,48 @@
     width: 1.5rem;
     height: 1.5rem;
     flex-shrink: 0;
-    opacity: 0.7;
-    transition: opacity 0.2s ease;
+    opacity: 0.55;
+    fill: currentColor;
+    transition: opacity 0.2s ease, fill 0.2s ease, transform 0.2s ease;
   }
   .ecosystem-item:hover .eco-icon {
     opacity: 1;
+    transform: scale(1.05);
   }
+  
+  /* Brand-color pop on hover */
+  .ecosystem-item:hover .nodejs-icon {
+    fill: #339933; /* Node.js green */
+  }
+  .ecosystem-item:hover .ts-icon {
+    fill: #3178c6; /* TypeScript blue */
+  }
+  .ecosystem-item:hover .opc-icon {
+    fill: #f39200; /* OPC Foundation orange */
+  }
+  .ecosystem-item:hover .sterfive-icon {
+    fill: var(--accent); /* Sterfive teal */
+  }
+
   .logo-text {
     font-family: var(--font-sans);
     font-size: 0.95rem;
     font-weight: 600;
   }
   
-  @media (max-width: 768px) {
+  @media (min-width: 576px) {
     .ecosystem-container {
       grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
+      gap: 1.75rem;
     }
   }
-  @media (max-width: 480px) {
+  @media (min-width: 992px) {
     .ecosystem-container {
-      grid-template-columns: 1fr;
-      gap: 1.25rem;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2.5rem;
+    }
+    .ecosystem-section {
+      padding: 3rem 0;
     }
   }
 </style>
