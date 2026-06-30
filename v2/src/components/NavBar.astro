@@ -1,4 +1,6 @@
 ---
+import { fetchLatestVersion } from '../../scripts/fetch-npm-version.mjs';
+const latestVersion = await fetchLatestVersion('node-opcua');
 ---
 <header class="navbar">
   <div class="container navbar-container">
@@ -23,6 +25,18 @@
       <a href="/api_doc/latest/" class="nav-link">API reference</a>
       <a href="/v2/projects/" class="nav-link">Projects</a>
       <a href="/v2/news/" class="nav-link">News</a>
+      {latestVersion && (
+        <a
+          href={`https://www.npmjs.com/package/node-opcua/v/${latestVersion}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="version-badge"
+          aria-label={`Latest release: v${latestVersion}`}
+        >
+          <span class="version-number">v{latestVersion}</span>
+          <span class="version-label">latest</span>
+        </a>
+      )}
       <a href="https://github.com/node-opcua/node-opcua" target="_blank" rel="noopener noreferrer" class="nav-link">GitHub</a>
       <a href="https://github.com/sponsors/node-opcua" target="_blank" rel="noopener noreferrer" class="nav-link">Sponsor</a>
     </nav>
@@ -182,6 +196,38 @@
       border-bottom: none;
       font-size: 0.9rem;
     }
+
+    .version-badge {
+      display: inline-flex;
+    }
+  }
+
+  /* Version badge */
+  .version-badge {
+    display: none;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.625rem;
+    border: 1px solid var(--divider);
+    border-radius: 4px;
+    text-decoration: none;
+    transition: border-color 0.15s ease;
+  }
+  .version-badge:hover {
+    border-color: var(--accent);
+  }
+  .version-number {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--accent);
+    font-weight: 500;
+  }
+  .version-label {
+    font-family: var(--font-sans);
+    font-size: 0.6875rem;
+    color: var(--muted);
+    text-transform: lowercase;
+    letter-spacing: 0.02em;
   }
 </style>
 

@@ -18,7 +18,7 @@ export const featuredRepos: Repo[] = [
     url: "https://github.com/node-opcua/node-opcua-modeler-mcp-server",
     description: "MCP server for OPC UA information modeling, designed for AI agents building industrial automation models.",
     featured: true,
-    extendedDescription: "Lets AI agents (Claude, Cursor, and other MCP-compatible tooling) query, validate, and build OPC UA information models — discover companion specification types, resolve namespace dependencies, look up engineering units. The first Model Context Protocol server for industrial automation.",
+    extendedDescription: "Lets AI agents (Claude, Cursor, and other MCP-compatible tooling) query, validate, and build OPC UA information models. Discover companion specification types, resolve namespace dependencies, look up engineering units. The first Model Context Protocol server for industrial automation.",
   },
 ];
 
