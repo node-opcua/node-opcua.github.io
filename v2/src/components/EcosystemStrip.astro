@@ -1,0 +1,105 @@
+---
+---
+<section class="ecosystem-section">
+  <div class="container ecosystem-container">
+    <!-- Column 1: Node.js -->
+    <a href="https://nodejs.org" target="_blank" rel="noopener noreferrer" class="ecosystem-item">
+      <span class="eyebrow">Built on</span>
+      <div class="logo-wrapper">
+        <svg viewBox="0 0 24 24" class="eco-icon nodejs-icon" fill="currentColor"><path d="M12 2L2 7.75v11.5L12 22l10-5.75V7.75L12 2Z"/></svg>
+        <span class="logo-text">Node.js</span>
+      </div>
+    </a>
+
+    <!-- Column 2: TypeScript -->
+    <a href="https://www.typescriptlang.org" target="_blank" rel="noopener noreferrer" class="ecosystem-item">
+      <span class="eyebrow">Written in</span>
+      <div class="logo-wrapper">
+        <svg viewBox="0 0 24 24" class="eco-icon ts-icon" fill="currentColor"><rect width="24" height="24" rx="2"/><text x="18" y="19" font-family="var(--font-sans)" font-weight="800" font-size="14" fill="var(--bg)" text-anchor="end">TS</text></svg>
+        <span class="logo-text">TypeScript</span>
+      </div>
+    </a>
+
+    <!-- Column 3: OPC Foundation -->
+    <a href="https://opcfoundation.org" target="_blank" rel="noopener noreferrer" class="ecosystem-item">
+      <span class="eyebrow">Implements</span>
+      <div class="logo-wrapper">
+        <svg viewBox="0 0 40 24" class="eco-icon opc-icon" fill="currentColor"><text x="0" y="18" font-family="var(--font-mono)" font-weight="800" font-size="18" letter-spacing="-0.05em">OPC</text></svg>
+        <span class="logo-text">OPC Foundation</span>
+      </div>
+    </a>
+
+    <!-- Column 4: Sterfive -->
+    <a href="https://www.sterfive.com" target="_blank" rel="noopener noreferrer" class="ecosystem-item">
+      <span class="eyebrow">Maintained by</span>
+      <div class="logo-wrapper">
+        <svg viewBox="0 0 70 24" class="eco-icon sterfive-icon" fill="currentColor"><text x="0" y="18" font-family="var(--font-sans)" font-weight="800" font-size="17" letter-spacing="-0.02em">sterfive</text></svg>
+        <span class="logo-text">Sterfive</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<style>
+  .ecosystem-section {
+    padding: 2.5rem 0;
+    background-color: var(--bg);
+    border-bottom: 1px solid var(--divider);
+  }
+  .ecosystem-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+  .ecosystem-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--ink-soft);
+    transition: color 0.2s ease;
+  }
+  .ecosystem-item:hover {
+    color: var(--accent);
+  }
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+  }
+  .logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    height: 1.75rem;
+  }
+  .eco-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    flex-shrink: 0;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+  }
+  .ecosystem-item:hover .eco-icon {
+    opacity: 1;
+  }
+  .logo-text {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+  
+  @media (max-width: 768px) {
+    .ecosystem-container {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+  }
+  @media (max-width: 480px) {
+    .ecosystem-container {
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+  }
+</style>
