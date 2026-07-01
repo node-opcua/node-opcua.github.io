@@ -1,0 +1,182 @@
+---
+title: "Node-OPCUA 0.0.50 has been released"
+date: 2015-12-05
+category: news
+description: "Release notes for Node-OPCUA 0.0.50, introducing enhancements like TwoStateDiscreteType, MultiStateDiscreteType, Matrix Variants, and several breaking API changes."
+permalink: news/2015/12/05/nodejs-5.0
+---
+
+## what's new in NodeOPCUA 0.0.50
+
+This version add a significant number of enhancements.
+You can access the  details in the [release notes][release-notes-0.0.50]
+
+#### Enhancements
+
+* AddressSpace helper methods have been added  to create DI objects of type
+  TwoStateDiscreteType , MultiStateDiscreteType and MultiStateValueDiscreteType
+
+* AddressSpace#addTwoStateDiscreteType
+
+<div class="indentedBlock">
+
+```javascript
+var addressSpace = engine.addressSpace;
+ var rootFolder = addressSpace.findObject("ObjectsFolder");
+ rootFolder.browseName.toString().should.eql("Objects");
+
+ var prop = addressSpace.addTwoStateDiscreteType({
+     organizedBy: rootFolder,
+     browseName: "MySwitch",
+     trueState: "busy",
+     falseState: "idle",
+     value: false
+ });
+ prop.browseName.toString().should.eql("MySwitch");
+
+ prop.getPropertyByName("TrueState").readValue().value.toString()
+     .should.eql("Variant(Scalar<LocalizedText>, value: locale=null text=busy)");
+
+ prop.getPropertyByName("FalseState").readValue().value.toString()
+     .should.eql("Variant(Scalar<LocalizedText>, value: locale=null text=idle)");
+
+ prop.readValue().value.toString().should.eql("Variant(Scalar<Boolean>, value: false)");
+```
+
+ </div>
+
+
+ * AddressSpace#addMultiStateDiscreteType
+
+ <div class="indentedBlock">
+
+```javascript
+
+ var prop = addressSpace.addMultiStateDiscreteType({
+      componentOf: rootFolder,
+      browseName: "MyMultiStateVariable",
+      enumStrings: [ "Red","Orange","Green"],
+      value: 1 // Orange
+  });
+  prop.browseName.toString().should.eql("MyMultiStateVariable");
+
+  prop.valueRank.should.eql(-2);
+
+  prop.getPropertyByName("EnumStrings").readValue().value.toString()
+      .should.eql("Variant(Array<LocalizedText>, l= 3, value=[locale=null text=Red,locale=null text=Orange,locale=null text=Green])");
+
+  prop.enumStrings.readValue().value.dataType.should.eql(DataType.LocalizedText);
+
+  prop.readValue().value.toString().should.eql("Variant(Scalar<UInt32>, value: 1)");
+  prop.readValue().value.dataType.should.eql(DataType.UInt32);
+
+```
+
+
+ </div>
+.....see [unit test][unittest_multiStateDiscrete]
+
+
+* AddressSpace#AddMultiStateValueDiscreteType
+
+<div class="indentedBlock">
+
+```javascript
+
+var addressSpace = engine.addressSpace;
+var rootFolder = addressSpace.findObject("ObjectsFolder");
+rootFolder.browseName.toString().should.eql("Objects");
+
+var prop = addressSpace.addMultiStateValueDiscreteType({
+    componentOf: rootFolder,
+    browseName: "MyMultiStateValueVariable",
+    enumValues: {
+      "Red":    0xFF0000,
+      "Orange": 0xFF9933,
+      "Green":  0x00FF00,
+      "Blue":   0x0000FF
+    },
+    value: 0xFF0000 // Red
+});
+prop.browseName.toString().should.eql("MyMultiStateValueVariable");
+var v = prop.getPropertyByName("EnumValues").readValue().value;
+v.dataType.should.eql(DataType.ExtensionObject);
+v.arrayType.should.eql(VariantArrayType.Array);
+v.value.length.should.eql(4);
+v.value[0].constructor.name.should.eql("EnumValueType");
+
+prop.readValue().value.toString().should.eql("Variant(Scalar<UInt32>, value: 16711680)");
+prop.readValue().value.dataType.should.eql(DataType.UInt32);
+
+prop.valueAsText.readValue().value.value.text.should.eql("Red");
+```
+
+</div>
+see [unit test][unittest_multiStateValueDiscrete]
+
+* UAVariable#bindExtensionObject
+  add the ability to create a Variable containing an array extension object,  
+  and exposing elements as components.
+
+* Variant can now be Matrices and have dimensions
+
+<div class="indentedBlock">
+
+```javascript
+var var1 = new opcua.Variant({
+    dataType:  opcua.DataType.UInt32,
+    arrayType: opcua.VariantArrayType.Matrix,
+    dimensions: [ 2,3], // 2 lines , 3 columns
+    value : [
+        0x000,0x001,0x002, // first line
+        0x010,0x011,0x012  // second line
+    ]
+});
+```
+
+</div>
+
+#### Breaking changes:
+
+* ```server.engine.address_space``` now becomes ```server.engine.addressSpace```
+  to comply with [camelCase] naming convention.
+
+* AddressSpace#addVariable now takes a single argument. The parent
+  object is now specified in the parameters,  using  the ```propertyOf```,
+  ```componentOf```, or ```organizedBy``` attributes.
+
+<div class="indentedBlock">
+
+```javascript
+addressSpace.addVariable(parent,{browseName: "MyVar"});
+```
+
+becomes :
+
+```javascript
+addressSpace.addVariable({ componentOf: parent, browseName: "MyVar"});
+```
+
+</div>
+
+* AddressSpace#addProperty has been deprecated.
+
+<div class="indentedBlock">
+
+```javascript
+addressSpace.addProperty(parent,{browseName: "MyVar"});
+```
+
+becomes :
+
+```javascript
+addressSpace.addVariable({ propertyOf: parent, browseName: "MyVar"});
+```
+
+</div>
+
+
+[release-notes-0.0.50]: https://github.com/node-opcua/node-opcua/releases/tag/v0.0.50
+[camelCase]: http://javascript.info/draft/variable-naming
+[unittest_multiStateValueDiscrete]: https://github.com/node-opcua/node-opcua/blob/master/test/data_access/subtest_multi_state_value_discrete_type.js
+[unittest_multiStateDiscrete]: https://github.com/node-opcua/node-opcua/blob/master/test/data_access/subtest_multi_state_discrete_type.js

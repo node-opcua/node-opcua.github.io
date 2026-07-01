@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About" description="About node-opcua — the open-source OPC UA stack for Node.js.">
+  <section class="about-content">
+    <h1>About node-opcua</h1>
+
+    <p>
+      <strong>node-opcua</strong> is the most popular open-source OPC UA stack for
+      Node.js, JavaScript, and TypeScript. It has been in continuous development
+      since 2014 and is used in production at Mercedes-Benz, Renault, Siemens,
+      and hundreds of industrial deployments worldwide.
+    </p>
+
+    <h2>What is OPC UA?</h2>
+    <p>
+      OPC Unified Architecture (OPC UA) is the industrial interoperability
+      standard for secure, reliable data exchange between devices, controllers,
+      and enterprise systems. It is platform-independent and maintained by the
+      OPC Foundation.
+    </p>
+
+    <h2>The project</h2>
+    <p>
+      node-opcua provides a full client and server SDK that lets developers
+      build OPC UA applications in JavaScript and TypeScript. The stack supports
+      security, subscriptions, historical access, alarms and conditions, and
+      the full OPC UA information model.
+    </p>
+
+    <h2>The team</h2>
+    <p>
+      node-opcua is maintained primarily by Etienne Rossignon at
+      <a href="https://www.sterfive.com" target="_blank" rel="noopener noreferrer">Sterfive SAS</a>,
+      a French company specializing in OPC UA consulting and commercial support.
+    </p>
+
+    <h2>License</h2>
+    <p>
+      node-opcua is released under the MIT license. Commercial modules with
+      extended functionality are available through Sterfive.
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .about-content {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: var(--space-section, 4.5rem) 1.5rem;
+  }
+
+  h1 {
+    font-family: var(--font-sans);
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    font-family: var(--font-sans);
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  p {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    margin: 0 0 1rem;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+</style>

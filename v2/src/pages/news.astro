@@ -1,9 +1,19 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { posts } from '../data/posts';
+import { getCollection } from 'astro:content';
 
-function formatDate(dateStr: string): string {
-  return new Date(dateStr).toLocaleDateString('en-GB', {
+const allPosts = await getCollection('blog', (p) => !p.data.draft);
+allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const posts = allPosts.map((p) => ({
+  title: p.data.title,
+  date: p.data.date,
+  url: `/${p.data.permalink}.html`,
+  summary: p.data.description || '',
+}));
+
+function formatDate(date: Date): string {
+  return date.toLocaleDateString('en-GB', {
     day: 'numeric',
     month: 'long',
     year: 'numeric'

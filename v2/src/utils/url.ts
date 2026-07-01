@@ -1,7 +1,8 @@
 /**
  * Prefixes a path with the Astro BASE_URL.
- * Usage: url("projects/") → "/v2/projects/" in staging, "/projects/" in production.
- * Do NOT use for domain-root content (api_doc, Jekyll news posts).
+ * Usage: url("projects.html") → "/v2/projects.html" in staging, "/projects.html" in production.
+ * Usage: url("logos/foo.png") → "/v2/logos/foo.png" in staging, "/logos/foo.png" in production.
+ * Do NOT use for domain-root content (api_doc, external URLs).
  */
 export const url = (path: string) =>
   `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;

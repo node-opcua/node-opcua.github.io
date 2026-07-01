@@ -1,0 +1,180 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  date: Date;
+  author?: string;
+  category?: string;
+}
+
+const { title, description, date, author, category } = Astro.props;
+
+const formattedDate = date.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<BaseLayout title={title} description={description}>
+  <article class="post-article">
+    <header class="post-header">
+      {category && <span class="post-category">{category}</span>}
+      <h1 class="post-title">{title}</h1>
+      <div class="post-meta">
+        <time datetime={date.toISOString()}>{formattedDate}</time>
+        {author && <span class="post-author">by {author}</span>}
+      </div>
+    </header>
+    <div class="post-content">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .post-article {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: var(--space-section, 4.5rem) 1.5rem;
+  }
+
+  .post-header {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--divider, #d4d2cc);
+  }
+
+  .post-category {
+    display: inline-block;
+    font-family: var(--font-mono, monospace);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent, #2a7a6e);
+    margin-bottom: 0.75rem;
+  }
+
+  .post-title {
+    font-family: var(--font-sans, sans-serif);
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--ink, #2c2c28);
+    line-height: 1.25;
+    margin: 0 0 1rem;
+  }
+
+  .post-meta {
+    font-family: var(--font-sans, sans-serif);
+    font-size: 0.875rem;
+    color: var(--muted, #8a8880);
+  }
+
+  .post-meta time {
+    margin-right: 0.5rem;
+  }
+
+  .post-content {
+    font-family: var(--font-sans, sans-serif);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--ink-soft, #5c5c56);
+  }
+
+  .post-content :global(h2) {
+    font-size: 1.375rem;
+    font-weight: 600;
+    color: var(--ink, #2c2c28);
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .post-content :global(h3) {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--ink, #2c2c28);
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .post-content :global(p) {
+    margin: 0 0 1.25rem;
+  }
+
+  .post-content :global(img) {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin: 1.5rem 0;
+  }
+
+  .post-content :global(pre) {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    padding: 1.25rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin: 1.5rem 0;
+  }
+
+  .post-content :global(code) {
+    font-family: var(--font-mono, monospace);
+    font-size: 0.875em;
+  }
+
+  .post-content :global(p > code),
+  .post-content :global(li > code) {
+    background: var(--bg-elevated, #f5f4f0);
+    padding: 0.15em 0.35em;
+    border-radius: 3px;
+  }
+
+  .post-content :global(blockquote) {
+    border-left: 3px solid var(--accent, #2a7a6e);
+    padding-left: 1.25rem;
+    margin: 1.5rem 0;
+    color: var(--muted, #8a8880);
+    font-style: italic;
+  }
+
+  .post-content :global(a) {
+    color: var(--accent, #2a7a6e);
+    text-decoration: none;
+  }
+  .post-content :global(a:hover) {
+    text-decoration: underline;
+  }
+
+  .post-content :global(ul),
+  .post-content :global(ol) {
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .post-content :global(li) {
+    margin-bottom: 0.5rem;
+  }
+
+  .post-content :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.9375rem;
+  }
+
+  .post-content :global(th),
+  .post-content :global(td) {
+    padding: 0.625rem 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--divider, #d4d2cc);
+  }
+
+  .post-content :global(th) {
+    font-weight: 600;
+    color: var(--ink, #2c2c28);
+  }
+</style>
