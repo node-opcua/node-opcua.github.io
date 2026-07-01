@@ -219,4 +219,13 @@ export const customers: Customer[] = [
     genericText: "a statistical process control software vendor",
     tier: "secondary",
   },
+  {
+    id: "lads",
+    name: "LADS",
+    logo: "",
+    display: "name",
+    fallbackText: "LADS",
+    genericText: "Laboratory & Analytical Device Standard",
+    tier: "secondary",
+  },
 ];
