@@ -2,6 +2,8 @@
 import '../styles/global.css';
 import NavBar from '../components/NavBar.astro';
 import Footer from '../components/Footer.astro';
+import Analytics from '../components/Analytics.astro';
+import ConsentBanner from '../components/ConsentBanner.astro';
 import { url } from '../utils/url';
 
 interface Props {
@@ -51,6 +53,7 @@ const isStaging = import.meta.env.PUBLIC_STAGING === "true";
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageUrl} />
+    <Analytics />
   </head>
   <body>
     <NavBar />
@@ -58,5 +61,6 @@ const isStaging = import.meta.env.PUBLIC_STAGING === "true";
       <slot />
     </main>
     <Footer />
+    <ConsentBanner />
   </body>
 </html>

@@ -231,8 +231,8 @@ export const customers: Customer[] = [
   {
     id: "umati",
     name: "umati",
-    logo: "",
-    display: "name",
+    logo: "logos/umati.png",
+    display: "logo",
     fallbackText: "umati",
     genericText: "universal machine technology interface",
     tier: "secondary",
