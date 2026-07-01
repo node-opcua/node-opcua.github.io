@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import NavBar from '../components/NavBar.astro';
 import Footer from '../components/Footer.astro';
+import { url } from '../utils/url';
 
 interface Props {
   title: string;
@@ -12,12 +13,16 @@ interface Props {
 const { 
   title, 
   description = "node-opcua: The open-source OPC UA stack for Node.js. Production-grade since 2014.",
-  ogImage = "/v2/og-default.png"
+  ogImage = url("og-default.png")
 } = Astro.props;
 
 const canonicalUrl = new URL(Astro.url.pathname, "https://node-opcua.github.io").href;
 const fullTitle = `${title} | node-opcua`;
 const ogImageUrl = new URL(ogImage, "https://node-opcua.github.io").href;
+
+// Noindex is env-conditional: only present when PUBLIC_STAGING=true.
+// Default (flag absent) = indexable. Safe for production cutover.
+const isStaging = import.meta.env.PUBLIC_STAGING === "true";
 ---
 
 <!DOCTYPE html>
@@ -25,10 +30,11 @@ const ogImageUrl = new URL(ogImage, "https://node-opcua.github.io").href;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="/v2/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href={url("favicon.ico")} />
     
-    <!-- Layer 1 SEO Containment: Strict noindex, nofollow on all v2 pages -->
-    <meta name="robots" content="noindex,nofollow" />
+    {isStaging && (
+      <meta name="robots" content="noindex,nofollow" />
+    )}
     
     <title>{fullTitle}</title>
     <meta name="description" content={description} />

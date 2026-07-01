@@ -6,7 +6,7 @@ export interface Customer {
   id: string;
   /** Real company name */
   name: string;
-  /** Path to logo, relative to /v2/ */
+  /** Path to logo, relative to public/ (BASE_URL is prepended at render time) */
   logo: string;
   /** Current display mode */
   display: CustomerDisplay;
@@ -23,7 +23,7 @@ export const customers: Customer[] = [
   {
     id: "mercedes-benz",
     name: "Mercedes-Benz",
-    logo: "/v2/logos/mercedes-benz.jpg",
+    logo: "logos/mercedes-benz.jpg",
     display: "logo",
     fallbackText: "Mercedes-Benz™",
     genericText: "a Fortune 500 automotive OEM",
@@ -32,7 +32,7 @@ export const customers: Customer[] = [
   {
     id: "renault",
     name: "Renault",
-    logo: "/v2/logos/renault.png",
+    logo: "logos/renault.png",
     display: "logo",
     fallbackText: "Renault™",
     genericText: "a European automotive manufacturer",
@@ -41,7 +41,7 @@ export const customers: Customer[] = [
   {
     id: "siemens",
     name: "Siemens",
-    logo: "/v2/logos/siemens.png",
+    logo: "logos/siemens.png",
     display: "logo",
     fallbackText: "Siemens™",
     genericText: "a global industrial automation leader",
@@ -50,7 +50,7 @@ export const customers: Customer[] = [
   {
     id: "litmus",
     name: "Litmus",
-    logo: "/v2/logos/litmus.png",
+    logo: "logos/litmus.png",
     display: "logo",
     fallbackText: "Litmus™",
     genericText: "an industrial IoT platform",
@@ -59,7 +59,7 @@ export const customers: Customer[] = [
   {
     id: "tulip",
     name: "Tulip",
-    logo: "/v2/logos/tulip.png",
+    logo: "logos/tulip.png",
     display: "logo",
     fallbackText: "Tulip™",
     genericText: "a frontline operations platform",
@@ -68,7 +68,7 @@ export const customers: Customer[] = [
   {
     id: "apprentice-fs",
     name: "Apprentice FS",
-    logo: "/v2/logos/apprentice-fs.png",
+    logo: "logos/apprentice-fs.png",
     display: "logo",
     fallbackText: "Apprentice FS™",
     genericText: "a pharmaceutical manufacturing software vendor",
@@ -87,7 +87,7 @@ export const customers: Customer[] = [
   {
     id: "ibm",
     name: "IBM",
-    logo: "/v2/logos/ibm.png",
+    logo: "logos/ibm.png",
     display: "logo",
     fallbackText: "IBM™",
     genericText: "a global technology corporation",
@@ -96,7 +96,7 @@ export const customers: Customer[] = [
   {
     id: "sap",
     name: "SAP",
-    logo: "/v2/logos/sap.png",
+    logo: "logos/sap.png",
     display: "logo",
     fallbackText: "SAP™",
     genericText: "an enterprise application software leader",
@@ -105,7 +105,7 @@ export const customers: Customer[] = [
   {
     id: "capgemini",
     name: "Capgemini",
-    logo: "/v2/logos/capgemini.png",
+    logo: "logos/capgemini.png",
     display: "logo",
     fallbackText: "Capgemini™",
     genericText: "a global consulting and IT services provider",
@@ -114,7 +114,7 @@ export const customers: Customer[] = [
   {
     id: "node-red",
     name: "Node-RED",
-    logo: "/v2/logos/node-red.png",
+    logo: "logos/node-red.png",
     display: "logo",
     fallbackText: "Node-RED™",
     genericText: "a low-code programming tool for event-driven applications",
@@ -123,7 +123,7 @@ export const customers: Customer[] = [
   {
     id: "valmet",
     name: "Valmet",
-    logo: "/v2/logos/valmet.png",
+    logo: "logos/valmet.png",
     display: "logo",
     fallbackText: "Valmet™",
     genericText: "a developer and supplier of industrial automation technologies",
@@ -132,7 +132,7 @@ export const customers: Customer[] = [
   {
     id: "cedalo",
     name: "Cedalo",
-    logo: "/v2/logos/cedalo.png",
+    logo: "logos/cedalo.png",
     display: "logo",
     fallbackText: "Cedalo™",
     genericText: "an MQTT broker and stream processing solutions provider",
@@ -141,7 +141,7 @@ export const customers: Customer[] = [
   {
     id: "braincube",
     name: "BrainCube",
-    logo: "/v2/logos/braincube.png",
+    logo: "logos/braincube.png",
     display: "logo",
     fallbackText: "BrainCube™",
     genericText: "an industrial IoT platform provider",
@@ -150,7 +150,7 @@ export const customers: Customer[] = [
   {
     id: "single",
     name: "Single",
-    logo: "/v2/logos/single.png",
+    logo: "logos/single.png",
     display: "logo",
     fallbackText: "Single™",
     genericText: "a temperature control system manufacturer",
@@ -159,7 +159,7 @@ export const customers: Customer[] = [
   {
     id: "tum",
     name: "TUM",
-    logo: "/v2/logos/tum.jpg",
+    logo: "logos/tum.jpg",
     display: "logo",
     fallbackText: "TUM™",
     genericText: "Technical University of Munich",
@@ -168,7 +168,7 @@ export const customers: Customer[] = [
   {
     id: "mit",
     name: "MIT",
-    logo: "/v2/logos/mit.jpg",
+    logo: "logos/mit.jpg",
     display: "logo",
     fallbackText: "MIT™",
     genericText: "Massachusetts Institute of Technology",
@@ -177,7 +177,7 @@ export const customers: Customer[] = [
   {
     id: "actiw",
     name: "ACTIW",
-    logo: "/v2/logos/actiw.png",
+    logo: "logos/actiw.png",
     display: "logo",
     fallbackText: "ACTIW™",
     genericText: "an automated warehouse solutions provider",

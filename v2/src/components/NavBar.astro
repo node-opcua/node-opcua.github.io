@@ -1,10 +1,11 @@
 ---
 import { fetchLatestVersion } from '../../scripts/fetch-npm-version.mjs';
+import { url } from '../utils/url';
 const latestVersion = await fetchLatestVersion('node-opcua');
 ---
 <header class="navbar">
   <div class="container navbar-container">
-    <a href="/v2/" class="logo">
+    <a href={url("")} class="logo">
       <span class="logo-dot"></span><span class="logo-text">node-opcua</span>
     </a>
 
@@ -23,8 +24,8 @@ const latestVersion = await fetchLatestVersion('node-opcua');
 
     <nav class="nav-drawer" aria-label="Main navigation">
       <a href="/api_doc/latest/" class="nav-link">API reference</a>
-      <a href="/v2/projects/" class="nav-link">Projects</a>
-      <a href="/v2/news/" class="nav-link">News</a>
+      <a href={url("projects/")} class="nav-link">Projects</a>
+      <a href={url("news/")} class="nav-link">News</a>
       {latestVersion && (
         <a
           href={`https://www.npmjs.com/package/node-opcua/v/${latestVersion}`}

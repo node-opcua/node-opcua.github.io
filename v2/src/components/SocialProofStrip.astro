@@ -1,5 +1,6 @@
 ---
 import { customers } from '../data/customers';
+import { url } from '../utils/url';
 
 const primaryCustomers = customers.filter(c => c.tier === 'primary');
 const secondaryCustomers = customers.filter(c => c.tier === 'secondary');
@@ -14,7 +15,7 @@ const secondaryCustomers = customers.filter(c => c.tier === 'secondary');
           if (c.display === "logo") {
             return (
               <div class="customer-slot logo-slot" id={`customer-${c.id}`}>
-                <img src={c.logo} alt={c.name} class="grayscale-logo customer-img primary-img" />
+                <img src={url(c.logo)} alt={c.name} class="grayscale-logo customer-img primary-img" />
               </div>
             );
           } else if (c.display === "name") {
@@ -42,7 +43,7 @@ const secondaryCustomers = customers.filter(c => c.tier === 'secondary');
           if (c.display === "logo") {
             return (
               <div class="customer-slot logo-slot secondary-slot" id={`customer-${c.id}`}>
-                <img src={c.logo} alt={c.name} class="grayscale-logo customer-img secondary-img" />
+                <img src={url(c.logo)} alt={c.name} class="grayscale-logo customer-img secondary-img" />
               </div>
             );
           } else if (c.display === "name") {

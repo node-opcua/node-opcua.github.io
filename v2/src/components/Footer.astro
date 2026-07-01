@@ -1,4 +1,5 @@
 ---
+import { url } from '../utils/url';
 ---
 <footer class="footer">
   <div class="container footer-container">
@@ -7,8 +8,8 @@
     </div>
     <div class="footer-center">
       <a href="/api_doc/latest/">Docs</a>
-      <a href="/v2/projects/">Projects</a>
-      <a href="/v2/news/">News</a>
+      <a href={url("projects/")}>Projects</a>
+      <a href={url("news/")}>News</a>
       <a href="https://github.com/node-opcua/node-opcua" target="_blank" rel="noopener noreferrer">GitHub</a>
       <a href="https://www.npmjs.com/package/node-opcua" target="_blank" rel="noopener noreferrer">npm</a>
       <a href="https://github.com/sponsors/node-opcua" target="_blank" rel="noopener noreferrer">Sponsor</a>
