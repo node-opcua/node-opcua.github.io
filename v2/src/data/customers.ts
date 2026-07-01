@@ -228,4 +228,13 @@ export const customers: Customer[] = [
     genericText: "Laboratory & Analytical Device Standard",
     tier: "secondary",
   },
+  {
+    id: "umati",
+    name: "umati",
+    logo: "",
+    display: "name",
+    fallbackText: "umati",
+    genericText: "universal machine technology interface",
+    tier: "secondary",
+  },
 ];
