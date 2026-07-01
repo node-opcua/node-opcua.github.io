@@ -15,22 +15,88 @@ const { title, description, date, author, category, permalink } = Astro.props;
 // Build canonical from permalink: /<permalink>.html
 const canonical = permalink ? `/${permalink}.html` : undefined;
 
+const site = 'https://node-opcua.github.io';
+const postUrl = permalink ? `${site}/${permalink}.html` : site;
+const authorName = author || 'Etienne Rossignon';
+const isoDate = date.toISOString();
+
 const formattedDate = date.toLocaleDateString('en-US', {
   year: 'numeric',
   month: 'long',
   day: 'numeric',
 });
+
+// 6a — BlogPosting JSON-LD
+const blogLd = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "description": description || '',
+  "datePublished": isoDate,
+  "dateModified": isoDate,
+  "author": {
+    "@type": "Person",
+    "name": authorName,
+    "url": "https://github.com/node-opcua"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "node-opcua",
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${site}/logos/sterfive-logo.png`
+    }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": postUrl },
+  "url": postUrl,
+  "articleSection": category || undefined
+};
+
+// 6c — BreadcrumbList JSON-LD
+const breadcrumbLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": site
+    },
+    ...(category ? [{
+      "@type": "ListItem",
+      "position": 2,
+      "name": category.charAt(0).toUpperCase() + category.slice(1),
+      "item": `${site}/news.html`
+    }] : []),
+    {
+      "@type": "ListItem",
+      "position": category ? 3 : 2,
+      "name": title
+    }
+  ]
+};
+
+// 6d — article OG meta
+const articleMeta = { publishedTime: isoDate, author: authorName };
 ---
 
-<BaseLayout title={title} description={description} canonical={canonical}>
+<BaseLayout title={title} description={description} canonical={canonical} articleMeta={articleMeta}>
+  <!-- 6a + 6c: Structured data in head -->
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(blogLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
+  </Fragment>
+
   <article class="post-article">
     <header class="post-header">
       {category && <span class="post-category">{category}</span>}
       <h1 class="post-title">{title}</h1>
-      <div class="post-meta">
-        <time datetime={date.toISOString()}>{formattedDate}</time>
-        {author && <span class="post-author">by {author}</span>}
-      </div>
+      <p class="post-byline">
+        <time datetime={isoDate}>{formattedDate}</time>
+        <span class="byline-sep">·</span>
+        <span class="byline-author">{authorName}</span>
+      </p>
     </header>
     <div class="post-content">
       <slot />
@@ -70,14 +136,23 @@ const formattedDate = date.toLocaleDateString('en-US', {
     margin: 0 0 1rem;
   }
 
-  .post-meta {
+  .post-byline {
     font-family: var(--font-sans, sans-serif);
     font-size: 0.875rem;
     color: var(--muted, #8a8880);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
   }
 
-  .post-meta time {
-    margin-right: 0.5rem;
+  .byline-sep {
+    color: var(--divider, #d4d2cc);
+  }
+
+  .byline-author {
+    font-weight: 500;
+    color: var(--ink-soft, #5c5c56);
   }
 
   .post-content {

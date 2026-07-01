@@ -11,6 +11,10 @@ interface Props {
   description?: string;
   ogImage?: string;
   canonical?: string;
+  articleMeta?: {
+    publishedTime: string;
+    author: string;
+  };
 }
 
 const { 
@@ -18,7 +22,25 @@ const {
   description = "node-opcua: The open-source OPC UA stack for Node.js. Production-grade since 2014.",
   ogImage = url("og-default.png"),
   canonical,
+  articleMeta,
 } = Astro.props;
+
+const site = 'https://node-opcua.github.io';
+
+// Organization JSON-LD (emitted on every page)
+const orgLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "node-opcua",
+  "url": site,
+  "logo": `${site}/logos/sterfive-logo.png`,
+  "description": "The open-source OPC UA stack for Node.js, maintained by Sterfive.",
+  "sameAs": [
+    "https://github.com/node-opcua",
+    "https://www.npmjs.com/package/node-opcua",
+    "https://www.sterfive.com"
+  ]
+};
 
 // Canonical: use explicit prop if provided, otherwise derive from pathname.
 // For format:'file' pages, pathname already ends in .html.
@@ -52,13 +74,25 @@ const isStaging = import.meta.env.PUBLIC_STAGING === "true";
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImageUrl} />
     <meta property="og:url" content={canonicalUrl} />
-    <meta property="og:type" content="website" />
+    {articleMeta ? (
+      <meta property="og:type" content="article" />
+      <meta property="article:published_time" content={articleMeta.publishedTime} />
+      <meta property="article:author" content={articleMeta.author} />
+    ) : (
+      <meta property="og:type" content="website" />
+    )}
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageUrl} />
+
+    <!-- Organization JSON-LD (site-wide) -->
+    <script type="application/ld+json" set:html={JSON.stringify(orgLd)} />
+
+    <!-- Slot for child layout head content (JSON-LD etc.) -->
+    <slot name="head" />
     <Analytics />
   </head>
   <body>
