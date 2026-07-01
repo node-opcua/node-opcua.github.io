@@ -53,10 +53,8 @@ if (Test-Path "$root\googlea35ecc050f9ca765.html") {
     Copy-Item "$root\googlea35ecc050f9ca765.html" "$preview\" -Force
 }
 
-# Keep feed.xml if it exists
-if (Test-Path "$root\feed.xml") {
-    Copy-Item "$root\feed.xml" "$preview\" -Force
-}
+# NOTE: Do NOT copy the old Jekyll feed.xml — the Astro RSS endpoint
+# (feed.xml.ts) is the single source of truth for /feed.xml.
 
 Write-Host "`n=== Step 4: Restore staging config ===" -ForegroundColor Cyan
 Copy-Item "$v2\.env.bak" "$v2\.env" -Force

@@ -10,15 +10,20 @@ interface Props {
   title: string;
   description?: string;
   ogImage?: string;
+  canonical?: string;
 }
 
 const { 
   title, 
   description = "node-opcua: The open-source OPC UA stack for Node.js. Production-grade since 2014.",
-  ogImage = url("og-default.png")
+  ogImage = url("og-default.png"),
+  canonical,
 } = Astro.props;
 
-const canonicalUrl = new URL(Astro.url.pathname, "https://node-opcua.github.io").href;
+// Canonical: use explicit prop if provided, otherwise derive from pathname.
+// For format:'file' pages, pathname already ends in .html.
+const canonicalPath = canonical || Astro.url.pathname;
+const canonicalUrl = new URL(canonicalPath, "https://node-opcua.github.io").href;
 const fullTitle = `${title} | node-opcua`;
 const ogImageUrl = new URL(ogImage, "https://node-opcua.github.io").href;
 
@@ -39,6 +44,7 @@ const isStaging = import.meta.env.PUBLIC_STAGING === "true";
     )}
     
     <title>{fullTitle}</title>
+    <link rel="canonical" href={canonicalUrl} />
     <meta name="description" content={description} />
     
     <!-- Open Graph -->

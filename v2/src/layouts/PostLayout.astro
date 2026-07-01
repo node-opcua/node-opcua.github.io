@@ -7,9 +7,13 @@ interface Props {
   date: Date;
   author?: string;
   category?: string;
+  permalink?: string;
 }
 
-const { title, description, date, author, category } = Astro.props;
+const { title, description, date, author, category, permalink } = Astro.props;
+
+// Build canonical from permalink: /<permalink>.html
+const canonical = permalink ? `/${permalink}.html` : undefined;
 
 const formattedDate = date.toLocaleDateString('en-US', {
   year: 'numeric',
@@ -18,7 +22,7 @@ const formattedDate = date.toLocaleDateString('en-US', {
 });
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} canonical={canonical}>
   <article class="post-article">
     <header class="post-header">
       {category && <span class="post-category">{category}</span>}
