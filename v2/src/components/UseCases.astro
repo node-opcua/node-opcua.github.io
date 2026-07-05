@@ -1,0 +1,141 @@
+---
+---
+<section class="usecases-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">What you can build</span>
+      <h2 class="section-title">From factory floor to cloud, in JavaScript.</h2>
+      <p class="section-subtitle">
+        node-opcua powers the application and integration layer of industrial systems.
+        Here's what teams ship with it.
+      </p>
+    </div>
+
+    <div class="usecases-grid">
+      <div class="usecase-card">
+        <div class="usecase-icon">⇄</div>
+        <h3 class="usecase-title">Protocol gateways</h3>
+        <p class="usecase-body">
+          Bridge S7, Modbus, MQTT, BACnet, or proprietary protocols to OPC UA.
+          Bidirectional, with buffering and reconnect logic built in.
+        </p>
+      </div>
+
+      <div class="usecase-card">
+        <div class="usecase-icon">◎</div>
+        <h3 class="usecase-title">OPC UA servers for your devices</h3>
+        <p class="usecase-body">
+          Expose your machine's data model as a standards-compliant OPC UA address space.
+          Companion specs (Euromap, PackML, LADS) supported.
+        </p>
+      </div>
+
+      <div class="usecase-card">
+        <div class="usecase-icon">▲</div>
+        <h3 class="usecase-title">Edge data collectors</h3>
+        <p class="usecase-body">
+          Subscribe to hundreds of variables across multiple PLCs. Aggregate,
+          filter, and forward to your historian, time-series DB, or cloud platform.
+        </p>
+      </div>
+
+      <div class="usecase-card">
+        <div class="usecase-icon">☁</div>
+        <h3 class="usecase-title">Cloud &amp; IoT bridges</h3>
+        <p class="usecase-body">
+          Connect OPC UA to AWS IoT Greengrass, Azure IoT Hub, Google Cloud IoT,
+          or any MQTT/REST backend. node-opcua runs where Node.js runs.
+        </p>
+      </div>
+
+      <div class="usecase-card">
+        <div class="usecase-icon">⬡</div>
+        <h3 class="usecase-title">MES &amp; ERP connectors</h3>
+        <p class="usecase-body">
+          Read production data from the shop floor and push it to SAP, Oracle,
+          or your custom MES. Real-time, with type-safe mappings.
+        </p>
+      </div>
+
+      <div class="usecase-card">
+        <div class="usecase-icon">◉</div>
+        <h3 class="usecase-title">Node-RED OPC UA nodes</h3>
+        <p class="usecase-body">
+          The official OPC UA nodes for Node-RED are built on node-opcua.
+          Low-code OPC UA integration used by thousands of flows worldwide.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .usecases-section {
+    padding: var(--space-section) 0;
+    background-color: var(--bg);
+  }
+  .section-header {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 3.5rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .section-title {
+    font-size: clamp(1.8rem, 4vw, 2.25rem);
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.025em;
+  }
+  .section-subtitle {
+    font-size: 1rem;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+  .usecases-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .usecase-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    padding: 1.75rem 0;
+    border-top: 1px solid var(--divider);
+  }
+  .usecase-icon {
+    font-size: 1.25rem;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+  .usecase-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.015em;
+  }
+  .usecase-body {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    max-width: 48ch;
+  }
+
+  @media (min-width: 768px) {
+    .usecases-grid {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 3rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .usecases-grid {
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 3rem;
+    }
+  }
+</style>

@@ -1,0 +1,152 @@
+---
+const features = [
+  {
+    category: "Core protocol",
+    items: [
+      "Full OPC UA client & server SDK",
+      "Subscriptions & monitored items",
+      "Method calls (synchronous & async)",
+      "Browse, read, write, call, history read",
+      "Complex types & custom structures",
+      "Secure channels (Sign, SignAndEncrypt)",
+    ],
+  },
+  {
+    category: "Advanced capabilities",
+    items: [
+      "Alarms & conditions (A&C)",
+      "Historical access (HA)",
+      "Global Discovery Server (GDS)",
+      "PubSub (UADP + JSON over MQTT)",
+      "File transfer (Part 20)",
+      "Role-based security (Part 18)",
+    ],
+  },
+  {
+    category: "Developer experience",
+    items: [
+      "Full TypeScript types & generics",
+      "Async/await throughout",
+      "3,000+ tests · ~97% coverage",
+      "Node.js 16 – 22 supported",
+      "Windows · Linux · macOS · Alpine",
+      "npm install — zero native deps",
+    ],
+  },
+  {
+    category: "Integration & ecosystem",
+    items: [
+      "Companion spec support (Euromap, PackML, LADS)",
+      "Node-RED OPC UA nodes",
+      "XML nodeset import/export",
+      "Certificate management (X.509)",
+      "Reverse connect",
+      "Session & channel recovery",
+    ],
+  },
+];
+---
+
+<section class="capabilities-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Capabilities</span>
+      <h2 class="section-title">What's in the stack.</h2>
+      <p class="section-subtitle">
+        node-opcua implements the OPC UA specification broadly and deeply.
+        Here's what ships in the current release.
+      </p>
+    </div>
+
+    <div class="capabilities-grid">
+      {features.map((group) => (
+        <div class="capability-group">
+          <h3 class="group-title">{group.category}</h3>
+          <ul class="feature-list">
+            {group.items.map((item) => (
+              <li class="feature-item">
+                <span class="check">✓</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .capabilities-section {
+    padding: var(--space-section) 0;
+    background-color: var(--bg-elevated);
+  }
+  .section-header {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 3.5rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .section-title {
+    font-size: clamp(1.8rem, 4vw, 2.25rem);
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.025em;
+  }
+  .section-subtitle {
+    font-size: 1rem;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+  .capabilities-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .capability-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .group-title {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    font-weight: 600;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--divider);
+  }
+  .feature-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+  .feature-item {
+    display: flex;
+    align-items: baseline;
+    gap: 0.625rem;
+    font-size: 0.9375rem;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+  .check {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+
+  @media (min-width: 768px) {
+    .capabilities-grid {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 3rem;
+    }
+  }
+</style>

@@ -1,77 +1,156 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { url } from '../utils/url';
 ---
 
-<BaseLayout title="About" description="About node-opcua — the open-source OPC UA stack for Node.js.">
+<BaseLayout
+  title="About"
+  description="The story behind node-opcua — how a side project at a nuclear plant became the most widely used OPC UA stack for Node.js."
+>
   <section class="about-content">
-    <h1>About node-opcua</h1>
 
+    <h1>The story behind node-opcua</h1>
+
+    <div class="origin-block">
+      <p class="lede">
+        node-opcua started in 2014 inside a nuclear engineering facility.
+        Twelve years later it's used in production at Mercedes-Benz, Renault,
+        Siemens, and hundreds of industrial deployments worldwide.
+      </p>
+    </div>
+
+    <h2>How it started</h2>
     <p>
-      <strong>node-opcua</strong> is the most popular open-source OPC UA stack for
-      Node.js, JavaScript, and TypeScript. It has been in continuous development
-      since 2014 and is used in production at Mercedes-Benz, Renault, Siemens,
-      and hundreds of industrial deployments worldwide.
+      Etienne Rossignon was working at Areva, immersed in CAD/CAM, metrology,
+      and machine-to-machine communication, when he encountered OPC UA — an
+      emerging standard for secure, cross-platform industrial data exchange.
+      Faced with a critical project and the need to master the spec fast, he
+      decided to build a full SDK from scratch in JavaScript.
+    </p>
+    <p>
+      The choice of JavaScript was deliberate: Node.js's asynchronous event
+      loop is a natural fit for OPC UA's subscription-and-notification model —
+      many concurrent sessions per process, no thread management. At the time,
+      industrial software was dominated by C/C++ and Java. Etienne bet that
+      the developer velocity and ecosystem of Node.js would make OPC UA
+      accessible to a far wider audience.
+    </p>
+    <p>
+      He published the first commit on GitHub in 2014. The project was
+      MIT-licensed from day one.
     </p>
 
-    <h2>What is OPC UA?</h2>
+    <h2>How it grew</h2>
     <p>
-      OPC Unified Architecture (OPC UA) is the industrial interoperability
-      standard for secure, reliable data exchange between devices, controllers,
-      and enterprise systems. It is platform-independent and maintained by the
-      OPC Foundation.
+      Downloads have grown more than 20× since 2020, from a few thousand a
+      month to over 500,000. The stack has been in continuous development for
+      twelve years — over 3,000 tests, roughly 97% code coverage, and
+      production deployments on every major operating system.
+    </p>
+    <p>
+      node-opcua became the OPC UA implementation embedded in
+      <a href="https://nodered.org" target="_blank" rel="noopener noreferrer">Node-RED</a>,
+      the low-code programming tool from the OpenJS Foundation.
+      It's used inside
+      <a href="https://aws.amazon.com/greengrass/" target="_blank" rel="noopener noreferrer">AWS IoT Greengrass</a>,
+      and has been adopted by companies and universities including
+      Siemens, Valmet, Capgemini, Litmus, Tulip, BrainCube, MIT, and
+      the Technical University of Munich.
     </p>
 
-    <h2>The project</h2>
+    <h2>Sterfive — the company behind the stack</h2>
     <p>
-      node-opcua provides a full client and server SDK that lets developers
-      build OPC UA applications in JavaScript and TypeScript. The stack supports
-      security, subscriptions, historical access, alarms and conditions, and
-      the full OPC UA information model.
+      In 2017 Etienne founded
+      <a href="https://www.sterfive.com" target="_blank" rel="noopener noreferrer">Sterfive</a>,
+      a French company dedicated to sustaining node-opcua and providing
+      commercial services around it: support contracts, consulting, custom
+      OPC UA development, and a family of commercial add-on modules (GDS,
+      PubSub, Modeler, OPC UA for Node-RED, and more).
+    </p>
+    <p>
+      Sterfive exclusively funds its open-source R&D through its customers.
+      The technology evolves directly with industry needs — no VC, no ads,
+      no telemetry. The company is a Corporate Member of the
+      <a href="https://opcfoundation.org" target="_blank" rel="noopener noreferrer">OPC Foundation</a>
+      and a
+      <a href="https://umati.org" target="_blank" rel="noopener noreferrer">UMATI</a> partner.
     </p>
 
-    <h2>The team</h2>
+    <h2>Open-source DNA</h2>
     <p>
-      node-opcua is maintained primarily by Etienne Rossignon at
-      <a href="https://www.sterfive.com" target="_blank" rel="noopener noreferrer">Sterfive SAS</a>,
-      a French company specializing in OPC UA consulting and commercial support.
+      Sterfive's open-source commitment extends beyond maintaining node-opcua.
+      As part of its contracted engagements, the company regularly contributes
+      production-grade code to third-party open-source projects in the
+      industrial IoT ecosystem — including
+      <a href="https://github.com/eclipse-thingweb/node-wot" target="_blank" rel="noopener noreferrer">Eclipse node-wot</a>
+      and upstream dependencies it relies on. When a client project uncovers
+      a bug in an external library, Sterfive fixes it at the source and
+      pushes the contribution upstream.
     </p>
 
     <h2>License</h2>
     <p>
-      node-opcua is released under the MIT license. Commercial modules with
-      extended functionality are available through Sterfive.
+      The core node-opcua SDK is released under the
+      <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener noreferrer">MIT license</a>.
+      Commercial modules with extended functionality are available through
+      <a href="https://www.sterfive.com" target="_blank" rel="noopener noreferrer">Sterfive</a>.
     </p>
+
+    <div class="about-cta">
+      <a href={url("commercial-use.html")} class="btn btn-secondary">
+        Commercial use & support <span class="arrow">&rarr;</span>
+      </a>
+      <a href="https://github.com/node-opcua/node-opcua" target="_blank" rel="noopener noreferrer" class="btn btn-tertiary">
+        View on GitHub <span class="arrow">&rarr;</span>
+      </a>
+    </div>
   </section>
 </BaseLayout>
 
 <style>
   .about-content {
-    max-width: 40rem;
+    max-width: 42rem;
     margin: 0 auto;
     padding: var(--space-section, 4.5rem) 1.5rem;
   }
 
   h1 {
     font-family: var(--font-sans);
-    font-size: 2rem;
-    font-weight: 600;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 700;
     color: var(--ink);
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+  }
+
+  .origin-block {
+    border-left: 3px solid var(--accent);
+    padding-left: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .lede {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: var(--ink);
+    font-weight: 500;
   }
 
   h2 {
     font-family: var(--font-sans);
-    font-size: 1.125rem;
-    font-weight: 600;
+    font-size: 1.25rem;
+    font-weight: 700;
     color: var(--ink);
-    margin-top: 2rem;
+    margin-top: 2.5rem;
     margin-bottom: 0.75rem;
+    letter-spacing: -0.015em;
   }
 
   p {
     font-family: var(--font-sans);
     font-size: 1rem;
-    line-height: 1.65;
+    line-height: 1.7;
     color: var(--ink-soft);
     margin: 0 0 1rem;
   }
@@ -82,5 +161,29 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
   a:hover {
     text-decoration: underline;
+  }
+
+  .about-cta {
+    display: flex;
+    gap: 1rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .arrow {
+    margin-left: 0.35rem;
+    transition: transform 0.2s ease;
+  }
+  .btn:hover .arrow {
+    transform: translateX(3px);
+  }
+
+  @media (max-width: 640px) {
+    .about-cta {
+      flex-direction: column;
+    }
+    .btn {
+      width: 100%;
+    }
   }
 </style>
