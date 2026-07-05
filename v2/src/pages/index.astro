@@ -7,12 +7,39 @@ import ThreePaths from '../components/ThreePaths.astro';
 import CodeExample from '../components/CodeExample.astro';
 import TrustSignals from '../components/TrustSignals.astro';
 import AcrossEcosystem from '../components/AcrossEcosystem.astro';
+
+const softwareLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "node-opcua",
+  "description": "Production-grade, open-source OPC UA client and server SDK for Node.js, JavaScript, and TypeScript.",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Cross-platform (Node.js)",
+  "programmingLanguage": ["JavaScript", "TypeScript"],
+  "license": "https://opensource.org/licenses/MIT",
+  "downloadUrl": "https://www.npmjs.com/package/node-opcua",
+  "softwareVersion": "latest",
+  "codeRepository": "https://github.com/node-opcua/node-opcua",
+  "author": {
+    "@type": "Organization",
+    "name": "Sterfive",
+    "url": "https://www.sterfive.com"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+};
 ---
 
 <BaseLayout 
   title="The OPC UA stack for Node.js" 
   description="Production-grade, open-source OPC UA client and server SDK for Node.js, JavaScript, and TypeScript. Used in production at Mercedes-Benz, Renault, Siemens, and more."
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(softwareLd)} />
+  </Fragment>
   <Hero />
   <EcosystemStrip />
   <SocialProofStrip />
