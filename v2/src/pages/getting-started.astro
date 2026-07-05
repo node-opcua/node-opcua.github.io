@@ -1,0 +1,261 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { url } from '../utils/url';
+
+const clientCode = `import { OPCUAClient, AttributeIds } from "node-opcua";
+
+const endpointUrl = "opc.tcp://opcuademo.sterfive.com:26543";
+
+const client = OPCUAClient.create({ endpointMustExist: false });
+
+await client.withSessionAsync(endpointUrl, async (session) => {
+  const dataValue = await session.read({
+    nodeId: "ns=0;i=2258", // Server CurrentTime
+    attributeId: AttributeIds.Value,
+  });
+  console.log("Server time:", dataValue.value.value);
+});`;
+
+const serverCode = `import { OPCUAServer, DataType } from "node-opcua";
+
+const server = new OPCUAServer({
+  port: 4840,
+  resourcePath: "/UA/MyServer",
+  buildInfo: { productName: "MyServer", buildNumber: "1" },
+});
+
+await server.initialize();
+
+const namespace = server.engine.addressSpace!.getOwnNamespace();
+const device = namespace.addObject({
+  organizedBy: server.engine.addressSpace!.rootFolder.objects,
+  browseName: "Device",
+});
+
+namespace.addVariable({
+  componentOf: device,
+  browseName: "Temperature",
+  dataType: "Double",
+  value: {
+    get: () => new Variant({
+      dataType: DataType.Double,
+      value: 19 + Math.random(),
+    }),
+  },
+});
+
+await server.start();
+console.log("Server listening on", server.getEndpointUrl());`;
+---
+
+<BaseLayout
+  title="Getting started"
+  description="Get from npm install to a working OPC UA client and server in under 5 minutes. Step-by-step guide with TypeScript examples."
+>
+  <section class="getting-started">
+    <div class="container gs-container">
+
+      <h1>Getting started</h1>
+      <p class="lede">
+        From <code>npm install</code> to a working OPC UA client in under 5 minutes.
+        This guide uses TypeScript and ES modules.
+      </p>
+
+      <div class="step">
+        <div class="step-marker">01</div>
+        <h2>Install</h2>
+        <p>Create a new project and install node-opcua:</p>
+        <pre class="code-block"><code>mkdir my-opcua-app && cd my-opcua-app
+npm init -y
+npm install node-opcua
+npx tsc --init</code></pre>
+        <p class="hint">
+          node-opcua has zero native dependencies — <code>npm install</code> is all you need.
+          TypeScript types are included out of the box.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-marker">02</div>
+        <h2>Read from a server (client)</h2>
+        <p>
+          Create <code>client.ts</code> and connect to a public demo server.
+          This reads the server's current time:
+        </p>
+        <pre class="code-block"><code>{clientCode}</code></pre>
+        <p class="hint">
+          <code>withSessionAsync</code> handles connect, session creation, and
+          clean disconnect automatically. The demo server at
+          <code>opcuademo.sterfive.com</code> is publicly accessible.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-marker">03</div>
+        <h2>Create a server</h2>
+        <p>
+          Create <code>server.ts</code> with a Temperature variable
+          that returns a random reading on every read:
+        </p>
+        <pre class="code-block"><code>{serverCode}</code></pre>
+        <p class="hint">
+          Your server is now browsable by any OPC UA client — UaExpert,
+          Prosys, or another node-opcua client.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-marker">04</div>
+        <h2>Run it</h2>
+        <pre class="code-block"><code>npx tsx client.ts
+# → Server time: 2025-07-05T21:08:00.000Z
+
+npx tsx server.ts
+# → Server listening on opc.tcp://localhost:4840/UA/MyServer</code></pre>
+      </div>
+
+      <div class="step">
+        <div class="step-marker">05</div>
+        <h2>Next steps</h2>
+        <ul class="next-list">
+          <li>
+            <a href="/api_doc/latest/">API reference</a> — full documentation for every class and method
+          </li>
+          <li>
+            <a href="https://github.com/node-opcua/node-opcua" target="_blank" rel="noopener noreferrer">GitHub repo</a> — examples, issue tracker, contribution guide
+          </li>
+          <li>
+            <a href="https://leanpub.com/node-opcuabyexample-edition2024" target="_blank" rel="noopener noreferrer">The book</a> — "node-opcua by Example" (2024 edition)
+          </li>
+          <li>
+            <a href={url("projects.html")}>Ecosystem</a> — explore the full family of node-opcua packages
+          </li>
+          <li>
+            <a href={url("commercial-use.html")}>Commercial support</a> — SLAs, consulting, and PRO modules from Sterfive
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .getting-started {
+    padding: var(--space-section) 0;
+  }
+  .gs-container {
+    max-width: 42rem;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 1rem;
+    letter-spacing: -0.025em;
+  }
+
+  .lede {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin-bottom: 3rem;
+  }
+  .lede code {
+    font-family: var(--font-mono);
+    font-size: 0.95em;
+    background: var(--bg-elevated);
+    padding: 0.15em 0.35em;
+    border-radius: 3px;
+  }
+
+  .step {
+    border-top: 1px solid var(--divider);
+    padding: 2rem 0;
+  }
+
+  .step-marker {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.015em;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    margin-bottom: 1rem;
+  }
+  p code {
+    font-family: var(--font-mono);
+    font-size: 0.875em;
+    background: var(--bg-elevated);
+    padding: 0.15em 0.35em;
+    border-radius: 3px;
+  }
+
+  .hint {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-top: 0.75rem;
+    padding-left: 1rem;
+    border-left: 2px solid var(--divider);
+  }
+
+  .code-block {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    line-height: 1.55;
+    padding: 1.25rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 0.75rem 0;
+    white-space: pre;
+  }
+
+  .next-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .next-list li {
+    font-size: 1rem;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    padding-left: 1.25rem;
+    position: relative;
+  }
+  .next-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .next-list a {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .next-list a:hover {
+    text-decoration: underline;
+  }
+</style>

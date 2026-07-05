@@ -1,47 +1,59 @@
 ---
 const features = [
   {
-    category: "Core protocol",
+    category: "Core protocol (MIT)",
     items: [
-      "Full OPC UA client & server SDK",
-      "Subscriptions & monitored items",
-      "Method calls (synchronous & async)",
-      "Browse, read, write, call, history read",
-      "Complex types & custom structures",
-      "Secure channels (Sign, SignAndEncrypt)",
+      { text: "Full OPC UA client & server SDK", pro: false },
+      { text: "Subscriptions & monitored items", pro: false },
+      { text: "Method calls (synchronous & async)", pro: false },
+      { text: "Browse, read, write, call, history read", pro: false },
+      { text: "Complex types & custom structures", pro: false },
+      { text: "Alarms & conditions (A&C)", pro: false },
+      { text: "Historical access (HA)", pro: false },
+      { text: "File transfer (Part 20)", pro: false },
     ],
   },
   {
-    category: "Advanced capabilities",
+    category: "Security & certificates (MIT)",
     items: [
-      "Alarms & conditions (A&C)",
-      "Historical access (HA)",
-      "Global Discovery Server (GDS)",
-      "PubSub (UADP + JSON over MQTT)",
-      "File transfer (Part 20)",
-      "Role-based security (Part 18)",
+      { text: "Secure channels (Sign, SignAndEncrypt)", pro: false },
+      { text: "node-opcua-pki — certificate authority & PKI toolchain", pro: false },
+      { text: "node-opcua-crypto — OPC UA crypto primitives", pro: false },
+      { text: "Certificate management (X.509)", pro: false },
+      { text: "Role-based security (Part 18)", pro: false },
+      { text: "User identity tokens (anonymous, user/pass, X.509)", pro: false },
     ],
   },
   {
     category: "Developer experience",
     items: [
-      "Full TypeScript types & generics",
-      "Async/await throughout",
-      "3,000+ tests · ~97% coverage",
-      "Node.js 16 – 22 supported",
-      "Windows · Linux · macOS · Alpine",
-      "npm install — zero native deps",
+      { text: "Full TypeScript types & generics", pro: false },
+      { text: "Async/await throughout", pro: false },
+      { text: "3,000+ tests · ~97% coverage", pro: false },
+      { text: "Node.js 16 – 22 supported", pro: false },
+      { text: "Windows · Linux · macOS · Alpine", pro: false },
+      { text: "npm install — zero native deps", pro: false },
     ],
   },
   {
     category: "Integration & ecosystem",
     items: [
-      "Companion spec support (Euromap, PackML, LADS)",
-      "Node-RED OPC UA nodes",
-      "XML nodeset import/export",
-      "Certificate management (X.509)",
-      "Reverse connect",
-      "Session & channel recovery",
+      { text: "Companion spec support (Euromap, PackML, LADS)", pro: false },
+      { text: "Node-RED OPC UA nodes", pro: false },
+      { text: "XML nodeset import/export", pro: false },
+      { text: "Reverse connect", pro: false },
+      { text: "Session & channel recovery", pro: false },
+    ],
+  },
+  {
+    category: "Commercial add-ons",
+    items: [
+      { text: "Global Discovery Server (GDS)", pro: true },
+      { text: "PubSub (UADP + JSON over MQTT)", pro: true },
+      { text: "Optimized OPC UA client — high-throughput reads", pro: true },
+      { text: "Address space crawler & exporter", pro: true },
+      { text: "React UI components for OPC UA", pro: true },
+      { text: "WebProxy — browser-to-OPC UA bridge", pro: true },
     ],
   },
 ];
@@ -66,13 +78,20 @@ const features = [
             {group.items.map((item) => (
               <li class="feature-item">
                 <span class="check">✓</span>
-                <span>{item}</span>
+                <span>{item.text}</span>
+                {item.pro && <span class="pro-badge">PRO</span>}
               </li>
             ))}
           </ul>
         </div>
       ))}
     </div>
+    <p class="capabilities-footnote">
+      Items marked <span class="pro-badge-inline">PRO</span> are commercial add-on modules,
+      available with a <a href="https://www.sterfive.com" target="_blank" rel="noopener noreferrer">Sterfive subscription</a>.
+      Source code is available. The core SDK and unmarked items above are MIT-licensed.
+      Some ecosystem packages (e.g. node-i3x) use AGPL + commercial dual licensing.
+    </p>
   </div>
 </section>
 
@@ -141,6 +160,38 @@ const features = [
     font-weight: 700;
     font-size: 0.85rem;
     flex-shrink: 0;
+  }
+  .pro-badge, .pro-badge-inline {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    border: 1.5px solid var(--accent);
+    border-radius: 3px;
+    padding: 1px 5px;
+    margin-left: 0.35rem;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+  .pro-badge-inline {
+    font-size: 0.55rem;
+  }
+  .capabilities-footnote {
+    max-width: 1000px;
+    margin: 2.5rem auto 0 auto;
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.5;
+    text-align: center;
+  }
+  .capabilities-footnote a {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+  .capabilities-footnote a:hover {
+    color: var(--ink);
   }
 
   @media (min-width: 768px) {

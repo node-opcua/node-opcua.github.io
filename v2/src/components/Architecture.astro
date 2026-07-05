@@ -1,0 +1,187 @@
+---
+---
+<section class="architecture-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Where it fits</span>
+      <h2 class="section-title">From the shop floor to the cloud.</h2>
+      <p class="section-subtitle">
+        node-opcua lives in the application and integration layer —
+        connecting physical equipment to the systems that make decisions.
+      </p>
+    </div>
+
+    <div class="arch-diagram">
+      <!-- Layer 1: Field -->
+      <div class="arch-layer field-layer">
+        <div class="layer-label">Field level</div>
+        <div class="layer-items">
+          <div class="arch-node device">PLCs</div>
+          <div class="arch-node device">Sensors</div>
+          <div class="arch-node device">CNCs</div>
+          <div class="arch-node device">Robots</div>
+        </div>
+      </div>
+
+      <div class="arch-connector">
+        <div class="connector-line"></div>
+        <div class="connector-label">S7 · Modbus · MQTT · proprietary</div>
+      </div>
+
+      <!-- Layer 2: node-opcua -->
+      <div class="arch-layer opcua-layer">
+        <div class="layer-label">Integration layer</div>
+        <div class="layer-items">
+          <div class="arch-node highlight">
+            <span class="node-brand">node-opcua</span>
+            <span class="node-detail">OPC UA server · client · gateway</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="arch-connector">
+        <div class="connector-line"></div>
+        <div class="connector-label">OPC UA (binary / JSON / PubSub)</div>
+      </div>
+
+      <!-- Layer 3: Applications -->
+      <div class="arch-layer app-layer">
+        <div class="layer-label">Application level</div>
+        <div class="layer-items">
+          <div class="arch-node app">MES / ERP</div>
+          <div class="arch-node app">Historian</div>
+          <div class="arch-node app">Cloud IoT</div>
+          <div class="arch-node app">Dashboard</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .architecture-section {
+    padding: var(--space-section) 0;
+    background-color: var(--bg);
+  }
+  .section-header {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 3.5rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .section-title {
+    font-size: clamp(1.8rem, 4vw, 2.25rem);
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.025em;
+  }
+  .section-subtitle {
+    font-size: 1rem;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+
+  .arch-diagram {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .arch-layer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1.5rem;
+    border-radius: 6px;
+  }
+  .layer-label {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .layer-items {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .arch-node {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .arch-node.device {
+    background-color: var(--bg-elevated);
+    border: 1px solid var(--divider);
+    color: var(--ink-soft);
+  }
+  .arch-node.highlight {
+    background-color: var(--accent);
+    color: #fff;
+    border: 1px solid var(--accent);
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    flex-grow: 1;
+  }
+  .node-brand {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .node-detail {
+    font-size: 0.75rem;
+    font-weight: 400;
+    opacity: 0.85;
+  }
+  .arch-node.app {
+    background-color: var(--bg-elevated);
+    border: 1px solid var(--divider);
+    color: var(--ink-soft);
+  }
+
+  .arch-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.5rem 0;
+  }
+  .connector-line {
+    width: 2px;
+    height: 24px;
+    background: var(--divider);
+  }
+  .connector-label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--muted);
+    letter-spacing: 0.03em;
+  }
+
+  @media (max-width: 640px) {
+    .layer-items {
+      gap: 0.5rem;
+    }
+    .arch-node {
+      font-size: 0.7rem;
+      padding: 0.4rem 0.75rem;
+    }
+    .arch-node.highlight {
+      padding: 0.75rem 1rem;
+    }
+  }
+</style>
