@@ -1,4 +1,5 @@
 ---
+import { url } from '../utils/url';
 const features = [
   {
     category: "Core protocol (MIT)",
@@ -20,7 +21,7 @@ const features = [
       { text: "node-opcua-pki — certificate authority & PKI toolchain", pro: false },
       { text: "node-opcua-crypto — OPC UA crypto primitives", pro: false },
       { text: "Certificate management (X.509)", pro: false },
-      { text: "Role-based security (Part 18)", pro: false },
+      { text: "Role-based security (Part 18)", pro: false, href: url("role_based_security.html") },
       { text: "User identity tokens (anonymous, user/pass, X.509)", pro: false },
     ],
   },
@@ -78,7 +79,9 @@ const features = [
             {group.items.map((item) => (
               <li class="feature-item">
                 <span class="check">✓</span>
-                <span>{item.text}</span>
+                {item.href
+                  ? <a href={item.href} class="feature-link">{item.text}</a>
+                  : <span>{item.text}</span>}
                 {item.pro && <span class="pro-badge">PRO</span>}
               </li>
             ))}
@@ -160,6 +163,18 @@ const features = [
     font-weight: 700;
     font-size: 0.85rem;
     flex-shrink: 0;
+  }
+  .feature-link {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: var(--divider);
+    text-underline-offset: 3px;
+    transition: text-decoration-color 0.15s ease;
+  }
+  .feature-link:hover,
+  .feature-link:focus-visible {
+    text-decoration-color: var(--accent);
+    color: var(--accent);
   }
   .pro-badge, .pro-badge-inline {
     font-family: var(--font-mono);
