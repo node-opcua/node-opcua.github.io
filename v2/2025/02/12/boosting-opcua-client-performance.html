@@ -1,0 +1,184 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/x-icon" href="/v2/favicon.ico"><meta name="robots" content="noindex,nofollow"><title>Boosting OPCUA Communication with @sterfive/opcua-optimized-client | node-opcua</title><link rel="canonical" href="https://node-opcua.github.io/2025/02/12/boosting-opcua-client-performance.html"><meta name="description" content="How the @sterfive/opcua-optimized-client module automatically handles server limitations by intelligently merging and splitting transactions for optimal OPC UA performance."><!-- Open Graph --><meta property="og:title" content="Boosting OPCUA Communication with @sterfive/opcua-optimized-client | node-opcua"><meta property="og:description" content="How the @sterfive/opcua-optimized-client module automatically handles server limitations by intelligently merging and splitting transactions for optimal OPC UA performance."><meta property="og:image" content="https://node-opcua.github.io/v2/og-default.png"><meta property="og:url" content="https://node-opcua.github.io/2025/02/12/boosting-opcua-client-performance.html"><meta property="og:type" content="article">
+      <meta property="article:published_time" content="2025-02-12T00:00:00.000Z">
+      <meta property="article:author" content="Etienne Rossignon"><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Boosting OPCUA Communication with @sterfive/opcua-optimized-client | node-opcua"><meta name="twitter:description" content="How the @sterfive/opcua-optimized-client module automatically handles server limitations by intelligently merging and splitting transactions for optimal OPC UA performance."><meta name="twitter:image" content="https://node-opcua.github.io/v2/og-default.png"><!-- Organization JSON-LD (site-wide) --><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"node-opcua","url":"https://node-opcua.github.io","logo":"https://node-opcua.github.io/logos/sterfive-logo.png","description":"The open-source OPC UA stack for Node.js, maintained by Sterfive.","sameAs":["https://github.com/node-opcua","https://www.npmjs.com/package/node-opcua","https://www.sterfive.com"]}</script><!-- Slot for child layout head content (JSON-LD etc.) --> <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Boosting OPCUA Communication with @sterfive/opcua-optimized-client","description":"How the @sterfive/opcua-optimized-client module automatically handles server limitations by intelligently merging and splitting transactions for optimal OPC UA performance.","datePublished":"2025-02-12T00:00:00.000Z","dateModified":"2025-02-12T00:00:00.000Z","author":{"@type":"Person","name":"Etienne Rossignon","url":"https://github.com/node-opcua"},"publisher":{"@type":"Organization","name":"node-opcua","logo":{"@type":"ImageObject","url":"https://node-opcua.github.io/logos/sterfive-logo.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://node-opcua.github.io/2025/02/12/boosting-opcua-client-performance.html"},"url":"https://node-opcua.github.io/2025/02/12/boosting-opcua-client-performance.html"}</script> <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://node-opcua.github.io"},{"@type":"ListItem","position":2,"name":"Boosting OPCUA Communication with @sterfive/opcua-optimized-client"}]}</script> <link rel="stylesheet" href="/v2/assets/_permalink_.9ggQW0VF.css">
+<style>.post-article[data-astro-cid-gjtny2mx]{max-width:42rem;margin:0 auto;padding:var(--space-section, 4.5rem) 1.5rem}.post-header[data-astro-cid-gjtny2mx]{margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--divider, #d4d2cc)}.post-category[data-astro-cid-gjtny2mx]{display:inline-block;font-family:var(--font-mono, monospace);font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--accent, #2a7a6e);margin-bottom:.75rem}.post-title[data-astro-cid-gjtny2mx]{font-family:var(--font-sans, sans-serif);font-size:2rem;font-weight:600;color:var(--ink, #2c2c28);line-height:1.25;margin:0 0 1rem}.post-byline[data-astro-cid-gjtny2mx]{font-family:var(--font-sans, sans-serif);font-size:.875rem;color:var(--muted, #8a8880);margin:0;display:flex;align-items:center;gap:.5rem}.byline-sep[data-astro-cid-gjtny2mx]{color:var(--divider, #d4d2cc)}.byline-author[data-astro-cid-gjtny2mx]{font-weight:500;color:var(--ink-soft, #5c5c56)}.post-content[data-astro-cid-gjtny2mx]{font-family:var(--font-sans, sans-serif);font-size:1.0625rem;line-height:1.7;color:var(--ink-soft, #5c5c56)}.post-content[data-astro-cid-gjtny2mx] h2{font-size:1.375rem;font-weight:600;color:var(--ink, #2c2c28);margin-top:2.5rem;margin-bottom:.75rem}.post-content[data-astro-cid-gjtny2mx] h3{font-size:1.125rem;font-weight:600;color:var(--ink, #2c2c28);margin-top:2rem;margin-bottom:.5rem}.post-content[data-astro-cid-gjtny2mx] p{margin:0 0 1.25rem}.post-content[data-astro-cid-gjtny2mx] img{max-width:100%;height:auto;border-radius:6px;margin:1.5rem 0}.post-content[data-astro-cid-gjtny2mx] pre{background:#1e1e1e;color:#d4d4d4;padding:1.25rem;border-radius:6px;overflow-x:auto;font-size:.875rem;line-height:1.5;margin:1.5rem 0}.post-content[data-astro-cid-gjtny2mx] code{font-family:var(--font-mono, monospace);font-size:.875em}.post-content[data-astro-cid-gjtny2mx] p>code,.post-content[data-astro-cid-gjtny2mx] li>code{background:var(--bg-elevated, #f5f4f0);padding:.15em .35em;border-radius:3px}.post-content[data-astro-cid-gjtny2mx] blockquote{border-left:3px solid var(--accent, #2a7a6e);padding-left:1.25rem;margin:1.5rem 0;color:var(--muted, #8a8880);font-style:italic}.post-content[data-astro-cid-gjtny2mx] a{color:var(--accent, #2a7a6e);text-decoration:none}.post-content[data-astro-cid-gjtny2mx] a:hover{text-decoration:underline}.post-content[data-astro-cid-gjtny2mx] ul,.post-content[data-astro-cid-gjtny2mx] ol{padding-left:1.5rem;margin:1rem 0}.post-content[data-astro-cid-gjtny2mx] li{margin-bottom:.5rem}.post-content[data-astro-cid-gjtny2mx] table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.9375rem}.post-content[data-astro-cid-gjtny2mx] th,.post-content[data-astro-cid-gjtny2mx] td{padding:.625rem .75rem;text-align:left;border-bottom:1px solid var(--divider, #d4d2cc)}.post-content[data-astro-cid-gjtny2mx] th{font-weight:600;color:var(--ink, #2c2c28)}
+</style><script type="module" src="/v2/assets/hoisted.3WjCi9KP.js"></script></head> <body> <header class="navbar" data-astro-cid-ymhdp2rl> <div class="container navbar-container" data-astro-cid-ymhdp2rl> <a href="/v2/" class="logo" data-astro-cid-ymhdp2rl> <span class="logo-dot" data-astro-cid-ymhdp2rl></span><span class="logo-text" data-astro-cid-ymhdp2rl>node-opcua</span> </a> <button class="menu-trigger" aria-label="Open menu" aria-expanded="false" type="button" data-astro-cid-ymhdp2rl> <span class="hamburger-bar" data-astro-cid-ymhdp2rl></span> <span class="hamburger-bar" data-astro-cid-ymhdp2rl></span> <span class="hamburger-bar" data-astro-cid-ymhdp2rl></span> </button> <div class="backdrop" aria-hidden="true" data-astro-cid-ymhdp2rl></div> <nav class="nav-drawer" aria-label="Main navigation" data-astro-cid-ymhdp2rl> <a href="/v2/getting-started.html" class="nav-link" data-astro-cid-ymhdp2rl>Getting started</a> <a href="/v2/role_based_security.html" class="nav-link" data-astro-cid-ymhdp2rl>Role-Based Security</a> <a href="/api_doc/latest/" class="nav-link" data-astro-cid-ymhdp2rl>API reference</a> <a href="/v2/projects.html" class="nav-link" data-astro-cid-ymhdp2rl>Projects</a> <a href="/v2/news.html" class="nav-link" data-astro-cid-ymhdp2rl>News</a> <a href="https://www.npmjs.com/package/node-opcua/v/2.175.0" target="_blank" rel="noopener noreferrer" class="version-badge" aria-label="Latest release: v2.175.0" data-astro-cid-ymhdp2rl> <span class="version-number" data-astro-cid-ymhdp2rl>v2.175.0</span> <span class="version-label" data-astro-cid-ymhdp2rl>latest</span> </a> <a href="https://github.com/node-opcua/node-opcua" target="_blank" rel="noopener noreferrer" class="nav-link" data-astro-cid-ymhdp2rl>GitHub</a> <a href="https://github.com/sponsors/node-opcua" target="_blank" rel="noopener noreferrer" class="nav-link" data-astro-cid-ymhdp2rl>Sponsor</a> </nav> </div> </header>   <main>    <article class="post-article" data-astro-cid-gjtny2mx> <header class="post-header" data-astro-cid-gjtny2mx>  <h1 class="post-title" data-astro-cid-gjtny2mx>Boosting OPCUA Communication with @sterfive/opcua-optimized-client</h1> <p class="post-byline" data-astro-cid-gjtny2mx> <time datetime="2025-02-12T00:00:00.000Z" data-astro-cid-gjtny2mx>February 12, 2025</time> <span class="byline-sep" data-astro-cid-gjtny2mx>·</span> <span class="byline-author" data-astro-cid-gjtny2mx>Etienne Rossignon</span> </p> </header> <div class="post-content" data-astro-cid-gjtny2mx>  <h1 id="boosting-opcua-communication-with-sterfiveopcua-optimized-client">Boosting OPCUA Communication with @sterfive/opcua-optimized-client</h1>
+<p>In the world of industrial automation, efficient OPCUA communication is critical.</p>
+<p>However, as many of you already know, not all OPCUA servers are created equal.</p>
+<p>Many embedded or nano servers come with strict limitations such as reduced message sizes or restrictions on the number of batch items in requests (e.g., Read, Write, Browse).</p>
+<p>This creates a scenario where even a well-designed client might hit performance bottlenecks or fail to fully leverage available resources.</p>
+<p><strong>Enter @sterfive/opcua-optimized-client</strong> – a professional module designed to automatically handle these quirks. By intelligently merging and splitting transactions to match each server’s limits, our module takes the hassle out of optimization. Under the hood, it dynamically adjusts communication flows so you can focus on your application logic rather than wrangling with low-level protocol constraints.</p>
+<h2 id="the-problem-not-all-servers-are-created-equal">The Problem: Not All Servers Are Created Equal</h2>
+<p>OPCUA is a powerful protocol, but its flexibility means that server implementations can vary widely:</p>
+<ul>
+<li>Limited message size: Some servers only allow small packets of data.</li>
+<li>Batch limitations: There might be constraints on the number of nodes you can read, write, or browse in one request.</li>
+<li>When using standard libraries like node-opcua, you often need to manually implement logic to split or combine requests. This not only complicates your code but also can lead to suboptimal performance if not done correctly.</li>
+</ul>
+<h2 id="a-quick-benchmark-standard-vs-optimized">A Quick Benchmark: Standard vs. Optimized</h2>
+<p>To illustrate the impact of our optimized client, we conducted benchmarks comparing the raw performance of standard node-opcua usage versus using @sterfive/optimized-client. Here’s a look at the two approaches:</p>
+<h3 id="standard-node-opcua-implementation">Standard node-opcua Implementation</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> endpointUrl</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> `opc.tcp://opcuademo.sterfive.com:26543`</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">  OPCUAClient</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  getExtraDataTypeManager</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  resolveNodeId</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  MessageSecurityMode</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  SecurityPolicy</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">} </span><span style="color:#F97583">=</span><span style="color:#B392F0"> require</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"node-opcua"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// use the old deprecated crawler </span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">NodeCrawler</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#B392F0"> require</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"node-opcua-client-crawler"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> startDate</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Date</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> function</span><span style="color:#B392F0"> main</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> client</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> OPCUAClient.</span><span style="color:#B392F0">create</span><span style="color:#E1E4E8">({});</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> nodeId</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> resolveNodeId</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"ns=2;i=5001"</span><span style="color:#E1E4E8">); </span><span style="color:#6A737D">// DeviceSets</span></span>
+<span class="line"><span style="color:#F97583">  await</span><span style="color:#E1E4E8"> client.</span><span style="color:#B392F0">withSessionAsync</span><span style="color:#E1E4E8">(endpointUrl, </span><span style="color:#F97583">async</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">session</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    await</span><span style="color:#B392F0"> getExtraDataTypeManager</span><span style="color:#E1E4E8">(session);</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> crawler</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> NodeCrawler</span><span style="color:#E1E4E8">(session);</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> data</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#E1E4E8"> crawler.</span><span style="color:#B392F0">read</span><span style="color:#E1E4E8">(nodeId);</span></span>
+<span class="line"><span style="color:#E1E4E8">  });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> endDate</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Date</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">  console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"transaction stats : "</span><span style="color:#E1E4E8">, client.transactionsPerformed);</span></span>
+<span class="line"><span style="color:#E1E4E8">  console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"bytes read        : "</span><span style="color:#E1E4E8">, client.bytesRead);</span></span>
+<span class="line"><span style="color:#E1E4E8">  console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"bytes written     : "</span><span style="color:#E1E4E8">, client.bytesWritten);</span></span>
+<span class="line"><span style="color:#E1E4E8">  console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"duration          : "</span><span style="color:#E1E4E8">, endDate </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> startDate, </span><span style="color:#9ECBFF">" ms"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<h3 id="optimized-approach-with-sterfiveopcua-optimized-client">Optimized Approach with @sterfive/opcua-optimized-client</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> endpointUrl</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> `opc.tcp://opcuademo.sterfive.com:26543`</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">  OPCUAClient</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  getExtraDataTypeManager</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  resolveNodeId</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  MessageSecurityMode</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  SecurityPolicy</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">} </span><span style="color:#F97583">=</span><span style="color:#B392F0"> require</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"node-opcua"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">ClientSessionOptimized</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#B392F0"> require</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"@sterfive/opcua-optimized-client"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#6A737D">// use the crawler</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">NodeCrawler2</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#B392F0"> require</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"@sterfive/crawler"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> startDate</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Date</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> function</span><span style="color:#B392F0"> main</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> client</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> OPCUAClient.</span><span style="color:#B392F0">create</span><span style="color:#E1E4E8">({});</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> nodeId</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> resolveNodeId</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"ns=2;i=5001"</span><span style="color:#E1E4E8">); </span><span style="color:#6A737D">// DeviceSets</span></span>
+<span class="line"><span style="color:#F97583">  await</span><span style="color:#E1E4E8"> client.</span><span style="color:#B392F0">withSessionAsync</span><span style="color:#E1E4E8">(endpointUrl, </span><span style="color:#F97583">async</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">session</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    // this is the magic line that puts your NodeOPCUA client </span></span>
+<span class="line"><span style="color:#6A737D">    // session on steroid </span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> sessionOptimized</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> ClientSessionOptimized</span><span style="color:#E1E4E8">(session);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    await</span><span style="color:#B392F0"> getExtraDataTypeManager</span><span style="color:#E1E4E8">(sessionOptimized);</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> crawler</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> NodeCrawler2</span><span style="color:#E1E4E8">(sessionOptimized);</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> data</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#E1E4E8"> crawler.</span><span style="color:#B392F0">read</span><span style="color:#E1E4E8">(nodeId);</span></span>
+<span class="line"><span style="color:#E1E4E8">  });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> endDate</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Date</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">  console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"transaction stats : "</span><span style="color:#E1E4E8">, client.transactionsPerformed);</span></span>
+<span class="line"><span style="color:#E1E4E8">  console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"bytes read        : "</span><span style="color:#E1E4E8">, client.bytesRead);</span></span>
+<span class="line"><span style="color:#E1E4E8">  console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"bytes written     : "</span><span style="color:#E1E4E8">, client.bytesWritten);</span></span>
+<span class="line"><span style="color:#E1E4E8">  console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"duration          : "</span><span style="color:#E1E4E8">, endDate </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> startDate, </span><span style="color:#9ECBFF">" ms"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<h3 id="behind-the-scenes-how-it-works">Behind the Scenes: How It Works</h3>
+<p>The @sterfive/opcua-optimized-client module abstracts away the intricate details of adapting to various server limits. It automatically:</p>
+<ul>
+<li><strong>Merges or splits transactions</strong>: Requests are bundled or divided as needed to fit the server’s constraints.</li>
+<li><strong>Handles continuous data points seamlessly</strong>: No more manually segmenting large sets of data.</li>
+<li><strong>Optimizes communication</strong>: By reducing the number of transactions and the amount of data transmitted, it minimizes overhead and maximizes throughput.</li>
+</ul>
+<p>This means that, as a developer, you don’t have to worry about tailoring your requests to different server capabilities – the optimized client does all the heavy lifting for you.</p>
+<h3 id="performance-analysis-the-results-speak">Performance Analysis: The Results Speak</h3>
+<p>Let’s look at some of the benchmark results we gathered:</p>
+<h4 id="without-optimisation">Without optimisation</h4>
+<p>Results:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Name</th><th>Standard</th><th>Optimized</th><th>Diff</th></tr></thead><tbody><tr><td>transactionsPerformed</td><td>643</td><td>75</td><td>-88%</td></tr><tr><td>bytesRead</td><td>185346</td><td>152719</td><td>-18%</td></tr><tr><td>bytesWritten</td><td>84363</td><td>30185</td><td>-64%</td></tr><tr><td>duration</td><td>2425</td><td>1821</td><td>-25%</td></tr></tbody></table>
+<h4 id="with-nodeopcua-on-steroid--using-sterfiveopcua-optimized-client">with NodeOPCUA on steroid ( using @sterfive/opcua-optimized-client)</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Name</th><th>Standard</th><th>Optimized</th><th>Diff</th></tr></thead><tbody><tr><td>transactionsPerformed</td><td>1495</td><td>143</td><td>-90%</td></tr><tr><td>bytesRead</td><td>2302046</td><td>2045714</td><td>-11%</td></tr><tr><td>bytesWritten</td><td>1202514</td><td>923818</td><td>-23%</td></tr><tr><td>duration</td><td>14447</td><td>5996</td><td>-58%</td></tr></tbody></table>
+<h3 id="what-does-this-mean">What does this mean?</h3>
+<ul>
+<li><strong>Transactions Performed</strong>: The optimized approach reduces the number of transactions dramatically, meaning fewer packets and less overhead.</li>
+<li><strong>Data Transfer (Bytes Read/Written)</strong>: With fewer bytes being transferred, the overall load on the network is reduced.</li>
+<li><strong>Overall Duration</strong>: A shorter duration indicates that the communication is faster and more efficient.</li>
+</ul>
+<p>In summary, the optimized client not only simplifies your development process but also significantly boosts performance, which can be crucial in industrial applications where every millisecond counts.</p>
+<h2 id="get-started">Get Started</h2>
+<p>The <code>@sterfive/opcua-optimized-client</code> module is a professional add-on available from <a href="https://www.sterfive.com">Sterfive</a>.</p>
+<p>Happy coding!</p>  </div> </article>  </main> <footer class="footer" data-astro-cid-sz7xmlte> <div class="container footer-container" data-astro-cid-sz7xmlte> <div class="footer-left" data-astro-cid-sz7xmlte> <p class="copyright" data-astro-cid-sz7xmlte><strong data-astro-cid-sz7xmlte>node-opcua</strong> &middot; maintained by Sterfive SAS &middot; MIT licensed</p> </div> <div class="footer-center" data-astro-cid-sz7xmlte> <a href="/api_doc/latest/" data-astro-cid-sz7xmlte>Docs</a> <a href="/v2/projects.html" data-astro-cid-sz7xmlte>Projects</a> <a href="/v2/news.html" data-astro-cid-sz7xmlte>News</a> <a href="https://github.com/node-opcua/node-opcua" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>GitHub</a> <a href="https://www.npmjs.com/package/node-opcua" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>npm</a> <a href="https://github.com/sponsors/node-opcua" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>Sponsor</a> <a href="/v2/privacy.html" data-astro-cid-sz7xmlte>Privacy</a> </div> <div class="footer-right" data-astro-cid-sz7xmlte> <p data-astro-cid-sz7xmlte>For commercial inquiries: <a href="https://www.sterfive.com" target="_blank" rel="noopener noreferrer" class="commercial-link" data-astro-cid-sz7xmlte>sterfive.com</a></p> </div> </div> </footer>   </body></html> 
