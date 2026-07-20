@@ -1,28 +1,29 @@
 name: Deploy to GitHub Pages
 
 on:
+  push:
+    branches:
+      - master
   workflow_dispatch:
     inputs:
       enable_indexing:
         description: 'Enable indexing (remove noindex)?'
         required: true
-        default: 'false'
+        default: 'true'
         type: choice
         options:
-          - 'false'
           - 'true'
+          - 'false'
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -43,8 +44,10 @@ jobs:
         working-directory: v2
         run: |
           echo "PUBLIC_GA_MEASUREMENT_ID=G-J4DZPPT47Y" > .env
-          if [ "${{ inputs.enable_indexing }}" = "false" ]; then
-            echo "PUBLIC_STAGING=true" >> .env
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            if [ "${{ github.event.inputs.enable_indexing }}" = "false" ]; then
+              echo "PUBLIC_STAGING=true" >> .env
+            fi
           fi
 
       - name: Set production base
@@ -56,48 +59,11 @@ jobs:
         run: npm run build
         working-directory: v2
 
-      - name: Assemble deployment artifact
-        run: |
-          # Start with Astro dist
-          mkdir -p artifact
-          cp -r v2/dist/* artifact/
-
-          # Merge api_doc (the most back-linked asset)
-          if [ -d "api_doc" ]; then
-            cp -r api_doc artifact/api_doc
-          fi
-
-          # Ensure .nojekyll is present (prevents GH Pages Jekyll build)
-          touch artifact/.nojekyll
-
-          # Verify critical files
-          echo "=== Artifact verification ==="
-          test -f artifact/index.html && echo "OK  index.html" || echo "MISS index.html"
-          test -f artifact/feed.xml && echo "OK  feed.xml" || echo "MISS feed.xml"
-          test -f artifact/googlea35ecc050f9ca765.html && echo "OK  GSC verification" || echo "MISS GSC verification"
-          test -f artifact/.nojekyll && echo "OK  .nojekyll" || echo "MISS .nojekyll"
-          test -d artifact/api_doc && echo "OK  api_doc/" || echo "MISS api_doc/"
-          test -f artifact/sitemap-index.xml && echo "OK  sitemap" || echo "MISS sitemap"
-
-          # Spot-check a deep api_doc URL
-          if [ -f "artifact/api_doc/2.174.0/index.html" ]; then
-            echo "OK  api_doc/2.174.0/index.html"
-          else
-            echo "WARN api_doc/2.174.0/index.html not found (may be different version)"
-          fi
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: artifact
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./v2/dist
+          publish_branch: master
+          keep_files: true
+          enable_jekyll: true
