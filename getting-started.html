@@ -1,0 +1,159 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/x-icon" href="/favicon.ico"><title>Getting started | node-opcua</title><link rel="canonical" href="https://node-opcua.github.io/getting-started.html"><meta name="description" content="Get from npm install to a working OPC UA client and server in under 5 minutes. Step-by-step guide with TypeScript examples."><!-- Open Graph --><meta property="og:title" content="Getting started | node-opcua"><meta property="og:description" content="Get from npm install to a working OPC UA client and server in under 5 minutes. Step-by-step guide with TypeScript examples."><meta property="og:image" content="https://node-opcua.github.io/og-default.png"><meta property="og:url" content="https://node-opcua.github.io/getting-started.html"><meta property="og:type" content="website"><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Getting started | node-opcua"><meta name="twitter:description" content="Get from npm install to a working OPC UA client and server in under 5 minutes. Step-by-step guide with TypeScript examples."><meta name="twitter:image" content="https://node-opcua.github.io/og-default.png"><!-- Organization JSON-LD (site-wide) --><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"node-opcua","url":"https://node-opcua.github.io","logo":"https://node-opcua.github.io/logos/sterfive-logo.png","description":"The open-source OPC UA stack for Node.js, maintained by Sterfive.","sameAs":["https://github.com/node-opcua","https://www.npmjs.com/package/node-opcua","https://www.sterfive.com"]}</script><!-- Slot for child layout head content (JSON-LD etc.) --><script>(function(){const gaId = "G-J4DZPPT47Y";
+
+    // Consent Mode v2 — default everything to DENIED before consent
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    window.gtag = gtag;
+
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'wait_for_update': 500
+    });
+
+    // Check for a previously stored consent choice
+    var stored = (function() {
+      try {
+        return document.cookie
+          .split('; ')
+          .find(function(row) { return row.startsWith('na_consent='); })
+          ?.split('=')[1];
+      } catch (e) { return null; }
+    })();
+
+    if (stored === 'granted') {
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    }
+
+    // Load the GA script (Consent Mode ensures it respects the state above)
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
+    document.head.appendChild(s);
+
+    gtag('js', new Date());
+    gtag('config', gaId, {
+      'anonymize_ip': true,
+      'allow_google_signals': false,
+      'allow_ad_personalization_signals': false
+    });
+  })();</script><link rel="stylesheet" href="/assets/role_based_security.CrBQaTfZ.css">
+<style>.getting-started[data-astro-cid-mwd2jfe2]{padding:var(--space-section) 0}.gs-container[data-astro-cid-mwd2jfe2]{max-width:42rem;margin:0 auto}h1[data-astro-cid-mwd2jfe2]{font-size:clamp(2rem,4vw,2.75rem);font-weight:700;color:var(--ink);margin-bottom:1rem;letter-spacing:-.025em}.lede[data-astro-cid-mwd2jfe2]{font-size:1.1rem;line-height:1.6;color:var(--ink-soft);margin-bottom:3rem}.lede[data-astro-cid-mwd2jfe2] code[data-astro-cid-mwd2jfe2]{font-family:var(--font-mono);font-size:.95em;background:var(--bg-elevated);padding:.15em .35em;border-radius:3px}.step[data-astro-cid-mwd2jfe2]{border-top:1px solid var(--divider);padding:2rem 0}.step-marker[data-astro-cid-mwd2jfe2]{font-family:var(--font-mono);font-size:.6875rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.5rem}h2[data-astro-cid-mwd2jfe2]{font-size:1.25rem;font-weight:700;color:var(--ink);margin-bottom:.75rem;letter-spacing:-.015em}p[data-astro-cid-mwd2jfe2]{font-size:1rem;line-height:1.65;color:var(--ink-soft);margin-bottom:1rem}p[data-astro-cid-mwd2jfe2] code[data-astro-cid-mwd2jfe2]{font-family:var(--font-mono);font-size:.875em;background:var(--bg-elevated);padding:.15em .35em;border-radius:3px}.hint[data-astro-cid-mwd2jfe2]{font-size:.9rem;color:var(--muted);margin-top:.75rem;padding-left:1rem;border-left:2px solid var(--divider)}.code-block[data-astro-cid-mwd2jfe2]{background:#1e1e1e;color:#d4d4d4;font-family:var(--font-mono);font-size:.85rem;line-height:1.55;padding:1.25rem;border-radius:6px;overflow-x:auto;margin:.75rem 0;white-space:pre}.next-list[data-astro-cid-mwd2jfe2]{list-style:none;padding:0;display:flex;flex-direction:column;gap:.75rem}.next-list[data-astro-cid-mwd2jfe2] li[data-astro-cid-mwd2jfe2]{font-size:1rem;color:var(--ink-soft);line-height:1.5;padding-left:1.25rem;position:relative}.next-list[data-astro-cid-mwd2jfe2] li[data-astro-cid-mwd2jfe2]:before{content:"→";position:absolute;left:0;color:var(--accent);font-weight:600}.next-list[data-astro-cid-mwd2jfe2] a[data-astro-cid-mwd2jfe2]{color:var(--accent);font-weight:600;text-decoration:none}.next-list[data-astro-cid-mwd2jfe2] a[data-astro-cid-mwd2jfe2]:hover{text-decoration:underline}
+</style><script type="module" src="/assets/hoisted.3WjCi9KP.js"></script></head> <body> <header class="navbar" data-astro-cid-ymhdp2rl> <div class="container navbar-container" data-astro-cid-ymhdp2rl> <a href="/" class="logo" data-astro-cid-ymhdp2rl> <span class="logo-dot" data-astro-cid-ymhdp2rl></span><span class="logo-text" data-astro-cid-ymhdp2rl>node-opcua</span> </a> <button class="menu-trigger" aria-label="Open menu" aria-expanded="false" type="button" data-astro-cid-ymhdp2rl> <span class="hamburger-bar" data-astro-cid-ymhdp2rl></span> <span class="hamburger-bar" data-astro-cid-ymhdp2rl></span> <span class="hamburger-bar" data-astro-cid-ymhdp2rl></span> </button> <div class="backdrop" aria-hidden="true" data-astro-cid-ymhdp2rl></div> <nav class="nav-drawer" aria-label="Main navigation" data-astro-cid-ymhdp2rl> <a href="/getting-started.html" class="nav-link" data-astro-cid-ymhdp2rl>Getting started</a> <a href="/api_doc/latest/" class="nav-link" data-astro-cid-ymhdp2rl>API reference</a> <a href="/projects.html" class="nav-link" data-astro-cid-ymhdp2rl>Projects</a> <a href="/news.html" class="nav-link" data-astro-cid-ymhdp2rl>News</a> <a href="https://www.npmjs.com/package/node-opcua/v/2.175.2" target="_blank" rel="noopener noreferrer" class="version-badge" aria-label="Latest release: v2.175.2" data-astro-cid-ymhdp2rl> <span class="version-number" data-astro-cid-ymhdp2rl>v2.175.2</span> <span class="version-label" data-astro-cid-ymhdp2rl>latest</span> </a> <a href="https://github.com/node-opcua/node-opcua" target="_blank" rel="noopener noreferrer" class="nav-link" data-astro-cid-ymhdp2rl>GitHub</a> <a href="https://github.com/sponsors/node-opcua" target="_blank" rel="noopener noreferrer" class="nav-link" data-astro-cid-ymhdp2rl>Sponsor</a> </nav> </div> </header>   <main>  <section class="getting-started" data-astro-cid-mwd2jfe2> <div class="container gs-container" data-astro-cid-mwd2jfe2> <h1 data-astro-cid-mwd2jfe2>Getting started</h1> <p class="lede" data-astro-cid-mwd2jfe2>
+From <code data-astro-cid-mwd2jfe2>npm install</code> to a working OPC UA client in under 5 minutes.
+        This guide uses TypeScript and ES modules.
+</p> <div class="step" data-astro-cid-mwd2jfe2> <div class="step-marker" data-astro-cid-mwd2jfe2>01</div> <h2 data-astro-cid-mwd2jfe2>Install</h2> <p data-astro-cid-mwd2jfe2>Create a new project and install node-opcua:</p> <pre class="code-block" data-astro-cid-mwd2jfe2><code data-astro-cid-mwd2jfe2>mkdir my-opcua-app && cd my-opcua-app
+npm init -y
+npm install node-opcua
+npx tsc --init</code></pre> <p class="hint" data-astro-cid-mwd2jfe2>
+node-opcua has zero native dependencies — <code data-astro-cid-mwd2jfe2>npm install</code> is all you need.
+          TypeScript types are included out of the box.
+</p> </div> <div class="step" data-astro-cid-mwd2jfe2> <div class="step-marker" data-astro-cid-mwd2jfe2>02</div> <h2 data-astro-cid-mwd2jfe2>Read from a server (client)</h2> <p data-astro-cid-mwd2jfe2>
+Create <code data-astro-cid-mwd2jfe2>client.ts</code> and connect to a public demo server.
+          This reads the server's current time:
+</p> <pre class="code-block" data-astro-cid-mwd2jfe2><code data-astro-cid-mwd2jfe2>import { OPCUAClient, AttributeIds } from &quot;node-opcua&quot;;
+
+const endpointUrl = &quot;opc.tcp://opcuademo.sterfive.com:26543&quot;;
+
+const client = OPCUAClient.create({ endpointMustExist: false });
+
+await client.withSessionAsync(endpointUrl, async (session) =&gt; {
+  const dataValue = await session.read({
+    nodeId: &quot;ns=0;i=2258&quot;, // Server CurrentTime
+    attributeId: AttributeIds.Value,
+  });
+  console.log(&quot;Server time:&quot;, dataValue.value.value);
+});</code></pre> <p class="hint" data-astro-cid-mwd2jfe2> <code data-astro-cid-mwd2jfe2>withSessionAsync</code> handles connect, session creation, and
+          clean disconnect automatically. The demo server at
+<code data-astro-cid-mwd2jfe2>opcuademo.sterfive.com</code> is publicly accessible.
+</p> </div> <div class="step" data-astro-cid-mwd2jfe2> <div class="step-marker" data-astro-cid-mwd2jfe2>03</div> <h2 data-astro-cid-mwd2jfe2>Create a server</h2> <p data-astro-cid-mwd2jfe2>
+Create <code data-astro-cid-mwd2jfe2>server.ts</code> with a Temperature variable
+          that returns a random reading on every read:
+</p> <pre class="code-block" data-astro-cid-mwd2jfe2><code data-astro-cid-mwd2jfe2>import { OPCUAServer, DataType } from &quot;node-opcua&quot;;
+
+const server = new OPCUAServer({
+  port: 4840,
+  resourcePath: &quot;/UA/MyServer&quot;,
+  buildInfo: { productName: &quot;MyServer&quot;, buildNumber: &quot;1&quot; },
+});
+
+await server.initialize();
+
+const namespace = server.engine.addressSpace!.getOwnNamespace();
+const device = namespace.addObject({
+  organizedBy: server.engine.addressSpace!.rootFolder.objects,
+  browseName: &quot;Device&quot;,
+});
+
+namespace.addVariable({
+  componentOf: device,
+  browseName: &quot;Temperature&quot;,
+  dataType: &quot;Double&quot;,
+  value: {
+    get: () =&gt; new Variant({
+      dataType: DataType.Double,
+      value: 19 + Math.random(),
+    }),
+  },
+});
+
+await server.start();
+console.log(&quot;Server listening on&quot;, server.getEndpointUrl());</code></pre> <p class="hint" data-astro-cid-mwd2jfe2>
+Your server is now browsable by any OPC UA client — UaExpert,
+          Prosys, or another node-opcua client.
+</p> </div> <div class="step" data-astro-cid-mwd2jfe2> <div class="step-marker" data-astro-cid-mwd2jfe2>04</div> <h2 data-astro-cid-mwd2jfe2>Run it</h2> <pre class="code-block" data-astro-cid-mwd2jfe2><code data-astro-cid-mwd2jfe2>npx tsx client.ts
+# → Server time: 2025-07-05T21:08:00.000Z
+
+npx tsx server.ts
+# → Server listening on opc.tcp://localhost:4840/UA/MyServer</code></pre> </div> <div class="step" data-astro-cid-mwd2jfe2> <div class="step-marker" data-astro-cid-mwd2jfe2>05</div> <h2 data-astro-cid-mwd2jfe2>Next steps</h2> <ul class="next-list" data-astro-cid-mwd2jfe2> <li data-astro-cid-mwd2jfe2> <a href="/api_doc/latest/" data-astro-cid-mwd2jfe2>API reference</a> — full documentation for every class and method
+</li> <li data-astro-cid-mwd2jfe2> <a href="https://github.com/node-opcua/node-opcua" target="_blank" rel="noopener noreferrer" data-astro-cid-mwd2jfe2>GitHub repo</a> — examples, issue tracker, contribution guide
+</li> <li data-astro-cid-mwd2jfe2> <a href="https://leanpub.com/node-opcuabyexample-edition2024" target="_blank" rel="noopener noreferrer" data-astro-cid-mwd2jfe2>The book</a> — "node-opcua by Example" (2024 edition)
+</li> <li data-astro-cid-mwd2jfe2> <a href="/projects.html" data-astro-cid-mwd2jfe2>Ecosystem</a> — explore the full family of node-opcua packages
+</li> <li data-astro-cid-mwd2jfe2> <a href="/commercial-use.html" data-astro-cid-mwd2jfe2>Commercial support</a> — SLAs, consulting, and PRO modules from Sterfive
+</li> </ul> </div> </div> </section>  </main> <footer class="footer" data-astro-cid-sz7xmlte> <div class="container footer-container" data-astro-cid-sz7xmlte> <div class="footer-left" data-astro-cid-sz7xmlte> <p class="copyright" data-astro-cid-sz7xmlte><strong data-astro-cid-sz7xmlte>node-opcua</strong> &middot; maintained by Sterfive SAS &middot; MIT licensed</p> </div> <div class="footer-center" data-astro-cid-sz7xmlte> <a href="/api_doc/latest/" data-astro-cid-sz7xmlte>Docs</a> <a href="/projects.html" data-astro-cid-sz7xmlte>Projects</a> <a href="/news.html" data-astro-cid-sz7xmlte>News</a> <a href="https://github.com/node-opcua/node-opcua" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>GitHub</a> <a href="https://www.npmjs.com/package/node-opcua" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>npm</a> <a href="https://github.com/sponsors/node-opcua" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>Sponsor</a> <a href="/privacy.html" data-astro-cid-sz7xmlte>Privacy</a> <button id="reset-analytics-consent" type="button" class="footer-analytics-btn" aria-label="Reset analytics consent preference" data-astro-cid-sz7xmlte>
+Analytics: manage
+</button> </div> <div class="footer-right" data-astro-cid-sz7xmlte> <p data-astro-cid-sz7xmlte>For commercial inquiries: <a href="https://www.sterfive.com" target="_blank" rel="noopener noreferrer" class="commercial-link" data-astro-cid-sz7xmlte>sterfive.com</a></p> </div> </div> </footer> <script>
+    (function() {
+      var btn = document.getElementById('reset-analytics-consent');
+      if (!btn) return;
+      btn.addEventListener('click', function() {
+        // Clear the consent cookie so the banner reappears on next load.
+        document.cookie = 'na_consent=; max-age=0; path=/; SameSite=Lax';
+        // Reload so the banner mounts fresh and Consent Mode reverts to default DENIED.
+        window.location.reload();
+      });
+    })();
+  </script>  <div id="consent-banner" class="consent-banner" role="region" aria-label="Analytics consent" aria-live="polite" data-astro-cid-2effgw6e><div class="consent-inner" data-astro-cid-2effgw6e><div class="consent-text" data-astro-cid-2effgw6e><span class="consent-eyebrow" data-astro-cid-2effgw6e>Analytics</span><p class="consent-body" data-astro-cid-2effgw6e>
+We use Google Analytics to measure traffic: page views, country,
+          and referrer. No advertising, no cross-site tracking, no profiling.
+<a href="/privacy.html" class="consent-privacy-link" data-astro-cid-2effgw6e>Privacy details</a></p></div><div class="consent-actions" data-astro-cid-2effgw6e><button id="consent-accept" class="consent-btn consent-btn-accept" type="button" aria-label="Accept analytics" data-astro-cid-2effgw6e>Accept</button><button id="consent-reject" class="consent-btn consent-btn-reject" type="button" aria-label="Reject analytics" data-astro-cid-2effgw6e>Reject</button></div></div></div>
+
+  <script>
+    (function() {
+      // Check if consent was already given — hide banner immediately
+      var hasCookie = document.cookie.split('; ').some(function(row) {
+        return row.startsWith('na_consent=');
+      });
+      if (hasCookie) {
+        document.getElementById('consent-banner').style.display = 'none';
+        return;
+      }
+
+      function setConsent(choice) {
+        var sixMonths = 60 * 60 * 24 * 180;
+        document.cookie = 'na_consent=' + choice + '; max-age=' + sixMonths + '; path=/; SameSite=Lax';
+
+        if (choice === 'granted' && window.gtag) {
+          window.gtag('consent', 'update', { 'analytics_storage': 'granted' });
+        }
+        document.getElementById('consent-banner').style.display = 'none';
+      }
+
+      document.getElementById('consent-accept')
+        .addEventListener('click', function() { setConsent('granted'); });
+      document.getElementById('consent-reject')
+        .addEventListener('click', function() { setConsent('denied'); });
+    })();
+  </script> </body></html> 

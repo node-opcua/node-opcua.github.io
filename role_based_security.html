@@ -1,0 +1,390 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/x-icon" href="/favicon.ico"><title>undefined | node-opcua</title><link rel="canonical" href="https://node-opcua.github.io/role_based_security.html"><meta name="description" content="node-opcua: The open-source OPC UA stack for Node.js. Production-grade since 2014."><!-- Open Graph --><meta property="og:title" content="undefined | node-opcua"><meta property="og:description" content="node-opcua: The open-source OPC UA stack for Node.js. Production-grade since 2014."><meta property="og:image" content="https://node-opcua.github.io/og-default.png"><meta property="og:url" content="https://node-opcua.github.io/role_based_security.html"><meta property="og:type" content="website"><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="undefined | node-opcua"><meta name="twitter:description" content="node-opcua: The open-source OPC UA stack for Node.js. Production-grade since 2014."><meta name="twitter:image" content="https://node-opcua.github.io/og-default.png"><!-- Organization JSON-LD (site-wide) --><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"node-opcua","url":"https://node-opcua.github.io","logo":"https://node-opcua.github.io/logos/sterfive-logo.png","description":"The open-source OPC UA stack for Node.js, maintained by Sterfive.","sameAs":["https://github.com/node-opcua","https://www.npmjs.com/package/node-opcua","https://www.sterfive.com"]}</script><!-- Slot for child layout head content (JSON-LD etc.) --> <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","description":"","inLanguage":"en","proficiencyLevel":"Expert","articleSection":"Documentation","mainEntityOfPage":{"@type":"WebPage","@id":"https://node-opcua.github.io/role_based_security.html"},"url":"https://node-opcua.github.io/role_based_security.html","about":[{"@type":"Thing","name":"OPC UA","sameAs":"https://www.wikidata.org/wiki/Q1196437","description":"The IEC 62541 industrial communication standard maintained by the OPC Foundation."},{"@type":"Thing","name":"Node.js","sameAs":"https://www.wikidata.org/wiki/Q756100","description":"The JavaScript runtime built on Chrome's V8 engine and libuv."},{"@type":"Thing","name":"node-opcua","sameAs":"https://github.com/node-opcua/node-opcua","description":"The open-source OPC UA stack for Node.js and TypeScript, maintained by Sterfive."}],"author":{"@type":"Organization","name":"node-opcua","url":"https://node-opcua.github.io"},"publisher":{"@type":"Organization","name":"node-opcua","url":"https://node-opcua.github.io","logo":{"@type":"ImageObject","url":"https://node-opcua.github.io/logos/sterfive-logo.png"}}}</script> <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://node-opcua.github.io"},{"@type":"ListItem","position":2,"name":"Documentation"},{"@type":"ListItem","position":3}]}</script> <script>(function(){const gaId = "G-J4DZPPT47Y";
+
+    // Consent Mode v2 — default everything to DENIED before consent
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    window.gtag = gtag;
+
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'wait_for_update': 500
+    });
+
+    // Check for a previously stored consent choice
+    var stored = (function() {
+      try {
+        return document.cookie
+          .split('; ')
+          .find(function(row) { return row.startsWith('na_consent='); })
+          ?.split('=')[1];
+      } catch (e) { return null; }
+    })();
+
+    if (stored === 'granted') {
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    }
+
+    // Load the GA script (Consent Mode ensures it respects the state above)
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
+    document.head.appendChild(s);
+
+    gtag('js', new Date());
+    gtag('config', gaId, {
+      'anonymize_ip': true,
+      'allow_google_signals': false,
+      'allow_ad_personalization_signals': false
+    });
+  })();</script><link rel="stylesheet" href="/assets/role_based_security.CrBQaTfZ.css">
+<style>.docs-article[data-astro-cid-mw7aashj]{max-width:46rem;margin:0 auto;padding:var(--space-section, 4.5rem) 1.5rem}.docs-content[data-astro-cid-mw7aashj]{font-family:var(--font-sans, sans-serif);font-size:1.0625rem;line-height:1.7;color:var(--ink-soft, #5c5c56)}.docs-content[data-astro-cid-mw7aashj] h1{font-family:var(--font-sans, sans-serif);font-size:2rem;font-weight:700;color:var(--ink, #2c2c28);line-height:1.2;letter-spacing:-.02em;margin:0 0 1.25rem;padding-bottom:1rem;border-bottom:1px solid var(--divider, #d4d2cc)}.docs-content[data-astro-cid-mw7aashj] h2{font-size:1.5rem;font-weight:700;color:var(--ink, #2c2c28);letter-spacing:-.015em;margin-top:3rem;margin-bottom:.85rem}.docs-content[data-astro-cid-mw7aashj] h3{font-size:1.2rem;font-weight:600;color:var(--ink, #2c2c28);margin-top:2.25rem;margin-bottom:.65rem}.docs-content[data-astro-cid-mw7aashj] h4{font-size:1.05rem;font-weight:600;color:var(--ink, #2c2c28);margin-top:1.75rem;margin-bottom:.5rem}.docs-content[data-astro-cid-mw7aashj] p{margin:0 0 1.25rem}.docs-content[data-astro-cid-mw7aashj] strong{color:var(--ink, #2c2c28);font-weight:600}.docs-content[data-astro-cid-mw7aashj] hr{border:0;height:1px;background:var(--divider, #d4d2cc);margin:3rem 0}.docs-content[data-astro-cid-mw7aashj] code{font-family:var(--font-mono, monospace);font-size:.9em}.docs-content[data-astro-cid-mw7aashj] p>code,.docs-content[data-astro-cid-mw7aashj] li>code,.docs-content[data-astro-cid-mw7aashj] td>code,.docs-content[data-astro-cid-mw7aashj] th>code,.docs-content[data-astro-cid-mw7aashj] a>code{background:var(--bg-elevated, #f5f4f0);padding:.12em .4em;border-radius:3px;color:var(--ink, #2c2c28);font-size:.9em}.docs-content[data-astro-cid-mw7aashj] pre{background:#1e1e1e;color:#d4d4d4;padding:1.25rem 1.35rem;border-radius:6px;overflow-x:auto;font-size:.875rem;line-height:1.55;margin:1.5rem 0}.docs-content[data-astro-cid-mw7aashj] pre code{background:transparent;padding:0;color:inherit;font-size:inherit}.docs-content[data-astro-cid-mw7aashj] a{color:var(--accent, #2a7a6e);text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--accent, #2a7a6e) 40%,transparent);text-underline-offset:3px;transition:text-decoration-color .15s ease,color .15s ease}.docs-content[data-astro-cid-mw7aashj] a:hover,.docs-content[data-astro-cid-mw7aashj] a:focus-visible{text-decoration-color:currentColor;color:var(--ink, #2c2c28)}.docs-content[data-astro-cid-mw7aashj] ul,.docs-content[data-astro-cid-mw7aashj] ol{padding-left:1.5rem;margin:1rem 0 1.25rem}.docs-content[data-astro-cid-mw7aashj] li{margin-bottom:.5rem}.docs-content[data-astro-cid-mw7aashj] li>ul,.docs-content[data-astro-cid-mw7aashj] li>ol{margin:.5rem 0}.docs-content[data-astro-cid-mw7aashj] table{width:100%;border-collapse:collapse;margin:1.75rem 0;font-size:.95rem;border-top:1px solid var(--divider, #d4d2cc);border-bottom:1px solid var(--divider, #d4d2cc);display:block;overflow-x:auto}.docs-content[data-astro-cid-mw7aashj] thead{background:var(--bg-elevated, #f5f4f0)}.docs-content[data-astro-cid-mw7aashj] th,.docs-content[data-astro-cid-mw7aashj] td{padding:.625rem .85rem;text-align:left;border-bottom:1px solid var(--divider, #d4d2cc);vertical-align:top}.docs-content[data-astro-cid-mw7aashj] th{font-weight:700;color:var(--ink, #2c2c28);font-size:.875rem;letter-spacing:-.005em}.docs-content[data-astro-cid-mw7aashj] tr:last-child td{border-bottom:none}.docs-content[data-astro-cid-mw7aashj] blockquote{border-left:3px solid var(--accent, #2a7a6e);padding:.25rem 0 .25rem 1.25rem;margin:1.5rem 0;color:var(--muted, #8a8880);font-style:italic}
+</style><script type="module" src="/assets/hoisted.3WjCi9KP.js"></script></head> <body> <header class="navbar" data-astro-cid-ymhdp2rl> <div class="container navbar-container" data-astro-cid-ymhdp2rl> <a href="/" class="logo" data-astro-cid-ymhdp2rl> <span class="logo-dot" data-astro-cid-ymhdp2rl></span><span class="logo-text" data-astro-cid-ymhdp2rl>node-opcua</span> </a> <button class="menu-trigger" aria-label="Open menu" aria-expanded="false" type="button" data-astro-cid-ymhdp2rl> <span class="hamburger-bar" data-astro-cid-ymhdp2rl></span> <span class="hamburger-bar" data-astro-cid-ymhdp2rl></span> <span class="hamburger-bar" data-astro-cid-ymhdp2rl></span> </button> <div class="backdrop" aria-hidden="true" data-astro-cid-ymhdp2rl></div> <nav class="nav-drawer" aria-label="Main navigation" data-astro-cid-ymhdp2rl> <a href="/getting-started.html" class="nav-link" data-astro-cid-ymhdp2rl>Getting started</a> <a href="/api_doc/latest/" class="nav-link" data-astro-cid-ymhdp2rl>API reference</a> <a href="/projects.html" class="nav-link" data-astro-cid-ymhdp2rl>Projects</a> <a href="/news.html" class="nav-link" data-astro-cid-ymhdp2rl>News</a> <a href="https://www.npmjs.com/package/node-opcua/v/2.175.2" target="_blank" rel="noopener noreferrer" class="version-badge" aria-label="Latest release: v2.175.2" data-astro-cid-ymhdp2rl> <span class="version-number" data-astro-cid-ymhdp2rl>v2.175.2</span> <span class="version-label" data-astro-cid-ymhdp2rl>latest</span> </a> <a href="https://github.com/node-opcua/node-opcua" target="_blank" rel="noopener noreferrer" class="nav-link" data-astro-cid-ymhdp2rl>GitHub</a> <a href="https://github.com/sponsors/node-opcua" target="_blank" rel="noopener noreferrer" class="nav-link" data-astro-cid-ymhdp2rl>Sponsor</a> </nav> </div> </header>   <main>   <article class="docs-article" data-astro-cid-mw7aashj> <div class="docs-content" data-astro-cid-mw7aashj> <h1 id="role-based-security-and-user-management-opc-10000-18">Role-Based Security and User Management (OPC 10000-18)</h1>
+<p>NodeOPCUA ships a complete, modular, and spec-conformant implementation of <strong>Role-Based Access Control (RBAC)</strong> and <strong>User Management</strong> (OPC 10000-18) available in open source under the MIT license.</p>
+<p>For a higher-level commercial overview of why this matters and how it fits into the OPC UA security landscape, see <a href="https://www.sterfive.com/en/blog/opcua-role-based-security-nodeopcua-2-174-0/">OPC UA Role-Based Security in Practice</a> on the Sterfive blog.</p>
+<hr>
+<h2 id="overview">Overview</h2>
+<p>OPC 10000-18 (Part 18) defines the standard <strong>Information Model</strong> by which an OPC UA Server decides <strong>who is allowed to do what</strong> in its AddressSpace. It does not invent new permissions (which live in Part 3). Instead, it defines the plumbing that connects <strong>identities</strong> (who is connecting) to <strong>Roles</strong> (named buckets of privileges), plus a standard API to manage local users at runtime.</p>
+<p>The NodeOPCUA implementation is spread across five packages:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Package</th><th>Role</th></tr></thead><tbody><tr><td><a href="https://github.com/node-opcua/node-opcua/tree/master/packages/node-opcua-role-set-common"><code>node-opcua-role-set-common</code></a></td><td>Framework-agnostic building blocks: identity/user stores, the consolidated encrypted archive, X.509/UserName matching, well-known Role NodeIds. No dependency on the address space.</td></tr><tr><td><a href="https://github.com/node-opcua/node-opcua/tree/master/packages/node-opcua-role-set-server"><code>node-opcua-role-set-server</code></a></td><td>Server-side install: binds the <code>RoleSet</code> and <code>UserManagement</code> Methods, resolves a session’s Roles, persists, and hardens the sensitive nodes.</td></tr><tr><td><a href="https://github.com/node-opcua/node-opcua/tree/master/packages/node-opcua-role-set-client"><code>node-opcua-role-set-client</code></a></td><td>Client-side API to browse Roles, read/modify their identities, and administer users over a real session.</td></tr><tr><td><a href="https://github.com/node-opcua/node-opcua/tree/master/packages/node-opcua-role-set-admin"><code>node-opcua-role-set-admin</code></a></td><td>The <code>role-set-admin</code> command-line tool, built on the client.</td></tr><tr><td><a href="https://github.com/node-opcua/node-opcua/tree/master/packages/node-opcua-role-set-test"><code>node-opcua-role-set-test</code></a></td><td>Integration tests and a runnable sample server (private).</td></tr></tbody></table>
+<hr>
+<h2 id="architecture">Architecture</h2>
+<p>Part 18 decouples two core security concerns:</p>
+<ol>
+<li><strong>Authentication (“Who are you?”)</strong>: Handled at session activation (Part 4) using user identity tokens (UserName, X.509 certificates, or JSON Web Tokens) and client application certificates.</li>
+<li><strong>Authorization (“What may you do?”)</strong>: Enforced per-Node via <code>RolePermissions</code> granted to specific Roles (Part 3).</li>
+</ol>
+<p>A session can hold <strong>many Roles</strong> simultaneously. The Server evaluates every Role’s mapping rules against the session’s properties (user credentials, application URI, endpoint URL, security level) and grants all Roles that match.</p>
+<h3 id="component-relationship">Component Relationship</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>+-------------------------------------------------------------+</span></span>
+<span class="line"><span>|                        OPC UA Client                        |</span></span>
+<span class="line"><span>+-------------------------------------------------------------+</span></span>
+<span class="line"><span>                               |</span></span>
+<span class="line"><span>                         (OPC UA Message Channel)</span></span>
+<span class="line"><span>                               v</span></span>
+<span class="line"><span>+-------------------------------------------------------------+</span></span>
+<span class="line"><span>|                        OPCUAServer                          |</span></span>
+<span class="line"><span>|                                                             |</span></span>
+<span class="line"><span>|  +---------------------+           +---------------------+  |</span></span>
+<span class="line"><span>|  |       RoleSet       |           |   UserManagement    |  |</span></span>
+<span class="line"><span>|  |  (AddIdentity, etc) |           |  (AddUser, Change)  |  |</span></span>
+<span class="line"><span>|  +-----------+---------+           +----------+----------+  |</span></span>
+<span class="line"><span>|              |                                |             |</span></span>
+<span class="line"><span>|              v                                v             |</span></span>
+<span class="line"><span>|  +-----------+--------------------------------+----------+  |</span></span>
+<span class="line"><span>|  |                IManagedUserManager Bridge             |  |</span></span>
+<span class="line"><span>|  +----------------------------+--------------------------+  |</span></span>
+<span class="line"><span>|                               |                             |</span></span>
+<span class="line"><span>|                               v                             |</span></span>
+<span class="line"><span>|  +----------------------------+--------------------------+  |</span></span>
+<span class="line"><span>|  |                       ArchiveStore                    |  |</span></span>
+<span class="line"><span>|  |       (Consolidated on-disk, AES-256-GCM encrypted)   |  |</span></span>
+<span class="line"><span>|  +-------------------------------------------------------+  |</span></span>
+<span class="line"><span>+-------------------------------------------------------------+</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>To prevent data drift, the server core resolves a session’s Roles through a single integration point: the server <code>userManager</code> bridge. Both the “legacy” session-creation path and the “modern” RoleSet Methods map to the same in-memory user and identity stores, backed by a single persistence file.</p>
+<hr>
+<h2 id="getting-started">Getting Started</h2>
+<p>The simplest way to configure a NodeOPCUA server with full Role-Based Security and User Management is using the <code>createRoleBasedSecurity</code> helper.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { OPCUAServer, MessageSecurityMode, SecurityPolicy } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "node-opcua"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { WellKnownRoleIds } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "node-opcua-role-set-common"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { createRoleBasedSecurity } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "node-opcua-role-set-server"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> function</span><span style="color:#B392F0"> main</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#6A737D">    // 1. Build the shared stores and the userManager bridge.</span></span>
+<span class="line"><span style="color:#6A737D">    // Seeds initial users and maps them to standard Roles.</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> security</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> createRoleBasedSecurity</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">        policy: { minLength: </span><span style="color:#79B8FF">8</span><span style="color:#E1E4E8">, requireDigit: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">        users: [</span></span>
+<span class="line"><span style="color:#E1E4E8">            {</span></span>
+<span class="line"><span style="color:#E1E4E8">                userName: </span><span style="color:#9ECBFF">"admin"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">                password: </span><span style="color:#9ECBFF">"RotateMe1!"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">                roles: [WellKnownRoleIds.SecurityAdmin, WellKnownRoleIds.ConfigureAdmin]</span></span>
+<span class="line"><span style="color:#E1E4E8">            },</span></span>
+<span class="line"><span style="color:#E1E4E8">            {</span></span>
+<span class="line"><span style="color:#E1E4E8">                userName: </span><span style="color:#9ECBFF">"operator"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">                password: </span><span style="color:#9ECBFF">"ChangeMe!"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">                roles: [WellKnownRoleIds.Operator, WellKnownRoleIds.Observer]</span></span>
+<span class="line"><span style="color:#E1E4E8">            }</span></span>
+<span class="line"><span style="color:#E1E4E8">        ]</span></span>
+<span class="line"><span style="color:#E1E4E8">    });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    // 2. The userManager is a constructor option, passed during server creation.</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> server</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> OPCUAServer</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">        port: </span><span style="color:#79B8FF">4840</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        securityModes: [MessageSecurityMode.SignAndEncrypt],</span></span>
+<span class="line"><span style="color:#E1E4E8">        securityPolicies: [SecurityPolicy.Basic256Sha256],</span></span>
+<span class="line"><span style="color:#E1E4E8">        userManager: security.userManager</span></span>
+<span class="line"><span style="color:#E1E4E8">    });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    await</span><span style="color:#E1E4E8"> server.</span><span style="color:#B392F0">initialize</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">    await</span><span style="color:#E1E4E8"> server.</span><span style="color:#B392F0">start</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    // 3. Install the RoleSet and User Management Methods after start().</span></span>
+<span class="line"><span style="color:#6A737D">    // Binds the active stores and persists to an AES-256-GCM encrypted archive.</span></span>
+<span class="line"><span style="color:#F97583">    await</span><span style="color:#E1E4E8"> security.</span><span style="color:#B392F0">install</span><span style="color:#E1E4E8">(server, {</span></span>
+<span class="line"><span style="color:#E1E4E8">        persistencePath: </span><span style="color:#9ECBFF">"./config/role-set.json"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        persistenceSecret: process.env.</span><span style="color:#79B8FF">ROLE_SET_SECRET</span><span style="color:#6A737D"> // AES-256-GCM encryption key</span></span>
+<span class="line"><span style="color:#E1E4E8">    });</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">main</span><span style="color:#E1E4E8">().</span><span style="color:#B392F0">catch</span><span style="color:#E1E4E8">(console.error);</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="createrolebasedsecurityoptions"><code>createRoleBasedSecurity(options?)</code></h3>
+<p>Creates the user and identity mapping stores, builds the <code>userManager</code> bridge, and returns an installation helper.</p>
+<ul>
+<li><strong>Parameters</strong>: <code>options?: CreateRoleBasedSecurityOptions</code>
+<ul>
+<li><code>policy?: PasswordPolicy</code>: Enforced password complexity rules.
+<ul>
+<li><code>minLength?: number</code></li>
+<li><code>requireDigit?: boolean</code></li>
+<li><code>requireUpperCase?: boolean</code></li>
+<li><code>requireLowerCase?: boolean</code></li>
+<li><code>requireSpecialCharacters?: boolean</code></li>
+</ul>
+</li>
+<li><code>users?: RoleBasedUser[]</code>: List of users to seed.
+<ul>
+<li><code>userName: string</code></li>
+<li><code>password: string</code></li>
+<li><code>roles?: NodeId[]</code></li>
+<li><code>userConfiguration?: UserConfigurationMask</code></li>
+<li><code>description?: string</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Returns</strong>: <code>RoleBasedSecurity</code>
+<ul>
+<li><code>userStore: InMemoryUserManagementStore</code></li>
+<li><code>identityStore: InMemoryIdentityMappingStore</code></li>
+<li><code>userManager: IManagedUserManager</code></li>
+<li><code>install(server, options)</code>: Binds Methods to the server and starts persistence.</li>
+</ul>
+</li>
+</ul>
+<h3 id="installrolesetserver-options"><code>installRoleSet(server, options)</code></h3>
+<p>Lower-level server method to install the RoleSet information model independently.</p>
+<ul>
+<li><strong>Parameters</strong>:
+<ul>
+<li><code>server: IServerForRoleSet</code></li>
+<li><code>options: InstallRoleSetOptions</code> (requires <code>store: IIdentityMappingStore</code> and <code>persistence: ArchiveStore</code>).</li>
+</ul>
+</li>
+</ul>
+<h3 id="wellknownroles-and-wellknownroleids"><code>WellKnownRoles</code> and <code>WellKnownRoleIds</code></h3>
+<p><code>WellKnownRoles</code> defines the standard numeric identifiers. <code>WellKnownRoleIds</code> defines pre-built <code>NodeId</code> objects:</p>
+<ul>
+<li><code>WellKnownRoleIds.Anonymous</code></li>
+<li><code>WellKnownRoleIds.AuthenticatedUser</code></li>
+<li><code>WellKnownRoleIds.Observer</code></li>
+<li><code>WellKnownRoleIds.Operator</code></li>
+<li><code>WellKnownRoleIds.Engineer</code></li>
+<li><code>WellKnownRoleIds.Supervisor</code></li>
+<li><code>WellKnownRoleIds.ConfigureAdmin</code></li>
+<li><code>WellKnownRoleIds.SecurityAdmin</code></li>
+</ul>
+<h3 id="clientroleset-and-clientusermanagement"><code>ClientRoleSet</code> and <code>ClientUserManagement</code></h3>
+<p>Client-side classes (from <code>node-opcua-role-set-client</code>) for remote administration over an active OPC UA session.</p>
+<ul>
+<li><code>ClientRoleSet</code>: exposes methods like <code>addRole</code>, <code>removeRole</code>, <code>addIdentity</code>, <code>removeIdentity</code>, <code>setApplications</code>, <code>setEndpoints</code>.</li>
+<li><code>ClientUserManagement</code>: exposes methods like <code>addUser</code>, <code>modifyUser</code>, <code>removeUser</code>, <code>changePassword</code>.</li>
+</ul>
+<h3 id="flags-and-masks">Flags and Masks</h3>
+<ul>
+<li><strong><code>UserConfigurationMask</code></strong>:
+<ul>
+<li><code>None = 0</code></li>
+<li><code>MustChangePassword = 1</code></li>
+<li><code>NoDelete = 2</code></li>
+<li><code>NoChangeByUser = 4</code></li>
+<li><code>Disabled = 8</code></li>
+</ul>
+</li>
+<li><strong><code>PasswordOptionsMask</code></strong>: Flags returned to clients to advertise complexity rules (<code>RequiresUpperCase</code>, <code>RequiresLowerCase</code>, <code>RequiresDigit</code>, <code>RequiresSpecialCharacters</code>).</li>
+</ul>
+<hr>
+<h2 id="identity-mapping-reference">Identity Mapping Reference</h2>
+<p>Identity mapping rules are managed via the standard <code>AddIdentity</code> and <code>RemoveIdentity</code> Methods on each Role object. The system supports 9 criteria types (<code>IdentityCriteriaType</code>):</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Criteria Type</th><th>Description and Matching Logic</th></tr></thead><tbody><tr><td><strong><code>UserName</code></strong></td><td>Matches a <code>UserNameIdentityToken</code> whose user name matches the rule criteria exactly.</td></tr><tr><td><strong><code>Thumbprint</code></strong></td><td>Matches an <code>X509IdentityToken</code> whose SHA-1 certificate thumbprint matches the criteria.</td></tr><tr><td><strong><code>Role</code></strong></td><td>Matches a token carrying a JWT whose <code>roles</code> array contains the criteria.</td></tr><tr><td><strong><code>GroupId</code></strong></td><td>Matches a token carrying a JWT whose <code>groups</code> array contains the criteria.</td></tr><tr><td><strong><code>Anonymous</code></strong></td><td>Evaluates to <code>true</code> when the session is anonymous.</td></tr><tr><td><strong><code>AuthenticatedUser</code></strong></td><td>Evaluates to <code>true</code> when any valid user credentials are provided.</td></tr><tr><td><strong><code>Application</code></strong></td><td>Matches a specific <code>ApplicationUri</code> from a trusted client certificate.</td></tr><tr><td><strong><code>X509Subject</code></strong></td><td>Matches an <code>X509IdentityToken</code> whose certificate subject matches the criteria. Supports full normalized DN matching (e.g. <code>CN="Jane Doe"/O="Sterfive"/C="FR"</code>).</td></tr><tr><td><strong><code>TrustedApplication</code></strong></td><td>Evaluates to <code>true</code> for any trusted client application connected over a signed/encrypted channel.</td></tr></tbody></table>
+<hr>
+<h2 id="security-model">Security Model</h2>
+<p>The implementation adheres to strict security rules defined in the specification:</p>
+<ul>
+<li><strong>Administrative Isolation</strong>: The management Methods (<code>AddRole</code>, <code>AddIdentity</code>, <code>AddUser</code>, etc.) require the caller to hold the <code>SecurityAdmin</code> Role and connect over an <strong>encrypted channel</strong> (<code>SignAndEncrypt</code>). Calls over unencrypted channels or from non-admin users fail with <code>Bad_SecurityModeInsufficient</code> or <code>Bad_UserAccessDenied</code>.</li>
+<li><strong>Browsable Hiding</strong>: Sensitive configuration nodes (such as the <code>Identities</code>, <code>Applications</code>, and <code>Endpoints</code> properties of Roles, as well as the <code>Users</code> list) are hidden from Browse results for non-admin sessions.</li>
+<li><strong>Audit Trail</strong>: Every modification to the roles, identity rules, or user database raises a <code>RoleMappingRuleChangedAuditEventType</code> event, providing a tamper-evident audit log that never exposes password credentials.</li>
+<li><strong>Active Disconnection</strong>: Disabling or deleting a user immediately terminates all active sessions and subscriptions held by that user.</li>
+<li><strong>Self-Reference Protection</strong>: A user cannot delete or disable their own account; doing so returns <code>Bad_InvalidSelfReference</code>.</li>
+</ul>
+<hr>
+<h2 id="persistence">Persistence</h2>
+<p>All configuration data, which includes custom roles, identity mapping rules, application/endpoint filters, and users (stored using salted scrypt password hashes), is saved in a <strong>single consolidated JSON or binary archive file</strong>.</p>
+<ul>
+<li><strong>Atomic Writes</strong>: Persistence uses a temp-file write followed by a rename to prevent file corruption in the event of a system crash.</li>
+<li><strong>Encryption at Rest</strong>: If a <code>persistenceSecret</code> is provided, the archive is encrypted using AES-256-GCM. The key is derived from the secret using scrypt.</li>
+</ul>
+<hr>
+<h2 id="migration-guide">Migration Guide</h2>
+<p>If you are migrating a server from a legacy, hand-rolled <code>userManager</code> authentication model:</p>
+<ol>
+<li><strong>Bridge the Model</strong>: Retain your legacy user database initially by wrapping it inside the <code>IManagedUserManager</code> bridge using a custom <code>IRoleResolver</code>.</li>
+<li><strong>Convert Checkers</strong>: Replace inline, code-based checks (e.g., <code>if (user.isAdmin)</code>) with declarative <code>RolePermissions</code> defined directly on the AddressSpace Nodes during initialization.</li>
+<li><strong>Migrate Accounts</strong>: Import your user accounts into the standard <code>UserManagement</code> store, ensuring passwords are converted into standard scrypt formats.</li>
+<li><strong>Remove Legacy Code</strong>: Decommission the legacy <code>userManager</code> once all permissions are declared in the address space.</li>
+</ol>
+<hr>
+<h2 id="role-set-admin-cli-reference"><code>role-set-admin</code> CLI Reference</h2>
+<p>The <code>role-set-admin</code> CLI tool allows remote administration of any conformant OPC UA server.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Install globally</span></span>
+<span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> install</span><span style="color:#79B8FF"> -g</span><span style="color:#9ECBFF"> node-opcua-role-set-admin</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># List all Roles configured on the server</span></span>
+<span class="line"><span style="color:#B392F0">npx</span><span style="color:#9ECBFF"> role-set-admin</span><span style="color:#79B8FF"> -e</span><span style="color:#9ECBFF"> opc.tcp://localhost:4840</span><span style="color:#79B8FF"> -u</span><span style="color:#9ECBFF"> admin</span><span style="color:#9ECBFF"> list-roles</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Map a UserName identity to the Operator Role</span></span>
+<span class="line"><span style="color:#B392F0">npx</span><span style="color:#9ECBFF"> role-set-admin</span><span style="color:#79B8FF"> -e</span><span style="color:#9ECBFF"> opc.tcp://localhost:4840</span><span style="color:#79B8FF"> -u</span><span style="color:#9ECBFF"> admin</span><span style="color:#9ECBFF"> add-identity</span><span style="color:#9ECBFF"> Operator</span><span style="color:#9ECBFF"> alice</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Create a new local user and map to the Engineer Role</span></span>
+<span class="line"><span style="color:#B392F0">npx</span><span style="color:#9ECBFF"> role-set-admin</span><span style="color:#79B8FF"> -e</span><span style="color:#9ECBFF"> opc.tcp://localhost:4840</span><span style="color:#79B8FF"> -u</span><span style="color:#9ECBFF"> admin</span><span style="color:#9ECBFF"> add-user</span><span style="color:#9ECBFF"> bob</span><span style="color:#9ECBFF"> s3cret-pw1</span><span style="color:#79B8FF"> -r</span><span style="color:#9ECBFF"> Engineer</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="troubleshooting-and-faq">Troubleshooting and FAQ</h2>
+<ul>
+<li><strong><code>Bad_SecurityModeInsufficient</code></strong>: The client is attempting to call a management Method or read sensitive properties over an unencrypted channel. The channel must be switched to <code>SignAndEncrypt</code>.</li>
+<li><strong><code>Bad_UserAccessDenied</code></strong>: The authenticated user does not have the <code>SecurityAdmin</code> Role required to run the operation.</li>
+<li><strong><code>Good_PasswordChangeRequired</code></strong>: The user account has been flagged with <code>MustChangePassword</code>. The user’s active session is restricted to <code>Anonymous</code> permissions until they call the <code>ChangePassword</code> Method.</li>
+<li><strong><code>Bad_InvalidSelfReference</code></strong>: The admin user is attempting to delete or disable the account they are currently logged in with.</li>
+</ul>
+<hr>
+<h2 id="links-and-resources">Links and Resources</h2>
+<ul>
+<li><strong>Commercial context and architectural rationale</strong>: <a href="https://www.sterfive.com/en/blog/opcua-role-based-security-nodeopcua-2-174-0/">Sterfive blog: OPC UA Role-Based Security in Practice</a></li>
+<li><strong>Vendor-neutral spec walkthrough</strong>: <a href="https://www.sterfive.com/en/learn/opcua-reference/role-based-security">Sterfive Learn: OPC UA Part 18</a></li>
+<li><strong>Official Release Notes</strong>: <a href="https://github.com/node-opcua/node-opcua/releases/tag/v2.174.0">v2.174.0 on GitHub</a></li>
+<li><strong>Need enterprise support?</strong>: <a href="https://www.sterfive.com/en/contact">Sterfive, book a briefing</a></li>
+</ul> </div> </article>  </main> <footer class="footer" data-astro-cid-sz7xmlte> <div class="container footer-container" data-astro-cid-sz7xmlte> <div class="footer-left" data-astro-cid-sz7xmlte> <p class="copyright" data-astro-cid-sz7xmlte><strong data-astro-cid-sz7xmlte>node-opcua</strong> &middot; maintained by Sterfive SAS &middot; MIT licensed</p> </div> <div class="footer-center" data-astro-cid-sz7xmlte> <a href="/api_doc/latest/" data-astro-cid-sz7xmlte>Docs</a> <a href="/projects.html" data-astro-cid-sz7xmlte>Projects</a> <a href="/news.html" data-astro-cid-sz7xmlte>News</a> <a href="https://github.com/node-opcua/node-opcua" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>GitHub</a> <a href="https://www.npmjs.com/package/node-opcua" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>npm</a> <a href="https://github.com/sponsors/node-opcua" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>Sponsor</a> <a href="/privacy.html" data-astro-cid-sz7xmlte>Privacy</a> <button id="reset-analytics-consent" type="button" class="footer-analytics-btn" aria-label="Reset analytics consent preference" data-astro-cid-sz7xmlte>
+Analytics: manage
+</button> </div> <div class="footer-right" data-astro-cid-sz7xmlte> <p data-astro-cid-sz7xmlte>For commercial inquiries: <a href="https://www.sterfive.com" target="_blank" rel="noopener noreferrer" class="commercial-link" data-astro-cid-sz7xmlte>sterfive.com</a></p> </div> </div> </footer> <script>
+    (function() {
+      var btn = document.getElementById('reset-analytics-consent');
+      if (!btn) return;
+      btn.addEventListener('click', function() {
+        // Clear the consent cookie so the banner reappears on next load.
+        document.cookie = 'na_consent=; max-age=0; path=/; SameSite=Lax';
+        // Reload so the banner mounts fresh and Consent Mode reverts to default DENIED.
+        window.location.reload();
+      });
+    })();
+  </script>  <div id="consent-banner" class="consent-banner" role="region" aria-label="Analytics consent" aria-live="polite" data-astro-cid-2effgw6e><div class="consent-inner" data-astro-cid-2effgw6e><div class="consent-text" data-astro-cid-2effgw6e><span class="consent-eyebrow" data-astro-cid-2effgw6e>Analytics</span><p class="consent-body" data-astro-cid-2effgw6e>
+We use Google Analytics to measure traffic: page views, country,
+          and referrer. No advertising, no cross-site tracking, no profiling.
+<a href="/privacy.html" class="consent-privacy-link" data-astro-cid-2effgw6e>Privacy details</a></p></div><div class="consent-actions" data-astro-cid-2effgw6e><button id="consent-accept" class="consent-btn consent-btn-accept" type="button" aria-label="Accept analytics" data-astro-cid-2effgw6e>Accept</button><button id="consent-reject" class="consent-btn consent-btn-reject" type="button" aria-label="Reject analytics" data-astro-cid-2effgw6e>Reject</button></div></div></div>
+
+  <script>
+    (function() {
+      // Check if consent was already given — hide banner immediately
+      var hasCookie = document.cookie.split('; ').some(function(row) {
+        return row.startsWith('na_consent=');
+      });
+      if (hasCookie) {
+        document.getElementById('consent-banner').style.display = 'none';
+        return;
+      }
+
+      function setConsent(choice) {
+        var sixMonths = 60 * 60 * 24 * 180;
+        document.cookie = 'na_consent=' + choice + '; max-age=' + sixMonths + '; path=/; SameSite=Lax';
+
+        if (choice === 'granted' && window.gtag) {
+          window.gtag('consent', 'update', { 'analytics_storage': 'granted' });
+        }
+        document.getElementById('consent-banner').style.display = 'none';
+      }
+
+      document.getElementById('consent-accept')
+        .addEventListener('click', function() { setConsent('granted'); });
+      document.getElementById('consent-reject')
+        .addEventListener('click', function() { setConsent('denied'); });
+    })();
+  </script> </body></html> 

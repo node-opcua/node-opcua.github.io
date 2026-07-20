@@ -1,0 +1,421 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/x-icon" href="/favicon.ico"><title>Node-OPCUA goes PubSub - Episode 1 | node-opcua</title><link rel="canonical" href="https://node-opcua.github.io/concepts/2022/02/16/node-opcua-pubsub-episode1.html"><meta name="description" content="Demonstrates how to extend a Node-OPCUA server with PubSub support, streaming sensor values to an MQTT broker using standardized OPC-UA JSON payloads."><!-- Open Graph --><meta property="og:title" content="Node-OPCUA goes PubSub - Episode 1 | node-opcua"><meta property="og:description" content="Demonstrates how to extend a Node-OPCUA server with PubSub support, streaming sensor values to an MQTT broker using standardized OPC-UA JSON payloads."><meta property="og:image" content="https://node-opcua.github.io/og-default.png"><meta property="og:url" content="https://node-opcua.github.io/concepts/2022/02/16/node-opcua-pubsub-episode1.html"><meta property="og:type" content="article">
+      <meta property="article:published_time" content="2022-02-16T00:00:00.000Z">
+      <meta property="article:author" content="Etienne Rossignon"><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Node-OPCUA goes PubSub - Episode 1 | node-opcua"><meta name="twitter:description" content="Demonstrates how to extend a Node-OPCUA server with PubSub support, streaming sensor values to an MQTT broker using standardized OPC-UA JSON payloads."><meta name="twitter:image" content="https://node-opcua.github.io/og-default.png"><!-- Organization JSON-LD (site-wide) --><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"node-opcua","url":"https://node-opcua.github.io","logo":"https://node-opcua.github.io/logos/sterfive-logo.png","description":"The open-source OPC UA stack for Node.js, maintained by Sterfive.","sameAs":["https://github.com/node-opcua","https://www.npmjs.com/package/node-opcua","https://www.sterfive.com"]}</script><!-- Slot for child layout head content (JSON-LD etc.) --> <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Node-OPCUA goes PubSub - Episode 1","description":"Demonstrates how to extend a Node-OPCUA server with PubSub support, streaming sensor values to an MQTT broker using standardized OPC-UA JSON payloads.","datePublished":"2022-02-16T00:00:00.000Z","dateModified":"2022-02-16T00:00:00.000Z","author":{"@type":"Person","name":"Etienne Rossignon","url":"https://github.com/node-opcua"},"publisher":{"@type":"Organization","name":"node-opcua","logo":{"@type":"ImageObject","url":"https://node-opcua.github.io/logos/sterfive-logo.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://node-opcua.github.io/concepts/2022/02/16/node-opcua-pubsub-episode1.html"},"url":"https://node-opcua.github.io/concepts/2022/02/16/node-opcua-pubsub-episode1.html","articleSection":"concepts"}</script> <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://node-opcua.github.io"},{"@type":"ListItem","position":2,"name":"Concepts","item":"https://node-opcua.github.io/news.html"},{"@type":"ListItem","position":3,"name":"Node-OPCUA goes PubSub - Episode 1"}]}</script> <script>(function(){const gaId = "G-J4DZPPT47Y";
+
+    // Consent Mode v2 — default everything to DENIED before consent
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    window.gtag = gtag;
+
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'wait_for_update': 500
+    });
+
+    // Check for a previously stored consent choice
+    var stored = (function() {
+      try {
+        return document.cookie
+          .split('; ')
+          .find(function(row) { return row.startsWith('na_consent='); })
+          ?.split('=')[1];
+      } catch (e) { return null; }
+    })();
+
+    if (stored === 'granted') {
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    }
+
+    // Load the GA script (Consent Mode ensures it respects the state above)
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
+    document.head.appendChild(s);
+
+    gtag('js', new Date());
+    gtag('config', gaId, {
+      'anonymize_ip': true,
+      'allow_google_signals': false,
+      'allow_ad_personalization_signals': false
+    });
+  })();</script><link rel="stylesheet" href="/assets/role_based_security.CrBQaTfZ.css">
+<style>.post-article[data-astro-cid-gjtny2mx]{max-width:42rem;margin:0 auto;padding:var(--space-section, 4.5rem) 1.5rem}.post-header[data-astro-cid-gjtny2mx]{margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--divider, #d4d2cc)}.post-category[data-astro-cid-gjtny2mx]{display:inline-block;font-family:var(--font-mono, monospace);font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--accent, #2a7a6e);margin-bottom:.75rem}.post-title[data-astro-cid-gjtny2mx]{font-family:var(--font-sans, sans-serif);font-size:2rem;font-weight:600;color:var(--ink, #2c2c28);line-height:1.25;margin:0 0 1rem}.post-byline[data-astro-cid-gjtny2mx]{font-family:var(--font-sans, sans-serif);font-size:.875rem;color:var(--muted, #8a8880);margin:0;display:flex;align-items:center;gap:.5rem}.byline-sep[data-astro-cid-gjtny2mx]{color:var(--divider, #d4d2cc)}.byline-author[data-astro-cid-gjtny2mx]{font-weight:500;color:var(--ink-soft, #5c5c56)}.post-content[data-astro-cid-gjtny2mx]{font-family:var(--font-sans, sans-serif);font-size:1.0625rem;line-height:1.7;color:var(--ink-soft, #5c5c56)}.post-content[data-astro-cid-gjtny2mx] h2{font-size:1.375rem;font-weight:600;color:var(--ink, #2c2c28);margin-top:2.5rem;margin-bottom:.75rem}.post-content[data-astro-cid-gjtny2mx] h3{font-size:1.125rem;font-weight:600;color:var(--ink, #2c2c28);margin-top:2rem;margin-bottom:.5rem}.post-content[data-astro-cid-gjtny2mx] p{margin:0 0 1.25rem}.post-content[data-astro-cid-gjtny2mx] img{max-width:100%;height:auto;border-radius:6px;margin:1.5rem 0}.post-content[data-astro-cid-gjtny2mx] pre{background:#1e1e1e;color:#d4d4d4;padding:1.25rem;border-radius:6px;overflow-x:auto;font-size:.875rem;line-height:1.5;margin:1.5rem 0}.post-content[data-astro-cid-gjtny2mx] code{font-family:var(--font-mono, monospace);font-size:.875em}.post-content[data-astro-cid-gjtny2mx] p>code,.post-content[data-astro-cid-gjtny2mx] li>code{background:var(--bg-elevated, #f5f4f0);padding:.15em .35em;border-radius:3px}.post-content[data-astro-cid-gjtny2mx] blockquote{border-left:3px solid var(--accent, #2a7a6e);padding-left:1.25rem;margin:1.5rem 0;color:var(--muted, #8a8880);font-style:italic}.post-content[data-astro-cid-gjtny2mx] a{color:var(--accent, #2a7a6e);text-decoration:none}.post-content[data-astro-cid-gjtny2mx] a:hover{text-decoration:underline}.post-content[data-astro-cid-gjtny2mx] ul,.post-content[data-astro-cid-gjtny2mx] ol{padding-left:1.5rem;margin:1rem 0}.post-content[data-astro-cid-gjtny2mx] li{margin-bottom:.5rem}.post-content[data-astro-cid-gjtny2mx] table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.9375rem}.post-content[data-astro-cid-gjtny2mx] th,.post-content[data-astro-cid-gjtny2mx] td{padding:.625rem .75rem;text-align:left;border-bottom:1px solid var(--divider, #d4d2cc)}.post-content[data-astro-cid-gjtny2mx] th{font-weight:600;color:var(--ink, #2c2c28)}
+</style><script type="module" src="/assets/hoisted.3WjCi9KP.js"></script></head> <body> <header class="navbar" data-astro-cid-ymhdp2rl> <div class="container navbar-container" data-astro-cid-ymhdp2rl> <a href="/" class="logo" data-astro-cid-ymhdp2rl> <span class="logo-dot" data-astro-cid-ymhdp2rl></span><span class="logo-text" data-astro-cid-ymhdp2rl>node-opcua</span> </a> <button class="menu-trigger" aria-label="Open menu" aria-expanded="false" type="button" data-astro-cid-ymhdp2rl> <span class="hamburger-bar" data-astro-cid-ymhdp2rl></span> <span class="hamburger-bar" data-astro-cid-ymhdp2rl></span> <span class="hamburger-bar" data-astro-cid-ymhdp2rl></span> </button> <div class="backdrop" aria-hidden="true" data-astro-cid-ymhdp2rl></div> <nav class="nav-drawer" aria-label="Main navigation" data-astro-cid-ymhdp2rl> <a href="/getting-started.html" class="nav-link" data-astro-cid-ymhdp2rl>Getting started</a> <a href="/api_doc/latest/" class="nav-link" data-astro-cid-ymhdp2rl>API reference</a> <a href="/projects.html" class="nav-link" data-astro-cid-ymhdp2rl>Projects</a> <a href="/news.html" class="nav-link" data-astro-cid-ymhdp2rl>News</a> <a href="https://www.npmjs.com/package/node-opcua/v/2.175.2" target="_blank" rel="noopener noreferrer" class="version-badge" aria-label="Latest release: v2.175.2" data-astro-cid-ymhdp2rl> <span class="version-number" data-astro-cid-ymhdp2rl>v2.175.2</span> <span class="version-label" data-astro-cid-ymhdp2rl>latest</span> </a> <a href="https://github.com/node-opcua/node-opcua" target="_blank" rel="noopener noreferrer" class="nav-link" data-astro-cid-ymhdp2rl>GitHub</a> <a href="https://github.com/sponsors/node-opcua" target="_blank" rel="noopener noreferrer" class="nav-link" data-astro-cid-ymhdp2rl>Sponsor</a> </nav> </div> </header>   <main>    <article class="post-article" data-astro-cid-gjtny2mx> <header class="post-header" data-astro-cid-gjtny2mx> <span class="post-category" data-astro-cid-gjtny2mx>concepts</span> <h1 class="post-title" data-astro-cid-gjtny2mx>Node-OPCUA goes PubSub - Episode 1</h1> <p class="post-byline" data-astro-cid-gjtny2mx> <time datetime="2022-02-16T00:00:00.000Z" data-astro-cid-gjtny2mx>February 16, 2022</time> <span class="byline-sep" data-astro-cid-gjtny2mx>·</span> <span class="byline-author" data-astro-cid-gjtny2mx>Etienne Rossignon</span> </p> </header> <div class="post-content" data-astro-cid-gjtny2mx>  <p><strong>Node-OPCUA goes PubSub !  Episode 1</strong></p>
+<p><img src="/images/2022-02-16/usecase1_diagram3.png" alt="use case"></p>
+<p>That’s it! NodeOPCUA now supports PubSub as per Part 14 of the official
+OPCUA specifications.</p>
+<p>In this article, we will extend an existing OPC-UA Server. Then we will
+turn it into a PubSub publisher that streams its sensor values to an
+external MQTT broker. A scenario where IoT edge devices have to publish
+data to the cloud for data analysis.</p>
+<p>If you are already familiar with
+<a href="https://node-opcua.github.io">Node-OPCUA</a> programming, you already know
+how to create a simple OPCUA Server. You can do this in 3 easy steps,
+assuming that you have already installed NodeJS on your computer.</p>
+<p>Let’s create a NodeJs project:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">mkdir</span><span style="color:#9ECBFF"> my-publishing-opcua-server</span></span>
+<span class="line"><span style="color:#79B8FF">cd</span><span style="color:#9ECBFF">  my-publishing-opcua-server</span></span>
+<span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> init</span><span style="color:#79B8FF"> -y</span></span>
+<span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> node-opcua</span></span>
+<span class="line"></span></code></pre>
+<p>Now let’s edit our <code>server.js</code> javascript file:</p>
+<h2 id="the-server">the server</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">OPCUAServer</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#B392F0"> require</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"node-opcua"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">_</span><span style="color:#9ECBFF">"some additional imports"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">(</span><span style="color:#F97583">async</span><span style="color:#E1E4E8">()</span><span style="color:#F97583">=></span><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">        const</span><span style="color:#79B8FF"> server</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> OPCUAServer</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">            port: </span><span style="color:#79B8FF">26543</span></span>
+<span class="line"><span style="color:#E1E4E8">        });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">        await</span><span style="color:#E1E4E8"> server.</span><span style="color:#B392F0">initialize</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        _</span><span style="color:#9ECBFF">"add a temperature sensor"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        _</span><span style="color:#9ECBFF">"enable pub-sub service"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">        await</span><span style="color:#E1E4E8"> server.</span><span style="color:#B392F0">start</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">        console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"server started at "</span><span style="color:#E1E4E8">, server.</span><span style="color:#B392F0">getEndpointUrl</span><span style="color:#E1E4E8">());</span></span>
+<span class="line"><span style="color:#E1E4E8">    } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8">(err) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(err);</span></span>
+<span class="line"><span style="color:#E1E4E8">        process.</span><span style="color:#B392F0">exit</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">})();</span></span>
+<span class="line"><span style="color:#E1E4E8">_</span><span style="color:#9ECBFF">"constructing the configuration parameters"</span></span>
+<span class="line"></span></code></pre>
+<p><a href="#" title="save:">server.js</a></p>
+<h3 id="add-a-temperature-sensor">add a temperature sensor</h3>
+<p>Let’s create a sensor with its temperature variables.</p>
+<p>Here is the OPCUA model diagram that represents the sensor option.</p>
+<p><img src="/images/2022-02-16/ea94ba4b1156f12d17d85fc4daad377c6ec15567.png" alt=""></p>
+<p>The javascript code to create the sensor instance is straightforward.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> namespace</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> server.engine.addressSpace.</span><span style="color:#B392F0">getOwnNamespace</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> sensor</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> namespace.</span><span style="color:#B392F0">addObject</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">    browseName: </span><span style="color:#9ECBFF">"MySensor"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    organizedBy: server.engine.addressSpace.rootFolder.objects</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> temperature</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> namespace.</span><span style="color:#B392F0">addVariable</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">    browseName: </span><span style="color:#9ECBFF">"Temperature"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    nodeId: </span><span style="color:#9ECBFF">"s=Temperature"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    componentOf: sensor,</span></span>
+<span class="line"><span style="color:#E1E4E8">    dataType: </span><span style="color:#9ECBFF">"Double"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    value: { dataType: DataType.Double, value: </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8"> }</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">Note</span><span style="color:#E1E4E8">: The temperature variable nodeId has been set to </span><span style="color:#9ECBFF">`"ns=1;s=Temperature"`</span><span style="color:#E1E4E8">.</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">_</span><span style="color:#9ECBFF">"simulate the temperature variation."</span></span>
+<span class="line"></span></code></pre>
+<h3 id="simulate-the-temperature-variation">simulate the temperature variation.</h3>
+<p>We do not have a physical sensor connected here. Instead, we can
+simulate a temperature variation by continuously changing the
+temperature with a sine wave.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#B392F0">setInterval</span><span style="color:#E1E4E8">(() </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> value</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> 19</span><span style="color:#F97583"> +</span><span style="color:#79B8FF"> 5</span><span style="color:#F97583"> *</span><span style="color:#E1E4E8"> Math.</span><span style="color:#B392F0">sin</span><span style="color:#E1E4E8">(Date.</span><span style="color:#B392F0">now</span><span style="color:#E1E4E8">() </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 10000</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> Math.</span><span style="color:#B392F0">random</span><span style="color:#E1E4E8">()</span><span style="color:#F97583">*</span><span style="color:#79B8FF">0.2</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    temperature.</span><span style="color:#B392F0">setValueFromSource</span><span style="color:#E1E4E8">({ dataType: </span><span style="color:#9ECBFF">"Double"</span><span style="color:#E1E4E8">, value });</span></span>
+<span class="line"><span style="color:#E1E4E8">}, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span></code></pre>
+<h3 id="run-the-server">run the server</h3>
+<p>We can now start the server and check the temperature value using an
+OPCUA client.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>$ node server.js</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>We can monitor the value by using
+<a href="https://github.com/node-opcua/opcua-commander"><code>opcua-commander</code></a>. This
+lightweight OPC-UA client works in a console and does not require any
+GUI framework.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>$ npx -y opcua-commander -e opc.tcp://localhost:26543</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>We can now navigate to the variable
+<code>/RootFolder/Objects/MySensor/Temperature</code> to watch it change.</p>
+<p><img src="/images/2022-02-16/opcua-commander.png" alt="image"></p>
+<h3 id="adding-pub-sub-support">Adding PUB SUB support</h3>
+<p>We now want to publish the temperature to an MQTT Brocker using the
+OPCUA PubSub specification. MQTT is a generic Publish-Subscribe protocol
+that allows data publishers to send almost any data type to any related
+subscriber. It is very flexible and convenient but doesn’t rely upon
+enforcing the data payload format that is conveyed to the subscriber.
+When using OPCUA over MQTT PUBSUB, the payload can be a JSON object or a
+binary blob. It is also structured in a standard way, with the header,
+metadata, rich content possibility message signature, and encryption. We
+will focus here on the OPCUA JSON payload. Two types of OPCUA JSON
+encoding are possible; The first can be used to be consumed by a generic
+(non-OPCUA) application. The second format contains more
+meta-information about the data type transmitted, such as the variant
+type. This format can use it to synchronize two OPCUA applications
+(client or server) over MQTT. (we will come back to this point in a
+future article.)</p>
+<p>For the time being, let’s focus on adding the pubsub extension to our
+server, creating an MQTT JSON publisher, and creating a dataset writer
+that publishes our temperature value.</p>
+<p>The initial step is required to add the node-opcua pubsub server
+extension.</p>
+<p>We start by importing the <code>node-opcua-pubsub-server</code> and
+<code>node-opcua-pubsub-expander</code> modules to our project.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>$ npm install node-opcua-pubsub-server node-opcua-pubsub-expander</span></span>
+<span class="line"><span></span></span></code></pre>
+<h3 id="enable-pub-sub-service">enable pub-sub service</h3>
+<p>We can now turn our OPCUA Server into a PubSub ready publisher by
+calling the <code>installPubSub</code> utility. This function will do the
+heavy-lifting of creating the PublishSubscribe object under the standard
+Server object in the address space and bind all the necessary methods
+and services.</p>
+<p>Let’s add this after the <code>await server.initialize();</code> of our server
+code.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> configuration</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> getPubSubConfiguration</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(configuration.</span><span style="color:#B392F0">toString</span><span style="color:#E1E4E8">());</span></span>
+<span class="line"><span style="color:#6A737D">//</span></span>
+<span class="line"><span style="color:#F97583">await</span><span style="color:#B392F0"> installPubSub</span><span style="color:#E1E4E8">(server, {</span></span>
+<span class="line"><span style="color:#E1E4E8">    configuration,</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span></code></pre>
+<h3 id="construct-the-configuration-parameters">construct the configuration parameters</h3>
+<p>We reed to provide a set of parameters to fully configure the publisher
+and the associated dataset. A dataset describes the variables that will
+be published in the payload.</p>
+<p>Let’s analyze the <code>getPubSubConfiguration</code> function that produces the
+configuration object.</p>
+<p>It returns a <code>PubSubConfigurationDataType</code> object containing the PubSub
+configuration. The configufation describes the connection and the
+published data set.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> getPubSubConfiguration</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#E1E4E8">  _</span><span style="color:#9ECBFF">"create the connection"</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> connection</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> createConnection</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  _</span><span style="color:#9ECBFF">"create the published dataset"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> publishedDataSet</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> createPublishedDataSet</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> PubSubConfigurationDataType</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">    connections: [connection],</span></span>
+<span class="line"><span style="color:#E1E4E8">    publishedDataSets: [publishedDataSet] });</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<p>The <code>PubSubConfiguration</code> describes the connections and the published
+data sets.</p>
+<p>A connection contains specific parameters regarding the PubSub transport
+protocol used and the various required parameters for the broker or the
+broadcasting system.</p>
+<p>A published data set describes the payload content and provides the
+mapping information to link the published variables with the
+corresponding OPCUA variables in the server address space.</p>
+<p>In our case, we need to define an OPCUA JSON MQTT connection and a
+single dataset.</p>
+<h3 id="create-the-connection">create the connection</h3>
+<p>For a OPCUA MQTT JSON transport, we need to set the
+<code>transportProfileUri</code> to Transport.MQTT_JSON.</p>
+<p>The <code>PubSubConnection</code> contains the address of the MQTT broker we want
+to publish to. For our demo, we will use the public demo broker offered
+by <a href="https://www.hivemq.com/">Hivemq</a> at <code>"mqtt:broker.hivemq.com:1883"</code>.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> createConnection</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> mqttEndpoint</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> "mqtt:broker.hivemq.com:1883"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    _</span><span style="color:#9ECBFF">"create the writer group"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> connection</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> MyMqttJsonPubSubConnectionDataType</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">        enabled: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        name: </span><span style="color:#9ECBFF">"Connection1"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        transportProfileUri: Transport.</span><span style="color:#79B8FF">MQTT_JSON</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        address: {</span></span>
+<span class="line"><span style="color:#E1E4E8">            url: mqttEndpoint,</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">        writerGroups: [writerGroup],</span></span>
+<span class="line"><span style="color:#E1E4E8">        readerGroups: []</span></span>
+<span class="line"><span style="color:#E1E4E8">    });</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> connection;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<p>The PubSubConnection requires also one dataset writer definition to
+describe the MQTT topic of the datastream. It also contains additional
+flags that shape the meta-data that will be provided in each JSON
+message. A dataset writer needs to be assigned to a writer group.</p>
+<h3 id="create-the-writer-group">create the writer group</h3>
+<p>The writer group contains extra parameters such as <code>messageSettings</code> and
+<code>transportSettings</code> that are common to all dataset writers in this
+group. It also contains information about the publishing interval. The
+<code>publishingInterval</code> indicates the rate at which the JSON message will
+be published to the broker.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">_</span><span style="color:#9ECBFF">"create the dataset writer"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> writerGroup</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    dataSetWriters: [dataSetWriter],</span></span>
+<span class="line"><span style="color:#E1E4E8">    enabled: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    publishingInterval: </span><span style="color:#79B8FF">1000</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    name: </span><span style="color:#9ECBFF">"WriterGroup1"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    messageSettings: {</span></span>
+<span class="line"><span style="color:#E1E4E8">        networkMessageContentMask: JsonNetworkMessageContentMask.PublisherId,</span></span>
+<span class="line"><span style="color:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#E1E4E8">    transportSettings: {</span></span>
+<span class="line"><span style="color:#E1E4E8">        requestedDeliveryGuarantee: BrokerTransportQualityOfService.AtMostOnce,</span></span>
+<span class="line"><span style="color:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span></code></pre>
+<h3 id="create-the-dataset-writer">create the dataset writer</h3>
+<p>The data set writer contains additional message setting parameters.</p>
+<p>The <code>dataSetName</code> parameter indicates the name of the published data set
+that produces the data to be sent.</p>
+<p>The <code>queueName</code> parameters contains the mqtt topic we want to publish
+to: <code>stervfive-opcua-demo/json/data/temperature-sensor1</code> .</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> dataSetWriter</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    dataSetFieldContentMask: DataSetFieldContentMask.None,</span></span>
+<span class="line"><span style="color:#E1E4E8">    dataSetName: </span><span style="color:#9ECBFF">"PublishedDataSet1"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    dataSetWriterId: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    enabled: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    name: </span><span style="color:#9ECBFF">"dataSetWriter1"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    messageSettings: {</span></span>
+<span class="line"><span style="color:#E1E4E8">        dataSetMessageContentMask:</span></span>
+<span class="line"><span style="color:#E1E4E8">            JsonDataSetMessageContentMask.DataSetWriterId </span><span style="color:#F97583">|</span></span>
+<span class="line"><span style="color:#E1E4E8">            JsonDataSetMessageContentMask.MetaDataVersion,</span></span>
+<span class="line"><span style="color:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#E1E4E8">    transportSettings: {</span></span>
+<span class="line"><span style="color:#E1E4E8">        queueName: </span><span style="color:#9ECBFF">"stervfive-opcua-demo/json/data/temperature-sensor1"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span></code></pre>
+<p>The <code>dataSetName: "PublishedDataSet1"</code> tells the data set to publish the
+data that will be collected by the published data set named
+<code>PublishedDataSet1</code>, defined below.</p>
+<h3 id="create-the-published-dataset">create the published dataset</h3>
+<p>The PublishedDataSet object describes the content of a payload message
+and what are the corresponding OPCUA variables.</p>
+<p>The <code>dataSetMetaData.fields</code> array contains the list of properties
+exposed in the payload message.</p>
+<p>In our case, we have only one variable to expose. Let’s give it a
+property name. I choose <code>"Sensor.Temperature"</code>. We also need to specify
+that this is a <code>Double</code> value.</p>
+<p>The <code>dataSetSource.publishedData</code> array contains the same number of
+element as in the <code>dataSetMetaData.fields</code>.</p>
+<p>Each element of <code>dataSetSource.publishedData</code> is used to map the data
+set property to the corresponding OPC-UA variable on the server address
+space with the <code>attributeId</code> and <code>publishedVariable</code> parameters.</p>
+<p>It also indicates the suggested sampling interval in the
+<code>samplingIntervalHint</code> parameter.</p>
+<p>In our case, the nodeId of the varaible to monitor is
+<code>"ns=1;s=Temperature"</code></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> createPublishedDataSet</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> publishedDataSet</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">        name: </span><span style="color:#9ECBFF">"PublishedDataSet1"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        dataSetMetaData: {</span></span>
+<span class="line"><span style="color:#E1E4E8">            fields: [</span></span>
+<span class="line"><span style="color:#E1E4E8">                {</span></span>
+<span class="line"><span style="color:#E1E4E8">                    name: </span><span style="color:#9ECBFF">"Sensor.Temperature"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">                    builtInType: DataType.Double,</span></span>
+<span class="line"><span style="color:#E1E4E8">                    dataType: </span><span style="color:#B392F0">resolveNodeId</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Double"</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#E1E4E8">                },</span></span>
+<span class="line"><span style="color:#E1E4E8">            ],</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">        dataSetSource: </span><span style="color:#F97583">new</span><span style="color:#B392F0"> PublishedDataItemsDataType</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">            publishedData: [</span></span>
+<span class="line"><span style="color:#E1E4E8">                {</span></span>
+<span class="line"><span style="color:#E1E4E8">                    attributeId: AttributeIds.Value,</span></span>
+<span class="line"><span style="color:#E1E4E8">                    samplingIntervalHint: </span><span style="color:#79B8FF">1000</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">                    publishedVariable: </span><span style="color:#9ECBFF">`ns=1;s=Temperature`</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">                },</span></span>
+<span class="line"><span style="color:#E1E4E8">            ],</span></span>
+<span class="line"><span style="color:#E1E4E8">        }),</span></span>
+<span class="line"><span style="color:#E1E4E8">    };</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> publishedDataSet;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<!--
+###### some additional imports
+
+```javascript
+const { resolveNodeId, DataType, AttributeIds } = require("node-opcua");
+const {
+    DataSetFieldContentMask,
+    JsonNetworkMessageContentMask,
+    JsonDataSetMessageContentMask,
+    BrokerTransportQualityOfService,
+    PubSubConfigurationDataType,
+    PubSubConnectionDataType,
+    PublishedDataItemsDataType
+ } = require("node-opcua-types");
+const { installPubSub } = require("@sterfive/node-opcua-pubsub-server");
+const  { Transport, MyMqttJsonPubSubConnectionDataType } = require("@sterfive/node-opcua-pubsub-expander");
+```
+-->
+<h3 id="starting-the-server">starting the server</h3>
+<p>We can start the server</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>$ npx node server.js</span></span>
+<span class="line"><span></span></span></code></pre>
+<h4 id="subscribing-to-the-opcua-pubsub-topic">Subscribing to the OPCUA PubSub topic</h4>
+<p>We can now verify that a MQTT client can subscribe to the published
+data. Let visit the HiveMQ’s public WebSocket client page at
+<a href="http://www.hivemq.com/demos/websocket-client/">http://www.hivemq.com/demos/websocket-client/</a> .</p>
+<p>and add a topic subscription to our topic:
+<code>stervfive-opcua-demo/json/data/temperature-sensor1</code>.</p>
+<p><img src="/images/2022-02-16/hiveMqStream.png" alt="image"></p>
+<p>Here we go ! the data stream is up and running. It’s time to collect
+the flow of data to feed our data lake and produce the data we need for
+your predictive maintenance application.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>We have demonstrated how to add PubSUb support to a
+<a href="https://node-opcua.github.io">node-opcua</a> server application and
+created a data stream that publishes a sensor value to an MQTT broker by
+using a standardized OPCUA JSON payload.</p>
+<p>Our next article will explore the <code>PublishSubscribe</code> object in the
+server address space. This object exposes the PubSub configuration of
+the OPC-UA server. It’s used to modify the connection parameters or the
+payload shape; dynamically, while the server is running.</p>
+<p>The <code>node-opcua-pubsub-*</code> modules are available from <a href="https://www.sterfive.com/product/pubsub/">Sterfive</a>.</p>
+<p>references:</p>
+<ul>
+<li><a href="https://leanpub.com/node-opcuabyexample-edition2024">the “Node-OPCUA by example” book</a></li>
+<li><a href="https://www.sterfive.com/product/pubsub/">@sterfive/node-opcua-pubsub</a></li>
+<li><a href="https://www.hivemq.com/public-mqtt-broker/">HiveMQ’s public demo MQTT broker</a></li>
+<li><a href="http://www.hivemq.com/demos/websocket-client/">HiveMQ public WebClient</a></li>
+<li><a href="https://mosquitto.org/">Eclipse Mosquitto</a></li>
+<li><a href="https://giphy.com/gifs/n6mEMqAuYOQ8l8qcEE">Gyphy</a></li>
+</ul>  </div> </article>  </main> <footer class="footer" data-astro-cid-sz7xmlte> <div class="container footer-container" data-astro-cid-sz7xmlte> <div class="footer-left" data-astro-cid-sz7xmlte> <p class="copyright" data-astro-cid-sz7xmlte><strong data-astro-cid-sz7xmlte>node-opcua</strong> &middot; maintained by Sterfive SAS &middot; MIT licensed</p> </div> <div class="footer-center" data-astro-cid-sz7xmlte> <a href="/api_doc/latest/" data-astro-cid-sz7xmlte>Docs</a> <a href="/projects.html" data-astro-cid-sz7xmlte>Projects</a> <a href="/news.html" data-astro-cid-sz7xmlte>News</a> <a href="https://github.com/node-opcua/node-opcua" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>GitHub</a> <a href="https://www.npmjs.com/package/node-opcua" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>npm</a> <a href="https://github.com/sponsors/node-opcua" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>Sponsor</a> <a href="/privacy.html" data-astro-cid-sz7xmlte>Privacy</a> <button id="reset-analytics-consent" type="button" class="footer-analytics-btn" aria-label="Reset analytics consent preference" data-astro-cid-sz7xmlte>
+Analytics: manage
+</button> </div> <div class="footer-right" data-astro-cid-sz7xmlte> <p data-astro-cid-sz7xmlte>For commercial inquiries: <a href="https://www.sterfive.com" target="_blank" rel="noopener noreferrer" class="commercial-link" data-astro-cid-sz7xmlte>sterfive.com</a></p> </div> </div> </footer> <script>
+    (function() {
+      var btn = document.getElementById('reset-analytics-consent');
+      if (!btn) return;
+      btn.addEventListener('click', function() {
+        // Clear the consent cookie so the banner reappears on next load.
+        document.cookie = 'na_consent=; max-age=0; path=/; SameSite=Lax';
+        // Reload so the banner mounts fresh and Consent Mode reverts to default DENIED.
+        window.location.reload();
+      });
+    })();
+  </script>  <div id="consent-banner" class="consent-banner" role="region" aria-label="Analytics consent" aria-live="polite" data-astro-cid-2effgw6e><div class="consent-inner" data-astro-cid-2effgw6e><div class="consent-text" data-astro-cid-2effgw6e><span class="consent-eyebrow" data-astro-cid-2effgw6e>Analytics</span><p class="consent-body" data-astro-cid-2effgw6e>
+We use Google Analytics to measure traffic: page views, country,
+          and referrer. No advertising, no cross-site tracking, no profiling.
+<a href="/privacy.html" class="consent-privacy-link" data-astro-cid-2effgw6e>Privacy details</a></p></div><div class="consent-actions" data-astro-cid-2effgw6e><button id="consent-accept" class="consent-btn consent-btn-accept" type="button" aria-label="Accept analytics" data-astro-cid-2effgw6e>Accept</button><button id="consent-reject" class="consent-btn consent-btn-reject" type="button" aria-label="Reject analytics" data-astro-cid-2effgw6e>Reject</button></div></div></div>
+
+  <script>
+    (function() {
+      // Check if consent was already given — hide banner immediately
+      var hasCookie = document.cookie.split('; ').some(function(row) {
+        return row.startsWith('na_consent=');
+      });
+      if (hasCookie) {
+        document.getElementById('consent-banner').style.display = 'none';
+        return;
+      }
+
+      function setConsent(choice) {
+        var sixMonths = 60 * 60 * 24 * 180;
+        document.cookie = 'na_consent=' + choice + '; max-age=' + sixMonths + '; path=/; SameSite=Lax';
+
+        if (choice === 'granted' && window.gtag) {
+          window.gtag('consent', 'update', { 'analytics_storage': 'granted' });
+        }
+        document.getElementById('consent-banner').style.display = 'none';
+      }
+
+      document.getElementById('consent-accept')
+        .addEventListener('click', function() { setConsent('granted'); });
+      document.getElementById('consent-reject')
+        .addEventListener('click', function() { setConsent('denied'); });
+    })();
+  </script> </body></html> 
