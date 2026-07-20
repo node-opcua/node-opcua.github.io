@@ -49,8 +49,8 @@ if (Test-Path "$root\api_doc") {
 }
 
 # Keep the Google verification file
-if (Test-Path "$root\googlea35ecc050f9ca765.html") {
-    Copy-Item "$root\googlea35ecc050f9ca765.html" "$preview\" -Force
+if (Test-Path "$v2\public\googlea35ecc050f9ca765.html") {
+    Copy-Item "$v2\public\googlea35ecc050f9ca765.html" "$preview\" -Force
 }
 
 # NOTE: Do NOT copy the old Jekyll feed.xml — the Astro RSS endpoint
