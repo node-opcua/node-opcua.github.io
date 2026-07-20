@@ -1,0 +1,114 @@
+---
+import { url } from '../utils/url';
+---
+<section class="brand-mark" aria-label="node-opcua identity">
+  <div class="container brand-container">
+    <a href="https://nodejs.org"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="brand-logo brand-nodejs"
+       aria-label="Node.js official website (nodejs.org)">
+      <img src={url("logos/nodejs-logo.png")} alt="Node.js" width="120" height="72" />
+    </a>
+
+    <div class="brand-tagline">
+      <span class="tag-eyebrow">node-opcua</span>
+      <span class="tag-line">open source for industrial interoperability</span>
+    </div>
+
+    <a href="https://www.opcfoundation.org"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="brand-logo brand-opcua"
+       aria-label="OPC Foundation official website (opcfoundation.org)">
+      <img src={url("logos/opcua-logo.png")} alt="OPC UA" width="180" height="72" />
+    </a>
+  </div>
+</section>
+
+<style>
+  .brand-mark {
+    padding: 2.75rem 0;
+    background-color: var(--bg);
+    border-top: 1px solid var(--divider);
+    border-bottom: 1px solid var(--divider);
+  }
+  .brand-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.75rem 3rem;
+    flex-wrap: wrap;
+  }
+
+  .brand-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    flex-shrink: 0;
+    padding: 0.25rem;
+    border-radius: 4px;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+  }
+  .brand-logo:hover,
+  .brand-logo:focus-visible {
+    opacity: 0.82;
+    transform: translateY(-1px);
+  }
+  .brand-logo img {
+    display: block;
+    max-height: 3.25rem;
+    width: auto;
+    object-fit: contain;
+  }
+  .brand-nodejs img {
+    max-height: 3rem;
+  }
+  .brand-opcua img {
+    max-height: 2.5rem;
+  }
+
+  .brand-tagline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.25rem;
+    max-width: 22ch;
+  }
+  .tag-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .tag-line {
+    font-family: var(--font-sans);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.3;
+    letter-spacing: -0.005em;
+  }
+
+  @media (max-width: 640px) {
+    .brand-mark {
+      padding: 1.75rem 0;
+    }
+    .brand-container {
+      gap: 1.25rem 1.75rem;
+    }
+    .brand-nodejs img {
+      max-height: 2.25rem;
+    }
+    .brand-opcua img {
+      max-height: 1.75rem;
+    }
+    .tag-line {
+      font-size: 0.95rem;
+    }
+  }
+</style>

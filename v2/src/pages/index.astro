@@ -1,8 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
+import BrandMark from '../components/BrandMark.astro';
+import ReleaseStrip from '../components/ReleaseStrip.astro';
 import EcosystemStrip from '../components/EcosystemStrip.astro';
 import SocialProofStrip from '../components/SocialProofStrip.astro';
+import WhyNodeJs from '../components/WhyNodeJs.astro';
 import UseCases from '../components/UseCases.astro';
 import Capabilities from '../components/Capabilities.astro';
 import ThreePaths from '../components/ThreePaths.astro';
@@ -10,28 +13,93 @@ import CodeExample from '../components/CodeExample.astro';
 import TrustSignals from '../components/TrustSignals.astro';
 import AcrossEcosystem from '../components/AcrossEcosystem.astro';
 import Architecture from '../components/Architecture.astro';
+import { fetchLatestVersion } from '../../scripts/fetch-npm-version.mjs';
+
+// Fetched at build time from the npm registry so JSON-LD stays accurate on
+// every release. Fallback to a hardcoded version if the registry is
+// unreachable so the build never fails.
+const latestVersion = (await fetchLatestVersion('node-opcua')) || '2.174.0';
+const releaseNotesUrl = `https://github.com/node-opcua/node-opcua/releases/tag/v${latestVersion}`;
 
 const softwareLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "node-opcua",
-  "description": "Production-grade, open-source OPC UA client and server SDK for Node.js, JavaScript, and TypeScript.",
+  "alternateName": ["NodeOPCUA", "node-opcua-client", "node-opcua-server"],
+  "description": "The open-source OPC UA client, server, and PubSub stack for Node.js and TypeScript. Production-grade since 2014. MIT-licensed core. Maintained by Sterfive, OPC Foundation Corporate Member.",
   "applicationCategory": "DeveloperApplication",
-  "operatingSystem": "Cross-platform (Node.js)",
+  "applicationSubCategory": "Industrial Communication",
+  "operatingSystem": "Cross-platform (Node.js 18+, Windows, Linux, macOS, Alpine)",
   "programmingLanguage": ["JavaScript", "TypeScript"],
   "license": "https://opensource.org/licenses/MIT",
   "downloadUrl": "https://www.npmjs.com/package/node-opcua",
-  "softwareVersion": "latest",
+  "softwareVersion": latestVersion,
+  "releaseNotes": releaseNotesUrl,
   "codeRepository": "https://github.com/node-opcua/node-opcua",
+  "sameAs": [
+    "https://github.com/node-opcua/node-opcua",
+    "https://www.npmjs.com/package/node-opcua",
+    "https://npmtrends.com/node-opcua-client"
+  ],
+  "keywords": [
+    "OPC UA",
+    "OPC UA Node.js",
+    "OPC UA TypeScript",
+    "OPC UA SDK",
+    "OPC UA client",
+    "OPC UA server",
+    "OPC UA PubSub",
+    "Industrial IoT",
+    "Industry 4.0",
+    "IEC 62541",
+    "Role-Based Access Control",
+    "OPC 10000-18",
+    "OPC 10000-14 PubSub",
+    "companion specifications",
+    "Euromap 77",
+    "PackML",
+    "umati"
+  ],
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "OPC UA",
+      "sameAs": "https://www.wikidata.org/wiki/Q1196437",
+      "description": "The IEC 62541 industrial communication standard maintained by the OPC Foundation."
+    },
+    {
+      "@type": "Thing",
+      "name": "Node.js",
+      "sameAs": "https://www.wikidata.org/wiki/Q756100",
+      "description": "The JavaScript runtime built on Chrome's V8 engine and libuv."
+    },
+    {
+      "@type": "Thing",
+      "name": "TypeScript",
+      "sameAs": "https://www.wikidata.org/wiki/Q978185",
+      "description": "Microsoft's typed superset of JavaScript."
+    }
+  ],
   "author": {
     "@type": "Organization",
-    "name": "Sterfive",
+    "name": "Sterfive SAS",
+    "url": "https://www.sterfive.com",
+    "sameAs": [
+      "https://www.sterfive.com",
+      "https://github.com/node-opcua",
+      "https://www.linkedin.com/company/sterfive/"
+    ]
+  },
+  "maintainer": {
+    "@type": "Organization",
+    "name": "Sterfive SAS",
     "url": "https://www.sterfive.com"
   },
   "offers": {
     "@type": "Offer",
     "price": "0",
-    "priceCurrency": "USD"
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock"
   }
 };
 ---
@@ -44,13 +112,16 @@ const softwareLd = {
     <script type="application/ld+json" set:html={JSON.stringify(softwareLd)} />
   </Fragment>
   <Hero />
+  <BrandMark />
+  <ReleaseStrip />
   <EcosystemStrip />
   <SocialProofStrip />
+  <WhyNodeJs />
   <UseCases />
-  <Capabilities />
   <CodeExample />
   <Architecture />
-  <ThreePaths />
-  <TrustSignals />
+  <Capabilities />
   <AcrossEcosystem />
+  <TrustSignals />
+  <ThreePaths />
 </BaseLayout>

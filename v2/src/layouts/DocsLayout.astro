@@ -1,0 +1,303 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface AboutEntity {
+  name: string;
+  sameAs?: string;
+  description?: string;
+}
+
+interface Props {
+  title: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string;
+  dateModified?: string;
+  datePublished?: string;
+  keywords?: string[];
+  about?: AboutEntity[];
+  proficiencyLevel?: 'Beginner' | 'Expert';
+  articleSection?: string;
+  breadcrumbLabel?: string;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  ogImage,
+  dateModified,
+  datePublished,
+  keywords,
+  about,
+  proficiencyLevel = 'Expert',
+  articleSection = 'Documentation',
+  breadcrumbLabel,
+} = Astro.props;
+
+const site = 'https://node-opcua.github.io';
+const pageUrl = new URL(canonical || Astro.url.pathname, site).href;
+
+// Default `about[]` entities for any documentation page in this project.
+// Individual pages can override by passing their own `about` prop.
+const defaultAbout: AboutEntity[] = [
+  {
+    name: 'OPC UA',
+    sameAs: 'https://www.wikidata.org/wiki/Q1196437',
+    description: 'The IEC 62541 industrial communication standard maintained by the OPC Foundation.',
+  },
+  {
+    name: 'Node.js',
+    sameAs: 'https://www.wikidata.org/wiki/Q756100',
+    description: "The JavaScript runtime built on Chrome's V8 engine and libuv.",
+  },
+  {
+    name: 'node-opcua',
+    sameAs: 'https://github.com/node-opcua/node-opcua',
+    description: 'The open-source OPC UA stack for Node.js and TypeScript, maintained by Sterfive.',
+  },
+];
+
+const aboutEntities = (about && about.length > 0 ? about : defaultAbout).map((entity) => ({
+  '@type': 'Thing',
+  name: entity.name,
+  ...(entity.sameAs ? { sameAs: entity.sameAs } : {}),
+  ...(entity.description ? { description: entity.description } : {}),
+}));
+
+const techArticleLd: Record<string, unknown> = {
+  '@context': 'https://schema.org',
+  '@type': 'TechArticle',
+  headline: title,
+  description: description || '',
+  inLanguage: 'en',
+  proficiencyLevel,
+  articleSection,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },
+  url: pageUrl,
+  about: aboutEntities,
+  author: {
+    '@type': 'Organization',
+    name: 'node-opcua',
+    url: site,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'node-opcua',
+    url: site,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${site}/logos/sterfive-logo.png`,
+    },
+  },
+};
+
+if (datePublished) techArticleLd.datePublished = datePublished;
+if (dateModified) techArticleLd.dateModified = dateModified;
+if (keywords && keywords.length > 0) techArticleLd.keywords = keywords.join(', ');
+
+// BreadcrumbList so documentation pages carry proper breadcrumb schema.
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: site,
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Documentation',
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: breadcrumbLabel || title,
+    },
+  ],
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} ogImage={ogImage}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(techArticleLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
+  </Fragment>
+
+  <article class="docs-article">
+    <div class="docs-content">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .docs-article {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: var(--space-section, 4.5rem) 1.5rem;
+  }
+
+  .docs-content {
+    font-family: var(--font-sans, sans-serif);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--ink-soft, #5c5c56);
+  }
+
+  /* Headings */
+  .docs-content :global(h1) {
+    font-family: var(--font-sans, sans-serif);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--ink, #2c2c28);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin: 0 0 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--divider, #d4d2cc);
+  }
+  .docs-content :global(h2) {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--ink, #2c2c28);
+    letter-spacing: -0.015em;
+    margin-top: 3rem;
+    margin-bottom: 0.85rem;
+  }
+  .docs-content :global(h3) {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--ink, #2c2c28);
+    margin-top: 2.25rem;
+    margin-bottom: 0.65rem;
+  }
+  .docs-content :global(h4) {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--ink, #2c2c28);
+    margin-top: 1.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Paragraphs and inline elements */
+  .docs-content :global(p) {
+    margin: 0 0 1.25rem;
+  }
+  .docs-content :global(strong) {
+    color: var(--ink, #2c2c28);
+    font-weight: 600;
+  }
+
+  /* Horizontal rules used as section separators */
+  .docs-content :global(hr) {
+    border: 0;
+    height: 1px;
+    background: var(--divider, #d4d2cc);
+    margin: 3rem 0;
+  }
+
+  /* Code */
+  .docs-content :global(code) {
+    font-family: var(--font-mono, monospace);
+    font-size: 0.9em;
+  }
+  .docs-content :global(p > code),
+  .docs-content :global(li > code),
+  .docs-content :global(td > code),
+  .docs-content :global(th > code),
+  .docs-content :global(a > code) {
+    background: var(--bg-elevated, #f5f4f0);
+    padding: 0.12em 0.4em;
+    border-radius: 3px;
+    color: var(--ink, #2c2c28);
+    font-size: 0.9em;
+  }
+  .docs-content :global(pre) {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    padding: 1.25rem 1.35rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-size: 0.875rem;
+    line-height: 1.55;
+    margin: 1.5rem 0;
+  }
+  .docs-content :global(pre code) {
+    background: transparent;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+  }
+
+  /* Links */
+  .docs-content :global(a) {
+    color: var(--accent, #2a7a6e);
+    text-decoration: underline;
+    text-decoration-color: color-mix(in srgb, var(--accent, #2a7a6e) 40%, transparent);
+    text-underline-offset: 3px;
+    transition: text-decoration-color 0.15s ease, color 0.15s ease;
+  }
+  .docs-content :global(a:hover),
+  .docs-content :global(a:focus-visible) {
+    text-decoration-color: currentColor;
+    color: var(--ink, #2c2c28);
+  }
+
+  /* Lists */
+  .docs-content :global(ul),
+  .docs-content :global(ol) {
+    padding-left: 1.5rem;
+    margin: 1rem 0 1.25rem;
+  }
+  .docs-content :global(li) {
+    margin-bottom: 0.5rem;
+  }
+  .docs-content :global(li > ul),
+  .docs-content :global(li > ol) {
+    margin: 0.5rem 0;
+  }
+
+  /* Tables */
+  .docs-content :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.75rem 0;
+    font-size: 0.95rem;
+    border-top: 1px solid var(--divider, #d4d2cc);
+    border-bottom: 1px solid var(--divider, #d4d2cc);
+    display: block;
+    overflow-x: auto;
+  }
+  .docs-content :global(thead) {
+    background: var(--bg-elevated, #f5f4f0);
+  }
+  .docs-content :global(th),
+  .docs-content :global(td) {
+    padding: 0.625rem 0.85rem;
+    text-align: left;
+    border-bottom: 1px solid var(--divider, #d4d2cc);
+    vertical-align: top;
+  }
+  .docs-content :global(th) {
+    font-weight: 700;
+    color: var(--ink, #2c2c28);
+    font-size: 0.875rem;
+    letter-spacing: -0.005em;
+  }
+  .docs-content :global(tr:last-child td) {
+    border-bottom: none;
+  }
+
+  /* Blockquotes */
+  .docs-content :global(blockquote) {
+    border-left: 3px solid var(--accent, #2a7a6e);
+    padding: 0.25rem 0 0.25rem 1.25rem;
+    margin: 1.5rem 0;
+    color: var(--muted, #8a8880);
+    font-style: italic;
+  }
+</style>

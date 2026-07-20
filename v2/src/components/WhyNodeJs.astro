@@ -1,0 +1,145 @@
+---
+---
+<section class="why-section">
+  <div class="container why-container">
+    <div class="section-header">
+      <span class="section-eyebrow">Why Node.js</span>
+      <h2 class="section-title">The application and integration layer of industrial systems.</h2>
+    </div>
+
+    <div class="why-content">
+      <p class="body-p">
+        OPC UA implementations exist in every serious language. Choosing one is a question of which
+        layer of the industrial stack you are working at, and what the code around it looks like.
+        Firmware, embedded controllers, and hard real-time loops belong to C, C++, and Rust.
+        SCADA and historian back-ends have long been C# and Java territory.
+      </p>
+      <p class="body-p">
+        The layer <span class="figure-emphasis">above</span> them, where gateways, MES adapters, IIoT
+        bridges, and cloud connectors live, is the layer Node.js and TypeScript were built for.
+        Typed APIs. Async-first concurrency. Full LSP tooling. The npm ecosystem for everything from
+        S7 protocol drivers to Azure IoT SDKs.
+      </p>
+      <p class="body-p">
+        Underneath the API, V8 and libuv match OPC UA's subscription and notification model directly:
+        many concurrent sessions per process, no thread management, no lock discipline. That is where
+        node-opcua earns its place.
+      </p>
+
+      <div class="stats-strip">
+        <div class="stat">
+          <a href="https://npmtrends.com/node-opcua-client" target="_blank" rel="noopener noreferrer" class="stat-link">
+            <span class="stat-figure">350,000+</span>
+            <span class="stat-label">downloads per month <span class="stat-source">(npm)</span></span>
+          </a>
+        </div>
+        <div class="stat">
+          <span class="stat-figure">12 years</span>
+          <span class="stat-label">of continuous development</span>
+        </div>
+        <div class="stat">
+          <a href="https://www.opcfoundation.org" target="_blank" rel="noopener noreferrer" class="stat-link">
+            <span class="stat-figure">OPC Foundation</span>
+            <span class="stat-label">corporate member</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .why-section {
+    padding: var(--space-section) 0;
+    background-color: var(--bg);
+    border-bottom: 1px solid var(--divider);
+  }
+  .why-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .section-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-stack-xs);
+    margin-bottom: var(--space-stack-xl);
+  }
+  .section-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .section-title {
+    font-size: clamp(1.8rem, 4vw, 2.25rem);
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.025em;
+  }
+  .why-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-stack-md);
+    max-width: 62ch;
+  }
+  .body-p {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--ink-soft);
+  }
+  .figure-emphasis {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .stats-strip {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem 2rem;
+    margin-top: var(--space-stack-lg);
+    padding-top: var(--space-stack-lg);
+    border-top: 1px solid var(--divider);
+  }
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .stat-figure {
+    font-family: var(--font-mono);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.015em;
+  }
+  .stat-label {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+  }
+  .stat-link {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.15s ease;
+  }
+  .stat-link:hover .stat-figure,
+  .stat-link:focus-visible .stat-figure {
+    color: var(--accent);
+  }
+  .stat-source {
+    color: var(--muted);
+    font-size: 0.75rem;
+    margin-left: 0.15rem;
+  }
+
+  @media (min-width: 768px) {
+    .stats-strip {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>

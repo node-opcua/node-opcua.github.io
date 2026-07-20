@@ -2,59 +2,33 @@
 import { url } from '../utils/url';
 const features = [
   {
-    category: "Core protocol (MIT)",
+    category: "Complete OPC UA surface",
+    intro: "Every part of the spec you actually deploy, in one package.",
     items: [
-      { text: "Full OPC UA client & server SDK", pro: false },
-      { text: "Subscriptions & monitored items", pro: false },
-      { text: "Method calls (synchronous & async)", pro: false },
-      { text: "Browse, read, write, call, history read", pro: false },
-      { text: "Complex types & custom structures", pro: false },
-      { text: "Alarms & conditions (A&C)", pro: false },
-      { text: "Historical access (HA)", pro: false },
-      { text: "File transfer (Part 20)", pro: false },
+      { text: "Client and Server (Part 4, Part 5)" },
+      { text: "Subscriptions, monitored items, method calls" },
+      { text: "Alarms and Conditions (Part 9), Historical Access (Part 11)" },
+      { text: "Companion spec loading via XML nodeset (Euromap, PackML, LADS, umati)" },
     ],
   },
   {
-    category: "Security & certificates (MIT)",
+    category: "Production hardening",
+    intro: "The plumbing that matters when the deploy is not a demo.",
     items: [
-      { text: "Secure channels (Sign, SignAndEncrypt)", pro: false },
-      { text: "node-opcua-pki — certificate authority & PKI toolchain", pro: false },
-      { text: "node-opcua-crypto — OPC UA crypto primitives", pro: false },
-      { text: "Certificate management (X.509)", pro: false },
-      { text: "Role-based security (Part 18)", pro: false, href: url("role_based_security.html") },
-      { text: "User identity tokens (anonymous, user/pass, X.509)", pro: false },
+      { text: "OPC UA Role-Based Security and User Management (Part 18)", href: url("role_based_security.html") },
+      { text: "Certificate lifecycle: X.509, PKI toolchain, encrypted persistence" },
+      { text: "Session and channel auto-recovery, reverse-connect for restricted networks" },
+      { text: "Audit events, hot-reloadable identity mapping, no side-channel admin protocol" },
     ],
   },
   {
-    category: "Developer experience",
+    category: "TypeScript-first ergonomics",
+    intro: "The developer surface Node.js and TypeScript teams already expect.",
     items: [
-      { text: "Full TypeScript types & generics", pro: false },
-      { text: "Async/await throughout", pro: false },
-      { text: "3,000+ tests · ~97% coverage", pro: false },
-      { text: "Node.js 16 – 22 supported", pro: false },
-      { text: "Windows · Linux · macOS · Alpine", pro: false },
-      { text: "npm install — zero native deps", pro: false },
-    ],
-  },
-  {
-    category: "Integration & ecosystem",
-    items: [
-      { text: "Companion spec support (Euromap, PackML, LADS)", pro: false },
-      { text: "Node-RED OPC UA nodes", pro: false },
-      { text: "XML nodeset import/export", pro: false },
-      { text: "Reverse connect", pro: false },
-      { text: "Session & channel recovery", pro: false },
-    ],
-  },
-  {
-    category: "Commercial add-ons",
-    items: [
-      { text: "Global Discovery Server (GDS)", pro: true },
-      { text: "PubSub (UADP + JSON over MQTT)", pro: true },
-      { text: "Optimized OPC UA client — high-throughput reads", pro: true },
-      { text: "Address space crawler & exporter", pro: true },
-      { text: "React UI components for OPC UA", pro: true },
-      { text: "WebProxy — browser-to-OPC UA bridge", pro: true },
+      { text: "Full TypeScript types across every public API and every companion spec" },
+      { text: "Async/await everywhere, no callback layers, no thread pools" },
+      { text: "3,000+ tests, ~97% coverage, releases every two weeks on average" },
+      { text: "Runs on Node.js 18+ across Windows, Linux, macOS, Alpine. npm install, zero native dependencies" },
     ],
   },
 ];
@@ -64,10 +38,9 @@ const features = [
   <div class="container">
     <div class="section-header">
       <span class="section-eyebrow">Capabilities</span>
-      <h2 class="section-title">What's in the stack.</h2>
+      <h2 class="section-title">What node-opcua actually implements.</h2>
       <p class="section-subtitle">
-        node-opcua implements the OPC UA specification broadly and deeply.
-        Here's what ships in the current release.
+        Three claims about the stack. Everything below is in the MIT-licensed core.
       </p>
     </div>
 
@@ -75,6 +48,7 @@ const features = [
       {features.map((group) => (
         <div class="capability-group">
           <h3 class="group-title">{group.category}</h3>
+          <p class="group-intro">{group.intro}</p>
           <ul class="feature-list">
             {group.items.map((item) => (
               <li class="feature-item">
@@ -82,19 +56,12 @@ const features = [
                 {item.href
                   ? <a href={item.href} class="feature-link">{item.text}</a>
                   : <span>{item.text}</span>}
-                {item.pro && <span class="pro-badge">PRO</span>}
               </li>
             ))}
           </ul>
         </div>
       ))}
     </div>
-    <p class="capabilities-footnote">
-      Items marked <span class="pro-badge-inline">PRO</span> are commercial add-on modules,
-      available with a <a href="https://www.sterfive.com" target="_blank" rel="noopener noreferrer">Sterfive subscription</a>.
-      Source code is available. The core SDK and unmarked items above are MIT-licensed.
-      Some ecosystem packages (e.g. node-i3x) use AGPL + commercial dual licensing.
-    </p>
   </div>
 </section>
 
@@ -143,6 +110,12 @@ const features = [
     font-weight: 600;
     padding-bottom: 0.75rem;
     border-bottom: 1px solid var(--divider);
+  }
+  .group-intro {
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    margin: 0 0 0.5rem 0;
   }
   .feature-list {
     list-style: none;

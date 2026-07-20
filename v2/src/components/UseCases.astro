@@ -3,11 +3,11 @@
 <section class="usecases-section">
   <div class="container">
     <div class="section-header">
-      <span class="section-eyebrow">What you can build</span>
-      <h2 class="section-title">From factory floor to cloud, in JavaScript.</h2>
+      <span class="section-eyebrow">What teams build with it</span>
+      <h2 class="section-title">Six shapes of production traffic.</h2>
       <p class="section-subtitle">
-        node-opcua powers the application and integration layer of industrial systems.
-        Here's what teams ship with it.
+        node-opcua fits the application and integration layer of industrial systems.
+        Here is what running deployments look like, and where the Node.js runtime pays off.
       </p>
     </div>
 
@@ -16,17 +16,19 @@
         <div class="usecase-icon">⇄</div>
         <h3 class="usecase-title">Protocol gateways</h3>
         <p class="usecase-body">
-          Bridge S7, Modbus, MQTT, BACnet, or proprietary protocols to OPC UA.
-          Bidirectional, with buffering and reconnect logic built in.
+          Bridge Siemens S7, Modbus, MQTT, BACnet, or a proprietary transport to OPC UA.
+          npm ships a driver for every one of those on the field-bus side.
+          The single event loop handles both sides without thread pools.
         </p>
       </div>
 
       <div class="usecase-card">
         <div class="usecase-icon">◎</div>
-        <h3 class="usecase-title">OPC UA servers for your devices</h3>
+        <h3 class="usecase-title">Companion-spec servers on your device</h3>
         <p class="usecase-body">
-          Expose your machine's data model as a standards-compliant OPC UA address space.
-          Companion specs (Euromap, PackML, LADS) supported.
+          Expose your machine as a standards-compliant OPC UA address space.
+          Companion specs (Euromap 77, PackML, LADS, umati) load as XML nodesets and
+          generate their TypeScript types automatically. No handwritten node IDs.
         </p>
       </div>
 
@@ -34,26 +36,29 @@
         <div class="usecase-icon">▲</div>
         <h3 class="usecase-title">Edge data collectors</h3>
         <p class="usecase-body">
-          Subscribe to hundreds of variables across multiple PLCs. Aggregate,
-          filter, and forward to your historian, time-series DB, or cloud platform.
+          Subscribe to hundreds of variables across multiple PLCs from one Node.js process.
+          The subscription and notification model maps directly onto the async event loop, so
+          scaling to thousands of monitored items does not require any thread management.
         </p>
       </div>
 
       <div class="usecase-card">
         <div class="usecase-icon">☁</div>
-        <h3 class="usecase-title">Cloud &amp; IoT bridges</h3>
+        <h3 class="usecase-title">Cloud and IoT bridges</h3>
         <p class="usecase-body">
-          Connect OPC UA to AWS IoT Greengrass, Azure IoT Hub, Google Cloud IoT,
-          or any MQTT/REST backend. node-opcua runs where Node.js runs.
+          The same runtime that handles OPC UA also hosts the AWS, Azure, and Google IoT SDKs,
+          the MQTT libraries, and every REST client you already use. One process, one deploy target,
+          one language on both sides of the bridge.
         </p>
       </div>
 
       <div class="usecase-card">
         <div class="usecase-icon">⬡</div>
-        <h3 class="usecase-title">MES &amp; ERP connectors</h3>
+        <h3 class="usecase-title">MES and ERP connectors</h3>
         <p class="usecase-body">
-          Read production data from the shop floor and push it to SAP, Oracle,
-          or your custom MES. Real-time, with type-safe mappings.
+          Read production values from the shop floor and push them into SAP, Oracle, or your
+          in-house MES. Custom `DataType` and `ExtensionObject` schemas resolve as typed
+          TypeScript structures at compile time, not as unchecked bags at runtime.
         </p>
       </div>
 
@@ -61,8 +66,9 @@
         <div class="usecase-icon">◉</div>
         <h3 class="usecase-title">Node-RED OPC UA nodes</h3>
         <p class="usecase-body">
-          The official OPC UA nodes for Node-RED are built on node-opcua.
-          Low-code OPC UA integration used by thousands of flows worldwide.
+          The most-installed OPC UA nodes for Node-RED are built on node-opcua.
+          Low-code deployments on plant equipment, edge boxes, and home labs run the same
+          stack that the primary API-driven integrations do.
         </p>
       </div>
     </div>

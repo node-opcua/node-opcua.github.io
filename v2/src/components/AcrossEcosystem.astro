@@ -3,25 +3,15 @@
 <section class="across-ecosystem-section">
   <div class="container ecosystem-container">
     <div class="section-header">
-      <span class="section-eyebrow">Ecosystem</span>
-      <h2 class="section-title">Across the OPC UA ecosystem</h2>
+      <span class="section-eyebrow">Peer implementations</span>
+      <h2 class="section-title">Across the OPC UA ecosystem.</h2>
+      <p class="section-lead">
+        node-opcua is one of a small handful of production-grade OPC UA stacks the industry actually runs on.
+        The others are excellent choices for the layers below and beside it.
+      </p>
     </div>
 
     <div class="ecosystem-content">
-      <p class="body-p">
-        Downloads have grown <span class="figure-emphasis">more than 20&times;</span> since 2020, from a few
-        thousand a month to <span class="figure-emphasis">over 500,000</span>, and have grown every year
-        since the project's first stable release. After <span class="figure-emphasis">12 years of
-        continuous development</span>, node-opcua has become the
-        production-grade OPC UA implementation for the Node.js,
-        JavaScript, and TypeScript ecosystem.
-      </p>
-
-      <p class="body-p">
-        It sits alongside the mature implementations the OPC UA
-        community maintains in other languages:
-      </p>
-
       <ul class="peer-list">
         <li class="peer-item">
           <span class="peer-lang">C / C++</span>
@@ -61,19 +51,9 @@
         </li>
       </ul>
 
-      <p class="body-p">
-        Node.js and TypeScript fit the application and integration
-        layer of industrial systems: gateways, MES adapters, IIoT
-        bridges, cloud connectors. They bring typed APIs, async-first
-        concurrency, full LSP tooling, and the npm ecosystem. Built on
-        V8 and libuv, the async event loop matches OPC UA's subscription
-        and notification model: many concurrent sessions per process,
-        no thread management. That is where node-opcua earns its place.
-      </p>
-
-      <p class="body-p">
-        Sterfive participates in the OPC Foundation alongside the
-        maintainers of these projects.
+      <p class="body-p peer-note-line">
+        Sterfive participates in the OPC Foundation alongside the maintainers of these projects.
+        Interoperability is the point.
       </p>
     </div>
   </div>
@@ -100,6 +80,19 @@
     font-weight: 700;
     color: var(--ink);
     letter-spacing: -0.025em;
+  }
+  .section-lead {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    max-width: 56ch;
+    margin-top: var(--space-stack-xs);
+  }
+  .peer-note-line {
+    margin-top: var(--space-stack-md);
+    padding-top: var(--space-stack-md);
+    border-top: 1px solid var(--divider);
+    font-size: 0.9375rem;
   }
   .ecosystem-content {
     display: flex;

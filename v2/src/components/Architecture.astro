@@ -3,58 +3,62 @@
 <section class="architecture-section">
   <div class="container">
     <div class="section-header">
-      <span class="section-eyebrow">Where it fits</span>
-      <h2 class="section-title">From the shop floor to the cloud.</h2>
+      <span class="section-eyebrow">A real deployment</span>
+      <h2 class="section-title">One Node.js process on an edge box.</h2>
       <p class="section-subtitle">
-        node-opcua lives in the application and integration layer —
-        connecting physical equipment to the systems that make decisions.
+        Not an abstract three-layer marketing diagram. A concrete picture of what a node-opcua
+        deployment actually looks like on the factory floor.
       </p>
     </div>
 
     <div class="arch-diagram">
-      <!-- Layer 1: Field -->
+      <!-- Row 1: Field devices (three concrete assets) -->
       <div class="arch-layer field-layer">
-        <div class="layer-label">Field level</div>
+        <div class="layer-label">Shop floor</div>
         <div class="layer-items">
-          <div class="arch-node device">PLCs</div>
-          <div class="arch-node device">Sensors</div>
-          <div class="arch-node device">CNCs</div>
-          <div class="arch-node device">Robots</div>
+          <div class="arch-node device">S7-1500 PLC<br /><span class="node-sub">line A</span></div>
+          <div class="arch-node device">S7-1500 PLC<br /><span class="node-sub">line B</span></div>
+          <div class="arch-node device">SICK laser scanner<br /><span class="node-sub">line A</span></div>
         </div>
       </div>
 
       <div class="arch-connector">
         <div class="connector-line"></div>
-        <div class="connector-label">S7 · Modbus · MQTT · proprietary</div>
+        <div class="connector-label">S7 native protocol (via node-snap7)</div>
       </div>
 
-      <!-- Layer 2: node-opcua -->
+      <!-- Row 2: the Node.js process, the concrete node-opcua block -->
       <div class="arch-layer opcua-layer">
-        <div class="layer-label">Integration layer</div>
+        <div class="layer-label">Edge box · 1 Node.js process</div>
         <div class="layer-items">
           <div class="arch-node highlight">
             <span class="node-brand">node-opcua</span>
-            <span class="node-detail">OPC UA server · client · gateway</span>
+            <span class="node-detail">OPC UA Server exposing an Euromap 77 companion-spec address space</span>
+            <span class="node-detail-secondary">+ OPC UA Client subscribing to plant historian, + MQTT client to Azure IoT Hub</span>
           </div>
         </div>
       </div>
 
       <div class="arch-connector">
         <div class="connector-line"></div>
-        <div class="connector-label">OPC UA (binary / JSON / PubSub)</div>
+        <div class="connector-label">OPC UA over TLS (Basic256Sha256, SignAndEncrypt) · MQTT over TLS</div>
       </div>
 
-      <!-- Layer 3: Applications -->
+      <!-- Row 3: Consumers -->
       <div class="arch-layer app-layer">
-        <div class="layer-label">Application level</div>
+        <div class="layer-label">Upstream consumers</div>
         <div class="layer-items">
-          <div class="arch-node app">MES / ERP</div>
-          <div class="arch-node app">Historian</div>
-          <div class="arch-node app">Cloud IoT</div>
-          <div class="arch-node app">Dashboard</div>
+          <div class="arch-node app">Azure IoT Hub<br /><span class="node-sub">cloud analytics</span></div>
+          <div class="arch-node app">Plant SCADA<br /><span class="node-sub">OPC UA client</span></div>
+          <div class="arch-node app">MES<br /><span class="node-sub">TypeScript backend</span></div>
         </div>
       </div>
     </div>
+
+    <p class="arch-caption">
+      One process. Three protocol families in and out. Full type safety across companion-spec
+      structures. Async I/O all the way through. This is the shape node-opcua is designed for.
+    </p>
   </div>
 </section>
 
@@ -146,6 +150,30 @@
     font-size: 0.75rem;
     font-weight: 400;
     opacity: 0.85;
+  }
+  .node-detail-secondary {
+    font-size: 0.7rem;
+    font-weight: 400;
+    opacity: 0.7;
+    font-style: italic;
+  }
+  .node-sub {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    color: var(--muted);
+    font-weight: 400;
+    margin-top: 0.15rem;
+    letter-spacing: 0;
+  }
+  .arch-caption {
+    max-width: 700px;
+    margin: 2rem auto 0 auto;
+    text-align: center;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    max-width: 60ch;
   }
   .arch-node.app {
     background-color: var(--bg-elevated);

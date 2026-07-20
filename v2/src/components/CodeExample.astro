@@ -61,6 +61,8 @@ await server.shutdown();`;
       <h2 class="section-title">A few lines is enough to get started.</h2>
       <p class="section-subtitle">
         Both client and server fit comfortably on a screen. Full TypeScript types, full async/await, full OPC UA spec coverage underneath.
+        The client example below connects to a real OPC UA server at <code class="demo-endpoint">opc.tcp://opcuademo.sterfive.com:26543</code>.
+        Paste it into a fresh Node.js project and run it.
       </p>
     </div>
 
@@ -170,6 +172,16 @@ await server.shutdown();`;
   .section-subtitle {
     font-size: 1rem;
     color: var(--ink-soft);
+    line-height: 1.6;
+  }
+  .demo-endpoint {
+    font-family: var(--font-mono);
+    font-size: 0.85em;
+    color: var(--accent);
+    background: var(--bg-elevated);
+    padding: 0.1em 0.4em;
+    border-radius: 3px;
+    white-space: nowrap;
   }
   .tabs-container {
     max-width: 800px;

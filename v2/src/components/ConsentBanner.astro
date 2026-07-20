@@ -10,7 +10,11 @@ const enableAnalytics = gaId && !isStaging;
 ---
 
 {enableAnalytics && (
-  <div id="consent-banner" class="consent-banner">
+  <div id="consent-banner"
+       class="consent-banner"
+       role="region"
+       aria-label="Analytics consent"
+       aria-live="polite">
     <div class="consent-inner">
       <div class="consent-text">
         <span class="consent-eyebrow">Analytics</span>
@@ -21,8 +25,8 @@ const enableAnalytics = gaId && !isStaging;
         </p>
       </div>
       <div class="consent-actions">
-        <button id="consent-accept" class="consent-btn consent-btn-accept" type="button">Accept</button>
-        <button id="consent-reject" class="consent-btn consent-btn-reject" type="button">Reject</button>
+        <button id="consent-accept" class="consent-btn consent-btn-accept" type="button" aria-label="Accept analytics">Accept</button>
+        <button id="consent-reject" class="consent-btn consent-btn-reject" type="button" aria-label="Reject analytics">Reject</button>
       </div>
     </div>
   </div>

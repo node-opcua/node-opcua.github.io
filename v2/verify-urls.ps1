@@ -38,7 +38,10 @@ $extras = @(
     "news.html",
     "projects.html",
     "commercial-use.html",
-    "privacy.html"
+    "privacy.html",
+    "getting-started.html",
+    "role_based_security.html",
+    "release-notes/2026/06/30/v2-174-0-role-based-security.html"
 )
 
 Write-Host ""

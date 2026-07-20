@@ -1,0 +1,116 @@
+---
+import { url } from '../utils/url';
+---
+<section class="release-strip" aria-label="Latest release">
+  <div class="container release-container">
+    <div class="release-content">
+      <span class="release-dot" aria-hidden="true"></span>
+      <span class="release-eyebrow">Latest release</span>
+      <a href="https://github.com/node-opcua/node-opcua/releases/tag/v2.174.0"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="release-version-link"
+         aria-label="v2.174.0 release notes on GitHub">
+        v2.174.0
+      </a>
+      <span class="release-separator" aria-hidden="true">·</span>
+      <span class="release-headline">Full OPC UA Part 18 Role-Based Security and User Management</span>
+    </div>
+    <a href={url("role_based_security.html")} class="release-cta">
+      Read the documentation <span class="arrow" aria-hidden="true">&rarr;</span>
+    </a>
+  </div>
+</section>
+
+<style>
+  .release-strip {
+    background-color: var(--bg-elevated);
+    border-top: 1px solid var(--divider);
+    border-bottom: 1px solid var(--divider);
+    padding: 0.875rem 0;
+  }
+  .release-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+  }
+  .release-content {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: var(--ink-soft);
+  }
+  .release-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+  .release-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .release-version-link {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--divider);
+    padding-bottom: 1px;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+  .release-version-link:hover,
+  .release-version-link:focus-visible {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+  .release-separator {
+    color: var(--muted);
+  }
+  .release-headline {
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .release-cta {
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    white-space: nowrap;
+    transition: color 0.15s ease;
+  }
+  .release-cta:hover,
+  .release-cta:focus-visible {
+    color: var(--ink);
+  }
+  .release-cta .arrow {
+    transition: transform 0.2s ease;
+  }
+  .release-cta:hover .arrow {
+    transform: translateX(3px);
+  }
+
+  @media (max-width: 767px) {
+    .release-strip {
+      padding: 0.75rem 0;
+    }
+    .release-headline {
+      font-size: 0.875rem;
+    }
+  }
+</style>

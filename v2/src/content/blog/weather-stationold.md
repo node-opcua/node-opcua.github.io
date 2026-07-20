@@ -4,7 +4,7 @@ date: 2015-07-05
 category: tutorial
 description: "An older tutorial on creating an OPC-UA virtual weather station server using Node.js and the worldweatheronline REST API."
 permalink: tutorial/2015/07/05/weather-stationold
-draft: true
+draft: false
 ---
 
 # Creating a OPC-UA server for a virtual weather station.

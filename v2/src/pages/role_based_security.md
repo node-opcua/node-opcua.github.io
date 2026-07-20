@@ -1,7 +1,43 @@
 ---
-layout: ../layouts/BaseLayout.astro
+layout: ../layouts/DocsLayout.astro
 title: "Role-Based Security and User Management (OPC 10000-18)"
 description: "NodeOPCUA's complete, spec-conformant implementation of OPC UA Role-Based Security and User Management (OPC 10000-18), in open source under MIT. Architecture, API reference, identity mapping, security model, persistence, CLI, and migration guide."
+ogImage: "og/role-based-security-og.png"
+datePublished: "2026-06-30"
+dateModified: "2026-07-12"
+articleSection: "Documentation"
+breadcrumbLabel: "Role-Based Security"
+keywords:
+  - OPC UA Role-Based Security
+  - OPC 10000-18
+  - OPC UA Part 18
+  - Role-Based Access Control
+  - RBAC
+  - NodeOPCUA
+  - node-opcua-role-set-server
+  - node-opcua-role-set-client
+  - role-set-admin
+  - OPC UA identity mapping
+  - X.509 Distinguished Name
+  - JWT claims
+  - OPC UA SecurityAdmin
+  - OPC UA ConfigureAdmin
+  - encrypted persistence
+  - AES-256-GCM
+  - salted scrypt
+about:
+  - name: "OPC UA Role-Based Security"
+    sameAs: "https://reference.opcfoundation.org/Core/Part18/"
+    description: "The OPC UA Part 18 information model for Role-Based Access Control and User Management."
+  - name: "Role-based access control"
+    sameAs: "https://www.wikidata.org/wiki/Q547489"
+    description: "An access-control model where permissions are assigned to roles rather than directly to users."
+  - name: "OPC UA"
+    sameAs: "https://www.wikidata.org/wiki/Q1196437"
+    description: "The IEC 62541 industrial communication standard maintained by the OPC Foundation."
+  - name: "node-opcua"
+    sameAs: "https://github.com/node-opcua/node-opcua"
+    description: "The open-source OPC UA stack for Node.js and TypeScript, maintained by Sterfive."
 ---
 
 # Role-Based Security and User Management (OPC 10000-18)
@@ -273,5 +309,3 @@ npx role-set-admin -e opc.tcp://localhost:4840 -u admin add-user bob s3cret-pw1 
 - **Vendor-neutral spec walkthrough**: [Sterfive Learn: OPC UA Part 18](https://www.sterfive.com/en/learn/opcua-reference/role-based-security)
 - **Official Release Notes**: [v2.174.0 on GitHub](https://github.com/node-opcua/node-opcua/releases/tag/v2.174.0)
 - **Need enterprise support?**: [Sterfive, book a briefing](https://www.sterfive.com/en/contact)
-</content>
-</invoke>
