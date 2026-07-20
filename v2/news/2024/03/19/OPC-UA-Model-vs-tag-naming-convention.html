@@ -1,0 +1,125 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/x-icon" href="/v2/favicon.ico"><meta name="robots" content="noindex,nofollow"><title>Enhancing Industrial Automation with OPC UA Modeling and Object-Oriented Process Modeling | node-opcua</title><link rel="canonical" href="https://node-opcua.github.io/news/2024/03/19/OPC-UA-Model-vs-tag-naming-convention.html"><meta name="description" content="How OPC UA modeling and object-oriented process modeling provide a more intuitive, scalable alternative to traditional PLC tag naming conventions."><!-- Open Graph --><meta property="og:title" content="Enhancing Industrial Automation with OPC UA Modeling and Object-Oriented Process Modeling | node-opcua"><meta property="og:description" content="How OPC UA modeling and object-oriented process modeling provide a more intuitive, scalable alternative to traditional PLC tag naming conventions."><meta property="og:image" content="https://node-opcua.github.io/v2/og-default.png"><meta property="og:url" content="https://node-opcua.github.io/news/2024/03/19/OPC-UA-Model-vs-tag-naming-convention.html"><meta property="og:type" content="article">
+      <meta property="article:published_time" content="2024-03-19T00:00:00.000Z">
+      <meta property="article:author" content="Etienne Rossignon"><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Enhancing Industrial Automation with OPC UA Modeling and Object-Oriented Process Modeling | node-opcua"><meta name="twitter:description" content="How OPC UA modeling and object-oriented process modeling provide a more intuitive, scalable alternative to traditional PLC tag naming conventions."><meta name="twitter:image" content="https://node-opcua.github.io/v2/og-default.png"><!-- Organization JSON-LD (site-wide) --><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"node-opcua","url":"https://node-opcua.github.io","logo":"https://node-opcua.github.io/logos/sterfive-logo.png","description":"The open-source OPC UA stack for Node.js, maintained by Sterfive.","sameAs":["https://github.com/node-opcua","https://www.npmjs.com/package/node-opcua","https://www.sterfive.com"]}</script><!-- Slot for child layout head content (JSON-LD etc.) --> <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Enhancing Industrial Automation with OPC UA Modeling and Object-Oriented Process Modeling","description":"How OPC UA modeling and object-oriented process modeling provide a more intuitive, scalable alternative to traditional PLC tag naming conventions.","datePublished":"2024-03-19T00:00:00.000Z","dateModified":"2024-03-19T00:00:00.000Z","author":{"@type":"Person","name":"Etienne Rossignon","url":"https://github.com/node-opcua"},"publisher":{"@type":"Organization","name":"node-opcua","logo":{"@type":"ImageObject","url":"https://node-opcua.github.io/logos/sterfive-logo.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://node-opcua.github.io/news/2024/03/19/OPC-UA-Model-vs-tag-naming-convention.html"},"url":"https://node-opcua.github.io/news/2024/03/19/OPC-UA-Model-vs-tag-naming-convention.html","articleSection":"news"}</script> <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://node-opcua.github.io"},{"@type":"ListItem","position":2,"name":"News","item":"https://node-opcua.github.io/news.html"},{"@type":"ListItem","position":3,"name":"Enhancing Industrial Automation with OPC UA Modeling and Object-Oriented Process Modeling"}]}</script> <link rel="stylesheet" href="/v2/assets/role_based_security.B5ALXdld.css">
+<style>.post-article[data-astro-cid-gjtny2mx]{max-width:42rem;margin:0 auto;padding:var(--space-section, 4.5rem) 1.5rem}.post-header[data-astro-cid-gjtny2mx]{margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--divider, #d4d2cc)}.post-category[data-astro-cid-gjtny2mx]{display:inline-block;font-family:var(--font-mono, monospace);font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--accent, #2a7a6e);margin-bottom:.75rem}.post-title[data-astro-cid-gjtny2mx]{font-family:var(--font-sans, sans-serif);font-size:2rem;font-weight:600;color:var(--ink, #2c2c28);line-height:1.25;margin:0 0 1rem}.post-byline[data-astro-cid-gjtny2mx]{font-family:var(--font-sans, sans-serif);font-size:.875rem;color:var(--muted, #8a8880);margin:0;display:flex;align-items:center;gap:.5rem}.byline-sep[data-astro-cid-gjtny2mx]{color:var(--divider, #d4d2cc)}.byline-author[data-astro-cid-gjtny2mx]{font-weight:500;color:var(--ink-soft, #5c5c56)}.post-content[data-astro-cid-gjtny2mx]{font-family:var(--font-sans, sans-serif);font-size:1.0625rem;line-height:1.7;color:var(--ink-soft, #5c5c56)}.post-content[data-astro-cid-gjtny2mx] h2{font-size:1.375rem;font-weight:600;color:var(--ink, #2c2c28);margin-top:2.5rem;margin-bottom:.75rem}.post-content[data-astro-cid-gjtny2mx] h3{font-size:1.125rem;font-weight:600;color:var(--ink, #2c2c28);margin-top:2rem;margin-bottom:.5rem}.post-content[data-astro-cid-gjtny2mx] p{margin:0 0 1.25rem}.post-content[data-astro-cid-gjtny2mx] img{max-width:100%;height:auto;border-radius:6px;margin:1.5rem 0}.post-content[data-astro-cid-gjtny2mx] pre{background:#1e1e1e;color:#d4d4d4;padding:1.25rem;border-radius:6px;overflow-x:auto;font-size:.875rem;line-height:1.5;margin:1.5rem 0}.post-content[data-astro-cid-gjtny2mx] code{font-family:var(--font-mono, monospace);font-size:.875em}.post-content[data-astro-cid-gjtny2mx] p>code,.post-content[data-astro-cid-gjtny2mx] li>code{background:var(--bg-elevated, #f5f4f0);padding:.15em .35em;border-radius:3px}.post-content[data-astro-cid-gjtny2mx] blockquote{border-left:3px solid var(--accent, #2a7a6e);padding-left:1.25rem;margin:1.5rem 0;color:var(--muted, #8a8880);font-style:italic}.post-content[data-astro-cid-gjtny2mx] a{color:var(--accent, #2a7a6e);text-decoration:none}.post-content[data-astro-cid-gjtny2mx] a:hover{text-decoration:underline}.post-content[data-astro-cid-gjtny2mx] ul,.post-content[data-astro-cid-gjtny2mx] ol{padding-left:1.5rem;margin:1rem 0}.post-content[data-astro-cid-gjtny2mx] li{margin-bottom:.5rem}.post-content[data-astro-cid-gjtny2mx] table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.9375rem}.post-content[data-astro-cid-gjtny2mx] th,.post-content[data-astro-cid-gjtny2mx] td{padding:.625rem .75rem;text-align:left;border-bottom:1px solid var(--divider, #d4d2cc)}.post-content[data-astro-cid-gjtny2mx] th{font-weight:600;color:var(--ink, #2c2c28)}
+</style><script type="module" src="/v2/assets/hoisted.3WjCi9KP.js"></script></head> <body> <header class="navbar" data-astro-cid-ymhdp2rl> <div class="container navbar-container" data-astro-cid-ymhdp2rl> <a href="/v2/" class="logo" data-astro-cid-ymhdp2rl> <span class="logo-dot" data-astro-cid-ymhdp2rl></span><span class="logo-text" data-astro-cid-ymhdp2rl>node-opcua</span> </a> <button class="menu-trigger" aria-label="Open menu" aria-expanded="false" type="button" data-astro-cid-ymhdp2rl> <span class="hamburger-bar" data-astro-cid-ymhdp2rl></span> <span class="hamburger-bar" data-astro-cid-ymhdp2rl></span> <span class="hamburger-bar" data-astro-cid-ymhdp2rl></span> </button> <div class="backdrop" aria-hidden="true" data-astro-cid-ymhdp2rl></div> <nav class="nav-drawer" aria-label="Main navigation" data-astro-cid-ymhdp2rl> <a href="/v2/getting-started.html" class="nav-link" data-astro-cid-ymhdp2rl>Getting started</a> <a href="/api_doc/latest/" class="nav-link" data-astro-cid-ymhdp2rl>API reference</a> <a href="/v2/projects.html" class="nav-link" data-astro-cid-ymhdp2rl>Projects</a> <a href="/v2/news.html" class="nav-link" data-astro-cid-ymhdp2rl>News</a> <a href="https://www.npmjs.com/package/node-opcua/v/2.175.2" target="_blank" rel="noopener noreferrer" class="version-badge" aria-label="Latest release: v2.175.2" data-astro-cid-ymhdp2rl> <span class="version-number" data-astro-cid-ymhdp2rl>v2.175.2</span> <span class="version-label" data-astro-cid-ymhdp2rl>latest</span> </a> <a href="https://github.com/node-opcua/node-opcua" target="_blank" rel="noopener noreferrer" class="nav-link" data-astro-cid-ymhdp2rl>GitHub</a> <a href="https://github.com/sponsors/node-opcua" target="_blank" rel="noopener noreferrer" class="nav-link" data-astro-cid-ymhdp2rl>Sponsor</a> </nav> </div> </header>   <main>    <article class="post-article" data-astro-cid-gjtny2mx> <header class="post-header" data-astro-cid-gjtny2mx> <span class="post-category" data-astro-cid-gjtny2mx>news</span> <h1 class="post-title" data-astro-cid-gjtny2mx>Enhancing Industrial Automation with OPC UA Modeling and Object-Oriented Process Modeling</h1> <p class="post-byline" data-astro-cid-gjtny2mx> <time datetime="2024-03-19T00:00:00.000Z" data-astro-cid-gjtny2mx>March 19, 2024</time> <span class="byline-sep" data-astro-cid-gjtny2mx>·</span> <span class="byline-author" data-astro-cid-gjtny2mx>Etienne Rossignon</span> </p> </header> <div class="post-content" data-astro-cid-gjtny2mx>  <h1 id="enhancing-industrial-automation-with-opc-ua-modeling-and-object-oriented-process-modeling">Enhancing Industrial Automation with OPC UA Modeling and Object-Oriented Process Modeling</h1>
+<div style="text-align:center;">
+<img src="/images/2024-03-19/image-1.png">
+</div>
+<p>The traditional PLC tag naming convention has been the standard for industrial automation for decades. However, it has its limitations, such as the lack of clarity due to compressed names, limited length, and the need to include variable types in the names which hinder scalability and interoperability.</p>
+<p>This article will explain how OPC UA modeling and Object-Oriented Process Modeling provide a more intuitive, self-descriptive, expressive, and interoperable alternative that will help you scale and facilitate data organization and logical reasoning accross the organization.</p>
+<h2 id="the-shortcomings-of-traditional-plc-tag-naming">The Shortcomings of Traditional PLC Tag Naming</h2>
+<p>Traditional PLC tag naming conventions rely heavily on user-defined names for variables or tags, which represent inputs, outputs, and internal values of a PLC program.</p>
+<p>PLCs traditionally work with registers and linear tables, and tags identify these registers.</p>
+<p>Let’s consider a complex Robotic Equipment with a motor exposing speed, torque, and position, as well as a sensor exposing temperature and pressure.</p>
+<p>In the traditional PLC tag naming convention, these might be represented as follows:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Tag Name</th><th>Description</th></tr></thead><tbody><tr><td>M1_SPD_X</td><td>Motor 1 Speed, Boolean</td></tr><tr><td>M1_TQ_DW</td><td>Motor 1 Torque, Double Word</td></tr><tr><td>M1_POS_F</td><td>Motor 1 Position, Float</td></tr><tr><td>S1_TMP_R</td><td>Sensor 1 Temperature, Real</td></tr><tr><td>S1_PRS_I</td><td>Sensor 1 Pressure, Integer</td></tr></tbody></table>
+<p>Due to the limited length of tags imposed by the PLC, they often need to be compressed, leading to a lack of clarity.</p>
+<p>The tag <code>"M1_SPD_X"</code> can be interpreted this way:</p>
+<ul>
+<li><code>"M1"</code> represents <code>Motor 1</code>,</li>
+<li><code>"SPD"</code> represents speed,</li>
+<li>and <code>"X"</code> represents the data type (in this case, a boolean).</li>
+</ul>
+<p>Standard practice and guidelines are well documented in the <code>IEC 61131-3 standard</code>, which provides a set of rules for naming variables and tags. Most PLC manufacturers have their own guidelines and best practices for naming conventions that are based on this <code>IEC 61131-3 standard</code>.</p>
+<p>While this method offers simplicity, it falls short in several key areas:</p>
+<ul>
+<li>
+<p><strong>Lack of Scalability</strong>: As systems expand, maintaining a coherent and intuitive naming convention becomes cumbersome, leading to increased potential for errors.</p>
+</li>
+<li>
+<p><strong>Lack of nteroperability</strong>: Lack of standardization can hinder the integration of devices and systems from different manufacturers, complicating system upgrades and expansions.</p>
+</li>
+<li>
+<p><strong>Lack of Clarity</strong> : With complex systems, tag names can become cryptic and hard to understand, especially for non PLC programmer or for personnel not involved in the initial design process.</p>
+</li>
+</ul>
+<p>This model is familiar to the PLCs engineers. This is the way, the PLC world has been working for decades, and it has been working well.</p>
+<p>However when it comes to make real-time process data available to non PLC specialists,  this naming convention can become confusing and difficult to manage, especially in complex systems with thousands of tags.</p>
+<p>With the advent of Industry 4.0, the need for a more expressive, interoperable, and scalable naming convention has become apparent.</p>
+<h2 id="bridging-the-ot-and-it-world">Bridging the OT and IT world</h2>
+<p>In Industry 4.0, the convergence of Operational Technology (OT) and Information Technology (IT) is a key to building a smart factory, where data is collected, analyzed, and used to optimize processes and improve efficiency.</p>
+<p>This requires that the PLC’s layers communicates to the IT layers in a seamless and interoperable way.</p>
+<p>This also requires that IT domain experts can understand and interpret the data coming from the OT domain.</p>
+<p>This is where <strong>OPC UA</strong> and <strong>Object-Oriented Process Modeling</strong> come into play.</p>
+<h2 id="opc-ua-to-the-rescue">OPC UA to the rescue</h2>
+<p><strong>OPC UA</strong> (Open Platform Communications Unified Architecture) is a machine-to-machine communication protocol for industrial automation developed by the OPC Foundation.
+It is designed to provide a more secure, reliable, and interoperable alternative to the traditional OPC (OLE for Process Control) protocol.
+It has a rich information model and a flexible address space that can be used to represent complex systems and processes.</p>
+<p>Now suppose we want to expose the same Robotic Equipment with a motor and a sensor to the IT world using OPC UA.</p>
+<p>In OPC UA, the same variables would be represented as follows:</p>
+<div style="text-align:center;"><img src="/images/2024-03-19/tree.svg"></div>
+<p>Note the hierarchy and the rich set of attributes that can be used to represent the variables and the logical structure of the system.</p>
+<h2 id="recommendations-for-implementing-opc-ua-and-object-oriented-process-modeling">Recommendations for Implementing OPC UA and Object-Oriented Process Modeling:</h2>
+<p>When wrapping a PLC with an OPC UA server to enhance interoperability, the following principles should apply:</p>
+<ul>
+<li><strong>Rethink the Exposed Variables:</strong> Take this opportunity to create meaningful or long descriptive names that provide clarity and improve understanding.</li>
+<li><strong>Avoid Data Type Decoration</strong>: In traditional PLC tag naming, variable types are included in the names. In OPC UA, use the DataType attribute for this purpose.</li>
+<li><strong>Use Clear Naming for Booleans</strong>: For boolean variables, use names like <code>"IsMotorRunning"</code> or <code>"HasSensorTriggered"</code> to improve readability.</li>
+<li><strong>Use Verbs for Actions and Methods</strong>: For actions and methods, use names like <code>"StartMotor"</code> or <code>"SetActiveRecipe"</code> to indicate the intended function.</li>
+<li><strong>Use Enumeration for States</strong>: For states, use an enumeration to represent the state of a machine or process, such as <code>"Running"</code>, <code>"Stopped"</code>, or <code>"Faulted"</code>.</li>
+<li><strong>Hide PLC Internals</strong>: Your PLC exposes many data points, but not all are necessary. Select the few meaningful and important process variables that are useful and hide the implementation details.</li>
+<li><strong>Collaborate with the Appropriate Team</strong>: Involve the right people in the process, including automation engineers, software developers, and other stakeholders.</li>
+<li><strong>Leverage Companion Specifications</strong>: Bind your ObjectType with companion specifications as much as possible and leverage the models that have already been built by the community and working groups.</li>
+<li><strong>Grow Your Model on Demand</strong>: Keep your model extendable by adding new modules as needed, ensuring backward compatibility.</li>
+<li><strong>Enrich your model</strong> with meta data (EngineeringUnits, Description, DisplayName, etc.) to ensure intuitive and error-prone usage, hence avoiding the need for documentation and misinterpretation.</li>
+<li><strong>Use AnalogDataItem for Analog Values</strong>: Use the AnalogDataItem type for analog values, which provides a rich set of attributes for engineering units, range, and precision.</li>
+<li><strong>Use Multi-StateDiscrete for States</strong>: Use the Multi-StateDiscrete type for states, which provides a rich set of attributes for states and transitions.</li>
+<li><strong>Implements Alarm and Condition</strong>: Use the Alarm and Condition model to represent alarms and conditions in your system, providing a rich set of attributes for severity, priority, and time stamps.</li>
+</ul>
+<h2 id="real-world-example">Real-world Example:</h2>
+<p>In OPC UA and Object-Oriented Process Modeling, following the recommendations above, these would be represented as follows:</p>
+<img src="/images/2024-03-19/2024-03-19.svg">
+<h2 id="conclusion">Conclusion:</h2>
+<p>Whereas  IEC 61131-3  and  PLCopen  provide a standard for programming languages and control logic,  OPC UA  provides a standard for data modeling and communication and naming conventions, when exposing industrial equipment data to the enterprise level it is important to use the power of OPC UA to create a reusable, interoperable, intuitive, and self-descriptive, human readable, allowing better and faster integration with other systems and devices up and down the automation pyramid.</p>
+<p>OPC UA provide a reusable, interoperable, intuitive, and self-descriptive model that improves data organization and logical reasoning, making it an ideal choice for complex industrial automation systems.</p>
+<p>By leveraging OPC UA and Object-Oriented Process Modeling, you can create a scalable and maintainable model that is easy to understand and extend, ensuring that your system is future-proof and ready for integration with other systems and devices.</p>
+<h2 id="about-the-author">About the Author:</h2>
+<p>Etienne Rossignon is a software architect and OPC UA expert and CEO at Sterfive. He has been working in the industrial software world for more than 20 years, and has been involved in the development of several OPC UA products and projects. He is also a member of the OPC Foundation and is the author of NodeOPCUA the renowned OPC UA development stack for Node.js, and @opcua/for-node-red.</p>
+<h2 id="references">References:</h2>
+<ul>
+<li>
+<p><a href="https://plcopen.org/guidelines/guidelines">https://plcopen.org/guidelines/guidelines</a></p>
+</li>
+<li>
+<p><a href="https://www.optimizedtechnicalsolutions.com/ReferenceDocuments/Naming%20Conventions%20and%20Data%20Structures%20for%20Industrial%20PLCs.pdf">Naming Convention and Data Structure for Industrial PLCs</a></p>
+</li>
+<li>
+<p><a href="https://www.sterfive.com/product/modeler">OPCUA Modeler by Sterfive</a></p>
+</li>
+<li>
+<p><a href="https://reference.opcfoundation.org/DI/v102/docs/4.2.1">Information Modeling in OPC UA</a></p>
+</li>
+<li>
+<p><a href="https://opcfoundation.org/developer-tools/documents/view/312">OPC UA Modeling best practises</a></p>
+</li>
+</ul>  </div> </article>  </main> <footer class="footer" data-astro-cid-sz7xmlte> <div class="container footer-container" data-astro-cid-sz7xmlte> <div class="footer-left" data-astro-cid-sz7xmlte> <p class="copyright" data-astro-cid-sz7xmlte><strong data-astro-cid-sz7xmlte>node-opcua</strong> &middot; maintained by Sterfive SAS &middot; MIT licensed</p> </div> <div class="footer-center" data-astro-cid-sz7xmlte> <a href="/api_doc/latest/" data-astro-cid-sz7xmlte>Docs</a> <a href="/v2/projects.html" data-astro-cid-sz7xmlte>Projects</a> <a href="/v2/news.html" data-astro-cid-sz7xmlte>News</a> <a href="https://github.com/node-opcua/node-opcua" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>GitHub</a> <a href="https://www.npmjs.com/package/node-opcua" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>npm</a> <a href="https://github.com/sponsors/node-opcua" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>Sponsor</a> <a href="/v2/privacy.html" data-astro-cid-sz7xmlte>Privacy</a>  </div> <div class="footer-right" data-astro-cid-sz7xmlte> <p data-astro-cid-sz7xmlte>For commercial inquiries: <a href="https://www.sterfive.com" target="_blank" rel="noopener noreferrer" class="commercial-link" data-astro-cid-sz7xmlte>sterfive.com</a></p> </div> </div> </footer>    </body></html> 
