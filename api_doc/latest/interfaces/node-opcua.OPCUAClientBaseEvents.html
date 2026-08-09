@@ -15,7 +15,7 @@
 <h1>Interface OPCUAClientBaseEvents</h1></div>
 <div class="tsd-signature"><span class="tsd-signature-keyword">interface</span> <span class="tsd-kind-interface">OPCUAClientBaseEvents</span> <span class="tsd-signature-symbol">{</span><br/>    <a class="tsd-kind-property" href="#abort">abort</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#after_reconnection">after_reconnection</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span>err<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">Error</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#backoff">backoff</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span>count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">,</span> delay<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#close">close</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span>err<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">Error</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#connected">connected</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#connection_failed">connection_failed</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span>err<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Error</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#connection_lost">connection_lost</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#connection_reestablished">connection_reestablished</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#keepalive">keepalive</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#lifetime_75">lifetime_75</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span>token<span class="tsd-signature-symbol">:</span> <a href="../classes/node-opcua.ChannelSecurityToken.html" class="tsd-signature-type tsd-kind-class">ChannelSecurityToken</a><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#receive_chunk">receive_chunk</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span>chunk<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ArrayBufferLike</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#receive_response">receive_response</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span>response<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Response</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#reconnecting">reconnecting</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#reconnection_attempt_has_failed">reconnection_attempt_has_failed</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span>err<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Error</span><span class="tsd-signature-symbol">,</span> message<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#reconnection_canceled">reconnection_canceled</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#repairconnectionstarted">repairConnectionStarted</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#secure_channel_created">secure_channel_created</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span>secureChannel<span class="tsd-signature-symbol">:</span> <a href="../classes/node-opcua.ClientSecureChannelLayer.html" class="tsd-signature-type tsd-kind-class">ClientSecureChannelLayer</a><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#security_token_renewed">security_token_renewed</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><br/>        channel<span class="tsd-signature-symbol">:</span> <a href="../classes/node-opcua.ClientSecureChannelLayer.html" class="tsd-signature-type tsd-kind-class">ClientSecureChannelLayer</a><span class="tsd-signature-symbol">,</span><br/>        token<span class="tsd-signature-symbol">:</span> <a href="../classes/node-opcua.ChannelSecurityToken.html" class="tsd-signature-type tsd-kind-class">ChannelSecurityToken</a><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#send_chunk">send_chunk</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span>chunk<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ArrayBufferLike</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#send_request">send_request</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span>request<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Request</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#start_reconnection">start_reconnection</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span>err<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">Error</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#startingdelaybeforereconnection">startingDelayBeforeReconnection</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span>duration<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#timed_out_request">timed_out_request</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span>request<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Request</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">;</span><br/><span class="tsd-signature-symbol">}</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:222</li></ul></aside>
+<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:236</li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-accordion" open><summary class="tsd-accordion-summary tsd-index-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
@@ -56,7 +56,7 @@
 <div class="tsd-comment tsd-typography"><p>the event is raised when the connection has been aborted by the remote OPCUA Server</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:262</li></ul></aside></section>
+<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:276</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="after_reconnection"><span>after_<wbr/>reconnection</span><a href="#after_reconnection" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">after_reconnection</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span>err<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">Error</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">]</span></div>
@@ -66,54 +66,54 @@ You can intercept after_reconnection event to resume your interaction with the r
 OPCUA server.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:258</li></ul></aside></section>
+<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:272</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="backoff"><span>backoff</span><a href="#backoff" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">backoff</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span>count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">,</span> delay<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></div>
 <div class="tsd-comment tsd-typography"><p>this Event is raised when a failing connection is about to be tried again</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:234</li></ul></aside></section>
+<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:248</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="close"><span>close</span><a href="#close" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">close</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span>err<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">Error</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">]</span></div>
 <div class="tsd-comment tsd-typography"><p>this event is raised when the connection is closed</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:271</li></ul></aside></section>
+<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:285</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="connected"><span>connected</span><a href="#connected" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">connected</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-symbol">]</span></div>
 <div class="tsd-comment tsd-typography"><p>this Event is raised when the  initial connection has succeeded</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:226</li></ul></aside></section>
+<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:240</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="connection_failed"><span>connection_<wbr/>failed</span><a href="#connection_failed" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">connection_failed</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span>err<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Error</span><span class="tsd-signature-symbol">]</span></div>
 <div class="tsd-comment tsd-typography"><p>this Event is raised when the  initial connection has failed</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:230</li></ul></aside></section>
+<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:244</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="connection_lost"><span>connection_<wbr/>lost</span><a href="#connection_lost" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">connection_lost</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-symbol">]</span></div>
 <div class="tsd-comment tsd-typography"><p>this event is raised when the connection has been broken</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:301</li></ul></aside></section>
+<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:315</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="connection_reestablished"><span>connection_<wbr/>reestablished</span><a href="#connection_reestablished" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">connection_reestablished</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-symbol">]</span></div>
 <div class="tsd-comment tsd-typography"><p>this event is raised when a broken connection with the remote Server has been reestablished</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:305</li></ul></aside></section>
+<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:319</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="keepalive"><span>keepalive</span><a href="#keepalive" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">keepalive</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-symbol">]</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:267</li></ul></aside></section>
+<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:281</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="lifetime_75"><span>lifetime_<wbr/>75</span><a href="#lifetime_75" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">lifetime_75</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span>token<span class="tsd-signature-symbol">:</span> <a href="../classes/node-opcua.ChannelSecurityToken.html" class="tsd-signature-type tsd-kind-class">ChannelSecurityToken</a><span class="tsd-signature-symbol">]</span></div>
@@ -121,7 +121,7 @@ OPCUA server.</p>
 about to expired.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:288</li></ul></aside></section>
+<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:302</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="receive_chunk"><span>receive_<wbr/>chunk</span><a href="#receive_chunk" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">receive_chunk</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span>chunk<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ArrayBufferLike</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">]</span></div>
@@ -129,17 +129,17 @@ about to expired.</p>
 (advanced use only)</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:281</li></ul></aside></section>
+<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:295</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="receive_response"><span>receive_<wbr/>response</span><a href="#receive_response" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">receive_response</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span>response<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Response</span><span class="tsd-signature-symbol">]</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:283</li></ul></aside></section>
+<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:297</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="reconnecting"><span>reconnecting</span><a href="#reconnecting" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">reconnecting</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-symbol">]</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:265</li></ul></aside></section>
+<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:279</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="reconnection_attempt_has_failed"><span>reconnection_<wbr/>attempt_<wbr/>has_<wbr/>failed</span><a href="#reconnection_attempt_has_failed" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">reconnection_attempt_has_failed</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span>err<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Error</span><span class="tsd-signature-symbol">,</span> message<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]</span></div>
@@ -148,24 +148,24 @@ This event will be raised if the socket has successfully being created to the se
 if something went wrong during the reconnection process.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:251</li></ul></aside></section>
+<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:265</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="reconnection_canceled"><span>reconnection_<wbr/>canceled</span><a href="#reconnection_canceled" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">reconnection_canceled</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-symbol">]</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:263</li></ul></aside></section>
+<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:277</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="repairconnectionstarted"><span>repair<wbr/>Connection<wbr/>Started</span><a href="#repairconnectionstarted" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">repairConnectionStarted</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-symbol">]</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:266</li></ul></aside></section>
+<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:280</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="secure_channel_created"><span>secure_<wbr/>channel_<wbr/>created</span><a href="#secure_channel_created" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">secure_channel_created</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span>secureChannel<span class="tsd-signature-symbol">:</span> <a href="../classes/node-opcua.ClientSecureChannelLayer.html" class="tsd-signature-type tsd-kind-class">ClientSecureChannelLayer</a><span class="tsd-signature-symbol">]</span></div>
 <div class="tsd-comment tsd-typography"><p>this event is raised when the secure channel has been created</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:297</li></ul></aside></section>
+<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:311</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="security_token_renewed"><span>security_<wbr/>token_<wbr/>renewed</span><a href="#security_token_renewed" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">security_token_renewed</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><br/>    channel<span class="tsd-signature-symbol">:</span> <a href="../classes/node-opcua.ClientSecureChannelLayer.html" class="tsd-signature-type tsd-kind-class">ClientSecureChannelLayer</a><span class="tsd-signature-symbol">,</span><br/>    token<span class="tsd-signature-symbol">:</span> <a href="../classes/node-opcua.ChannelSecurityToken.html" class="tsd-signature-type tsd-kind-class">ChannelSecurityToken</a><span class="tsd-signature-symbol">,</span><br/><span class="tsd-signature-symbol">]</span></div>
@@ -173,7 +173,7 @@ if something went wrong during the reconnection process.</p>
 and renegotiated with the <a href="http://server.to">server.to</a> expire</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:293</li></ul></aside></section>
+<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:307</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="send_chunk"><span>send_<wbr/>chunk</span><a href="#send_chunk" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">send_chunk</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span>chunk<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ArrayBufferLike</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">]</span></div>
@@ -181,12 +181,12 @@ and renegotiated with the <a href="http://server.to">server.to</a> expire</p>
 (advanced use only)</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:276</li></ul></aside></section>
+<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:290</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="send_request"><span>send_<wbr/>request</span><a href="#send_request" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">send_request</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span>request<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Request</span><span class="tsd-signature-symbol">]</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:282</li></ul></aside></section>
+<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:296</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="start_reconnection"><span>start_<wbr/>reconnection</span><a href="#start_reconnection" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">start_reconnection</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span>err<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">Error</span><span class="tsd-signature-symbol">]</span></div>
@@ -198,12 +198,12 @@ after having received a connection break...</p>
 OPCUA server.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:245</li></ul></aside></section>
+<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:259</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="startingdelaybeforereconnection"><span>starting<wbr/>Delay<wbr/>Before<wbr/>Reconnection</span><a href="#startingdelaybeforereconnection" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">startingDelayBeforeReconnection</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span>duration<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:264</li></ul></aside></section>
+<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:278</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="timed_out_request"><span>timed_<wbr/>out_<wbr/>request</span><a href="#timed_out_request" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">timed_out_request</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span>request<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Request</span><span class="tsd-signature-symbol">]</span></div>
@@ -211,7 +211,7 @@ OPCUA server.</p>
 a Response from the server.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:310</li></ul></aside></section></section></details></div>
+<li>Defined in packages/node-opcua-client/dist/client_base.d.ts:324</li></ul></aside></section></section></details></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
