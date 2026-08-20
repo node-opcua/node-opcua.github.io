@@ -13,7 +13,7 @@
 <li><a href="../modules/node-opcua-certificate-manager.html">node-opcua-certificate-manager</a></li>
 <li><a href="" aria-current="page">CertificateManager</a></li></ul>
 <h1>Class CertificateManager</h1></div>
-<section class="tsd-panel tsd-hierarchy" data-refl="706797">
+<section class="tsd-panel tsd-hierarchy" data-refl="707117">
 <h4>Hierarchy (<a href="../hierarchy.html#node-opcua-certificate-manager.CertificateManager">View Summary</a>)</h4>
 <ul class="tsd-hierarchy">
 <li class="tsd-hierarchy-item"><span class="tsd-signature-type">EventEmitter</span>
@@ -22,7 +22,7 @@
 <ul class="tsd-hierarchy">
 <li class="tsd-hierarchy-item"><a href="node-opcua-certificate-manager.OPCUACertificateManager.html" class="tsd-signature-type tsd-kind-class">OPCUACertificateManager</a></li></ul></li></ul></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1052</li></ul></aside>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1170</li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-accordion" open><summary class="tsd-accordion-summary tsd-index-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
@@ -76,6 +76,7 @@
 <a href="#eventnames" class="tsd-index-link tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>event<wbr/>Names</span></a>
 <a href="#findissuercertificate" class="tsd-index-link tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>find<wbr/>Issuer<wbr/>Certificate</span></a>
 <a href="#getmaxlisteners" class="tsd-index-link tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Max<wbr/>Listeners</span></a>
+<a href="#getprivatekey" class="tsd-index-link tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Private<wbr/>Key</span></a>
 <a href="#gettrustedcertificatecount" class="tsd-index-link tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Trusted<wbr/>Certificate<wbr/>Count</span></a>
 <a href="#hasissuer" class="tsd-index-link tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>has<wbr/>Issuer</span></a>
 <a href="#initialize" class="tsd-index-link tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>initialize</span></a>
@@ -91,6 +92,7 @@
 <a href="#prependlistener" class="tsd-index-link tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>prepend<wbr/>Listener</span></a>
 <a href="#prependoncelistener" class="tsd-index-link tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>prepend<wbr/>Once<wbr/>Listener</span></a>
 <a href="#rawlisteners" class="tsd-index-link tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>raw<wbr/>Listeners</span></a>
+<a href="#reencryptprivatekey" class="tsd-index-link tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>reencrypt<wbr/>Private<wbr/>Key</span></a>
 <a href="#rejectcertificate" class="tsd-index-link tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>reject<wbr/>Certificate</span></a>
 <a href="#reloadcertificates" class="tsd-index-link tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>reload<wbr/>Certificates</span></a>
 <a href="#removealllisteners" class="tsd-index-link tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>remove<wbr/>All<wbr/>Listeners</span></a>
@@ -136,7 +138,7 @@ exist but does <strong>not</strong> initialise the PKI store — call
 <h4 class="tsd-returns-title">Returns <a href="" class="tsd-signature-type tsd-kind-class">CertificateManager</a></h4><aside class="tsd-sources">
 <p>Overrides EventEmitter.constructor</p>
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1102</li></ul></aside></div></li></ul></section></section></details>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1220</li></ul></aside></div></li></ul></section></section></details>
 <details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Properties"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
 <h2 class="tsd-anchor-link" id="properties-1">Properties<a href="#properties-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2></summary>
 <section>
@@ -148,21 +150,21 @@ exist but does <strong>not</strong> initialise the PKI store — call
 <h4 class="tsd-anchor-link" id="deprecated">Deprecated<a href="#deprecated" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>Use <a href="#folderpollinginterval" class="tsd-kind-accessor">folderPollingInterval</a> instead (typo fix).</p>
 </div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1087</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1205</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="keysize"><code class="tsd-tag">Readonly</code><span>key<wbr/>Size</span><a href="#keysize" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">keySize</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">KeySize</span></div>
 <div class="tsd-comment tsd-typography"><p>RSA key size used when generating the private key.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1092</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1210</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="state"><span>state</span><a href="#state" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">state</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">CertificateManagerState</span></div>
 <div class="tsd-comment tsd-typography"><p>Current lifecycle state of this instance.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1085</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1203</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="untrustunknowncertificate"><span>untrust<wbr/>Unknown<wbr/>Certificate</span><a href="#untrustunknowncertificate" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">untrustUnknownCertificate</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
@@ -171,7 +173,7 @@ already in the trusted or rejected store is automatically
 written to the rejected folder the first time it is seen.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1083</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1201</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="capturerejections"><code class="tsd-tag">Static</code><span>capture<wbr/>Rejections</span><a href="#capturerejections" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">captureRejections</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
@@ -184,7 +186,7 @@ written to the rejected folder the first time it is seen.</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from EventEmitter.captureRejections</p>
 <ul>
-<li>Defined in node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:425</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:425</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="capturerejectionsymbol"><code class="tsd-tag">Static</code> <code class="tsd-tag">Readonly</code><span>capture<wbr/>Rejection<wbr/>Symbol</span><a href="#capturerejectionsymbol" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">captureRejectionSymbol</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-keyword">typeof</span> <a href="node-opcua-certificate-manager.OPCUACertificateManager.html#capturerejectionsymbol" class="tsd-signature-type tsd-kind-property">captureRejectionSymbol</a></div>
@@ -197,14 +199,14 @@ written to the rejected folder the first time it is seen.</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from EventEmitter.captureRejectionSymbol</p>
 <ul>
-<li>Defined in node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:418</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:418</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="chaincompletionstatus"><code class="tsd-tag">Static</code> <code class="tsd-tag">Readonly</code><span>Chain<wbr/>Completion<wbr/>Status</span><a href="#chaincompletionstatus" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">ChainCompletionStatus</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-keyword">typeof</span> <span class="tsd-signature-type">ChainCompletionStatus</span></div>
 <div class="tsd-comment tsd-typography"><p>Outcome status for <a href="#completecertificatechain" class="tsd-kind-method">CertificateManager.completeCertificateChain</a>.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1348</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1511</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="defaultmaxlisteners"><code class="tsd-tag">Static</code><span>default<wbr/>Max<wbr/>Listeners</span><a href="#defaultmaxlisteners" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">defaultMaxListeners</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
@@ -239,7 +241,7 @@ Its <code>name</code> property is set to <code>'MaxListenersExceededWarning'</co
 </div></div><aside class="tsd-sources">
 <p>Inherited from EventEmitter.defaultMaxListeners</p>
 <ul>
-<li>Defined in node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:464</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:464</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="errormonitor"><code class="tsd-tag">Static</code> <code class="tsd-tag">Readonly</code><span>error<wbr/>Monitor</span><a href="#errormonitor" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">errorMonitor</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-keyword">typeof</span> <a href="node-opcua-certificate-manager.OPCUACertificateManager.html#errormonitor" class="tsd-signature-type tsd-kind-property">errorMonitor</a></div>
@@ -253,7 +255,7 @@ regular <code>'error'</code> listener is installed.</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from EventEmitter.errorMonitor</p>
 <ul>
-<li>Defined in node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:411</li></ul></aside></section></section></details>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:411</li></ul></aside></section></section></details>
 <details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Accessors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
 <h2 class="tsd-anchor-link" id="accessors-1">Accessors<a href="#accessors-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2></summary>
 <section>
@@ -267,7 +269,7 @@ regular <code>'error'</code> listener is installed.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1104</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1222</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="crlfolder"><span>crl<wbr/>Folder</span><a href="#crlfolder" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -278,7 +280,7 @@ regular <code>'error'</code> listener is installed.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1141</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1304</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="folderpollinginterval"><span>folder<wbr/>Polling<wbr/>Interval</span><a href="#folderpollinginterval" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -289,7 +291,7 @@ regular <code>'error'</code> listener is installed.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1089</li></ul></aside></div></li>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1207</li></ul></aside></div></li>
 <li>
 <div class="tsd-signature" id="folderpollingintervalfolderpollinginterval-1"><span class="tsd-signature-keyword">set</span> <span class="tsd-kind-set-signature">folderPollingInterval</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">value</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">void</span></div>
 <div class="tsd-description">
@@ -299,7 +301,7 @@ regular <code>'error'</code> listener is installed.</p>
 <li><span><span class="tsd-kind-parameter">value</span>: <span class="tsd-signature-type">number</span></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1090</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1208</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="issuerscertfolder"><span>issuers<wbr/>Cert<wbr/>Folder</span><a href="#issuerscertfolder" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -310,7 +312,7 @@ regular <code>'error'</code> listener is installed.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1143</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1306</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="issuerscrlfolder"><span>issuers<wbr/>Crl<wbr/>Folder</span><a href="#issuerscrlfolder" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -321,7 +323,7 @@ regular <code>'error'</code> listener is installed.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1145</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1308</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="owncertfolder"><span>own<wbr/>Cert<wbr/>Folder</span><a href="#owncertfolder" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -332,7 +334,7 @@ regular <code>'error'</code> listener is installed.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1147</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1310</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="ownprivatefolder"><span>own<wbr/>Private<wbr/>Folder</span><a href="#ownprivatefolder" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -341,7 +343,7 @@ regular <code>'error'</code> listener is installed.</p>
 <div class="tsd-description">
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1148</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1311</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="privatekey"><span>private<wbr/>Key</span><a href="#privatekey" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -349,10 +351,15 @@ regular <code>'error'</code> listener is installed.</p>
 <div class="tsd-signature" id="privatekeyprivatekey"><span class="tsd-signature-keyword">get</span> <span class="tsd-kind-get-signature">privateKey</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 <div class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Path to the private key file (<code>own/private/private_key.pem</code>).</p>
+<p>Kept for backward compatibility with code that reads the key
+directly from disk. When a passphrase or a <code>privateKeyProvider</code> is
+configured, prefer <a href="#getprivatekey" class="tsd-kind-method">getPrivateKey</a> instead — this getter still
+returns the on-disk path even if a provider is configured (there may
+be no meaningful file in that case).</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1108</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1234</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="randomfile"><span>random<wbr/>File</span><a href="#randomfile" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -363,7 +370,7 @@ regular <code>'error'</code> listener is installed.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1110</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1273</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="rejectedfolder"><span>rejected<wbr/>Folder</span><a href="#rejectedfolder" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -374,7 +381,7 @@ regular <code>'error'</code> listener is installed.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1137</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1300</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="rootdir"><span>root<wbr/>Dir</span><a href="#rootdir" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -385,7 +392,7 @@ regular <code>'error'</code> listener is installed.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1106</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1224</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="trustedfolder"><span>trusted<wbr/>Folder</span><a href="#trustedfolder" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -396,7 +403,7 @@ regular <code>'error'</code> listener is installed.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1139</li></ul></aside></div></li></ul></section></section></details>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1302</li></ul></aside></div></li></ul></section></section></details>
 <details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Methods"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
 <h2 class="tsd-anchor-link" id="methods-1">Methods<a href="#methods-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2></summary>
 <section>
@@ -419,7 +426,7 @@ regular <code>'error'</code> listener is installed.</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <p>Inherited from EventEmitter.[captureRejectionSymbol]</p>
 <ul>
-<li>Defined in node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:103</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:103</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="addissuer"><span>add<wbr/>Issuer</span><a href="#addissuer" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -444,7 +451,7 @@ If the certificate is already present, this is a no-op.</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">VerificationStatus</span><span class="tsd-signature-symbol">&gt;</span></h4><p><code>VerificationStatus.Good</code> on success</p>
 <aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1236</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1399</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="addissuers"><span>add<wbr/>Issuers</span><a href="#addissuers" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -468,7 +475,7 @@ If the certificate is already present, this is a no-op.</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">VerificationStatus</span><span class="tsd-signature-symbol">&gt;</span></h4><p><code>VerificationStatus.Good</code> on success</p>
 <aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1244</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1407</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="addlistener"><span>add<wbr/>Listener</span><a href="#addlistener" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -493,7 +500,7 @@ If the certificate is already present, this is a no-op.</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from EventEmitter.addListener</p>
 <ul>
-<li>Defined in node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:642</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:642</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="addrevocationlist"><span>add<wbr/>Revocation<wbr/>List</span><a href="#addrevocationlist" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -513,7 +520,7 @@ If the certificate is already present, this is a no-op.</p>
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">VerificationStatus</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1250</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1413</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="addtrustedcertificatefromchain"><span>add<wbr/>Trusted<wbr/>Certificate<wbr/>From<wbr/>Chain</span><a href="#addtrustedcertificatefromchain" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -553,7 +560,7 @@ and AddCertificateValidationOptions.ignoreMissingRevocationList).</li>
 status indicating why the certificate was rejected.</p>
 <aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1316</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1479</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="clearrevocationlists"><span>clear<wbr/>Revocation<wbr/>Lists</span><a href="#clearrevocationlists" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -572,7 +579,7 @@ trusted/crl, &quot;all&quot; clears both.</p>
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1257</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1420</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="completecertificatechain"><span>complete<wbr/>Certificate<wbr/>Chain</span><a href="#completecertificatechain" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -598,7 +605,7 @@ an issuer.</p>
 chain, a status code, and an optional diagnostic message.</p>
 <aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1362</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1525</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="createcertificaterequest"><span>create<wbr/>Certificate<wbr/>Request</span><a href="#createcertificaterequest" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -619,7 +626,7 @@ filename.</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4><p>the filesystem path to the generated CSR file</p>
 <aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1227</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1390</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="createselfsignedcertificate"><span>create<wbr/>Self<wbr/>Signed<wbr/>Certificate</span><a href="#createselfsignedcertificate" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -639,7 +646,7 @@ validity, etc.)</p>
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1216</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1379</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="dispose"><span>dispose</span><a href="#dispose" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -652,7 +659,7 @@ calling this method.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1195</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1358</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="emit"><span>emit</span><a href="#emit" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -682,7 +689,7 @@ to each.</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from EventEmitter.emit</p>
 <ul>
-<li>Defined in node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:904</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:904</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="eventnames"><span>event<wbr/>Names</span><a href="#eventnames" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -702,7 +709,7 @@ listeners. The values in the array are strings or <code>Symbol</code>s.</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from EventEmitter.eventNames</p>
 <ul>
-<li>Defined in node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:967</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:967</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="findissuercertificate"><span>find<wbr/>Issuer<wbr/>Certificate</span><a href="#findissuercertificate" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -731,7 +738,7 @@ if found. If multiple matching certificates are found, a warning is logged to th
 <li><span><span class="tsd-kind-parameter">certificate</span>: <span class="tsd-signature-type">DER</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">DER</span><span class="tsd-signature-symbol">[]</span></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">DER</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1344</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1507</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="getmaxlisteners"><span>get<wbr/>Max<wbr/>Listeners</span><a href="#getmaxlisteners" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -748,7 +755,29 @@ set by <code>emitter.setMaxListeners(n)</code> or defaults to <a href="node-opcu
 </div></div><aside class="tsd-sources">
 <p>Inherited from EventEmitter.getMaxListeners</p>
 <ul>
-<li>Defined in node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:819</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:819</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member tsd-is-external">
+<h3 class="tsd-anchor-link" id="getprivatekey"><span>get<wbr/>Private<wbr/>Key</span><a href="#getprivatekey" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-is-external">
+<li class="tsd-is-external">
+<div class="tsd-signature tsd-anchor-link" id="getprivatekey-1"><span class="tsd-kind-call-signature">getPrivateKey</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">PrivateKey</span><span class="tsd-signature-symbol">&gt;</span><a href="#getprivatekey-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Resolve the private key: from <code>privateKeyProvider</code> if configured,
+otherwise from disk (decrypting with <code>privateKeyPassphrase</code> if the
+key is encrypted). Fails closed — throws
+<code>PrivateKeyPassphraseRequiredError</code> — if the on-disk key is encrypted
+and no passphrase is configured, or if the wrong passphrase is
+configured.</p>
+<p>The on-disk key is read and decrypted once and then cached for the
+lifetime of this instance, so a <code>privateKeyPassphrase</code> function is
+called at most once (concurrent first calls share the same read). A
+failed read is not cached, so a caller can fix the passphrase and
+retry. A <code>privateKeyProvider</code> is consulted on every call: it is the
+authority on what the current key is.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">PrivateKey</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1250</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="gettrustedcertificatecount"><span>get<wbr/>Trusted<wbr/>Certificate<wbr/>Count</span><a href="#gettrustedcertificatecount" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -760,7 +789,7 @@ trusted store.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1135</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1298</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="hasissuer"><span>has<wbr/>Issuer</span><a href="#hasissuer" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -778,7 +807,7 @@ is already registered.</p>
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1263</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1426</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="initialize"><span>initialize</span><a href="#initialize" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -792,7 +821,7 @@ It must be called before any certificate operations.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1189</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1352</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="iscertificaterevoked"><span>is<wbr/>Certificate<wbr/>Revoked</span><a href="#iscertificaterevoked" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -823,7 +852,7 @@ or <code>BadCertificateChainIncomplete</code> if the issuer cannot be
 found.</p>
 <aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1379</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1542</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="iscertificatetrusted"><span>is<wbr/>Certificate<wbr/>Trusted</span><a href="#iscertificatetrusted" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -842,7 +871,7 @@ it will be written to the rejected folder.</p>
 or <code>&quot;BadCertificateInvalid&quot;</code> if the certificate cannot be parsed.</p>
 <aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1157</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1320</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="isissuerinusebytrustedcertificate"><span>is<wbr/>Issuer<wbr/>In<wbr/>Use<wbr/>By<wbr/>Trusted<wbr/>Certificate</span><a href="#isissuerinusebytrustedcertificate" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -865,7 +894,7 @@ certificate.</p>
 signed by this issuer.</p>
 <aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1329</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1492</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="istrustlistempty"><span>is<wbr/>Trust<wbr/>List<wbr/>Empty</span><a href="#istrustlistempty" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -879,7 +908,7 @@ watchers after <a href="#initialize" class="tsd-kind-method">initialize</a> has 
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1130</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1293</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="listenercount"><span>listener<wbr/>Count</span><a href="#listenercount" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -910,7 +939,7 @@ in the list of the listeners of the event.</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from EventEmitter.listenerCount</p>
 <ul>
-<li>Defined in node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:913</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:913</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="listeners"><span>listeners</span><a href="#listeners" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -937,7 +966,7 @@ in the list of the listeners of the event.</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from EventEmitter.listeners</p>
 <ul>
-<li>Defined in node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:832</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:832</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="off"><span>off</span><a href="#off" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -962,7 +991,7 @@ in the list of the listeners of the event.</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from EventEmitter.off</p>
 <ul>
-<li>Defined in node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:792</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:792</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="on"><span>on</span><a href="#on" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -1003,7 +1032,7 @@ event listener to the beginning of the listeners array.</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from EventEmitter.on</p>
 <ul>
-<li>Defined in node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:674</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:674</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="once"><span>once</span><a href="#once" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -1042,7 +1071,7 @@ event listener to the beginning of the listeners array.</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from EventEmitter.once</p>
 <ul>
-<li>Defined in node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:704</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:704</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="prependlistener"><span>prepend<wbr/>Listener</span><a href="#prependlistener" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -1078,7 +1107,7 @@ and <code>listener</code> will result in the <code>listener</code> being added, 
 </div></div><aside class="tsd-sources">
 <p>Inherited from EventEmitter.prependListener</p>
 <ul>
-<li>Defined in node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:931</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:931</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="prependoncelistener"><span>prepend<wbr/>Once<wbr/>Listener</span><a href="#prependoncelistener" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -1112,7 +1141,7 @@ listener is removed, and then invoked.</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from EventEmitter.prependOnceListener</p>
 <ul>
-<li>Defined in node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:947</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:947</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="rawlisteners"><span>raw<wbr/>Listeners</span><a href="#rawlisteners" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -1140,7 +1169,38 @@ including any wrappers (such as those created by <code>.once()</code>).</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from EventEmitter.rawListeners</p>
 <ul>
-<li>Defined in node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:863</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:863</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member tsd-is-external">
+<h3 class="tsd-anchor-link" id="reencryptprivatekey"><span>reencrypt<wbr/>Private<wbr/>Key</span><a href="#reencryptprivatekey" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-is-external">
+<li class="tsd-is-external">
+<div class="tsd-signature tsd-anchor-link" id="reencryptprivatekey-1"><span class="tsd-kind-call-signature">reencryptPrivateKey</span><span class="tsd-signature-symbol">(</span><br/>    <span class="tsd-kind-parameter">oldPassphrase</span><span class="tsd-signature-symbol">?:</span> <a href="../types/node-opcua-certificate-manager.PrivateKeyPassphrase.html" class="tsd-signature-type tsd-kind-type-alias">PrivateKeyPassphrase</a><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">newPassphrase</span><span class="tsd-signature-symbol">?:</span> <a href="../types/node-opcua-certificate-manager.PrivateKeyPassphrase.html" class="tsd-signature-type tsd-kind-type-alias">PrivateKeyPassphrase</a><span class="tsd-signature-symbol">,</span><br/><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span><a href="#reencryptprivatekey-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Enable, disable, or rotate the passphrase protecting the on-disk
+private key: decrypt with <code>oldPassphrase</code> (omit if the key is
+currently unencrypted), then write back encrypted with
+<code>newPassphrase</code> (omit to leave it unencrypted). The write goes to a
+temporary file in the same directory and is atomically renamed into
+place, so a crash mid-rotation cannot leave a partially-written key;
+the temporary file is removed if anything fails, so a rotation <em>to</em>
+plaintext can never leave a stray cleartext copy behind. Runs under
+the same lock as <code>initialize()</code>.</p>
+<p>This only rewrites the on-disk file — it does not update this
+instance's own <code>privateKeyPassphrase</code> (set at construction), and it
+drops this instance's cached key so that disk stays the source of
+truth. Construct a new <code>CertificateManager</code> with the new passphrase to
+continue using it afterward.</p>
+<p>Not supported when a <code>privateKeyProvider</code> is configured (there is no
+disk file for this method to rewrite).</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li><span><code class="tsd-tag">Optional</code><span class="tsd-kind-parameter">oldPassphrase</span>: <a href="../types/node-opcua-certificate-manager.PrivateKeyPassphrase.html" class="tsd-signature-type tsd-kind-type-alias">PrivateKeyPassphrase</a></span></li>
+<li><span><code class="tsd-tag">Optional</code><span class="tsd-kind-parameter">newPassphrase</span>: <a href="../types/node-opcua-certificate-manager.PrivateKeyPassphrase.html" class="tsd-signature-type tsd-kind-type-alias">PrivateKeyPassphrase</a></span></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1271</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="rejectcertificate"><span>reject<wbr/>Certificate</span><a href="#rejectcertificate" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -1158,7 +1218,7 @@ If the certificate was previously trusted, it will be removed from the trusted f
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1116</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1279</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="reloadcertificates"><span>reload<wbr/>Certificates</span><a href="#reloadcertificates" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -1174,7 +1234,7 @@ state without waiting for file-system events.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1205</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1368</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="removealllisteners"><span>remove<wbr/>All<wbr/>Listeners</span><a href="#removealllisteners" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -1198,7 +1258,7 @@ component or module (e.g. sockets or file streams).</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from EventEmitter.removeAllListeners</p>
 <ul>
-<li>Defined in node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:803</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:803</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="removeissuer"><span>remove<wbr/>Issuer</span><a href="#removeissuer" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -1218,7 +1278,7 @@ in-memory index.</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">DER</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span></h4><p>the removed certificate buffer, or <code>null</code> if not found</p>
 <aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1279</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1442</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="removelistener"><span>remove<wbr/>Listener</span><a href="#removelistener" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -1268,7 +1328,7 @@ recently added instance. In the example the <code>once('ping')</code> listener i
 </div></div><aside class="tsd-sources">
 <p>Inherited from EventEmitter.removeListener</p>
 <ul>
-<li>Defined in node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:787</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:787</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="removerevocationlistsforissuer"><span>remove<wbr/>Revocation<wbr/>Lists<wbr/>For<wbr/>Issuer</span><a href="#removerevocationlistsforissuer" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -1289,7 +1349,7 @@ from the specified folder (or both).</p>
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1286</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1449</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="removetrustedcertificate"><span>remove<wbr/>Trusted<wbr/>Certificate</span><a href="#removetrustedcertificate" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -1309,7 +1369,7 @@ in-memory index.</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">DER</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span></h4><p>the removed certificate buffer, or <code>null</code> if not found</p>
 <aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1271</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1434</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="setmaxlisteners"><span>set<wbr/>Max<wbr/>Listeners</span><a href="#setmaxlisteners" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -1333,7 +1393,7 @@ modified for this specific <code>EventEmitter</code> instance. The value can be 
 </div></div><aside class="tsd-sources">
 <p>Inherited from EventEmitter.setMaxListeners</p>
 <ul>
-<li>Defined in node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:813</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:813</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="trustcertificate"><span>trust<wbr/>Certificate</span><a href="#trustcertificate" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -1351,7 +1411,7 @@ If the certificate was previously rejected, it will be removed from the rejected
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1122</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1285</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="verifycertificate"><span>verify<wbr/>Certificate</span><a href="#verifycertificate" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -1374,7 +1434,7 @@ issuer chain, CRL revocation checks, and time validity.</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">VerificationStatus</span><span class="tsd-signature-symbol">&gt;</span></h4><p>the verification status code</p>
 <aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1181</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1344</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-protected tsd-is-external">
 <h3 class="tsd-anchor-link" id="verifycertificateasync"><code class="tsd-tag">Protected</code><span>verify<wbr/>Certificate<wbr/>Async</span><a href="#verifycertificateasync" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-protected tsd-is-external">
@@ -1399,7 +1459,7 @@ public API</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">VerificationStatus</span><span class="tsd-signature-symbol">&gt;</span></h4><p>the verification status code</p>
 <aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1170</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1333</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-protected tsd-is-external">
 <h3 class="tsd-anchor-link" id="withlock2"><code class="tsd-tag">Protected</code><span>with<wbr/>Lock2</span><a href="#withlock2" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-protected tsd-is-external">
@@ -1416,7 +1476,7 @@ public API</p>
 <li><span><span class="tsd-kind-parameter">action</span>: <span class="tsd-signature-symbol">()</span> <span class="tsd-signature-symbol">=&gt;</span> <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a class="tsd-signature-type tsd-kind-type-parameter" href="node-opcua-certificate-manager.OPCUACertificateManager.html#withlock2t">T</a><span class="tsd-signature-symbol">&gt;</span></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a class="tsd-signature-type tsd-kind-type-parameter" href="node-opcua-certificate-manager.OPCUACertificateManager.html#withlock2t">T</a><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1206</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1369</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="addabortlistener"><code class="tsd-tag">Static</code><span>add<wbr/>Abort<wbr/>Listener</span><a href="#addabortlistener" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -1450,7 +1510,7 @@ not prevent the listener from running.</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from EventEmitter.addAbortListener</p>
 <ul>
-<li>Defined in node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:403</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:403</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="checkalldisposed"><code class="tsd-tag">Static</code><span>check<wbr/>All<wbr/>Disposed</span><a href="#checkalldisposed" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -1471,7 +1531,7 @@ hooks to catch missing <code>dispose()</code> calls early.</p>
 
 </div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1077</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1195</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="disposeall"><code class="tsd-tag">Static</code><span>dispose<wbr/>All</span><a href="#disposeall" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -1485,7 +1545,7 @@ Node.js process can exit cleanly.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/.pnpm/node-opcua-pki@6.19.1/node_modules/node-opcua-pki/dist/index.d.ts:1061</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/node-opcua-pki@6.20.0/node_modules/node-opcua-pki/dist/index.d.ts:1179</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="geteventlisteners"><code class="tsd-tag">Static</code><span>get<wbr/>Event<wbr/>Listeners</span><a href="#geteventlisteners" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -1513,7 +1573,7 @@ event target. This is useful for debugging and diagnostic purposes.</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from EventEmitter.getEventListeners</p>
 <ul>
-<li>Defined in node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:325</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:325</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="getmaxlisteners-2"><code class="tsd-tag">Static</code><span>get<wbr/>Max<wbr/>Listeners</span><a href="#getmaxlisteners-2" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -1541,7 +1601,7 @@ the max set, the EventTarget will print a warning.</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from EventEmitter.getMaxListeners</p>
 <ul>
-<li>Defined in node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:354</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:354</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="listenercount-2"><code class="tsd-tag">Static</code><span class="deprecated">listener<wbr/>Count</span><a href="#listenercount-2" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -1572,7 +1632,7 @@ the max set, the EventTarget will print a warning.</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from EventEmitter.listenerCount</p>
 <ul>
-<li>Defined in node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:297</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:297</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="on-2"><code class="tsd-tag">Static</code><span>on</span><a href="#on-2" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -1609,7 +1669,7 @@ composed of the emitted event arguments.</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from EventEmitter.on</p>
 <ul>
-<li>Defined in node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:270</li></ul></aside></div></li>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:270</li></ul></aside></div></li>
 <li class="tsd-is-inherited tsd-is-external">
 <div class="tsd-signature tsd-anchor-link" id="on-4"><span class="tsd-kind-call-signature">on</span><span class="tsd-signature-symbol">(</span><br/>    <span class="tsd-kind-parameter">emitter</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EventTarget</span><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">eventName</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">options</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">StaticEventEmitterIteratorOptions</span><span class="tsd-signature-symbol">,</span><br/><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">AsyncIterator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><a href="#on-4" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
@@ -1643,7 +1703,7 @@ composed of the emitted event arguments.</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from EventEmitter.on</p>
 <ul>
-<li>Defined in node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:275</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:275</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="once-2"><code class="tsd-tag">Static</code><span>once</span><a href="#once-2" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -1683,7 +1743,7 @@ special handling:</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from EventEmitter.once</p>
 <ul>
-<li>Defined in node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:184</li></ul></aside></div></li>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:184</li></ul></aside></div></li>
 <li class="tsd-is-inherited tsd-is-external">
 <div class="tsd-signature tsd-anchor-link" id="once-4"><span class="tsd-kind-call-signature">once</span><span class="tsd-signature-symbol">(</span><br/>    <span class="tsd-kind-parameter">emitter</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EventTarget</span><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">eventName</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">options</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">StaticEventEmitterOptions</span><span class="tsd-signature-symbol">,</span><br/><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><a href="#once-4" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
@@ -1720,7 +1780,7 @@ special handling:</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from EventEmitter.once</p>
 <ul>
-<li>Defined in node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:189</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:189</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="setmaxlisteners-2"><code class="tsd-tag">Static</code><span>set<wbr/>Max<wbr/>Listeners</span><a href="#setmaxlisteners-2" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -1748,7 +1808,7 @@ objects.</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from EventEmitter.setMaxListeners</p>
 <ul>
-<li>Defined in node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:369</li></ul></aside></div></li></ul></section></section></details></div>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@24.13.3/node_modules/@types/node/events.d.ts:369</li></ul></aside></div></li></ul></section></section></details></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
@@ -1770,7 +1830,7 @@ objects.</p>
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Accessors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Accessors</summary>
 <div><a href="#configfile" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>config<wbr/>File</span></a><a href="#crlfolder" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>crl<wbr/>Folder</span></a><a href="#folderpollinginterval" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>folder<wbr/>Polling<wbr/>Interval</span></a><a href="#issuerscertfolder" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>issuers<wbr/>Cert<wbr/>Folder</span></a><a href="#issuerscrlfolder" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>issuers<wbr/>Crl<wbr/>Folder</span></a><a href="#owncertfolder" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>own<wbr/>Cert<wbr/>Folder</span></a><a href="#ownprivatefolder" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>own<wbr/>Private<wbr/>Folder</span></a><a href="#privatekey" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>private<wbr/>Key</span></a><a href="#randomfile" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>random<wbr/>File</span></a><a href="#rejectedfolder" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>rejected<wbr/>Folder</span></a><a href="#rootdir" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>root<wbr/>Dir</span></a><a href="#trustedfolder" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>trusted<wbr/>Folder</span></a></div></details>
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Methods"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Methods</summary>
-<div><a href="#capturerejectionsymbol-1" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>[capture<wbr/>Rejection<wbr/>Symbol]</span></a><a href="#addissuer" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>add<wbr/>Issuer</span></a><a href="#addissuers" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>add<wbr/>Issuers</span></a><a href="#addlistener" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>add<wbr/>Listener</span></a><a href="#addrevocationlist" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>add<wbr/>Revocation<wbr/>List</span></a><a href="#addtrustedcertificatefromchain" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>add<wbr/>Trusted<wbr/>Certificate<wbr/>From<wbr/>Chain</span></a><a href="#clearrevocationlists" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>clear<wbr/>Revocation<wbr/>Lists</span></a><a href="#completecertificatechain" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>complete<wbr/>Certificate<wbr/>Chain</span></a><a href="#createcertificaterequest" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>create<wbr/>Certificate<wbr/>Request</span></a><a href="#createselfsignedcertificate" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>create<wbr/>Self<wbr/>Signed<wbr/>Certificate</span></a><a href="#dispose" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>dispose</span></a><a href="#emit" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>emit</span></a><a href="#eventnames" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>event<wbr/>Names</span></a><a href="#findissuercertificate" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>find<wbr/>Issuer<wbr/>Certificate</span></a><a href="#getmaxlisteners" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Max<wbr/>Listeners</span></a><a href="#gettrustedcertificatecount" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Trusted<wbr/>Certificate<wbr/>Count</span></a><a href="#hasissuer" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>has<wbr/>Issuer</span></a><a href="#initialize" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>initialize</span></a><a href="#iscertificaterevoked" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>is<wbr/>Certificate<wbr/>Revoked</span></a><a href="#iscertificatetrusted" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>is<wbr/>Certificate<wbr/>Trusted</span></a><a href="#isissuerinusebytrustedcertificate" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>is<wbr/>Issuer<wbr/>In<wbr/>Use<wbr/>By<wbr/>Trusted<wbr/>Certificate</span></a><a href="#istrustlistempty" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>is<wbr/>Trust<wbr/>List<wbr/>Empty</span></a><a href="#listenercount" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>listener<wbr/>Count</span></a><a href="#listeners" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>listeners</span></a><a href="#off" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>off</span></a><a href="#on" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>on</span></a><a href="#once" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>once</span></a><a href="#prependlistener" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>prepend<wbr/>Listener</span></a><a href="#prependoncelistener" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>prepend<wbr/>Once<wbr/>Listener</span></a><a href="#rawlisteners" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>raw<wbr/>Listeners</span></a><a href="#rejectcertificate" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>reject<wbr/>Certificate</span></a><a href="#reloadcertificates" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>reload<wbr/>Certificates</span></a><a href="#removealllisteners" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>remove<wbr/>All<wbr/>Listeners</span></a><a href="#removeissuer" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>remove<wbr/>Issuer</span></a><a href="#removelistener" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>remove<wbr/>Listener</span></a><a href="#removerevocationlistsforissuer" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>remove<wbr/>Revocation<wbr/>Lists<wbr/>For<wbr/>Issuer</span></a><a href="#removetrustedcertificate" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>remove<wbr/>Trusted<wbr/>Certificate</span></a><a href="#setmaxlisteners" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>set<wbr/>Max<wbr/>Listeners</span></a><a href="#trustcertificate" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>trust<wbr/>Certificate</span></a><a href="#verifycertificate" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>verify<wbr/>Certificate</span></a><a href="#verifycertificateasync" class="tsd-is-protected tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>verify<wbr/>Certificate<wbr/>Async</span></a><a href="#withlock2" class="tsd-is-protected tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>with<wbr/>Lock2</span></a><a href="#addabortlistener" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>add<wbr/>Abort<wbr/>Listener</span></a><a href="#checkalldisposed" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>check<wbr/>All<wbr/>Disposed</span></a><a href="#disposeall" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>dispose<wbr/>All</span></a><a href="#geteventlisteners" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Event<wbr/>Listeners</span></a><a href="#getmaxlisteners-2" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Max<wbr/>Listeners</span></a><a href="#listenercount-2" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>listener<wbr/>Count</span></a><a href="#on-2" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>on</span></a><a href="#once-2" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>once</span></a><a href="#setmaxlisteners-2" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>set<wbr/>Max<wbr/>Listeners</span></a></div></details></div></details></div>
+<div><a href="#capturerejectionsymbol-1" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>[capture<wbr/>Rejection<wbr/>Symbol]</span></a><a href="#addissuer" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>add<wbr/>Issuer</span></a><a href="#addissuers" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>add<wbr/>Issuers</span></a><a href="#addlistener" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>add<wbr/>Listener</span></a><a href="#addrevocationlist" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>add<wbr/>Revocation<wbr/>List</span></a><a href="#addtrustedcertificatefromchain" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>add<wbr/>Trusted<wbr/>Certificate<wbr/>From<wbr/>Chain</span></a><a href="#clearrevocationlists" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>clear<wbr/>Revocation<wbr/>Lists</span></a><a href="#completecertificatechain" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>complete<wbr/>Certificate<wbr/>Chain</span></a><a href="#createcertificaterequest" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>create<wbr/>Certificate<wbr/>Request</span></a><a href="#createselfsignedcertificate" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>create<wbr/>Self<wbr/>Signed<wbr/>Certificate</span></a><a href="#dispose" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>dispose</span></a><a href="#emit" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>emit</span></a><a href="#eventnames" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>event<wbr/>Names</span></a><a href="#findissuercertificate" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>find<wbr/>Issuer<wbr/>Certificate</span></a><a href="#getmaxlisteners" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Max<wbr/>Listeners</span></a><a href="#getprivatekey" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Private<wbr/>Key</span></a><a href="#gettrustedcertificatecount" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Trusted<wbr/>Certificate<wbr/>Count</span></a><a href="#hasissuer" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>has<wbr/>Issuer</span></a><a href="#initialize" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>initialize</span></a><a href="#iscertificaterevoked" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>is<wbr/>Certificate<wbr/>Revoked</span></a><a href="#iscertificatetrusted" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>is<wbr/>Certificate<wbr/>Trusted</span></a><a href="#isissuerinusebytrustedcertificate" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>is<wbr/>Issuer<wbr/>In<wbr/>Use<wbr/>By<wbr/>Trusted<wbr/>Certificate</span></a><a href="#istrustlistempty" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>is<wbr/>Trust<wbr/>List<wbr/>Empty</span></a><a href="#listenercount" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>listener<wbr/>Count</span></a><a href="#listeners" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>listeners</span></a><a href="#off" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>off</span></a><a href="#on" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>on</span></a><a href="#once" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>once</span></a><a href="#prependlistener" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>prepend<wbr/>Listener</span></a><a href="#prependoncelistener" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>prepend<wbr/>Once<wbr/>Listener</span></a><a href="#rawlisteners" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>raw<wbr/>Listeners</span></a><a href="#reencryptprivatekey" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>reencrypt<wbr/>Private<wbr/>Key</span></a><a href="#rejectcertificate" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>reject<wbr/>Certificate</span></a><a href="#reloadcertificates" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>reload<wbr/>Certificates</span></a><a href="#removealllisteners" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>remove<wbr/>All<wbr/>Listeners</span></a><a href="#removeissuer" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>remove<wbr/>Issuer</span></a><a href="#removelistener" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>remove<wbr/>Listener</span></a><a href="#removerevocationlistsforissuer" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>remove<wbr/>Revocation<wbr/>Lists<wbr/>For<wbr/>Issuer</span></a><a href="#removetrustedcertificate" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>remove<wbr/>Trusted<wbr/>Certificate</span></a><a href="#setmaxlisteners" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>set<wbr/>Max<wbr/>Listeners</span></a><a href="#trustcertificate" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>trust<wbr/>Certificate</span></a><a href="#verifycertificate" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>verify<wbr/>Certificate</span></a><a href="#verifycertificateasync" class="tsd-is-protected tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>verify<wbr/>Certificate<wbr/>Async</span></a><a href="#withlock2" class="tsd-is-protected tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>with<wbr/>Lock2</span></a><a href="#addabortlistener" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>add<wbr/>Abort<wbr/>Listener</span></a><a href="#checkalldisposed" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>check<wbr/>All<wbr/>Disposed</span></a><a href="#disposeall" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>dispose<wbr/>All</span></a><a href="#geteventlisteners" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Event<wbr/>Listeners</span></a><a href="#getmaxlisteners-2" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Max<wbr/>Listeners</span></a><a href="#listenercount-2" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>listener<wbr/>Count</span></a><a href="#on-2" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>on</span></a><a href="#once-2" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>once</span></a><a href="#setmaxlisteners-2" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>set<wbr/>Max<wbr/>Listeners</span></a></div></details></div></details></div>
 <div class="site-menu">
 <nav id="tsd-sidebar-links" class="tsd-navigation"><a href="https://leanpub.com/node-opcuabyexample-edition2024" class="tsd-nav-link">Book</a><a href="https://github.com/node-opcua/node-opcua" class="tsd-nav-link">GitHub</a><a href="https://support.sterfive.com" class="tsd-nav-link">Support</a></nav>
 <nav class="tsd-navigation"><a href="../modules.html">NodeOPCUA API Documentation</a>
