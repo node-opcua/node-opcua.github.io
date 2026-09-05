@@ -18,7 +18,7 @@
 <ul class="tsd-hierarchy">
 <li><a href="../interfaces/node-opcua.IEventData.html" class="tsd-signature-type tsd-kind-interface">IEventData</a></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-address-space/dist/src/event_data.d.ts:10</li></ul></aside>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-address-space/dist/impl/event_data.d.ts:12</li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-accordion" open><summary class="tsd-accordion-summary tsd-index-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
@@ -37,6 +37,7 @@
 <div class="tsd-index-list"><a href="#_browse" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>_<wbr/>browse</span></a>
 <a href="#_createvalue" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>_<wbr/>create<wbr/>Value</span></a>
 <a href="#_readvalue" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>_<wbr/>read<wbr/>Value</span></a>
+<a href="#_setfield" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>_<wbr/>set<wbr/>Field</span></a>
 <a href="#geteventdatasource" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Event<wbr/>Data<wbr/>Source</span></a>
 </div></section></div></details></section></section>
 <details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Constructors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
@@ -46,15 +47,19 @@
 <h3 class="tsd-anchor-link" id="constructor"><span>constructor</span><a href="#constructor" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
 <li class="">
-<div class="tsd-signature tsd-anchor-link" id="constructoreventdata"><span class="tsd-signature-keyword">new</span> <span class="tsd-kind-constructor-signature">EventData</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">eventTypeNode</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/node-opcua.BaseNode.html" class="tsd-signature-type tsd-kind-interface">BaseNode</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <a href="" class="tsd-signature-type tsd-kind-class">EventData</a><a href="#constructoreventdata" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-signature tsd-anchor-link" id="constructoreventdata"><span class="tsd-signature-keyword">new</span> <span class="tsd-kind-constructor-signature">EventData</span><span class="tsd-signature-symbol">(</span><br/>    <span class="tsd-kind-parameter">eventTypeNode</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/node-opcua.BaseNode.html" class="tsd-signature-type tsd-kind-interface">BaseNode</a><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">pathToNodeId</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">,</span> <a href="node-opcua.NodeId.html" class="tsd-signature-type tsd-kind-class">NodeId</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">,</span><br/><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <a href="" class="tsd-signature-type tsd-kind-class">EventData</a><a href="#constructoreventdata" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
-<li><span><span class="tsd-kind-parameter">eventTypeNode</span>: <a href="../interfaces/node-opcua.BaseNode.html" class="tsd-signature-type tsd-kind-interface">BaseNode</a></span></li></ul></div>
+<li><span><span class="tsd-kind-parameter">eventTypeNode</span>: <a href="../interfaces/node-opcua.BaseNode.html" class="tsd-signature-type tsd-kind-interface">BaseNode</a></span></li>
+<li><span><code class="tsd-tag">Optional</code><span class="tsd-kind-parameter">pathToNodeId</span>: <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">,</span> <a href="node-opcua.NodeId.html" class="tsd-signature-type tsd-kind-class">NodeId</a><span class="tsd-signature-symbol">&gt;</span></span>
+<div class="tsd-comment tsd-typography"><p>the browse-path index of the event layout, shared by every event of the type;
+an event built field by field (a condition snapshot) keeps an index of its own</p>
+</div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <a href="" class="tsd-signature-type tsd-kind-class">EventData</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-address-space/dist/src/event_data.d.ts:13</li></ul></aside></div></li></ul></section></section></details>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-address-space/dist/impl/event_data.d.ts:19</li></ul></aside></div></li></ul></section></section></details>
 <details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Properties"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
 <h2 class="tsd-anchor-link" id="properties-1">Properties<a href="#properties-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2></summary>
 <section>
@@ -63,7 +68,7 @@
 <div class="tsd-signature"><span class="tsd-kind-property">eventId</span><span class="tsd-signature-symbol">:</span> <a href="node-opcua.NodeId.html" class="tsd-signature-type tsd-kind-class">NodeId</a></div><aside class="tsd-sources">
 <p>Implementation of <a href="../interfaces/node-opcua.IEventData.html">IEventData</a>.<a href="../interfaces/node-opcua.IEventData.html#eventid">eventId</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-address-space/dist/src/event_data.d.ts:12</li></ul></aside></section></section></details>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-address-space/dist/impl/event_data.d.ts:14</li></ul></aside></section></section></details>
 <details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Methods"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
 <h2 class="tsd-anchor-link" id="methods-1">Methods<a href="#methods-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2></summary>
 <section>
@@ -80,7 +85,7 @@
 <h4 class="tsd-returns-title">Returns <a href="node-opcua.BrowsePathResult.html" class="tsd-signature-type tsd-kind-class">BrowsePathResult</a> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span></h4><aside class="tsd-sources">
 <p>Implementation of <a href="../interfaces/node-opcua.IEventData.html">IEventData</a>.<a href="../interfaces/node-opcua.IEventData.html#_browse">_browse</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-address-space/dist/src/event_data.d.ts:16</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-address-space/dist/impl/event_data.d.ts:24</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="_createvalue"><span>_<wbr/>create<wbr/>Value</span><a href="#_createvalue" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -96,7 +101,7 @@
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <p>Implementation of <a href="../interfaces/node-opcua.IEventData.html">IEventData</a>.<a href="../interfaces/node-opcua.IEventData.html#_createvalue">_createValue</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-address-space/dist/src/event_data.d.ts:15</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-address-space/dist/impl/event_data.d.ts:21</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="_readvalue"><span>_<wbr/>read<wbr/>Value</span><a href="#_readvalue" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -110,7 +115,23 @@
 <h4 class="tsd-returns-title">Returns <a href="node-opcua.Variant.html" class="tsd-signature-type tsd-kind-class">Variant</a> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span></h4><aside class="tsd-sources">
 <p>Implementation of <a href="../interfaces/node-opcua.IEventData.html">IEventData</a>.<a href="../interfaces/node-opcua.IEventData.html#_readvalue">_readValue</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-address-space/dist/src/event_data.d.ts:17</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-address-space/dist/impl/event_data.d.ts:25</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="_setfield"><span>_<wbr/>set<wbr/>Field</span><a href="#_setfield" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="_setfield-1"><span class="tsd-kind-call-signature">_setField</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">field</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EventField</span><span class="tsd-signature-symbol">,</span> <span class="tsd-kind-parameter">variant</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/node-opcua.VariantOptions.html" class="tsd-signature-type tsd-kind-interface">VariantOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">void</span><a href="#_setfield-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>the value of one field of the layout</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li><span><span class="tsd-kind-parameter">field</span>: <span class="tsd-signature-type">EventField</span></span></li>
+<li><span><span class="tsd-kind-parameter">variant</span>: <a href="../interfaces/node-opcua.VariantOptions.html" class="tsd-signature-type tsd-kind-interface">VariantOptions</a></span></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-address-space/dist/impl/event_data.d.ts:23</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="geteventdatasource"><span>get<wbr/>Event<wbr/>Data<wbr/>Source</span><a href="#geteventdatasource" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -120,7 +141,7 @@
 <h4 class="tsd-returns-title">Returns <a href="../interfaces/node-opcua.BaseNode.html" class="tsd-signature-type tsd-kind-interface">BaseNode</a></h4><aside class="tsd-sources">
 <p>Implementation of <a href="../interfaces/node-opcua.IEventData.html">IEventData</a>.<a href="../interfaces/node-opcua.IEventData.html#geteventdatasource">getEventDataSource</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-address-space/dist/src/event_data.d.ts:14</li></ul></aside></div></li></ul></section></section></details></div>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-address-space/dist/impl/event_data.d.ts:20</li></ul></aside></div></li></ul></section></section></details></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
@@ -140,7 +161,7 @@
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Properties"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Properties</summary>
 <div><a href="#eventid"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>event<wbr/>Id</span></a></div></details>
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Methods"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Methods</summary>
-<div><a href="#_browse"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>_<wbr/>browse</span></a><a href="#_createvalue"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>_<wbr/>create<wbr/>Value</span></a><a href="#_readvalue"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>_<wbr/>read<wbr/>Value</span></a><a href="#geteventdatasource"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Event<wbr/>Data<wbr/>Source</span></a></div></details></div></details></div>
+<div><a href="#_browse"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>_<wbr/>browse</span></a><a href="#_createvalue"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>_<wbr/>create<wbr/>Value</span></a><a href="#_readvalue"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>_<wbr/>read<wbr/>Value</span></a><a href="#_setfield"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>_<wbr/>set<wbr/>Field</span></a><a href="#geteventdatasource"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Event<wbr/>Data<wbr/>Source</span></a></div></details></div></details></div>
 <div class="site-menu">
 <nav id="tsd-sidebar-links" class="tsd-navigation"><a href="https://leanpub.com/node-opcuabyexample-edition2024" class="tsd-nav-link">Book</a><a href="https://github.com/node-opcua/node-opcua" class="tsd-nav-link">GitHub</a><a href="https://support.sterfive.com" class="tsd-nav-link">Support</a></nav>
 <nav class="tsd-navigation"><a href="../modules.html">NodeOPCUA API Documentation</a>

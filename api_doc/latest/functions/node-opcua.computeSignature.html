@@ -12,7 +12,7 @@
 <ul class="tsd-breadcrumb" aria-label="Breadcrumb">
 <li><a href="../modules/node-opcua.html">node-opcua</a></li>
 <li><a href="" aria-current="page">computeSignature</a></li></ul>
-<h1>Function computeSignature</h1></div>
+<h1 class="deprecated">Function computeSignature</h1></div>
 <section class="tsd-panel">
 <ul class="tsd-signatures">
 <li class="">
@@ -25,9 +25,16 @@
 <li><span><span class="tsd-kind-parameter">senderNonce</span>: <span class="tsd-signature-type">Nonce</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span></span></li>
 <li><span><span class="tsd-kind-parameter">receiverPrivateKey</span>: <span class="tsd-signature-type">PrivateKey</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span></span></li>
 <li><span><span class="tsd-kind-parameter">securityPolicy</span>: <a href="../enums/node-opcua.SecurityPolicy.html" class="tsd-signature-type tsd-kind-enum">SecurityPolicy</a></span></li></ul></div>
-<h4 class="tsd-returns-title">Returns <a href="../classes/node-opcua.SignatureData.html" class="tsd-signature-type tsd-kind-class">SignatureData</a> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">undefined</span></h4><aside class="tsd-sources">
+<h4 class="tsd-returns-title">Returns <a href="../classes/node-opcua.SignatureData.html" class="tsd-signature-type tsd-kind-class">SignatureData</a> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">undefined</span></h4>
+<div class="tsd-comment tsd-typography">
+<div class="tsd-tag-deprecated">
+<h4 class="tsd-anchor-link" id="deprecated">Deprecated<a href="#deprecated" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>prefer <a href="node-opcua.computeSignatureAsync.html" class="tsd-kind-function">computeSignatureAsync</a>: it accepts either a raw
+<code>PrivateKey</code> (byte-identical result) or an opaque <code>IKeyOperations</code>
+(HSM/KMS-held key). This synchronous form requires raw key material and
+is a removal candidate for the next major.</p>
+</div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-secure-channel/dist/source/security_policy.d.ts:141</li></ul></aside></div></li></ul></section></div>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-secure-channel/dist/source/security_policy.d.ts:169</li></ul></aside></div></li></ul></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">

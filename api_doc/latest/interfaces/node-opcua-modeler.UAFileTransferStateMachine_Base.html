@@ -42,7 +42,7 @@
 </table>
 </div></section>
 <div class="tsd-signature"><span class="tsd-signature-keyword">interface</span> <span class="tsd-kind-interface">UAFileTransferStateMachine_Base</span> <span class="tsd-signature-symbol">{</span><br/>    <a class="tsd-kind-property" href="#applywrite">applyWrite</a><span class="tsd-signature-symbol">:</span> <a href="node-opcua-modeler.UAState.html" class="tsd-signature-type tsd-kind-interface">UAState</a><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#applywritetoerror">applyWriteToError</a><span class="tsd-signature-symbol">:</span> <a href="node-opcua-modeler.UATransition.html" class="tsd-signature-type tsd-kind-interface">UATransition</a><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#applywritetoidle">applyWriteToIdle</a><span class="tsd-signature-symbol">:</span> <a href="node-opcua-modeler.UATransition.html" class="tsd-signature-type tsd-kind-interface">UATransition</a><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#availablestates">availableStates</a><span class="tsd-signature-symbol">?:</span> <a href="node-opcua-modeler.UABaseDataVariable.html" class="tsd-signature-type tsd-kind-interface">UABaseDataVariable</a><span class="tsd-signature-symbol">&lt;</span><a href="../classes/node-opcua-modeler.NodeId.html" class="tsd-signature-type tsd-kind-class">NodeId</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">,</span> <a href="../enums/node-opcua-modeler.DataType.html#nodeid" class="tsd-signature-type tsd-kind-enum-member">NodeId</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#availabletransitions">availableTransitions</a><span class="tsd-signature-symbol">?:</span> <a href="node-opcua-modeler.UABaseDataVariable.html" class="tsd-signature-type tsd-kind-interface">UABaseDataVariable</a><span class="tsd-signature-symbol">&lt;</span><a href="../classes/node-opcua-modeler.NodeId.html" class="tsd-signature-type tsd-kind-class">NodeId</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">,</span> <a href="../enums/node-opcua-modeler.DataType.html#nodeid" class="tsd-signature-type tsd-kind-enum-member">NodeId</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#currentstate">currentState</a><span class="tsd-signature-symbol">:</span> <a href="node-opcua-modeler.UAStateVariable.html" class="tsd-signature-type tsd-kind-interface">UAStateVariable</a><span class="tsd-signature-symbol">&lt;</span><a href="../classes/node-opcua-modeler.LocalizedText.html" class="tsd-signature-type tsd-kind-class">LocalizedText</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#error">error</a><span class="tsd-signature-symbol">:</span> <a href="node-opcua-modeler.UAState.html" class="tsd-signature-type tsd-kind-interface">UAState</a><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#errortoidle">errorToIdle</a><span class="tsd-signature-symbol">:</span> <a href="node-opcua-modeler.UATransition.html" class="tsd-signature-type tsd-kind-interface">UATransition</a><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#idle">idle</a><span class="tsd-signature-symbol">:</span> <a href="node-opcua-modeler.UAInitialState.html" class="tsd-signature-type tsd-kind-interface">UAInitialState</a><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#idletoapplywrite">idleToApplyWrite</a><span class="tsd-signature-symbol">:</span> <a href="node-opcua-modeler.UATransition.html" class="tsd-signature-type tsd-kind-interface">UATransition</a><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#idletoreadprepare">idleToReadPrepare</a><span class="tsd-signature-symbol">:</span> <a href="node-opcua-modeler.UATransition.html" class="tsd-signature-type tsd-kind-interface">UATransition</a><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#lasttransition">lastTransition</a><span class="tsd-signature-symbol">?:</span> <a href="node-opcua-modeler.UATransitionVariable.html" class="tsd-signature-type tsd-kind-interface">UATransitionVariable</a><span class="tsd-signature-symbol">&lt;</span><a href="../classes/node-opcua-modeler.LocalizedText.html" class="tsd-signature-type tsd-kind-class">LocalizedText</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#readprepare">readPrepare</a><span class="tsd-signature-symbol">:</span> <a href="node-opcua-modeler.UAState.html" class="tsd-signature-type tsd-kind-interface">UAState</a><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#readpreparetoerror">readPrepareToError</a><span class="tsd-signature-symbol">:</span> <a href="node-opcua-modeler.UATransition.html" class="tsd-signature-type tsd-kind-interface">UATransition</a><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#readpreparetoreadtransfer">readPrepareToReadTransfer</a><span class="tsd-signature-symbol">:</span> <a href="node-opcua-modeler.UATransition.html" class="tsd-signature-type tsd-kind-interface">UATransition</a><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#readtransfer">readTransfer</a><span class="tsd-signature-symbol">:</span> <a href="node-opcua-modeler.UAState.html" class="tsd-signature-type tsd-kind-interface">UAState</a><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#readtransfertoerror">readTransferToError</a><span class="tsd-signature-symbol">:</span> <a href="node-opcua-modeler.UATransition.html" class="tsd-signature-type tsd-kind-interface">UATransition</a><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#readtransfertoidle">readTransferToIdle</a><span class="tsd-signature-symbol">:</span> <a href="node-opcua-modeler.UATransition.html" class="tsd-signature-type tsd-kind-interface">UATransition</a><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#reset">reset</a><span class="tsd-signature-symbol">:</span> <a href="node-opcua-modeler.UAMethod.html" class="tsd-signature-type tsd-kind-interface">UAMethod</a><span class="tsd-signature-symbol">;</span><br/><span class="tsd-signature-symbol">}</span></div>
-<section class="tsd-panel tsd-hierarchy" data-refl="793695">
+<section class="tsd-panel tsd-hierarchy" data-refl="819577">
 <h4>Hierarchy (<a href="../hierarchy.html#node-opcua-modeler.UAFileTransferStateMachine_Base">View Summary</a>)</h4>
 <ul class="tsd-hierarchy">
 <li class="tsd-hierarchy-item"><a href="node-opcua-modeler.UAFiniteStateMachine_Base.html" class="tsd-signature-type tsd-kind-interface">UAFiniteStateMachine_Base</a>
@@ -51,7 +51,7 @@
 <ul class="tsd-hierarchy">
 <li class="tsd-hierarchy-item"><a href="node-opcua-modeler.UAFileTransferStateMachine.html" class="tsd-signature-type tsd-kind-interface">UAFileTransferStateMachine</a></li></ul></li></ul></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in packages/node-opcua-nodeset-ua/dist/ua_file_transfer_state_machine.d.ts:14</li></ul></aside>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-nodeset-ua/dist/ua_file_transfer_state_machine.d.ts:14</li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-accordion" open><summary class="tsd-accordion-summary tsd-index-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
@@ -86,101 +86,101 @@
 <h3 class="tsd-anchor-link" id="applywrite"><span>apply<wbr/>Write</span><a href="#applywrite" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">applyWrite</span><span class="tsd-signature-symbol">:</span> <a href="node-opcua-modeler.UAState.html" class="tsd-signature-type tsd-kind-interface">UAState</a></div><aside class="tsd-sources">
 <ul>
-<li>Defined in packages/node-opcua-nodeset-ua/dist/ua_file_transfer_state_machine.d.ts:18</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-nodeset-ua/dist/ua_file_transfer_state_machine.d.ts:18</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="applywritetoerror"><span>apply<wbr/>Write<wbr/>To<wbr/>Error</span><a href="#applywritetoerror" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">applyWriteToError</span><span class="tsd-signature-symbol">:</span> <a href="node-opcua-modeler.UATransition.html" class="tsd-signature-type tsd-kind-interface">UATransition</a></div><aside class="tsd-sources">
 <ul>
-<li>Defined in packages/node-opcua-nodeset-ua/dist/ua_file_transfer_state_machine.d.ts:27</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-nodeset-ua/dist/ua_file_transfer_state_machine.d.ts:27</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="applywritetoidle"><span>apply<wbr/>Write<wbr/>To<wbr/>Idle</span><a href="#applywritetoidle" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">applyWriteToIdle</span><span class="tsd-signature-symbol">:</span> <a href="node-opcua-modeler.UATransition.html" class="tsd-signature-type tsd-kind-interface">UATransition</a></div><aside class="tsd-sources">
 <ul>
-<li>Defined in packages/node-opcua-nodeset-ua/dist/ua_file_transfer_state_machine.d.ts:24</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-nodeset-ua/dist/ua_file_transfer_state_machine.d.ts:24</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="availablestates"><code class="tsd-tag">Optional</code><span>available<wbr/>States</span><a href="#availablestates" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">availableStates</span><span class="tsd-signature-symbol">?:</span> <a href="node-opcua-modeler.UABaseDataVariable.html" class="tsd-signature-type tsd-kind-interface">UABaseDataVariable</a><span class="tsd-signature-symbol">&lt;</span><a href="../classes/node-opcua-modeler.NodeId.html" class="tsd-signature-type tsd-kind-class">NodeId</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">,</span> <a href="../enums/node-opcua-modeler.DataType.html#nodeid" class="tsd-signature-type tsd-kind-enum-member">NodeId</a><span class="tsd-signature-symbol">&gt;</span></div><aside class="tsd-sources">
 <p>Inherited from <a href="node-opcua-modeler.UAFiniteStateMachine_Base.html">UAFiniteStateMachine_Base</a>.<a href="node-opcua-modeler.UAFiniteStateMachine_Base.html#availablestates">availableStates</a></p>
 <ul>
-<li>Defined in packages/node-opcua-nodeset-ua/dist/ua_finite_state_machine.d.ts:19</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-nodeset-ua/dist/ua_finite_state_machine.d.ts:19</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="availabletransitions"><code class="tsd-tag">Optional</code><span>available<wbr/>Transitions</span><a href="#availabletransitions" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">availableTransitions</span><span class="tsd-signature-symbol">?:</span> <a href="node-opcua-modeler.UABaseDataVariable.html" class="tsd-signature-type tsd-kind-interface">UABaseDataVariable</a><span class="tsd-signature-symbol">&lt;</span><a href="../classes/node-opcua-modeler.NodeId.html" class="tsd-signature-type tsd-kind-class">NodeId</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">,</span> <a href="../enums/node-opcua-modeler.DataType.html#nodeid" class="tsd-signature-type tsd-kind-enum-member">NodeId</a><span class="tsd-signature-symbol">&gt;</span></div><aside class="tsd-sources">
 <p>Inherited from <a href="node-opcua-modeler.UAFiniteStateMachine_Base.html">UAFiniteStateMachine_Base</a>.<a href="node-opcua-modeler.UAFiniteStateMachine_Base.html#availabletransitions">availableTransitions</a></p>
 <ul>
-<li>Defined in packages/node-opcua-nodeset-ua/dist/ua_finite_state_machine.d.ts:20</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-nodeset-ua/dist/ua_finite_state_machine.d.ts:20</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="currentstate"><span>current<wbr/>State</span><a href="#currentstate" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">currentState</span><span class="tsd-signature-symbol">:</span> <a href="node-opcua-modeler.UAStateVariable.html" class="tsd-signature-type tsd-kind-interface">UAStateVariable</a><span class="tsd-signature-symbol">&lt;</span><a href="../classes/node-opcua-modeler.LocalizedText.html" class="tsd-signature-type tsd-kind-class">LocalizedText</a><span class="tsd-signature-symbol">&gt;</span></div><aside class="tsd-sources">
 <p>Inherited from <a href="node-opcua-modeler.UAFiniteStateMachine_Base.html">UAFiniteStateMachine_Base</a>.<a href="node-opcua-modeler.UAFiniteStateMachine_Base.html#currentstate">currentState</a></p>
 <ul>
-<li>Defined in packages/node-opcua-nodeset-ua/dist/ua_finite_state_machine.d.ts:17</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-nodeset-ua/dist/ua_finite_state_machine.d.ts:17</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="error"><span>error</span><a href="#error" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">error</span><span class="tsd-signature-symbol">:</span> <a href="node-opcua-modeler.UAState.html" class="tsd-signature-type tsd-kind-interface">UAState</a></div><aside class="tsd-sources">
 <ul>
-<li>Defined in packages/node-opcua-nodeset-ua/dist/ua_file_transfer_state_machine.d.ts:19</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-nodeset-ua/dist/ua_file_transfer_state_machine.d.ts:19</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="errortoidle"><span>error<wbr/>To<wbr/>Idle</span><a href="#errortoidle" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">errorToIdle</span><span class="tsd-signature-symbol">:</span> <a href="node-opcua-modeler.UATransition.html" class="tsd-signature-type tsd-kind-interface">UATransition</a></div><aside class="tsd-sources">
 <ul>
-<li>Defined in packages/node-opcua-nodeset-ua/dist/ua_file_transfer_state_machine.d.ts:28</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-nodeset-ua/dist/ua_file_transfer_state_machine.d.ts:28</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="idle"><span>idle</span><a href="#idle" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">idle</span><span class="tsd-signature-symbol">:</span> <a href="node-opcua-modeler.UAInitialState.html" class="tsd-signature-type tsd-kind-interface">UAInitialState</a></div><aside class="tsd-sources">
 <ul>
-<li>Defined in packages/node-opcua-nodeset-ua/dist/ua_file_transfer_state_machine.d.ts:15</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-nodeset-ua/dist/ua_file_transfer_state_machine.d.ts:15</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="idletoapplywrite"><span>idle<wbr/>To<wbr/>Apply<wbr/>Write</span><a href="#idletoapplywrite" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">idleToApplyWrite</span><span class="tsd-signature-symbol">:</span> <a href="node-opcua-modeler.UATransition.html" class="tsd-signature-type tsd-kind-interface">UATransition</a></div><aside class="tsd-sources">
 <ul>
-<li>Defined in packages/node-opcua-nodeset-ua/dist/ua_file_transfer_state_machine.d.ts:23</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-nodeset-ua/dist/ua_file_transfer_state_machine.d.ts:23</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="idletoreadprepare"><span>idle<wbr/>To<wbr/>Read<wbr/>Prepare</span><a href="#idletoreadprepare" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">idleToReadPrepare</span><span class="tsd-signature-symbol">:</span> <a href="node-opcua-modeler.UATransition.html" class="tsd-signature-type tsd-kind-interface">UATransition</a></div><aside class="tsd-sources">
 <ul>
-<li>Defined in packages/node-opcua-nodeset-ua/dist/ua_file_transfer_state_machine.d.ts:20</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-nodeset-ua/dist/ua_file_transfer_state_machine.d.ts:20</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="lasttransition"><code class="tsd-tag">Optional</code><span>last<wbr/>Transition</span><a href="#lasttransition" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">lastTransition</span><span class="tsd-signature-symbol">?:</span> <a href="node-opcua-modeler.UATransitionVariable.html" class="tsd-signature-type tsd-kind-interface">UATransitionVariable</a><span class="tsd-signature-symbol">&lt;</span><a href="../classes/node-opcua-modeler.LocalizedText.html" class="tsd-signature-type tsd-kind-class">LocalizedText</a><span class="tsd-signature-symbol">&gt;</span></div><aside class="tsd-sources">
 <p>Inherited from <a href="node-opcua-modeler.UAFiniteStateMachine_Base.html">UAFiniteStateMachine_Base</a>.<a href="node-opcua-modeler.UAFiniteStateMachine_Base.html#lasttransition">lastTransition</a></p>
 <ul>
-<li>Defined in packages/node-opcua-nodeset-ua/dist/ua_finite_state_machine.d.ts:18</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-nodeset-ua/dist/ua_finite_state_machine.d.ts:18</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="readprepare"><span>read<wbr/>Prepare</span><a href="#readprepare" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">readPrepare</span><span class="tsd-signature-symbol">:</span> <a href="node-opcua-modeler.UAState.html" class="tsd-signature-type tsd-kind-interface">UAState</a></div><aside class="tsd-sources">
 <ul>
-<li>Defined in packages/node-opcua-nodeset-ua/dist/ua_file_transfer_state_machine.d.ts:16</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-nodeset-ua/dist/ua_file_transfer_state_machine.d.ts:16</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="readpreparetoerror"><span>read<wbr/>Prepare<wbr/>To<wbr/>Error</span><a href="#readpreparetoerror" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">readPrepareToError</span><span class="tsd-signature-symbol">:</span> <a href="node-opcua-modeler.UATransition.html" class="tsd-signature-type tsd-kind-interface">UATransition</a></div><aside class="tsd-sources">
 <ul>
-<li>Defined in packages/node-opcua-nodeset-ua/dist/ua_file_transfer_state_machine.d.ts:25</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-nodeset-ua/dist/ua_file_transfer_state_machine.d.ts:25</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="readpreparetoreadtransfer"><span>read<wbr/>Prepare<wbr/>To<wbr/>Read<wbr/>Transfer</span><a href="#readpreparetoreadtransfer" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">readPrepareToReadTransfer</span><span class="tsd-signature-symbol">:</span> <a href="node-opcua-modeler.UATransition.html" class="tsd-signature-type tsd-kind-interface">UATransition</a></div><aside class="tsd-sources">
 <ul>
-<li>Defined in packages/node-opcua-nodeset-ua/dist/ua_file_transfer_state_machine.d.ts:21</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-nodeset-ua/dist/ua_file_transfer_state_machine.d.ts:21</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="readtransfer"><span>read<wbr/>Transfer</span><a href="#readtransfer" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">readTransfer</span><span class="tsd-signature-symbol">:</span> <a href="node-opcua-modeler.UAState.html" class="tsd-signature-type tsd-kind-interface">UAState</a></div><aside class="tsd-sources">
 <ul>
-<li>Defined in packages/node-opcua-nodeset-ua/dist/ua_file_transfer_state_machine.d.ts:17</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-nodeset-ua/dist/ua_file_transfer_state_machine.d.ts:17</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="readtransfertoerror"><span>read<wbr/>Transfer<wbr/>To<wbr/>Error</span><a href="#readtransfertoerror" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">readTransferToError</span><span class="tsd-signature-symbol">:</span> <a href="node-opcua-modeler.UATransition.html" class="tsd-signature-type tsd-kind-interface">UATransition</a></div><aside class="tsd-sources">
 <ul>
-<li>Defined in packages/node-opcua-nodeset-ua/dist/ua_file_transfer_state_machine.d.ts:26</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-nodeset-ua/dist/ua_file_transfer_state_machine.d.ts:26</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="readtransfertoidle"><span>read<wbr/>Transfer<wbr/>To<wbr/>Idle</span><a href="#readtransfertoidle" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">readTransferToIdle</span><span class="tsd-signature-symbol">:</span> <a href="node-opcua-modeler.UATransition.html" class="tsd-signature-type tsd-kind-interface">UATransition</a></div><aside class="tsd-sources">
 <ul>
-<li>Defined in packages/node-opcua-nodeset-ua/dist/ua_file_transfer_state_machine.d.ts:22</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-nodeset-ua/dist/ua_file_transfer_state_machine.d.ts:22</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="reset"><span>reset</span><a href="#reset" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">reset</span><span class="tsd-signature-symbol">:</span> <a href="node-opcua-modeler.UAMethod.html" class="tsd-signature-type tsd-kind-interface">UAMethod</a></div><aside class="tsd-sources">
 <ul>
-<li>Defined in packages/node-opcua-nodeset-ua/dist/ua_file_transfer_state_machine.d.ts:29</li></ul></aside></section></section></details></div>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-nodeset-ua/dist/ua_file_transfer_state_machine.d.ts:29</li></ul></aside></section></section></details></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">

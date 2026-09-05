@@ -16,17 +16,28 @@
 <section class="tsd-panel">
 <ul class="tsd-signatures">
 <li class="">
-<div class="tsd-signature tsd-anchor-link" id="generateaddressspace"><span class="tsd-kind-call-signature">generateAddressSpace</span><span class="tsd-signature-symbol">(</span><br/>    <span class="tsd-kind-parameter">addressSpace</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/node-opcua.IAddressSpace.html" class="tsd-signature-type tsd-kind-interface">IAddressSpace</a><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">xmlFiles</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">options</span><span class="tsd-signature-symbol">?:</span> <a href="../interfaces/node-opcua.NodeSetLoaderOptions.html" class="tsd-signature-type tsd-kind-interface">NodeSetLoaderOptions</a><span class="tsd-signature-symbol">,</span><br/><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span><a href="#generateaddressspace" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-signature tsd-anchor-link" id="generateaddressspace"><span class="tsd-kind-call-signature">generateAddressSpace</span><span class="tsd-signature-symbol">(</span><br/>    <span class="tsd-kind-parameter">addressSpace</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/node-opcua.IAddressSpace.html" class="tsd-signature-type tsd-kind-interface">IAddressSpace</a><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">xmlFiles</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span> <span class="tsd-signature-symbol">|</span> <a href="../types/node-opcua.NodesetSource.html" class="tsd-signature-type tsd-kind-type-alias">NodesetSource</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">options</span><span class="tsd-signature-symbol">?:</span> <a href="../interfaces/node-opcua.NodeSetLoaderOptions.html" class="tsd-signature-type tsd-kind-interface">NodeSetLoaderOptions</a><span class="tsd-signature-symbol">,</span><br/><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span><a href="#generateaddressspace" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>load NodeSet2 documents into an address space: file paths, and <a href="../types/node-opcua.NodesetSource.html" class="tsd-kind-type-alias">NodesetSource</a> values
+for a document that is not a file (a gzip stream, an HTTP response, a string of XML). A
+string in the list is always a path here; content and streams go through a source.</p>
+<p>A file with a valid precompiled image next to it (<code>&lt;name&gt;.ndjson.gz</code>, the catalog ships one
+for every nodeset) is replayed from the image, with nothing to configure. With <code>imageStore</code>,
+a file without one is hashed and its image replayed when the store has it, written
+otherwise; <code>true</code> selects the per-user file store (<a href="../classes/node-opcua.FileNodesetImageStore.html" class="tsd-kind-class">FileNodesetImageStore</a>).
+<code>imageStore: false</code> disables the sibling images too and streams the XML, for tests and for
+bisecting. The documents load in dependency order whatever the order given; a model one of
+them requires may also be one the address space holds already, from an earlier call.</p>
+</div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
 <li><span><span class="tsd-kind-parameter">addressSpace</span>: <a href="../interfaces/node-opcua.IAddressSpace.html" class="tsd-signature-type tsd-kind-interface">IAddressSpace</a></span></li>
-<li><span><span class="tsd-kind-parameter">xmlFiles</span>: <span class="tsd-signature-type">string</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></span></li>
+<li><span><span class="tsd-kind-parameter">xmlFiles</span>: <span class="tsd-signature-type">string</span> <span class="tsd-signature-symbol">|</span> <a href="../types/node-opcua.NodesetSource.html" class="tsd-signature-type tsd-kind-type-alias">NodesetSource</a><span class="tsd-signature-symbol">[]</span></span></li>
 <li><span><code class="tsd-tag">Optional</code><span class="tsd-kind-parameter">options</span>: <a href="../interfaces/node-opcua.NodeSetLoaderOptions.html" class="tsd-signature-type tsd-kind-interface">NodeSetLoaderOptions</a></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-address-space/distNodeJS/generate_address_space.d.ts:4</li></ul></aside></div></li></ul></section></div>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-address-space/distNodeJS/generate_address_space.d.ts:35</li></ul></aside></div></li></ul></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">

@@ -22,7 +22,8 @@ is NOT installed. The chain can be replaced in-place via <code>update()</code>.<
 <h4>Implements</h4>
 <ul class="tsd-hierarchy">
 <li><a href="../interfaces/node-opcua.ICertificateChainProvider.html" class="tsd-signature-type tsd-kind-interface">ICertificateChainProvider</a></li>
-<li><a href="../interfaces/node-opcua.ICertificateKeyPairProviderWithLocation.html" class="tsd-signature-type tsd-kind-interface">ICertificateKeyPairProviderWithLocation</a></li></ul></section><aside class="tsd-sources">
+<li><a href="../interfaces/node-opcua.ICertificateKeyPairProviderWithLocation.html" class="tsd-signature-type tsd-kind-interface">ICertificateKeyPairProviderWithLocation</a></li>
+<li><a href="../interfaces/node-opcua.ICertificateKeyPairProvider2.html" class="tsd-signature-type tsd-kind-interface">ICertificateKeyPairProvider2</a></li></ul></section><aside class="tsd-sources">
 <ul>
 <li>Defined in work/node-opcua/node-opcua/packages/node-opcua-common/dist/certificate_chain_provider.d.ts:32</li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
@@ -43,6 +44,7 @@ is NOT installed. The chain can be replaced in-place via <code>update()</code>.<
 <h3 class="tsd-index-heading tsd-anchor-link" id="methods">Methods<a href="#methods" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-index-list"><a href="#getcertificate" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Certificate</span></a>
 <a href="#getcertificatechain" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Certificate<wbr/>Chain</span></a>
+<a href="#getkeyoperations" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Key<wbr/>Operations</span></a>
 <a href="#getprivatekey" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Private<wbr/>Key</span></a>
 <a href="#invalidate" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>invalidate</span></a>
 <a href="#tojson" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>to<wbr/>JSON</span></a>
@@ -98,7 +100,7 @@ is NOT installed. The chain can be replaced in-place via <code>update()</code>.<
 <div class="tsd-signature tsd-anchor-link" id="getcertificate-1"><span class="tsd-kind-call-signature">getCertificate</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">DER</span><a href="#getcertificate-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">DER</span></h4><aside class="tsd-sources">
-<p>Implementation of <a href="../interfaces/node-opcua.ICertificateKeyPairProviderWithLocation.html">ICertificateKeyPairProviderWithLocation</a>.<a href="../interfaces/node-opcua.ICertificateKeyPairProviderWithLocation.html#getcertificate">getCertificate</a></p>
+<p>Implementation of <a href="../interfaces/node-opcua.ICertificateKeyPairProvider2.html">ICertificateKeyPairProvider2</a>.<a href="../interfaces/node-opcua.ICertificateKeyPairProvider2.html#getcertificate">getCertificate</a></p>
 <ul>
 <li>Defined in work/node-opcua/node-opcua/packages/node-opcua-common/dist/certificate_chain_provider.d.ts:37</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
@@ -108,17 +110,35 @@ is NOT installed. The chain can be replaced in-place via <code>update()</code>.<
 <div class="tsd-signature tsd-anchor-link" id="getcertificatechain-1"><span class="tsd-kind-call-signature">getCertificateChain</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">DER</span><span class="tsd-signature-symbol">[]</span><a href="#getcertificatechain-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">DER</span><span class="tsd-signature-symbol">[]</span></h4><aside class="tsd-sources">
-<p>Implementation of <a href="../interfaces/node-opcua.ICertificateKeyPairProviderWithLocation.html">ICertificateKeyPairProviderWithLocation</a>.<a href="../interfaces/node-opcua.ICertificateKeyPairProviderWithLocation.html#getcertificatechain">getCertificateChain</a></p>
+<p>Implementation of <a href="../interfaces/node-opcua.ICertificateKeyPairProvider2.html">ICertificateKeyPairProvider2</a>.<a href="../interfaces/node-opcua.ICertificateKeyPairProvider2.html#getcertificatechain">getCertificateChain</a></p>
 <ul>
 <li>Defined in work/node-opcua/node-opcua/packages/node-opcua-common/dist/certificate_chain_provider.d.ts:38</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="getkeyoperations"><span>get<wbr/>Key<wbr/>Operations</span><a href="#getkeyoperations" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="getkeyoperations-1"><span class="tsd-kind-call-signature">getKeyOperations</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/node-opcua.IKeyOperations.html" class="tsd-signature-type tsd-kind-interface">IKeyOperations</a><a href="#getkeyoperations-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>The key as an opaque sign/decrypt object — see <a href="../functions/node-opcua.localKeyOperationsOfProvider.html" class="tsd-kind-function">localKeyOperationsOfProvider</a>.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <a href="../interfaces/node-opcua.IKeyOperations.html" class="tsd-signature-type tsd-kind-interface">IKeyOperations</a></h4><aside class="tsd-sources">
+<p>Implementation of <a href="../interfaces/node-opcua.ICertificateKeyPairProvider2.html">ICertificateKeyPairProvider2</a>.<a href="../interfaces/node-opcua.ICertificateKeyPairProvider2.html#getkeyoperations">getKeyOperations</a></p>
+<ul>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-common/dist/certificate_chain_provider.d.ts:41</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="getprivatekey"><span>get<wbr/>Private<wbr/>Key</span><a href="#getprivatekey" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
 <li class="">
 <div class="tsd-signature tsd-anchor-link" id="getprivatekey-1"><span class="tsd-kind-call-signature">getPrivateKey</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">PrivateKey</span><a href="#getprivatekey-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>The raw private key. Kept for compatibility — new code should prefer
+<a href="../interfaces/node-opcua.ICertificateKeyPairProvider2.html#getkeyoperations" class="tsd-kind-method">ICertificateKeyPairProvider2.getKeyOperations</a> (via
+<code>getKeyOperationsFromProvider</code>), which works whether the key is local
+or HSM/KMS-held; an opaque provider implements this method by
+throwing <code>PrivateKeyUnavailableError</code>.</p>
+</div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">PrivateKey</span></h4><aside class="tsd-sources">
-<p>Implementation of <a href="../interfaces/node-opcua.ICertificateKeyPairProviderWithLocation.html">ICertificateKeyPairProviderWithLocation</a>.<a href="../interfaces/node-opcua.ICertificateKeyPairProviderWithLocation.html#getprivatekey">getPrivateKey</a></p>
+<p>Implementation of <a href="../interfaces/node-opcua.ICertificateKeyPairProvider2.html">ICertificateKeyPairProvider2</a>.<a href="../interfaces/node-opcua.ICertificateKeyPairProvider2.html#getprivatekey">getPrivateKey</a></p>
 <ul>
 <li>Defined in work/node-opcua/node-opcua/packages/node-opcua-common/dist/certificate_chain_provider.d.ts:39</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
@@ -133,7 +153,7 @@ Use <code>update()</code> to replace the chain explicitly.</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <p>Implementation of <a href="../interfaces/node-opcua.ICertificateKeyPairProviderWithLocation.html">ICertificateKeyPairProviderWithLocation</a>.<a href="../interfaces/node-opcua.ICertificateKeyPairProviderWithLocation.html#invalidate">invalidate</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-common/dist/certificate_chain_provider.d.ts:44</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-common/dist/certificate_chain_provider.d.ts:46</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="tojson"><span>to<wbr/>JSON</span><a href="#tojson" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -142,7 +162,7 @@ Use <code>update()</code> to replace the chain explicitly.</p>
 <div class="tsd-description">
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">,</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-common/dist/certificate_chain_provider.d.ts:53</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-common/dist/certificate_chain_provider.d.ts:55</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="update"><span>update</span><a href="#update" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -161,7 +181,7 @@ endpoint descriptions with dynamic <code>serverCertificate</code> getters).</p>
 <li><span><code class="tsd-tag">Optional</code><span class="tsd-kind-parameter">key</span>: <span class="tsd-signature-type">PrivateKey</span></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-common/dist/certificate_chain_provider.d.ts:52</li></ul></aside></div></li></ul></section></section></details></div>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-common/dist/certificate_chain_provider.d.ts:54</li></ul></aside></div></li></ul></section></section></details></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
@@ -181,7 +201,7 @@ endpoint descriptions with dynamic <code>serverCertificate</code> getters).</p>
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Accessors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Accessors</summary>
 <div><a href="#certificatefile"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>certificate<wbr/>File</span></a><a href="#privatekeyfile"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>private<wbr/>Key<wbr/>File</span></a></div></details>
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Methods"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Methods</summary>
-<div><a href="#getcertificate"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Certificate</span></a><a href="#getcertificatechain"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Certificate<wbr/>Chain</span></a><a href="#getprivatekey"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Private<wbr/>Key</span></a><a href="#invalidate"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>invalidate</span></a><a href="#tojson"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>to<wbr/>JSON</span></a><a href="#update"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>update</span></a></div></details></div></details></div>
+<div><a href="#getcertificate"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Certificate</span></a><a href="#getcertificatechain"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Certificate<wbr/>Chain</span></a><a href="#getkeyoperations"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Key<wbr/>Operations</span></a><a href="#getprivatekey"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Private<wbr/>Key</span></a><a href="#invalidate"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>invalidate</span></a><a href="#tojson"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>to<wbr/>JSON</span></a><a href="#update"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>update</span></a></div></details></div></details></div>
 <div class="site-menu">
 <nav id="tsd-sidebar-links" class="tsd-navigation"><a href="https://leanpub.com/node-opcuabyexample-edition2024" class="tsd-nav-link">Book</a><a href="https://github.com/node-opcua/node-opcua" class="tsd-nav-link">GitHub</a><a href="https://support.sterfive.com" class="tsd-nav-link">Support</a></nav>
 <nav class="tsd-navigation"><a href="../modules.html">NodeOPCUA API Documentation</a>

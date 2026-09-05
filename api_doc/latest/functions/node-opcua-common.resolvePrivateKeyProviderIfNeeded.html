@@ -22,6 +22,11 @@
 (decrypting with the manager's configured <code>privateKeyPassphrase</code> /
 <code>privateKeyProvider</code> if needed) and install it as <code>secureObject</code>'s
 provider.</p>
+<p>When the certificate manager reports an OPAQUE key
+(<code>isPrivateKeyOpaque()</code> true — <code>keyOperations</code> configured, HSM/KMS-held),
+an <a href="../classes/node-opcua-common.OpaqueCertificateKeyPairProvider.html" class="tsd-kind-class">OpaqueCertificateKeyPairProvider</a> is installed instead, with the
+key metadata (and public half, when available) prefetched here so later
+synchronous consumers never await the ops provider for facts.</p>
 <p>No-ops — leaves the current provider untouched — when:</p>
 <ul>
 <li><code>hasUserProvidedProvider</code> is <code>true</code> (the secure object was constructed
@@ -64,7 +69,7 @@ of refresh either way (e.g. after a certificate rotation) can fall back to
 a plain <code>invalidate()</code> when this returns <code>false</code>.</p>
 <aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/11ad1e0894355cd279e19443c6c9a4fc090e7d7a/packages/node-opcua-common/source/resolve_private_key_provider.ts#L97">packages/node-opcua-common/source/resolve_private_key_provider.ts:97</a></li></ul></aside></div></li></ul></section></div>
+<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/04354d3d96aea598d81749bba55d573f97c8021a/packages/node-opcua-common/source/resolve_private_key_provider.ts#L120">packages/node-opcua-common/source/resolve_private_key_provider.ts:120</a></li></ul></aside></div></li></ul></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">

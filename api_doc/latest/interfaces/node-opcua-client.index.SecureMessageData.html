@@ -14,9 +14,9 @@
 <li><a href="../modules/node-opcua-client.index.html">index</a></li>
 <li><a href="" aria-current="page">SecureMessageData</a></li></ul>
 <h1>Interface SecureMessageData</h1></div>
-<div class="tsd-signature"><span class="tsd-signature-keyword">interface</span> <span class="tsd-kind-interface">SecureMessageData</span> <span class="tsd-signature-symbol">{</span><br/>    <a class="tsd-kind-property" href="#cipherblocksize">cipherBlockSize</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#encryptbufferfunc">encryptBufferFunc</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EncryptBufferFunc</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#plainblocksize">plainBlockSize</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#signaturelength">signatureLength</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#signbufferfunc">signBufferFunc</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">SignBufferFunc</span><span class="tsd-signature-symbol">;</span><br/><span class="tsd-signature-symbol">}</span></div><aside class="tsd-sources">
+<div class="tsd-signature"><span class="tsd-signature-keyword">interface</span> <span class="tsd-kind-interface">SecureMessageData</span> <span class="tsd-signature-symbol">{</span><br/>    <a class="tsd-kind-property" href="#cipherblocksize">cipherBlockSize</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#encryptbufferfunc">encryptBufferFunc</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EncryptBufferFunc</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#plainblocksize">plainBlockSize</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#signaturelength">signatureLength</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#signbufferasyncfunc">signBufferAsyncFunc</a><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">SignBufferAsyncFunc</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#signbufferfunc">signBufferFunc</a><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">SignBufferFunc</span><span class="tsd-signature-symbol">;</span><br/><span class="tsd-signature-symbol">}</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-secure-channel/dist/source/security_policy.d.ts:143</li></ul></aside>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-secure-channel/dist/source/security_policy.d.ts:199</li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-accordion" open><summary class="tsd-accordion-summary tsd-index-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
@@ -28,7 +28,8 @@
 <a href="#encryptbufferfunc" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>encrypt<wbr/>Buffer<wbr/>Func</span></a>
 <a href="#plainblocksize" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>plain<wbr/>Block<wbr/>Size</span></a>
 <a href="#signaturelength" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>signature<wbr/>Length</span></a>
-<a href="#signbufferfunc" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>sign<wbr/>Buffer<wbr/>Func</span></a>
+<a href="#signbufferasyncfunc" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>sign<wbr/>Buffer<wbr/>Async<wbr/>Func?</span></a>
+<a href="#signbufferfunc" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>sign<wbr/>Buffer<wbr/>Func?</span></a>
 </div></section></div></details></section></section>
 <details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Properties"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
 <h2 class="tsd-anchor-link" id="properties-1">Properties<a href="#properties-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2></summary>
@@ -37,27 +38,32 @@
 <h3 class="tsd-anchor-link" id="cipherblocksize"><span>cipher<wbr/>Block<wbr/>Size</span><a href="#cipherblocksize" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">cipherBlockSize</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-secure-channel/dist/source/security_policy.d.ts:144</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-secure-channel/dist/source/security_policy.d.ts:200</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="encryptbufferfunc"><span>encrypt<wbr/>Buffer<wbr/>Func</span><a href="#encryptbufferfunc" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">encryptBufferFunc</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EncryptBufferFunc</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-secure-channel/dist/source/security_policy.d.ts:145</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-secure-channel/dist/source/security_policy.d.ts:201</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="plainblocksize"><span>plain<wbr/>Block<wbr/>Size</span><a href="#plainblocksize" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">plainBlockSize</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-secure-channel/dist/source/security_policy.d.ts:146</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-secure-channel/dist/source/security_policy.d.ts:202</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="signaturelength"><span>signature<wbr/>Length</span><a href="#signaturelength" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">signatureLength</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-secure-channel/dist/source/security_policy.d.ts:148</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-secure-channel/dist/source/security_policy.d.ts:205</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
-<h3 class="tsd-anchor-link" id="signbufferfunc"><span>sign<wbr/>Buffer<wbr/>Func</span><a href="#signbufferfunc" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<div class="tsd-signature"><span class="tsd-kind-property">signBufferFunc</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">SignBufferFunc</span></div><aside class="tsd-sources">
+<h3 class="tsd-anchor-link" id="signbufferasyncfunc"><code class="tsd-tag">Optional</code><span>sign<wbr/>Buffer<wbr/>Async<wbr/>Func</span><a href="#signbufferasyncfunc" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<div class="tsd-signature"><span class="tsd-kind-property">signBufferAsyncFunc</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">SignBufferAsyncFunc</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-secure-channel/dist/source/security_policy.d.ts:147</li></ul></aside></section></section></details></div>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-secure-channel/dist/source/security_policy.d.ts:204</li></ul></aside></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="signbufferfunc"><code class="tsd-tag">Optional</code><span>sign<wbr/>Buffer<wbr/>Func</span><a href="#signbufferfunc" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<div class="tsd-signature"><span class="tsd-kind-property">signBufferFunc</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">SignBufferFunc</span></div><aside class="tsd-sources">
+<ul>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-secure-channel/dist/source/security_policy.d.ts:203</li></ul></aside></section></section></details></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
@@ -73,7 +79,7 @@
 <h3>On This Page</h3></summary>
 <div class="tsd-accordion-details">
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Properties"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Properties</summary>
-<div><a href="#cipherblocksize"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>cipher<wbr/>Block<wbr/>Size</span></a><a href="#encryptbufferfunc"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>encrypt<wbr/>Buffer<wbr/>Func</span></a><a href="#plainblocksize"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>plain<wbr/>Block<wbr/>Size</span></a><a href="#signaturelength"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>signature<wbr/>Length</span></a><a href="#signbufferfunc"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>sign<wbr/>Buffer<wbr/>Func</span></a></div></details></div></details></div>
+<div><a href="#cipherblocksize"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>cipher<wbr/>Block<wbr/>Size</span></a><a href="#encryptbufferfunc"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>encrypt<wbr/>Buffer<wbr/>Func</span></a><a href="#plainblocksize"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>plain<wbr/>Block<wbr/>Size</span></a><a href="#signaturelength"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>signature<wbr/>Length</span></a><a href="#signbufferasyncfunc"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>sign<wbr/>Buffer<wbr/>Async<wbr/>Func</span></a><a href="#signbufferfunc"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>sign<wbr/>Buffer<wbr/>Func</span></a></div></details></div></details></div>
 <div class="site-menu">
 <nav id="tsd-sidebar-links" class="tsd-navigation"><a href="https://leanpub.com/node-opcuabyexample-edition2024" class="tsd-nav-link">Book</a><a href="https://github.com/node-opcua/node-opcua" class="tsd-nav-link">GitHub</a><a href="https://support.sterfive.com" class="tsd-nav-link">Support</a></nav>
 <nav class="tsd-navigation"><a href="../modules.html">NodeOPCUA API Documentation</a>
