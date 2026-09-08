@@ -18,9 +18,11 @@
 <li class="">
 <div class="tsd-signature tsd-anchor-link" id="nodesettoimage"><span class="tsd-kind-call-signature">nodesetToImage</span><span class="tsd-signature-symbol">(</span><br/>    <span class="tsd-kind-parameter">source</span><span class="tsd-signature-symbol">:</span> <a href="../types/node-opcua-modeler.NodesetSource.html" class="tsd-signature-type tsd-kind-type-alias">NodesetSource</a><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">options</span><span class="tsd-signature-symbol">?:</span> <a href="../interfaces/node-opcua-modeler.NodesetToImageOptions.html" class="tsd-signature-type tsd-kind-interface">NodesetToImageOptions</a><span class="tsd-signature-symbol">,</span><br/><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Uint8Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ArrayBufferLike</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><a href="#nodesettoimage" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>the precompiled image of a NodeSet2 document, built from the source alone: converting a file
+<div class="tsd-comment tsd-typography"><p>the precompiled image of a nodeset document, built from the source alone: converting a file
 needs neither its dependencies nor an address space. A source that already holds an image is
 returned as it is, once read through to check it.</p>
+<p>Any registered format can be the input, not only NodeSet2 XML: an image is a cache of records,
+and records are what every format produces.</p>
 </div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>

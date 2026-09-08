@@ -13,11 +13,17 @@
 <li><a href="../modules/node-opcua-address-space.html">node-opcua-address-space</a></li>
 <li><a href="" aria-current="page">NODESET_RECORD_SCHEMA</a></li></ul>
 <h1>Variable NODESET_RECORD_SCHEMA<code class="tsd-tag">Const</code></h1></div>
-<div class="tsd-signature"><span class="tsd-kind-variable">NODESET_RECORD_SCHEMA</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">2</span></div>
-<div class="tsd-comment tsd-typography"><p>bumped whenever the record shape changes; the precompiled image carries it</p>
+<div class="tsd-signature"><span class="tsd-kind-variable">NODESET_RECORD_SCHEMA</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">3</span></div>
+<div class="tsd-comment tsd-typography"><p>bumped whenever the record shape changes; the precompiled image carries it, and it is part of
+the key an image is cached under, so a bump invalidates every stored image.</p>
+<p>It is bumped for a change in what the records <em>contain</em> as well as for a change in their shape:
+when the reader learns to read something it used to drop -- a DateTime value, say -- every image
+built before is still valid schema-N and still parses, but it is less faithful than the file it
+was built from, and nothing else would ever invalidate it. The source digest cannot: the source
+did not change. This number is the only lever.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/04354d3d96aea598d81749bba55d573f97c8021a/packages/node-opcua-address-space/api/loader/nodeset_record.ts#L23">work/node-opcua/node-opcua/packages/node-opcua-address-space/api/loader/nodeset_record.ts:23</a></li></ul></aside></div>
+<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/7172ac8333d34505a72221e8f56e8708c2c96bd7/packages/node-opcua-address-space/api/loader/nodeset_record.ts#L32">work/node-opcua/node-opcua/packages/node-opcua-address-space/api/loader/nodeset_record.ts:32</a></li></ul></aside></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">

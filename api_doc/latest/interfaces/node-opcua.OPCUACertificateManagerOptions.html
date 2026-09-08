@@ -39,7 +39,7 @@
 <h3 class="tsd-anchor-link" id="automaticallyacceptunknowncertificate"><code class="tsd-tag">Optional</code><span>automatically<wbr/>Accept<wbr/>Unknown<wbr/>Certificate</span><a href="#automaticallyacceptunknowncertificate" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">automaticallyAcceptUnknownCertificate</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">boolean</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-certificate-manager/dist/certificate_manager.d.ts:27</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-certificate-manager/dist/certificate_manager.d.ts:34</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="disablefilewatchers"><code class="tsd-tag">Optional</code><span>disable<wbr/>File<wbr/>Watchers</span><a href="#disablefilewatchers" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">disableFileWatchers</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">boolean</span></div>
@@ -57,7 +57,7 @@ exhaust the libuv thread-pool.</p>
 
 </div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-certificate-manager/dist/certificate_manager.d.ts:49</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-certificate-manager/dist/certificate_manager.d.ts:57</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="keyoperations"><code class="tsd-tag">Optional</code><span>key<wbr/>Operations</span><a href="#keyoperations" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">keyOperations</span><span class="tsd-signature-symbol">?:</span> <a href="node-opcua.IKeyOperations.html" class="tsd-signature-type tsd-kind-interface">IKeyOperations</a></div>
@@ -77,20 +77,22 @@ private-key-protection guide for the full contract.</p>
 
 </div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-certificate-manager/dist/certificate_manager.d.ts:97</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-certificate-manager/dist/certificate_manager.d.ts:105</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="keysize"><code class="tsd-tag">Optional</code><span>key<wbr/>Size</span><a href="#keysize" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">keySize</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">2048</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">4096</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">3072</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-certificate-manager/dist/certificate_manager.d.ts:37</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-certificate-manager/dist/certificate_manager.d.ts:45</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="name"><code class="tsd-tag">Optional</code><span>name</span><a href="#name" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">name</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
-<div class="tsd-comment tsd-typography"><p>the name of the pki store( default value = &quot;pki&quot; )</p>
-<p>the PKI folder will be <rootFolder>/<name></p>
+<div class="tsd-comment tsd-typography"><p>A label for this store. It does <strong>not</strong> change where the store lives:
+the folder is <code>rootFolder</code> alone. Callers that want one store per name
+build the path themselves, as <a href="../functions/node-opcua.getDefaultCertificateManager.html" class="tsd-kind-function">getDefaultCertificateManager</a> does
+with <code>rootFolder: path.join(config, name)</code>.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-certificate-manager/dist/certificate_manager.d.ts:33</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-certificate-manager/dist/certificate_manager.d.ts:41</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="privatekeypassphrase"><code class="tsd-tag">Optional</code><span>private<wbr/>Key<wbr/>Passphrase</span><a href="#privatekeypassphrase" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">privateKeyPassphrase</span><span class="tsd-signature-symbol">?:</span> <a href="../types/node-opcua.PrivateKeyPassphrase.html" class="tsd-signature-type tsd-kind-type-alias">PrivateKeyPassphrase</a></div>
@@ -122,7 +124,7 @@ logged.</p>
 
 </div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-certificate-manager/dist/certificate_manager.d.ts:74</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-certificate-manager/dist/certificate_manager.d.ts:82</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="privatekeyprovider"><code class="tsd-tag">Optional</code><span>private<wbr/>Key<wbr/>Provider</span><a href="#privatekeyprovider" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">privateKeyProvider</span><span class="tsd-signature-symbol">?:</span> <a href="node-opcua.PrivateKeyProvider.html" class="tsd-signature-type tsd-kind-interface">PrivateKeyProvider</a></div>
@@ -139,15 +141,23 @@ ignored.</p>
 
 </div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-certificate-manager/dist/certificate_manager.d.ts:84</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-certificate-manager/dist/certificate_manager.d.ts:92</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="rootfolder"><code class="tsd-tag">Optional</code><span>root<wbr/>Folder</span><a href="#rootfolder" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">rootFolder</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span></div>
-<div class="tsd-comment tsd-typography"><p>where to store the PKI
-default %APPDATA%/node-opcua-default</p>
-</div><aside class="tsd-sources">
+<div class="tsd-comment tsd-typography"><p>The folder that <strong>is</strong> the PKI store: <code>own/</code>, <code>trusted/</code>, <code>issuers/</code> and
+<code>rejected/</code> are created directly under it. <code>name</code> is not appended.</p>
+<p>Two managers given the same <code>rootFolder</code> share one store and one
+private key, whatever their <code>name</code>. Give every application, and every
+side of an application (server side, client side), a folder of its own.</p>
+</div>
+<div class="tsd-comment tsd-typography">
+<div class="tsd-tag-defaultValue">
+<h4 class="tsd-anchor-link" id="default-value-4">Default Value<a href="#default-value-4" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>the per-user config folder of node-opcua
+(<code>%APPDATA%/node-opcua-default</code> on Windows, <code>~/.config/node-opcua-default</code> elsewhere)</p>
+</div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-certificate-manager/dist/certificate_manager.d.ts:26</li></ul></aside></section></section></details></div>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-certificate-manager/dist/certificate_manager.d.ts:33</li></ul></aside></section></section></details></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">

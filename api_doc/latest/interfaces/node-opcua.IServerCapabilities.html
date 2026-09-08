@@ -55,16 +55,22 @@
 <h3 class="tsd-anchor-link" id="conformanceunits"><span>conformance<wbr/>Units</span><a href="#conformanceunits" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">conformanceUnits</span><span class="tsd-signature-symbol">:</span> <a href="../classes/node-opcua.QualifiedName.html" class="tsd-signature-type tsd-kind-class">QualifiedName</a><span class="tsd-signature-symbol">[]</span></div>
 <div class="tsd-comment tsd-typography"><p>ConformanceUnits is a QualifiedName array specifying the set of conformance units
-the Server supports. This list should be limited to the ConformanceUnits the Server
-supports in its current configuration.</p>
+the Server supports (Part 5, Server/ServerCapabilities/ConformanceUnits, i=24101,
+new in OPC UA 1.05). Part 7 1.05 wants this list limited to the ConformanceUnits
+the Server supports in its current configuration, e.g.
+<code>[new QualifiedName({ name: &quot;Base Info Core Structure 2&quot; })]</code>.</p>
+<p>The variable reads the list live: assigning or pushing to
+<code>server.engine.serverCapabilities.conformanceUnits</code> after the server has started
+is reflected in the next Read. It is read-only for clients. Default: empty, which is
+served as a typed empty QualifiedName array (not a Null variant).</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_capabilities.d.ts:120</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_capabilities.d.ts:136</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="localeidarray"><span>locale<wbr/>Id<wbr/>Array</span><a href="#localeidarray" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">localeIdArray</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_capabilities.d.ts:48</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_capabilities.d.ts:57</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="maxarraylength"><span>max<wbr/>Array<wbr/>Length</span><a href="#maxarraylength" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">maxArrayLength</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div><aside class="tsd-sources">
@@ -95,7 +101,7 @@ therefore there is no guarantee the Server can always support
 the maximum.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_capabilities.d.ts:73</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_capabilities.d.ts:82</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="maxmonitoreditemspersubscription"><span>max<wbr/>Monitored<wbr/>Items<wbr/>Per<wbr/>Subscription</span><a href="#maxmonitoreditemspersubscription" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">maxMonitoredItemsPerSubscription</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
@@ -106,7 +112,7 @@ therefore there is no guarantee the Server can always support
 the maximum</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_capabilities.d.ts:89</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_capabilities.d.ts:98</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="maxmonitoreditemsqueuesize"><span>max<wbr/>Monitored<wbr/>Items<wbr/>Queue<wbr/>Size</span><a href="#maxmonitoreditemsqueuesize" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">maxMonitoredItemsQueueSize</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
@@ -116,7 +122,7 @@ queues. The value specifies the maximum the Server can support under normal circ
 therefore there is no guarantee the Server can always support the maximum.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_capabilities.d.ts:112</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_capabilities.d.ts:121</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="maxquerycontinuationpoints"><span>max<wbr/>Query<wbr/>Continuation<wbr/>Points</span><a href="#maxquerycontinuationpoints" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">maxQueryContinuationPoints</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div><aside class="tsd-sources">
@@ -132,7 +138,7 @@ therefore there is no guarantee the Server can always support
 the maximum.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_capabilities.d.ts:97</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_capabilities.d.ts:106</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="maxsessions"><span>max<wbr/>Sessions</span><a href="#maxsessions" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">maxSessions</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
@@ -143,7 +149,7 @@ therefore there is no guarantee the Server can always support
 the maximum.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_capabilities.d.ts:57</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_capabilities.d.ts:66</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="maxstringlength"><span>max<wbr/>String<wbr/>Length</span><a href="#maxstringlength" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">maxStringLength</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div><aside class="tsd-sources">
@@ -159,7 +165,7 @@ therefore there is no guarantee the Server can always support
 the maximum.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_capabilities.d.ts:65</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_capabilities.d.ts:74</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="maxsubscriptionspersession"><span>max<wbr/>Subscriptions<wbr/>Per<wbr/>Session</span><a href="#maxsubscriptionspersession" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">maxSubscriptionsPerSession</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
@@ -170,7 +176,7 @@ therefore there is no guarantee the Server can always support
 the maximum.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_capabilities.d.ts:81</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_capabilities.d.ts:90</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="maxwhereclauseparameters"><span>max<wbr/>Where<wbr/>Clause<wbr/>Parameters</span><a href="#maxwhereclauseparameters" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">maxWhereClauseParameters</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
@@ -180,27 +186,35 @@ The value specifies the maximum the Server can support under normal circumstance
 therefore there is no guarantee the Server can always support the maximum</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_capabilities.d.ts:104</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_capabilities.d.ts:113</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="minsupportedsamplerate"><span>min<wbr/>Supported<wbr/>Sample<wbr/>Rate</span><a href="#minsupportedsamplerate" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<div class="tsd-signature"><span class="tsd-kind-property">minSupportedSampleRate</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div><aside class="tsd-sources">
+<div class="tsd-signature"><span class="tsd-kind-property">minSupportedSampleRate</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+<div class="tsd-comment tsd-typography"><p>MinSupportedSampleRate, in milliseconds: the fastest sampling interval the server
+supports, and the floor of the revisedSamplingInterval it answers to a requested 0.
+Defaults to MonitoredItem.minimumSamplingInterval (50 ms). A Variable whose
+MinimumSamplingInterval is 0 is still delivered on change, the revised interval being
+the window over which changes are coalesced. Set it to 0 to claim exception-based
+acquisition: such items are then answered with a revisedSamplingInterval of 0 and every
+change is reported (the CTT flags this for manual verification).</p>
+</div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_capabilities.d.ts:45</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_capabilities.d.ts:54</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="operationlimits"><span>operation<wbr/>Limits</span><a href="#operationlimits" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">operationLimits</span><span class="tsd-signature-symbol">:</span> <a href="node-opcua.OperationLimitsOptions.html" class="tsd-signature-type tsd-kind-interface">OperationLimitsOptions</a></div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_capabilities.d.ts:46</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_capabilities.d.ts:55</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="serverprofilearray"><span>server<wbr/>Profile<wbr/>Array</span><a href="#serverprofilearray" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">serverProfileArray</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_capabilities.d.ts:47</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_capabilities.d.ts:56</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="softwarecertificates"><span>software<wbr/>Certificates</span><a href="#softwarecertificates" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">softwareCertificates</span><span class="tsd-signature-symbol">:</span> <a href="../classes/node-opcua.SignedSoftwareCertificate.html" class="tsd-signature-type tsd-kind-class">SignedSoftwareCertificate</a><span class="tsd-signature-symbol">[]</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_capabilities.d.ts:49</li></ul></aside></section></section></details></div>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_capabilities.d.ts:58</li></ul></aside></section></section></details></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
