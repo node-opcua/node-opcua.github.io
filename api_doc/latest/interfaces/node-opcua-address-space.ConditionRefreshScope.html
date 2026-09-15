@@ -20,13 +20,18 @@
 content filtering associated with a Subscription and will always be delivered to the Client.&quot;
 The retained Condition Events sent in between still have to &quot;meet the Subscriptions content
 filter criteria&quot; (5.5.7), so only the bracket bypasses the where clause.</p>
-<p>The address space raises the bracket but knows nothing about Subscriptions, so it publishes
-the scope of the refresh in progress and the server side reads it back: that keeps the bypass
-to the Subscription the ConditionRefresh call named.</p>
+<p>5.5.7 also says which Subscription all of it is for: the bracket is queued &quot;for every Notifier
+MonitoredItem in the Subscription&quot; named by the SubscriptionId argument, and the Retained
+Conditions are the ones meeting that Subscription's content filter. 5.5.8 narrows both to the
+single MonitoredItem ConditionRefresh2 names.</p>
+<p>The address space raises all of it on the Server Object and knows nothing about Subscriptions -
+from there an Event bubbles to every event MonitoredItem of the whole Server. So it publishes
+the scope of the refresh in progress and the server side reads it back: a MonitoredItem outside
+the scope drops the refresh, one inside it applies the bypass.</p>
 </div></section>
 <div class="tsd-signature"><span class="tsd-signature-keyword">interface</span> <span class="tsd-kind-interface">ConditionRefreshScope</span> <span class="tsd-signature-symbol">{</span><br/>    <a class="tsd-kind-property" href="#monitoreditemid">monitoredItemId</a><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#subscription">subscription</a><span class="tsd-signature-symbol">:</span> <a href="node-opcua-address-space.ISubscriptionBase.html" class="tsd-signature-type tsd-kind-interface">ISubscriptionBase</a><span class="tsd-signature-symbol">;</span><br/><span class="tsd-signature-symbol">}</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-address-space-base/dist/session_context.d.ts:59</li></ul></aside>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-address-space-base/dist/session_context.d.ts:65</li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-accordion" open><summary class="tsd-accordion-summary tsd-index-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
@@ -46,14 +51,14 @@ to the Subscription the ConditionRefresh call named.</p>
 <div class="tsd-comment tsd-typography"><p>ConditionRefresh2 only: the single MonitoredItem of the MonitoredItemId argument</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-address-space-base/dist/session_context.d.ts:63</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-address-space-base/dist/session_context.d.ts:69</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="subscription"><span>subscription</span><a href="#subscription" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">subscription</span><span class="tsd-signature-symbol">:</span> <a href="node-opcua-address-space.ISubscriptionBase.html" class="tsd-signature-type tsd-kind-interface">ISubscriptionBase</a></div>
 <div class="tsd-comment tsd-typography"><p>the Subscription of the SubscriptionId argument</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-address-space-base/dist/session_context.d.ts:61</li></ul></aside></section></section></details></div>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-address-space-base/dist/session_context.d.ts:67</li></ul></aside></section></section></details></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
