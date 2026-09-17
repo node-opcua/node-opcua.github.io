@@ -39,6 +39,7 @@
 <div class="tsd-index-list"><a href="#chunksecuremessage" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>chunk<wbr/>Secure<wbr/>Message</span></a>
 <a href="#chunksecuremessageasync" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>chunk<wbr/>Secure<wbr/>Message<wbr/>Async</span></a>
 <a href="#dispose" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>dispose</span></a>
+<a href="#maxbodysize" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>max<wbr/>Body<wbr/>Size</span></a>
 <a href="#preparechunk" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>prepare<wbr/>Chunk</span></a>
 </div></section></div></details></section></section>
 <details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Constructors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
@@ -110,7 +111,7 @@
 <li><span><span class="tsd-kind-parameter">messageChunkCallback</span>: <span class="tsd-signature-type">MessageCallbackFunc</span></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <a href="node-opcua-client.index.StatusCode.html" class="tsd-signature-type tsd-kind-class">StatusCode</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-secure-channel/dist/source/message_chunker.d.ts:35</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-secure-channel/dist/source/message_chunker.d.ts:43</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="chunksecuremessageasync"><span>chunk<wbr/>Secure<wbr/>Message<wbr/>Async</span><a href="#chunksecuremessageasync" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -132,7 +133,7 @@ provider failure rejects.</p>
 <li><span><span class="tsd-kind-parameter">messageChunkCallback</span>: <span class="tsd-signature-type">MessageCallbackFunc</span></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="node-opcua-client.index.StatusCode.html" class="tsd-signature-type tsd-kind-class">StatusCode</a><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-secure-channel/dist/source/message_chunker.d.ts:43</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-secure-channel/dist/source/message_chunker.d.ts:51</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="dispose"><span>dispose</span><a href="#dispose" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -142,6 +143,26 @@ provider failure rejects.</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
 <li>Defined in work/node-opcua/node-opcua/packages/node-opcua-secure-channel/dist/source/message_chunker.d.ts:30</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="maxbodysize"><span>max<wbr/>Body<wbr/>Size</span><a href="#maxbodysize" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="maxbodysize-1"><span class="tsd-kind-call-signature">maxBodySize</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">msgType</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">,</span> <span class="tsd-kind-parameter">params</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ChunkMessageParameters</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><a href="#maxbodysize-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>The largest message body <a href="#preparechunk" class="tsd-kind-method">prepareChunk</a> accepts with these parameters, or 0
+when neither limit applies: the negotiated maxMessageSize, and maxChunkCount times
+what one chunk carries under the channel's security. The second is the tighter one
+whenever a peer derives its chunk count as maxMessageSize / bufferSize, as the CTT
+does, because every chunk also spends bytes on headers.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li><span><span class="tsd-kind-parameter">msgType</span>: <span class="tsd-signature-type">string</span></span></li>
+<li><span><span class="tsd-kind-parameter">params</span>: <span class="tsd-signature-type">ChunkMessageParameters</span></span></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-secure-channel/dist/source/message_chunker.d.ts:42</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="preparechunk"><span>prepare<wbr/>Chunk</span><a href="#preparechunk" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -176,7 +197,7 @@ provider failure rejects.</p>
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Properties"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Properties</summary>
 <div><a href="#maxchunkcount"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>max<wbr/>Chunk<wbr/>Count</span></a><a href="#maxmessagesize"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>max<wbr/>Message<wbr/>Size</span></a><a href="#securitymode"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>security<wbr/>Mode</span></a><a href="#defaultchunkcount"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>default<wbr/>Chunk<wbr/>Count</span></a><a href="#defaultmaxmessagesize"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>default<wbr/>Max<wbr/>Message<wbr/>Size</span></a><a href="#minimummessagesizehint"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>minimum<wbr/>Message<wbr/>Size<wbr/>Hint</span></a></div></details>
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Methods"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Methods</summary>
-<div><a href="#chunksecuremessage"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>chunk<wbr/>Secure<wbr/>Message</span></a><a href="#chunksecuremessageasync"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>chunk<wbr/>Secure<wbr/>Message<wbr/>Async</span></a><a href="#dispose"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>dispose</span></a><a href="#preparechunk"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>prepare<wbr/>Chunk</span></a></div></details></div></details></div>
+<div><a href="#chunksecuremessage"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>chunk<wbr/>Secure<wbr/>Message</span></a><a href="#chunksecuremessageasync"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>chunk<wbr/>Secure<wbr/>Message<wbr/>Async</span></a><a href="#dispose"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>dispose</span></a><a href="#maxbodysize"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>max<wbr/>Body<wbr/>Size</span></a><a href="#preparechunk"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>prepare<wbr/>Chunk</span></a></div></details></div></details></div>
 <div class="site-menu">
 <nav id="tsd-sidebar-links" class="tsd-navigation"><a href="https://leanpub.com/node-opcuabyexample-edition2024" class="tsd-nav-link">Book</a><a href="https://github.com/node-opcua/node-opcua" class="tsd-nav-link">GitHub</a><a href="https://support.sterfive.com" class="tsd-nav-link">Support</a></nav>
 <nav class="tsd-navigation"><a href="../modules.html">NodeOPCUA API Documentation</a>
