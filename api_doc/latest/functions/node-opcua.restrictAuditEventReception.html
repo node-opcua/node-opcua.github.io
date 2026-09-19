@@ -19,7 +19,7 @@
 <div class="tsd-signature tsd-anchor-link" id="restrictauditeventreception"><span class="tsd-kind-call-signature">restrictAuditEventReception</span><span class="tsd-signature-symbol">(</span><br/>    <span class="tsd-kind-parameter">addressSpace</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/node-opcua.IAddressSpace.html" class="tsd-signature-type tsd-kind-interface">IAddressSpace</a><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">roles</span><span class="tsd-signature-symbol">:</span> <a href="../types/node-opcua.RoleIdLike.html" class="tsd-signature-type tsd-kind-type-alias">RoleIdLike</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">,</span><br/><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><a href="#restrictauditeventreception" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Makes <code>roles</code> the only Roles holding ReceiveEvents on AuditEventType and on every subtype loaded so
-far, so that event MonitoredItems deliver Audit Events to their Sessions alone (OPC 10000-2 6.7:
+far, so that event MonitoredItems deliver Audit Events to their Sessions alone (OPC 10000-2 v1.05.06 §6.7:
 &quot;Administrative AccessRestrictions should also be used to control Audit Events&quot;).</p>
 <p>Only the ReceiveEvents bit is rewritten: every other permission a type declares stays as its
 nodeset wrote it. Opc.Ua.NodeSet2.xml already grants ReceiveEvents to SecurityAdmin alone on the
