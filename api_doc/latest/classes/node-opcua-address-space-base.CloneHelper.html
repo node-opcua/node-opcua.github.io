@@ -14,7 +14,7 @@
 <li><a href="" aria-current="page">CloneHelper</a></li></ul>
 <h1>Class CloneHelper</h1></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/c4b15b4ca645101b2d656a75b2ea9a8a843d25b5/packages/node-opcua-address-space-base/source/clone_helper.ts#L193">node-opcua-address-space-base/source/clone_helper.ts:193</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/86af5eac683e2b11900c1e93c232d4adc06b5b77/packages/node-opcua-address-space-base/source/clone_helper.ts#L193">node-opcua-address-space-base/source/clone_helper.ts:193</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-accordion" open><summary class="tsd-accordion-summary tsd-index-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
@@ -26,11 +26,14 @@
 </div></section>
 <section class="tsd-index-section">
 <h3 class="tsd-index-heading tsd-anchor-link" id="properties">Properties<a href="#properties" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<div class="tsd-index-list"><a href="#level" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>level</span></a>
+<div class="tsd-index-list"><a href="#candefer" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>can<wbr/>Defer</span></a>
+<a href="#level" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>level</span></a>
 </div></section>
 <section class="tsd-index-section">
 <h3 class="tsd-index-heading tsd-anchor-link" id="methods">Methods<a href="#methods" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<div class="tsd-index-list"><a href="#foreachcontext" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>for<wbr/>Each<wbr/>Context</span></a>
+<div class="tsd-index-list"><a href="#deferincurrentcontext" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>defer<wbr/>In<wbr/>Current<wbr/>Context</span></a>
+<a href="#flushdeferred" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>flush<wbr/>Deferred</span></a>
+<a href="#foreachcontext" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>for<wbr/>Each<wbr/>Context</span></a>
 <a href="#getcloned" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Cloned</span></a>
 <a href="#getclonedarray" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Cloned<wbr/>Array</span></a>
 <a href="#pad" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>pad</span></a>
@@ -52,13 +55,47 @@
 <h2 class="tsd-anchor-link" id="properties-1">Properties<a href="#properties-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2></summary>
 <section>
 <section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="candefer"><span>can<wbr/>Defer</span><a href="#candefer" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<div class="tsd-signature"><span class="tsd-kind-property">canDefer</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
+<div class="tsd-comment tsd-typography"><p>set by a walk that calls flushDeferred() once the whole tree is cloned (instantiate): only
+then may a clone be put off until the node that owns it has had its chance to clone it</p>
+</div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/86af5eac683e2b11900c1e93c232d4adc06b5b77/packages/node-opcua-address-space-base/source/clone_helper.ts#L199">node-opcua-address-space-base/source/clone_helper.ts:199</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="level"><span>level</span><a href="#level" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">level</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/c4b15b4ca645101b2d656a75b2ea9a8a843d25b5/packages/node-opcua-address-space-base/source/clone_helper.ts#L194">node-opcua-address-space-base/source/clone_helper.ts:194</a></li></ul></aside></section></section></details>
+<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/86af5eac683e2b11900c1e93c232d4adc06b5b77/packages/node-opcua-address-space-base/source/clone_helper.ts#L194">node-opcua-address-space-base/source/clone_helper.ts:194</a></li></ul></aside></section></section></details>
 <details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Methods"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
 <h2 class="tsd-anchor-link" id="methods-1">Methods<a href="#methods-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2></summary>
 <section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="deferincurrentcontext"><span>defer<wbr/>In<wbr/>Current<wbr/>Context</span><a href="#deferincurrentcontext" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="deferincurrentcontext-1"><span class="tsd-kind-call-signature">deferInCurrentContext</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">action</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">()</span> <span class="tsd-signature-symbol">=&gt;</span> <span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">void</span><a href="#deferincurrentcontext-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>run <code>action</code> in flushDeferred(), in the context that is current now</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li><span><span class="tsd-kind-parameter">action</span>: <span class="tsd-signature-symbol">()</span> <span class="tsd-signature-symbol">=&gt;</span> <span class="tsd-signature-type">void</span></span></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/86af5eac683e2b11900c1e93c232d4adc06b5b77/packages/node-opcua-address-space-base/source/clone_helper.ts#L209">node-opcua-address-space-base/source/clone_helper.ts:209</a></li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="flushdeferred"><span>flush<wbr/>Deferred</span><a href="#flushdeferred" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="flushdeferred-1"><span class="tsd-kind-call-signature">flushDeferred</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">void</span><a href="#flushdeferred-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>run what was deferred, and what that defers in turn, in order</p>
+</div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/86af5eac683e2b11900c1e93c232d4adc06b5b77/packages/node-opcua-address-space-base/source/clone_helper.ts#L223">node-opcua-address-space-base/source/clone_helper.ts:223</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="foreachcontext"><span>for<wbr/>Each<wbr/>Context</span><a href="#foreachcontext" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -73,7 +110,7 @@
 <li><span><span class="tsd-kind-parameter">callback</span>: <span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">context</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ReadonlyMap</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">,</span> <span class="tsd-signature-type">CloneInfo</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span> <span class="tsd-signature-symbol">=&gt;</span> <span class="tsd-signature-type">void</span></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/c4b15b4ca645101b2d656a75b2ea9a8a843d25b5/packages/node-opcua-address-space-base/source/clone_helper.ts#L203">node-opcua-address-space-base/source/clone_helper.ts:203</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/86af5eac683e2b11900c1e93c232d4adc06b5b77/packages/node-opcua-address-space-base/source/clone_helper.ts#L232">node-opcua-address-space-base/source/clone_helper.ts:232</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="getcloned"><span>get<wbr/>Cloned</span><a href="#getcloned" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -86,7 +123,7 @@
 <li><span><span class="tsd-kind-parameter">__namedParameters</span>: <span class="tsd-signature-symbol">{</span><br/>    <span class="tsd-kind-property">clonedParent</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/node-opcua-address-space-base.BaseNode.html" class="tsd-signature-type tsd-kind-interface">BaseNode</a><span class="tsd-signature-symbol">;</span><br/>    <span class="tsd-kind-property">originalNode</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/node-opcua-address-space-base.UAObject.html" class="tsd-signature-type tsd-kind-interface">UAObject</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/node-opcua-address-space-base.UAObjectEvents.html" class="tsd-signature-type tsd-kind-interface">UAObjectEvents</a><span class="tsd-signature-symbol">&gt;</span> <span class="tsd-signature-symbol">|</span> <a href="../interfaces/node-opcua-address-space-base.UAVariable.html" class="tsd-signature-type tsd-kind-interface">UAVariable</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/node-opcua-address-space-base.UAVariableEvents.html" class="tsd-signature-type tsd-kind-interface">UAVariableEvents</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">;</span><br/>    <span class="tsd-kind-property">originalParent</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/node-opcua-address-space-base.BaseNode.html" class="tsd-signature-type tsd-kind-interface">BaseNode</a><span class="tsd-signature-symbol">;</span><br/><span class="tsd-signature-symbol">}</span></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <br/>    <span class="tsd-signature-symbol">|</span> <a href="../interfaces/node-opcua-address-space-base.UAObject.html" class="tsd-signature-type tsd-kind-interface">UAObject</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/node-opcua-address-space-base.UAObjectEvents.html" class="tsd-signature-type tsd-kind-interface">UAObjectEvents</a><span class="tsd-signature-symbol">&gt;</span><br/>    <span class="tsd-signature-symbol">|</span> <a href="../interfaces/node-opcua-address-space-base.UAMethod.html" class="tsd-signature-type tsd-kind-interface">UAMethod</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/node-opcua-address-space-base.UAMethodEvents.html" class="tsd-signature-type tsd-kind-interface">UAMethodEvents</a><span class="tsd-signature-symbol">&gt;</span><br/>    <span class="tsd-signature-symbol">|</span> <a href="../interfaces/node-opcua-address-space-base.UAVariable.html" class="tsd-signature-type tsd-kind-interface">UAVariable</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/node-opcua-address-space-base.UAVariableEvents.html" class="tsd-signature-type tsd-kind-interface">UAVariableEvents</a><span class="tsd-signature-symbol">&gt;</span><br/>    <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/c4b15b4ca645101b2d656a75b2ea9a8a843d25b5/packages/node-opcua-address-space-base/source/clone_helper.ts#L291">node-opcua-address-space-base/source/clone_helper.ts:291</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/86af5eac683e2b11900c1e93c232d4adc06b5b77/packages/node-opcua-address-space-base/source/clone_helper.ts#L320">node-opcua-address-space-base/source/clone_helper.ts:320</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="getclonedarray"><span>get<wbr/>Cloned<wbr/>Array</span><a href="#getclonedarray" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -95,7 +132,7 @@
 <div class="tsd-description">
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">CloneInfo</span><span class="tsd-signature-symbol">[]</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/c4b15b4ca645101b2d656a75b2ea9a8a843d25b5/packages/node-opcua-address-space-base/source/clone_helper.ts#L209">node-opcua-address-space-base/source/clone_helper.ts:209</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/86af5eac683e2b11900c1e93c232d4adc06b5b77/packages/node-opcua-address-space-base/source/clone_helper.ts#L238">node-opcua-address-space-base/source/clone_helper.ts:238</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="pad"><span>pad</span><a href="#pad" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -104,7 +141,7 @@
 <div class="tsd-description">
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/c4b15b4ca645101b2d656a75b2ea9a8a843d25b5/packages/node-opcua-address-space-base/source/clone_helper.ts#L198">node-opcua-address-space-base/source/clone_helper.ts:198</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/86af5eac683e2b11900c1e93c232d4adc06b5b77/packages/node-opcua-address-space-base/source/clone_helper.ts#L204">node-opcua-address-space-base/source/clone_helper.ts:204</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="popcontext"><span>pop<wbr/>Context</span><a href="#popcontext" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -113,7 +150,7 @@
 <div class="tsd-description">
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/c4b15b4ca645101b2d656a75b2ea9a8a843d25b5/packages/node-opcua-address-space-base/source/clone_helper.ts#L244">node-opcua-address-space-base/source/clone_helper.ts:244</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/86af5eac683e2b11900c1e93c232d4adc06b5b77/packages/node-opcua-address-space-base/source/clone_helper.ts#L273">node-opcua-address-space-base/source/clone_helper.ts:273</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="pushcontext"><span>push<wbr/>Context</span><a href="#pushcontext" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -131,7 +168,7 @@
 <li><span><span class="tsd-kind-parameter">__namedParameters</span>: <span class="tsd-signature-symbol">{</span> <span class="tsd-kind-property">clonedParent</span><span class="tsd-signature-symbol">:</span> <a class="tsd-signature-type tsd-kind-type-parameter" href="#pushcontexttc">TC</a><span class="tsd-signature-symbol">;</span> <span class="tsd-kind-property">originalParent</span><span class="tsd-signature-symbol">:</span> <a class="tsd-signature-type tsd-kind-type-parameter" href="#pushcontextto">TO</a> <span class="tsd-signature-symbol">}</span></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/c4b15b4ca645101b2d656a75b2ea9a8a843d25b5/packages/node-opcua-address-space-base/source/clone_helper.ts#L219">node-opcua-address-space-base/source/clone_helper.ts:219</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/86af5eac683e2b11900c1e93c232d4adc06b5b77/packages/node-opcua-address-space-base/source/clone_helper.ts#L248">node-opcua-address-space-base/source/clone_helper.ts:248</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="registerclonedobject"><span>register<wbr/>Cloned<wbr/>Object</span><a href="#registerclonedobject" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -149,7 +186,7 @@
 <li><span><span class="tsd-kind-parameter">__namedParameters</span>: <span class="tsd-signature-symbol">{</span> <span class="tsd-kind-property">clonedNode</span><span class="tsd-signature-symbol">:</span> <a class="tsd-signature-type tsd-kind-type-parameter" href="#registerclonedobjecttc">TC</a><span class="tsd-signature-symbol">;</span> <span class="tsd-kind-property">originalNode</span><span class="tsd-signature-symbol">:</span> <a class="tsd-signature-type tsd-kind-type-parameter" href="#registerclonedobjectto">TO</a> <span class="tsd-signature-symbol">}</span></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/c4b15b4ca645101b2d656a75b2ea9a8a843d25b5/packages/node-opcua-address-space-base/source/clone_helper.ts#L248">node-opcua-address-space-base/source/clone_helper.ts:248</a></li></ul></aside></div></li></ul></section></section></details></div>
+<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/86af5eac683e2b11900c1e93c232d4adc06b5b77/packages/node-opcua-address-space-base/source/clone_helper.ts#L277">node-opcua-address-space-base/source/clone_helper.ts:277</a></li></ul></aside></div></li></ul></section></section></details></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
@@ -167,9 +204,9 @@
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Constructors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Constructors</summary>
 <div><a href="#constructor"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Constructor"><use href="../assets/icons.svg#icon-512"></use></svg><span>constructor</span></a></div></details>
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Properties"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Properties</summary>
-<div><a href="#level"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>level</span></a></div></details>
+<div><a href="#candefer"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>can<wbr/>Defer</span></a><a href="#level"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>level</span></a></div></details>
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Methods"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Methods</summary>
-<div><a href="#foreachcontext"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>for<wbr/>Each<wbr/>Context</span></a><a href="#getcloned"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Cloned</span></a><a href="#getclonedarray"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Cloned<wbr/>Array</span></a><a href="#pad"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>pad</span></a><a href="#popcontext"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>pop<wbr/>Context</span></a><a href="#pushcontext"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>push<wbr/>Context</span></a><a href="#registerclonedobject"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>register<wbr/>Cloned<wbr/>Object</span></a></div></details></div></details></div>
+<div><a href="#deferincurrentcontext"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>defer<wbr/>In<wbr/>Current<wbr/>Context</span></a><a href="#flushdeferred"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>flush<wbr/>Deferred</span></a><a href="#foreachcontext"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>for<wbr/>Each<wbr/>Context</span></a><a href="#getcloned"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Cloned</span></a><a href="#getclonedarray"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Cloned<wbr/>Array</span></a><a href="#pad"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>pad</span></a><a href="#popcontext"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>pop<wbr/>Context</span></a><a href="#pushcontext"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>push<wbr/>Context</span></a><a href="#registerclonedobject"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>register<wbr/>Cloned<wbr/>Object</span></a></div></details></div></details></div>
 <div class="site-menu">
 <nav id="tsd-sidebar-links" class="tsd-navigation"><a href="https://leanpub.com/node-opcuabyexample-edition2024" class="tsd-nav-link">Book</a><a href="https://github.com/node-opcua/node-opcua" class="tsd-nav-link">GitHub</a><a href="https://support.sterfive.com" class="tsd-nav-link">Support</a></nav>
 <nav class="tsd-navigation"><a href="../modules.html">NodeOPCUA API Documentation</a>
