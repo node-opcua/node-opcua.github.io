@@ -16,9 +16,9 @@
 <section class="tsd-panel tsd-comment">
 <div class="tsd-comment tsd-typography"><p>The results of a Call, with the DiagnosticInfo the server returned for each result's statusCode.</p>
 </div></section>
-<div class="tsd-signature"><span class="tsd-signature-keyword">interface</span> <span class="tsd-kind-interface">CallResultsWithDiagnostics</span> <span class="tsd-signature-symbol">{</span><br/>    <a class="tsd-kind-property" href="#diagnosticinfos">diagnosticInfos</a><span class="tsd-signature-symbol">:</span> <a href="../classes/node-opcua.DiagnosticInfo.html" class="tsd-signature-type tsd-kind-class">DiagnosticInfo</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#results">results</a><span class="tsd-signature-symbol">:</span> <a href="../classes/node-opcua.CallMethodResult.html" class="tsd-signature-type tsd-kind-class">CallMethodResult</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">;</span><br/><span class="tsd-signature-symbol">}</span></div><aside class="tsd-sources">
+<div class="tsd-signature"><span class="tsd-signature-keyword">interface</span> <span class="tsd-kind-interface">CallResultsWithDiagnostics</span> <span class="tsd-signature-symbol">{</span><br/>    <a class="tsd-kind-property" href="#diagnosticinfos">diagnosticInfos</a><span class="tsd-signature-symbol">:</span> <a href="../classes/node-opcua.DiagnosticInfo.html" class="tsd-signature-type tsd-kind-class">DiagnosticInfo</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#diagnosticstrings">diagnosticStrings</a><span class="tsd-signature-symbol">:</span> <a href="node-opcua.DiagnosticStrings.html" class="tsd-signature-type tsd-kind-interface">DiagnosticStrings</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#results">results</a><span class="tsd-signature-symbol">:</span> <a href="../classes/node-opcua.CallMethodResult.html" class="tsd-signature-type tsd-kind-class">CallMethodResult</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">;</span><br/><span class="tsd-signature-symbol">}</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-client/dist/client_session.d.ts:173</li></ul></aside>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-client/dist/client_session.d.ts:180</li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-accordion" open><summary class="tsd-accordion-summary tsd-index-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
@@ -27,6 +27,7 @@
 <section class="tsd-index-section">
 <h3 class="tsd-index-heading tsd-anchor-link" id="properties">Properties<a href="#properties" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-index-list"><a href="#diagnosticinfos" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>diagnostic<wbr/>Infos</span></a>
+<a href="#diagnosticstrings" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>diagnostic<wbr/>Strings</span></a>
 <a href="#results" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>results</span></a>
 </div></section></div></details></section></section>
 <details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Properties"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
@@ -39,12 +40,21 @@
 otherwise (the server had none, or <code>returnDiagnostics</code> asked for no operation-level field).</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-client/dist/client_session.d.ts:179</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-client/dist/client_session.d.ts:186</li></ul></aside></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="diagnosticstrings"><span>diagnostic<wbr/>Strings</span><a href="#diagnosticstrings" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<div class="tsd-signature"><span class="tsd-kind-property">diagnosticStrings</span><span class="tsd-signature-symbol">:</span> <a href="node-opcua.DiagnosticStrings.html" class="tsd-signature-type tsd-kind-interface">DiagnosticStrings</a><span class="tsd-signature-symbol">[]</span></div>
+<div class="tsd-comment tsd-typography"><p>The strings each DiagnosticInfo points at in the ResponseHeader <code>stringTable</code> (OPC 10000-4 §7.12), one per entry
+of <code>diagnosticInfos</code>; <code>null</code> where there is none. <code>symbolicId</code> and <code>namespaceUri</code> need the operation-level
+SymbolicId bit (0x20) in <code>returnDiagnostics</code>, <code>localizedText</code> and <code>locale</code> the LocalizedText bit (0x40).</p>
+</div><aside class="tsd-sources">
+<ul>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-client/dist/client_session.d.ts:192</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="results"><span>results</span><a href="#results" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">results</span><span class="tsd-signature-symbol">:</span> <a href="../classes/node-opcua.CallMethodResult.html" class="tsd-signature-type tsd-kind-class">CallMethodResult</a><span class="tsd-signature-symbol">[]</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-client/dist/client_session.d.ts:174</li></ul></aside></section></section></details></div>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-client/dist/client_session.d.ts:181</li></ul></aside></section></section></details></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
@@ -60,7 +70,7 @@ otherwise (the server had none, or <code>returnDiagnostics</code> asked for no o
 <h3>On This Page</h3></summary>
 <div class="tsd-accordion-details">
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Properties"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Properties</summary>
-<div><a href="#diagnosticinfos"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>diagnostic<wbr/>Infos</span></a><a href="#results"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>results</span></a></div></details></div></details></div>
+<div><a href="#diagnosticinfos"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>diagnostic<wbr/>Infos</span></a><a href="#diagnosticstrings"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>diagnostic<wbr/>Strings</span></a><a href="#results"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>results</span></a></div></details></div></details></div>
 <div class="site-menu">
 <nav id="tsd-sidebar-links" class="tsd-navigation"><a href="https://leanpub.com/node-opcuabyexample-edition2024" class="tsd-nav-link">Book</a><a href="https://github.com/node-opcua/node-opcua" class="tsd-nav-link">GitHub</a><a href="https://support.sterfive.com" class="tsd-nav-link">Support</a></nav>
 <nav class="tsd-navigation"><a href="../modules.html">NodeOPCUA API Documentation</a>
