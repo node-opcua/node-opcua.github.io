@@ -13,8 +13,8 @@
 <li><a href="../modules/node-opcua.html">node-opcua</a></li>
 <li><a href="" aria-current="page">ITransportSettingProvider</a></li></ul>
 <h1>Interface ITransportSettingProvider</h1></div>
-<div class="tsd-signature"><span class="tsd-signature-keyword">interface</span> <span class="tsd-kind-interface">ITransportSettingProvider</span> <span class="tsd-signature-symbol">{</span><br/>    <a class="tsd-kind-property" href="#gettransportsettings">getTransportSettings</a><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-symbol">()</span> <span class="tsd-signature-symbol">=&gt;</span> <a href="node-opcua.IBasicTransportSettings.html" class="tsd-signature-type tsd-kind-interface">IBasicTransportSettings</a><span class="tsd-signature-symbol">;</span><br/><span class="tsd-signature-symbol">}</span></div>
-<section class="tsd-panel tsd-hierarchy" data-refl="491355">
+<div class="tsd-signature"><span class="tsd-signature-keyword">interface</span> <span class="tsd-kind-interface">ITransportSettingProvider</span> <span class="tsd-signature-symbol">{</span><br/>    <a class="tsd-kind-property" href="#getmaxrequestbodysize">getMaxRequestBodySize</a><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-symbol">()</span> <span class="tsd-signature-symbol">=&gt;</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#gettransportsettings">getTransportSettings</a><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-symbol">()</span> <span class="tsd-signature-symbol">=&gt;</span> <a href="node-opcua.IBasicTransportSettings.html" class="tsd-signature-type tsd-kind-interface">IBasicTransportSettings</a><span class="tsd-signature-symbol">;</span><br/><span class="tsd-signature-symbol">}</span></div>
+<section class="tsd-panel tsd-hierarchy" data-refl="491389">
 <h4>Hierarchy (<a href="../hierarchy.html#node-opcua.ITransportSettingProvider">View Summary</a>)</h4>
 <ul class="tsd-hierarchy">
 <li class="tsd-hierarchy-item"><span class="tsd-hierarchy-target">ITransportSettingProvider</span>
@@ -29,11 +29,23 @@
 <div class="tsd-accordion-details">
 <section class="tsd-index-section">
 <h3 class="tsd-index-heading tsd-anchor-link" id="properties">Properties<a href="#properties" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<div class="tsd-index-list"><a href="#gettransportsettings" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>get<wbr/>Transport<wbr/>Settings?</span></a>
+<div class="tsd-index-list"><a href="#getmaxrequestbodysize" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>get<wbr/>Max<wbr/>Request<wbr/>Body<wbr/>Size?</span></a>
+<a href="#gettransportsettings" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>get<wbr/>Transport<wbr/>Settings?</span></a>
 </div></section></div></details></section></section>
 <details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Properties"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
 <h2 class="tsd-anchor-link" id="properties-1">Properties<a href="#properties-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2></summary>
 <section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="getmaxrequestbodysize"><code class="tsd-tag">Optional</code><span>get<wbr/>Max<wbr/>Request<wbr/>Body<wbr/>Size</span><a href="#getmaxrequestbodysize" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<div class="tsd-signature"><span class="tsd-kind-property">getMaxRequestBodySize</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-symbol">()</span> <span class="tsd-signature-symbol">=&gt;</span> <span class="tsd-signature-type">number</span></div>
+<div class="tsd-comment tsd-typography"><p>the largest request body the channel can send in one message, or 0 when unknown or
+unlimited: the server's maxMessageSize and maxChunkCount with every chunk's headers,
+signature and padding already paid for. A client packing many items into one request
+budgets against this rather than against maxMessageSize alone, which over-fills a
+message by exactly those per-chunk bytes and is refused with BadTcpMessageTooLarge.</p>
+</div><aside class="tsd-sources">
+<ul>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-pseudo-session/dist/basic_session_interface.d.ts:239</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="gettransportsettings"><code class="tsd-tag">Optional</code><span>get<wbr/>Transport<wbr/>Settings</span><a href="#gettransportsettings" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">getTransportSettings</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-symbol">()</span> <span class="tsd-signature-symbol">=&gt;</span> <a href="node-opcua.IBasicTransportSettings.html" class="tsd-signature-type tsd-kind-interface">IBasicTransportSettings</a></div><aside class="tsd-sources">
@@ -54,7 +66,7 @@
 <h3>On This Page</h3></summary>
 <div class="tsd-accordion-details">
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Properties"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Properties</summary>
-<div><a href="#gettransportsettings"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>get<wbr/>Transport<wbr/>Settings</span></a></div></details></div></details></div>
+<div><a href="#getmaxrequestbodysize"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>get<wbr/>Max<wbr/>Request<wbr/>Body<wbr/>Size</span></a><a href="#gettransportsettings"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>get<wbr/>Transport<wbr/>Settings</span></a></div></details></div></details></div>
 <div class="site-menu">
 <nav id="tsd-sidebar-links" class="tsd-navigation"><a href="https://leanpub.com/node-opcuabyexample-edition2024" class="tsd-nav-link">Book</a><a href="https://github.com/node-opcua/node-opcua" class="tsd-nav-link">GitHub</a><a href="https://support.sterfive.com" class="tsd-nav-link">Support</a></nav>
 <nav class="tsd-navigation"><a href="../modules.html">NodeOPCUA API Documentation</a>
