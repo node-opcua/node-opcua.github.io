@@ -38,6 +38,8 @@
 <section class="tsd-index-section">
 <h3 class="tsd-index-heading tsd-anchor-link" id="methods">Methods<a href="#methods" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-index-list"><a href="#extractdatavalues" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>extract<wbr/>Data<wbr/>Values</span></a>
+<a href="#findboundafter" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>find<wbr/>Bound<wbr/>After</span></a>
+<a href="#findboundbefore" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>find<wbr/>Bound<wbr/>Before</span></a>
 <a href="#push" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>push</span></a>
 </div></section></div></details></section></section>
 <details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Constructors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
@@ -89,6 +91,44 @@
 <ul>
 <li>Defined in work/node-opcua/node-opcua/packages/node-opcua-address-space/dist/impl/historical_access/address_space_historical_data_node.d.ts:17</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="findboundafter"><span>find<wbr/>Bound<wbr/>After</span><a href="#findboundafter" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="findboundafter-1"><span class="tsd-kind-call-signature">findBoundAfter</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">date</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <a href="node-opcua.DataValue.html" class="tsd-signature-type tsd-kind-class">DataValue</a> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span><a href="#findboundafter-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Find the oldest raw data value with a sourceTimestamp strictly after <code>date</code>.</p>
+<p>See findBoundBefore.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li><span><span class="tsd-kind-parameter">date</span>: <span class="tsd-signature-type">Date</span></span></li></ul></div>
+<h4 class="tsd-returns-title">Returns <a href="node-opcua.DataValue.html" class="tsd-signature-type tsd-kind-class">DataValue</a> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span></h4><aside class="tsd-sources">
+<p>Implementation of <a href="../interfaces/node-opcua.IVariableHistorian.html">IVariableHistorian</a>.<a href="../interfaces/node-opcua.IVariableHistorian.html#findboundafter">findBoundAfter</a></p>
+<ul>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-address-space/dist/impl/historical_access/address_space_historical_data_node.d.ts:19</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="findboundbefore"><span>find<wbr/>Bound<wbr/>Before</span><a href="#findboundbefore" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="findboundbefore-1"><span class="tsd-kind-call-signature">findBoundBefore</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">date</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <a href="node-opcua.DataValue.html" class="tsd-signature-type tsd-kind-class">DataValue</a> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span><a href="#findboundbefore-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Find the most recent raw data value with a sourceTimestamp strictly before <code>date</code>.</p>
+<p>Used to compute a Bounding Value (OPC 10000-11 6.5.3.2 and 3.1.2) when a HistoryRead
+with ReadRawModifiedDetails.returnBounds set finds no raw value exactly at the start
+or end of the requested time domain. Returns null when no such value exists.</p>
+<p>Optional: a historian that does not implement it causes the bound to be reported as
+Bad_BoundNotSupported instead of being computed.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li><span><span class="tsd-kind-parameter">date</span>: <span class="tsd-signature-type">Date</span></span></li></ul></div>
+<h4 class="tsd-returns-title">Returns <a href="node-opcua.DataValue.html" class="tsd-signature-type tsd-kind-class">DataValue</a> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span></h4><aside class="tsd-sources">
+<p>Implementation of <a href="../interfaces/node-opcua.IVariableHistorian.html">IVariableHistorian</a>.<a href="../interfaces/node-opcua.IVariableHistorian.html#findboundbefore">findBoundBefore</a></p>
+<ul>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-address-space/dist/impl/historical_access/address_space_historical_data_node.d.ts:18</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="push"><span>push</span><a href="#push" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
 <li class="">
@@ -125,7 +165,7 @@ directly write to the underlying database</p>
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Properties"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Properties</summary>
 <div><a href="#node"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>node</span></a></div></details>
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Methods"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Methods</summary>
-<div><a href="#extractdatavalues"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>extract<wbr/>Data<wbr/>Values</span></a><a href="#push"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>push</span></a></div></details></div></details></div>
+<div><a href="#extractdatavalues"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>extract<wbr/>Data<wbr/>Values</span></a><a href="#findboundafter"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>find<wbr/>Bound<wbr/>After</span></a><a href="#findboundbefore"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>find<wbr/>Bound<wbr/>Before</span></a><a href="#push"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>push</span></a></div></details></div></details></div>
 <div class="site-menu">
 <nav id="tsd-sidebar-links" class="tsd-navigation"><a href="https://leanpub.com/node-opcuabyexample-edition2024" class="tsd-nav-link">Book</a><a href="https://github.com/node-opcua/node-opcua" class="tsd-nav-link">GitHub</a><a href="https://support.sterfive.com" class="tsd-nav-link">Support</a></nav>
 <nav class="tsd-navigation"><a href="../modules.html">NodeOPCUA API Documentation</a>
