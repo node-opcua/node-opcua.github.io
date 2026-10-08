@@ -13,7 +13,7 @@
 <li><a href="../modules/node-opcua.html">node-opcua</a></li>
 <li><a href="" aria-current="page">ReverseClientTCP_transport</a></li></ul>
 <h1>Class ReverseClientTCP_transport</h1></div>
-<section class="tsd-panel tsd-hierarchy" data-refl="480384">
+<section class="tsd-panel tsd-hierarchy" data-refl="484127">
 <h4>Hierarchy (<a href="../hierarchy.html#node-opcua.ReverseClientTCP_transport">View Summary</a>)</h4>
 <ul class="tsd-hierarchy">
 <li class="tsd-hierarchy-item"><a href="node-opcua.ClientTransportBase.html" class="tsd-signature-type tsd-kind-class">ClientTransportBase</a>
@@ -56,7 +56,8 @@
 </div></section>
 <section class="tsd-index-section">
 <h3 class="tsd-index-heading tsd-anchor-link" id="accessors">Accessors<a href="#accessors" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<div class="tsd-index-list"><a href="#timeout" class="tsd-index-link tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>timeout</span></a>
+<div class="tsd-index-list"><a href="#queuedbytes" class="tsd-index-link tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>queued<wbr/>Bytes</span></a>
+<a href="#timeout" class="tsd-index-link tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>timeout</span></a>
 </div></section>
 <section class="tsd-index-section">
 <h3 class="tsd-index-heading tsd-anchor-link" id="methods">Methods<a href="#methods" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
@@ -83,6 +84,7 @@
 <a href="#off" class="tsd-index-link tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>off</span></a>
 <a href="#on" class="tsd-index-link tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>on</span></a>
 <a href="#once" class="tsd-index-link tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>once</span></a>
+<a href="#oncedrained" class="tsd-index-link tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>once<wbr/>Drained</span></a>
 <a href="#prematureterminate" class="tsd-index-link tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>premature<wbr/>Terminate</span></a>
 <a href="#prependlistener" class="tsd-index-link tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>prepend<wbr/>Listener</span></a>
 <a href="#prependoncelistener" class="tsd-index-link tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>prepend<wbr/>Once<wbr/>Listener</span></a>
@@ -121,37 +123,37 @@
 <div class="tsd-signature"><span class="tsd-kind-property">_socket</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/node-opcua.ISocketLike.html" class="tsd-signature-type tsd-kind-interface">ISocketLike</a> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span></div><aside class="tsd-sources">
 <p>Inherited from <a href="node-opcua.ClientTransportBase.html">ClientTransportBase</a>.<a href="node-opcua.ClientTransportBase.html#_socket">_socket</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:81</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:87</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-protected tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="_thecloseerror"><code class="tsd-tag">Protected</code><span>_<wbr/>the<wbr/>Close<wbr/>Error</span><a href="#_thecloseerror" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">_theCloseError</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Error</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span></div><aside class="tsd-sources">
 <p>Inherited from <a href="node-opcua.ClientTransportBase.html">ClientTransportBase</a>.<a href="node-opcua.ClientTransportBase.html#_thecloseerror">_theCloseError</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:82</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:88</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="bytesread"><span>bytes<wbr/>Read</span><a href="#bytesread" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">bytesRead</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div><aside class="tsd-sources">
 <p>Inherited from <a href="node-opcua.ClientTransportBase.html">ClientTransportBase</a>.<a href="node-opcua.ClientTransportBase.html#bytesread">bytesRead</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:77</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:83</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="byteswritten"><span>bytes<wbr/>Written</span><a href="#byteswritten" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">bytesWritten</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div><aside class="tsd-sources">
 <p>Inherited from <a href="node-opcua.ClientTransportBase.html">ClientTransportBase</a>.<a href="node-opcua.ClientTransportBase.html#byteswritten">bytesWritten</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:76</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:82</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="chunkreadcount"><span>chunk<wbr/>Read<wbr/>Count</span><a href="#chunkreadcount" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">chunkReadCount</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div><aside class="tsd-sources">
 <p>Inherited from <a href="node-opcua.ClientTransportBase.html">ClientTransportBase</a>.<a href="node-opcua.ClientTransportBase.html#chunkreadcount">chunkReadCount</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:79</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:85</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="chunkwrittencount"><span>chunk<wbr/>Written<wbr/>Count</span><a href="#chunkwrittencount" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">chunkWrittenCount</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div><aside class="tsd-sources">
 <p>Inherited from <a href="node-opcua.ClientTransportBase.html">ClientTransportBase</a>.<a href="node-opcua.ClientTransportBase.html#chunkwrittencount">chunkWrittenCount</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:78</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:84</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="endpointurl"><span>endpoint<wbr/>Url</span><a href="#endpointurl" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">endpointUrl</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div><aside class="tsd-sources">
@@ -163,19 +165,19 @@
 <div class="tsd-signature"><span class="tsd-kind-property">maxChunkCount</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div><aside class="tsd-sources">
 <p>Inherited from <a href="node-opcua.ClientTransportBase.html">ClientTransportBase</a>.<a href="node-opcua.ClientTransportBase.html#maxchunkcount">maxChunkCount</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:73</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:79</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="maxmessagesize"><span>max<wbr/>Message<wbr/>Size</span><a href="#maxmessagesize" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">maxMessageSize</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div><aside class="tsd-sources">
 <p>Inherited from <a href="node-opcua.ClientTransportBase.html">ClientTransportBase</a>.<a href="node-opcua.ClientTransportBase.html#maxmessagesize">maxMessageSize</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:72</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:78</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="name"><span>name</span><a href="#name" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">name</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div><aside class="tsd-sources">
 <p>Inherited from <a href="node-opcua.ClientTransportBase.html">ClientTransportBase</a>.<a href="node-opcua.ClientTransportBase.html#name">name</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:80</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:86</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="numberofretry"><span>number<wbr/>Of<wbr/>Retry</span><a href="#numberofretry" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">numberOfRetry</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div><aside class="tsd-sources">
@@ -201,19 +203,19 @@
 </div></div><aside class="tsd-sources">
 <p>Inherited from <a href="node-opcua.ClientTransportBase.html">ClientTransportBase</a>.<a href="node-opcua.ClientTransportBase.html#protocolversion">protocolVersion</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:71</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:77</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="receivebuffersize"><span>receive<wbr/>Buffer<wbr/>Size</span><a href="#receivebuffersize" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">receiveBufferSize</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div><aside class="tsd-sources">
 <p>Inherited from <a href="node-opcua.ClientTransportBase.html">ClientTransportBase</a>.<a href="node-opcua.ClientTransportBase.html#receivebuffersize">receiveBufferSize</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:75</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:81</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="sendbuffersize"><span>send<wbr/>Buffer<wbr/>Size</span><a href="#sendbuffersize" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">sendBufferSize</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div><aside class="tsd-sources">
 <p>Inherited from <a href="node-opcua.ClientTransportBase.html">ClientTransportBase</a>.<a href="node-opcua.ClientTransportBase.html#sendbuffersize">sendBufferSize</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:74</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:80</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="serveruri"><span>server<wbr/>Uri</span><a href="#serveruri" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">serverUri</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div><aside class="tsd-sources">
@@ -257,10 +259,22 @@
 </div></div><aside class="tsd-sources">
 <p>Inherited from <a href="node-opcua.ClientTransportBase.html">ClientTransportBase</a>.<a href="node-opcua.ClientTransportBase.html#headersize">headerSize</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:66</li></ul></aside></section></section></details>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:72</li></ul></aside></section></section></details>
 <details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Accessors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
 <h2 class="tsd-anchor-link" id="accessors-1">Accessors<a href="#accessors-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2></summary>
 <section>
+<section class="tsd-panel tsd-member tsd-is-inherited">
+<h3 class="tsd-anchor-link" id="queuedbytes"><span>queued<wbr/>Bytes</span><a href="#queuedbytes" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-is-inherited">
+<li>
+<div class="tsd-signature" id="queuedbytesqueuedbytes"><span class="tsd-signature-keyword">get</span> <span class="tsd-kind-get-signature">queuedBytes</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>the bytes written to the socket and not sent yet; 0 for a socket that does not say</p>
+</div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
+<p>Inherited from ClientTransportBase.queuedBytes</p>
+<ul>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:106</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="timeout"><span>timeout</span><a href="#timeout" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited">
@@ -270,7 +284,7 @@
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
 <p>Inherited from ClientTransportBase.timeout</p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:91</li></ul></aside></div></li>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:97</li></ul></aside></div></li>
 <li>
 <div class="tsd-signature" id="timeouttimeout-1"><span class="tsd-signature-keyword">set</span> <span class="tsd-kind-set-signature">timeout</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">value</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">void</span></div>
 <div class="tsd-description">
@@ -281,7 +295,7 @@
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <p>Inherited from ClientTransportBase.timeout</p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:92</li></ul></aside></div></li></ul></section></section></details>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:98</li></ul></aside></div></li></ul></section></section></details>
 <details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Methods"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
 <h2 class="tsd-anchor-link" id="methods-1">Methods<a href="#methods-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2></summary>
 <section>
@@ -298,7 +312,7 @@
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <p>Inherited from <a href="node-opcua.ClientTransportBase.html">ClientTransportBase</a>.<a href="node-opcua.ClientTransportBase.html#_emitclose">_emitClose</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:134</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:148</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-protected tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="_install_one_time_message_receiver"><code class="tsd-tag">Protected</code><span>_<wbr/>install_<wbr/>one_<wbr/>time_<wbr/>message_<wbr/>receiver</span><a href="#_install_one_time_message_receiver" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-protected tsd-is-inherited">
@@ -322,7 +336,7 @@ an error, the callback function will be called with an Error.</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <p>Inherited from <a href="node-opcua.ClientTransportBase.html">ClientTransportBase</a>.<a href="node-opcua.ClientTransportBase.html#_install_one_time_message_receiver">_install_one_time_message_receiver</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:127</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:141</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-protected tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="_install_post_connect_error_handler"><code class="tsd-tag">Protected</code><span>_<wbr/>install_<wbr/>post_<wbr/>connect_<wbr/>error_<wbr/>handler</span><a href="#_install_post_connect_error_handler" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-protected tsd-is-inherited">
@@ -356,7 +370,7 @@ react.</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <p>Inherited from <a href="node-opcua.ClientTransportBase.html">ClientTransportBase</a>.<a href="node-opcua.ClientTransportBase.html#_install_socket">_install_socket</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:109</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:123</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-protected tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="_perform_hel_ack_transaction"><code class="tsd-tag">Protected</code><span>_<wbr/>perform_<wbr/>HEL_<wbr/>ACK_<wbr/>transaction</span><a href="#_perform_hel_ack_transaction" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-protected tsd-is-inherited">
@@ -385,7 +399,7 @@ react.</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <p>Inherited from <a href="node-opcua.ClientTransportBase.html">ClientTransportBase</a>.<a href="node-opcua.ClientTransportBase.html#_write_chunk">_write_chunk</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:108</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:122</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="capturerejectionsymbol"><code class="tsd-tag">Optional</code><span>[capture<wbr/>Rejection<wbr/>Symbol]</span><a href="#capturerejectionsymbol" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -414,7 +428,7 @@ place of <code>Symbol.for('nodejs.rejection')</code>.</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from <a href="node-opcua.ClientTransportBase.html">ClientTransportBase</a>.<a href="node-opcua.ClientTransportBase.html#capturerejectionsymbol">[captureRejectionSymbol]</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.3/node_modules/@types/node/events.d.ts:87</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.4/node_modules/@types/node/events.d.ts:87</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="addlistener"><span>add<wbr/>Listener</span><a href="#addlistener" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -439,7 +453,7 @@ place of <code>Symbol.for('nodejs.rejection')</code>.</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from <a href="node-opcua.ClientTransportBase.html">ClientTransportBase</a>.<a href="node-opcua.ClientTransportBase.html#addlistener">addListener</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.3/node_modules/@types/node/events.d.ts:92</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.4/node_modules/@types/node/events.d.ts:92</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="connect"><span>connect</span><a href="#connect" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -474,7 +488,7 @@ The <code>&quot;close&quot;</code> event will be emitted to the observers with e
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <p>Inherited from <a href="node-opcua.ClientTransportBase.html">ClientTransportBase</a>.<a href="node-opcua.ClientTransportBase.html#disconnect">disconnect</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:106</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:120</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="dispose"><span>dispose</span><a href="#dispose" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -566,7 +580,7 @@ listeners.</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from <a href="node-opcua.ClientTransportBase.html">ClientTransportBase</a>.<a href="node-opcua.ClientTransportBase.html#eventnames">eventNames</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.3/node_modules/@types/node/events.d.ts:154</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.4/node_modules/@types/node/events.d.ts:154</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="forceconnectionbreak"><span>force<wbr/>Connection<wbr/>Break</span><a href="#forceconnectionbreak" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited">
@@ -576,7 +590,7 @@ listeners.</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <p>Inherited from <a href="node-opcua.ClientTransportBase.html">ClientTransportBase</a>.<a href="node-opcua.ClientTransportBase.html#forceconnectionbreak">forceConnectionBreak</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:112</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:126</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="getmaxlisteners"><span>get<wbr/>Max<wbr/>Listeners</span><a href="#getmaxlisteners" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -594,7 +608,7 @@ set by <code>emitter.setMaxListeners(n)</code> or defaults to
 </div></div><aside class="tsd-sources">
 <p>Inherited from <a href="node-opcua.ClientTransportBase.html">ClientTransportBase</a>.<a href="node-opcua.ClientTransportBase.html#getmaxlisteners">getMaxListeners</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.3/node_modules/@types/node/events.d.ts:161</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.4/node_modules/@types/node/events.d.ts:161</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="gettransportsettings"><span>get<wbr/>Transport<wbr/>Settings</span><a href="#gettransportsettings" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited">
@@ -614,7 +628,7 @@ set by <code>emitter.setMaxListeners(n)</code> or defaults to
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4><aside class="tsd-sources">
 <p>Inherited from <a href="node-opcua.ClientTransportBase.html">ClientTransportBase</a>.<a href="node-opcua.ClientTransportBase.html#isdisconnecting">isDisconnecting</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:100</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:114</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="isvalid"><span>is<wbr/>Valid</span><a href="#isvalid" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited">
@@ -624,7 +638,7 @@ set by <code>emitter.setMaxListeners(n)</code> or defaults to
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4><aside class="tsd-sources">
 <p>Inherited from <a href="node-opcua.ClientTransportBase.html">ClientTransportBase</a>.<a href="node-opcua.ClientTransportBase.html#isvalid">isValid</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:107</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:121</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="listenercount"><span>listener<wbr/>Count</span><a href="#listenercount" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -655,7 +669,7 @@ in the list of the listeners of the event.</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from <a href="node-opcua.ClientTransportBase.html">ClientTransportBase</a>.<a href="node-opcua.ClientTransportBase.html#listenercount">listenerCount</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.3/node_modules/@types/node/events.d.ts:170</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.4/node_modules/@types/node/events.d.ts:170</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="listeners"><span>listeners</span><a href="#listeners" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -682,7 +696,7 @@ in the list of the listeners of the event.</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from <a href="node-opcua.ClientTransportBase.html">ClientTransportBase</a>.<a href="node-opcua.ClientTransportBase.html#listeners">listeners</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.3/node_modules/@types/node/events.d.ts:186</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.4/node_modules/@types/node/events.d.ts:186</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="off"><span>off</span><a href="#off" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -707,7 +721,7 @@ in the list of the listeners of the event.</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from <a href="node-opcua.ClientTransportBase.html">ClientTransportBase</a>.<a href="node-opcua.ClientTransportBase.html#off">off</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.3/node_modules/@types/node/events.d.ts:191</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.4/node_modules/@types/node/events.d.ts:191</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="on"><span>on</span><a href="#on" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited">
@@ -856,6 +870,24 @@ event listener to the beginning of the listeners array.</p>
 <ul>
 <li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/client_transport_base.d.ts:25</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
+<h3 class="tsd-anchor-link" id="oncedrained"><span>once<wbr/>Drained</span><a href="#oncedrained" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-is-inherited">
+<li class="tsd-is-inherited">
+<div class="tsd-signature tsd-anchor-link" id="oncedrained-1"><span class="tsd-kind-call-signature">onceDrained</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">listener</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">()</span> <span class="tsd-signature-symbol">=&gt;</span> <span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">void</span><a href="#oncedrained-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>calls <code>listener</code> once the socket has sent what it holds. Only meaningful above the socket's
+highWaterMark, which is when net.Socket emits &quot;drain&quot;; a socket holding nothing calls back
+on the next turn.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li><span><span class="tsd-kind-parameter">listener</span>: <span class="tsd-signature-symbol">()</span> <span class="tsd-signature-symbol">=&gt;</span> <span class="tsd-signature-type">void</span></span></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<p>Inherited from <a href="node-opcua.ClientTransportBase.html">ClientTransportBase</a>.<a href="node-opcua.ClientTransportBase.html#oncedrained">onceDrained</a></p>
+<ul>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:112</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="prematureterminate"><span>premature<wbr/>Terminate</span><a href="#prematureterminate" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited">
 <li class="tsd-is-inherited">
@@ -869,7 +901,7 @@ event listener to the beginning of the listeners array.</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <p>Inherited from <a href="node-opcua.ClientTransportBase.html">ClientTransportBase</a>.<a href="node-opcua.ClientTransportBase.html#prematureterminate">prematureTerminate</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:111</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:125</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="prependlistener"><span>prepend<wbr/>Listener</span><a href="#prependlistener" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -906,7 +938,7 @@ times.</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from <a href="node-opcua.ClientTransportBase.html">ClientTransportBase</a>.<a href="node-opcua.ClientTransportBase.html#prependlistener">prependListener</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.3/node_modules/@types/node/events.d.ts:275</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.4/node_modules/@types/node/events.d.ts:275</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="prependoncelistener"><span>prepend<wbr/>Once<wbr/>Listener</span><a href="#prependoncelistener" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -941,7 +973,7 @@ listener is removed, and then invoked.</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from <a href="node-opcua.ClientTransportBase.html">ClientTransportBase</a>.<a href="node-opcua.ClientTransportBase.html#prependoncelistener">prependOnceListener</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.3/node_modules/@types/node/events.d.ts:292</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.4/node_modules/@types/node/events.d.ts:292</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="rawlisteners"><span>raw<wbr/>Listeners</span><a href="#rawlisteners" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -969,7 +1001,7 @@ including any wrappers (such as those created by <code>.once()</code>).</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from <a href="node-opcua.ClientTransportBase.html">ClientTransportBase</a>.<a href="node-opcua.ClientTransportBase.html#rawlisteners">rawListeners</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.3/node_modules/@types/node/events.d.ts:326</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.4/node_modules/@types/node/events.d.ts:326</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="removealllisteners"><span>remove<wbr/>All<wbr/>Listeners</span><a href="#removealllisteners" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -997,7 +1029,7 @@ component or module (e.g. sockets or file streams).</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from <a href="node-opcua.ClientTransportBase.html">ClientTransportBase</a>.<a href="node-opcua.ClientTransportBase.html#removealllisteners">removeAllListeners</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.3/node_modules/@types/node/events.d.ts:338</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.4/node_modules/@types/node/events.d.ts:338</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="removelistener"><span>remove<wbr/>Listener</span><a href="#removelistener" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -1051,7 +1083,7 @@ listener is removed:</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from <a href="node-opcua.ClientTransportBase.html">ClientTransportBase</a>.<a href="node-opcua.ClientTransportBase.html#removelistener">removeListener</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.3/node_modules/@types/node/events.d.ts:425</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.4/node_modules/@types/node/events.d.ts:425</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="senderrormessage"><span>send<wbr/>Error<wbr/>Message</span><a href="#senderrormessage" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited">
@@ -1066,7 +1098,7 @@ listener is removed:</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <p>Inherited from <a href="node-opcua.ClientTransportBase.html">ClientTransportBase</a>.<a href="node-opcua.ClientTransportBase.html#senderrormessage">sendErrorMessage</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:110</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:124</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="setlimits"><span>set<wbr/>Limits</span><a href="#setlimits" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited">
@@ -1080,7 +1112,7 @@ listener is removed:</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <p>Inherited from <a href="node-opcua.ClientTransportBase.html">ClientTransportBase</a>.<a href="node-opcua.ClientTransportBase.html#setlimits">setLimits</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:85</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:91</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="setmaxlisteners"><span>set<wbr/>Max<wbr/>Listeners</span><a href="#setmaxlisteners" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -1105,7 +1137,7 @@ modified for this specific <code>EventEmitter</code> instance. The value can be 
 </div></div><aside class="tsd-sources">
 <p>Inherited from <a href="node-opcua.ClientTransportBase.html">ClientTransportBase</a>.<a href="node-opcua.ClientTransportBase.html#setmaxlisteners">setMaxListeners</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.3/node_modules/@types/node/events.d.ts:436</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.4/node_modules/@types/node/events.d.ts:436</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="tostring"><span>to<wbr/>String</span><a href="#tostring" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited">
@@ -1117,15 +1149,13 @@ modified for this specific <code>EventEmitter</code> instance. The value can be 
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><aside class="tsd-sources">
 <p>Inherited from <a href="node-opcua.ClientTransportBase.html">ClientTransportBase</a>.<a href="node-opcua.ClientTransportBase.html#tostring">toString</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:84</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:90</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="write"><span>write</span><a href="#write" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited">
 <li class="tsd-is-inherited">
 <div class="tsd-signature tsd-anchor-link" id="write-1"><span class="tsd-kind-call-signature">write</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">messageChunk</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">,</span> <span class="tsd-kind-parameter">callback</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">err</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">Error</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span> <span class="tsd-signature-symbol">=&gt;</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">void</span><a href="#write-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>write the message_chunk on the socket.</p>
-</div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
@@ -1134,7 +1164,7 @@ modified for this specific <code>EventEmitter</code> instance. The value can be 
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <p>Inherited from <a href="node-opcua.ClientTransportBase.html">ClientTransportBase</a>.<a href="node-opcua.ClientTransportBase.html#write">write</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:99</li></ul></aside></div></li></ul></section></section></details></div>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-transport/dist/source/tcp_transport.d.ts:113</li></ul></aside></div></li></ul></section></section></details></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
@@ -1154,9 +1184,9 @@ modified for this specific <code>EventEmitter</code> instance. The value can be 
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Properties"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Properties</summary>
 <div><a href="#_socket" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>_<wbr/>socket</span></a><a href="#_thecloseerror" class="tsd-is-protected tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>_<wbr/>the<wbr/>Close<wbr/>Error</span></a><a href="#bytesread" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>bytes<wbr/>Read</span></a><a href="#byteswritten" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>bytes<wbr/>Written</span></a><a href="#chunkreadcount" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>chunk<wbr/>Read<wbr/>Count</span></a><a href="#chunkwrittencount" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>chunk<wbr/>Written<wbr/>Count</span></a><a href="#endpointurl" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>endpoint<wbr/>Url</span></a><a href="#maxchunkcount" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>max<wbr/>Chunk<wbr/>Count</span></a><a href="#maxmessagesize" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>max<wbr/>Message<wbr/>Size</span></a><a href="#name" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>name</span></a><a href="#numberofretry" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>number<wbr/>Of<wbr/>Retry</span></a><a href="#parameters" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>parameters</span></a><a href="#protocolversion" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>protocol<wbr/>Version</span></a><a href="#receivebuffersize" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>receive<wbr/>Buffer<wbr/>Size</span></a><a href="#sendbuffersize" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>send<wbr/>Buffer<wbr/>Size</span></a><a href="#serveruri" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>server<wbr/>Uri</span></a><a href="#defaultmaxchunk" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>default<wbr/>Max<wbr/>Chunk</span></a><a href="#defaultmaxmessagesize" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>default<wbr/>Max<wbr/>Message<wbr/>Size</span></a><a href="#defaultreceivebuffersize" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>default<wbr/>Receive<wbr/>Buffer<wbr/>Size</span></a><a href="#defaultsendbuffersize" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>default<wbr/>Send<wbr/>Buffer<wbr/>Size</span></a><a href="#headersize" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>header<wbr/>Size</span></a></div></details>
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Accessors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Accessors</summary>
-<div><a href="#timeout" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>timeout</span></a></div></details>
+<div><a href="#queuedbytes" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>queued<wbr/>Bytes</span></a><a href="#timeout" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>timeout</span></a></div></details>
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Methods"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Methods</summary>
-<div><a href="#_emitclose" class="tsd-is-protected tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>_<wbr/>emit<wbr/>Close</span></a><a href="#_install_one_time_message_receiver" class="tsd-is-protected tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>_<wbr/>install_<wbr/>one_<wbr/>time_<wbr/>message_<wbr/>receiver</span></a><a href="#_install_post_connect_error_handler" class="tsd-is-protected tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>_<wbr/>install_<wbr/>post_<wbr/>connect_<wbr/>error_<wbr/>handler</span></a><a href="#_install_socket" class="tsd-is-protected tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>_<wbr/>install_<wbr/>socket</span></a><a href="#_perform_hel_ack_transaction" class="tsd-is-protected tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>_<wbr/>perform_<wbr/>HEL_<wbr/>ACK_<wbr/>transaction</span></a><a href="#_write_chunk" class="tsd-is-protected tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>_<wbr/>write_<wbr/>chunk</span></a><a href="#capturerejectionsymbol" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>[capture<wbr/>Rejection<wbr/>Symbol]</span></a><a href="#addlistener" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>add<wbr/>Listener</span></a><a href="#connect"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>connect</span></a><a href="#disconnect" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>disconnect</span></a><a href="#dispose"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>dispose</span></a><a href="#emit" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>emit</span></a><a href="#eventnames" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>event<wbr/>Names</span></a><a href="#forceconnectionbreak" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>force<wbr/>Connection<wbr/>Break</span></a><a href="#getmaxlisteners" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Max<wbr/>Listeners</span></a><a href="#gettransportsettings" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Transport<wbr/>Settings</span></a><a href="#isdisconnecting" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>is<wbr/>Disconnecting</span></a><a href="#isvalid" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>is<wbr/>Valid</span></a><a href="#listenercount" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>listener<wbr/>Count</span></a><a href="#listeners" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>listeners</span></a><a href="#off" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>off</span></a><a href="#on" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>on</span></a><a href="#once" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>once</span></a><a href="#prematureterminate" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>premature<wbr/>Terminate</span></a><a href="#prependlistener" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>prepend<wbr/>Listener</span></a><a href="#prependoncelistener" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>prepend<wbr/>Once<wbr/>Listener</span></a><a href="#rawlisteners" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>raw<wbr/>Listeners</span></a><a href="#removealllisteners" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>remove<wbr/>All<wbr/>Listeners</span></a><a href="#removelistener" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>remove<wbr/>Listener</span></a><a href="#senderrormessage" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>send<wbr/>Error<wbr/>Message</span></a><a href="#setlimits" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>set<wbr/>Limits</span></a><a href="#setmaxlisteners" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>set<wbr/>Max<wbr/>Listeners</span></a><a href="#tostring" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>to<wbr/>String</span></a><a href="#write" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>write</span></a></div></details></div></details></div>
+<div><a href="#_emitclose" class="tsd-is-protected tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>_<wbr/>emit<wbr/>Close</span></a><a href="#_install_one_time_message_receiver" class="tsd-is-protected tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>_<wbr/>install_<wbr/>one_<wbr/>time_<wbr/>message_<wbr/>receiver</span></a><a href="#_install_post_connect_error_handler" class="tsd-is-protected tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>_<wbr/>install_<wbr/>post_<wbr/>connect_<wbr/>error_<wbr/>handler</span></a><a href="#_install_socket" class="tsd-is-protected tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>_<wbr/>install_<wbr/>socket</span></a><a href="#_perform_hel_ack_transaction" class="tsd-is-protected tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>_<wbr/>perform_<wbr/>HEL_<wbr/>ACK_<wbr/>transaction</span></a><a href="#_write_chunk" class="tsd-is-protected tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>_<wbr/>write_<wbr/>chunk</span></a><a href="#capturerejectionsymbol" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>[capture<wbr/>Rejection<wbr/>Symbol]</span></a><a href="#addlistener" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>add<wbr/>Listener</span></a><a href="#connect"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>connect</span></a><a href="#disconnect" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>disconnect</span></a><a href="#dispose"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>dispose</span></a><a href="#emit" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>emit</span></a><a href="#eventnames" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>event<wbr/>Names</span></a><a href="#forceconnectionbreak" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>force<wbr/>Connection<wbr/>Break</span></a><a href="#getmaxlisteners" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Max<wbr/>Listeners</span></a><a href="#gettransportsettings" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Transport<wbr/>Settings</span></a><a href="#isdisconnecting" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>is<wbr/>Disconnecting</span></a><a href="#isvalid" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>is<wbr/>Valid</span></a><a href="#listenercount" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>listener<wbr/>Count</span></a><a href="#listeners" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>listeners</span></a><a href="#off" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>off</span></a><a href="#on" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>on</span></a><a href="#once" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>once</span></a><a href="#oncedrained" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>once<wbr/>Drained</span></a><a href="#prematureterminate" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>premature<wbr/>Terminate</span></a><a href="#prependlistener" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>prepend<wbr/>Listener</span></a><a href="#prependoncelistener" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>prepend<wbr/>Once<wbr/>Listener</span></a><a href="#rawlisteners" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>raw<wbr/>Listeners</span></a><a href="#removealllisteners" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>remove<wbr/>All<wbr/>Listeners</span></a><a href="#removelistener" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>remove<wbr/>Listener</span></a><a href="#senderrormessage" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>send<wbr/>Error<wbr/>Message</span></a><a href="#setlimits" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>set<wbr/>Limits</span></a><a href="#setmaxlisteners" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>set<wbr/>Max<wbr/>Listeners</span></a><a href="#tostring" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>to<wbr/>String</span></a><a href="#write" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>write</span></a></div></details></div></details></div>
 <div class="site-menu">
 <nav id="tsd-sidebar-links" class="tsd-navigation"><a href="https://leanpub.com/node-opcuabyexample-edition2024" class="tsd-nav-link">Book</a><a href="https://github.com/node-opcua/node-opcua" class="tsd-nav-link">GitHub</a><a href="https://support.sterfive.com" class="tsd-nav-link">Support</a></nav>
 <nav class="tsd-navigation"><a href="../modules.html">NodeOPCUA API Documentation</a>

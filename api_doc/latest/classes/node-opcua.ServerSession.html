@@ -13,7 +13,7 @@
 <li><a href="../modules/node-opcua.html">node-opcua</a></li>
 <li><a href="" aria-current="page">ServerSession</a></li></ul>
 <h1>Class ServerSession</h1></div>
-<section class="tsd-panel tsd-hierarchy" data-refl="481566">
+<section class="tsd-panel tsd-hierarchy" data-refl="485343">
 <h4>Hierarchy</h4>
 <ul class="tsd-hierarchy">
 <li class="tsd-hierarchy-item"><span class="tsd-signature-type">EventEmitter</span>
@@ -27,7 +27,7 @@
 <li><a href="../interfaces/node-opcua.IServerSession.html" class="tsd-signature-type tsd-kind-interface">IServerSession</a></li>
 <li><a href="../interfaces/node-opcua.IServerSessionBase.html" class="tsd-signature-type tsd-kind-interface">IServerSessionBase</a></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:18</li></ul></aside>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:27</li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-accordion" open><summary class="tsd-accordion-summary tsd-index-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
@@ -56,6 +56,7 @@
 <a href="#parent" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>parent</span></a>
 <a href="#passwordchangerequired" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>password<wbr/>Change<wbr/>Required?</span></a>
 <a href="#publishengine" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>publish<wbr/>Engine</span></a>
+<a href="#remotechannelsecurity" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>remote<wbr/>Channel<wbr/>Security?</span></a>
 <a href="#sessioncontext" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>session<wbr/>Context</span></a>
 <a href="#sessiondiagnostics" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>session<wbr/>Diagnostics?</span></a>
 <a href="#sessionname" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>session<wbr/>Name</span></a>
@@ -71,6 +72,7 @@
 <h3 class="tsd-index-heading tsd-anchor-link" id="accessors">Accessors<a href="#accessors" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-index-list"><a href="#aborted" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>aborted</span></a>
 <a href="#addressspace" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>address<wbr/>Space</span></a>
+<a href="#channelsecurity" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>channel<wbr/>Security</span></a>
 <a href="#clientconnectiontime" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>client<wbr/>Connection<wbr/>Time</span></a>
 <a href="#clientlastcontacttime" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>client<wbr/>Last<wbr/>Contact<wbr/>Time</span></a>
 <a href="#cumulatedsubscriptioncount" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>cumulated<wbr/>Subscription<wbr/>Count</span></a>
@@ -100,6 +102,7 @@
 <a href="#getsessionid" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Session<wbr/>Id</span></a>
 <a href="#getsessionsecuritydiagnosticsarray" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Session<wbr/>Security<wbr/>Diagnostics<wbr/>Array</span></a>
 <a href="#getsubscription" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Subscription</span></a>
+<a href="#hasregisterednodes" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>has<wbr/>Registered<wbr/>Nodes</span></a>
 <a href="#incrementrequesterrorcounter" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>increment<wbr/>Request<wbr/>Error<wbr/>Counter</span></a>
 <a href="#incrementrequesttotalcounter" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>increment<wbr/>Request<wbr/>Total<wbr/>Counter</span></a>
 <a href="#incrementtotalrequestcount" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>increment<wbr/>Total<wbr/>Request<wbr/>Count</span></a>
@@ -122,6 +125,7 @@
 <a href="#tostring" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>to<wbr/>String</span></a>
 <a href="#unregisternode" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>un<wbr/>Register<wbr/>Node</span></a>
 <a href="#updateclientlastcontacttime" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>update<wbr/>Client<wbr/>Last<wbr/>Contact<wbr/>Time</span></a>
+<a href="#watchedelsewhere" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>watched<wbr/>Elsewhere</span></a>
 </div></section></div></details></section></section>
 <details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Constructors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
 <h2 class="tsd-anchor-link" id="constructors-1">Constructors<a href="#constructors-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2></summary>
@@ -130,18 +134,18 @@
 <h3 class="tsd-anchor-link" id="constructor"><span>constructor</span><a href="#constructor" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
 <li class="">
-<div class="tsd-signature tsd-anchor-link" id="constructorserversession"><span class="tsd-signature-keyword">new</span> <span class="tsd-kind-constructor-signature">ServerSession</span><span class="tsd-signature-symbol">(</span><br/>    <span class="tsd-kind-parameter">parent</span><span class="tsd-signature-symbol">:</span> <a href="node-opcua.ServerEngine.html" class="tsd-signature-type tsd-kind-class">ServerEngine</a><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">server</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/node-opcua.IServerBase.html" class="tsd-signature-type tsd-kind-interface">IServerBase</a><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">sessionTimeout</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">,</span><br/><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <a href="" class="tsd-signature-type tsd-kind-class">ServerSession</a><a href="#constructorserversession" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-signature tsd-anchor-link" id="constructorserversession"><span class="tsd-signature-keyword">new</span> <span class="tsd-kind-constructor-signature">ServerSession</span><span class="tsd-signature-symbol">(</span><br/>    <span class="tsd-kind-parameter">parent</span><span class="tsd-signature-symbol">:</span> <a href="../types/node-opcua.ServerSessionParent.html" class="tsd-signature-type tsd-kind-type-alias">ServerSessionParent</a><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">server</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/node-opcua.IServerBase.html" class="tsd-signature-type tsd-kind-interface">IServerBase</a><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">sessionTimeout</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">,</span><br/><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <a href="" class="tsd-signature-type tsd-kind-class">ServerSession</a><a href="#constructorserversession" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
-<li><span><span class="tsd-kind-parameter">parent</span>: <a href="node-opcua.ServerEngine.html" class="tsd-signature-type tsd-kind-class">ServerEngine</a></span></li>
+<li><span><span class="tsd-kind-parameter">parent</span>: <a href="../types/node-opcua.ServerSessionParent.html" class="tsd-signature-type tsd-kind-type-alias">ServerSessionParent</a></span></li>
 <li><span><span class="tsd-kind-parameter">server</span>: <a href="../interfaces/node-opcua.IServerBase.html" class="tsd-signature-type tsd-kind-interface">IServerBase</a></span></li>
 <li><span><span class="tsd-kind-parameter">sessionTimeout</span>: <span class="tsd-signature-type">number</span></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <a href="" class="tsd-signature-type tsd-kind-class">ServerSession</a></h4><aside class="tsd-sources">
 <p>Overrides EventEmitter.constructor</p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:68</li></ul></aside></div></li></ul></section></section></details>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:85</li></ul></aside></div></li></ul></section></section></details>
 <details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Properties"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
 <h2 class="tsd-anchor-link" id="properties-1">Properties<a href="#properties-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2></summary>
 <section>
@@ -149,62 +153,62 @@
 <h3 class="tsd-anchor-link" id="__status"><span>__<wbr/>status</span><a href="#__status" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">__status</span><span class="tsd-signature-symbol">:</span> <a href="../types/node-opcua.SessionStatus.html" class="tsd-signature-type tsd-kind-type-alias">SessionStatus</a></div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:21</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:30</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="_watchdog"><code class="tsd-tag">Optional</code><span>_<wbr/>watch<wbr/>Dog</span><a href="#_watchdog" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">_watchDog</span><span class="tsd-signature-symbol">?:</span> <a href="node-opcua.WatchDog.html" class="tsd-signature-type tsd-kind-class">WatchDog</a></div><aside class="tsd-sources">
 <p>Implementation of <a href="../interfaces/node-opcua.ISubscriber.html">ISubscriber</a>.<a href="../interfaces/node-opcua.ISubscriber.html#_watchdog">_watchDog</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:58</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:67</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="_watchdogdata"><code class="tsd-tag">Optional</code><span>_<wbr/>watch<wbr/>Dog<wbr/>Data</span><a href="#_watchdogdata" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">_watchDogData</span><span class="tsd-signature-symbol">?:</span> <a href="../interfaces/node-opcua.IWatchdogData2.html" class="tsd-signature-type tsd-kind-interface">IWatchdogData2</a></div><aside class="tsd-sources">
 <p>Implementation of <a href="../interfaces/node-opcua.ISubscriber.html">ISubscriber</a>.<a href="../interfaces/node-opcua.ISubscriber.html#_watchdogdata">_watchDogData</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:59</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:68</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="authenticationtoken"><span>authentication<wbr/>Token</span><a href="#authenticationtoken" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">authenticationToken</span><span class="tsd-signature-symbol">:</span> <a href="node-opcua.NodeId.html" class="tsd-signature-type tsd-kind-class">NodeId</a></div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:23</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:32</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="channel"><code class="tsd-tag">Optional</code><span>channel</span><a href="#channel" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">channel</span><span class="tsd-signature-symbol">?:</span> <a href="node-opcua.ServerSecureChannelLayer.html" class="tsd-signature-type tsd-kind-class">ServerSecureChannelLayer</a></div><aside class="tsd-sources">
 <p>Implementation of <a href="../interfaces/node-opcua.ISessionBase.html">ISessionBase</a>.<a href="../interfaces/node-opcua.ISessionBase.html#channel">channel</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:33</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:42</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="channelid"><code class="tsd-tag">Optional</code><span>channel<wbr/>Id</span><a href="#channelid" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">channelId</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">number</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:48</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:57</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="clientdescription"><code class="tsd-tag">Optional</code><span>client<wbr/>Description</span><a href="#clientdescription" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">clientDescription</span><span class="tsd-signature-symbol">?:</span> <a href="node-opcua.ApplicationDescription.html" class="tsd-signature-type tsd-kind-class">ApplicationDescription</a></div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:47</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:56</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="continuationpointmanager"><span>continuation<wbr/>Point<wbr/>Manager</span><a href="#continuationpointmanager" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">continuationPointManager</span><span class="tsd-signature-symbol">:</span> <a href="node-opcua.ContinuationPointManager.html" class="tsd-signature-type tsd-kind-class">ContinuationPointManager</a></div><aside class="tsd-sources">
 <p>Implementation of <a href="../interfaces/node-opcua.ISessionBase.html">ISessionBase</a>.<a href="../interfaces/node-opcua.ISessionBase.html#continuationpointmanager">continuationPointManager</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:49</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:58</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="creationdate"><code class="tsd-tag">Readonly</code><span>creation<wbr/>Date</span><a href="#creationdate" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">creationDate</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:28</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:37</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="endpoint"><code class="tsd-tag">Optional</code><span>endpoint</span><a href="#endpoint" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">endpoint</span><span class="tsd-signature-symbol">?:</span> <a href="node-opcua.EndpointDescription.html" class="tsd-signature-type tsd-kind-class">EndpointDescription</a></div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:72</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:89</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="keepalive"><span>keep<wbr/>Alive</span><a href="#keepalive" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">keepAlive</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">()</span> <span class="tsd-signature-symbol">=&gt;</span> <span class="tsd-signature-type">void</span></div><aside class="tsd-sources">
 <p>Implementation of <a href="../interfaces/node-opcua.IServerSession.html">IServerSession</a>.<a href="../interfaces/node-opcua.IServerSession.html#keepalive">keepAlive</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:60</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:69</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="localeids"><span>locale<wbr/>Ids</span><a href="#localeids" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">localeIds</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
@@ -213,22 +217,22 @@ empty until the first one. Set only through <a href="#setlocaleids" class="tsd-k
 </div><aside class="tsd-sources">
 <p>Implementation of <a href="../interfaces/node-opcua.ISessionBase.html">ISessionBase</a>.<a href="../interfaces/node-opcua.ISessionBase.html#localeids">localeIds</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:40</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:49</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="nodeid"><span>node<wbr/>Id</span><a href="#nodeid" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">nodeId</span><span class="tsd-signature-symbol">:</span> <a href="node-opcua.NodeId.html" class="tsd-signature-type tsd-kind-class">NodeId</a></div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:24</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:33</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="nonce"><code class="tsd-tag">Optional</code><span>nonce</span><a href="#nonce" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">nonce</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ArrayBufferLike</span><span class="tsd-signature-symbol">&gt;</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:34</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:43</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="parent"><span>parent</span><a href="#parent" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<div class="tsd-signature"><span class="tsd-kind-property">parent</span><span class="tsd-signature-symbol">:</span> <a href="node-opcua.ServerEngine.html" class="tsd-signature-type tsd-kind-class">ServerEngine</a></div><aside class="tsd-sources">
+<div class="tsd-signature"><span class="tsd-kind-property">parent</span><span class="tsd-signature-symbol">:</span> <a href="../types/node-opcua.ServerSessionParent.html" class="tsd-signature-type tsd-kind-type-alias">ServerSessionParent</a></div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:22</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:31</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="passwordchangerequired"><code class="tsd-tag">Optional</code><span>password<wbr/>Change<wbr/>Required</span><a href="#passwordchangerequired" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">passwordChangeRequired</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">boolean</span></div>
@@ -237,12 +241,19 @@ must change the password (OPC 10000-18 §5.2.8). When true, ActivateSession
 returns <code>Good_PasswordChangeRequired</code> so the Client can react.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:46</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:55</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="publishengine"><span>publish<wbr/>Engine</span><a href="#publishengine" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">publishEngine</span><span class="tsd-signature-symbol">:</span> <a href="node-opcua.ServerSidePublishEngine.html" class="tsd-signature-type tsd-kind-class">ServerSidePublishEngine</a></div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:26</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:35</li></ul></aside></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="remotechannelsecurity"><code class="tsd-tag">Optional</code><span>remote<wbr/>Channel<wbr/>Security</span><a href="#remotechannelsecurity" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<div class="tsd-signature"><span class="tsd-kind-property">remoteChannelSecurity</span><span class="tsd-signature-symbol">?:</span> <a href="../interfaces/node-opcua.SessionChannelSecurity.html" class="tsd-signature-type tsd-kind-interface">SessionChannelSecurity</a></div>
+<div class="tsd-comment tsd-typography"><p>the security of the channel of a Session kept here for a channel of another thread (front threads)</p>
+</div><aside class="tsd-sources">
+<ul>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:105</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="sessioncontext"><span>session<wbr/>Context</span><a href="#sessioncontext" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">sessionContext</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/node-opcua.ISessionContext.html" class="tsd-signature-type tsd-kind-interface">ISessionContext</a></div>
@@ -253,55 +264,55 @@ RequestHeader) onto this instance - build a derived context with
 OPCUAServer#_on_CallRequest).</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:57</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:66</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="sessiondiagnostics"><code class="tsd-tag">Optional</code><span>session<wbr/>Diagnostics</span><a href="#sessiondiagnostics" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">sessionDiagnostics</span><span class="tsd-signature-symbol">?:</span> <a href="../interfaces/node-opcua.UASessionDiagnosticsVariable.html" class="tsd-signature-type tsd-kind-interface">UASessionDiagnosticsVariable</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/node-opcua.DTSessionDiagnostics.html" class="tsd-signature-type tsd-kind-interface">DTSessionDiagnostics</a><span class="tsd-signature-symbol">&gt;</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:30</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:39</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="sessionname"><span>session<wbr/>Name</span><a href="#sessionname" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">sessionName</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div><aside class="tsd-sources">
 <p>Implementation of <a href="../interfaces/node-opcua.IServerSessionBase.html">IServerSessionBase</a>.<a href="../interfaces/node-opcua.IServerSessionBase.html#sessionname">sessionName</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:25</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:34</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="sessionobject"><span>session<wbr/>Object</span><a href="#sessionobject" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">sessionObject</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/node-opcua.UAObject.html" class="tsd-signature-type tsd-kind-interface">UAObject</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/node-opcua.UAObjectEvents.html" class="tsd-signature-type tsd-kind-interface">UAObjectEvents</a><span class="tsd-signature-symbol">&gt;</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:27</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:36</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="sessionsecuritydiagnostics"><code class="tsd-tag">Optional</code><span>session<wbr/>Security<wbr/>Diagnostics</span><a href="#sessionsecuritydiagnostics" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">sessionSecurityDiagnostics</span><span class="tsd-signature-symbol">?:</span> <a href="../interfaces/node-opcua.UASessionSecurityDiagnostics.html" class="tsd-signature-type tsd-kind-interface">UASessionSecurityDiagnostics</a><span class="tsd-signature-symbol">&lt;</span><br/>    <a href="../interfaces/node-opcua.DTSessionSecurityDiagnostics.html" class="tsd-signature-type tsd-kind-interface">DTSessionSecurityDiagnostics</a><span class="tsd-signature-symbol">,</span><br/><span class="tsd-signature-symbol">&gt;</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:31</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:40</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="sessiontimeout"><span>session<wbr/>Timeout</span><a href="#sessiontimeout" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">sessionTimeout</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div><aside class="tsd-sources">
 <p>Implementation of <a href="../interfaces/node-opcua.IServerSessionBase.html">IServerSessionBase</a>.<a href="../interfaces/node-opcua.IServerSessionBase.html#sessiontimeout">sessionTimeout</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:29</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:38</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="subscriptiondiagnosticsarray"><code class="tsd-tag">Optional</code><span>subscription<wbr/>Diagnostics<wbr/>Array</span><a href="#subscriptiondiagnosticsarray" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">subscriptionDiagnosticsArray</span><span class="tsd-signature-symbol">?:</span> <a href="../interfaces/node-opcua.UADynamicVariableArray.html" class="tsd-signature-type tsd-kind-interface">UADynamicVariableArray</a><span class="tsd-signature-symbol">&lt;</span><br/>    <a href="node-opcua.SubscriptionDiagnosticsDataType.html" class="tsd-signature-type tsd-kind-class">SubscriptionDiagnosticsDataType</a><span class="tsd-signature-symbol">,</span><br/><span class="tsd-signature-symbol">&gt;</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:32</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:41</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="useridentitytoken"><code class="tsd-tag">Optional</code><span>user<wbr/>Identity<wbr/>Token</span><a href="#useridentitytoken" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">userIdentityToken</span><span class="tsd-signature-symbol">?:</span> <a href="node-opcua.UserIdentityToken.html" class="tsd-signature-type tsd-kind-class">UserIdentityToken</a></div><aside class="tsd-sources">
 <p>Implementation of <a href="../interfaces/node-opcua.ISessionBase.html">ISessionBase</a>.<a href="../interfaces/node-opcua.ISessionBase.html#useridentitytoken">userIdentityToken</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:35</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:44</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="maxpublishrequestinqueue"><code class="tsd-tag">Static</code><span>max<wbr/>Publish<wbr/>Request<wbr/>In<wbr/>Queue</span><a href="#maxpublishrequestinqueue" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">maxPublishRequestInQueue</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:20</li></ul></aside></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:29</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="registry"><code class="tsd-tag">Static</code><span>registry</span><a href="#registry" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">registry</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ObjectRegistry</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:19</li></ul></aside></section></section></details>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:28</li></ul></aside></section></section></details>
 <details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Accessors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
 <h2 class="tsd-anchor-link" id="accessors-1">Accessors<a href="#accessors-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2></summary>
 <section>
@@ -315,7 +326,7 @@ OPCUAServer#_on_CallRequest).</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:161</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:211</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="addressspace"><span>address<wbr/>Space</span><a href="#addressspace" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -324,7 +335,18 @@ OPCUAServer#_on_CallRequest).</p>
 <div class="tsd-description">
 <h4 class="tsd-returns-title">Returns <a href="../interfaces/node-opcua.AddressSpace.html" class="tsd-signature-type tsd-kind-interface">AddressSpace</a> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:93</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:119</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="channelsecurity"><span>channel<wbr/>Security</span><a href="#channelsecurity" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li>
+<div class="tsd-signature" id="channelsecuritychannelsecurity"><span class="tsd-signature-keyword">get</span> <span class="tsd-kind-get-signature">channelSecurity</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/node-opcua.SessionChannelSecurity.html" class="tsd-signature-type tsd-kind-interface">SessionChannelSecurity</a> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">undefined</span></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>the security of the Session's channel</p>
+</div>
+<h4 class="tsd-returns-title">Returns <a href="../interfaces/node-opcua.SessionChannelSecurity.html" class="tsd-signature-type tsd-kind-interface">SessionChannelSecurity</a> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">undefined</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:107</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="clientconnectiontime"><span>client<wbr/>Connection<wbr/>Time</span><a href="#clientconnectiontime" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -333,7 +355,7 @@ OPCUAServer#_on_CallRequest).</p>
 <div class="tsd-description">
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:76</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:93</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="clientlastcontacttime"><span>client<wbr/>Last<wbr/>Contact<wbr/>Time</span><a href="#clientlastcontacttime" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -346,7 +368,7 @@ the first transaction is the creation of the session</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
 <p>Implementation of <a href="../interfaces/node-opcua.IServerSessionBase.html">IServerSessionBase</a>.<a href="../interfaces/node-opcua.IServerSessionBase.html#clientlastcontacttime">clientLastContactTime</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:81</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:98</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="cumulatedsubscriptioncount"><span>cumulated<wbr/>Subscription<wbr/>Count</span><a href="#cumulatedsubscriptioncount" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -357,7 +379,7 @@ the first transaction is the creation of the session</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:120</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:168</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="currentmonitoreditemcount"><span>current<wbr/>Monitored<wbr/>Item<wbr/>Count</span><a href="#currentmonitoreditemcount" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -368,7 +390,7 @@ the first transaction is the creation of the session</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:124</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:172</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="currentpublishrequestinqueue"><span>current<wbr/>Publish<wbr/>Request<wbr/>In<wbr/>Queue</span><a href="#currentpublishrequestinqueue" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -377,7 +399,7 @@ the first transaction is the creation of the session</p>
 <div class="tsd-description">
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:94</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:120</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="currentsubscriptioncount"><span>current<wbr/>Subscription<wbr/>Count</span><a href="#currentsubscriptioncount" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -388,7 +410,7 @@ the first transaction is the creation of the session</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:116</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:164</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="status"><span>status</span><a href="#status" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -398,7 +420,7 @@ the first transaction is the creation of the session</p>
 <h4 class="tsd-returns-title">Returns <a href="../types/node-opcua.SessionStatus.html" class="tsd-signature-type tsd-kind-type-alias">SessionStatus</a></h4><aside class="tsd-sources">
 <p>Implementation of <a href="../interfaces/node-opcua.IServerSessionBase.html">IServerSessionBase</a>.<a href="../interfaces/node-opcua.IServerSessionBase.html#status">status</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:82</li></ul></aside></div></li>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:108</li></ul></aside></div></li>
 <li>
 <div class="tsd-signature" id="statusstatus-1"><span class="tsd-signature-keyword">set</span> <span class="tsd-kind-set-signature">status</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">value</span><span class="tsd-signature-symbol">:</span> <a href="../types/node-opcua.SessionStatus.html" class="tsd-signature-type tsd-kind-type-alias">SessionStatus</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">void</span></div>
 <div class="tsd-description">
@@ -409,7 +431,7 @@ the first transaction is the creation of the session</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <p>Implementation of <a href="../interfaces/node-opcua.IServerSessionBase.html">IServerSessionBase</a>.<a href="../interfaces/node-opcua.IServerSessionBase.html#status">status</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:83</li></ul></aside></div></li></ul></section></section></details>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:109</li></ul></aside></div></li></ul></section></section></details>
 <details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Methods"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
 <h2 class="tsd-anchor-link" id="methods-1">Methods<a href="#methods-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2></summary>
 <section>
@@ -425,7 +447,7 @@ the first transaction is the creation of the session</p>
 <li><span><span class="tsd-kind-parameter">channel</span>: <a href="node-opcua.ServerSecureChannelLayer.html" class="tsd-signature-type tsd-kind-class">ServerSecureChannelLayer</a></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:163</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:214</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="_detach_channel"><span>_<wbr/>detach_<wbr/>channel</span><a href="#_detach_channel" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -434,7 +456,7 @@ the first transaction is the creation of the session</p>
 <div class="tsd-description">
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:164</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:215</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="_exposesubscriptiondiagnostics"><span>_<wbr/>expose<wbr/>Subscription<wbr/>Diagnostics</span><a href="#_exposesubscriptiondiagnostics" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -447,7 +469,7 @@ the first transaction is the creation of the session</p>
 <li><span><span class="tsd-kind-parameter">subscription</span>: <a href="node-opcua.Subscription.html" class="tsd-signature-type tsd-kind-class">Subscription</a></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:165</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:216</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="_unexposesubscriptiondiagnostics"><span>_<wbr/>unexpose<wbr/>Subscription<wbr/>Diagnostics</span><a href="#_unexposesubscriptiondiagnostics" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -460,7 +482,7 @@ the first transaction is the creation of the session</p>
 <li><span><span class="tsd-kind-parameter">subscription</span>: <a href="node-opcua.Subscription.html" class="tsd-signature-type tsd-kind-class">Subscription</a></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:166</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:217</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="capturerejectionsymbol"><code class="tsd-tag">Optional</code><span>[capture<wbr/>Rejection<wbr/>Symbol]</span><a href="#capturerejectionsymbol" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -489,7 +511,7 @@ place of <code>Symbol.for('nodejs.rejection')</code>.</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from EventEmitter.[captureRejectionSymbol]</p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.3/node_modules/@types/node/events.d.ts:87</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.4/node_modules/@types/node/events.d.ts:87</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="addlistener"><span>add<wbr/>Listener</span><a href="#addlistener" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -514,7 +536,7 @@ place of <code>Symbol.for('nodejs.rejection')</code>.</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from EventEmitter.addListener</p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.3/node_modules/@types/node/events.d.ts:92</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.4/node_modules/@types/node/events.d.ts:92</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="close"><span>close</span><a href="#close" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -546,20 +568,23 @@ server-initiated close (Timeout, Terminated, Forcing), where there is no client 
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:154</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:202</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="createsubscription"><span>create<wbr/>Subscription</span><a href="#createsubscription" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
 <li class="">
-<div class="tsd-signature tsd-anchor-link" id="createsubscription-1"><span class="tsd-kind-call-signature">createSubscription</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">parameters</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/node-opcua.CreateSubscriptionRequestOptions.html" class="tsd-signature-type tsd-kind-interface">CreateSubscriptionRequestOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <a href="node-opcua.Subscription.html" class="tsd-signature-type tsd-kind-class">Subscription</a><a href="#createsubscription-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-signature tsd-anchor-link" id="createsubscription-1"><span class="tsd-kind-call-signature">createSubscription</span><span class="tsd-signature-symbol">(</span><br/>    <span class="tsd-kind-parameter">parameters</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/node-opcua.CreateSubscriptionRequestOptions.html" class="tsd-signature-type tsd-kind-interface">CreateSubscriptionRequestOptions</a><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">id</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">,</span><br/><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <a href="node-opcua.Subscription.html" class="tsd-signature-type tsd-kind-class">Subscription</a><a href="#createsubscription-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p><code>id</code>: the id the subscription keeps, when it comes from another thread of the server</p>
+</div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
-<li><span><span class="tsd-kind-parameter">parameters</span>: <a href="../interfaces/node-opcua.CreateSubscriptionRequestOptions.html" class="tsd-signature-type tsd-kind-interface">CreateSubscriptionRequestOptions</a></span></li></ul></div>
+<li><span><span class="tsd-kind-parameter">parameters</span>: <a href="../interfaces/node-opcua.CreateSubscriptionRequestOptions.html" class="tsd-signature-type tsd-kind-interface">CreateSubscriptionRequestOptions</a></span></li>
+<li><span><code class="tsd-tag">Optional</code><span class="tsd-kind-parameter">id</span>: <span class="tsd-signature-type">number</span></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <a href="node-opcua.Subscription.html" class="tsd-signature-type tsd-kind-class">Subscription</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:162</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:213</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="deletesubscription"><span>delete<wbr/>Subscription</span><a href="#deletesubscription" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -574,7 +599,7 @@ server-initiated close (Timeout, Terminated, Forcing), where there is no client 
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <a href="node-opcua.StatusCode.html" class="tsd-signature-type tsd-kind-class">StatusCode</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:134</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:182</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="dispose"><span>dispose</span><a href="#dispose" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -583,7 +608,7 @@ server-initiated close (Timeout, Terminated, Forcing), where there is no client 
 <div class="tsd-description">
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:75</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:92</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="emit"><span>emit</span><a href="#emit" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -614,7 +639,7 @@ to each.</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from EventEmitter.emit</p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.3/node_modules/@types/node/events.d.ts:134</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.4/node_modules/@types/node/events.d.ts:134</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="eventnames"><span>event<wbr/>Names</span><a href="#eventnames" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -634,7 +659,7 @@ listeners.</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from EventEmitter.eventNames</p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.3/node_modules/@types/node/events.d.ts:154</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.4/node_modules/@types/node/events.d.ts:154</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="getendpointdescription"><span>get<wbr/>Endpoint<wbr/>Description</span><a href="#getendpointdescription" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -643,7 +668,7 @@ listeners.</p>
 <div class="tsd-description">
 <h4 class="tsd-returns-title">Returns <a href="node-opcua.EndpointDescription.html" class="tsd-signature-type tsd-kind-class">EndpointDescription</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:73</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:90</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="getendpointurl"><span>get<wbr/>Endpoint<wbr/>Url</span><a href="#getendpointurl" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -655,7 +680,7 @@ listeners.</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">undefined</span></h4><aside class="tsd-sources">
 <p>Implementation of <a href="../interfaces/node-opcua.ISessionBase.html">ISessionBase</a>.<a href="../interfaces/node-opcua.ISessionBase.html#getendpointurl">getEndpointUrl</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:74</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:91</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="getmaxlisteners"><span>get<wbr/>Max<wbr/>Listeners</span><a href="#getmaxlisteners" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -673,7 +698,7 @@ set by <code>emitter.setMaxListeners(n)</code> or defaults to
 </div></div><aside class="tsd-sources">
 <p>Inherited from EventEmitter.getMaxListeners</p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.3/node_modules/@types/node/events.d.ts:161</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.4/node_modules/@types/node/events.d.ts:161</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="getsessiondiagnosticsarray"><span>get<wbr/>Session<wbr/>Diagnostics<wbr/>Array</span><a href="#getsessiondiagnosticsarray" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -684,7 +709,7 @@ set by <code>emitter.setMaxListeners(n)</code> or defaults to
 </div>
 <h4 class="tsd-returns-title">Returns <a href="../interfaces/node-opcua.UADynamicVariableArray.html" class="tsd-signature-type tsd-kind-interface">UADynamicVariableArray</a><span class="tsd-signature-symbol">&lt;</span><a href="node-opcua.SessionDiagnosticsDataType.html" class="tsd-signature-type tsd-kind-class">SessionDiagnosticsDataType</a><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:108</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:156</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="getsessionid"><span>get<wbr/>Session<wbr/>Id</span><a href="#getsessionid" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -694,7 +719,7 @@ set by <code>emitter.setMaxListeners(n)</code> or defaults to
 <h4 class="tsd-returns-title">Returns <a href="node-opcua.NodeId.html" class="tsd-signature-type tsd-kind-class">NodeId</a></h4><aside class="tsd-sources">
 <p>Implementation of <a href="../interfaces/node-opcua.ISessionBase.html">ISessionBase</a>.<a href="../interfaces/node-opcua.ISessionBase.html#getsessionid">getSessionId</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:71</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:88</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="getsessionsecuritydiagnosticsarray"><span>get<wbr/>Session<wbr/>Security<wbr/>Diagnostics<wbr/>Array</span><a href="#getsessionsecuritydiagnosticsarray" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -705,7 +730,7 @@ set by <code>emitter.setMaxListeners(n)</code> or defaults to
 </div>
 <h4 class="tsd-returns-title">Returns <a href="../interfaces/node-opcua.UADynamicVariableArray.html" class="tsd-signature-type tsd-kind-interface">UADynamicVariableArray</a><span class="tsd-signature-symbol">&lt;</span><a href="node-opcua.SessionSecurityDiagnosticsDataType.html" class="tsd-signature-type tsd-kind-class">SessionSecurityDiagnosticsDataType</a><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:112</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:160</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="getsubscription"><span>get<wbr/>Subscription</span><a href="#getsubscription" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -723,7 +748,18 @@ set by <code>emitter.setMaxListeners(n)</code> or defaults to
 <h4 class="tsd-returns-title">Returns <a href="node-opcua.Subscription.html" class="tsd-signature-type tsd-kind-class">Subscription</a> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span></h4><aside class="tsd-sources">
 <p>Implementation of <a href="../interfaces/node-opcua.ISessionBase.html">ISessionBase</a>.<a href="../interfaces/node-opcua.ISessionBase.html#getsubscription">getSubscription</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:129</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:177</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="hasregisterednodes"><span>has<wbr/>Registered<wbr/>Nodes</span><a href="#hasregisterednodes" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="hasregisterednodes-1"><span class="tsd-kind-call-signature">hasRegisteredNodes</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><a href="#hasregisterednodes-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>whether the client registered nodes on this session (RegisterNodes): their aliases name them in its requests</p>
+</div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:206</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="incrementrequesterrorcounter"><span>increment<wbr/>Request<wbr/>Error<wbr/>Counter</span><a href="#incrementrequesterrorcounter" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -737,7 +773,7 @@ set by <code>emitter.setMaxListeners(n)</code> or defaults to
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <p>Implementation of <a href="../interfaces/node-opcua.IServerSession.html">IServerSession</a>.<a href="../interfaces/node-opcua.IServerSession.html#incrementrequesterrorcounter">incrementRequestErrorCounter</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:104</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:152</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="incrementrequesttotalcounter"><span>increment<wbr/>Request<wbr/>Total<wbr/>Counter</span><a href="#incrementrequesttotalcounter" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -751,7 +787,7 @@ set by <code>emitter.setMaxListeners(n)</code> or defaults to
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <p>Implementation of <a href="../interfaces/node-opcua.IServerSession.html">IServerSession</a>.<a href="../interfaces/node-opcua.IServerSession.html#incrementrequesttotalcounter">incrementRequestTotalCounter</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:103</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:151</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="incrementtotalrequestcount"><span>increment<wbr/>Total<wbr/>Request<wbr/>Count</span><a href="#incrementtotalrequestcount" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -761,7 +797,7 @@ set by <code>emitter.setMaxListeners(n)</code> or defaults to
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <p>Implementation of <a href="../interfaces/node-opcua.IServerSession.html">IServerSession</a>.<a href="../interfaces/node-opcua.IServerSession.html#incrementtotalrequestcount">incrementTotalRequestCount</a></p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:102</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:150</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="listenercount"><span>listener<wbr/>Count</span><a href="#listenercount" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -792,7 +828,7 @@ in the list of the listeners of the event.</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from EventEmitter.listenerCount</p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.3/node_modules/@types/node/events.d.ts:170</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.4/node_modules/@types/node/events.d.ts:170</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="listeners"><span>listeners</span><a href="#listeners" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -819,7 +855,7 @@ in the list of the listeners of the event.</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from EventEmitter.listeners</p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.3/node_modules/@types/node/events.d.ts:186</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.4/node_modules/@types/node/events.d.ts:186</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="off"><span>off</span><a href="#off" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -844,7 +880,7 @@ in the list of the listeners of the event.</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from EventEmitter.off</p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.3/node_modules/@types/node/events.d.ts:191</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.4/node_modules/@types/node/events.d.ts:191</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="on"><span>on</span><a href="#on" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -887,7 +923,7 @@ event listener to the beginning of the listeners array.</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from EventEmitter.on</p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.3/node_modules/@types/node/events.d.ts:225</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.4/node_modules/@types/node/events.d.ts:225</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="once"><span>once</span><a href="#once" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -927,7 +963,7 @@ event listener to the beginning of the listeners array.</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from EventEmitter.once</p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.3/node_modules/@types/node/events.d.ts:256</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.4/node_modules/@types/node/events.d.ts:256</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="prependlistener"><span>prepend<wbr/>Listener</span><a href="#prependlistener" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -964,7 +1000,7 @@ times.</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from EventEmitter.prependListener</p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.3/node_modules/@types/node/events.d.ts:275</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.4/node_modules/@types/node/events.d.ts:275</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="prependoncelistener"><span>prepend<wbr/>Once<wbr/>Listener</span><a href="#prependoncelistener" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -999,7 +1035,7 @@ listener is removed, and then invoked.</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from EventEmitter.prependOnceListener</p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.3/node_modules/@types/node/events.d.ts:292</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.4/node_modules/@types/node/events.d.ts:292</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="rawlisteners"><span>raw<wbr/>Listeners</span><a href="#rawlisteners" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -1027,7 +1063,7 @@ including any wrappers (such as those created by <code>.once()</code>).</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from EventEmitter.rawListeners</p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.3/node_modules/@types/node/events.d.ts:326</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.4/node_modules/@types/node/events.d.ts:326</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="registernode"><span>register<wbr/>Node</span><a href="#registernode" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -1040,7 +1076,7 @@ including any wrappers (such as those created by <code>.once()</code>).</p>
 <li><span><span class="tsd-kind-parameter">nodeId</span>: <a href="node-opcua.NodeId.html" class="tsd-signature-type tsd-kind-class">NodeId</a></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <a href="node-opcua.NodeId.html" class="tsd-signature-type tsd-kind-class">NodeId</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:155</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:203</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="removealllisteners"><span>remove<wbr/>All<wbr/>Listeners</span><a href="#removealllisteners" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -1068,7 +1104,7 @@ component or module (e.g. sockets or file streams).</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from EventEmitter.removeAllListeners</p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.3/node_modules/@types/node/events.d.ts:338</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.4/node_modules/@types/node/events.d.ts:338</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="removelistener"><span>remove<wbr/>Listener</span><a href="#removelistener" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -1122,7 +1158,7 @@ listener is removed:</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from EventEmitter.removeListener</p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.3/node_modules/@types/node/events.d.ts:425</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.4/node_modules/@types/node/events.d.ts:425</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="resendmonitorediteminitialvalues"><span>resend<wbr/>Monitored<wbr/>Item<wbr/>Initial<wbr/>Values</span><a href="#resendmonitorediteminitialvalues" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -1131,7 +1167,7 @@ listener is removed:</p>
 <div class="tsd-description">
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:173</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:224</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="resolveregisterednode"><span>resolve<wbr/>Registered<wbr/>Node</span><a href="#resolveregisterednode" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -1144,7 +1180,7 @@ listener is removed:</p>
 <li><span><span class="tsd-kind-parameter">aliasNodeId</span>: <a href="node-opcua.NodeId.html" class="tsd-signature-type tsd-kind-class">NodeId</a></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <a href="node-opcua.NodeId.html" class="tsd-signature-type tsd-kind-class">NodeId</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:157</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:207</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="setlocaleids"><span>set<wbr/>Locale<wbr/>Ids</span><a href="#setlocaleids" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -1163,7 +1199,7 @@ the Session.&quot; A null/empty/all-blank list is therefore a no-op, not a reset
 <li><span><code class="tsd-tag">Optional</code><span class="tsd-kind-parameter">localeIds</span>: <span class="tsd-signature-keyword">readonly</span> (<span class="tsd-signature-type">string</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span>)<span class="tsd-signature-symbol">[]</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:92</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:118</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="setmaxlisteners"><span>set<wbr/>Max<wbr/>Listeners</span><a href="#setmaxlisteners" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -1188,7 +1224,7 @@ modified for this specific <code>EventEmitter</code> instance. The value can be 
 </div></div><aside class="tsd-sources">
 <p>Inherited from EventEmitter.setMaxListeners</p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.3/node_modules/@types/node/events.d.ts:436</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/node_modules/.pnpm/@types+node@26.6.4/node_modules/@types/node/events.d.ts:436</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="tojson"><span>to<wbr/>JSON</span><a href="#tojson" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -1197,7 +1233,7 @@ modified for this specific <code>EventEmitter</code> instance. The value can be 
 <div class="tsd-description">
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">,</span> <span class="tsd-signature-type">string</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">number</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">Date</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:69</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:86</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="tostring"><span>to<wbr/>String</span><a href="#tostring" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -1208,7 +1244,7 @@ modified for this specific <code>EventEmitter</code> instance. The value can be 
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:70</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:87</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="unregisternode"><span>un<wbr/>Register<wbr/>Node</span><a href="#unregisternode" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -1221,7 +1257,7 @@ modified for this specific <code>EventEmitter</code> instance. The value can be 
 <li><span><span class="tsd-kind-parameter">aliasNodeId</span>: <a href="node-opcua.NodeId.html" class="tsd-signature-type tsd-kind-class">NodeId</a></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:156</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:204</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="updateclientlastcontacttime"><span>update<wbr/>Client<wbr/>Last<wbr/>Contact<wbr/>Time</span><a href="#updateclientlastcontacttime" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -1230,7 +1266,23 @@ modified for this specific <code>EventEmitter</code> instance. The value can be 
 <div class="tsd-description">
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:95</li></ul></aside></div></li></ul></section></section></details></div>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:127</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="watchedelsewhere"><span>watched<wbr/>Elsewhere</span><a href="#watchedelsewhere" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="watchedelsewhere-1"><span class="tsd-kind-call-signature">watchedElsewhere</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">seen</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">()</span> <span class="tsd-signature-symbol">=&gt;</span> <span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">void</span><a href="#watchedelsewhere-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>a Session whose timeout another thread keeps (the engine of front threads): it leaves this
+thread's watchdog, and each keepAlive() calls <code>seen</code> instead</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li><span><span class="tsd-kind-parameter">seen</span>: <span class="tsd-signature-symbol">()</span> <span class="tsd-signature-symbol">=&gt;</span> <span class="tsd-signature-type">void</span></span></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-server/dist/server_session.d.ts:103</li></ul></aside></div></li></ul></section></section></details></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
@@ -1248,11 +1300,11 @@ modified for this specific <code>EventEmitter</code> instance. The value can be 
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Constructors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Constructors</summary>
 <div><a href="#constructor"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Constructor"><use href="../assets/icons.svg#icon-512"></use></svg><span>constructor</span></a></div></details>
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Properties"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Properties</summary>
-<div><a href="#__status"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>__<wbr/>status</span></a><a href="#_watchdog"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>_<wbr/>watch<wbr/>Dog</span></a><a href="#_watchdogdata"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>_<wbr/>watch<wbr/>Dog<wbr/>Data</span></a><a href="#authenticationtoken"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>authentication<wbr/>Token</span></a><a href="#channel"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>channel</span></a><a href="#channelid"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>channel<wbr/>Id</span></a><a href="#clientdescription"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>client<wbr/>Description</span></a><a href="#continuationpointmanager"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>continuation<wbr/>Point<wbr/>Manager</span></a><a href="#creationdate"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>creation<wbr/>Date</span></a><a href="#endpoint"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>endpoint</span></a><a href="#keepalive"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>keep<wbr/>Alive</span></a><a href="#localeids"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>locale<wbr/>Ids</span></a><a href="#nodeid"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>node<wbr/>Id</span></a><a href="#nonce"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>nonce</span></a><a href="#parent"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>parent</span></a><a href="#passwordchangerequired"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>password<wbr/>Change<wbr/>Required</span></a><a href="#publishengine"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>publish<wbr/>Engine</span></a><a href="#sessioncontext"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>session<wbr/>Context</span></a><a href="#sessiondiagnostics"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>session<wbr/>Diagnostics</span></a><a href="#sessionname"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>session<wbr/>Name</span></a><a href="#sessionobject"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>session<wbr/>Object</span></a><a href="#sessionsecuritydiagnostics"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>session<wbr/>Security<wbr/>Diagnostics</span></a><a href="#sessiontimeout"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>session<wbr/>Timeout</span></a><a href="#subscriptiondiagnosticsarray"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>subscription<wbr/>Diagnostics<wbr/>Array</span></a><a href="#useridentitytoken"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>user<wbr/>Identity<wbr/>Token</span></a><a href="#maxpublishrequestinqueue"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>max<wbr/>Publish<wbr/>Request<wbr/>In<wbr/>Queue</span></a><a href="#registry"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>registry</span></a></div></details>
+<div><a href="#__status"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>__<wbr/>status</span></a><a href="#_watchdog"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>_<wbr/>watch<wbr/>Dog</span></a><a href="#_watchdogdata"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>_<wbr/>watch<wbr/>Dog<wbr/>Data</span></a><a href="#authenticationtoken"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>authentication<wbr/>Token</span></a><a href="#channel"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>channel</span></a><a href="#channelid"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>channel<wbr/>Id</span></a><a href="#clientdescription"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>client<wbr/>Description</span></a><a href="#continuationpointmanager"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>continuation<wbr/>Point<wbr/>Manager</span></a><a href="#creationdate"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>creation<wbr/>Date</span></a><a href="#endpoint"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>endpoint</span></a><a href="#keepalive"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>keep<wbr/>Alive</span></a><a href="#localeids"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>locale<wbr/>Ids</span></a><a href="#nodeid"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>node<wbr/>Id</span></a><a href="#nonce"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>nonce</span></a><a href="#parent"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>parent</span></a><a href="#passwordchangerequired"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>password<wbr/>Change<wbr/>Required</span></a><a href="#publishengine"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>publish<wbr/>Engine</span></a><a href="#remotechannelsecurity"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>remote<wbr/>Channel<wbr/>Security</span></a><a href="#sessioncontext"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>session<wbr/>Context</span></a><a href="#sessiondiagnostics"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>session<wbr/>Diagnostics</span></a><a href="#sessionname"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>session<wbr/>Name</span></a><a href="#sessionobject"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>session<wbr/>Object</span></a><a href="#sessionsecuritydiagnostics"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>session<wbr/>Security<wbr/>Diagnostics</span></a><a href="#sessiontimeout"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>session<wbr/>Timeout</span></a><a href="#subscriptiondiagnosticsarray"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>subscription<wbr/>Diagnostics<wbr/>Array</span></a><a href="#useridentitytoken"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>user<wbr/>Identity<wbr/>Token</span></a><a href="#maxpublishrequestinqueue"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>max<wbr/>Publish<wbr/>Request<wbr/>In<wbr/>Queue</span></a><a href="#registry"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>registry</span></a></div></details>
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Accessors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Accessors</summary>
-<div><a href="#aborted"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>aborted</span></a><a href="#addressspace"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>address<wbr/>Space</span></a><a href="#clientconnectiontime"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>client<wbr/>Connection<wbr/>Time</span></a><a href="#clientlastcontacttime"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>client<wbr/>Last<wbr/>Contact<wbr/>Time</span></a><a href="#cumulatedsubscriptioncount"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>cumulated<wbr/>Subscription<wbr/>Count</span></a><a href="#currentmonitoreditemcount"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>current<wbr/>Monitored<wbr/>Item<wbr/>Count</span></a><a href="#currentpublishrequestinqueue"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>current<wbr/>Publish<wbr/>Request<wbr/>In<wbr/>Queue</span></a><a href="#currentsubscriptioncount"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>current<wbr/>Subscription<wbr/>Count</span></a><a href="#status"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>status</span></a></div></details>
+<div><a href="#aborted"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>aborted</span></a><a href="#addressspace"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>address<wbr/>Space</span></a><a href="#channelsecurity"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>channel<wbr/>Security</span></a><a href="#clientconnectiontime"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>client<wbr/>Connection<wbr/>Time</span></a><a href="#clientlastcontacttime"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>client<wbr/>Last<wbr/>Contact<wbr/>Time</span></a><a href="#cumulatedsubscriptioncount"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>cumulated<wbr/>Subscription<wbr/>Count</span></a><a href="#currentmonitoreditemcount"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>current<wbr/>Monitored<wbr/>Item<wbr/>Count</span></a><a href="#currentpublishrequestinqueue"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>current<wbr/>Publish<wbr/>Request<wbr/>In<wbr/>Queue</span></a><a href="#currentsubscriptioncount"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>current<wbr/>Subscription<wbr/>Count</span></a><a href="#status"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Accessor"><use href="../assets/icons.svg#icon-262144"></use></svg><span>status</span></a></div></details>
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Methods"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Methods</summary>
-<div><a href="#_attach_channel"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>_<wbr/>attach_<wbr/>channel</span></a><a href="#_detach_channel"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>_<wbr/>detach_<wbr/>channel</span></a><a href="#_exposesubscriptiondiagnostics"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>_<wbr/>expose<wbr/>Subscription<wbr/>Diagnostics</span></a><a href="#_unexposesubscriptiondiagnostics"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>_<wbr/>unexpose<wbr/>Subscription<wbr/>Diagnostics</span></a><a href="#capturerejectionsymbol" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>[capture<wbr/>Rejection<wbr/>Symbol]</span></a><a href="#addlistener" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>add<wbr/>Listener</span></a><a href="#close"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>close</span></a><a href="#createsubscription"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>create<wbr/>Subscription</span></a><a href="#deletesubscription"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>delete<wbr/>Subscription</span></a><a href="#dispose"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>dispose</span></a><a href="#emit" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>emit</span></a><a href="#eventnames" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>event<wbr/>Names</span></a><a href="#getendpointdescription"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Endpoint<wbr/>Description</span></a><a href="#getendpointurl"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Endpoint<wbr/>Url</span></a><a href="#getmaxlisteners" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Max<wbr/>Listeners</span></a><a href="#getsessiondiagnosticsarray"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Session<wbr/>Diagnostics<wbr/>Array</span></a><a href="#getsessionid"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Session<wbr/>Id</span></a><a href="#getsessionsecuritydiagnosticsarray"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Session<wbr/>Security<wbr/>Diagnostics<wbr/>Array</span></a><a href="#getsubscription"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Subscription</span></a><a href="#incrementrequesterrorcounter"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>increment<wbr/>Request<wbr/>Error<wbr/>Counter</span></a><a href="#incrementrequesttotalcounter"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>increment<wbr/>Request<wbr/>Total<wbr/>Counter</span></a><a href="#incrementtotalrequestcount"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>increment<wbr/>Total<wbr/>Request<wbr/>Count</span></a><a href="#listenercount" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>listener<wbr/>Count</span></a><a href="#listeners" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>listeners</span></a><a href="#off" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>off</span></a><a href="#on" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>on</span></a><a href="#once" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>once</span></a><a href="#prependlistener" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>prepend<wbr/>Listener</span></a><a href="#prependoncelistener" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>prepend<wbr/>Once<wbr/>Listener</span></a><a href="#rawlisteners" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>raw<wbr/>Listeners</span></a><a href="#registernode"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>register<wbr/>Node</span></a><a href="#removealllisteners" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>remove<wbr/>All<wbr/>Listeners</span></a><a href="#removelistener" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>remove<wbr/>Listener</span></a><a href="#resendmonitorediteminitialvalues"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>resend<wbr/>Monitored<wbr/>Item<wbr/>Initial<wbr/>Values</span></a><a href="#resolveregisterednode"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>resolve<wbr/>Registered<wbr/>Node</span></a><a href="#setlocaleids"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>set<wbr/>Locale<wbr/>Ids</span></a><a href="#setmaxlisteners" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>set<wbr/>Max<wbr/>Listeners</span></a><a href="#tojson"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>to<wbr/>JSON</span></a><a href="#tostring"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>to<wbr/>String</span></a><a href="#unregisternode"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>un<wbr/>Register<wbr/>Node</span></a><a href="#updateclientlastcontacttime"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>update<wbr/>Client<wbr/>Last<wbr/>Contact<wbr/>Time</span></a></div></details></div></details></div>
+<div><a href="#_attach_channel"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>_<wbr/>attach_<wbr/>channel</span></a><a href="#_detach_channel"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>_<wbr/>detach_<wbr/>channel</span></a><a href="#_exposesubscriptiondiagnostics"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>_<wbr/>expose<wbr/>Subscription<wbr/>Diagnostics</span></a><a href="#_unexposesubscriptiondiagnostics"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>_<wbr/>unexpose<wbr/>Subscription<wbr/>Diagnostics</span></a><a href="#capturerejectionsymbol" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>[capture<wbr/>Rejection<wbr/>Symbol]</span></a><a href="#addlistener" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>add<wbr/>Listener</span></a><a href="#close"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>close</span></a><a href="#createsubscription"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>create<wbr/>Subscription</span></a><a href="#deletesubscription"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>delete<wbr/>Subscription</span></a><a href="#dispose"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>dispose</span></a><a href="#emit" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>emit</span></a><a href="#eventnames" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>event<wbr/>Names</span></a><a href="#getendpointdescription"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Endpoint<wbr/>Description</span></a><a href="#getendpointurl"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Endpoint<wbr/>Url</span></a><a href="#getmaxlisteners" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Max<wbr/>Listeners</span></a><a href="#getsessiondiagnosticsarray"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Session<wbr/>Diagnostics<wbr/>Array</span></a><a href="#getsessionid"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Session<wbr/>Id</span></a><a href="#getsessionsecuritydiagnosticsarray"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Session<wbr/>Security<wbr/>Diagnostics<wbr/>Array</span></a><a href="#getsubscription"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Subscription</span></a><a href="#hasregisterednodes"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>has<wbr/>Registered<wbr/>Nodes</span></a><a href="#incrementrequesterrorcounter"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>increment<wbr/>Request<wbr/>Error<wbr/>Counter</span></a><a href="#incrementrequesttotalcounter"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>increment<wbr/>Request<wbr/>Total<wbr/>Counter</span></a><a href="#incrementtotalrequestcount"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>increment<wbr/>Total<wbr/>Request<wbr/>Count</span></a><a href="#listenercount" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>listener<wbr/>Count</span></a><a href="#listeners" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>listeners</span></a><a href="#off" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>off</span></a><a href="#on" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>on</span></a><a href="#once" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>once</span></a><a href="#prependlistener" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>prepend<wbr/>Listener</span></a><a href="#prependoncelistener" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>prepend<wbr/>Once<wbr/>Listener</span></a><a href="#rawlisteners" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>raw<wbr/>Listeners</span></a><a href="#registernode"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>register<wbr/>Node</span></a><a href="#removealllisteners" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>remove<wbr/>All<wbr/>Listeners</span></a><a href="#removelistener" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>remove<wbr/>Listener</span></a><a href="#resendmonitorediteminitialvalues"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>resend<wbr/>Monitored<wbr/>Item<wbr/>Initial<wbr/>Values</span></a><a href="#resolveregisterednode"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>resolve<wbr/>Registered<wbr/>Node</span></a><a href="#setlocaleids"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>set<wbr/>Locale<wbr/>Ids</span></a><a href="#setmaxlisteners" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>set<wbr/>Max<wbr/>Listeners</span></a><a href="#tojson"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>to<wbr/>JSON</span></a><a href="#tostring"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>to<wbr/>String</span></a><a href="#unregisternode"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>un<wbr/>Register<wbr/>Node</span></a><a href="#updateclientlastcontacttime"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>update<wbr/>Client<wbr/>Last<wbr/>Contact<wbr/>Time</span></a><a href="#watchedelsewhere"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>watched<wbr/>Elsewhere</span></a></div></details></div></details></div>
 <div class="site-menu">
 <nav id="tsd-sidebar-links" class="tsd-navigation"><a href="https://leanpub.com/node-opcuabyexample-edition2024" class="tsd-nav-link">Book</a><a href="https://github.com/node-opcua/node-opcua" class="tsd-nav-link">GitHub</a><a href="https://support.sterfive.com" class="tsd-nav-link">Support</a></nav>
 <nav class="tsd-navigation"><a href="../modules.html">NodeOPCUA API Documentation</a>
