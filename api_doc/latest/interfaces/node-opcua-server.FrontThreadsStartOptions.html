@@ -15,7 +15,7 @@
 <h1>Interface FrontThreadsStartOptions</h1></div>
 <div class="tsd-signature"><span class="tsd-signature-keyword">interface</span> <span class="tsd-kind-interface">FrontThreadsStartOptions</span> <span class="tsd-signature-symbol">{</span><br/>    <a class="tsd-kind-property" href="#fronts">fronts</a><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#ownports">ownPorts</a><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#servermodule">serverModule</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">URL</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#servermoduledata">serverModuleData</a><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#sessionworkers">sessionWorkers</a><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#sessionworkerscript">sessionWorkerScript</a><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">URL</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#workerscript">workerScript</a><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">URL</span><span class="tsd-signature-symbol">;</span><br/><span class="tsd-signature-symbol">}</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/22b86ffc9b80890a90d4d8f3cce1fa9f5290b9f8/packages/node-opcua-server/source/front_threads/front_thread_engine.ts#L100">packages/node-opcua-server/source/front_threads/front_thread_engine.ts:100</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/126ee937fe6d49403b6a5a8b84e01d5869be91ab/packages/node-opcua-server/source/front_threads/front_thread_engine.ts#L100">packages/node-opcua-server/source/front_threads/front_thread_engine.ts:100</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-accordion" open><summary class="tsd-accordion-summary tsd-index-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
@@ -44,14 +44,14 @@ Each front needs a few client connections of its own (Linux spreads connections 
 fronts by hash).</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/22b86ffc9b80890a90d4d8f3cce1fa9f5290b9f8/packages/node-opcua-server/source/front_threads/front_thread_engine.ts#L108">packages/node-opcua-server/source/front_threads/front_thread_engine.ts:108</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/126ee937fe6d49403b6a5a8b84e01d5869be91ab/packages/node-opcua-server/source/front_threads/front_thread_engine.ts#L108">packages/node-opcua-server/source/front_threads/front_thread_engine.ts:108</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="ownports"><code class="tsd-tag">Optional</code><span>own<wbr/>Ports</span><a href="#ownports" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">ownPorts</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">boolean</span></div>
 <div class="tsd-comment tsd-typography"><p>true: front k listens on the port of its options + k, as where there is no SO_REUSEPORT, so that a client chooses its front</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/22b86ffc9b80890a90d4d8f3cce1fa9f5290b9f8/packages/node-opcua-server/source/front_threads/front_thread_engine.ts#L125">packages/node-opcua-server/source/front_threads/front_thread_engine.ts:125</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/126ee937fe6d49403b6a5a8b84e01d5869be91ab/packages/node-opcua-server/source/front_threads/front_thread_engine.ts#L125">packages/node-opcua-server/source/front_threads/front_thread_engine.ts:125</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="servermodule"><span>server<wbr/>Module</span><a href="#servermodule" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">serverModule</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">URL</span></div>
@@ -61,35 +61,35 @@ worker calls it too, with <code>{ front: -1, sessionWorker }</code>, for the onC
 onDeleteMonitoredItem hooks, which run where the monitored items are; it uses nothing else.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/22b86ffc9b80890a90d4d8f3cce1fa9f5290b9f8/packages/node-opcua-server/source/front_threads/front_thread_engine.ts#L115">packages/node-opcua-server/source/front_threads/front_thread_engine.ts:115</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/126ee937fe6d49403b6a5a8b84e01d5869be91ab/packages/node-opcua-server/source/front_threads/front_thread_engine.ts#L115">packages/node-opcua-server/source/front_threads/front_thread_engine.ts:115</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="servermoduledata"><code class="tsd-tag">Optional</code><span>server<wbr/>Module<wbr/>Data</span><a href="#servermoduledata" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">serverModuleData</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">unknown</span></div>
 <div class="tsd-comment tsd-typography"><p>passed to the default export of serverModule; structured-cloned to each front</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/22b86ffc9b80890a90d4d8f3cce1fa9f5290b9f8/packages/node-opcua-server/source/front_threads/front_thread_engine.ts#L117">packages/node-opcua-server/source/front_threads/front_thread_engine.ts:117</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/126ee937fe6d49403b6a5a8b84e01d5869be91ab/packages/node-opcua-server/source/front_threads/front_thread_engine.ts#L117">packages/node-opcua-server/source/front_threads/front_thread_engine.ts:117</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="sessionworkers"><code class="tsd-tag">Optional</code><span>session<wbr/>Workers</span><a href="#sessionworkers" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">sessionWorkers</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">number</span></div>
 <div class="tsd-comment tsd-typography"><p>how many session worker threads host the subscriptions of the sessions; 1 by default</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/22b86ffc9b80890a90d4d8f3cce1fa9f5290b9f8/packages/node-opcua-server/source/front_threads/front_thread_engine.ts#L123">packages/node-opcua-server/source/front_threads/front_thread_engine.ts:123</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/126ee937fe6d49403b6a5a8b84e01d5869be91ab/packages/node-opcua-server/source/front_threads/front_thread_engine.ts#L123">packages/node-opcua-server/source/front_threads/front_thread_engine.ts:123</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="sessionworkerscript"><code class="tsd-tag">Optional</code><span>session<wbr/>Worker<wbr/>Script</span><a href="#sessionworkerscript" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">sessionWorkerScript</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">URL</span></div>
 <div class="tsd-comment tsd-typography"><p>the session worker script, for a bundled deployment; this package's by default</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/22b86ffc9b80890a90d4d8f3cce1fa9f5290b9f8/packages/node-opcua-server/source/front_threads/front_thread_engine.ts#L121">packages/node-opcua-server/source/front_threads/front_thread_engine.ts:121</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/126ee937fe6d49403b6a5a8b84e01d5869be91ab/packages/node-opcua-server/source/front_threads/front_thread_engine.ts#L121">packages/node-opcua-server/source/front_threads/front_thread_engine.ts:121</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="workerscript"><code class="tsd-tag">Optional</code><span>worker<wbr/>Script</span><a href="#workerscript" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">workerScript</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">URL</span></div>
 <div class="tsd-comment tsd-typography"><p>the front worker script, for a bundled deployment; this package's by default</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/22b86ffc9b80890a90d4d8f3cce1fa9f5290b9f8/packages/node-opcua-server/source/front_threads/front_thread_engine.ts#L119">packages/node-opcua-server/source/front_threads/front_thread_engine.ts:119</a></li></ul></aside></section></section></details></div>
+<li>Defined in <a href="https://github.com/node-opcua/node-opcua/blob/126ee937fe6d49403b6a5a8b84e01d5869be91ab/packages/node-opcua-server/source/front_threads/front_thread_engine.ts#L119">packages/node-opcua-server/source/front_threads/front_thread_engine.ts:119</a></li></ul></aside></section></section></details></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
