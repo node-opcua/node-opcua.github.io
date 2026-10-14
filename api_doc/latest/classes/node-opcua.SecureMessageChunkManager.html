@@ -13,14 +13,20 @@
 <li><a href="../modules/node-opcua.html">node-opcua</a></li>
 <li><a href="" aria-current="page">SecureMessageChunkManager</a></li></ul>
 <h1>Class SecureMessageChunkManager</h1></div>
-<section class="tsd-panel tsd-hierarchy" data-refl="484517">
+<section class="tsd-panel tsd-comment">
+<div class="tsd-comment tsd-typography"><p>A ChunkManager that writes the message, security and sequence headers of each chunk.</p>
+<p>Deprecated: use <a href="node-opcua.SecureChunkWriter.html" class="tsd-kind-class">SecureChunkWriter</a>, which writes the same bytes, for every message type
+(OpenSecureChannel and asynchronous signing included), with one call and no event (ADR 0001).
+MessageChunker no longer uses this class; to be removed in the next major version.</p>
+</div></section>
+<section class="tsd-panel tsd-hierarchy" data-refl="484750">
 <h4>Hierarchy</h4>
 <ul class="tsd-hierarchy">
 <li class="tsd-hierarchy-item"><span class="tsd-signature-type">EventEmitter</span>
 <ul class="tsd-hierarchy">
 <li class="tsd-hierarchy-item"><span class="tsd-hierarchy-target">SecureMessageChunkManager</span></li></ul></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-secure-channel/dist/source/secure_message_chunk_manager.d.ts:25</li></ul></aside>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-secure-channel/dist/source/secure_message_chunk_manager.d.ts:32</li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-accordion" open><summary class="tsd-accordion-summary tsd-index-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
@@ -81,7 +87,7 @@
 <h4 class="tsd-returns-title">Returns <a href="" class="tsd-signature-type tsd-kind-class">SecureMessageChunkManager</a></h4><aside class="tsd-sources">
 <p>Overrides EventEmitter.constructor</p>
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-secure-channel/dist/source/secure_message_chunk_manager.d.ts:29</li></ul></aside></div></li></ul></section></section></details>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-secure-channel/dist/source/secure_message_chunk_manager.d.ts:36</li></ul></aside></div></li></ul></section></section></details>
 <details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Accessors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
 <h2 class="tsd-anchor-link" id="accessors-1">Accessors<a href="#accessors-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2></summary>
 <section>
@@ -95,7 +101,7 @@
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-secure-channel/dist/source/secure_message_chunk_manager.d.ts:35</li></ul></aside></div></li></ul></section></section></details>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-secure-channel/dist/source/secure_message_chunk_manager.d.ts:42</li></ul></aside></div></li></ul></section></section></details>
 <details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Methods"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
 <h2 class="tsd-anchor-link" id="methods-1">Methods<a href="#methods-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2></summary>
 <section>
@@ -136,7 +142,7 @@ place of <code>Symbol.for('nodejs.rejection')</code>.</p>
 <div class="tsd-description">
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-secure-channel/dist/source/secure_message_chunk_manager.d.ts:39</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-secure-channel/dist/source/secure_message_chunk_manager.d.ts:46</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="addlistener"><span>add<wbr/>Listener</span><a href="#addlistener" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -201,7 +207,7 @@ to each.</p>
 <div class="tsd-description">
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-secure-channel/dist/source/secure_message_chunk_manager.d.ts:40</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-secure-channel/dist/source/secure_message_chunk_manager.d.ts:47</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="endasync"><span>end<wbr/>Async</span><a href="#endasync" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -214,7 +220,7 @@ signing error.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-secure-channel/dist/source/secure_message_chunk_manager.d.ts:46</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-secure-channel/dist/source/secure_message_chunk_manager.d.ts:53</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="evaluatetotallengthandchunks"><span>evaluate<wbr/>Total<wbr/>Length<wbr/>And<wbr/>Chunks</span><a href="#evaluatetotallengthandchunks" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -227,7 +233,7 @@ signing error.</p>
 <li><span><span class="tsd-kind-parameter">bodySize</span>: <span class="tsd-signature-type">number</span></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{</span> <span class="tsd-kind-property">chunkCount</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">;</span> <span class="tsd-kind-property">totalLength</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span> <span class="tsd-signature-symbol">}</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-secure-channel/dist/source/secure_message_chunk_manager.d.ts:30</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-secure-channel/dist/source/secure_message_chunk_manager.d.ts:37</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="eventnames"><span>event<wbr/>Names</span><a href="#eventnames" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -652,7 +658,7 @@ modified for this specific <code>EventEmitter</code> instance. The value can be 
 <li><span><code class="tsd-tag">Optional</code><span class="tsd-kind-parameter">length</span>: <span class="tsd-signature-type">number</span></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-secure-channel/dist/source/secure_message_chunk_manager.d.ts:38</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-secure-channel/dist/source/secure_message_chunk_manager.d.ts:45</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="write_header"><span>write_<wbr/>header</span><a href="#write_header" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -667,7 +673,7 @@ modified for this specific <code>EventEmitter</code> instance. The value can be 
 <li><span><span class="tsd-kind-parameter">length</span>: <span class="tsd-signature-type">number</span></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-secure-channel/dist/source/secure_message_chunk_manager.d.ts:36</li></ul></aside></div></li></ul></section>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-secure-channel/dist/source/secure_message_chunk_manager.d.ts:43</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="writesequenceheader"><span>write<wbr/>Sequence<wbr/>Header</span><a href="#writesequenceheader" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -680,7 +686,7 @@ modified for this specific <code>EventEmitter</code> instance. The value can be 
 <li><span><span class="tsd-kind-parameter">buffer</span>: <span class="tsd-signature-type">Buffer</span></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-secure-channel/dist/source/secure_message_chunk_manager.d.ts:37</li></ul></aside></div></li></ul></section></section></details></div>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-secure-channel/dist/source/secure_message_chunk_manager.d.ts:44</li></ul></aside></div></li></ul></section></section></details></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
