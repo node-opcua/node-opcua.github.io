@@ -42,6 +42,11 @@ import { projectGroups, featuredRepos } from '../data/projects';
               </a>
               <span class="repo-separator">&middot;</span>
               <span class="repo-description">{repo.description}</span>
+              {repo.siteUrl && (
+                <a href={repo.siteUrl} target="_blank" rel="noopener noreferrer" class="repo-site">
+                  {repo.siteLabel ?? "Website"} &rarr;
+                </a>
+              )}
             </li>
           ))}
         </ul>
@@ -174,6 +179,17 @@ import { projectGroups, featuredRepos } from '../data/projects';
     font-family: var(--font-sans);
     font-size: 1rem;
     color: var(--ink-soft);
+  }
+  .repo-site {
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--accent);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .repo-site:hover {
+    text-decoration: underline;
   }
   .projects-footer {
     padding: 3rem 0 0 0;
