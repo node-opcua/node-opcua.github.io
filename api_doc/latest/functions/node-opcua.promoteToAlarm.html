@@ -30,9 +30,10 @@ that arrived any other way - <code>objectType.instantiate()</code>, or a nodeset
 children but none of the machinery, so <code>activateAlarm</code> and <code>signalNewCondition</code> are simply not
 there. This retypes the node in place, keeping its identity in the address space index and every
 reference already pointing at it, and then runs the same initialization the factory runs.</p>
-<p>Limit alarms are refused rather than half-promoted: their behaviour lives in
-UALimitAlarmImpl and its subclasses, and a node wearing the plain alarm prototype would look
-promoted while ignoring its own limit set points.</p>
+<p>A limit alarm is handed to <a href="node-opcua.promoteToLimitAlarm.html" class="tsd-kind-function">promoteToLimitAlarm</a>: its behaviour lives in UALimitAlarmImpl
+and its subclasses, and a node wearing the plain alarm prototype would look promoted while
+ignoring its own limit set points. Handing it on rather than refusing it lets a caller promote
+every alarm of a nodeset the same way, without sorting them by type first.</p>
 </div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
@@ -41,7 +42,7 @@ promoted while ignoring its own limit set points.</p>
 <li><span><code class="tsd-tag">Optional</code><span class="tsd-kind-parameter">options</span>: <a href="../interfaces/node-opcua.PromoteToAlarmOptions.html" class="tsd-signature-type tsd-kind-interface">PromoteToAlarmOptions</a></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <a href="../interfaces/node-opcua.UAAlarmConditionEx.html" class="tsd-signature-type tsd-kind-interface">UAAlarmConditionEx</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-address-space/dist/impl/alarms_and_conditions/ua_alarm_condition_impl.d.ts:175</li></ul></aside></div></li></ul></section></div>
+<li>Defined in work/node-opcua/node-opcua/packages/node-opcua-address-space/dist/impl/alarms_and_conditions/promote_to_alarm.d.ts:23</li></ul></aside></div></li></ul></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
