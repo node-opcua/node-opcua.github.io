@@ -5,6 +5,9 @@ export interface Repo {
   highlighted?: boolean;
   featured?: boolean;
   extendedDescription?: string;
+  // Optional live site, shown next to the repository link.
+  siteUrl?: string;
+  siteLabel?: string;
 }
 
 export interface RepoGroup {
@@ -47,6 +50,9 @@ export const projectGroups: RepoGroup[] = [
   {
     title: "Tooling",
     repos: [
+      { name: "opcua-modeler", url: "https://github.com/node-opcua/opcua-modeler",
+        description: "Author OPC UA information models in YAML and compile them to standard NodeSet2.xml — companion specifications resolved, modelling rules checked, documentation generated. Runs in the browser, in VS Code and in CI.",
+        siteUrl: "https://opcua-modeler.sterfive.io", siteLabel: "Try it online" },
       { name: "opcua-commander", url: "https://github.com/node-opcua/opcua-commander",
         description: "OPC UA client with a blessed (ncurses) terminal UI." },
       { name: "bench-opcua", url: "https://github.com/node-opcua/bench-opcua",
